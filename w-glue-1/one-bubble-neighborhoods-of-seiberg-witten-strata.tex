@@ -30,6 +30,7 @@
 \theoremstyle{plain}
 \newtheorem{thmletter}{Theorem}
 \renewcommand{\thethmletter}{\Alph{thmletter}}
+\newtheorem{corletter}[thmletter]{Corollary}
 
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
@@ -75,27 +76,30 @@ Seiberg--Witten moduli spaces, Donaldson invariants, Witten conjecture}
 Feehan and Leness constructed local gluing and obstruction maps near
 Seiberg--Witten strata in the Uhlenbeck compactification of the
 $SO(3)$-monopole moduli space.  Their level-one link calculation also requires
-continuity, embedding, neighborhood-surjectivity, and orientation properties
+continuity, embedding, surjectivity onto a Uhlenbeck-open neighborhood, and
+orientation properties
 assigned to a companion gluing theorem and retained as a hypothesis.  We
 prove these properties at the one-bubble level over any compact regular
 Seiberg--Witten moduli space consisting of solutions with nonzero spinor.
 
 A global equivariant stabilization of the normal deformation operators
 handles the family problem without a fixed spectral cutoff.  A scale-uniform
-augmented parametrix in mixed critical norms gives $O(\lambda^{1/3})$ bounds
-for the projected splicing error and nonlinear correction, uniformly over the
-family.  Model-coordinate modulation recovers the background and gluing
-parameters; a two-sided spectral estimate on the conformal neck gives the
-no-neck theorem needed for reverse gluing.  The obstruction section extends
-over the natural cone family, and equivariant determinant-line excision
-identifies the actual and virtual links as oriented cycles.
+augmented parametrix in mixed critical-exponent norms gives
+$O(\lambda^{1/3})$ bounds for the projected splicing error and nonlinear
+correction, uniformly over the family.  Projection onto fixed-model Jacobi
+fields recovers the background and gluing parameters; a two-sided spectral
+estimate on the conformal neck gives the no-neck theorem needed for reverse
+gluing.  At zero scale the instanton obstruction line collapses to the vertex
+of a cone family, and equivariant determinant-line excision identifies the
+actual and virtual links as oriented cycles.
 
 Consequently, this proves the neighborhood-theorem input to the
 Feehan--Leness level-one pairing over regular strata of arbitrary dimension.
-We give its Jacobi-polynomial formula; the zero-dimensional formula and the
-associated low-degree Donaldson--Seiberg--Witten comparison follow as
-corollaries.  The result is confined to one bubble and does not treat
-collision strata, zero-spinor solutions, or the full Witten conjecture.
+Substitution into their published cohomological calculation yields its
+Jacobi-polynomial formula; the zero-dimensional formula and the associated
+low-degree Donaldson--Seiberg--Witten comparison follow as corollaries.  The
+result is confined to one bubble and does not treat collision strata,
+zero-spinor solutions, or the full Witten conjecture.
 \end{abstract}
 
 \maketitle
@@ -119,11 +123,15 @@ Leness~\cite{FeehanLenessIII}.  That theorem constructs the gluing-data
 bundle, a smooth solution map for the extended equations, and a finite-rank
 obstruction section.  It gives the inclusion of the obstruction zero set in
 the monopole moduli space.  Section~1.5.1 of the same paper separates from
-this construction the continuity, embedding, and neighborhood-surjectivity
-properties and assigns them to a companion article.  In the one-bubble case,
-these properties are stated in~\cite[Theorem~3.8]{FeehanLenessLevelOne} and
-used in the oriented link calculation there.  The global version appears as
-Hypothesis~7.8.1 in~\cite{FeehanLenessCobordism}.
+this construction the remaining continuity and embedding statements and the
+claim of surjectivity onto a Uhlenbeck-open neighborhood; it assigns this
+package to a companion article.  In the one-bubble case,
+\cite[Theorem~3.8]{FeehanLenessLevelOne} records the compactified embedding,
+the obstruction sections, and the inclusion of their zero set in the monopole
+moduli space, but it does not assert that this zero set maps onto an open
+neighborhood of the ideal stratum.  That stronger conclusion is Property~(4)
+of Hypothesis~7.8.1 in~\cite{FeehanLenessCobordism} and is retained there as
+part of the local gluing hypothesis.
 
 This paper proves the missing neighborhood statement for one charge-one
 bubble over a compact regular Seiberg--Witten moduli space of arbitrary
@@ -145,6 +153,15 @@ reducible stratum is
  M_{\mathfrak s}\times X
  \subset \overline{\cM}_{\mathfrak t'}.
 \end{equation}
+Let $\mathfrak t$ denote the lower-level $\operatorname{spin}^u$ structure
+containing $M_{\mathfrak s}$.  In the standard level-one notation,
+\begin{equation}\label{eq:lower-ambient-structures}
+ \mathfrak t=\mathfrak s\oplus\mathfrak s\otimes L,
+ \qquad c_1(\mathfrak t)=c_1(\mathfrak t'),
+ \qquad p_1(\mathfrak t)=p_1(\mathfrak t')+4.
+\end{equation}
+Thus $\mathfrak t'$ is the ambient structure obtained after splicing one unit
+of instanton charge into a configuration for $\mathfrak t$.
 Assume that $M_{\mathfrak s}$ is a compact regular smooth manifold, every
 represented Seiberg--Witten pair has nonzero spinor, and
 \begin{equation}\label{eq:intro-sw-dimension}
@@ -237,9 +254,12 @@ therefore gives a unique correction and obstruction coefficients satisfying
  \leq C\lambda^{1/3}.
 \end{equation}
 
-The neighborhood theorem supplies every invocation of the deferred gluing
-result in Sections~3--6 of~\cite{FeehanLenessLevelOne}.  We retain the
-notation of that paper for the pairing.  Let $\mathfrak t'$ be a
+Theorem~\ref{thm:intro-neighborhood} is the principal result.  The next two
+statements are consequences obtained by inserting it into published
+cohomological calculations.  The neighborhood theorem supplies every
+invocation of the deferred gluing result in Sections~3--6 of
+\cite{FeehanLenessLevelOne}.  We retain the notation of that paper for the
+pairing.  Let $\mathfrak t'$ be a
 $\operatorname{spin}^u$ structure with $w_2(\mathfrak t')$ good in the sense
 of~\cite[Definition~2.3]{FeehanLenessLevelOne}, and suppose
 \begin{equation}\label{eq:intro-level-relation}
@@ -263,7 +283,8 @@ determined by the chosen homology orientation, set
 \end{equation}
 Also write
 \begin{equation}\label{eq:asd-dimension}
- d_a(\mathfrak t')=-2p_1(\mathfrak t')-\tfrac32(\chi+\sigma),
+ d_a(\mathfrak t')=-2p_1(\mathfrak t')
+ -\tfrac32\bigl(\chi(X)+\sigma(X)\bigr),
 \end{equation}
 and set
 \begin{equation}\label{eq:intro-pairing-notation}
@@ -277,8 +298,8 @@ For the Jacobi polynomials we use the normalization
  (\zeta-1)^{d-v}(\zeta+1)^v.
 \end{equation}
 
-\begin{thmletter}[family level-one pairing; $=$
-Theorem~\ref{thm:pairing}]\label{thm:intro-pairing}
+\begin{corletter}[completion of the family level-one pairing; $=$
+Corollary~\ref{cor:pairing}]\label{cor:intro-pairing}
 Let $\delta,m,\eta$ be nonnegative integers satisfying
 \[
  0\leq m\leq\lfloor\delta/2\rfloor,
@@ -289,7 +310,7 @@ Put $n=\delta-2m$ and
 \begin{align*}
  A_J&=\eta-d+1,\qquad
  B_J=\frac12\bigl(2\delta-d_a(\mathfrak t')-d_{\mathfrak s}\bigr)
-      -\frac14(\chi+\sigma),\\
+      -\frac14\bigl(\chi(X)+\sigma(X)\bigr),\\
  J_d&=P_d^{A_J,B_J}(0),\qquad
  J_d'=P_d^{A_J-1,B_J+1}(0).
 \end{align*}
@@ -310,7 +331,7 @@ a_0&=3\beta^2+c_1^2(X)+2\beta\cdot c_1(\mathfrak t')
      +4n-4m,\qquad
 a_1=4\binom n2.
 \end{align*}
-\end{thmletter}
+\end{corletter}
 
 This is the polynomial form of~\cite[Theorem~6.1]{FeehanLenessLevelOne}; it
 remains meaningful when $J_d=0$.  The new neighborhood theorem supplies the
@@ -322,14 +343,14 @@ proved in the earlier version of this manuscript.
 
 For completeness, write
 \[
- c(X)=-\frac14(7\chi+11\sigma).
+ c(X)=-\frac14\bigl(7\chi(X)+11\sigma(X)\bigr).
 \]
-Combining Theorem~\ref{thm:intro-pairing} with the published top-level
+Combining Corollary~\ref{cor:intro-pairing} with the published top-level
 calculation, blow-up formulas, and superconformal-simple-type vanishing gives
 the following precise consequence.
 
-\begin{thmletter}[degree consequence; $=$
-Corollary~\ref{cor:degree}]\label{thm:intro-degree}
+\begin{corletter}[degree consequence; $=$
+Corollary~\ref{cor:degree}]\label{cor:intro-degree}
 Suppose in addition that $X$ is abundant, effective, and of
 Seiberg--Witten simple type, and choose the characteristic data as in
 \cite[Theorem~1.1]{FeehanLenessLevelOne}.  Then
@@ -342,7 +363,7 @@ and
  2^{2-c(X)}e^{Q_X(h,h)/2}\SW_X^w(h)
  \pmod{h^{c(X)+2}}.
 \]
-\end{thmletter}
+\end{corletter}
 
 The corollary retains every hypothesis just listed.  It does not prove the
 full Witten conjecture, remove effectiveness, or treat a level
@@ -467,7 +488,8 @@ orientation; the characteristic-class normalization is checked independently
 in Section~\ref{sec:pairing}.
 
 \subsection{The background finite-dimensional reduction}
-The reducible splitting is
+The lower-level structure in~\eqref{eq:lower-ambient-structures} has the
+reducible splitting
 \[
  \mathfrak t=\mathfrak s\oplus\mathfrak s\otimes L.
 \]
@@ -620,7 +642,7 @@ Its compactification is the cone map
 the fiber collapses at the vertex.  This is a rank-dropping pseudo-bundle,
 not a singular trivialization of a line bundle.
 
-\subsection{Strong and weak levels}
+\subsection{Strong and critical-norm Sobolev completions}
 For smooth dependence at a fixed positive scale, choose $k\geq4$ and use the
 standard Fredholm map
 \[
@@ -670,7 +692,12 @@ is $2r_\Xi+2$.  Hence the expected dimension of the obstruction zero set is
 \end{equation}
 
 \begin{theorem}[level-one neighborhood]\label{thm:neighborhood}
-Under the hypotheses preceding Theorem~\ref{thm:intro-neighborhood}, there is
+Let $b_1(X)=0$ and let $b_2^+(X)\geq3$ be odd.  Fix generic perturbation data
+and a level-one pair $(\mathfrak t',\mathfrak s)$ as in
+\eqref{eq:intro-stratum}--\eqref{eq:lower-ambient-structures}.  Suppose that
+$M_{\mathfrak s}$ is compact and regular and that every represented
+Seiberg--Witten pair has nonzero spinor.  For sufficiently small
+$\varepsilon,\delta>0$, there is
 an equivariant compactified embedding
 \[
  \gamma:\overline{\cM}^{\mathrm{vir}}_{\mathfrak t',\mathfrak s}
@@ -1242,18 +1269,20 @@ On the exterior, the preglued pair equals the background pair and
 $J_{s,\lambda}$ equals the background obstruction embedding; the residual
 therefore vanishes identically.
 
-Write $\mathfrak S(q)=(v_0,\psi_0)$ and let $\chi$ be the outer spinor cutoff.
-On $4R<d(x,\cdot)<8R$ the pair is $(A_0,\chi\Phi_0)$ and
+Write $\mathfrak S(q)=(v_0,\psi_0)$ and let $\chi_{\mathrm{out}}$ be the outer
+spinor cutoff.  On $4R<d(x,\cdot)<8R$ the pair is
+$(A_0,\chi_{\mathrm{out}}\Phi_0)$ and
 $J_{s,\lambda}b(q)=\mathfrak S(q)$.  If $\mathcal Q(\Phi)$ denotes the
 quadratic spinor term in the curvature equation, the residual is
 \begin{equation}\label{eq:outer-residual}
- \bigl(\mathcal Q(\Phi_0)-\mathcal Q(\chi\Phi_0),
- (\chi-1)\psi_0+\rho(d\chi)\Phi_0\bigr).
+ \bigl(\mathcal Q(\Phi_0)-\mathcal Q(\chi_{\mathrm{out}}\Phi_0),
+ (\chi_{\mathrm{out}}-1)\psi_0
+ +\rho(d\chi_{\mathrm{out}})\Phi_0\bigr).
 \end{equation}
 The first component and the first term in the second component are uniformly
 bounded on a ball of radius $8R$, and hence have mixed-target norm $O(R^2)$
 by~\eqref{eq:shrinking-support}.  Direct radial integration gives
-$\|d\chi\|_{L^2}\leq CR$; consequently the last term in
+$\|d\chi_{\mathrm{out}}\|_{L^2}\leq CR$; consequently the last term in
 \eqref{eq:outer-residual} is $O(R)=O(\lambda^{1/3})$.
 
 On the plateau $4r<d(x,\cdot)<4R$ the pair is $(A_0,0)$, not a solution of
@@ -1268,12 +1297,15 @@ with the sign in $\mathcal Q$ fixed by the convention in
 in $B(x,4R)$, so their mixed-target norm is $O(R^2)=O(\lambda^{2/3})$.
 
 On the middle annulus $2r<d(x,\cdot)<4r$, write the connection in radial
-gauge as $\Gamma+\chi_m(A_0-\Gamma)$.  Then
+gauge as $\Gamma+\chi_{\mathrm{mid}}(A_0-\Gamma)$.  Then
 \begin{equation}\label{eq:middle-curvature}
- F=\chi_mF_{A_0}+d\chi_m\wedge(A_0-\Gamma)
-   +(\chi_m^2-\chi_m)(A_0-\Gamma)\wedge(A_0-\Gamma).
+ F=\chi_{\mathrm{mid}}F_{A_0}
+   +d\chi_{\mathrm{mid}}\wedge(A_0-\Gamma)
+   +(\chi_{\mathrm{mid}}^2-\chi_{\mathrm{mid}})
+    (A_0-\Gamma)\wedge(A_0-\Gamma).
 \end{equation}
-The bounds $|A_0-\Gamma|\leq Cr$ and $|d\chi_m|\leq C/r$ show that
+The bounds $|A_0-\Gamma|\leq Cr$ and
+$|d\chi_{\mathrm{mid}}|\leq C/r$ show that
 \eqref{eq:middle-curvature} is uniformly bounded.  The spinor is zero and the
 matched background target is uniformly bounded, so
 \eqref{eq:shrinking-support} gives an $O(r^2)=O(\lambda)$ contribution.  On
@@ -1874,7 +1906,7 @@ charge-one tail has size $O((\lambda_n/r)^2)$.  On the at most two slabs
 meeting the outer spinor cutoff, conformal covariance gives the additional
 source
 \[
- c(dt)(\partial_t\chi)r^{3/2}\Phi_{\mathrm E},
+ c(dt)(\partial_t\chi_{\mathrm{out}})r^{3/2}\Phi_{\mathrm E},
 \]
 of size $O(r^{3/2})$.  Thus the pregluing defect on a slab of radius $r_j$
 satisfies
@@ -2171,7 +2203,8 @@ $\gamma$ is a compactified embedding by Corollary~\ref{cor:embedding}.
 
 \subsection{The compactified section}
 The background summand $\overline\Upsilon^s$ is the pullback of the fixed
-complex bundle $\Xi\to N_{\mathfrak t',\mathfrak s}$.  The charge-one Dirac
+complex bundle $\Xi\to M_{\mathfrak s}$ to
+$N_{\mathfrak t,\mathfrak s}$.  The charge-one Dirac
 operator has the kernel and cokernel in~\eqref{eq:bubble-cokernel}.
 At positive scale its obstruction line is
 \[
@@ -2188,11 +2221,10 @@ scale, set
  \chi(q,x,0)=(b(q),0).
 \end{equation}
 The contraction is equivariant, because the nonlinear map, cutoffs,
-transports, and inverse are equivariant and its fixed point is unique.  The
-two common presentations of the residual circle action should not be mixed.
-Before taking the effective circle, the diagonal presentation has weight two
-on the normal and background-obstruction factors.  After passage to the
-effective action, the corresponding Euler class is
+transports, and inverse are equivariant and its fixed point is unique.  We use
+the diagonal presentation before taking the effective residual circle; it has
+weight two on the normal and background-obstruction factors.  After passage
+to the effective action, the corresponding Euler class is
 \begin{equation}\label{eq:background-euler}
  e(\overline\Upsilon^s/S^1)=(-\nu)^{r_\Xi}.
 \end{equation}
@@ -2229,8 +2261,9 @@ collapsed fiber.
 \end{proof}
 
 We next compare the global reduction with the local small-eigenvalue
-reduction of~\cite[Section~8]{FeehanLenessIII}.  Three objects must be kept
-distinct.  On a relatively compact positive-scale chart $U^+$ on which a
+reduction of~\cite[Section~8]{FeehanLenessIII}.  There are three distinct
+finite-dimensional reductions.  On a relatively compact positive-scale
+chart $U^+$ on which a
 cutoff $\mu$ avoids the spectrum, let
 \begin{equation}\label{eq:three-obstruction-models}
  E_{\mathrm{glob},g}=\Xi_q\oplus K_I,\qquad
@@ -2319,7 +2352,7 @@ zero gives
 For a generic perturbation at which the irreducible monopole section is
 transverse, the total section $\chi_s\oplus\chi_i$ is transverse on
 $\cG^+$.  On
-$(N_{\mathfrak t',\mathfrak s}-M_{\mathfrak s})\times X$, the surviving
+$(N_{\mathfrak t,\mathfrak s}-M_{\mathfrak s})\times X$, the surviving
 background component $\chi_s=b$ is transverse.  No transversality holds or
 is asserted on $M_{\mathfrak s}\times X$ when $r_\Xi>0$.
 \end{proposition}
@@ -2697,7 +2730,7 @@ The equivariant Thom division of
 over
 \[
  M_{\mathfrak s}\times
- \partial\overline{\Gl}_{\mathfrak t'}(\delta)/S^1
+ \partial\overline{\Gl}_{\mathfrak t}(\delta)/S^1
 \]
 as a finite sum involving the Segre classes of $N$.  The normal-bundle
 calculation~\cite[Lemma~2.4]{FeehanLenessLevelOne} gives
@@ -2723,7 +2756,7 @@ Put
 \begin{equation}\label{eq:jacobi-parameters}
  A_J=\eta-d+1,\qquad
  B_J=\tfrac12(2\delta-d_a(\mathfrak t')-d_{\mathfrak s})
-      -\tfrac14(\chi+\sigma),
+      -\tfrac14\bigl(\chi(X)+\sigma(X)\bigr),
 \end{equation}
 and set
 \begin{equation}\label{eq:jacobi-values}
@@ -2781,8 +2814,20 @@ Lemma~\ref{lem:instanton-link-integrals} gives the following polynomial form,
 which does not divide by a Jacobi value and therefore remains defined when
 $J_d=0$.
 
-\begin{theorem}[family level-one pairing]\label{thm:pairing}
-Under the assumptions preceding Theorem~\ref{thm:intro-pairing},
+\begin{corollary}[completion of the family level-one pairing]\label{cor:pairing}
+Assume the four-manifold, level-one, regularity, and nonzero-spinor hypotheses
+of Theorem~\ref{thm:neighborhood}.  Suppose in addition that
+$w_2(\mathfrak t')$ is good in the sense of
+\cite[Definition~2.3]{FeehanLenessLevelOne}.  Let $\delta,m,\eta$ be
+nonnegative integers satisfying
+\[
+ 0\leq m\leq\lfloor\delta/2\rfloor,
+ \qquad
+ 2(\delta+\eta)=\dim(\cM_{\mathfrak t'}/S^1)-1,
+\]
+and use the notation in
+\eqref{eq:intro-pairing-notation} and
+\eqref{eq:jacobi-parameters}--\eqref{eq:jacobi-values}.  Then
 \begin{align*}
 &\#\bigl(\overline V(h^{\delta-2m}x^m)\cap\overline W^\eta
 \cap\overline L_{\mathfrak t',\mathfrak s}\bigr)\\
@@ -2798,7 +2843,7 @@ where terms with negative powers of $B_h$ are omitted and
  +4n-4m,\qquad
  a_1=4\binom n2.
 \end{align*}
-\end{theorem}
+\end{corollary}
 
 \begin{proof}
 Equation~\eqref{eq:pairing-integrand}, equivariant Thom division,
@@ -2825,7 +2870,7 @@ If $d_{\mathfrak s}=0$, then $J_0=J_0'=1$ and
 \left(a_0B_h^n+b_0B_h^{n-1}\langle c_1(\mathfrak t'),h\rangle
 +a_1B_h^{n-2}Q_X(h,h)\right),
 \end{align*}
-where $b_0=2n$ and $a_0,a_1$ are as in Theorem~\ref{thm:pairing}.
+where $b_0=2n$ and $a_0,a_1$ are as in Corollary~\ref{cor:pairing}.
 \end{corollary}
 
 \subsection{Blow-up and the degree consequence}
@@ -2858,8 +2903,9 @@ Together with $Q_{\widetilde X}(e,h)=0$ and $e^2=-1$, this is the $k=0$
 case of~\cite[Proposition~6.5]{FeehanLenessLevelOne}.
 
 \begin{corollary}[degree consequence]\label{cor:degree}
-Under the additional abundance, effectiveness, Seiberg--Witten-simple-type,
-and characteristic-data assumptions in Theorem~\ref{thm:intro-degree},
+Suppose in addition that $X$ is abundant, effective, and of
+Seiberg--Witten simple type, and choose the characteristic data as in
+\cite[Theorem~1.1]{FeehanLenessLevelOne}.  Then
 \begin{align}\label{eq:series-congruence}
  \cD_X^w(h)&\equiv0\equiv\SW_X^w(h)
  &&\pmod{h^{c(X)-2}},\notag\\
@@ -2886,7 +2932,7 @@ For abundant, effective manifolds of Seiberg--Witten simple type, choose the
 class $\Lambda$ and lift $w$ as in
 \cite[Theorem~1.1]{FeehanLenessLevelOne}.  Then
 $r(\Lambda)=c(X)-4$ and $i(\Lambda)=c(X)+4$.  The published top-level
-pairing~\cite{FeehanLenessII}, Theorem~\ref{thm:pairing}, the Donaldson and
+pairing~\cite{FeehanLenessII}, Corollary~\ref{cor:pairing}, the Donaldson and
 Seiberg--Witten blow-up formulas, and the superconformal-simple-type
 vanishing used in~\cite[Section~6]{FeehanLenessLevelOne} give
 \eqref{eq:series-congruence}.  Extracting the coefficients of the two final

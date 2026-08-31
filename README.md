@@ -28,16 +28,17 @@ action in the admissible setting.
 ### One-bubble neighborhoods of Seiberg–Witten strata in SO(3)-monopole moduli spaces
 
 Feehan and Leness constructed local gluing and obstruction maps near
-Seiberg–Witten strata, while the complementary continuity, embedding,
-neighborhood-surjectivity, and orientation properties were assigned to a
-companion theorem and retained as a hypothesis. This paper proves those
-properties at the one-bubble level over any compact regular Seiberg–Witten
-moduli space consisting of solutions with nonzero spinor. The family theorem
-combines global equivariant stabilization, a scale-uniform augmented
-parametrix, parameter recovery, a two-sided no-neck estimate, reverse gluing,
-and determinant-line excision. It proves the neighborhood-theorem input to
-the arbitrary-dimensional level-one pairing and gives its Jacobi-polynomial
-formula, with the zero-dimensional and low-degree formulas as corollaries.
+Seiberg–Witten strata. Their level-one calculation also requires continuity,
+embedding, surjectivity onto an Uhlenbeck-open neighborhood, and orientation
+properties assigned to a companion gluing theorem and retained as a
+hypothesis. This paper proves those properties at the one-bubble level over a
+compact regular Seiberg–Witten moduli space of nonzero-spinor solutions, under
+the stated four-manifold hypotheses. The proof combines global equivariant
+stabilization, a scale-uniform augmented parametrix, parameter recovery, a
+two-sided no-neck estimate, reverse gluing, and determinant-line excision.
+Substitution into the published cohomological calculation yields the
+arbitrary-dimensional Jacobi-polynomial pairing, with the zero-dimensional
+and low-degree formulas as corollaries.
 
 - [PDF](w-glue-1/one-bubble-neighborhoods-of-seiberg-witten-strata.pdf)
 - [LaTeX source](w-glue-1/one-bubble-neighborhoods-of-seiberg-witten-strata.tex)
