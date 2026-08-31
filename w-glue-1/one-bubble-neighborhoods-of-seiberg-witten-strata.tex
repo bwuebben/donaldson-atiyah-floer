@@ -1,0 +1,2993 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{flafter}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},
+  pdftitle={One-bubble neighborhoods of Seiberg-Witten strata in SO(3)-monopole moduli spaces},
+  pdfsubject={A family gluing and neighborhood theorem at the first Uhlenbeck level of the SO(3)-monopole moduli space},
+  pdfkeywords={SO(3) monopoles, Uhlenbeck compactification, gluing,
+  Seiberg-Witten moduli spaces, Donaldson invariants, Witten conjecture}}
+
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{convention}[theorem]{Convention}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\theoremstyle{plain}
+\newtheorem{thmletter}{Theorem}
+\renewcommand{\thethmletter}{\Alph{thmletter}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Fr}{\operatorname{Fr}}
+\newcommand{\Gl}{\operatorname{Gl}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\ind}{\operatorname{ind}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\SU}{\operatorname{SU}}
+\newcommand{\SW}{\operatorname{SW}}
+
+\title[One-bubble neighborhoods for $\SO(3)$ monopoles]
+{One-bubble neighborhoods of Seiberg--Witten strata\\
+in $\SO(3)$-monopole moduli spaces}
+\author{Bernd Johannes Wuebben}
+
+\date{30 August 2026}
+\subjclass[2020]{57K41 (primary); 57R57, 58J05, 58J37, 53C07 (secondary)}
+\keywords{$SO(3)$ monopoles, Uhlenbeck compactification, gluing,
+Seiberg--Witten moduli spaces, Donaldson invariants, Witten conjecture}
+
+\begin{document}
+
+\begin{abstract}
+Feehan and Leness constructed local gluing and obstruction maps near
+Seiberg--Witten strata in the Uhlenbeck compactification of the
+$SO(3)$-monopole moduli space.  Their level-one link calculation also requires
+continuity, embedding, neighborhood-surjectivity, and orientation properties
+assigned to a companion gluing theorem and retained as a hypothesis.  We
+prove these properties at the one-bubble level over any compact regular
+Seiberg--Witten moduli space consisting of solutions with nonzero spinor.
+
+A global equivariant stabilization of the normal deformation operators
+handles the family problem without a fixed spectral cutoff.  A scale-uniform
+augmented parametrix in mixed critical norms gives $O(\lambda^{1/3})$ bounds
+for the projected splicing error and nonlinear correction, uniformly over the
+family.  Model-coordinate modulation recovers the background and gluing
+parameters; a two-sided spectral estimate on the conformal neck gives the
+no-neck theorem needed for reverse gluing.  The obstruction section extends
+over the natural cone family, and equivariant determinant-line excision
+identifies the actual and virtual links as oriented cycles.
+
+Consequently, this proves the neighborhood-theorem input to the
+Feehan--Leness level-one pairing over regular strata of arbitrary dimension.
+We give its Jacobi-polynomial formula; the zero-dimensional formula and the
+associated low-degree Donaldson--Seiberg--Witten comparison follow as
+corollaries.  The result is confined to one bubble and does not treat
+collision strata, zero-spinor solutions, or the full Witten conjecture.
+\end{abstract}
+
+\maketitle
+\enlargethispage{6pt}
+
+\section{Introduction}\label{sec:introduction}
+
+\subsection{The neighborhood problem}
+Let $X$ be a smooth, closed, connected, oriented four-manifold, and consider
+the Uhlenbeck compactification of a moduli space of $SO(3)$ monopoles.  Its
+lower levels contain products of Seiberg--Witten moduli spaces with symmetric
+products of $X$.  The $SO(3)$-monopole cobordism program compares the link of
+the top anti-self-dual stratum with the links of these reducible strata.  A
+link calculation has two distinct analytic inputs.  One must first construct
+solutions of a finite-dimensional extension of the monopole equations from
+splicing data.  One must then prove that the resulting zero set is an actual
+neighborhood of the ideal stratum in the Uhlenbeck topology.
+
+The first input was established in the local gluing theorem of Feehan and
+Leness~\cite{FeehanLenessIII}.  That theorem constructs the gluing-data
+bundle, a smooth solution map for the extended equations, and a finite-rank
+obstruction section.  It gives the inclusion of the obstruction zero set in
+the monopole moduli space.  Section~1.5.1 of the same paper separates from
+this construction the continuity, embedding, and neighborhood-surjectivity
+properties and assigns them to a companion article.  In the one-bubble case,
+these properties are stated in~\cite[Theorem~3.8]{FeehanLenessLevelOne} and
+used in the oriented link calculation there.  The global version appears as
+Hypothesis~7.8.1 in~\cite{FeehanLenessCobordism}.
+
+This paper proves the missing neighborhood statement for one charge-one
+bubble over a compact regular Seiberg--Witten moduli space of arbitrary
+dimension.  At this level there are no collision strata and no overlaps
+among partitions of a symmetric product.  The family problem cannot be
+reduced to the zero-dimensional case by choosing one spectral cutoff:
+spectral flow can change the rank of the corresponding small-eigenvalue
+spaces.  We instead stabilize the normal family globally by a smooth
+finite-rank equivariant bundle.  Local cutoff reductions enter only through
+a common enlargement, so neither the gluing chart nor its orientation
+depends on a constant-rank spectral window.
+
+\subsection{Results}
+Let $b_1(X)=0$ and let $b_2^+(X)\geq3$ be odd.  Fix generic perturbation data,
+a $\operatorname{spin}^u$ structure $\mathfrak t'$, and a
+$\operatorname{spin}^c$ structure $\mathfrak s$ for which the level-one
+reducible stratum is
+\begin{equation}\label{eq:intro-stratum}
+ M_{\mathfrak s}\times X
+ \subset \overline{\cM}_{\mathfrak t'}.
+\end{equation}
+Assume that $M_{\mathfrak s}$ is a compact regular smooth manifold, every
+represented Seiberg--Witten pair has nonzero spinor, and
+\begin{equation}\label{eq:intro-sw-dimension}
+ \dim M_{\mathfrak s}=d_{\mathfrak s}=2d\geq0.
+\end{equation}
+The level-one construction has a compactified
+virtual gluing space
+\begin{equation}\label{eq:intro-virtual}
+ \overline{\cM}^{\mathrm{vir}}_{\mathfrak t',\mathfrak s}
+ (\varepsilon,\delta),
+\end{equation}
+an obstruction pseudo-bundle $\overline\Upsilon$, and a section $\chi$.
+Their definitions are recalled in Section~\ref{sec:gluing-data}.  The
+instanton summand of $\overline\Upsilon$ has complex rank one at positive
+scale and collapses at the zero-scale cone point.
+
+Writing $N(\varepsilon)$ for the background virtual-normal disk, the
+compactified gluing space has the three strata
+\begin{equation}\label{eq:intro-three-strata}
+ \cG^+\quad\sqcup\quad
+ \underbrace{(N(\varepsilon)-M_{\mathfrak s})\times X}_{\text{middle
+ zero-scale stratum}}\quad\sqcup\quad
+ \underbrace{M_{\mathfrak s}\times X}_{\text{lowest stratum}}.
+\end{equation}
+At positive scale the obstruction section has background and instanton
+components $\chi=(\chi_s,\chi_i)$.  At zero scale the instanton fiber and
+$\chi_i$ collapse, while $\chi_s$ restricts to the background obstruction
+section $b:N(\varepsilon)\to\Xi$.  Thus $b$ is transverse on the middle
+stratum and vanishes on the lowest stratum.
+
+\begin{thmletter}[level-one neighborhood; $=$
+Theorem~\ref{thm:neighborhood}]\label{thm:intro-neighborhood}
+For sufficiently small $\varepsilon,\delta>0$, there is an
+$S^1$-equivariant map
+\[
+ \gamma:\overline{\cM}^{\mathrm{vir}}_{\mathfrak t',\mathfrak s}
+ (\varepsilon,\delta)\longrightarrow\overline\cC_{\mathfrak t'}
+\]
+with the following properties.
+\begin{enumerate}
+\item The map is a topological embedding, is smooth on the positive-scale
+stratum, and is joined to the splicing map by an $S^1$-equivariant isotopy
+through compactified embeddings.  On the zero-scale face it is the canonical
+background-and-ideal-point map.
+\item There is an Uhlenbeck-open neighborhood $\cU$ of
+$M_{\mathfrak s}\times X$ for which the restriction
+\[
+ \gamma:\chi^{-1}(0)\cap\gamma^{-1}(\cU)\longrightarrow
+ \cU\cap\overline\cM_{\mathfrak t'}^{*,0}
+\]
+is a homeomorphism and is a diffeomorphism on the positive-scale stratum.
+\item The total obstruction section is transverse on the positive-scale
+stratum, and its background component is transverse on the middle
+zero-scale stratum.  Its norm is continuous along the compactified section.
+No transversality is asserted on the lowest stratum.
+\item For a homology orientation of $X$, determinant-line excision gives the
+orientation of the transverse zero locus.  This orientation descends through
+the frame and residual-circle quotients and induces the standard boundary
+orientation used in the level-one link pairing.
+\end{enumerate}
+\end{thmletter}
+
+The last qualification in (3) is forced by the geometry.  On the lowest
+stratum the surviving background obstruction section is identically zero.
+If its rank is positive, its restriction cannot be transverse.  This is the
+statement used in the relative-Euler-class calculation of
+\cite[Section~5]{FeehanLenessLevelOne}; it also agrees with the qualification
+following Theorem~3.8 there.  Under the fine decomposition
+\eqref{eq:intro-three-strata}, the all-strata transversality formulation in
+\cite[Hypothesis~7.8.1(2)]{FeehanLenessCobordism} would also include the
+lowest stratum and is false there when the background obstruction has
+positive rank.
+
+The analytic estimate behind Theorem~\ref{thm:intro-neighborhood} may be
+stated independently.  Write $q_\lambda$ for the standard one-bubble
+pregluing and $J_{s,\lambda}$ for the matched embedding of the background
+obstruction space.  If $\mathfrak S$ is the monopole map and
+$\mathfrak S(q)=\iota_{s,q}b(q)$ on the background virtual neighborhood,
+then
+\begin{equation}\label{eq:intro-residual}
+ \left\|\mathfrak S(q_\lambda)-J_{s,\lambda}b(q)\right\|_{L^{\sharp,2;2}}
+ \leq C\lambda^{1/3}.
+\end{equation}
+There is a uniformly bounded inverse for the augmented linearization on a
+model-coordinate complement of all gluing parameters.  The contraction
+therefore gives a unique correction and obstruction coefficients satisfying
+\begin{equation}\label{eq:intro-correction}
+ \|u_\lambda\|_{L^2_1}
+ +\|\eta_{s,\lambda}\|+\|\eta_{i,\lambda}\|
+ \leq C\lambda^{1/3}.
+\end{equation}
+
+The neighborhood theorem supplies every invocation of the deferred gluing
+result in Sections~3--6 of~\cite{FeehanLenessLevelOne}.  We retain the
+notation of that paper for the pairing.  Let $\mathfrak t'$ be a
+$\operatorname{spin}^u$ structure with $w_2(\mathfrak t')$ good in the sense
+of~\cite[Definition~2.3]{FeehanLenessLevelOne}, and suppose
+\begin{equation}\label{eq:intro-level-relation}
+ \bigl(c_1(\mathfrak t')-c_1(\mathfrak s)\bigr)^2
+ =p_1(\mathfrak t')+4.
+\end{equation}
+Let $h\in H_2(X;\RR)$ and let $x\in H_0(X;\mathbb Z)$ be the positive
+generator.  For a monomial $z$ in $h$ and $x$, let $\overline V(z)$ denote
+the closure of a transverse geometric representative of the Donaldson class
+$\mu_p(z)$; let $\overline W$ represent the circle class $\mu_c$; and let
+$\overline L_{\mathfrak t',\mathfrak s}$ be the standard oriented link of
+$M_{\mathfrak s}\times X$ in
+$\overline\cM_{\mathfrak t'}^{*,0}/S^1$.  The symbol $\#$ below denotes the
+signed count of a transverse zero-dimensional intersection.  Let
+$\mu_{\mathfrak s}\in H^2(M_{\mathfrak s};\mathbb Z)$ be the first Chern
+class of the Seiberg--Witten base-point fibration.  With the orientation
+determined by the chosen homology orientation, set
+\begin{equation}\label{eq:sw-definition}
+ \SW_X(\mathfrak s)
+ =\left\langle\mu_{\mathfrak s}^{d},[M_{\mathfrak s}]\right\rangle.
+\end{equation}
+Also write
+\begin{equation}\label{eq:asd-dimension}
+ d_a(\mathfrak t')=-2p_1(\mathfrak t')-\tfrac32(\chi+\sigma),
+\end{equation}
+and set
+\begin{equation}\label{eq:intro-pairing-notation}
+ \beta=c_1(\mathfrak s)-c_1(\mathfrak t'),\qquad
+ B_h=\langle\beta,h\rangle.
+\end{equation}
+For the Jacobi polynomials we use the normalization
+\begin{equation}\label{eq:intro-jacobi-normalization}
+ P_d^{A,B}(\zeta)=2^{-d}\sum_{v=0}^d
+ \binom{d+A}{v}\binom{d+B}{d-v}
+ (\zeta-1)^{d-v}(\zeta+1)^v.
+\end{equation}
+
+\begin{thmletter}[family level-one pairing; $=$
+Theorem~\ref{thm:pairing}]\label{thm:intro-pairing}
+Let $\delta,m,\eta$ be nonnegative integers satisfying
+\[
+ 0\leq m\leq\lfloor\delta/2\rfloor,
+ \qquad
+ 2(\delta+\eta)=\dim(\cM_{\mathfrak t'}/S^1)-1.
+\]
+Put $n=\delta-2m$ and
+\begin{align*}
+ A_J&=\eta-d+1,\qquad
+ B_J=\frac12\bigl(2\delta-d_a(\mathfrak t')-d_{\mathfrak s}\bigr)
+      -\frac14(\chi+\sigma),\\
+ J_d&=P_d^{A_J,B_J}(0),\qquad
+ J_d'=P_d^{A_J-1,B_J+1}(0).
+\end{align*}
+With the standard level-one link orientation,
+\begin{align*}
+&\#\bigl(
+\overline V(h^{\delta-2m}x^m)\cap\overline W^\eta
+\cap\overline L_{\mathfrak t',\mathfrak s}\bigr)\\
+&\quad=(-1)^{m+1+d}2^{d-\delta}
+ \left\langle\mu_{\mathfrak s}^{d},[M_{\mathfrak s}]\right\rangle\\
+&\qquad\quad\times
+ \left[J_d\left(a_0B_h^n+a_1B_h^{n-2}Q_X(h,h)\right)
+ +2nJ_d'B_h^{n-1}\langle c_1(\mathfrak t'),h\rangle\right],
+\end{align*}
+where terms with negative powers of $B_h$ are omitted and
+\begin{align*}
+a_0&=3\beta^2+c_1^2(X)+2\beta\cdot c_1(\mathfrak t')
+     +4n-4m,\qquad
+a_1=4\binom n2.
+\end{align*}
+\end{thmletter}
+
+This is the polynomial form of~\cite[Theorem~6.1]{FeehanLenessLevelOne}; it
+remains meaningful when $J_d=0$.  The new neighborhood theorem supplies the
+deferred analytic hypothesis of that calculation.  Its universal-class
+pullbacks, equivariant Thom and Segre reduction, charge-one fiber integrals,
+and Jacobi identity remain published inputs.  When $d=0$, one has
+$J_0=J_0'=1$ and the theorem reduces exactly to the zero-dimensional formula
+proved in the earlier version of this manuscript.
+
+For completeness, write
+\[
+ c(X)=-\frac14(7\chi+11\sigma).
+\]
+Combining Theorem~\ref{thm:intro-pairing} with the published top-level
+calculation, blow-up formulas, and superconformal-simple-type vanishing gives
+the following precise consequence.
+
+\begin{thmletter}[degree consequence; $=$
+Corollary~\ref{cor:degree}]\label{thm:intro-degree}
+Suppose in addition that $X$ is abundant, effective, and of
+Seiberg--Witten simple type, and choose the characteristic data as in
+\cite[Theorem~1.1]{FeehanLenessLevelOne}.  Then
+\[
+ \cD_X^w(h)\equiv0\equiv\SW_X^w(h)\pmod{h^{c(X)-2}}
+\]
+and
+\[
+ \cD_X^w(h)\equiv
+ 2^{2-c(X)}e^{Q_X(h,h)/2}\SW_X^w(h)
+ \pmod{h^{c(X)+2}}.
+\]
+\end{thmletter}
+
+The corollary retains every hypothesis just listed.  It does not prove the
+full Witten conjecture, remove effectiveness, or treat a level
+$\ell\geq2$ contribution.
+
+\subsection{Method}
+There are four analytic points.  First, the compact family of background
+normal operators is stabilized by a global complex equivariant bundle
+$\Xi$.  The resulting augmented operator contains both $\Xi$ and the complex
+one-dimensional cokernel of the charge-one Dirac operator.  A logarithmic
+square partition gives a cutoff error
+$C(\log N)^{-1/2}$.  The physical bubble geometry is compactified to a family
+of metrics on $S^4$; using the induced operator eliminates a principal-symbol
+comparison which is not bounded in the critical target.  All remaining
+coefficient errors are $O_N(\lambda^{1/3})$.  The inverse and its first two
+normalized parameter derivatives are uniformly bounded on transported graph
+domains, which gives a smooth correction over the family.
+
+Second, the complement is not the physical $L^2$-orthogonal complement of
+the bubble Jacobi fields.  Their physical $L^2$ norms collapse with scale.
+Instead, a glued variation is localized, transported to the fixed background
+and $S^4$ models, and projected there.  Synthesis followed by this retraction
+is $I+o(1)$.  It gives a uniform projection onto the background normal,
+translation, dilation, and relative-frame modes and a uniformly coercive
+complement.
+
+Third, parameter recovery requires a slice estimate uniform both in the
+family and in the bubbling scale.  We prove a critical Green estimate for
+the coupled pair gauge Laplacian.  Exterior-based gauge normalization
+retains the constant adjoint mode at bubble infinity as the relative frame;
+normalizing at a finite point on the bubble would erase precisely that
+gluing parameter.
+
+Fourth, continuity and compactness do not imply neighborhood surjectivity.
+For a genuine monopole sequence converging to the ideal stratum, a
+charge-one rescaling and a fixed-annulus estimate reduce the neck to a
+first-order equation on a conformal cylinder.  The nonzero spectrum of the
+odd-signature and Dirac tangential operators is separated uniformly from
+zero.  A two-sided Duhamel estimate then gives a length-independent
+$\ell^1$ bound, including the $r^{3/2}$ outer spinor-cutoff term.  Exact
+modulation places the resulting difference in the complement used for the
+construction.  The augmented inverse and contraction uniqueness identify
+the original monopole with the gluing solution.
+
+The determinant calculation follows the same decomposition.  Excision splits
+the background and bubble determinant lines.  The complex background normal
+and obstruction factors cancel in the finite-dimensional reduction, as do
+the tangent- and adjoint-frame quotient factors.  The residual-circle and
+outward-radial conventions give
+\begin{equation}\label{eq:intro-orientation}
+ \lambda_{\cM}=-v_{S^1}\wedge\vec r\wedge\widetilde\lambda_L,
+\end{equation}
+the convention in~\cite[Equation~(3.81)]{FeehanLenessLevelOne}.
+
+\subsection{Relation to prior work}
+The local construction quoted here is the one-bubble specialization of
+\cite{FeehanLenessIII}.  The critical norms and uniform slice estimates are
+from~\cite{FeehanCritical}; the Uhlenbeck gauge theorem and compactness
+principles are used in their standard form~\cite{Uhlenbeck82,DK90}.  The
+induced-metric construction follows the conformal comparison in
+\cite[Section~8]{FeehanLenessIII}.  The parameter-recovery and reverse-gluing
+arguments are adapted to the coupled monopole equation rather than imported
+from ASD gluing: the bubble spinor, mixed critical target, and background
+obstruction must be controlled simultaneously.
+
+Theorem~\ref{thm:intro-neighborhood} concerns the first lower Uhlenbeck level
+only.  The topological splicing and overlap problem at all levels is treated
+in~\cite{FeehanLenessCobordism}, while the analytic neighborhood
+identification is assumed there.  At level one the overlap problem is absent,
+which is what makes it possible to separate and prove the neighborhood
+theorem without solving the collision problem.  The varying-rank issue is
+handled here by global family stabilization and stable comparison with the
+local spectral reductions, not by assuming that a spectral window has
+constant rank.
+
+\section{Level-one gluing data}\label{sec:gluing-data}
+
+\subsection{The monopole map and its deformation operator}
+Let $\mathfrak t'$ be represented by a Clifford module
+$V=V^+\oplus V^-$ with Clifford multiplication $\rho$ and adjoint bundle
+$\mathfrak g_V$.  A configuration is a pair $(A,\Phi)$ consisting of a
+compatible connection and a section of $V^+$.  We use the perturbed monopole
+map
+\begin{equation}\label{eq:monopole-map}
+ \mathfrak S(A,\Phi)=
+ \left(
+ F_A^+-\tau\rho^{-1}(\Phi\otimes\Phi^*)_{00},
+ (D_A+\rho(\vartheta))\Phi
+ \right).
+\end{equation}
+The perturbations are fixed throughout and belong to a compact generic
+family.  For the determinant-one gauge group, our infinitesimal-action
+convention is
+\[
+ d^0_{A,\Phi}\zeta=(d_A\zeta,-\zeta\Phi).
+\]
+Thus
+\[
+ d^{0,*}_{A,\Phi}(a,\phi)=d_A^*a-(\,\cdot\,\Phi)^*\phi,
+\]
+and the derivative of~\eqref{eq:monopole-map} is
+\begin{align}\label{eq:d1}
+d^1_{A,\Phi}(a,\phi)=\bigl(&d_A^+a-
+\tau\rho^{-1}(\Phi\otimes\phi^*+\phi\otimes\Phi^*)_{00},\notag\\
+&(D_A+\rho(\vartheta))\phi+\rho(a)\Phi\bigr).
+\end{align}
+The gauge-fixed operator is
+\begin{equation}\label{eq:gauge-fixed}
+ \mathscr D_{A,\Phi}=d^{0,*}_{A,\Phi}\oplus d^1_{A,\Phi}.
+\end{equation}
+At an approximate solution $d^1d^0$ need not vanish.  All parametrices below
+include the gauge row and do not use a deformation complex at the preglued
+pair.
+
+Equation~(2.3) of~\cite{FeehanLenessIII} prints a factor $1/2$ in the
+spinor-bilinear term of $d^1$, whereas the literal derivative of the displayed
+monopole map, Equation~(9.3) there, and
+\cite[Equation~(2.36)]{FeehanLenessI} have the normalization in
+\eqref{eq:d1}.  We use~\eqref{eq:d1}.  Interpolating the discrepant
+zeroth-order coefficient through $[1/2,1]$ does not change a determinant-line
+orientation; the characteristic-class normalization is checked independently
+in Section~\ref{sec:pairing}.
+
+\subsection{The background finite-dimensional reduction}
+The reducible splitting is
+\[
+ \mathfrak t=\mathfrak s\oplus\mathfrak s\otimes L.
+\]
+Along the reducible embedding of $M_{\mathfrak s}$, the gauge-fixed family
+splits into tangential and normal summands
+\begin{equation}\label{eq:family-splitting}
+ \mathscr D=\mathscr D^t\oplus\mathscr D^n.
+\end{equation}
+Regularity of the Seiberg--Witten equations gives
+\begin{equation}\label{eq:tangential-family}
+ \ker\mathscr D^t=TM_{\mathfrak s},\qquad
+ \coker\mathscr D^t=0.
+\end{equation}
+The normal family is complex linear, and the residual circle acts on its
+domain and target through one complex character.
+
+We use the extrinsic finite-dimensional reduction of
+\cite[Theorem~3.19]{FeehanLenessTopLevel}.  Compactness of $M_{\mathfrak s}$
+gives a finite-rank complex bundle $\Xi$ and an equivariant target embedding
+$\iota_\Xi$ such that
+\begin{equation}\label{eq:global-augmentation}
+ \widehat{\mathscr D}^{n}_p
+ =\mathscr D^n_p\oplus(-\iota_{\Xi,p}):
+ \operatorname{Dom}\mathscr D^n_p\oplus\Xi_p
+ \longrightarrow\operatorname{Tar}\mathscr D^n_p
+\end{equation}
+is surjective for every $p\in M_{\mathfrak s}$.  Indeed, each $p$ admits a
+finite-dimensional complex cokernel-spanning space.  Surjectivity persists
+on a neighborhood, a finite subcover supplies a common enlargement, and an
+equivariant tubular retraction extends it to a small normal neighborhood.
+No spectral projection is used in this construction.
+
+The augmented kernels form a smooth complex bundle
+\begin{equation}\label{eq:normal-bundle-definition}
+ N_{\mathfrak t,\mathfrak s}
+ =\ker\widehat{\mathscr D}^{n}\longrightarrow M_{\mathfrak s}.
+\end{equation}
+Thus the full augmented kernel is
+$TM_{\mathfrak s}\oplus N_{\mathfrak t,\mathfrak s}$ and
+\begin{equation}\label{eq:index-family}
+ \operatorname{Ind}_{\CC}(\mathscr D^n)
+ =[N_{\mathfrak t,\mathfrak s}]-[\Xi]
+ \quad\text{in }K^0(M_{\mathfrak s}).
+\end{equation}
+The projected convention of~\cite{FeehanLenessIII} is equivalent: if
+$\Pi_{\Xi^perp}$ is orthogonal projection, then
+\begin{equation}\label{eq:projected-augmented-kernel}
+ u\longmapsto\bigl(u,\iota_\Xi^{-1}\mathscr D^nu\bigr)
+\end{equation}
+identifies $\ker(\Pi_{\Xi^\perp}\mathscr D^n)$ with
+$\ker\widehat{\mathscr D}^{n}$.
+
+After choosing a sufficiently small lifted disk in
+$N_{\mathfrak t,\mathfrak s}$, the implicit-function theorem gives a smooth
+embedding into the thickened configuration quotient and a section
+\begin{equation}\label{eq:background-obstruction}
+ b:N_{\mathfrak t,\mathfrak s}(\varepsilon)\longrightarrow\Xi,
+ \qquad
+ \mathfrak S(q)=\iota_{s,q}b(q).
+\end{equation}
+Its zero set is $M_{\mathfrak s}$.  The term \emph{virtual-normal disk}
+will always mean this disk bundle; it never means an eigenspace selected by
+a spectral cutoff.  Since every pair on the zero section has nonzero spinor,
+compactness and openness allow the disk to be chosen so that every pair in
+it has trivial determinant-one infinitesimal stabilizer.  Put
+\[
+ r_N=\rank_{\CC}N_{\mathfrak t,\mathfrak s},\qquad
+ r_\Xi=\rank_{\CC}\Xi.
+\]
+The background parameter bundle therefore has real dimension
+$d_{\mathfrak s}+2r_N$, while its obstruction variables have real dimension
+$2r_\Xi$.
+
+\subsection{The charge-one factor and compactification}
+Let $M_1^{s,\natural}(S^4,\delta)$ be the centered framed charge-one ASD
+moduli space with scale in $(0,\delta]$.  There are natural identifications
+\begin{equation}\label{eq:charge-one-cone}
+ M_1^{s,\natural}(S^4,\delta)
+ \cong(0,\delta]\times\SO(3),
+ \qquad
+ \overline M_1^{s,\natural}(S^4,\delta)
+ \cong c(\SO(3)).
+\end{equation}
+If $I$ is the standard centered instanton, then
+\begin{equation}\label{eq:bubble-cokernel}
+ \ker D_I=0,
+ \qquad K_I:=\coker D_I=\ker D_I^*,
+ \qquad \dim_{\CC}K_I=1.
+\end{equation}
+The framed ASD operator is surjective.  Its eight-dimensional kernel consists
+of four translations, one dilation, and three framed rotations.
+
+The pre-splicing factor is
+\begin{align}\label{eq:gluing-quotient}
+\widetilde\Gl_{\mathfrak t}(\delta)
+=\bigl(&\Fr(\mathfrak g_V)\times_X\Fr(T^*X)
+\times\Fr(\mathfrak g_V|_s)\notag\\
+&\times\widetilde M_1^\natural(S^4,\delta)\bigr)
+/(\SO(3)\times\SO(4)).
+\end{align}
+After dividing by the charge-one gauge group, one obtains
+$\Gl_{\mathfrak t}(\delta)$.  Replacing the instanton factor by the cone in
+\eqref{eq:charge-one-cone} gives $\overline\Gl_{\mathfrak t}(\delta)$ and
+\begin{equation}\label{eq:virtual-space}
+ \overline\cM^{\mathrm{vir}}_{\mathfrak t',\mathfrak s}
+ =\widetilde N_{\mathfrak t,\mathfrak s}(\varepsilon)
+ \times_{\cG_{\mathfrak s}}\overline\Gl_{\mathfrak t}(\delta).
+\end{equation}
+At the cone point the relative instanton frame is forgotten.  Hence
+\eqref{eq:virtual-space} has three strata:
+\begin{align}\label{eq:three-strata}
+\overline\cM^{\mathrm{vir}}_{\mathfrak t',\mathfrak s}
+={}&\cG^+\notag\\
+&\sqcup\bigl((N_{\mathfrak t,\mathfrak s}(\varepsilon)
+-M_{\mathfrak s})\times X\bigr)
+\sqcup(M_{\mathfrak s}\times X),
+\end{align}
+where $\cG^+$ denotes the positive-scale stratum.
+
+Before quotienting, the splicing map is equivariant for the diagonal
+$\cG_{\mathfrak s}$ and charge-one gauge actions and for the diagonal
+$\SO(4)$ tangent-frame and $\SO(3)$ adjoint-frame actions.  These auxiliary
+frame actions are divided out; the relative $\SO(3)$ frame in
+\eqref{eq:charge-one-cone} remains.
+
+The residual circle has the two equivalent presentations of
+\cite[Lemma~3.6]{FeehanLenessLevelOne}.  It may act by the monopole circle on
+the normal factor and trivially on the compactified gluing factor, or
+diagonally with weight two on both.  We use the effective circle in the link
+quotient.  Passing from weight two to its effective parametrization does not
+reverse the orbit orientation.
+
+\subsection{The obstruction pseudo-bundle}
+At positive scale the obstruction space is
+\begin{equation}\label{eq:obstruction-fiber}
+ \Upsilon_g=\Upsilon_g^s\oplus\Upsilon_g^i
+ \cong\Xi_q\oplus K_I.
+\end{equation}
+The background summand extends as an ordinary bundle over
+\eqref{eq:three-strata}.  The instanton summand is the associated line
+\[
+ (0,\delta]\times\SU(2)\times_{\{\pm1\}}\CC
+ \longrightarrow (0,\delta]\times\SO(3).
+\]
+Its compactification is the cone map
+\begin{equation}\label{eq:obstruction-cone}
+ c(\SU(2)\times_{\{\pm1\}}\CC)
+ \longrightarrow c(\SO(3));
+\end{equation}
+the fiber collapses at the vertex.  This is a rank-dropping pseudo-bundle,
+not a singular trivialization of a line bundle.
+
+\subsection{Strong and weak levels}
+For smooth dependence at a fixed positive scale, choose $k\geq4$ and use the
+standard Fredholm map
+\[
+ \mathscr D_{q_\lambda}:L^2_k(\Lambda^1\otimes\mathfrak g_V\oplus V^+)
+ \longrightarrow
+ L^2_{k-1}(\mathfrak g_V\oplus\Lambda^+\otimes\mathfrak g_V\oplus V^-).
+\]
+Uniform estimates as $\lambda\downarrow0$ use
+\begin{align}\label{eq:weak-spaces}
+ \mathbb X_{q_\lambda}&=L^2_{1,A_\lambda},\notag\\
+ \mathbb Z_{q_\lambda}&=L^2(\mathfrak g_V),\notag\\
+ \mathbb Y_{q_\lambda}&=
+ L^{\sharp,2}(\Lambda^+\otimes\mathfrak g_V)\oplus L^2(V^-).
+\end{align}
+Here $L^{\sharp,2}=L^\sharp\cap L^2$ with the critical norm of
+\cite{FeehanCritical}.  We construct the inverse on smooth target data, prove
+the estimate in~\eqref{eq:weak-spaces}, and extend by density.  We do not
+assert that the full first-order operator maps every arbitrary $L^2_1$
+section into the mixed critical target.
+
+Choose matched finite-dimensional embeddings
+\[
+ J_{s,\lambda}:\Xi_q\to\mathbb Y_{q_\lambda},\qquad
+ J_{i,\lambda}:K_I\to\mathbb Y_{q_\lambda}.
+\]
+The augmented linearization is
+\begin{equation}\label{eq:augmented-operator}
+\widehat{\mathscr D}_\lambda(u,\xi_s,\xi_i)
+=\left(d^{0,*}_{q_\lambda}u,
+d^1_{q_\lambda}u-J_{s,\lambda}\xi_s-J_{i,\lambda}\xi_i\right).
+\end{equation}
+The nonlinear augmented map is
+\begin{align}\label{eq:augmented-map}
+\widehat\cF_\lambda(u,\eta_s,\eta_i)
+=\bigl(&d^{0,*}_{q_\lambda}u,
+\mathfrak S(q_\lambda+u)\notag\\
+&-J_{s,\lambda}(b(q)+\eta_s)-J_{i,\lambda}\eta_i\bigr).
+\end{align}
+
+The retained parameter directions have real dimension
+$d_{\mathfrak s}+2r_N+8$: the background tangent and normal variables, four
+translations, dilation, and three relative rotations.  The obstruction rank
+is $2r_\Xi+2$.  Hence the expected dimension of the obstruction zero set is
+\begin{equation}\label{eq:dimension-check}
+ d_{\mathfrak s}+(2r_N+8)-(2r_\Xi+2)
+ =d_{\mathfrak s}+2(r_N-r_\Xi)+6.
+\end{equation}
+
+\begin{theorem}[level-one neighborhood]\label{thm:neighborhood}
+Under the hypotheses preceding Theorem~\ref{thm:intro-neighborhood}, there is
+an equivariant compactified embedding
+\[
+ \gamma:\overline{\cM}^{\mathrm{vir}}_{\mathfrak t',\mathfrak s}
+ (\varepsilon,\delta)\longrightarrow\overline\cC_{\mathfrak t'}
+\]
+and a continuous compactified obstruction section
+$\chi=(\chi_s,\chi_i)$ such that the following hold: the positive-scale maps
+are smooth; $\gamma$ is equivariantly isotopic through embeddings to
+splicing; $\chi^{-1}(0)$ maps homeomorphically onto an Uhlenbeck-open
+neighborhood of $M_{\mathfrak s}\times X$ and diffeomorphically on the
+positive-scale stratum; $\chi$ is transverse there and $\chi_s$ is transverse
+on the middle zero-scale stratum; and the determinant-line orientation
+induces the standard level-one boundary orientation.
+\end{theorem}
+
+The proof occupies Sections~\ref{sec:parametrix}--\ref{sec:orientations}.
+The local pregluing construction and the one-sided inclusion
+$\gamma(\chi^{-1}(0))\subset\overline\cM_{\mathfrak t'}^{*,0}$ are quoted
+from~\cite{FeehanLenessIII}.  Everything needed to turn that inclusion into
+the neighborhood homeomorphism is proved below.
+
+\section{The uniform augmented parametrix}\label{sec:parametrix}
+
+\subsection{Critical norms and the square partition}
+For a bundle-valued section $f$ on $X$, put
+\begin{align}\label{eq:critical-norms}
+ \|f\|_{L^\sharp}
+ &=\sup_{z\in X}\int_X\operatorname{dist}(z,y)^{-2}|f(y)|\,dV(y),\notag\\
+ \|f\|_{L^{2\sharp}}
+ &=\sup_{z\in X}
+ \left(\int_X\operatorname{dist}(z,y)^{-2}|f(y)|^2\,dV(y)\right)^{1/2},\\
+ \|f\|_{L^{\sharp,2}}&=\|f\|_{L^\sharp}+\|f\|_{L^2}.
+ \notag
+\end{align}
+The critical multiplication and Sobolev estimates of
+\cite[Lemmas~4.1 and~4.3]{FeehanCritical} give
+\begin{equation}\label{eq:critical-products}
+ L^2_1\hookrightarrow L^{2\sharp},\qquad
+ L^{2\sharp}\cdot L^{2\sharp}\longrightarrow L^\sharp,
+\end{equation}
+uniformly for the compact family of background connections under
+consideration.  In particular,
+\begin{equation}\label{eq:critical-sobolev}
+ \|v\|_{L^4}+\|v\|_{L^{2\sharp}}
+ \leq C\|v\|_{L^2_{1,A}}.
+\end{equation}
+
+Fix $N>4$.  The logarithmic cutoff of
+\cite[Lemma~5.4]{FeehanLenessIII}, pulled back by geodesic normal coordinates
+at $x$, may be chosen to satisfy
+\begin{align}\label{eq:log-cutoff}
+ \beta&=0 &&\text{if }r\leq N^{-1}\sqrt\lambda,
+ &\beta&=1 &&\text{if }r\geq\tfrac12\sqrt\lambda,\notag\\
+ \|d\beta\|_{L^4}&\leq C(\log N)^{-3/4},
+ &\|d\beta\|_{L^{2\sharp}}&\leq C(\log N)^{-1/2},
+ &\|d\beta\|_{L^2}&\leq C(\log N)^{-1}\sqrt\lambda.
+\end{align}
+Define
+\begin{equation}\label{eq:square-partition}
+ \beta_X=\sin(\pi\beta/2),\qquad
+ \beta_I=\cos(\pi\beta/2).
+\end{equation}
+Then $\beta_X^2+\beta_I^2=1$, and both derivatives obey the
+bounds in~\eqref{eq:log-cutoff}.  These estimates are uniform in $x$: near
+$x$ this follows from normal-coordinate comparison, and for a base point
+outside a fixed larger chart the last, scale-decaying bound in
+\eqref{eq:log-cutoff} controls the supremum in~\eqref{eq:critical-norms}.
+
+\begin{lemma}[cutoff commutator]\label{lem:commutator}
+For $j=X,I$ and smooth $u=(a,\phi)$,
+\begin{equation}\label{eq:commutator-identity}
+ [\mathscr D_{A_\lambda,\Phi_\lambda},\beta_j]u
+ =\left(-\iota_{\nabla\beta_j}a,
+ (d\beta_j\wedge a)^+,\rho(d\beta_j)\phi\right),
+\end{equation}
+and
+\begin{equation}\label{eq:commutator-estimate}
+ \|[\mathscr D_{A_\lambda,\Phi_\lambda},\beta_j]u\|_{
+ \mathbb Z\oplus\mathbb Y}
+ \leq C(\log N)^{-1/2}\|u\|_{\mathbb X_{q_\lambda}}.
+\end{equation}
+The estimate extends by density to the weak domain.
+\end{lemma}
+
+\begin{proof}
+All zero-order terms commute with a scalar cutoff.  The three principal
+parts give~\eqref{eq:commutator-identity}.  The gauge row, the $L^2$ part of
+the curvature row, and the Dirac row are bounded using
+$L^4\cdot L^4\subset L^2$ and the first estimate in
+\eqref{eq:log-cutoff}.  For the critical part of the curvature row,
+\eqref{eq:critical-products} gives
+\[
+ \|(d\beta_j\wedge a)^+\|_{L^\sharp}
+ \leq C\|d\beta_j\|_{L^{2\sharp}}
+       \|a\|_{L^{2\sharp}}
+ \leq C(\log N)^{-1/2}\|a\|_{L^2_{1,A_\lambda}}.
+\]
+Adding the rows proves~\eqref{eq:commutator-estimate}.  Notice that no
+derivative of $d\beta_j$ occurs: the augmented operator is first order.
+\end{proof}
+
+\subsection{The induced bubble operator}
+Let $I$ be the centered, framed charge-one instanton on $S^4$, and let
+$K_I=\coker D_I$, a complex line.  The stabilized round operator is
+\begin{equation}\label{eq:round-bubble-operator}
+ \widehat B_0(a,\phi,\kappa)
+ =\left(d_I^*a,d_I^+a,D_I\phi-\iota_I\kappa\right).
+\end{equation}
+It is inverted on the fixed $L^2_1(S^4)$ complement of translations,
+dilation, and framed rotations.
+
+A direct comparison of the physical operator with~\eqref{eq:round-bubble-operator}
+would compare their principal symbols in $L^\sharp$.  Such a comparison is
+not bounded merely by an $L^2_1$ domain norm.  We instead compactify the
+physical normal-coordinate metric and its Clifford structure to a smooth
+metric $g_{x,\lambda}$ on $S^4$, equal to the transported physical geometry
+on the active bubble region and to the round geometry near the north pole.
+Let $\widehat B_{x,\lambda}$ denote the operator defined by this geometry and
+the full instanton $I$.
+
+In normal coordinates $z$ at $x$, uniformly over $X$,
+\begin{equation}\label{eq:normal-coordinate-metric}
+ g_{ij}(z)=\delta_{ij}+O(|z|^2),\qquad
+ \partial g_{ij}(z)=O(|z|),\qquad \partial^2g_{ij}(z)=O(1).
+\end{equation}
+Put $z=\lambda y$ and $\Omega(y)=2/(1+|y|^2)$.  On the active region
+$|y|\leq\tfrac12\lambda^{-1/2}$, set
+\[
+ \widetilde g_{x,\lambda}=\Omega^2g_x(\lambda y).
+\]
+In the inverted coordinate $w=y/|y|^2$, its boundary has radius
+$2\sqrt\lambda$.  Interpolate there to the round metric
+$g_0=\Omega^2\delta$ with a cutoff depending on $|w|/\sqrt\lambda$.
+The tensor being cut off is $O(\lambda)$, while one cutoff derivative costs
+$O(\lambda^{-1/2})$.  Hence
+\begin{equation}\label{eq:induced-metric-estimate}
+ \|\widetilde g_{x,\lambda}-g_0\|_{C^0(g_0)}\leq C\lambda,
+ \qquad
+ \|\nabla^{g_0}(\widetilde g_{x,\lambda}-g_0)\|_{C^0(g_0)}
+ \leq C\sqrt\lambda.
+\end{equation}
+The interpolation lies where $\beta_I=0$.
+
+\begin{proposition}[induced bubble inverse]\label{prop:bubble-inverse}
+After fixing the stabilizing map $\iota_I$, the operators
+$\widehat B_{x,\lambda}$ have right inverses $P^I_{x,\lambda}$ on the
+fixed model-kernel complement such that
+\begin{align}\label{eq:induced-comparison}
+ \|\widehat B_{x,\lambda}-\widehat B_0\|_{
+ \mathcal L(L^2_1\oplus K_I,L^2)}&\leq C\sqrt\lambda,\\
+ \|P^I_{x,\lambda}y\|_{L^2_1\oplus K_I}&\leq C\|y\|_{L^2}.
+ \label{eq:induced-inverse}
+\end{align}
+If $I_\lambda^{\mathrm{tr}}$ is the truncated instanton used in the
+pregluing, its replacement of $I$ changes the transported operator by at
+most $C_N\sqrt\lambda$ from the weak domain to the mixed target.
+\end{proposition}
+
+\begin{proof}
+Transport the physical zero-spinor ASD and Dirac blocks separately to
+$(S^4,\widetilde g_{x,\lambda})$.  For the spinor block the conformal law is
+\[
+ D_A^{h^{-2}g}=h^{5/2}D_A^g h^{-3/2};
+\]
+the ASD block has its four-dimensional conformal transport, and the Coulomb
+row is transported with the gauge-fixed ASD operator.  On
+$\operatorname{supp}\beta_I$ this definition is an exact conjugation of the
+physical operator.  Thus its principal symbol agrees there exactly.
+Estimate~\eqref{eq:induced-metric-estimate} controls the principal
+coefficients in $L^2$ and the spin-connection and gauge-row zero-order
+coefficients, proving~\eqref{eq:induced-comparison}.  The Neumann formula
+\[
+ P^I_{x,\lambda}=P^I_0
+ \bigl(1+(\widehat B_{x,\lambda}-\widehat B_0)P^I_0\bigr)^{-1}
+\]
+then proves~\eqref{eq:induced-inverse}.  It applies to mixed target data
+because that norm contains the $L^2$ norm.  On the active region the induced
+and physical principal symbols agree exactly, so no principal-symbol error
+is estimated in $L^\sharp$.
+
+In the south-pole framing, $|I(y)|\leq C|y|^{-3}$ and
+$|\nabla I(y)|\leq C|y|^{-4}$.  Truncation begins at
+$R\asymp\lambda^{-1/2}$.  If $b_\lambda=I_\lambda^{\mathrm{tr}}-I$, radial
+integration gives
+\begin{equation}\label{eq:instanton-tail}
+ \|b_\lambda\|_{L^4}+\|\nabla b_\lambda\|_{L^2}
+ \leq C\lambda,
+ \qquad
+ \|b_\lambda\|_{L^2}+\|b_\lambda\|_{L^{2\sharp}}
+ \leq C\sqrt\lambda.
+\end{equation}
+Changing a connection changes all three rows only by multiplication by
+$b_\lambda$.  The ordinary rows follow from $L^4\cdot L^4\subset L^2$;
+the critical curvature row follows from~\eqref{eq:critical-products}.  This
+proves the last assertion.
+\end{proof}
+
+\subsection{Localized coefficients and matched obstruction spaces}
+The remaining comparison terms are zero-order.  We repeatedly use the
+following two consequences of~\eqref{eq:critical-norms}.  If $f=(v,\psi)$
+is a target section supported in $B(x,r)$ and is pointwise bounded by $M$,
+then
+\begin{equation}\label{eq:shrinking-support}
+ \|v\|_{L^{\sharp,2}}+\|\psi\|_{L^2}\leq CMr^2.
+\end{equation}
+Indeed, the $L^2$ bounds follow from volume, while the integral of
+$\operatorname{dist}(z,\cdot)^{-2}$ over a four-ball is $O(r^2)$,
+uniformly in $z$.
+
+If instead $f$ is a bounded coefficient supported in the same ball, then
+\begin{equation}\label{eq:supported-coefficient}
+ \|f\|_{L^4}+\|f\|_{L^{2\sharp}}
+ \leq Cr\|f\|_{L^\infty},
+ \qquad
+ \|fu\|_{L^2}+\|fu\|_{L^\sharp}
+ \leq Cr\|f\|_{L^\infty}\|u\|_{L^2_1}.
+\end{equation}
+The first inequality follows by volume comparison and by splitting the
+supremum in~\eqref{eq:critical-norms} according as its base point lies within
+$2r$ of $x$; the second follows from~\eqref{eq:critical-products} and
+$L^4\cdot L^4\subset L^2$.
+
+The pregluing formulas have the exact support properties
+\begin{align}\label{eq:pregluing-supports}
+ \Phi_\lambda&=\Phi_0
+ &&\text{outside }B(x,8\lambda^{1/3}),
+ &\Phi_\lambda&=0
+ &&\text{inside }B(x,4\lambda^{1/3}),\notag\\
+ A_\lambda&=A_0
+ &&\text{outside }B(x,4\sqrt\lambda).
+\end{align}
+Set $s_\lambda=\Phi_\lambda-\Phi_0$.  The compact background family and
+\eqref{eq:supported-coefficient} give
+\begin{equation}\label{eq:spinor-coefficient}
+ \|s_\lambda\|_{L^4}+\|s_\lambda\|_{L^{2\sharp}}
+ \leq C\lambda^{1/3}.
+\end{equation}
+This controls the spinor coefficients in the gauge, curvature, and Dirac
+rows, using $L^4$ for the ordinary rows and $L^{2\sharp}$ for the critical
+curvature row.
+
+In radial gauge, $|A_0-\Gamma|\leq C|z|$.  On
+$\operatorname{supp}\beta_X$, where $|z|\geq N^{-1}\sqrt\lambda$, the
+south-pole instanton decay gives
+\[
+ |I_\lambda(z)|\leq C\lambda^2|z|^{-3}
+ \leq C N^3\sqrt\lambda.
+\]
+Thus $c_{x,\lambda}=\beta_X(A_\lambda-A_0)$ satisfies
+\begin{equation}\label{eq:background-connection-coefficient}
+ \|c_{x,\lambda}\|_{L^\infty}\leq C_N\sqrt\lambda,
+ \qquad
+ \|c_{x,\lambda}\|_{L^4}
+ +\|c_{x,\lambda}\|_{L^{2\sharp}}\leq C_N\lambda.
+\end{equation}
+It contributes $O_N(\sqrt\lambda)$ to the three rows, including the Coulomb
+row.  Finally, the fixed perturbing one-form in the bubble Dirac row is
+supported by $\beta_I$ in a ball of radius $\tfrac12\sqrt\lambda$; ordinary
+H\"older gives an $O(\sqrt\lambda)$ multiplier bound.  Consequently the
+total localized coefficient error is
+\begin{equation}\label{eq:coefficient-error}
+ \|E_{\mathrm{spin}}+E^X_{\mathrm{conn}}+E^X_{\mathrm{gauge}}\|
+ \leq C_N\lambda^{1/3}.
+\end{equation}
+
+Choose the metrics on $\Xi_q$ and $K_I$ so that the limiting embeddings
+$\iota_{s,q}$ and $\iota_I$ are isometries.  With the same cutoffs as in
+\eqref{eq:square-partition}, define
+\begin{equation}\label{eq:matched-embeddings}
+ J_{s,\lambda}\xi=\beta_XT^Y_{X,\lambda}\iota_{s,q}\xi,
+ \qquad
+ J_{i,\lambda}\kappa
+ =T^-_{x,\lambda}\bigl(\beta_I^\#\iota_I\kappa\bigr),
+\end{equation}
+where $\beta_I^\#(y)=\beta_I(\lambda y)$.  The transports include the
+framing, dilation, and the negative-spinor conformal weight.
+
+\begin{lemma}[matched obstruction embeddings]\label{lem:matched-obstruction}
+For all sufficiently small scales, $J_{s,\lambda}\oplus J_{i,\lambda}$ is
+injective with a uniformly bounded inverse on its image.  Its $L^2$
+projection is uniformly bounded in the mixed target norm.  In the patched
+parametrix the two finite-dimensional stabilization terms cancel exactly.
+\end{lemma}
+
+\begin{proof}
+The background section removed by $1-\beta_X$ is smooth and supported in a
+ball of radius $O(\sqrt\lambda)$, so~\eqref{eq:shrinking-support} shows that
+its mixed-target norm tends to zero.  On the bubble, the cutoff complement
+moves to the north pole of $S^4$; compactness of the unit sphere in the
+finite-dimensional space $K_I$ makes the $L^2$ tail uniformly small.  The
+off-diagonal inner products tend to zero because the two supports separate
+after rescaling.  The Gram matrix therefore tends uniformly to the identity.
+This proves the first two assertions.  The last one follows directly from
+using precisely the profiles in~\eqref{eq:matched-embeddings} both when the
+model target is localized and when its obstruction coefficient is spliced
+back.  Thus there is no separate obstruction error in the parametrix.
+\end{proof}
+
+\subsection{A complement which does not degenerate}
+Let
+\[
+ \cK_X(q)=\ker\widehat{\mathscr D}^X_q,\qquad
+ \cK_I=\ker\widehat B_0.
+\]
+The first is identified by the background finite-dimensional reduction with
+$T_qN(\varepsilon)$ and has real dimension
+$d_{\mathfrak s}+2r_N$: along the zero section its tangential summand is
+$T_pM_{\mathfrak s}$ and its normal summand is $N_p$.  The second is the
+eight-dimensional framed ASD kernel.  The physical $L^2$ norm of a naturally
+dilated bubble one-form is $\lambda$ times its model norm.  We therefore do
+not use physical $L^2$-orthogonality to define the complement.
+
+The parameter metric is
+\begin{equation}\label{eq:parameter-metric}
+ g_{\mathrm{par},\lambda}=g_{\overline N}+\lambda^{-2}g_X
+ +(d\lambda/\lambda)^2+g_{\SO(3)}.
+\end{equation}
+Thus the normalized directions are $\lambda\partial_{x^j}$,
+$\lambda\partial_\lambda$, and $\partial_{\theta^k}$.  They converge after
+rescaling to a fixed basis of $\cK_I$.
+
+Define the synthesis map
+\begin{equation}\label{eq:synthesis}
+ S_{\lambda,N}(k_X,k_I)=
+ \left(\beta_XT^+_{X,\lambda}u_X
+ + T^+_{I,\lambda}(\beta_I^\#u_I),\eta_X,0\right),
+\end{equation}
+where $k_X=(u_X,\eta_X)$ and $k_I=(u_I,0)$.  Conversely, localize a physical
+domain element by $\beta_X$ and $\beta_I$, transport it to the two fixed
+models, project there onto the configuration components of $\cK_X(q)$ and
+$\cK_I$, and lift back to the augmented kernels.  Denote the resulting
+retraction by $R_{\lambda,N}$.  It ignores the two freely varying obstruction
+coefficients.
+
+Let $P^X_q$ denote the smoothly varying inverse of the stabilized background
+operator on the complement of $\cK_X(q)$.  We use this inverse, the kernel
+projection, and $\iota_{s,q}$ at the actual point $q$, rather than transport
+them to finitely many reference points.  All their strong and mixed graph
+norms are uniformly bounded on the compact disk bundle.  The background
+model equations therefore cancel exactly before the neck error is
+estimated.
+
+\begin{proposition}[model-coordinate complement]\label{prop:complement}
+For fixed $N$ and sufficiently small $\lambda$,
+\begin{equation}\label{eq:model-matrix}
+ M_{\lambda,N}=R_{\lambda,N}\operatorname{pr}_{\mathbb X}
+ S_{\lambda,N}=I+o(1)
+\end{equation}
+uniformly in all gluing data.  Hence
+\begin{equation}\label{eq:model-projection}
+ \Pi_{\lambda,N}=S_{\lambda,N}M_{\lambda,N}^{-1}
+ R_{\lambda,N}\operatorname{pr}_{\mathbb X}
+\end{equation}
+is a uniformly bounded projection onto the
+$d_{\mathfrak s}+2r_N+8$ parameter modes.
+Moreover,
+\begin{equation}\label{eq:approximate-kernel}
+ \|\widehat{\mathscr D}_\lambda S_{\lambda,N}\|
+ \leq C(\log N)^{-1/2}+C_N\lambda^{1/3}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+On a background kernel vector, the part removed by the cutoff is supported
+in a shrinking ball.  The derivative term is bounded by
+\[
+ \|d\beta_Xu_X\|_{L^2}
+ \leq C\|d\beta_X\|_{L^2}\|u_X\|_{L^\infty}
+ \leq C_N\sqrt\lambda\|k_X\|.
+\]
+On a bubble kernel vector, the normalized cutoff complement escapes to the
+north pole.  Compactness of the unit sphere in the fixed finite-dimensional
+space gives uniform decay of its $L^2_1$ and $L^4$ tails.  The two
+off-diagonal entries tend to zero: a smooth background mode acquires a
+positive power of $\lambda$ under bubble rescaling, while only the escaping
+tail of a bubble mode reaches the background projection.  This proves
+\eqref{eq:model-matrix}; it also gives the uniform bound in
+\eqref{eq:model-projection}.
+
+Apply the global augmented operator to~\eqref{eq:synthesis}.  The two model
+kernel equations remove the interior terms, Lemma~\ref{lem:commutator}
+controls the cutoffs, Proposition~\ref{prop:bubble-inverse} and
+\eqref{eq:coefficient-error} control the model comparisons, and
+Lemma~\ref{lem:matched-obstruction} cancels the stabilization terms.  Their
+sum is~\eqref{eq:approximate-kernel}.
+\end{proof}
+
+\medskip
+Set
+\begin{equation}\label{eq:complement-space}
+ \mathbb H^{\mathrm{cmp}}_{\lambda,N}
+ =\ker\bigl(R_{\lambda,N}\operatorname{pr}_{\mathbb X}\bigr).
+\end{equation}
+Literal normalized derivatives of the pregluing map differ by $o(1)$ in
+$L^2_1$ from the synthesized modes, so they define the same uniformly
+transverse complement after decreasing the scale bound.
+
+\subsection{The exact inverse}
+Let $P^I_{x,\lambda}$ be the inverse from
+Proposition~\ref{prop:bubble-inverse}.  We now give the raw parametrix
+explicitly.  For a smooth physical target $y$, define
+\begin{align}\label{eq:target-localizations}
+ L^Y_{X,\lambda}y
+ &= (T^Y_{X,\lambda})^{-1}(\beta_Xy),
+ &L^Y_{I,\lambda}y
+ &= (T^Y_{I,\lambda})^{-1}(\beta_Iy),
+\end{align}
+where the second transport includes dilation and the conformal spinor weight.
+The corresponding domain synthesis maps are
+\begin{align}\label{eq:domain-synthesis}
+ L^X_{X,\lambda}(u,\xi)
+ &=\bigl(\beta_XT^+_{X,\lambda}u,\xi,0\bigr),\notag\\
+ L^X_{I,\lambda}(v,\kappa)
+ &=\bigl(T^+_{I,\lambda}(\beta_I^\#v),0,\kappa\bigr).
+\end{align}
+Thus
+\begin{equation}\label{eq:raw-parametrix}
+ P^{\mathrm{raw}}_{\lambda,N}
+ =L^X_{X,\lambda}P^X_qL^Y_{X,\lambda}
+  +L^X_{I,\lambda}P^I_{x,\lambda}L^Y_{I,\lambda}.
+\end{equation}
+Multiplication by the scalar cutoffs is bounded on the ordinary $L^2$ target
+rows.  On the curvature row it is bounded on both $L^2$ and $L^\sharp$;
+the latter follows immediately from the defining positive-kernel integral in
+\eqref{eq:critical-norms}.  The transports in
+\eqref{eq:target-localizations} are uniformly bounded because the background
+geometry ranges over a compact family and the bubble transport is the exact
+conformal transport used to define $\widehat B_{x,\lambda}$ on the support of
+$\beta_I$.  Equations~\eqref{eq:target-localizations}--\eqref{eq:raw-parametrix}
+therefore define a uniformly bounded map from smooth mixed-target data to the
+augmented weak domain, and then by density to the graph closure.  The
+parametrix used below is $(1-\Pi_{\lambda,N})P^{\mathrm{raw}}_{\lambda,N}$.
+
+An arbitrary $L^2_1$ correction need not have curvature row in
+$L^{\sharp,2}$.  We therefore define $\mathbb X^{\mathrm{gr}}_{q_\lambda}$
+to be the completion of smooth corrections and auxiliary coefficients in
+the norm
+\begin{align}\label{eq:graph-domain}
+ \|(u,\eta_s,\eta_i)\|_{\mathrm{gr}}
+ ={}&\|u\|_{L^2_1}+\|\eta_s\|+\|\eta_i\|\notag\\
+ &+\|\widehat{\mathscr D}_\lambda(u,\eta_s,\eta_i)\|_{
+       \mathbb Z\oplus\mathbb Y}.
+\end{align}
+The augmented operator is bounded from this graph domain by definition.
+Elliptic regularity identifies every graph-domain solution of the homogeneous
+equation with a strong Sobolev solution.
+
+\begin{theorem}[uniform augmented inverse]\label{thm:uniform-inverse}
+There is $C>0$ such that for every sufficiently large $N$ there are
+$\varepsilon,\delta_N>0$ for which
+\begin{equation}\label{eq:parametrix-bound}
+ \left\|\widehat{\mathscr D}_\lambda
+ (1-\Pi_{\lambda,N})P^{\mathrm{raw}}_{\lambda,N}-I\right\|
+ \leq C(\log N)^{-1/2}+C_N\lambda^{1/3}.
+\end{equation}
+For $q\in\overline N(\varepsilon)$ and $0<\lambda\leq\delta_N$, the restriction
+\begin{equation}\label{eq:restricted-operator}
+ \widehat{\mathscr D}_\lambda:
+ \mathbb H^{\mathrm{cmp}}_{\lambda,N}\cap
+ \mathbb X^{\mathrm{gr}}_{q_\lambda}\longrightarrow
+ \mathbb Z_{q_\lambda}\oplus\mathbb Y_{q_\lambda}
+\end{equation}
+is an isomorphism on the strong Fredholm level.  Its inverse
+$P_{\lambda,N}$ obeys
+\begin{equation}\label{eq:uniform-inverse-bound}
+ \|P_{\lambda,N}y\|_{\mathrm{gr}}
+ \leq C\|y\|_{\mathbb Z\oplus\mathbb Y}.
+\end{equation}
+The inverse is smooth and equivariant on every positive-scale stratum.
+\end{theorem}
+
+\begin{proof}
+Apply $\widehat{\mathscr D}_\lambda$ to the two summands in
+\eqref{eq:raw-parametrix}.  Their principal terms are $\beta_X^2y$ and
+$\beta_I^2y$, which recombine to $y$ by
+\eqref{eq:square-partition}.  Lemma~\ref{lem:commutator} contributes
+$C(\log N)^{-1/2}$; Proposition~\ref{prop:bubble-inverse},
+\eqref{eq:coefficient-error}, and variation of the background operator
+at the actual point $q$ contribute
+$C_N\lambda^{1/3}$; the matched
+obstruction error is zero.  Projecting the output adds at most the same
+quantity by~\eqref{eq:approximate-kernel}.  This proves
+\eqref{eq:parametrix-bound}.
+
+Choose $N$ first so that the logarithmic term is less than $1/4$, and then
+choose $\delta_N$ so that the scale term is less than $1/4$.  A Neumann
+series gives a right inverse with image in
+\eqref{eq:complement-space} and proves~\eqref{eq:uniform-inverse-bound}.
+The strong augmented operator has index $d_{\mathfrak s}+2r_N+8$.  The
+complement has codimension $d_{\mathfrak s}+2r_N+8$, because
+\eqref{eq:model-matrix} is invertible.  The
+restricted operator has index zero; surjectivity therefore implies
+injectivity.  Elliptic regularity identifies the weakly constructed inverse
+with this strong inverse.  The estimate extends to the mixed-target graph
+closure.  Every ingredient is smooth and equivariant at positive scale, and
+inversion in the open group of bounded invertible operators preserves these
+properties.
+\end{proof}
+
+\begin{lemma}[normalized derivatives of the inverse]
+\label{lem:inverse-derivatives}
+Trivialize the mixed targets by the background and splicing transports and
+the complements by $1-\Pi_{\lambda,N}$.  For $j=0,1,2$, covariant
+differentiation with respect to the normalized parameter metric
+\eqref{eq:parameter-metric} gives
+\begin{equation}\label{eq:inverse-derivative-bound}
+ \|\nabla^jP_{\lambda,N}\|_{
+ \mathcal L(\mathbb Z\oplus\mathbb Y,
+            \mathbb X^{\mathrm{gr}}_{q_\lambda})}\leq C_j.
+\end{equation}
+The same statement holds for the strong inverse in strong Sobolev norms.
+\end{lemma}
+
+\begin{proof}
+Write $Q_\lambda=(1-\Pi_{\lambda,N})P^{\mathrm{raw}}_{\lambda,N}$ and
+$E_\lambda=\widehat{\mathscr D}_\lambda Q_\lambda-I$.  One or two
+normalized derivatives preserve the parametrix estimate.  Background
+derivatives range over a compact unit sphere bundle;
+$\lambda\partial_{x^j}$ and $\lambda\partial_\lambda$ conjugate under
+bubble dilation to fixed derivatives of the unit-scale model; frame
+derivatives act in fixed compact-group representations; and differentiated
+cutoff commutators obey the same logarithmic bound.  The same estimates hold
+for synthesis, retraction, and $\Pi_{\lambda,N}$.  Consequently
+\[
+ \|\nabla^jE_\lambda\|
+ \leq C_j(\log N)^{-1/2}+C_{j,N}\lambda^{1/3},
+ \qquad 0\leq j\leq2.
+\]
+Since
+$P_{\lambda,N}=Q_\lambda(I+E_\lambda)^{-1}$, differentiate this identity
+and use
+\[
+ \nabla(I+E)^{-1}=-(I+E)^{-1}(\nabla E)(I+E)^{-1}.
+\]
+The second derivative contains the corresponding $\nabla^2E$ term and two
+ordered products of $\nabla E$.  This proves the graph-domain and strong
+bounds.
+\end{proof}
+
+In particular, a normalized sequence in the complement cannot be an
+approximate kernel supported in the neck: applying
+\eqref{eq:uniform-inverse-bound} would give $1\leq o(1)$.  This also excludes
+gauge modes.  On the background the nonzero spinor removes the
+determinant-one stabilizer, and on the bubble it is removed by the based
+framing convention.
+
+\section{Projected residual and nonlinear correction}\label{sec:correction}
+
+\subsection{The seven-region estimate}
+Put $r=\sqrt\lambda$ and $R=\lambda^{1/3}$.  For small $\lambda$ the
+pregluing formula divides $X$ into the core $B(x,r/4)$; the inner, flat, and
+middle annuli with radii $(r/4,r/2)$, $(r/2,2r)$, and $(2r,4r)$; the
+zero-spinor plateau $(4r,4R)$; the outer spinor-cutoff annulus $(4R,8R)$; and
+the exterior of $B(x,8R)$.  The logarithmic parametrix cutoffs lie inside the
+$r$-scale annuli but play no role in this residual decomposition.
+
+\begin{proposition}[projected residual]\label{prop:residual}
+Uniformly in the compact background family, the center, and the frames,
+\begin{equation}\label{eq:residual}
+ \|\mathfrak S(q_\lambda)-J_{s,\lambda}b(q)\|_{L^{\sharp,2;2}}
+ \leq C\lambda^{1/3}.
+\end{equation}
+Here $L^{\sharp,2;2}$ means $L^{\sharp,2}$ in the curvature component and
+$L^2$ in the negative-spinor component.
+\end{proposition}
+
+\begin{proof}
+On the exterior, the preglued pair equals the background pair and
+$J_{s,\lambda}$ equals the background obstruction embedding; the residual
+therefore vanishes identically.
+
+Write $\mathfrak S(q)=(v_0,\psi_0)$ and let $\chi$ be the outer spinor cutoff.
+On $4R<d(x,\cdot)<8R$ the pair is $(A_0,\chi\Phi_0)$ and
+$J_{s,\lambda}b(q)=\mathfrak S(q)$.  If $\mathcal Q(\Phi)$ denotes the
+quadratic spinor term in the curvature equation, the residual is
+\begin{equation}\label{eq:outer-residual}
+ \bigl(\mathcal Q(\Phi_0)-\mathcal Q(\chi\Phi_0),
+ (\chi-1)\psi_0+\rho(d\chi)\Phi_0\bigr).
+\end{equation}
+The first component and the first term in the second component are uniformly
+bounded on a ball of radius $8R$, and hence have mixed-target norm $O(R^2)$
+by~\eqref{eq:shrinking-support}.  Direct radial integration gives
+$\|d\chi\|_{L^2}\leq CR$; consequently the last term in
+\eqref{eq:outer-residual} is $O(R)=O(\lambda^{1/3})$.
+
+On the plateau $4r<d(x,\cdot)<4R$ the pair is $(A_0,0)$, not a solution of
+the background Dirac equation.  Here the exact difference from the matched
+background residual is
+\begin{equation}\label{eq:plateau-residual}
+ \mathfrak S(A_0,0)-\mathfrak S(A_0,\Phi_0)
+ =\bigl(\mathcal Q(\Phi_0),-\psi_0\bigr),
+\end{equation}
+with the sign in $\mathcal Q$ fixed by the convention in
+\eqref{eq:outer-residual}.  Both entries are uniformly bounded and supported
+in $B(x,4R)$, so their mixed-target norm is $O(R^2)=O(\lambda^{2/3})$.
+
+On the middle annulus $2r<d(x,\cdot)<4r$, write the connection in radial
+gauge as $\Gamma+\chi_m(A_0-\Gamma)$.  Then
+\begin{equation}\label{eq:middle-curvature}
+ F=\chi_mF_{A_0}+d\chi_m\wedge(A_0-\Gamma)
+   +(\chi_m^2-\chi_m)(A_0-\Gamma)\wedge(A_0-\Gamma).
+\end{equation}
+The bounds $|A_0-\Gamma|\leq Cr$ and $|d\chi_m|\leq C/r$ show that
+\eqref{eq:middle-curvature} is uniformly bounded.  The spinor is zero and the
+matched background target is uniformly bounded, so
+\eqref{eq:shrinking-support} gives an $O(r^2)=O(\lambda)$ contribution.  On
+the flat annulus $r/2<d(x,\cdot)<2r$ the preglued pair is $(\Gamma,0)$; the
+only term after subtraction is again a uniformly bounded matched background
+target, and its contribution is $O(\lambda)$.
+
+On the inner annulus $r/4<d(x,\cdot)<r/2$, the instanton decay gives
+\begin{equation}\label{eq:inner-decay}
+ |F_I|\leq C\lambda^2d(x,\cdot)^{-4}\leq C,
+ \qquad
+ |A_I|\leq C\lambda^2d(x,\cdot)^{-3}\leq C\sqrt\lambda.
+\end{equation}
+Since the cutoff derivative is $O(\lambda^{-1/2})$, every curvature term in
+the truncated connection and every subtracted background term is uniformly
+bounded.  This annulus therefore also contributes $O(\lambda)$.
+
+Finally, on $B(x,r/4)$ the model instanton is anti-self-dual for the Euclidean
+metric $\delta$, but not identically for the physical metric $g$.  Its
+self-dual curvature is
+\begin{equation}\label{eq:core-metric-error}
+ F_I^{+,g}=\tfrac12(*_g-*_\delta)F_I.
+\end{equation}
+The normal-coordinate estimate $|g-\delta|\leq Cd(x,\cdot)$, conformal
+invariance of the four-dimensional curvature norm, and radial integration of
+the standard instanton give
+\begin{equation}\label{eq:core-metric-bound}
+ \|F_I^{+,g}\|_{L^{\sharp,2}(B(x,r/4))}\leq C\sqrt\lambda.
+\end{equation}
+The matched background target on the core contributes $O(r^2)=O(\lambda)$.
+Adding the seven disjoint regional estimates gives
+\[
+ C\bigl(\lambda^{1/3}+\lambda^{2/3}
+       +\lambda+\lambda^{1/2}\bigr)
+ \leq C\lambda^{1/3},
+\]
+which proves~\eqref{eq:residual}.
+\end{proof}
+
+\subsection{Solving the augmented equation}
+Write $h=(u,\eta_s,\eta_i)$ and let $P_\lambda$ be the inverse in
+Theorem~\ref{thm:uniform-inverse}.  Expanding~\eqref{eq:augmented-map} gives
+\begin{equation}\label{eq:nonlinear-expansion}
+ \widehat\cF_\lambda(h)=r_\lambda+
+ \widehat{\mathscr D}_\lambda h+Q_\lambda(u,u),
+\end{equation}
+where $r_\lambda$ is the residual in Proposition~\ref{prop:residual}.
+Sobolev multiplication gives the scale-independent estimates
+\begin{align}\label{eq:quadratic-estimates}
+ \|Q_\lambda(u,u)\|_{\mathbb Z\oplus\mathbb Y}
+ &\leq C\|u\|_{L^2_1}^2,\notag\\
+ \|Q_\lambda(u,u)-Q_\lambda(v,v)\|_{\mathbb Z\oplus\mathbb Y}
+ &\leq C(\|u\|_{L^2_1}+\|v\|_{L^2_1})\|u-v\|_{L^2_1}.
+\end{align}
+
+\begin{proposition}[small correction]\label{prop:correction}
+For sufficiently small $\lambda$, there is a unique
+$h_\lambda=(u_\lambda,\eta_{s,\lambda},\eta_{i,\lambda})$ in a fixed small
+ball in $\mathbb H^{\mathrm{cmp}}_{\lambda,N}$ satisfying
+$\widehat\cF_\lambda(h_\lambda)=0$.  It obeys
+\begin{equation}\label{eq:correction}
+ \|u_\lambda\|_{L^2_1}+\|\eta_{s,\lambda}\|
+ +\|\eta_{i,\lambda}\|\leq C\lambda^{1/3}.
+\end{equation}
+It is smooth in all positive-scale gluing parameters.
+\end{proposition}
+
+\begin{proof}
+On the ball of radius $2C\|r_\lambda\|$, use the map
+\[
+ h\longmapsto-P_\lambda\bigl(r_\lambda+Q_\lambda(u,u)\bigr).
+\]
+Theorem~\ref{thm:uniform-inverse}, Proposition~\ref{prop:residual}, and
+\eqref{eq:quadratic-estimates} show that it preserves this ball and has
+Lipschitz constant less than $1/2$ after decreasing the scale.  Banach's
+fixed-point theorem gives existence, uniqueness, and~\eqref{eq:correction}.
+The strong Sobolev inverse and the implicit-function theorem give smooth
+dependence for $\lambda>0$.
+\end{proof}
+
+Define the corrected gluing map and obstruction section by
+\begin{align}\label{eq:corrected-map-section}
+ \gamma(g)&=[q_\lambda+u_\lambda],\notag\\
+ \chi(g)&=(b(q)+\eta_{s,\lambda},\eta_{i,\lambda}).
+\end{align}
+Then $\gamma(g)$ is a genuine monopole exactly when $\chi(g)=0$.
+
+\subsection{Continuity at zero scale}
+The constants above are independent of a moving center.  If
+$g_n\to g_0$ with $\lambda_n\to0$, then~\eqref{eq:correction} gives
+$u_{\lambda_n}\to0$ in the global weak norm.  On compact subsets away from
+the limiting center, the preglued pairs converge in every Sobolev norm to
+the background.  After rescaling at the centers, their connections converge
+to the framed instanton while their spinors converge to zero.  These two
+statements, together with the energy identity, are precisely Uhlenbeck
+convergence to $(q,x)$.  Thus $\gamma$ extends continuously by
+\begin{equation}\label{eq:zero-scale-map}
+ \gamma(q,x,0)=(q,x).
+\end{equation}
+The same estimates and the definitions in~\eqref{eq:matched-embeddings}
+show that the norm of $\chi$ is continuous when the instanton line is
+collapsed at the cone vertex.
+
+\section{Parameter recovery and the compactified embedding}
+\label{sec:embedding}
+
+\subsection{Uniform modulation}
+Work first on the framed cover of the positive-scale gluing domain.  At a
+preglued pair $q_\lambda(g)$ impose the based Coulomb condition
+\begin{equation}\label{eq:based-slice}
+ d^{0,*}_{q_\lambda(g)}\bigl((A,\Phi)-q_\lambda(g)\bigr)=0.
+\end{equation}
+For $q_g=(A_g,\Phi_g)$, put
+\begin{equation}\label{eq:pair-laplacian}
+ \Delta_g^0=d_g^{0,*}d_g^0
+ =d_{A_g}^*d_{A_g}+\mathfrak r_{\Phi_g}^*\mathfrak r_{\Phi_g}.
+\end{equation}
+Let $L^{\sharp,2}_{2,g}$ be the completion of smooth determinant-one
+infinitesimal gauges in the norm
+\begin{equation}\label{eq:critical-gauge-norm}
+ \|\zeta\|_{2,\sharp,g}
+ =\|\Delta_g^0\zeta\|_{L^{\sharp,2}}+\|\zeta\|_{L^2}.
+\end{equation}
+Feehan's critical embedding gives
+$L^{\sharp,2}_{2,g}\hookrightarrow C^0\cap L^2_2$
+\cite[Lemmas~5.3--5.6]{FeehanCritical}.
+
+\begin{theorem}[uniform critical slice for pairs]
+\label{thm:critical-pair-slice}
+After decreasing the maximum scale, there is $C>0$ such that
+\begin{equation}\label{eq:critical-green-estimate}
+ \|\zeta\|_{2,\sharp,g}
+ \leq C\|\Delta_g^0\zeta\|_{L^{\sharp,2}}
+\end{equation}
+for every positive-scale family datum.  The Green operator
+$G_g=(\Delta_g^0)^{-1}$ and its first two normalized parameter derivatives
+are uniformly bounded.  Moreover, there is $r_{\mathrm{sl}}>0$, independent
+of the datum, such that every nearby based gauge orbit has a unique
+representative satisfying~\eqref{eq:based-slice}.
+\end{theorem}
+
+\begin{proof}
+We first prove a uniform ordinary spectral gap.  Otherwise there are data
+$g_j$ and infinitesimal gauges $\zeta_j$ with $\|\zeta_j\|_{L^2}=1$ and
+\[
+ \|d_{A_{g_j}}\zeta_j\|_{L^2}
+ +\|\zeta_j\Phi_{g_j}\|_{L^2}\longrightarrow0.
+\]
+Kato's inequality and Sobolev embedding give a common $L^4$ bound.  Away
+from the bubbling point, Rellich compactness gives a limit that is parallel
+and annihilates the nonzero limiting spinor; hence it vanishes.  No $L^2$
+mass can remain at the point, since
+\[
+ \|\zeta_j\|_{L^2(B(x_j,2r))}
+ \leq Cr\|\zeta_j\|_{L^4(B(x_j,2r))}\leq Cr.
+\]
+This contradicts the normalization and proves the gap.
+
+For $f=\Delta_g^0\zeta$, positivity of
+$\mathfrak r_{\Phi_g}^*\mathfrak r_{\Phi_g}$ and the weak Kato inequality
+give
+\[
+ (d^*d+1)|\zeta|\leq |f|+|\zeta|
+\]
+in distributions.  The scalar Green-kernel estimate and the spectral gap
+therefore yield
+\[
+ \|\zeta\|_{C^0}+\|\zeta\|_{L^2}
+ \leq C\|f\|_{L^{\sharp,2}}.
+\]
+Applying the covariant-Laplacian estimates of
+\cite[Lemmas~5.5--5.6]{FeehanCritical} to
+$d_{A_g}^*d_{A_g}\zeta
+=f-\mathfrak r_{\Phi_g}^*\mathfrak r_{\Phi_g}\zeta$
+proves~\eqref{eq:critical-green-estimate}.  Direct differentiation of
+\eqref{eq:pair-laplacian}, followed by the critical multiplication
+estimates and
+$\nabla G=-G(\nabla\Delta^0)G$, proves the first two normalized derivative
+bounds.  The normalization in~\eqref{eq:parameter-metric} cancels the
+inverse lengths of the center and scale profiles.
+
+The contraction argument for the gauge equation gives existence of a
+Coulomb representative with a uniform radius.  For injectivity, suppose
+$q_g+c_1$ and $q_g+c_2$ are in the slice and related by a based gauge
+$u$; set $v=u-1$.  The transition equations and the two Coulomb equations
+give the exact identity
+\begin{equation}\label{eq:nonlinear-slice-identity}
+ \Delta_g^0v
+ =d_{A_g}^*(va_1-a_2v)-\mathfrak r_{\Phi_g}^*(v\phi_1).
+\end{equation}
+Pairing with $v$, using the ordinary gap just proved and H\"older's
+inequality, gives
+\[
+ \|d_{A_g}v\|_{L^2}^2+\|v\Phi_g\|_{L^2}^2
+ \leq C(\|c_1\|_{L^2_1}+\|c_2\|_{L^2_1})
+ \bigl(\|d_{A_g}v\|_{L^2}^2+\|v\Phi_g\|_{L^2}^2\bigr).
+\]
+Decrease $r_{\mathrm{sl}}$ and absorb.  Then $v=0$ by the gap, and the two
+representatives agree.  This also excludes a slowly rotating transition
+along the long neck.  Smooth dependence follows from the same contraction;
+weak continuity follows from the uniform bound and uniqueness.
+\end{proof}
+
+The Coulomb-horizontal projection is
+\begin{equation}\label{eq:horizontal-projection}
+ H_g=1-d_g^0G_gd_g^{0,*}.
+\end{equation}
+It and its first two normalized derivatives are uniformly bounded by
+Theorem~\ref{thm:critical-pair-slice}.
+
+Put
+\begin{equation}\label{eq:horizontal-complement}
+ R_g=R_{\lambda,N}\operatorname{pr}_{\mathbb X},
+ \qquad
+ \cC_g^{\mathrm{sl}}=\ker R_g\cap\ker d^{0,*}_{q_\lambda(g)}.
+\end{equation}
+After locally trivializing this bundle, define the quotient-valued tubular map
+\begin{equation}\label{eq:tubular-map}
+ \mathcal T(g,h)=[q_\lambda(g)+h],
+ \qquad h\in\cC_g^{\mathrm{sl}}.
+\end{equation}
+Its differential along the zero section is
+\begin{equation}\label{eq:modulation-differential}
+ D\mathcal T_{(g,0)}(\dot g,\dot h)
+ =H_gdq_\lambda(\dot g)+\dot h.
+\end{equation}
+Let
+$\jmath_g:T_g\cG^+\to\cK_X(q)\oplus\cK_I$ be the coordinate identification
+which sends the normalized parameter basis from
+\eqref{eq:parameter-metric} to the background virtual-normal modes and the
+translation, dilation, and framed-rotation Jacobi fields.  Differentiating the
+splicing formulas gives
+\begin{equation}\label{eq:parameter-retraction}
+ \|R_gH_gdq_\lambda-\jmath_g\|
+ \longrightarrow0
+ \quad\text{uniformly as }\lambda\downarrow0.
+\end{equation}
+For background variations, the discrepancy in
+\eqref{eq:parameter-retraction} is supported on a shrinking ball.  For
+$\lambda\partial_x$, $\lambda\partial_\lambda$, and
+$\partial_\theta$, rescaling gives the fixed instanton Jacobi fields.
+Derivatives of an $r=\sqrt\lambda$ cutoff contribute the compensating factors
+$\lambda/r=\sqrt\lambda$ and $\lambda^2/r^2=\lambda$ for one and two
+normalized center derivatives; logarithmic-scale derivatives preserve the
+fixed cutoff profiles.  The remaining terms are smooth background terms on
+shrinking annuli or escaping instanton tails.  The estimates used in
+Proposition~\ref{prop:complement} apply to each such derivative.  Horizontal
+projection changes the result by $o(1)$ because the gauge row has the uniform
+coercive bound just established.  This proves
+\eqref{eq:parameter-retraction}.
+
+Since $R_g\dot h=0$, applying $R_g$ to
+\eqref{eq:modulation-differential} first recovers $\dot g$ with a uniformly
+bounded inverse; substitution then recovers $\dot h$.  Thus
+$D\mathcal T_{(g,0)}$ is uniformly invertible.  The preceding differentiated
+cutoff estimates also give a uniform bound for the normalized second
+derivative of $\mathcal T$.  The quantitative Banach inverse-function theorem,
+in the fixed local trivializations, consequently gives constants
+$c_{\mathrm{mod}},r_{\mathrm{mod}}>0$ independent of sufficiently small scale.
+
+\begin{lemma}[uniform modulation]\label{lem:modulation}
+The map~\eqref{eq:tubular-map} is one-to-one on
+\begin{equation}\label{eq:modulation-tube}
+ d_{\mathrm{par}}(g,g')<c_{\mathrm{mod}},
+ \qquad
+ \|h\|_{L^2_1}+\|h'\|_{L^2_1}<r_{\mathrm{mod}}.
+\end{equation}
+Equivalently, after the unique based gauge in~\eqref{eq:based-slice} is
+imposed, every class in this tube has a unique parameter $g$ characterized by
+\begin{equation}\label{eq:modulation-characterization}
+ R_g\bigl((A,\Phi)-q_\lambda(g)\bigr)=0.
+\end{equation}
+The recovered parameter and based gauge are continuous in the weak topology
+and smooth on the positive-scale strong Sobolev charts.  The construction is
+equivariant for the diagonal frame actions and therefore descends to the
+gluing quotient.
+\end{lemma}
+
+The correction in Proposition~\ref{prop:correction} satisfies both equations
+in~\eqref{eq:horizontal-complement}.  Hence exact modulation recovers the
+input parameter of every corrected configuration: no post-correction shift of
+center, scale, or relative frame is hidden in the construction.
+
+\subsection{Center, scale, and frame as observables}
+For an exact framed finite-energy connection on $\RR^4$, the model center
+and scale are
+\begin{equation}\label{eq:model-center-scale}
+ z[A]=\frac{1}{8\pi^2}\int_{\RR^4}y\,|F_A|^2,
+ \qquad
+ \sigma[A]^2=\frac{1}{8\pi^2}
+ \int_{\RR^4}|y-z[A]|^2|F_A|^2.
+\end{equation}
+They identify translations and dilations of the charge-one instanton.  For
+the corrected configurations we use only bounded local observables: a fixed
+fractional-energy radius, a first moment truncated in normalized
+coordinates, and convergence of the rescaled framed connection on compact
+sets.  Proposition~\ref{prop:correction} implies that these observables tend
+to those of the input instanton.  We do not apply the unbounded global
+moments in~\eqref{eq:model-center-scale} directly to the corrected
+connection.
+
+\begin{lemma}[outer-normalized bubble framing]
+\label{lem:outer-frame}
+Let $q_{g_n}+u_n$ be corrected configurations with
+$\lambda_n\downarrow0$ and
+\[
+ \|u_n\|_{L^2_1}+\|\eta_{s,n}\|+\|\eta_{i,n}\|
+ \leq C\lambda_n^{1/3}.
+\]
+Normalize the exterior gauges by the fixed based background slice.  The
+rescaled gauges may then be chosen to converge on compact subsets of
+$S^4-\{\infty\}$.  In temporal gauge the constant cylinder mode determines
+a value at bubble infinity, modulo the center, and this value is precisely
+the relative frame.  The resulting outer-normalized framed bubble limit is
+unique.
+\end{lemma}
+
+\begin{proof}
+Use the dyadic Coulomb gauges and the stabilized long-neck estimate of
+Proposition~\ref{prop:stabilized-long-neck} below.  Starting with the identity
+at the exterior end, remove the nonconstant temporal-gauge modes while
+retaining the constant endpoint $\rho_n\in\SO(3)$.  If $k_j$ relates the
+remaining gauges on successive slabs, the fixed-annulus estimate gives
+\[
+ \operatorname{dist}(k_{j+1},k_j)
+ \leq C(\alpha_j+\alpha_{j+1}+\beta_j+\beta_{j+1}),
+\]
+where $\alpha_j$ and $\beta_j$ are the connection and spinor norms on that
+slab.  The two-sided cylinder estimate gives a length-independent bound for
+the sum of these quantities, tending to zero after the exterior and interior
+ends are sent out.  Thus every nonconstant change of gauge on the neck
+vanishes in the limit, while compactness of $\SO(3)$ gives a limit of the
+retained endpoints.  Fixed-annulus elliptic estimates and the transition
+equation $dv_n=v_na_n-a_n'v_n$ give convergence of the relating gauges on
+compact sets.  Two outer-normalized limits differ by a stabilizer of the
+irreducible instanton with the same value at infinity, hence only by the
+central action already divided out.
+\end{proof}
+
+\begin{proposition}[separation of parameters]\label{prop:separation}
+Suppose $g_n$ and $g'_n$ are gluing parameters tending to the compactified
+domain and $\gamma(g_n)=\gamma(g'_n)$.  Then their background points and
+ideal centers agree in the limit.  If the scales are positive, their scale
+ratios tend to one and their relative frames tend to the same element of
+$\SO(3)$.  For all sufficiently small scale, $g_n=g'_n$.
+\end{proposition}
+
+\begin{proof}
+If the scales stay bounded away from zero, the smooth local inverse in
+Lemma~\ref{lem:modulation} gives the result.  It remains to consider
+$\lambda_n,\lambda'_n\to0$.  Uhlenbeck convergence first identifies the two
+background limits and ideal points.  The fixed background slices then give
+$d_N(q_n,q'_n)\to0$.
+
+Rescale the common corrected configuration about $x_n$ by $\lambda_n$.
+The first representation converges on compact sets to the centered
+unit-scale instanton $I$.  In these coordinates, the second bubble has
+relative translation and scale
+\begin{equation}\label{eq:relative-center-scale}
+ z_n=\lambda_n^{-1}\exp_{x_n}^{-1}(x'_n),
+ \qquad t_n=\lambda'_n/\lambda_n.
+\end{equation}
+If $|z_n|\to\infty$, the second description has no bubble energy on a fixed
+compact set.  If $t_n\to\infty$, it becomes flat there; if $t_n\to0$, its
+curvature measure tends to a point mass.  Each alternative contradicts the
+smooth unit-scale limit.  Thus, after a subsequence,
+$z_n\to z\in\RR^4$ and $t_n\to t\in(0,\infty)$.
+
+The two rescaled limits are gauge equivalent, and the second is the
+translate and dilate of $I$ by $(z,t)$.  Applying
+\eqref{eq:model-center-scale} to these exact limiting instantons gives
+$z=0$ and $t=1$.  Apply Lemma~\ref{lem:outer-frame} to both descriptions,
+using the same exterior based normalization.  Their retained values at
+bubble infinity coincide, so their relative $\SO(3)$ frames agree modulo
+exactly the central and diagonal actions already divided out.  Consequently
+\begin{equation}\label{eq:parameter-separation}
+ d_{\mathrm{par}}(g_n,g'_n)\longrightarrow0.
+\end{equation}
+For large $n$, the two parameters lie within the uniform modulation radius.
+Put the common configuration in the based slice and apply
+Lemma~\ref{lem:modulation}; uniqueness gives literal equality.  At zero
+scale the cone quotient has already identified all relative frames.
+\end{proof}
+
+Because the compactified parameter space over the compact background is
+compact after the outer boundary is fixed, sequential separation also rules
+out coincidences between parameters that are not initially close.  We have
+therefore proved the following statement.
+
+\begin{corollary}[compactified embedding]\label{cor:embedding}
+After decreasing $\varepsilon$ and $\delta$, $\gamma$ is an equivariant
+topological embedding of the compactified virtual gluing space.  On the
+positive-scale stratum it is a smooth embedding.
+\end{corollary}
+
+Finally write $\gamma(g)=q_g+u_g$ in the chosen based slice.  For
+$0\leq t\leq1$, set
+\begin{equation}\label{eq:isotopy}
+ \gamma_t(g)=q_g+t\,u_g.
+\end{equation}
+The parameter-separation argument is uniform in $t$, because
+$\|t u_g\|_{L^2_1}\leq C\lambda^{1/3}$ and the derivative of the modulation
+map remains $M_{\lambda,N}+o(1)$.  Hence every $\gamma_t$ is a compactified
+embedding.  The construction is equivariant, $\gamma_0$ is the splicing
+map, and $\gamma_1=\gamma$.
+
+\section{Reverse gluing and neighborhood surjectivity}
+\label{sec:reverse-gluing}
+
+Continuity and injectivity do not imply that every nearby monopole is
+obtained by gluing.  We prove the converse by first putting an arbitrary
+one-bubble sequence close to a preglued pair and then applying the same
+complement and inverse used in the construction.
+
+\begin{proposition}[strong splicing approximation]
+\label{prop:strong-splicing}
+Suppose that irreducible monopoles $[A_n,\Phi_n]$ converge in the Uhlenbeck
+topology to
+\[
+ ([B,\Psi],x)\in M_{\mathfrak s}\times X
+\]
+with exactly one unit of instanton charge lost at $x$.  There are coarse
+gluing data
+\[
+ g_n^0=([B,\Psi],x_n,\lambda_n,\rho_n),\qquad
+ x_n\to x,\quad\lambda_n\downarrow0,
+\]
+standard gluing bundle identifications, and determinant-one gauges for which
+\begin{equation}\label{eq:strong-splicing}
+ \|(A_n,\Phi_n)-q_{\lambda_n}(g_n^0)\|_{L^2_1}\longrightarrow0.
+\end{equation}
+The relative frames $\rho_n$ use the quotient convention in
+\eqref{eq:gluing-quotient}; no auxiliary tangent or bundle frame remains in
+the datum.
+\end{proposition}
+
+\subsection{Extraction of the bubble}
+The monopole Weitzenb\"ock formula gives a uniform $L^\infty$ bound for
+$\Phi_n$ on the fixed compact perturbation family.  Choose $x_n$ and
+$\lambda_n$ by a fixed fractional-energy centering and radius convention in
+a normal-coordinate ball about $x$.  Pull back by
+$y\mapsto\exp_{x_n}(\lambda_n y)$ and choose Uhlenbeck gauges.  The rescaled
+curvature equation has the form
+\begin{equation}\label{eq:rescaled-curvature}
+ F_{A_n^{\mathrm{res}}}^+
+ =\lambda_n^2\mathcal Q(\Phi_n^{\mathrm{res}})
+  +\lambda_n^2\mathcal P_n,
+\end{equation}
+where $\mathcal P_n$ is bounded on each fixed normalized ball.  The right
+side tends to zero.  Uhlenbeck compactness and removal of the singularity at
+infinity therefore give a finite-energy ASD connection $I$ on $S^4$.  The
+lost charge is one, so $I$ has charge one.  The centering and radius
+conventions make it centered and of unit scale; the framed charge-one
+classification identifies the remaining parameter with a based rotation
+$\rho_n\in\SO(3)$.  We choose this rotation by comparing the rescaled bubble
+gauge with the outer background gauge through the annular patching
+normalization below; this is equivalent to the framed classification and
+prevents a second, unrecorded frame from entering the gluing datum.
+
+After a subsequence,
+\begin{align}\label{eq:two-sided-strong-convergence}
+ A_n^{\mathrm{res}}&\longrightarrow I
+ &&\text{strongly in $L^2_1$ on compact subsets of $\RR^4$,}\notag\\
+ (A_n,\Phi_n)&\longrightarrow(B,\Psi)
+ &&\text{strongly in $L^2_1$ on compact subsets of $X\setminus\{x\}$.}
+\end{align}
+The conformally rescaled spinor tends to zero on the bubble side.
+
+On a conformal cylinder, the connection gauge-curvature block has tangential
+operator
+\begin{equation}\label{eq:odd-signature-operator}
+ L_0(\xi,b)=(-d_{S^3}^*b,-d_{S^3}\xi+*_{S^3}d_{S^3}b),
+ \qquad L=L_0\oplus D_{S^3}.
+\end{equation}
+For the unit round sphere, the exact-form spectrum of $L_0$ is
+$\{\pm\sqrt{k(k+2)}:k\geq1\}$, its coexact spectrum is
+$\{\pm(k+1):k\geq1\}$, and its kernel consists exactly of the constant
+$\xi$ modes.  The spin Dirac spectrum is
+$\{\pm(k+3/2):k\geq0\}$.  Hence, after removal of the constant gauge mode,
+\begin{equation}\label{eq:cylinder-gap}
+ \operatorname{spec}L\cap(-3/2,3/2)=\varnothing.
+\end{equation}
+
+\begin{lemma}[fixed-annulus coupled estimate]
+\label{lem:fixed-annulus}
+Let $D'\Subset D$ be one of the fixed round annulus pairs obtained by
+rescaling a dyadic annulus.  Let $(A,\Phi)$ solve the monopole equation on
+$D$, and let $(C,\Psi)$ solve it up to a defect $f\in L^p$, for a fixed
+$2<p<4$.  Suppose both connections are in Coulomb gauge relative to the
+flat product connection and have scale-invariant
+$L^4\oplus W^{1,2}$ norm below the Uhlenbeck constant.  Then, for
+$z=(A-C,\Phi-\Psi)$,
+\begin{equation}\label{eq:fixed-annulus-estimate}
+ \|z\|_{W^{1,p}(D')}
+ \leq C_p\bigl(\|z\|_{L^2(D)}+\|f\|_{L^p(D)}\bigr).
+\end{equation}
+On an overlap, the based mismatch $w$ between the actual and approximate
+transition maps satisfies the corresponding
+$W^{1,4}\cap W^{2,2}\cap W^{2,p}$ estimate with right-hand side given by
+the two neighboring $z$-norms and the defect.
+\end{lemma}
+
+\begin{proof}
+Subtract the gauge, curvature, and Dirac equations.  The result is a fixed
+first-order elliptic operator applied to $z$, with coefficients given by the
+two connection matrices and spinors, equal to $f$.  Multiplication by a
+small $L^4$ connection coefficient maps $W^{1,p}$ to $L^p$, because
+\[
+ W^{1,p}\hookrightarrow L^{4p/(4-p)},\qquad
+ \frac1p=\frac14+\frac{4-p}{4p},
+\]
+and can be absorbed.  Interior elliptic regularity proves
+\eqref{eq:fixed-annulus-estimate}.  Subtracting the two transition equations
+first gives the $W^{1,4}$ estimate for $w-1$; differentiating once and using
+\eqref{eq:fixed-annulus-estimate} gives the $W^{2,2}$ and $W^{2,p}$ bounds on
+a smaller annulus.  Since $p>2$, the latter embeds in $C^0$, placing $w$ in
+one fixed logarithm chart.
+\end{proof}
+
+\begin{lemma}[two-sided cylinder estimate]
+\label{lem:two-sided-cylinder}
+Suppose on $[j_-,j_+]\times S^3$ that $P_0z=0$ and
+\begin{equation}\label{eq:cylinder-equation}
+ (\partial_t+L)z=R(t)z+Q(z)+f,
+\end{equation}
+where the operator norm of $R$ and the Lipschitz norm of $Q$ on each
+two-slab enlargement are sufficiently small.  Let $\alpha_j$ be the
+scale-invariant $W^{1,2}\cap W^{1,p}$ norm of $z$ there, for a fixed
+$2<p<4$, and let $\beta_j$ be the corresponding $L^2\cap L^p$ norm of
+$f$.  There are $C>0$ and $0<\theta<1$, independent of the cylinder length,
+such that
+\begin{align}\label{eq:three-annulus}
+ \alpha_j\leq C\biggl(&\theta^{j-j_-}\alpha_{j_-}
+ +\theta^{j_+-j}\alpha_{j_+}
+ +\sum_{k=j_-}^{j_+}\theta^{|j-k|}\beta_k\biggr),\\
+ \sum_{j=j_-}^{j_+}\alpha_j
+ &\leq C\left(\alpha_{j_-}+\alpha_{j_+}
+ +\sum_{j=j_-}^{j_+}\beta_j\right).
+ \label{eq:cylinder-l1}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Let $P_+$ and $P_-$ be the positive and negative spectral projections of
+$L$.  Variation of constants, propagated from the left for $P_+$ and from
+the right for $P_-$, gives
+\begin{align*}
+ P_+z(t)&=e^{-(t-a)L}P_+z(a)
+ +\int_a^te^{-(t-s)L}P_+h(s)\,ds,\\
+ P_-z(t)&=e^{-(t-b)L}P_-z(b)
+ -\int_t^be^{-(t-s)L}P_-h(s)\,ds,
+\end{align*}
+where $h=Rz+Q(z)+f$.  The gap~\eqref{eq:cylinder-gap} bounds the semigroups
+by $e^{-3|t-s|/2}$.  Interior elliptic estimates give
+\eqref{eq:three-annulus}.  The terms involving $Rz+Q(z)$ are the same
+geometric convolution with a small multiple of $\alpha_k$; its operator is
+bounded on both $\ell^1$ and $\ell^\infty$ and can be absorbed.  Summing the
+remaining geometric series proves~\eqref{eq:cylinder-l1}.
+\end{proof}
+
+\begin{proposition}[family long-neck estimate]
+\label{prop:stabilized-long-neck}
+Let $(A_n,\Phi_n)$ be either genuine monopoles compared with their coarse
+pregluings, or corrected configurations satisfying the full stabilized
+equation
+\begin{equation}\label{eq:stabilized-neck-equation}
+ \mathfrak S(q_{g_n}+u_n)
+ =J_{s,g_n}(b(q_n)+\eta_{s,n})+J_{i,g_n}\eta_{i,n},
+ \qquad d_{q_{g_n}}^{0,*}u_n=0,
+\end{equation}
+with
+$\|u_n\|_{L^2_1}+\|\eta_{s,n}\|+\|\eta_{i,n}\|
+\leq C\lambda_n^{1/3}$.  Normalize at the exterior end.  On
+$\Omega_n(d,R)=B(x_n,d)-B(x_n,R\lambda_n)$ there is one determinant-one
+gauge in which
+\begin{align}\label{eq:family-long-neck}
+ &\|A_n-A_n^{\mathrm{spl}}\|_{L^4}
+ +\|\nabla_{A_n^{\mathrm{spl}}}(A_n-A_n^{\mathrm{spl}})\|_{L^2}
+ +\|d_{A_n^{\mathrm{spl}}}^*(A_n-A_n^{\mathrm{spl}})\|_{L^{\sharp,2}}
+ \notag\\
+ &\qquad\leq C\bigl(\alpha_{n,-}+\alpha_{n,+}
+ +d^{3/2}+d^2+R^{-2}+\lambda_n^{1/3}\bigr).
+\end{align}
+For genuine monopoles the last term may be omitted.  The constant is
+independent of the number of dyadic annuli and of the point in the compact
+background family.  The constant cylinder mode is retained at the inner end
+as the relative frame.
+\end{proposition}
+
+\begin{proof}
+Put $r=e^{-t}$ and conformally change the Euclidean neck metric to
+$dt^2+g_{S^3}$.  A Euclidean spinor becomes
+$\Phi_{\mathrm{cyl}}=r^{3/2}\Phi_{\mathrm E}$.  After radial and Coulomb
+gauge, the relative equation has principal part $\partial_t+L$.  The
+normal-coordinate metric error, bounded background curvature, quadratic
+spinor term, and fixed perturbation have cylindrical size $O(r^2)$; the
+charge-one tail has size $O((\lambda_n/r)^2)$.  On the at most two slabs
+meeting the outer spinor cutoff, conformal covariance gives the additional
+source
+\[
+ c(dt)(\partial_t\chi)r^{3/2}\Phi_{\mathrm E},
+\]
+of size $O(r^{3/2})$.  Thus the pregluing defect on a slab of radius $r_j$
+satisfies
+\begin{equation}\label{eq:neck-defect}
+ \beta_j\leq C\left(r_j^2+\frac{\lambda_n^2}{r_j^2}
+ +\mathbf1_{\{|j-j_{\mathrm{out}}|\leq1\}}r_j^{3/2}\right),
+\end{equation}
+and its sum is bounded by $C(d^{3/2}+d^2+R^{-2})$.
+
+For~\eqref{eq:stabilized-neck-equation}, the $b(q_n)$ terms cancel on
+subtraction.  The background obstruction fields contribute
+$O(r_j^2+r_j^{5/2})$, while the normalized charge-one adjoint-kernel spinor
+contributes $O(\lambda_n/r_j)$.  Multiplication by the coefficient bound
+$C\lambda_n^{1/3}$ and geometric summation add at most
+$C\lambda_n^{1/3}$ to~\eqref{eq:cylinder-l1}.
+
+No-neck energy makes the coefficients in~\eqref{eq:cylinder-equation}
+uniformly small.  Solve temporal gauge from the exterior end, removing the
+constant mode from $z$ but retaining its inner endpoint.  Lemma
+\ref{lem:two-sided-cylinder} gives the required length-independent
+$\ell^1$ estimate.  On neighboring fixed annuli, Lemma
+\ref{lem:fixed-annulus} gives, for the based transition mismatch $w_j$,
+\[
+ \|w_j-1\|_{W^{1,4}\cap W^{2,2}\cap W^{2,p}}
+ \leq C(\alpha_j+\alpha_{j+1}+\beta_j+\beta_{j+1}).
+\]
+Because $p>2$, these maps lie in one logarithm chart.  Extend their
+logarithms with fixed cutoffs, first over even and then over odd overlaps.
+The $\ell^1$ estimate controls the critical divergence norm without a neck
+length factor and proves~\eqref{eq:family-long-neck}.  The constant cocycle
+propagates uniquely from the exterior; its inner endpoint is the declared
+relative frame rather than a mode to be divided out.
+\end{proof}
+
+\begin{lemma}[compatible gauges on a long neck]
+\label{lem:neck-gauge-patching}
+Let
+\[
+ \Omega_n(d,R)=B(x_n,d)\setminus B(x_n,R\lambda_n),
+\]
+and let $A_n$ and $C_n$ be determinant-one connections on the same splicing
+bundle over this annulus.  Suppose that their total curvature energies on
+$\Omega_n(d,R)$ tend to zero in the iterated order $n\to\infty$,
+$d\downarrow0$, and $R\to\infty$.  Suppose also that, on fixed-ratio collars
+at the two ends, chosen gauges for $A_n$ and $C_n$ converge respectively to
+the same background connection and, after the declared rotation $\rho_n$, to
+the same framed bubble connection.  Then there is one determinant-one gauge
+$u_n$ on the whole neck, agreeing with these endpoint normalizations on
+smaller collars, such that
+\begin{align}\label{eq:patched-neck-estimate}
+ &\|u_n(A_n)-C_n\|_{L^4(\Omega_n(d,R))}
+ +\|\nabla_{C_n}(u_n(A_n)-C_n)\|_{L^2(\Omega_n(d,R))}\notag\\
+ &\quad\leq C\bigl(
+ \|F_{A_n}\|_{L^2(\Omega_n(d,R))}
+ +\|F_{C_n}\|_{L^2(\Omega_n(d,R))}\bigr)
+ +o_{n,d,R}(1),
+\end{align}
+where $C$ is independent of the number of dyadic annuli and the last term is
+the sum of the two endpoint discrepancies.
+\end{lemma}
+
+\begin{proof}
+Use enlarged dyadic annuli $D_j$ and concentric cores $D'_j$ so that the
+$D'_j$ cover the neck and the enlarged family has overlap bounded by an
+absolute constant.  After rescaling each $D_j$ to a fixed annulus, Uhlenbeck's
+small-curvature theorem~\cite{Uhlenbeck82} gives based Coulomb gauges
+$a_j$ and $c_j$ for $A_n$ and $C_n$ with
+\begin{equation}\label{eq:local-neck-gauges}
+ \|a_j\|_{L^4(D_j)}+\|\nabla a_j\|_{L^2(D_j)}
+ +\|c_j\|_{L^4(D_j)}+\|\nabla c_j\|_{L^2(D_j)}
+ \leq C e_j,
+\end{equation}
+where
+\[
+ e_j^2=\|F_{A_n}\|_{L^2(D_j)}^2
+       +\|F_{C_n}\|_{L^2(D_j)}^2.
+\]
+Bounded overlap gives
+\begin{equation}\label{eq:neck-square-sum}
+ \sum_j e_j^2\leq C\int_{\Omega_n^+}
+        (|F_{A_n}|^2+|F_{C_n}|^2),
+\end{equation}
+where $\Omega_n^+$ enlarges only the two endpoint collars.
+
+We record the overlap step because it is what prevents a logarithmic loss.
+If $v_j$ is the transition map between two neighboring Coulomb gauges, then
+on the fixed-shape overlap
+\begin{equation}\label{eq:transition-equation}
+ dv_j=v_ja_{j+1}-a_jv_j.
+\end{equation}
+Poincare's inequality applied to~\eqref{eq:transition-equation}, followed by
+the polar projection of the average to the compact determinant-one group,
+produces a constant $k_j$ such that
+\begin{equation}\label{eq:transition-estimate}
+ \|k_j^{-1}v_j-1\|_{W^{1,4}}
+ +\|k_j^{-1}v_j-1\|_{W^{2,2}}
+ \leq C(e_j+e_{j+1}).
+\end{equation}
+The $W^{2,2}$ estimate follows by differentiating
+\eqref{eq:transition-equation}; its right-hand side is in $L^2$ by
+$L^4\cdot L^4\subset L^2$, and the Coulomb equations control the weak first
+derivatives of $a_j$ and $a_{j+1}$.  The same construction gives constants
+$\ell_j$ for the transitions of the $c_j$ gauges.  On a slightly smaller
+overlap, the gauge-fixed monopole equations for $(a_j,\Phi_n)$ and the
+explicit equation for the smooth spliced pair give, by interior elliptic
+regularity, a bound in $W^{2,p}$ for the transition maps for some fixed
+$p>2$.  Its norm relative to the constants is bounded by a modulus
+$\omega(e_j+e_{j+1})$ with $\omega(t)\to0$.  Hence
+$W^{2,p}\hookrightarrow C^0$ puts each based transition in one normal
+neighborhood of the identity.  The group logarithm and cutoff extension used
+in the next paragraph are therefore well-defined.  This bootstrap is used
+only to construct the gauges; the global quantitative estimate remains the
+critical square-sum estimate~\eqref{eq:neck-square-sum}.
+
+Fix the outer background normalization.  Since the nerve of the annular cover
+is an interval, multiply successive local gauges by constants recursively so
+that the constant parts $k_j$ and $\ell_j$ agree.  The remaining overlap maps
+are the based maps in~\eqref{eq:transition-estimate}.  The standard cutoff
+extension on the fixed overlap absorbs each such map into one of its two
+neighbors.  Its $W^{1,4}\cap W^{2,2}$ norm is bounded by the right-hand side of
+\eqref{eq:transition-estimate}.  Applying the extensions on alternating
+overlaps first, and then on the remaining overlaps, gives global gauges.  The
+resulting $L^4\oplus W^{1,2}$ errors are estimated by the square sum, not by
+their ordinary sum.  Thus~\eqref{eq:neck-square-sum} gives a constant
+independent of the length of the neck.
+
+It remains to identify the normalization at the inner end.  Cap the outer end
+by the background bundle and the inner end by the charge-one bubble bundle.
+The two capped bundles have the same second Chern class: their only clutching
+class is the unit charge already used in the splicing construction.  Hence the
+product of the constant overlap transitions contains no additional
+$\pi_3(\SO(3))$ class.  After the outer constant has been fixed, its inner
+constant is precisely the constant comparing the rescaled inner gauge with
+the centered framed instanton; by our convention following
+\eqref{eq:rescaled-curvature}, this constant is $\rho_n$.  Inserting
+$\rho_n$ into $C_n$ makes the endpoint constants agree.  The endpoint
+convergence absorbs the two final collar errors into $o_{n,d,R}(1)$ and proves
+\eqref{eq:patched-neck-estimate}.
+\end{proof}
+
+\begin{lemma}[one-bubble no neck]\label{lem:no-neck}
+For the centers and scales above,
+\begin{equation}\label{eq:no-neck-energy}
+ \lim_{R\to\infty}\lim_{d\downarrow0}\limsup_{n\to\infty}
+ \int_{B(x_n,d)\setminus B(x_n,R\lambda_n)}|F_{A_n}|^2=0.
+\end{equation}
+After the bundle identifications determined by $\rho_n$, there are gauges
+on these necks in which the actual connection and the spliced
+background--instanton connection satisfy
+\begin{equation}\label{eq:no-neck-strong}
+ \|A_n-A_n^{\mathrm{spl}}\|_{L^4}
+ +\|\nabla_{A_n^{\mathrm{spl}}}(A_n-A_n^{\mathrm{spl}})\|_{L^2}
+ \longrightarrow0
+\end{equation}
+in the iterated order $n\to\infty$, $d\downarrow0$, and $R\to\infty$.
+\end{lemma}
+
+\begin{proof}
+The curvature measures converge to
+\[
+ |F_B|^2dV+8\pi^2\delta_x.
+\]
+For fixed $d$, the region outside $B(x_n,d)$ accounts for the background
+energy.  After rescaling, $B(x_n,R\lambda_n)$ accounts for the energy of $I$
+on $B(0,R)$.  Taking the three limits in the displayed order, the background
+energy in the shrinking ball and the instanton tail both vanish.  There is
+no second concentration point, so~\eqref{eq:no-neck-energy} follows.
+
+Cover the neck by dyadic annuli.  Once their curvature energy is below the
+Uhlenbeck threshold, the general small-curvature Coulomb-gauge estimate
+\cite{Uhlenbeck82} gives
+\begin{equation}\label{eq:annular-gauge}
+ \|a\|_{L^4}+\|\nabla a\|_{L^2}\leq C\|F_A\|_{L^2}.
+\end{equation}
+This is the estimate for a general connection, not an ASD annular decay
+theorem.  It applies here because the full neck energy tends to zero.  The
+monopole equation and the uniform spinor bound also give
+\begin{equation}\label{eq:self-dual-small-ball}
+ \|F_{A_n}^+\|_{L^2(B(x_n,d))}\leq Cd^2.
+\end{equation}
+The annuli have bounded overlap, so the squares of
+\eqref{eq:annular-gauge} sum to a constant times the total neck energy; no
+factor equal to the number of annuli occurs.  Apply the same estimate to the
+spliced connection, whose neck energy is small by bounded background
+curvature and instanton-tail decay.
+The two-sided convergence in~\eqref{eq:two-sided-strong-convergence} supplies
+the endpoint hypotheses of Lemma~\ref{lem:neck-gauge-patching}; the spliced
+connection uses the same outer background gauge and the same inner rotation
+$\rho_n$.  Apply~\eqref{eq:patched-neck-estimate} and then the three limits.
+This proves~\eqref{eq:no-neck-strong} in one global determinant-one gauge.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:strong-splicing}]
+Given $\epsilon>0$, first choose $R$ so that the $L^2_1$ tail of $I$ outside
+$B(0,R)$ is smaller than $\epsilon$.  Next choose $d$ so that the background
+has small local energy in $B(x,2d)$ and the no-neck quantity is smaller than
+$\epsilon$.  For all large $n$, the first convergence in
+\eqref{eq:two-sided-strong-convergence} controls $B(x_n,R\lambda_n)$,
+Lemma~\ref{lem:no-neck} controls the intermediate annulus, and the second
+convergence controls $X\setminus B(x_n,d)$.
+
+The spinor has no missing neck term.  Its pointwise bound gives
+\begin{equation}\label{eq:spinor-small-ball}
+ \|\Phi_n\|_{L^4(B(x_n,2d))}=O(d),
+\end{equation}
+and the Dirac equation with an interior covariant Caccioppoli estimate gives
+\begin{equation}\label{eq:spinor-caccioppoli}
+ \|\nabla_{A_n}\Phi_n\|_{L^2(B(x_n,d))}\leq Cd.
+\end{equation}
+Indeed, the Weitzenb\"ock formula bounds the square of the left side by the
+cutoff contribution, bounded zeroth-order terms, and
+\[
+ \int_{B(x_n,2d)}|F_{A_n}|\,|\Phi_n|^2
+ \leq \|\Phi_n\|_{L^\infty}^2\|F_{A_n}\|_{L^2}
+       \operatorname{vol}(B(x_n,2d))^{1/2}=O(d^2).
+\]
+The cutoff background spinor satisfies the same estimates.  Patching the
+three comparisons with the pregluing profiles yields
+\[
+ \limsup_{n\to\infty}
+ \|(A_n,\Phi_n)-q_{\lambda_n}(g_n^0)\|_{L^2_1}\leq C\epsilon.
+\]
+Letting $\epsilon$ tend to zero proves~\eqref{eq:strong-splicing}.
+\end{proof}
+
+\subsection{Exact modulation and complemented uniqueness}
+Apply Lemma~\ref{lem:modulation} to the configurations in
+Proposition~\ref{prop:strong-splicing}.  After based determinant-one gauge,
+there are unique exact gluing data
+$g_n=(q_n,\widehat x_n,\widehat\lambda_n,\widehat\rho_n)$ and differences
+$u_n$ such that
+\begin{equation}\label{eq:exact-modulation}
+ (A_n,\Phi_n)=q_{\widehat\lambda_n}(g_n)+u_n,\qquad
+ d^{0,*}_{q_{\widehat\lambda_n}}u_n=0,\qquad
+ R_{g_n}u_n=0,\qquad
+ \|u_n\|_{L^2_1}\to0.
+\end{equation}
+The exact parameters are close to the coarse ones in
+\eqref{eq:parameter-metric}; in particular, $q_n$ tends to the reducible
+background and $b(q_n)\to0$.
+
+Set
+\begin{equation}\label{eq:reverse-augmented-vector}
+ H_n=(u_n,-b(q_n),0).
+\end{equation}
+The complement condition depends only on $u_n$, so $H_n$ lies in
+$\mathbb H^{\mathrm{cmp}}_{\widehat\lambda_n,N}$.  Since $(A_n,\Phi_n)$ is
+a monopole and is in the based slice,
+\begin{equation}\label{eq:reverse-augmented-equation}
+ \widehat\cF_{g_n}(H_n)=0.
+\end{equation}
+Let $e_n=\widehat\cF_{g_n}(0)$.  The inverse and quadratic estimates give
+\[
+ \|H_n\|
+ \leq C\|e_n\|+C\|H_n\|^2
+ \leq C\widehat\lambda_n^{1/3}+C\|H_n\|^2.
+\]
+The qualitative convergence in~\eqref{eq:exact-modulation} absorbs the
+quadratic term, and hence
+\begin{equation}\label{eq:reverse-rate}
+ \|H_n\|\leq 2C\widehat\lambda_n^{1/3}.
+\end{equation}
+Thus $H_n$ lies in the same contraction ball as the correction in
+Proposition~\ref{prop:correction}.  Uniqueness of that fixed point gives
+\begin{equation}\label{eq:reverse-uniqueness}
+ (u_n,-b(q_n),0)
+ =(u_{g_n},\eta_{s,g_n},\eta_{i,g_n}).
+\end{equation}
+It follows that $[A_n,\Phi_n]=\gamma(g_n)$ and $\chi(g_n)=0$.
+
+\begin{proposition}[neighborhood surjectivity]\label{prop:neighborhood}
+There is an Uhlenbeck-open neighborhood $\cU$ of
+$M_{\mathfrak s}\times X$ such that
+\begin{equation}\label{eq:neighborhood-image}
+ \cU\cap\overline\cM_{\mathfrak t'}^{*,0}
+ =\cU\cap\gamma(\chi^{-1}(0)).
+\end{equation}
+Consequently, $\gamma$ restricts to a homeomorphism from $\chi^{-1}(0)$
+onto an Uhlenbeck-open neighborhood of the ideal stratum, after restricting
+the virtual neighborhood over its outer boundary.
+\end{proposition}
+
+\begin{proof}
+The gluing construction gives the inclusion from right to left.  If the
+reverse inclusion failed in every neighborhood, there would be genuine
+monopoles outside $\gamma(\chi^{-1}(0))$ converging to the compact ideal
+stratum.  A subsequence converges to one point of that stratum, and the
+argument above places every sufficiently late member in
+$\gamma(\chi^{-1}(0))$, a contradiction.  The inverse is continuous because
+$\gamma$ is a compactified embedding by Corollary~\ref{cor:embedding}.
+\end{proof}
+
+\section{The obstruction cone and orientations}\label{sec:orientations}
+
+\subsection{The compactified section}
+The background summand $\overline\Upsilon^s$ is the pullback of the fixed
+complex bundle $\Xi\to N_{\mathfrak t',\mathfrak s}$.  The charge-one Dirac
+operator has the kernel and cokernel in~\eqref{eq:bubble-cokernel}.
+At positive scale its obstruction line is
+\[
+ (0,\delta]\times\SU(2)\times_{\{\pm1\}}\CC
+ \longrightarrow(0,\delta]\times\SO(3).
+\]
+Its compactification is the cone map~\eqref{eq:obstruction-cone}; the whole
+fiber, not merely its norm, is identified with the vertex at zero scale.
+There are no partition-overlap maps at level one.
+
+At positive scale, define $\chi$ by~\eqref{eq:corrected-map-section}; at zero
+scale, set
+\begin{equation}\label{eq:zero-scale-obstruction}
+ \chi(q,x,0)=(b(q),0).
+\end{equation}
+The contraction is equivariant, because the nonlinear map, cutoffs,
+transports, and inverse are equivariant and its fixed point is unique.  The
+two common presentations of the residual circle action should not be mixed.
+Before taking the effective circle, the diagonal presentation has weight two
+on the normal and background-obstruction factors.  After passage to the
+effective action, the corresponding Euler class is
+\begin{equation}\label{eq:background-euler}
+ e(\overline\Upsilon^s/S^1)=(-\nu)^{r_\Xi}.
+\end{equation}
+The instanton line retains the nontrivial
+$\SU(2)/\{\pm1\}$ framing twist, so its Euler class is computed from its
+tensor square in Section~\ref{sec:pairing} rather than copied from
+\eqref{eq:background-euler}.
+
+\begin{proposition}[compactified obstruction section]
+\label{prop:obstruction-section}
+The two components of $\chi$ are smooth at positive scale.  The background
+component extends continuously over the compactification and smoothly on
+each zero-scale stratum.  The instanton component is a continuous section of
+the cone pseudo-bundle.  With the metric induced by
+$J_{s,g}\oplus J_{i,g}$, the norm of $\chi$ is continuous along the section.
+\end{proposition}
+
+\begin{proof}
+Positive-scale smoothness follows from Proposition~\ref{prop:correction}.
+At zero scale, its estimate gives
+\[
+ \|\eta_{s,g}\|+\|\eta_{i,g}\|\leq C\lambda^{1/3}.
+\]
+Thus $\chi_s$ tends to $b(q)$ and $\chi_i$ tends to the cone vertex.  For
+$g_n\to(q,x,0)$, the Gram estimate in
+Lemma~\ref{lem:matched-obstruction} gives
+\[
+ \|J_{s,g_n}\chi_s(g_n)+J_{i,g_n}\chi_i(g_n)\|_{L^2}^2
+ =\|b(q)\|^2+o(1),
+\]
+which is the asserted norm continuity.  This does not extend the ambient
+instanton line as a constant-rank bundle; only the section tends to its
+collapsed fiber.
+\end{proof}
+
+We next compare the global reduction with the local small-eigenvalue
+reduction of~\cite[Section~8]{FeehanLenessIII}.  Three objects must be kept
+distinct.  On a relatively compact positive-scale chart $U^+$ on which a
+cutoff $\mu$ avoids the spectrum, let
+\begin{equation}\label{eq:three-obstruction-models}
+ E_{\mathrm{glob},g}=\Xi_q\oplus K_I,\qquad
+ E_{\mathrm{loc},g}=\ker d_q^{1,*}\oplus K_I,\qquad
+ E_{\mathrm{spec},g}=\operatorname{Ran}\Pi_{q_g,\mu}.
+\end{equation}
+The published cut-and-project and synthesis estimates
+\cite[Propositions~8.19 and~8.26]{FeehanLenessIII} identify
+$E_{\mathrm{loc}}$ with $E_{\mathrm{spec}}$ on a constant-rank chart:
+their two composites are $I+o(1)$.  They also transport the ordered
+orientation local system of
+$\ker d_q^{1,*}\oplus K_I$ to $E_{\mathrm{spec}}$, compatibly on overlaps.
+There is generally no isomorphism between $E_{\mathrm{glob}}$ and
+$E_{\mathrm{loc}}$, since the global augmentation may contain extra
+stabilizing directions.
+
+\begin{proposition}[stable comparison of reductions]
+\label{prop:stable-reduction}
+On every positive-scale constant-rank germ of the monopole zero set, the
+global and spectral reductions admit a common equivariant finite-dimensional
+enlargement.  Their zero loci agree, the comparisons satisfy the cocycle
+condition up to controlled equivariant homotopy, and the induced determinant
+orientation and relative Euler--Thom pairing agree.  No equality of the two
+ranks and no spectral bundle at zero scale is asserted.
+\end{proposition}
+
+\begin{proof}
+For a smooth Fredholm section $F$ with two surjective augmentations
+$i_j:E_j\to Y$, form
+\[
+ \cV_{01}=\{(x,e_0,e_1):F(x)-i_0e_0-i_1e_1=0\}.
+\]
+The two reductions embed by setting the other coefficient equal to zero.
+At a point of the first reduction, projection to $e_1$ identifies its normal
+bundle in $\cV_{01}$ with $E_1$: surjectivity of
+$DF\oplus(-i_0)$ supplies a lift of every prescribed $e_1$.  The analogous
+statement holds with the indices reversed.  Thus both obstruction zero loci
+are canonically $F^{-1}(0)$.
+
+Apply this construction with $E_0=E_{\mathrm{glob}}$ and
+$E_1=E_{\mathrm{spec}}$.  The first augmented derivative is surjective by
+Theorem~\ref{thm:uniform-inverse}.  On $E_{\mathrm{spec}}^\perp$, the second
+has right inverse
+\[
+ d_{q_g}^{1,*}(d_{q_g}^1d_{q_g}^{1,*})^{-1},
+\]
+bounded by the spectral gap at $\mu$.  Lemma
+\ref{lem:inverse-derivatives} and the Riesz formula for
+$\Pi_{q_g,\mu}$ give controlled tubular maps on a common germ.  On overlaps,
+order all spectral factors by chart label and use literal zero-coordinate
+embeddings; associativity of direct sum gives the cocycle before tubular
+choices, and nearby invariant tubular choices are homotopic through their
+graph maps.
+
+Along the first embedding,
+\[
+ \det T\cV_{01}\cong\det T\cV_0\otimes\det E_1.
+\]
+The same $E_1$ occurs in the common obstruction bundle, so its determinant
+line cancels its dual.  Along the other embedding the fixed order contributes
+the Koszul factor
+$(-1)^{\rank_{\RR}E_0\rank_{\RR}E_1}$; it is $+1$ because
+$E_0=\Xi\oplus K_I$ has even real rank.  If $E_1$ is not globally oriented,
+its orientation local system is carried by both factors and cancels
+canonically.  The identical cancellation holds in relative equivariant
+cohomology: the Thom class of the added normal $E_1$ is the Euler factor of
+the added obstruction $E_1$.  Hence stabilization changes neither the
+oriented zero locus nor the relative Euler--Thom pairing.
+\end{proof}
+
+\subsection{The exact transversality statement}
+At a positive-scale zero, the extended equation is
+\begin{equation}\label{eq:extended-identity}
+ \mathfrak S(\gamma(g))=J_g\chi(g).
+\end{equation}
+Let $Q_g$ be projection onto the obstruction image.  The contraction
+parametrizes the local virtual manifold $(1-Q_g)\mathfrak S=0$, and the
+complemented inverse identifies its tangent space with
+$D\gamma_g(T_g\cG^+)$.  Differentiating~\eqref{eq:extended-identity} at a
+zero gives
+\begin{equation}\label{eq:differentiated-obstruction}
+ D\mathfrak S_{\gamma(g)}D\gamma_g=J_gD\chi_g.
+\end{equation}
+
+\begin{proposition}[stratumwise transversality]\label{prop:transversality}
+For a generic perturbation at which the irreducible monopole section is
+transverse, the total section $\chi_s\oplus\chi_i$ is transverse on
+$\cG^+$.  On
+$(N_{\mathfrak t',\mathfrak s}-M_{\mathfrak s})\times X$, the surviving
+background component $\chi_s=b$ is transverse.  No transversality holds or
+is asserted on $M_{\mathfrak s}\times X$ when $r_\Xi>0$.
+\end{proposition}
+
+\begin{proof}
+Given $e\in\Upsilon_g$ at a positive-scale zero, surjectivity of
+$D\mathfrak S_{\gamma(g)}$ supplies $v$ with
+$D\mathfrak S_{\gamma(g)}v=J_ge$.  Its projected equation component
+vanishes, so $v$ is tangent to the virtual manifold and equals
+$D\gamma_g\dot g$ for some $\dot g$.  Equation
+\eqref{eq:differentiated-obstruction} and injectivity of $J_g$ give
+$D\chi_g\dot g=e$.
+
+On the middle stratum, the instanton fiber has collapsed and the background
+finite-dimensional reduction makes $b$ transverse; the $X$ factor is
+passive.  On the lowest stratum $b$ is identically zero.  An identically zero
+section of a positive-rank bundle is not transverse.  This is why
+\cite[Theorem~3.8 and Section~5.1]{FeehanLenessLevelOne} asserts precisely
+the first two conclusions and disclaims the third.
+\end{proof}
+
+Accordingly, the all-strata formulation in
+\cite[Hypothesis~7.8.1(2)]{FeehanLenessCobordism} must be read using the
+coarser stratification there.  For the fine decomposition
+\eqref{eq:three-strata}, the relative Euler construction uses Proposition
+\ref{prop:transversality} and does not require transversality on the lowest
+stratum.
+
+\subsection{Determinant-line excision}
+For a real Fredholm operator $F$, use
+\[
+ \det F=\Lambda^{\max}\ker F\otimes
+ (\Lambda^{\max}\coker F)^*.
+\]
+Direct-sum factors are ordered as written, and complex vector spaces carry
+their complex orientations.  For $q\in N(\varepsilon)$, write
+$p=\pi_N(q)\in M_{\mathfrak s}$.  Orient $T_pM_{\mathfrak s}$ using the homology
+orientation $\Omega$.  Orient the centered framed instanton parameters
+by
+\begin{equation}\label{eq:quaternionic-orientation}
+ (\partial_\lambda,i,j,k)
+ \quad\text{on}\quad \RR\oplus\mathfrak{so}(3)=\mathbb H.
+\end{equation}
+
+We use the real determinant-line excision principle of
+\cite[Section~3]{DonaldsonOrientation}; see also
+\cite[Section~7.1]{DK90}.  In the form needed here, suppose two ordered pairs
+of real first-order elliptic operators are obtained from one another by
+exchanging compact pieces, and that their bundles, principal symbols, and
+operators agree on product collars after a homotopy of zero-order terms.
+There is then a natural isomorphism
+\begin{equation}\label{eq:abstract-excision}
+ \operatorname{Exc}:
+ \det D_1\otimes\det D_2
+ \longrightarrow
+ \det D'_1\otimes\det D'_2.
+\end{equation}
+It is continuous for families, compatible with composition and direct sum,
+and is the identity when the exchanged data are identical.  These
+normalizations determine its effect on orientations.  This is the excision
+principle used to define
+$O^{\mathrm{asd}}(\Omega,w)$ in
+\cite[Sections~2.1--2.2]{FeehanLenessII}.
+
+We apply~\eqref{eq:abstract-excision} to the augmented operators, for which
+the parametrix supplies all required uniform Fredholm control.  Replace the
+splicing annulus by a cylinder $[-T,T]\times S^3$ and denote the resulting
+operator by $\widehat{\mathscr D}_{g,T}$.  On the central third of the
+cylinder, homotope the coefficients to the product coefficients and remove
+the zero-order terms.  On the two remaining thirds use the same transports
+as in~\eqref{eq:raw-parametrix}.  The commutator and coefficient estimates of
+Section~\ref{sec:parametrix} show that, after $T$ is large, this entire
+homotopy has a uniformly invertible restriction to the model-coordinate
+complement.  Thus its determinant line is transported without a spectral
+crossing on that complement.
+
+Cut at the middle of the product cylinder and cap the two pieces by the
+fixed background and bubble models.  Excision gives
+\begin{equation}\label{eq:augmented-excision}
+ \det\widehat{\mathscr D}^{X}_q
+ \otimes\det\widehat B_I
+ \cong
+ \det\widehat{\mathscr D}_{q_g}
+ \otimes\det D_{\mathrm{ref}}.
+\end{equation}
+Here $D_{\mathrm{ref}}$ is the fixed based product operator obtained by
+gluing the two discarded flat caps.  Choose its fixed finite-dimensional
+stabilization so that it is invertible.  Its determinant is then canonically
+identified with $\RR$ by $1\in\Lambda^0(0)$, and this factor is suppressed
+below.  Equivalently, the isomorphism after suppressing it is the determinant
+of the kernel--cokernel exact sequence constructed by the patched parametrix.
+Because the three augmented operators are surjective, that exact sequence
+reduces to the kernel gluing isomorphism
+\begin{equation}\label{eq:kernel-excision}
+ \ker\widehat{\mathscr D}_{q_g}
+ \cong
+ \ker\widehat{\mathscr D}^{X}_q
+ \oplus\ker\widehat B_I.
+\end{equation}
+The synthesis and retraction maps in
+\eqref{eq:synthesis}--\eqref{eq:model-matrix} represent this isomorphism; its
+matrix is $I+o(1)$ and therefore has positive determinant.
+
+The ordered model kernels and finite-dimensional stabilizations give
+\begin{align}\label{eq:model-determinants}
+ \det\widehat{\mathscr D}^{X}_q
+ &=\det N_p\otimes\det T_pM_{\mathfrak s},\notag\\
+ \det\widehat B_I
+ &=\det T_IM_1^s(S^4,\delta),\\
+ \det\widehat{\mathscr D}_{q_g}
+ &=\det\mathscr D_{q_g}\otimes\det\Xi_p\otimes\det K_I.
+ \notag
+\end{align}
+The last identity is the determinant exact sequence for adding the
+finite-dimensional domain $\Xi_p\oplus K_I$ with the ordered map
+$-(J_{s,\lambda}\oplus J_{i,\lambda})$.  Its minus sign has positive
+determinant because the real stabilization dimension is $2r_\Xi+2$.
+Combining~\eqref{eq:augmented-excision}--\eqref{eq:model-determinants} and
+putting the obstruction determinants on the dual side yields
+\begin{align}\label{eq:determinant-splitting}
+ \det\mathscr D_{q_g}\cong{}&
+ \det N_p\otimes\det T_pM_{\mathfrak s}
+ \otimes\det T_I M_1^{s,\natural}(S^4,\delta)
+ \otimes\det T_xX\notag\\
+ &\otimes(\det\Xi_p)^*\otimes(\det K_I)^*.
+\end{align}
+Here the centered bubble factor contains scale and relative rotation; its
+four translations are identified orientation-preservingly with $T_xX$ by
+the chosen oriented tangent frame.  Moving the four-dimensional translation
+factor past the four-dimensional scale--rotation factor contributes no sign.
+
+The splitting~\eqref{eq:determinant-splitting} has no orientation monodromy
+around a loop in $M_{\mathfrak s}$.  The tangent bundle is oriented by
+$\Omega$, the bundles $N$ and $\Xi$ have their complex orientations, the
+instanton modes have the fixed quaternionic orientation, $TX$ is oriented,
+and $K_I$ is a complex line.  Possible spectral flow of an associated
+self-adjoint family changes neither this real orientation nor the global
+stabilization.
+
+The tangent- and adjoint-frame determinants introduced before taking the
+diagonal $\SO(4)\times\SO(3)$ quotient cancel between the ordered tangent
+exact sequences for the framed parameter space and for the orbit directions.
+Both group dimensions are moved past identical factors, so the two Koszul
+signs cancel.  The remaining relative-frame factor is the $\SO(3)$ already
+contained in $M_1^{s,\natural}$.
+
+There is also no orientation monodromy around this relative-frame factor.
+The generator of $\pi_1(\SO(3))$ lifts to a path in $\SU(2)$ from $1$ to
+$-1$.  Equivariance of~\eqref{eq:abstract-excision} transports the determinant
+along this lift.  At the endpoint, $-1$ acts trivially on adjoint connection
+directions, by complex multiplication by $-1$ on each complex spinor or
+obstruction factor, and by $-1$ on the four-dimensional quaternionic
+parameter space.  Each real determinant is $+1$.  Hence the excision
+orientation descends around the nontrivial loop in $\SO(3)$.
+
+Finally, the path $q_g+t u_g$ transports
+$\det\mathscr D_{q_g}$ to $\det\mathscr D_{\gamma(g)}$.  Intermediate
+configurations need not solve the equations.  Replacing the published
+obstruction profiles by the matched profiles is an isotopy through
+embeddings, and the model-coordinate Gram map remains positive.  The
+normalization discrepancy in the spinor-bilinear term is removed by a
+zero-order homotopy through positive coefficients.  Thus
+\eqref{eq:determinant-splitting}, with the same ordered factors, holds for the
+corrected operator and is the convention of
+\cite[Section~3.9]{FeehanLenessLevelOne}.
+
+\begin{proposition}[orientation of the corrected chart]
+\label{prop:chart-orientation}
+At a positive-scale zero of $\chi$, there is a canonical orientation
+isomorphism
+\begin{equation}\label{eq:orientation-isomorphism}
+ \det\mathscr D_{\gamma(g)}
+ \cong\det T_g\cG^+\otimes(\det\Upsilon_g)^*.
+\end{equation}
+Under this isomorphism, $D\gamma$ identifies the transverse-zero-locus
+orientation of $\chi^{-1}(0)$ with the orientation
+$O^{\mathrm{asd}}(\Omega,c_1(L))$ of the actual monopole moduli space.
+\end{proposition}
+
+\begin{proof}
+The tangent line of the virtual domain is the product of the first four
+factors in~\eqref{eq:determinant-splitting}, while
+$\Upsilon_g=\Xi_p\oplus K_I$.  This gives~\eqref{eq:orientation-isomorphism}
+as a line isomorphism.  To identify it with the finite-dimensional
+reduction, differentiate~\eqref{eq:extended-identity} at a zero.  The
+derivative of $J_g$ drops out, and
+\[
+ \dot g\longmapsto(D\gamma_g\dot g,D\chi_g\dot g)
+\]
+identifies $T_g\cG^+$ with the kernel of the stabilized operator.  It is
+homotopic under the model retraction to the identity, with positive Gram
+determinant.  The ordering $K_I\oplus\Xi_p$ used in one source formula may be
+interchanged with $\Xi_p\oplus K_I$ without sign because both have even real
+dimension.  Similarly, the analytic stabilization is $-J_g$, but
+$\dim_\RR\Upsilon_g=2r_\Xi+2$ is even.
+
+Proposition~\ref{prop:transversality} gives the exact sequence
+\[
+ 0\longrightarrow T_g\chi^{-1}(0)\longrightarrow T_g\cG^+
+ \xrightarrow{D\chi_g}\Upsilon_g\longrightarrow0.
+\]
+Its determinant is the right side of~\eqref{eq:orientation-isomorphism}
+with the same ordered factors.  The claim follows.
+\end{proof}
+
+\subsection{The residual circle and the link boundary}
+Let $\cZ^+=\chi^{-1}(0)\cap\cG^+$.  On the free circle locus define
+\begin{equation}\label{eq:circle-quotient-orientation}
+ \lambda_{\cZ}=v_{S^1}\wedge\widetilde\lambda_{\cZ/S^1}.
+\end{equation}
+The weight-two presentation changes the positive speed of an orbit but not
+its orientation.  Let $\vec r$ point outward from the deleted neighborhood
+of the ideal stratum.  The boundary of its complement has
+\[
+ \lambda_{\cZ/S^1}=-\vec r\wedge\lambda_L.
+\]
+Together with~\eqref{eq:circle-quotient-orientation}, this proves
+\begin{equation}\label{eq:link-orientation}
+ \lambda_{\cM}=-v_{S^1}\wedge\vec r
+ \wedge\widetilde\lambda_L,
+\end{equation}
+which is the convention in
+\cite[Equation~(3.81)]{FeehanLenessLevelOne}.  The sign can also be read in
+one complex fiber: moving the positive orbit vector $i\vec r$ past the
+outward radial vector contributes the displayed minus sign.
+
+The compactified virtual link has a background-normal face and an
+instanton-scale face.  Their common edge receives opposite orientations,
+because exchanging the two outward normals contributes a minus sign.  Thus
+the faces form an oriented relative cycle.  This statement concerns the
+smooth positive-scale zero set and the relative Euler cycle; it does not
+reinterpret the lowest stratum as a transverse zero set.
+
+Finally, if $w$ is an integral lift of $w_2(\mathfrak t')$, the orientation
+comparison of~\cite{FeehanLenessII} is
+\begin{equation}\label{eq:lift-orientation}
+ O^{\mathrm{asd}}(\Omega,w)
+ =(-1)^{(w-c_1(L))^2/4}
+ O^{\mathrm{asd}}(\Omega,c_1(L)).
+\end{equation}
+The exponent is integral.  The circle and boundary constructions are linear
+in the ambient orientation, so the same factor relates the corresponding
+link orientations.  This completes the orientation assertion in
+Theorem~\ref{thm:neighborhood}.
+
+\section{The level-one pairing}\label{sec:pairing}
+
+We now apply the family neighborhood theorem to the published level-one
+pairing.  The neighborhood theorem is used to identify the actual
+and virtual links, pull back geometric representatives, carry the universal
+bundle through an equivariant homotopy to the splicing map, represent the
+smooth zero locus by a relative Euler class, and preserve signed
+intersections.  Corollary~\ref{cor:embedding}, Proposition
+\ref{prop:neighborhood}, Proposition~\ref{prop:obstruction-section}, and
+Proposition~\ref{prop:chart-orientation} supply these inputs.  The dimension
+argument of~\cite[Lemmas~3.9 and~5.4]{FeehanLenessLevelOne} puts the counted
+intersection in the positive-scale smooth locus and away from the common
+edge.  The universal-bundle calculation, Thom and Segre reduction,
+charge-one fiber evaluations, and Jacobi identity are retained as published
+topological inputs; the contribution here is to discharge their deferred
+analytic neighborhood hypothesis.
+
+\subsection{Pullbacks and Euler classes}
+Let
+\begin{equation}\label{eq:nu-definition}
+ \nu=c_1\bigl(\overline\cG^{\mathrm{vir},*}\longrightarrow
+ \overline\cG^{\mathrm{vir},*}/S^1\bigr)
+\end{equation}
+for the effective circle.  The line defining $\mu_c$ on the monopole
+configuration quotient has weight $-2$, while the action on the gluing
+domain before effectivization has twice the angular parameter.  Hence
+\begin{equation}\label{eq:circle-pullback}
+ \gamma^*\mu_c=-\nu.
+\end{equation}
+
+Away from the incidence diagonal, the pulled-back universal $SO(3)$ bundle
+splits as $\RR\oplus\overline L^{\mathrm{vir}}$, where
+\begin{equation}\label{eq:associated-line-c1}
+ c_1(\overline L^{\mathrm{vir}})=
+ 2\pi_{\mathfrak s}^*\mu_{\mathfrak s}-\nu
+ +\pi_{X,2}^*c_1(L),\qquad c_1(L)=-\beta.
+\end{equation}
+The equivariant isotopy~\eqref{eq:isotopy} identifies the corrected and
+splicing pullbacks.  Insertion of one instanton changes the Pontrjagin class
+by the incidence diagonal, so
+\begin{align}\label{eq:universal-p1}
+ (\gamma\times\id_X)^*p_1(\mathbb F_{\mathfrak t'})
+ ={}&\bigl(2\pi_{\mathfrak s}^*\mu_{\mathfrak s}-\nu
+ +\pi_{X,2}^*c_1(L)\bigr)^2\notag\\
+ &-4(\pi_X\times\id_X)^*\operatorname{PD}[\Delta].
+\end{align}
+The coefficient $-4$ is fixed by a chain meeting the diagonal once.  Since
+$\mu_p(\alpha)=-\tfrac14p_1(\mathbb F_{\mathfrak t'})/\alpha$, slant product
+with a point and a surface gives
+\begin{align}\label{eq:mu-pullbacks}
+ \gamma^*\mu_p(x)
+ &=-\tfrac14(2\mu_{\mathfrak s}-\nu)^2
+   +\pi_X^*\operatorname{PD}[x],\notag\\
+ \gamma^*\mu_p(h)
+ &=\tfrac12\langle\beta,h\rangle
+   (2\mu_{\mathfrak s}-\nu)+\pi_X^*\operatorname{PD}[h].
+\end{align}
+These are the formulas of
+\cite[Lemma~4.10]{FeehanLenessLevelOne}; the second summand in each line is
+the diagonal correction.
+
+The background Euler class is~\eqref{eq:background-euler}.  For the
+instanton factor, the square of the framing line loses the central twist:
+\[
+ \bigl(\SU(2)\times_{\{\pm1\}}\CC\bigr)^{\otimes2}
+ \cong\SO(3)\times\CC.
+\]
+Accounting for the central and residual circle weights gives
+\begin{equation}\label{eq:instanton-euler-square}
+ c_1\bigl((\Upsilon^i/S^1)^{\otimes2}\bigr)
+ =\pi_X^*c_1(\mathfrak t')-\nu.
+\end{equation}
+Thus, in rational cohomology,
+\begin{equation}\label{eq:instanton-euler}
+ e(\Upsilon^i/S^1)
+ =\tfrac12\bigl(\pi_X^*c_1(\mathfrak t')-\nu\bigr).
+\end{equation}
+The factor $1/2$ is the square-root factor of the framed associated line; it
+has no relation to the derivative-normalization homotopy discussed before
+\eqref{eq:determinant-splitting}.
+
+\subsection{Relative Euler reduction}
+On the positive-scale virtual link, the section determines a relative Euler
+class.  The geometric-representative cocycle is supported away from the
+lower-level zero set.  The homotopy
+\begin{equation}\label{eq:euler-homotopy}
+\chi_s\oplus\chi_i\longmapsto\chi_s\oplus t\chi_i,
+\qquad 0\leq t\leq1,
+\end{equation}
+does not vanish off $\chi_s^{-1}(0)$.  At $t=0$ the class factors as
+\begin{equation}\label{eq:euler-factorization}
+ e(\Upsilon/S^1,\chi_s)
+ =e(\overline\Upsilon^s/S^1,\chi_s)
+  \smile e(\Upsilon^i/S^1).
+\end{equation}
+This is precisely where one needs continuity of the background section and
+the cone topology, but not transversality of the lowest stratum.  The signed
+actual-link count is therefore
+\begin{equation}\label{eq:relative-pairing}
+ \left\langle
+ \overline\mu_p(z)\smile\overline\mu_c^{\eta}
+ \smile\overline e_s\smile\overline e_i,
+ [\overline L^{\mathrm{vir}}]\right\rangle.
+\end{equation}
+
+Write
+\[
+ H=\pi_X^*\operatorname{PD}[h],\qquad
+ X_0=\pi_X^*\operatorname{PD}[x],\qquad
+ c=\pi_X^*c_1(\mathfrak t').
+\]
+Substitution of~\eqref{eq:circle-pullback},
+\eqref{eq:mu-pullbacks},~\eqref{eq:background-euler}, and
+\eqref{eq:instanton-euler} into~\eqref{eq:relative-pairing} gives
+\begin{align}\label{eq:pairing-integrand}
+ \mathcal P=\Bigl\langle&
+ \left[\tfrac12B_h(2\mu_{\mathfrak s}-\nu)+H\right]^n\notag\\
+ &\smile\left[-\tfrac14(2\mu_{\mathfrak s}-\nu)^2+X_0\right]^m
+ (-\nu)^{\eta+r_\Xi}\notag\\
+ &\smile\tfrac12(c-\nu),[\overline L^{\mathrm{vir}}]
+ \Bigr\rangle.
+\end{align}
+The dimension relation is
+\begin{equation}\label{eq:pairing-dimension}
+ \delta+\eta=d+r_N-r_\Xi+2.
+\end{equation}
+
+The equivariant Thom division of
+\cite[Propositions~5.20--5.21]{FeehanLenessLevelOne} expresses this pairing
+over
+\[
+ M_{\mathfrak s}\times
+ \partial\overline{\Gl}_{\mathfrak t'}(\delta)/S^1
+\]
+as a finite sum involving the Segre classes of $N$.  The normal-bundle
+calculation~\cite[Lemma~2.4]{FeehanLenessLevelOne} gives
+\begin{equation}\label{eq:normal-segre}
+ s_j(N)=S_j\mu_{\mathfrak s}^{j},
+\end{equation}
+where $S_j$ is the binomial coefficient in
+\cite[Equation~(6.14)]{FeehanLenessLevelOne}.  On this product base,
+\cite[Lemma~5.23]{FeehanLenessLevelOne} gives
+\begin{equation}\label{eq:circle-splitting}
+ \nu=\nu_{\mathfrak t}+2\mu_{\mathfrak s}.
+\end{equation}
+Every nonzero term then has base factor
+\begin{equation}\label{eq:sw-base-pairing}
+ \left\langle\mu_{\mathfrak s}^{d},[M_{\mathfrak s}]\right\rangle
+ =\SW_X(\mathfrak s).
+\end{equation}
+In particular, positive-dimensional base classes have not been discarded;
+the Segre calculation combines all of them into the single pairing in
+\eqref{eq:sw-base-pairing}.
+
+Put
+\begin{equation}\label{eq:jacobi-parameters}
+ A_J=\eta-d+1,\qquad
+ B_J=\tfrac12(2\delta-d_a(\mathfrak t')-d_{\mathfrak s})
+      -\tfrac14(\chi+\sigma),
+\end{equation}
+and set
+\begin{equation}\label{eq:jacobi-values}
+ J_d=P_d^{A_J,B_J}(0),\qquad
+ J_d'=P_d^{A_J-1,B_J+1}(0),
+\end{equation}
+using~\eqref{eq:intro-jacobi-normalization}.  The finite Segre sum is
+$2^dJ_d$, except in the term containing $Hc$, where it is $2^dJ_d'$;
+this is the Jacobi identity of
+\cite[Lemma~6.2]{FeehanLenessLevelOne}.
+
+\begin{lemma}[published charge-one link integrals]
+\label{lem:instanton-link-integrals}
+Let $\nu_t$ denote the effective circle class on the charge-one instanton
+link.  With the orientation in~\eqref{eq:link-orientation},
+\begin{align}\label{eq:instanton-link-integrals}
+ \langle\nu_tX_0,[\partial\overline\Gl/S^1]\rangle&=2,
+ &\langle\nu_t^2H,[\partial\overline\Gl/S^1]\rangle&=-4B_h,
+ \notag\\
+ \langle\nu_tHc,[\partial\overline\Gl/S^1]\rangle
+ &=2\langle c_1(\mathfrak t'),h\rangle,
+ &\langle\nu_t^3,[\partial\overline\Gl/S^1]\rangle
+ &=6\beta^2+2c_1^2(X),\notag\\
+ \langle\nu_t^2c,[\partial\overline\Gl/S^1]\rangle
+ &=-4\beta\cdot c_1(\mathfrak t').&&
+\end{align}
+\end{lemma}
+
+\begin{proof}
+These numerical evaluations are cohomological inputs from
+\cite[Lemma~5.24 and Equation~(5.77)]{FeehanLenessLevelOne}; they are not
+reproved here.  We recall enough of that calculation to fix their
+normalization.  On a finite cover of $X$, the framed charge-one gluing bundle
+is covered with degree $-2$ by the boundary of a rank-two Hermitian bundle
+$F$.  The induced map of projectivizations has degree $-1$, while $\nu_t$
+pulls back to twice the hyperplane class.  The projective-bundle pushforward
+\[
+ \pi_*(h^{1+j})=s_j(F)
+\]
+therefore gives
+$\langle\nu_tX_0\rangle=2$ and, from the published Segre classes of $F$,
+the second and fourth values in~\eqref{eq:instanton-link-integrals}.  Taking
+$h=\operatorname{PD}(c)$ in the second value gives the fifth.  Finally,
+Poincare duality in Equation~(5.77) gives
+\[
+ \langle\nu_tHc\rangle
+ =\langle\nu_tX_0\rangle\langle c_1(\mathfrak t'),h\rangle,
+\]
+which is the third value.  Since $c_1(L)=-\beta$, these conventions agree
+with~\eqref{eq:circle-pullback} and~\eqref{eq:link-orientation}.
+\end{proof}
+
+Combining the base reduction with
+Lemma~\ref{lem:instanton-link-integrals} gives the following polynomial form,
+which does not divide by a Jacobi value and therefore remains defined when
+$J_d=0$.
+
+\begin{theorem}[family level-one pairing]\label{thm:pairing}
+Under the assumptions preceding Theorem~\ref{thm:intro-pairing},
+\begin{align*}
+&\#\bigl(\overline V(h^{\delta-2m}x^m)\cap\overline W^\eta
+\cap\overline L_{\mathfrak t',\mathfrak s}\bigr)\\
+&\quad=(-1)^{m+1+d}2^{d-\delta}
+\left\langle\mu_{\mathfrak s}^{d},[M_{\mathfrak s}]\right\rangle\\
+&\qquad\quad\times
+\left[J_d\left(a_0B_h^n+a_1B_h^{n-2}Q_X(h,h)\right)
++2nJ_d'B_h^{n-1}\langle c_1(\mathfrak t'),h\rangle\right],
+\end{align*}
+where terms with negative powers of $B_h$ are omitted and
+\begin{align*}
+ a_0&=3\beta^2+c_1^2(X)+2\beta\cdot c_1(\mathfrak t')
+ +4n-4m,\qquad
+ a_1=4\binom n2.
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:pairing-integrand}, equivariant Thom division,
+\eqref{eq:normal-segre}, and~\eqref{eq:circle-splitting} reduce the base
+degree to~\eqref{eq:sw-base-pairing}.  The Jacobi identity gives $2^dJ_d$
+and $2^dJ_d'$ in the two indicated groups of terms.  The five charge-one
+evaluations in Lemma~\ref{lem:instanton-link-integrals} give respectively
+the $-4m$, $4n$, $2\beta\cdot c_1(\mathfrak t')$, $c_1^2(X)$, and
+$Q_X(h,h)$ contributions.  Collecting them gives $a_0$ and $a_1$.
+The sign and power of two are
+$(-1)^{m+1+d}2^{d-\delta}$, as in
+\cite[Equations~(6.15)--(6.18)]{FeehanLenessLevelOne}; Proposition
+\ref{prop:chart-orientation} introduces no further sign.  This proves the
+formula.
+\end{proof}
+
+\begin{corollary}[zero-dimensional specialization]
+\label{cor:zero-dimensional-pairing}
+If $d_{\mathfrak s}=0$, then $J_0=J_0'=1$ and
+\begin{align*}
+&\#\bigl(\overline V(h^{\delta-2m}x^m)\cap\overline W^\eta
+\cap\overline L_{\mathfrak t',\mathfrak s}\bigr)\\
+&\quad=(-1)^{m+1}2^{-\delta}\SW_X(\mathfrak s)
+\left(a_0B_h^n+b_0B_h^{n-1}\langle c_1(\mathfrak t'),h\rangle
++a_1B_h^{n-2}Q_X(h,h)\right),
+\end{align*}
+where $b_0=2n$ and $a_0,a_1$ are as in Theorem~\ref{thm:pairing}.
+\end{corollary}
+
+\subsection{Blow-up and the degree consequence}
+The only blow-up specialization needed below has no hidden change in
+$a_0$.  On $\widetilde X=X\#\overline{\mathbb{CP}}^{\,2}$, let $e$ be the
+exceptional class and
+\[
+ c_1(\mathfrak s^\pm)=c_1(\mathfrak s)\pm\operatorname{PD}[e],\qquad
+ \SW_{\widetilde X}(\mathfrak s^\pm)=\SW_X(\mathfrak s).
+\]
+For $\widetilde{\mathfrak t}'$ one has
+$c_1(\widetilde{\mathfrak t}')=c_1(\mathfrak t')$ and
+$p_1(\widetilde{\mathfrak t}')=p_1(\mathfrak t')-1$.  The exceptional
+evaluations are $\mp1$, while~\eqref{eq:lift-orientation} gives exponents
+$o_{\widetilde{\mathfrak t}'}(w+\operatorname{PD}[e],\mathfrak s^+)
+=o_{\mathfrak t'}(w,\mathfrak s)-1$ and
+$o_{\widetilde{\mathfrak t}'}(w+\operatorname{PD}[e],\mathfrak s^-)
+=o_{\mathfrak t'}(w,\mathfrak s)$.  The two exceptional contributions
+therefore add after orientation weighting.  Their factor two converts
+$2^{-(\delta+1)}$ to $2^{-\delta}$.
+
+Algebraically,
+\begin{align*}
+&3(\beta^2-1)+(c_1^2(X)-1)+2\beta\cdot c_1(\mathfrak t')
+ +4(\delta+1-2m)-4m\\
+&\qquad=3\beta^2+c_1^2(X)+2\beta\cdot c_1(\mathfrak t')
+ +4(\delta-2m)-4m.
+\end{align*}
+Together with $Q_{\widetilde X}(e,h)=0$ and $e^2=-1$, this is the $k=0$
+case of~\cite[Proposition~6.5]{FeehanLenessLevelOne}.
+
+\begin{corollary}[degree consequence]\label{cor:degree}
+Under the additional abundance, effectiveness, Seiberg--Witten-simple-type,
+and characteristic-data assumptions in Theorem~\ref{thm:intro-degree},
+\begin{align}\label{eq:series-congruence}
+ \cD_X^w(h)&\equiv0\equiv\SW_X^w(h)
+ &&\pmod{h^{c(X)-2}},\notag\\
+ \cD_X^w(h)&\equiv2^{2-c(X)}e^{Q_X(h,h)/2}\SW_X^w(h)
+ &&\pmod{h^{c(X)+2}}.
+\end{align}
+In the last two relevant degrees,
+\begin{align}\label{eq:terminal-degrees}
+ D_X^w(h^{c(X)-2}x)
+ &=2^{3-c(X)}\sum_{\mathfrak s}
+ (-1)^{(w^2+w\cdot c_1(\mathfrak s))/2}\SW_X(\mathfrak s)
+ \langle c_1(\mathfrak s),h\rangle^{c(X)-2},\notag\\
+ D_X^w(h^{c(X)})
+ &=2^{2-c(X)}\sum_{\mathfrak s}
+ (-1)^{(w^2+w\cdot c_1(\mathfrak s))/2}\SW_X(\mathfrak s)\notag\\
+ &\quad\times\left(\langle c_1(\mathfrak s),h\rangle^{c(X)}
+ +\binom{c(X)}2\langle c_1(\mathfrak s),h\rangle^{c(X)-2}
+ Q_X(h,h)\right).
+\end{align}
+\end{corollary}
+
+\begin{proof}
+For abundant, effective manifolds of Seiberg--Witten simple type, choose the
+class $\Lambda$ and lift $w$ as in
+\cite[Theorem~1.1]{FeehanLenessLevelOne}.  Then
+$r(\Lambda)=c(X)-4$ and $i(\Lambda)=c(X)+4$.  The published top-level
+pairing~\cite{FeehanLenessII}, Theorem~\ref{thm:pairing}, the Donaldson and
+Seiberg--Witten blow-up formulas, and the superconformal-simple-type
+vanishing used in~\cite[Section~6]{FeehanLenessLevelOne} give
+\eqref{eq:series-congruence}.  Extracting the coefficients of the two final
+degrees gives~\eqref{eq:terminal-degrees}.
+\end{proof}
+
+As a normalization test, for a K3 surface one has $c(X)=2$ and only the zero
+basic class, with Seiberg--Witten invariant one in the standard homology
+orientation.  Formula~\eqref{eq:terminal-degrees} becomes
+\begin{equation}\label{eq:k3-test}
+ D_{K3}(x)=2,\qquad D_{K3}(h^2)=Q_{K3}(h,h),
+\end{equation}
+the constant and quadratic coefficients of $e^{Q_{K3}(h,h)/2}$ in the
+convention with insertion $1+x/2$.  Thus the global test detects neither an
+additional sign nor an additional factor two.
+
+\section{Scope and further problems}\label{sec:discussion}
+
+Theorem~\ref{thm:neighborhood} supplies the analytic and orientation input
+that was deferred in the one-bubble calculation of
+\cite{FeehanLenessLevelOne}: the corrected chart is continuous and embedded,
+its zero set is an actual Uhlenbeck neighborhood, and its determinant and
+boundary orientations agree with those used in the pairing.  The proof also
+shows why the compactified instanton obstruction must be treated as a cone
+pseudo-bundle and why transversality stops at the middle stratum.
+
+The compact background is permitted to have arbitrary dimension, but its
+regularity and nonzero-spinor hypotheses are essential here.  The proof does
+not treat a zero-spinor pair quotient or a nonregular base.  It avoids the
+varying-rank cutoff problem by global finite-dimensional stabilization;
+spectral bundles are used only on positive-scale charts where their rank is
+locally constant.
+
+There is exactly one charge-one bubble.  Consequently there are no
+collision diagonals, no competing partitions of a symmetric product, and no
+compatibility maps between gluing charts.  The topological overlap machinery
+of~\cite{FeehanLenessCobordism} addresses those phenomena, but its analytic
+neighborhood identification remains a separate issue.  The present theorem
+does not imply the corresponding result at level two or higher.
+
+Corollary~\ref{cor:degree} has an equally precise logical range.  It removes
+the deferred neighborhood theorem from the level-one contributions.  It
+continues to use the published top-level pairing, the
+Donaldson and Seiberg--Witten blow-up formulas, the
+superconformal-simple-type vanishing input, and the assumptions of abundance,
+effectiveness, and Seiberg--Witten simple type.  In particular, it is neither
+a proof of the full Witten conjecture nor a removal of the effectiveness
+hypothesis.
+
+\begin{thebibliography}{FL18}
+
+\bibitem[Don87]{DonaldsonOrientation} S.~K. Donaldson,
+\emph{The orientation of Yang--Mills moduli spaces and $4$-manifold
+topology}, J.\ Differential Geom.\ \textbf{26} (1987), no.~3, 397--428.
+
+\bibitem[DK90]{DK90} S.~K. Donaldson and P.~B. Kronheimer,
+\emph{The geometry of four-manifolds}, Oxford Mathematical Monographs,
+Clarendon Press, Oxford, 1990.
+
+\bibitem[Fee01]{FeehanCritical} P.~M.~N. Feehan,
+\emph{Critical-exponent Sobolev norms and the slice theorem for the quotient
+space of connections}, Pacific J.\ Math.\ \textbf{200} (2001), no.~1,
+71--118; arXiv:dg-ga/9711004.
+
+\bibitem[FL98]{FeehanLenessI} P.~M.~N. Feehan and T.~G. Leness,
+\emph{$PU(2)$ monopoles. I: Regularity, Uhlenbeck compactness, and
+transversality}, J.\ Differential Geom.\ \textbf{49} (1998), no.~2,
+265--410; arXiv:dg-ga/9710032.
+
+\bibitem[FL01a]{FeehanLenessTopLevel} P.~M.~N. Feehan and T.~G. Leness,
+\emph{$PU(2)$ monopoles and links of top-level Seiberg--Witten moduli
+spaces}, J.\ Reine Angew.\ Math.\ \textbf{538} (2001), 57--133;
+arXiv:math/0007190.
+
+\bibitem[FL01b]{FeehanLenessII} P.~M.~N. Feehan and T.~G. Leness,
+\emph{$PU(2)$ monopoles. II: Top-level Seiberg--Witten moduli spaces and
+Witten's conjecture in low degrees}, J.\ Reine Angew.\ Math.\ \textbf{538}
+(2001), 135--212; arXiv:dg-ga/9712005.
+
+\bibitem[FL99]{FeehanLenessIII} P.~M.~N. Feehan and T.~G. Leness,
+\emph{$PU(2)$ monopoles. III: Existence of gluing and obstruction maps},
+preprint, 1999; arXiv:math/9907107.
+
+\bibitem[FL02]{FeehanLenessLevelOne} P.~M.~N. Feehan and T.~G. Leness,
+\emph{$SO(3)$ monopoles, level-one Seiberg--Witten moduli spaces, and
+Witten's conjecture in low degrees}, Topology Appl.\ \textbf{124} (2002),
+no.~2, 221--326; arXiv:math/0106238.
+
+\bibitem[FL18]{FeehanLenessCobordism} P.~M.~N. Feehan and T.~G. Leness,
+\emph{An $SO(3)$-monopole cobordism formula relating Donaldson and
+Seiberg--Witten invariants}, Mem.\ Amer.\ Math.\ Soc.\ \textbf{256} (2018),
+no.~1226; arXiv:math/0203047.
+
+\bibitem[Uhl82]{Uhlenbeck82} K.~K. Uhlenbeck,
+\emph{Connections with $L^p$ bounds on curvature}, Comm.\ Math.\ Phys.\
+\textbf{83} (1982), no.~1, 31--42.
+
+\end{thebibliography}
+
+\bigskip
+\noindent{\sc Bernd Johannes Wuebben, New York, NY,}
+\texttt{wuebben@gmail.com}
+
+\end{document}

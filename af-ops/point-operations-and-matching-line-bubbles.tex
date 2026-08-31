@@ -1,0 +1,3115 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{flafter}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},
+  pdftitle={Point operations and matching-line bubbles in the Atiyah-Floer comparison},
+  pdfsubject={Corrected point-operation compatibility in the admissible SO(3) Atiyah-Floer comparison},
+  pdfkeywords={Atiyah-Floer conjecture, instanton Floer homology,
+  Lagrangian Floer homology, operation algebra, mixed equation,
+  matching-line bubbling, stable bundles, Hermitian Yang-Mills equation}}
+
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{convention}[theorem]{Convention}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\theoremstyle{plain}
+\newtheorem{letterresult}{Theorem}
+\renewcommand{\theletterresult}{\Alph{letterresult}}
+\newtheorem{corletter}[letterresult]{Corollary}
+\renewcommand{\thecorletter}{\Alph{letterresult}}
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\frakM}{\mathfrak{M}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\Ev}{\operatorname{Ev}}
+\newcommand{\ind}{\operatorname{ind}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\Glue}{\operatorname{Glue}}
+\newcommand{\CS}{\operatorname{CS}}
+\newcommand{\id}{\operatorname{id}}
+
+\title[Point operations in the Atiyah--Floer comparison]{
+Point operations and matching-line bubbles\\
+in the Atiyah--Floer comparison}
+\author{Bernd Johannes Wuebben}
+
+\date{31 August 2026}
+\subjclass[2020]{57R58 (primary); 53D40, 58J32, 14D20 (secondary)}
+\keywords{Atiyah--Floer conjecture, instanton Floer homology,
+Lagrangian Floer homology, operation algebra, mixed equation,
+matching-line bubbling, stable bundles, Hermitian Yang--Mills equation}
+
+\begin{document}
+
+\begin{abstract}
+Daemi, Fukaya, and Lipyanskiy proved the admissible $SO(3)$
+Atiyah--Floer comparison and compatibility of the comparison map with the
+operations associated with $H_1$ and $H_2$ of the splitting surface.  The
+point class is the remaining generator; its comparison homotopy first
+encounters energy concentration on the matching line, the codimension-one
+seam between the gauge-theoretic and symplectic regions, in Fredholm index
+four.
+
+We compactify the one-dimensional point-cut mixed moduli space and classify
+its new boundary.  Chern--Simons excision gives positive half-integral local
+charge, which at index four forces a single charge-one matching bubble.
+Relative stable reduction identifies the primitive limits, a Dirichlet
+Hermitian--Yang--Mills problem reconstructs them, and a scale-uniform inverse
+gives converse gluing.  Determinant-line excision reduces the oriented local
+count to Mu\~noz's extension spaces.
+
+The resulting boundary identity shows that uncorrected point-operation
+compatibility fails in genera one and two.  After dividing the positive
+Pontryagin point class by four, the symplectic point operation must be
+shifted by $2$, $1$, or $0$ when the marked point lies on a component of
+genus one, two, or at least three; in the integral $p_1$ normalization the
+corresponding local counts are $8$, $4$, and $0$.  Together with the surface
+and loop results of Daemi, Fukaya, and Lipyanskiy, this proves the full
+corrected observable-algebra action in the admissible embedded-Lagrangian
+setting.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+\subsection{The point operation}
+Let $(Y_\#,E_\#)$ be an admissible $SO(3)$ pair split along a closed
+oriented surface $\Sigma$.  Atiyah's gauge--symplectic comparison
+principle predicts an identification of the two resulting Floer theories
+\cite{Atiyah88}.  In the embedded-Lagrangian setting of
+Daemi--Fukaya--Lipyanskiy, henceforth DFL, the splitting produces an
+instanton Floer complex $C_G$ with differential $d_G$, a Lagrangian Floer
+complex $C_S$ with differential $d_S$, and a comparison chain map
+\[
+                     N:C_G\longrightarrow C_S.
+\]
+Their main theorem identifies the induced homologies
+\cite[Theorem~4]{DaeFukLip21a}.  The comparison is defined by counting
+solutions of a mixed equation: an anti-self-dual connection on one side
+of a codimension-one seam and a pseudoholomorphic map on the other, with
+their boundary values identified in the symplectic moduli space of flat
+connections \cite{AtiyahBott83}.
+The regularity, Fredholm, compactness, and removal theorems for this
+equation are proved in \cite{DaeFukLip21b}.
+
+The universal bundle over the flat moduli space and the splitting surface
+gives operations indexed by $H_*(\Sigma)$.  DFL prove that $N$
+intertwines the operations associated with $H_2(\Sigma)$ and
+$H_1(\Sigma)$ \cite[Section~7.2]{DaeFukLip21a}.  They also explain why
+the same argument stops at $H_0(\Sigma)$: a point insertion requires
+four-dimensional mixed moduli spaces, and these can bubble on the
+matching line.  A neighborhood of that boundary was not part of their
+compactification.
+
+The purpose of this paper is to isolate the obstruction and construct the
+compactification needed to describe and count that neighborhood.  The
+cylinder calculation shows that uncorrected compatibility is impossible in
+low genus.  The general formula attributes the discrepancy to a
+matching-line scalar depending only on the genus of the component carrying
+the point.
+
+The local charge, primitive stable reduction, Dirichlet reconstruction,
+uniform inverse, no-neck theorem, primitive gluing collar, and stratified
+point incidence are established below.  Determinant excision identifies
+the local algebraic multiplicities and cylinder calibration fixes their
+coherent signs.  The resulting oriented boundary formula proves the point
+comparison and its full-operation consequence.
+
+\begin{convention}\label{conv:global}
+All moduli spaces use DFL's orientation, grading, and end conventions.
+The symbol $p_1$ denotes the positive integral degeneracy cycle determined
+by their product orientation.  Unless an integral statement is explicitly
+made, coefficients are rational.  A \emph{matching atom} is an atom of the
+mixed energy measure at a point of the matching line.  It is
+\emph{primitive} when its relative clutching number is one, equivalently
+when its normalized energy is $\frac12$.  Normalized energy means DFL's
+topological energy, recalled in \eqref{eq:top-energy}.
+\end{convention}
+
+\subsection{Results}
+Write
+\[
+                       \Sigma=\bigsqcup_j\Sigma_j,
+       \qquad g_j=\operatorname{genus}(\Sigma_j).
+\]
+We retain all admissibility, irreducibility, and embeddedness hypotheses
+of DFL.  In particular, the standard secondary perturbations are supported
+away from the matching line.  For $q\in\Sigma_j$, let $b_q^G$ and $b_q^S$
+be the gauge and symplectic operations represented by the positive
+integral degeneracy cycle $p_1/[q]$.  Over $\QQ$ put
+\[
+                      m_q^G=\frac14b_q^G,
+              \qquad m_q^S=\frac14b_q^S.
+\]
+This is DFL's positive quarter-Pontryagin convention.  The sign is fixed
+by their product orientation on the linear-dependence cycle, rather than
+by the alternative convention $\mu(q)=-\frac14p_1/[q]$ sometimes used in
+instanton theory \cite{DonaldsonKronheimer90}.
+For the cylinder splitting of $\Sigma_g\times S^1$, abbreviate the
+corresponding point operations by $b_G$ and $b_S$.
+
+\begin{letterresult}[low-genus cylinder obstruction;
+  $=$ Proposition~\ref{prop:cylinder-identities}]
+\label{thm:intro-cylinder}
+For the cylinder splitting of $\Sigma_g\times S^1$, the positive integral
+point operations satisfy
+\[
+ Nb_G-b_SN=
+ \begin{cases}
+ 8N,&g=1,\\
+ 4N,&g=2.
+ \end{cases}
+\]
+Consequently, the uncorrected point comparison cannot hold in general in
+genus one or two.
+\end{letterresult}
+
+Theorem~A is proved independently of the matching-line compactification:
+it follows from DFL's surface-operation comparison and Mu\~noz's cylinder
+relations.  Proposition~\ref{prop:cylinder-identities} gives the proof.
+
+\begin{letterresult}[point-class comparison; $=$ Theorem~\ref{thm:main}]
+\label{thm:intro-main}
+There are compatible secondary perturbations and a point-cut chain
+homotopy $K_q:C_G\to C_S$ for which
+\begin{equation}\label{eq:intro-main}
+ N m_q^G-m_q^S N
+ =d_SK_q+K_qd_G+\kappa_{g_j}N,
+ \qquad
+ \kappa_g=
+ \begin{cases}
+ 2,&g=1,\\
+ 1,&g=2,\\
+ 0,&g\geq3.
+ \end{cases}
+\end{equation}
+Equivalently, $N$ intertwines the gauge point operation with the corrected
+symplectic operation
+\[
+              \widehat m_q^S=m_q^S+\kappa_{g_j}\id
+\]
+up to chain homotopy.
+\end{letterresult}
+
+Theorem~B is restated as Theorem~\ref{thm:main}; its integral
+normalization is Theorem~\ref{thm:integral}.
+
+The integral version of \eqref{eq:intro-main} has coefficients
+$8$, $4$, and $0$; see Theorem~\ref{thm:integral}.  We state the quarter-Pontryagin
+formula over $\QQ$ because an integral refinement requires a separate
+divisibility choice for the universal bundle.
+
+Theorem~B completes the list of generator comparisons.  Give
+$H_k(\Sigma;\ZZ)$ degree $4-k$, and let $\mathbb A_{p_1}(\Sigma;R)$ denote
+the free graded-commutative algebra on
+$H_*(\Sigma;\ZZ)\otimes_{\ZZ}R$.
+
+\begin{corletter}[full corrected operation algebra;
+  $=$ Corollary~\ref{thm:full-operation-algebra}]
+\label{thm:intro-operation-algebra}
+For every commutative ring $R$, scalar extension of the DFL comparison is
+an isomorphism of $\mathbb A_{p_1}(\Sigma;R)$-modules after the symplectic
+point generator is corrected by $8$, $4$, or $0$ in genera one, two, or at
+least three.  If $4$ is invertible in $R$, the quarter-Pontryagin correction
+is respectively $2$, $1$, or $0$.  The intertwining identity for every
+chosen word is induced by an explicit signed chain homotopy.
+\end{corletter}
+
+Corollary~C is the formal generator-by-generator consequence proved in
+Corollary~\ref{thm:full-operation-algebra}.  Its only new input beyond DFL
+is Theorem~B.
+
+The scalar term comes from the following compactification theorem.  Let
+$M_g$ denote the moduli space of flat connections on the
+nontrivial $SO(3)$ bundle over a connected genus-$g$ surface.  Under the
+Narasimhan--Seshadri correspondence it is the moduli space of stable
+rank-two bundles with fixed odd determinant \cite{NarSes65}.  Mu\~noz's
+extension space and compact primitive bundle space are defined as follows.
+Fix the determinant line $\Lambda$, and let $\cE_g$ be the rank-$g$ vector
+bundle on $J(\Sigma_g)$ with fiber
+$H^1(\Sigma_g,L^2\otimes\Lambda^{-1})$ over $L$.  Then
+\begin{equation}\label{eq:intro-munoz-spaces}
+ N_g=\PP(\cE_g^\vee)\longrightarrow J(\Sigma_g),
+ \qquad
+ \frakM_g=\PP((\cE_g\oplus\cE_g)^\vee)
+       \longrightarrow J(\Sigma_g),
+\end{equation}
+and there is a natural map $i_g:N_g\to M_g$
+\cite{Munoz99b}.  A point of a fiber of $\frakM_g$ is a pair of extension
+vectors $[v_0:v_1]$.  Independent vectors give a minimal rational curve;
+dependent vectors give a degree-one quasimap with one basepoint.
+
+For the next statement, a \emph{primitive matching bubble} means a rescaled
+limit with relative clutching charge one.  We call it \emph{full rank} when
+$v_0$ and $v_1$ are independent and \emph{rank drop} when they are dependent.
+An algebraic limit is \emph{admissible along the seam} when every surface
+restriction over the compactified matching line is stable and any quasimap
+basepoint lies on the gauge-theoretic hemisphere.
+
+\begin{letterresult}[primitive compactification and gluing]
+\label{thm:intro-compactification}
+Let a sequence in an index-four mixed moduli space develop a
+matching-line bubble while meeting the point incidence.  Then its residual
+mixed solution has index zero and the following hold.
+\begin{enumerate}
+\item There is one matching concentration point, its relative clutching
+charge is one, its normalized energy is $\frac12$, and every neck and
+smaller scale carries zero energy.
+\item After passage to a subsequence, finite-scale holomorphic doubling and
+relative stable reduction produce a primitive algebraic limit in
+$\frakM_g$.  It is either a
+full-rank minimal line or a rank-drop bundle with one positive Hecke
+modification.  Both attach to the residual solution through
+$i_g(N_g)\subset M_g$.
+\item Every algebraic limit admissible along the seam is realized by an exact
+local mixed solution.  The primitive stratum has a gluing collar, and the
+gluing map is a local diffeomorphism onto a neighborhood of the bubbled face.
+\item After the integral $p_1$ point cut, the oriented local contribution
+per residual solution is
+\[
+                     c_g=
+       \begin{cases}
+       8,&g=1,\\
+       4,&g=2,\\
+       0,&g\geq3.
+       \end{cases}
+\]
+\end{enumerate}
+\end{letterresult}
+
+The atomwise charge statement in Theorem~D and
+the uniqueness of the physical matching center follow from
+Theorem~\ref{thm:local-charge} and
+Corollary~\ref{cor:primitive-atom}.  Proposition~\ref{prop:primitive-no-neck}
+excludes analytic neck energy, and Theorems~\ref{thm:reconstruction} and
+\ref{thm:primitive-gluing} reconstruct the primitive bubble and give its
+collar.  Proposition~\ref{prop:point-manifolds} supplies the transverse
+compact point cut.  Proposition~\ref{prop:determinant-excision} and
+Section~\ref{sec:coefficients} prove part~(4).
+
+The two types in part~(2) are both necessary in the compactification.
+Convergence away from a
+physical concentration point fixes the rescaled evaluation at infinity;
+it does not force a rescaled map to be constant at finite points.  The
+generic genus-two bubble is therefore full rank, while rank drop is a
+compactification stratum.  In genus one every pair of extension vectors is
+dependent and only the rank-drop, purely gauge-theoretic branch remains.
+
+\subsection{Why the correction is forced}
+The low-genus constants can be seen before doing any matching-line
+analysis.  Take the cylinder splitting of $\Sigma_g\times S^1$.  On the
+gauge side the point operation is multiplication by Mu\~noz's degree-four
+Floer generator $b_G$; on the symplectic side it is quantum multiplication
+by the geometric generator $b_S$.  For $g=2$ the ring relations are
+\[
+                 a_G^2+b_G-8=0,
+             \qquad a_S^2+b_S-4=0,
+\]
+where $a$ is the degree-two surface generator
+\cite{Munoz99a,Munoz99b}.  DFL already prove $Na_G=a_SN$, and hence
+\[
+                      Nb_G-b_SN=4N.
+\]
+For $g=1$, the odd-determinant character variety is a point, whereas the
+instanton Floer relation is $b_G=8\id$; therefore
+\[
+                      Nb_G-b_SN=8N.
+\]
+These identities use only the established surface compatibility and do
+not assume point compatibility.  They prove that an uncorrected theorem
+is impossible and later calibrate the local determinant orientation.
+
+\subsection{Method}
+The point-cut homotopy is zero-dimensional in mixed index three.  Its
+boundary relation is one-dimensional in mixed index four.  DFL's
+energy-index formula and half-integrality imply that any defective
+index-four sequence loses exactly $\frac12$ unit of topological energy and
+has an index-zero residual solution.  This global statement does not by
+itself prevent several nonquantized matching atoms.
+
+The proof has four stages.  First, on a small circle about a matching point,
+the gauge and symplectic halves are spliced to a connection on
+$S^1\times\Sigma_g$.  Comparing the original smooth filling with the
+removable limiting filling identifies their mixed Chern--Simons branch
+difference with $n/2$, where $n$ is the Pontryagin number of a relative
+clutching bundle on $S^2\times\Sigma_g$.  The total defect $1/2$ then forces
+$n=1$ at one point.  A good-circle Chern--Simons argument excludes energy
+on the intervening neck.
+
+The second step avoids the usual adiabatic projection.  After
+base dilation the vertical-curvature term in the ASD equation is
+multiplied by the square of the scale, rather than its inverse.  The usual
+adiabatic projection to $M_g$ therefore does not apply; compare
+\cite{DosSal94,DosSal07}.  Instead, every smooth finite-scale mixed
+solution determines a holomorphic bundle on the full disc times $\Sigma$.
+Relative stable reduction associates to these doubled bundles a classifying
+map and a finite modification cycle.  Relative $p_1$ additivity gives
+\[
+                            n=d+\ell.
+\]
+The primitive identity $n=1$ leaves exactly a minimal line
+$(d,\ell)=(1,0)$ or one rank-drop modification $(d,\ell)=(0,1)$.
+
+The third stage is reconstruction and gluing.  Decomposing $\PP^1$ into
+two hemispheres and prescribing the Narasimhan--Seshadri seam metrics puts
+the gauge hemisphere in the setting of Donaldson's Dirichlet theorem for
+Hermitian Yang--Mills metrics \cite{Donaldson92}.  The Dirichlet solution
+reconstructs every seam-admissible algebraic point.  The reduced Fredholm
+problem is the Dolbeault deformation complex, and an anisotropic
+difference-quotient estimate keeps its right inverse bounded as the gauge
+hemisphere collapses.  Pregluing and contraction then give the primitive
+collar.
+
+The fourth stage treats incidence and orientation.  Stratified
+transversality extends the point cut over the collar.  Determinant-line
+excision separates the residual orientation from a universal local scalar.
+The image of $i_g$ has real codimension $2(g-2)$, the
+genus-two map $i_2$ has degree four, and the genus-one excess line has degree
+eight.  The Dolbeault determinant identifies these numbers with the
+matching-face counts, and the cylinder identities fix both coherent signs
+as positive.
+
+\subsection{Relation to prior work}
+The mixed equation and the admissible comparison theorem are due to DFL
+\cite{DaeFukLip21a,DaeFukLip21b}.  The earlier adiabatic comparison of
+instantons and holomorphic curves is due to Dostoglou--Salamon
+\cite{DosSal94,DosSal07}.  Wehrheim established energy quantization and
+removal for ASD instantons with Lagrangian boundary conditions
+\cite{Wehrheim05a} and the energy identity on $\CC\times\Sigma$
+\cite{Wehrheim05b}.  Owens proved the correspondence between finite-energy
+instantons on a cylinder and stable bundles on $\PP^1\times\Sigma$
+\cite{Owens01}; the stable-family-plus-modification description used here
+is its relative local form.
+
+Mu\~noz computed both the instanton Floer ring of $\Sigma\times S^1$ and
+the quantum cohomology of $M_g$ \cite{Munoz99a,Munoz99b}.  His
+projective-bundle description of primitive product bundles supplies the
+finite-dimensional compactification and the two low-genus numbers.  The
+appearance of a correction term is analogous in spirit to seam-bubble
+corrections in pseudoholomorphic quilts \cite{BottmanWehrheim18}, but the
+local object here couples an ASD half to a holomorphic half and is not
+identified with a figure-eight bubble.
+
+\section{The point cut in the mixed moduli space}
+\label{sec:point-cut}
+
+\subsection{The DFL setting}\label{sec:dfl-setting}
+Let
+\[
+                      Y_\#=Y\cup_\Sigma(-Y')
+\]
+be an admissible splitting in the sense of
+\cite[Sections~2--3]{DaeFukLip21a}.  The restriction $F$ of the
+$SO(3)$ bundle to every component of $\Sigma$ is nontrivial.  We assume,
+as in the embedded form of the DFL theorem, that the perturbed
+three-manifold Lagrangians are embedded and intersect transversely and that
+all flat connections in the construction are irreducible.  Put
+\[
+ M=\cM(\Sigma,F)=\prod_jM_j,
+ \qquad M_j=\cM(\Sigma_j,F_j).
+\]
+The standard complex structure $J_*$ identifies $M_j$ with the
+fixed-odd-determinant stable-bundle moduli space.  Its real dimension is
+$6g_j-6$ for $g_j\geq2$; $M_j$ is a point for $g_j=1$.
+
+For generators $\alpha\in C_G$ and $\beta\in C_S$, let
+\[
+                         \cM_\eta(\alpha,\beta)_r
+\]
+denote the moduli space of perturbed mixed solutions whose linearized
+mixed operator has Fredholm index $r$.  The secondary perturbation $\eta$
+is a finite sum of gauge-theoretic holonomy perturbations and
+domain-dependent almost-complex variations.  It is identically zero on a
+fixed neighborhood of the matching line.  DFL construct such
+perturbations regular through index three
+\cite[Proposition~3.23]{DaeFukLip21a}.
+
+For a mixed pair $(A,u)$, their normalized topological energy is
+\begin{equation}\label{eq:top-energy}
+ \cE(A,u)=\frac1{8\pi^2}\int_X\tr(F_A\wedge F_A)
+          +\frac1{4\pi^2}\int_Su^*\Omega,
+\end{equation}
+with the perturbation terms incorporated on the cylindrical pieces.  The
+index formula has the form
+\begin{equation}\label{eq:index-energy}
+ \ind\cD_{(A,u)}
+ =8\cE(A,u)+\varepsilon(\beta)-\varepsilon(\alpha).
+\end{equation}
+For two mixed pairs with the same ends,
+\begin{equation}\label{eq:half-integrality}
+ 2\bigl(\cE(A,u)-\cE(A',u')\bigr)\in\ZZ;
+\end{equation}
+see \cite[Lemma~3.15]{DaeFukLip21a}.  These two formulas are the
+numerical source of the index-four threshold.
+
+\subsection{The universal degeneracy cycle}\label{sec:degeneracy}
+Let $\widetilde{\mathbb V}$ be DFL's interpolating universal adjoint
+bundle over the mixed configuration space times the glued parameter space
+$\widetilde X$.  Its complexification has rank three.  For two generic
+sections $s_1,s_2$, let
+\[
+ \mathscr D(s_1,s_2)
+ =\{x:\rank_\CC(s_1(x),s_2(x))\leq1\}.
+\]
+At the top rank-one stratum this has complex codimension two and hence
+real codimension four.  With DFL's product orientation it represents the
+positive class $p_1(\widetilde{\mathbb V})$.  The rank-zero stratum has
+larger codimension and is absent from every moduli space considered below.
+
+The interpolation from the gauge insertion to the symplectic insertion is
+an embedding
+\[
+                    \iota:\RR\times\Sigma\longrightarrow\widetilde X.
+\]
+The parameter $t\in\RR$ tends at the two ends to the representatives used
+to define $b_q^G$ and $b_q^S$.  If $P\subset\Sigma$ is an oriented smooth
+$k$-cycle, define
+\[
+ \cL_d^P(\alpha,\beta)
+ \subset \cM_\eta(\alpha,\beta)_r\times\RR_t\times P
+\]
+by the condition
+\[
+ s_1([A,u],\iota(t,x))\wedge
+ s_2([A,u],\iota(t,x))=0.
+\]
+
+\begin{lemma}[dimension of the comparison cut]\label{lem:cut-dimension}
+If the mixed moduli space and the degeneracy cycle are transverse, then
+$\cL_d^P(\alpha,\beta)$ has expected dimension $d$ precisely when
+\begin{equation}\label{eq:cut-dimension}
+                              r=d+3-k.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The mixed moduli, the interpolation parameter, and the cycle $P$ have
+total dimension $r+1+k$.  The top degeneracy stratum has real codimension
+four.  Thus the cut has dimension $r+k-3$, which equals $d$ exactly when
+\eqref{eq:cut-dimension} holds.
+\end{proof}
+
+For a point $q\in\Sigma$, the zero-dimensional comparison homotopy uses
+index three and the one-dimensional relation uses index four:
+\begin{equation}\label{eq:point-cuts}
+ \begin{aligned}
+ \cL_0^q(\alpha,\beta)
+ &\subset\cM_\eta(\alpha,\beta)_3\times\RR_t,\\
+ \cL_1^q(\alpha,\beta)
+ &\subset\cM_\eta(\alpha,\beta)_4\times\RR_t.
+ \end{aligned}
+\end{equation}
+This is the first insertion for which DFL's construction reaches the
+matching-line bubbling threshold.
+
+\subsection{The point-cut homotopy}\label{sec:candidate-homotopy}
+By Proposition~\ref{prop:index-exhaustion} below, mixed moduli spaces of
+index at most three do not bubble.  Once transversality is imposed, the
+oriented zero-manifolds $\cL_0^q(\alpha,\beta)$ therefore define
+\begin{equation}\label{eq:K-integral}
+ K_q^{p_1}(\alpha)
+ =\sum_\beta\#\cL_0^q(\alpha,\beta)\,\beta.
+\end{equation}
+Set $K_q=\frac14K_q^{p_1}$ over $\QQ$.
+
+The ordinary compactification of $\cL_1^q$ has four familiar boundary
+types: gauge and symplectic Floer breaking and escape of $t$ to its gauge
+and symplectic ends.  With DFL's conventions their signed sum is
+\begin{equation}\label{eq:ordinary-boundary}
+ d_SK_q^{p_1}+K_q^{p_1}d_G
+ -Nb_q^G+b_q^SN.
+\end{equation}
+The only possible additional codimension-one face consists of
+matching-line bubbles.  We denote its signed contribution by $B_q$ until
+Section~\ref{sec:coefficients}.  The desired integral boundary formula is
+therefore
+\begin{equation}\label{eq:boundary-with-B}
+ Nb_q^G-b_q^SN
+ =d_SK_q^{p_1}+K_q^{p_1}d_G+B_q.
+\end{equation}
+
+The remainder of the paper constructs this face and establishes
+$B_q=c_{g(q)}N$ with $c_1=8$, $c_2=4$, and $c_g=0$ for $g\geq3$.
+
+\section{Index-four concentration and local charge}
+\label{sec:charge}
+
+\subsection{Exhaustion of the index budget}\label{sec:index-exhaustion}
+Consider a sequence in $\cM_\eta(\alpha,\beta)_r$.  After DFL chain
+compactness, write $(A_0,u_0)$ for the residual mixed solution,
+$A_i^G$ for the nonconstant gauge Floer levels, and $v_j^S$ for the
+nonconstant symplectic Floer levels.  Define the global defect
+\begin{equation}\label{eq:global-defect}
+ \Delta=\cE(A_\nu,u_\nu)-\cE(A_0,u_0)
+        -\sum_i\cE(A_i^G)-\sum_j\cE(v_j^S).
+\end{equation}
+It includes all energy not carried by the displayed residual levels:
+ordinary bubbles, matching atoms, and any neck loss.
+
+\begin{proposition}[index-four exhaustion]\label{prop:index-exhaustion}
+Assume that the residual moduli spaces are regular and have no
+negative-index solutions.
+\begin{enumerate}
+\item A sequence of mixed solutions of index at most three cannot bubble.
+\item If an index-four sequence has $\Delta>0$, then
+\begin{equation}\label{eq:exhaustion}
+ \Delta=\frac12,\qquad
+ \ind\cD_{(A_0,u_0)}=0,
+\end{equation}
+and there are no nonconstant gauge or symplectic Floer levels.
+\item The defect in part~(2) carries all four missing Fredholm-index
+units.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+DFL compactness makes $\Delta$ nonnegative.  If it is positive, the
+strict form of the topological-energy inequality and
+\eqref{eq:half-integrality} give $\Delta\geq\frac12$.  Additivity of the
+mixed index under gluing gives
+\begin{equation}\label{eq:index-ledger}
+ \ind\cD_{(A_0,u_0)}+
+ \sum_i\ind\cD_{A_i^G}+
+ \sum_j\ind\cD_{v_j^S}+8\Delta\leq r.
+\end{equation}
+Every term except the last is nonnegative, and each nonconstant Floer
+level has positive index.  If $r\leq3$, the inequalities
+$8\Delta\geq4$ and \eqref{eq:index-ledger} are incompatible.  If $r=4$,
+equality is forced throughout: $8\Delta=4$ and every residual index other
+than the index-zero mixed component vanishes.  A nonconstant Floer level
+cannot have index zero, proving the claim.
+\end{proof}
+
+An interior four-dimensional instanton has integral charge at least one,
+hence energy at least one and index at least eight.  It cannot occur in
+Proposition~\ref{prop:index-exhaustion}(2), either as the primary bubble or
+as a smaller-scale bubble inside a matching configuration.  A
+nonconstant sphere in $M_g$ has normalized energy at least $\frac12$ and
+Chern index four; a nonconstant disc on either three-manifold Lagrangian
+has Maslov index at least four.  Thus the half-unit budget permits at most
+one ordinary symplectic bubble and no simultaneous breaking.
+
+\subsection{Ordinary bubbles and the point incidence}
+\label{sec:ordinary-bubbles}
+The preceding numerical statement concerns the uncut moduli space.  The
+point incidence removes the remaining ordinary sphere and disc strata from
+the finite-$t$ boundary.
+
+\begin{proposition}\label{prop:ordinary-bubbles}
+For a generic stratified representative of the universal $p_1$ cycle, no
+finite-$t$ boundary point of $\overline{\cL}_1^q(\alpha,\beta)$ contains an
+interior sphere bubble or an outer-boundary disc bubble.
+\end{proposition}
+
+\begin{proof}
+Put $2n=\dim_\RR M_g$.  The moduli space of simple minimal spheres with
+one nodal marked point has virtual dimension
+\[
+                    (2n-6)+2c_1(A_g)+2=2n,
+\]
+because $c_1(A_g)=2$.  Constraining the nodal evaluation to the residual
+map removes $2n$ dimensions.  The remaining two variables are the position
+of the node in the symplectic domain.  Thus the stable-sphere stratum has
+codimension two in the uncut index-four mixed moduli space.
+
+If the point incidence remains on the residual component, it is evaluated
+on the one-dimensional interpolation family of a fixed index-zero
+residual solution.  A generic codimension-four cycle misses that family.
+If the incidence enters the sphere scale, requiring the bubble point to
+equal the point on the fixed interpolation path leaves one real domain
+variable; a marked point on the sphere adds two, and the $p_1$ incidence
+removes four.  The resulting virtual dimension is $1+2-4=-1$.
+
+For an outer-boundary Maslov-four disc, the interpolation path is separated
+from the boundary, so the incidence cannot enter the disc scale.  On the
+residual component it again sees only a one-dimensional family and is
+missed generically.  Stable spheres or discs occurring after
+$t\to+\infty$ are part of the compactified symplectic point operation and
+are already included in $b_q^SN$; they are not finite-$t$ correction
+terms.
+\end{proof}
+
+The matching line is different.  The interpolation path crosses the seam,
+so the ratio between its normal coordinate and the concentration scale is
+a parameter in the rescaled problem.  Together with the center, scale,
+and marked-domain directions, it provides the four real directions cut by
+the incidence.  A matching bubble can therefore be a genuine boundary
+point of the one-dimensional cut.
+
+\subsection{The local Chern--Simons sector}\label{sec:local-CS}
+DFL's half-integrality controls the total defect, not each atom.  The next
+theorem is the local quantization needed to rule out several matching
+centers whose a priori energy measures sum to $\frac12$.
+
+Let $z$ be a matching point at which a sequence $(A_\nu,u_\nu)$
+concentrates.  Choose a small half-disc on either side of the seam, with
+no other concentration point in its closure.  On the negative semicircle
+use the restriction of $A_\nu$.  On the positive semicircle choose the
+flat representatives of $u_\nu$ supplied by the matching condition.  At
+the two seam endpoints insert the standard flat cylinder.  These pieces
+give a spliced connection
+\[
+                       B_{\nu,r}\quad\text{on}\quad
+                       Y_r\cong S^1\times\Sigma_g.
+\]
+The removable limit gives a second connection $B_{0,r}$ on the same
+three-manifold.
+
+DFL's connection-valued filling construction replaces this boundary data
+by a smooth connection on $D^2\times\Sigma_g$.  Its Chern--Weil integral
+contains both the gauge energy and the symplectic area
+\cite[Lemma~4.67]{DaeFukLip21b}; the equality between the curvature term of
+the flat-representative family and twice its symplectic area is
+\cite[Lemma~5.10]{DaeFukLip21a}.
+
+\begin{theorem}[local charge]\label{thm:local-charge}
+Let $\delta_z>0$ be the atom of the normalized mixed energy measure at
+$z$.  The original bundle and the removable limiting bundle determine a
+relative clutching integer $n_z$ such that
+\begin{equation}\label{eq:local-charge}
+                        \delta_z=\frac{n_z}{2},
+                 \qquad n_z\in\ZZ_{>0}.
+\end{equation}
+The sign is normalized so that the DFL positive generator has $n_z=1$ and
+$p_1=-2$.
+\end{theorem}
+
+\begin{proof}
+Take regular radii $r\downarrow0$ whose closed discs contain no other
+concentration point.  For fixed $r$, compactness supplies annular gauges in
+which the boundary connections converge smoothly.  Apply DFL's filling
+construction to the original and removable limiting pairs, and denote the
+resulting bundles with connection over $D^2\times\Sigma_g$ by
+$(Q_{\nu,r},\mathbb A_{\nu,r})$ and $(Q_{0,r},\mathbb A_{0,r})$.  Use the
+limiting framing to identify $Q_{0,r}|_{Y_r}$ with a fixed bundle
+$Q_r^\partial\to Y_r$.  The annular convergence gauge supplies a projective
+bundle isomorphism
+\[
+ \gamma_{\nu,r}:Q_{\nu,r}|_{Y_r}\longrightarrow Q_r^\partial
+\]
+for which $\gamma_{\nu,r*}B_{\nu,r}\to B_{0,r}$ smoothly.  No extension of
+$\gamma_{\nu,r}$ over either filling is chosen or required; a nonextendible
+gauge class will be the clutching class below.  With
+DFL's normalization, the filling identities just cited are
+\[
+ \cE_\nu(r)=\frac{1}{8\pi^2}
+   \int_{D^2\times\Sigma_g}\tr(F_{\mathbb A_{\nu,r}}\wedge
+                                      F_{\mathbb A_{\nu,r}}),
+ \qquad
+ \cE_0(r)=\frac{1}{8\pi^2}
+   \int_{D^2\times\Sigma_g}\tr(F_{\mathbb A_{0,r}}\wedge
+                                      F_{\mathbb A_{0,r}}).
+\]
+
+Interpolate linearly, in a fixed affine chart of connections on
+$Q_r^\partial$, between $\gamma_{\nu,r*}B_{\nu,r}$ and $B_{0,r}$ on
+$[0,1]\times Y_r$.  Smooth convergence makes its normalized Chern--Weil
+integral $\epsilon_{\nu,r}$ tend to zero.  Glue the original filling through
+$\gamma_{\nu,r}$, this interpolation, and the reverse of the limiting
+filling.  The result is an $SO(3)$ bundle $P_{\nu,r}$ over
+$S^2\times\Sigma_g$.  Thus every component of the annular gauge, including
+a possible large-gauge component, is recorded in $P_{\nu,r}$.  Replacing
+$\gamma_{\nu,r}$ by a convergence gauge in the same local slice changes the
+clutching map by a homotopy and leaves $p_1(P_{\nu,r})$ unchanged.
+Chern--Weil excision,
+with the sign convention of \cite[Proposition~5.14]{DaeFukLip21a}, gives
+\begin{equation}\label{eq:relative-p1}
+ \cE_\nu(r)-\cE_0(r)+\epsilon_{\nu,r}
+       =-\frac14p_1(P_{\nu,r}).
+\end{equation}
+
+The manifold $S^2\times\Sigma_g$ is spin.  The Wu formula and
+$p_1(P)\equiv w_2(P)^2\pmod2$ therefore show that $p_1(P_{\nu,r})$ is
+even.  Put
+\[
+                    n_{\nu,r}:=-\frac12p_1(P_{\nu,r})\in\ZZ.
+\]
+For fixed $r$, weak convergence of the energy measures and
+$\epsilon_{\nu,r}\to0$ show that the half-integers $n_{\nu,r}/2$ converge.
+They are consequently eventually constant; write their limit as $n(r)/2$.
+As regular radii tend to zero,
+\[
+ \frac{n(r)}2
+ =\lim_{\nu\to\infty}\bigl(\cE_\nu(r)-\cE_0(r)\bigr)
+ \longrightarrow\delta_z,
+\]
+because the removable limit is smooth.  The convergent half-integers
+$n(r)/2$ are again eventually constant.  Calling the eventual integer
+$n_z$ proves \eqref{eq:local-charge}.  Positivity of the atom gives
+$n_z>0$.  DFL's disc generator in Section~2.2 has normalized curvature
+integral $1/2$, so it has $p_1=-2$ and fixes the stated sign.
+
+All Chern--Simons lifts in this argument are the real-valued lifts selected
+by the displayed fillings.  For two regular radii, restricting the original
+and limiting fillings to the intervening annulus gives the same clutching
+bundle on their common boundary.  Hence changing the radius cannot transfer
+an integer to an independently chosen boundary branch; the only change is
+the Chern--Weil integral of that actual annular restriction, already present
+in \eqref{eq:relative-p1}.
+\end{proof}
+
+The construction does not pass through $M_g$.  It therefore retains the
+clutching class when $g=1$, even though $M_1$ is a point.  It is also
+additive over disconnected components of $\Sigma$, since the relative
+Pontryagin number splits componentwise.
+
+\begin{corollary}[unique primitive matching center]\label{cor:primitive-atom}
+Suppose an index-four sequence contributing to the point cut develops a
+matching atom.  Then there is exactly one matching concentration point
+$z$, and
+\begin{equation}\label{eq:primitive-charge}
+                 n_z=1,\qquad \delta_z=\Delta=\frac12.
+\end{equation}
+There is no second matching point and no ordinary bubble or nonconstant
+Floer level away from $z$.
+\end{corollary}
+
+\begin{proof}
+Proposition~\ref{prop:index-exhaustion} gives total defect $\frac12$.
+Theorem~\ref{thm:local-charge} assigns every matching atom a positive
+multiple of $\frac12$.  Thus the first atom already carries the whole
+defect and has charge one.  Every ordinary sphere or disc also costs at
+least $\frac12$, and every interior instanton costs at least one.  Energy
+exhaustion excludes each such component away from the matching center.
+\end{proof}
+
+Combining Proposition~\ref{prop:ordinary-bubbles} and
+Corollary~\ref{cor:primitive-atom}, the only new finite-$t$ concentration
+locus is one charge-one matching center attached to an index-zero residual
+mixed solution.  Quantization of the atom does not by itself exclude nested
+scales or neck energy at that same center.  The next two sections prove the
+stable-reduction and gluing results needed to do so.
+
+\section{Holomorphic compactification of a primitive atom}
+\label{sec:stable-reduction}
+
+\subsection{The local equations and base dilation}\label{sec:local-equations}
+Choose coordinates $(s,\theta)$ centered at the matching point, with
+$D_-=\{s\leq0\}$ the gauge half-disc and $D_+=\{s\geq0\}$ the symplectic
+half-disc.  In a gauge adapted to the $s$ direction, write the connection
+on $D_-\times\Sigma_g$ as
+\[
+                         A=\beta(s,\theta)+\psi(s,\theta)d\theta.
+\]
+The ASD equation is
+\begin{align}
+ *_\Sigma F_\beta+\partial_s\psi&=0,
+                                      \label{eq:local-asd-1}\\
+ -\partial_\theta\beta+*_\Sigma\partial_s\beta
+                  +d_\beta\psi&=0.  \label{eq:local-asd-2}
+\end{align}
+On $D_+$ the map $u$ satisfies
+\begin{equation}\label{eq:local-CR}
+                   \partial_\theta u-J_*\partial_su=0.
+\end{equation}
+Along $s=0$, the connection $\beta(0,\theta)$ is flat and represents
+$u(0,\theta)$.
+
+For a concentration scale $\rho\to0$, set
+\[
+ \beta_\rho(S,\Theta)=\beta(\rho S,\rho\Theta),
+ \qquad
+ \psi_\rho(S,\Theta)=\rho\psi(\rho S,\rho\Theta).
+\]
+Equations \eqref{eq:local-asd-1}--\eqref{eq:local-asd-2} become
+\begin{align}
+ \rho^2 *_\Sigma F_{\beta_\rho}+\partial_S\psi_\rho&=0,
+                                      \label{eq:scaled-asd-1}\\
+ -\partial_\Theta\beta_\rho+*_\Sigma\partial_S\beta_\rho
+                  +d_{\beta_\rho}\psi_\rho&=0.  \label{eq:scaled-asd-2}
+\end{align}
+The coefficient of vertical curvature is $\rho^2$, not $\rho^{-2}$.
+This is the opposite of the Dostoglou--Salamon adiabatic regime and does
+not force the interior surface slices to be flat.  The correct intermediate
+object is a holomorphic bundle on the product, rather than a direct map of
+the negative half-plane to $M_g$.
+
+\subsection{Finite-scale doubling}\label{sec:doubling}
+Give the base the complex coordinate $w=s+i\theta$.
+
+\begin{lemma}[finite-scale holomorphic doubling]\label{lem:doubling}
+Every smooth mixed solution on a disc neighborhood of the matching line
+determines a holomorphic rank-two bundle on the full disc times $\Sigma_g$.
+It is canonical up to fixed-determinant complex gauge and tensoring by a
+line bundle pulled back from the disc.
+\end{lemma}
+
+\begin{proof}
+On the negative half, the product metric is K\"ahler.  The ASD equation
+implies $F_A^{0,2}=0$, so $A^{0,1}$ is an integrable Dolbeault operator.
+
+Every seam fiber is stable.  Stability is open, so the negative
+holomorphic family has stable fibers on a collar of the seam.  The fine
+moduli property \cite[Section~4]{Owens01} gives a holomorphic classifying
+map $f_-$ on that collar and identifies its bundle, up to a line bundle
+from the base, with the pullback of the universal bundle.  The positive
+half similarly has the holomorphic classifying map $f_+=u$.
+
+The matching condition identifies the continuous boundary values of
+$f_-$ and $f_+$ on the seam.  In a complex chart of $M_g$, their union is
+continuous on a full collar and holomorphic on its two open halves.
+Morera's theorem shows that it is holomorphic across the seam.  Pull back
+the universal bundle by this glued map and use the resulting collar
+isomorphisms as transition maps between the negative and positive
+families.  This gives the required holomorphic bundle.  The fine-moduli
+ambiguity is a line bundle from the base; changing its trivialization and
+the collar isomorphisms has exactly the ambiguity stated in the lemma.
+\end{proof}
+
+The point of Lemma~\ref{lem:doubling} is that it is applied before taking
+the rescaled limit.  No unproved trace convergence for a limiting
+connection-valued half-plane equation is required.
+
+\subsection{Stable reduction over a disc}\label{sec:disc-reduction}
+The following one-parameter statement is the local stable-reduction input.
+It is the bundle-theoretic mechanism appearing in Owens's cylindrical
+correspondence \cite{Owens01}.
+
+\begin{lemma}[disc stable reduction]\label{lem:disc-reduction}
+Let $E\to D\times\Sigma_g$ be a holomorphic rank-two bundle whose surface
+fibers have fixed determinant of degree one, and suppose at least one fiber
+is stable.
+Then:
+\begin{enumerate}
+\item the unstable fibers form a finite analytic subset of every compact
+subdisc;
+\item the classifying map from the stable locus to $M_g$ extends
+holomorphically across the unstable fibers without base change;
+\item the original and pullback stable families differ by a finite Langton
+sequence supported on those fibers; all terms are locally free, retain the
+fixed surface-fiber determinant, and agree with $E$ off those fibers;
+\item if one step is the kernel of a quotient line $G_j$ of degree
+$q_j\leq0$, its positive charge is
+\[
+ \ell_j=\frac12\bigl(p_1(\ad E^{j+1})-p_1(\ad E^j)\bigr)
+       =1-2q_j>0.
+\]
+Thus $\ell=\sum_j\ell_j$ is a nonnegative integer, and it vanishes exactly
+when no modification occurs.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The family $E$ is flat over $D$.  Toma's relative
+Harder--Narasimhan theorem makes semistability Zariski open in such an
+analytic family \cite[Theorem~2.4]{Toma20}.  Here semistability is stability,
+so the existence of one stable fiber makes the unstable locus a proper
+analytic subset of $D$, hence finite on compact subdiscs.
+
+Fix an unstable point and a smaller disc $\Delta$ containing no other one.
+Toma's analytic Langton theorem produces, without base change, a coherent
+subsheaf $E'\subset E$ that equals $E$ over $\Delta^*$, is flat over
+$\Delta$, and has stable central fiber
+\cite[Theorem~3.1]{Toma20}.  It is locally free.  Indeed, all its fibers are
+torsion-free sheaves on the smooth curve and hence are vector bundles.  At a
+stalk with base parameter $t$, lift a basis of $E'/tE'$ to a map
+$R^2\to E'$.  Nakayama makes it surjective; flatness gives
+$\operatorname{Tor}_1^R(E',R/(t))=0$, so Nakayama applied to the kernel
+makes the map an isomorphism.
+
+In rank two Toma's construction is the finite Langton sequence
+\[
+0\longrightarrow E^{j+1}\longrightarrow E^j
+ \longrightarrow i_*G_j\longrightarrow0,
+\]
+where, on the central curve, $B_j\subset E^j_0$ is the saturated
+destabilizing line and $G_j=E^j_0/B_j$.  The transformed central fiber fits
+into
+\[
+0\longrightarrow G_j\longrightarrow E^{j+1}_0
+ \longrightarrow B_j\longrightarrow0.
+\]
+Thus every step retains the determinant $B_j\otimes G_j$ and equals its
+predecessor off the central fiber.  The final stable family supplies the
+holomorphic extension of the classifying map by the fine-moduli property;
+it differs from the pullback universal family only by a line bundle from
+$\Delta$.  In particular, the comparison preserves the outer attaching
+identification.  This is also the local data in
+\cite[Proposition~5.2]{Owens01}.
+
+Put $q_j=\deg G_j$.  Since $\deg E^j_0=1$ and $B_j$ destabilizes,
+$q_j\leq0$.  For the displayed elementary transform, the fiber divisor has
+square zero and
+\[
+ c_1(E^{j+1})=c_1(E^j)-[\Sigma_g],\qquad
+ \operatorname{ch}_2(E^{j+1})=\operatorname{ch}_2(E^j)-q_j.
+\]
+It follows that
+\[
+p_1(\ad E^{j+1})-p_1(\ad E^j)=2-4q_j.
+\]
+This proves the charge formula and positivity.  Repeating at the finitely
+many unstable fibers proves the lemma.
+\end{proof}
+
+\subsection{The primitive charge splitting}\label{sec:charge-splitting}
+Let $E\to D\times\Sigma_g$ be one doubled family supplied by
+Lemma~\ref{lem:doubling}.  The convergence to the removable residual
+solution fixes an outer projective framing.  Apply
+Lemma~\ref{lem:disc-reduction}, denote its final stable family by $F$, its
+classifying map by $f:D\to M_g$, and its total modification charge by
+$\ell$.
+
+Choose the outer circle so that $f(\partial D)$ lies in a contractible
+fine-moduli chart.  Cap it in that chart and put
+\begin{equation}\label{eq:capped-degree}
+ d=\left\langle
+ -\frac12p_1(\ad\mathcal U)/[\Sigma_g],
+ [\widehat f(S^2)]\right\rangle .
+\end{equation}
+This is the positive generator normalization: the pullback of
+$\ad\mathcal U$ by a minimal line has Pontryagin number $-2$
+\cite[Proposition~3]{Munoz99b}.
+
+\begin{proposition}[fixed-family framed splitting]
+\label{prop:framed-splitting}
+If $n(E)$ is the relative clutching charge in the outer framing, then
+\begin{equation}\label{eq:finite-charge-splitting}
+                              n(E)=d+\ell.
+\end{equation}
+The identity is independent of the cap, the universal-bundle
+representative, the base-line ambiguity in the fine-moduli problem, and
+the factorization into elementary transforms.  In the primitive sector,
+$n(E)=1$, so the individual doubled family has either $(d,\ell)=(1,0)$
+or $(0,1)$.
+\end{proposition}
+
+\begin{proof}
+For one elementary transform with quotient line $G$ of degree $q$,
+Grothendieck--Riemann--Roch and the triviality of the normal bundle of the
+fiber give
+\[
+ \operatorname{ch}(i_*G)=[\Sigma_g]+q[\mathrm{pt}].
+\]
+Thus
+\[
+ c_1(E')=c_1(E)-[\Sigma_g],\qquad
+ \operatorname{ch}_2(E')=\operatorname{ch}_2(E)-q[\mathrm{pt}].
+\]
+Since
+\[
+ p_1(\ad E)=4\operatorname{ch}_2(E)-c_1(E)^2,\qquad
+ [\Sigma_g]^2=0,\qquad c_1(E)\cdot[\Sigma_g]=1,
+\]
+one obtains
+\[
+ p_1(\ad E')-p_1(\ad E)=2-4q=2(1-2q).
+\]
+All transforms are supported away from the framed outer circle, and hence
+\begin{equation}\label{eq:relative-p1-langton}
+              p_1(\ad F)=p_1(\ad E)+2\ell
+\end{equation}
+as a relative identity.  The fine-moduli property identifies
+\[
+ F\cong(\id_{\Sigma_g}\times f)^*\mathcal U\otimes p_D^*L_D.
+\]
+The adjoint removes the base-line factor.  After capping,
+\eqref{eq:capped-degree} therefore says $p_1(\ad\widehat F)=-2d$.
+By definition $p_1(\ad\widehat E)=-2n(E)$, so
+\eqref{eq:relative-p1-langton} gives $n(E)=d+\ell$.
+
+Two caps in the chosen chart are homotopic relative to the boundary.
+A base-line twist leaves the adjoint bundle unchanged, and
+$\ell=(p_1(\ad F)-p_1(\ad E))/2$ depends only on the framed endpoints.
+These observations prove all independence assertions.  In the local
+primitive sector, Corollary~\ref{cor:primitive-atom} gives $n(E)=1$.
+Nonnegativity and integrality of $d$ and $\ell$ give the final dichotomy.
+\end{proof}
+
+\paragraph{The compactness distinction.}
+The pair $(d,\ell)$ belongs to one individual doubled family and need not
+be continuous under degeneration.  A sequence with $(d,\ell)=(1,0)$ can
+converge in the quasimap compactification to $(0,1)$; the missing degree
+then appears as a sphere component in the stable-map compactification.
+That sphere and the quasimap basepoint are two records of the same
+primitive charge and cannot be added as independent components.
+
+Near rank drop, write a full-rank pencil in an affine base coordinate as
+$s_\nu(z)=a_\nu z+b_\nu$.  If its limiting basepoint is
+$z_\nu=x_\nu+iy_\nu$, choose a linear functional on the limiting image
+line, absorb the phase of its transverse coefficient into $w_\nu$, and
+write exactly
+\begin{equation}\label{eq:rank-drop-exact-normal-form}
+ s_\nu(z)=a_\nu(z-z_\nu)+\varepsilon_\nu w_\nu,
+ \qquad \varepsilon_\nu>0,\quad \varepsilon_\nu\to0,\quad
+ a_\nu\to v,\quad w_\nu\to w,\quad v\wedge w\ne0.
+\end{equation}
+After the seam-preserving change
+$z=\varepsilon_\nu\zeta+iy_\nu$, the pencil is
+\[
+ [a_\nu(\zeta-\lambda_\nu)+w_\nu],
+ \qquad \lambda_\nu=x_\nu/\varepsilon_\nu.
+\]
+If $\lambda_\nu$ has a finite limit, this converges to a full-rank mixed
+bubble.  If $\lambda_\nu\to+\infty$ or $-\infty$, it is constant on
+seam-centered compact sets and recentering at $z_\nu$ extracts,
+respectively, a positive holomorphic sphere or a negative cylindrical
+instanton.  Thus a seam basepoint is not a fourth type: center--scale
+normalization either recovers a mixed bubble or one of the two pure ends.
+
+The required analytic statement is strong convergence of arbitrary
+primitive mixed sequences, in seam-compatible gauges and the first-order
+norms used below, to this three-colored master compactification.  At
+negative infinite seam ratio, affine recentering returns to the normalized
+gauge rank-drop chart.  At positive infinite ratio the additional component
+is an ordinary minimal sphere, whose nodal collar must be matched to the
+finite-ratio charts.  Sections~\ref{sec:primitive-no-neck}--
+\ref{sec:primitive-gluing} prove this analytic realization using
+good-circle no-neck, the uniform anisotropic inverse, and local
+surjectivity of the gluing maps.
+
+\section{The algebraic primitive moduli}
+\label{sec:primitive-algebraic}
+
+\subsection{Mu\~noz's extension spaces}\label{sec:munoz-spaces}
+Fix a line bundle $\Lambda$ of degree one on $\Sigma_g$.  Let
+$J=J(\Sigma_g)$ be the Jacobian and let $\mathscr L$ be a Poincar\'e line
+bundle on $\Sigma_g\times J$.  If $p:\Sigma_g\times J\to J$ is the
+projection, put
+\begin{equation}\label{eq:extension-bundle}
+             \cE_g=R^1p_*(\mathscr L^2\otimes\Lambda^{-1}).
+\end{equation}
+With the standard principal polarization $\omega\in H^2(J;\ZZ)$, the
+Grothendieck--Riemann--Roch calculation is
+\begin{equation}\label{eq:ch-Eg}
+                         \operatorname{ch}(\cE_g)=g+4\omega.
+\end{equation}
+The projective bundle
+\[
+                         N_g=\PP(\cE_g^\vee)\longrightarrow J
+\]
+parametrizes nonsplit extensions
+\begin{equation}\label{eq:surface-extension}
+ 0\longrightarrow L\longrightarrow V
+ \longrightarrow\Lambda\otimes L^{-1}\longrightarrow0.
+\end{equation}
+The middle term is stable and determines a holomorphic map
+\begin{equation}\label{eq:i-map}
+                              i_g:N_g\longrightarrow M_g.
+\end{equation}
+
+Mu\~noz studies stable rank-two bundles $E$ on
+$\PP^1\times\Sigma_g$ with
+\begin{equation}\label{eq:primitive-chern}
+ c_1(E)=[\PP^1]+[\Sigma_g],\qquad c_2(E)=1,
+ \qquad p_1(\ad E)=-2,
+\end{equation}
+for a polarization close to the $\Sigma_g$ boundary of the ample cone.  He
+proves that their moduli space is the smooth projective bundle
+\begin{equation}\label{eq:frakM}
+ \frakM_g=\PP((\cE_g\oplus\cE_g)^\vee)\longrightarrow J,
+ \qquad \dim_\CC\frakM_g=3g-1.
+\end{equation}
+See \cite[Sections~3--4]{Munoz99b}.  The two summands are the coefficients
+of a section of $\cO_{\PP^1}(1)\otimes\cE_g$.
+
+Fix $L\in J$, write $V=(\cE_g)_L$, and represent a point of the fiber by
+\[
+                      [v_0:v_1]\in\PP(V\oplus V).
+\]
+At $x=[x_0:x_1]\in\PP^1$, the corresponding surface extension has class
+\begin{equation}\label{eq:extension-pencil}
+                         v(x)=x_0v_0+x_1v_1.
+\end{equation}
+
+\begin{proposition}[rank stratification]\label{prop:rank-strata}
+The moduli space $\frakM_g$ has the following two strata.
+\begin{enumerate}
+\item If $v_0,v_1$ are independent, \eqref{eq:extension-pencil} never
+vanishes and defines a nonconstant parameterized minimal rational curve in
+$M_g$.  Every parameterized minimal rational curve arises uniquely in
+this way.
+\item If $v_0,v_1$ are dependent, write
+$(v_0,v_1)=(a_0v,a_1v)$.  The induced quasimap is constant away from the
+single basepoint $[-a_1:a_0]$.  The rank-drop locus is the Segre bundle
+\begin{equation}\label{eq:Segre}
+ \cR_g=N_g\times_J\PP^1\longrightarrow\frakM_g
+\end{equation}
+of complex codimension $g-1$.
+\end{enumerate}
+For an individual primitive bundle, the two alternatives in
+Proposition~\ref{prop:framed-splitting} correspond respectively to these
+two strata.
+\end{proposition}
+
+\begin{proof}
+If the two vectors are independent, no nonzero pair $(x_0,x_1)$ kills
+their linear combination.  Thus \eqref{eq:extension-pencil} defines a
+line in the projective extension fiber $\PP(V)$, followed by the map
+$i_g$.  Mu\~noz's classification identifies this full-rank open locus with
+the space of parameterized minimal curves.
+
+If the two vectors are dependent, every nonzero extension away from
+$[-a_1:a_0]$ represents the same point $[v]\in\PP(V)$.  At the unique
+zero the surface bundle splits, and stable reduction records one
+elementary modification.  Fiberwise, the dependent tensors form the
+Segre image $\PP(V)\times\PP(\CC^2)$ in
+$\PP(V\otimes\CC^2)$.  Its dimension is $(g-1)+1=g$, whereas the ambient
+projective space has dimension $2g-1$, so its codimension is $g-1$.
+The final assertion follows from the exact dichotomy in
+Proposition~\ref{prop:framed-splitting}.
+\end{proof}
+
+For $g=1$, the extension space $V$ is one-dimensional, and every pair is
+dependent.  The full-rank locus is empty and $\frakM_1=\cR_1$.  This is
+the algebraic reason the genus-one primitive class is invisible in the
+point-valued character variety.
+
+\subsection{Evaluation at infinity and the dimension ledger}
+\label{sec:evaluation-infinity}
+Choose $\infty=[1:0]\in\PP^1$.  On the locus $v_0\neq0$, evaluation of
+the induced stable map or quasimap is
+\begin{equation}\label{eq:ev-infinity}
+ \ev_\infty([v_0:v_1])=i_g([v_0]).
+\end{equation}
+Hence every primitive bubble, full rank or rank drop away from infinity,
+attaches through $i_g(N_g)$.
+
+Fix $[v]\in N_g$.  After the overall projective scalar is used to set
+$v_0=v$, the full-rank fiber of $\ev_\infty$ is
+\[
+                              V\setminus\CC v.
+\]
+The real affine group preserving the two half-planes and fixing infinity
+is
+\begin{equation}\label{eq:GR}
+ G_\RR=\{w\longmapsto aw+ib:a>0,\ b\in\RR\}.
+\end{equation}
+It fixes the translation and scale of a generic mixed bubble.  The reduced
+fiber therefore has real dimension $2g-2$.
+
+The dimensions of the attachment spaces are
+\begin{equation}\label{eq:dimensions-N-M}
+             \dim_\CC N_g=2g-1,
+       \qquad\dim_\CC M_g=3g-3.
+\end{equation}
+Mu\~noz proves that $i_g$ is generically finite onto its image.  Thus
+\begin{equation}\label{eq:image-codim}
+                 \codim_\RR i_g(N_g)=2(g-2).
+\end{equation}
+Let $e_0:\RR\to M_g$ be the matching evaluation path of a residual
+index-zero mixed solution.  Whenever it meets the regular part of
+$i_g(N_g)$, the reduced full-rank primitive stratum has dimension
+\begin{equation}\label{eq:bubble-dim-ledger}
+                 (2g-2)+1-2(g-2)=3.
+\end{equation}
+The interpolation parameter adds one dimension and the integral $p_1$
+incidence removes four, leaving isolated boundary points.
+
+For $g\geq3$, however, a generic one-dimensional path misses the
+positive-codimension image in \eqref{eq:image-codim}.  The matching
+correction is therefore absent.  In genus two, $N_2$ and $M_2$ have the
+same dimension and $i_2$ has a nonzero degree, computed next.
+
+\subsection{The genus-two degree}\label{sec:genus-two-degree}
+Let $h=c_1(\cO_{N_2}(1))$, and normalize the principal polarization by
+\begin{equation}\label{eq:omega-normalization}
+                    \int_{J(\Sigma_2)}\frac{\omega^2}{2}=1.
+\end{equation}
+If $\alpha\in H^2(M_2;\ZZ)$ is the standard generator, Mu\~noz's
+universal-bundle formulas give
+\begin{equation}\label{eq:munoz-pullback}
+ i_2^*\alpha=4\omega+h,
+ \qquad h^2+4\omega h+8\omega^2=0.
+\end{equation}
+
+\begin{proposition}\label{prop:degree-four}
+The map $i_2:N_2\to M_2$ has degree four.
+\end{proposition}
+
+\begin{proof}
+Using \eqref{eq:munoz-pullback} and $\omega^3=0$ gives
+\[
+ h^3=8\omega^2h,
+ \qquad 12\omega h^2=-48\omega^2h.
+\]
+Therefore
+\begin{equation}\label{eq:N2-intersection}
+ \int_{N_2}(4\omega+h)^3
+ =\int_{N_2}8\omega^2h=16,
+\end{equation}
+where the last equality uses \eqref{eq:omega-normalization} and integration
+over the projective-line fiber.  The genus-two moduli space $M_2$ is a
+smooth intersection of two quadrics in $\PP^5$, and $\alpha$ is its
+hyperplane class.  Hence
+\[
+                         \int_{M_2}\alpha^3=4.
+\]
+The ratio of \eqref{eq:N2-intersection} to this number is the degree:
+$\deg i_2=16/4=4$.
+\end{proof}
+
+All local algebraic multiplicities are positive in the complex
+orientation.  Thus, after the analytic incidence determinant is
+identified with its algebraic counterpart, the magnitude of the integral
+genus-two contribution is four.
+
+\subsection{The genus-one excess line}\label{sec:genus-one-excess}
+For $g=1$, \eqref{eq:ch-Eg} reads
+\begin{equation}\label{eq:torus-E}
+                         \operatorname{ch}(\cE_1)=1+4\omega.
+\end{equation}
+The two coefficients of the primitive extension form the rank-two bundle
+\begin{equation}\label{eq:Ezeta}
+ \cE_\zeta=H^0(\PP^1,\cO(1))\otimes\cE_1
+           \cong\cE_1\oplus\cE_1.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:torus-degree-eight}
+ c_1(\det\cE_\zeta)=8\omega,
+ \qquad
+ \int_{J(\Sigma_1)}c_1(\det\cE_\zeta)=8.
+\end{equation}
+After the rank-drop basepoint and the real affine symmetry are fixed, the
+elliptic Jacobian is the excess primitive family.  Section
+\ref{sec:determinant-locality} identifies its normal incidence determinant
+with $\det\cE_\zeta$.  Thus \eqref{eq:torus-degree-eight} is the magnitude
+of the integral genus-one contribution.
+
+\subsection{Cylinder calibration}\label{sec:cylinder-calibration}
+The algebraic magnitudes can be calibrated, including sign, without
+assuming the point theorem.  Let $a_G,b_G$ denote Mu\~noz's surface and
+point generators in the instanton Floer ring of $\Sigma_g\times S^1$, and
+let $a_S,b_S$ be the geometric generators of $QH^*(M_g)$.  These act on
+the gauge and symplectic Floer groups of every admissible target containing
+the chosen surface component.
+
+We record the normalization dictionary.  Mu\~noz uses
+$\mu(q)=-\frac14p_1/[q]$ and defines his point generator by
+$b=-4\mu(q)=p_1/[q]$; his surface generator is
+$a=2\mu(\Sigma)=-\frac12p_1/[\Sigma]$
+\cite[equation~(4)]{Munoz99a}.  Thus $b_G,b_S$ are exactly the positive
+integral point generators used here.  DFL's comparison for
+$p_1/[\Sigma]=-2a$ implies, over $\QQ$,
+\begin{equation}\label{eq:surface-compatibility}
+                              Na_G=a_SN.
+\end{equation}
+For genus two, Mu\~noz's corrected quantum generator is
+$\widehat b_S=b_S+4$, and his relation
+$a_S^2+\widehat b_S-8=0$ is therefore
+$a_S^2+b_S-4=0$ in the unshifted geometric generator
+\cite[Example~24]{Munoz99b}.  On the gauge side his corresponding relation
+is $a_G^2+b_G-8=0$ \cite[Example~22]{Munoz99a}.  In genus one his gauge
+relation is $b_G=8\id$ \cite[Lemma~11]{Munoz99a}, whereas the geometric
+class $b_S$ vanishes because $M_1$ is a point
+\cite[Example~23]{Munoz99b}.
+
+\begin{proposition}[low-genus cylinder identities]
+\label{prop:cylinder-identities}
+In the positive integral $p_1$ normalization,
+\begin{equation}\label{eq:cylinder-identities}
+ Nb_G-b_SN=
+ \begin{cases}
+ 8N,&g=1,\\
+ 4N,&g=2.
+ \end{cases}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $g=1$, the odd-determinant character variety is a point, so $b_S=0$.
+Mu\~noz's cylinder presentation has $b_G=8\id$, proving the first formula.
+
+For $g=2$, the instanton and quantum relations in the positive integral
+normalization are
+\[
+                    a_G^2+b_G-8=0,
+              \qquad a_S^2+b_S-4=0.
+\]
+Acting on the two modules and using \eqref{eq:surface-compatibility}
+twice gives
+\[
+ \begin{aligned}
+ Nb_G-b_SN
+ &=N(8-a_G^2)-(4-a_S^2)N\\
+ &=4N-a_S^2N+Na_G^2=4N.
+ \end{aligned}
+\]
+\end{proof}
+
+The proposition already proves that uncorrected point compatibility is
+false in low genus.  In the final orientation argument it has a second,
+noncircular role: determinant excision makes the local bubble coefficient
+universal, and \eqref{eq:cylinder-identities} fixes the universal DFL sign.
+
+\section{Dirichlet reconstruction and primitive gluing}
+\label{sec:reconstruction}
+
+\subsection{Seam-admissible product bundles}\label{sec:seam-admissible}
+Decompose the base sphere into closed hemispheres
+\begin{equation}\label{eq:hemispheres}
+                         \PP^1=H_-\cup_\Gamma H_+,
+\end{equation}
+where $\Gamma$ is the compactified matching line and
+$\infty\in\Gamma$ is the attaching point.  The gauge equation is placed
+on $H_-\times\Sigma_g$ and the holomorphic-map equation on $H_+$.  A
+primitive bundle $E\in\frakM_g$ induces on the stable fibers of the base a
+classifying map to $M_g$.
+
+\begin{definition}\label{def:seam-admissible}
+A bundle $E\in\frakM_g$ is \emph{seam admissible} if every restriction
+$E|_{\{z\}\times\Sigma_g}$ with $z\in\Gamma$ is stable and the
+classifying quasimap has no basepoint in $H_+$.  We denote the
+seam-admissible locus by $\frakM_g^{\rm sa}$.
+\end{definition}
+
+Every full-rank pair is seam admissible.  A rank-drop pair is seam
+admissible precisely when its unique basepoint lies in the interior of
+$H_-$.  A basepoint in $H_+$ makes the positive map undefined, while a
+basepoint on $\Gamma$ cannot occur in a smooth seam-admissible object.  For
+a sequence approaching $\Gamma$, the center--scale normal form
+\eqref{eq:rank-drop-exact-normal-form} either recovers a full-rank mixed
+bubble at finite seam ratio or converges to one of the two pure limits.
+The real M\"obius group preserving
+\eqref{eq:hemispheres} acts transitively on the interior of $H_-$; after
+fixing infinity, its affine subgroup $G_\RR$ in \eqref{eq:GR} normalizes a
+gauge-side basepoint to a compact set.
+
+\subsection{Exact reconstruction}\label{sec:exact-reconstruction}
+For $\rho>0$, equip the gauge hemisphere with the product K\"ahler form
+\begin{equation}\label{eq:omega-rho}
+                    \omega_\rho=\rho^2\omega_{H_-}+\omega_{\Sigma_g}.
+\end{equation}
+This is the form obtained by pulling the original metric back under base
+dilation by $\rho$.
+
+\begin{theorem}[Dirichlet reconstruction]\label{thm:reconstruction}
+Let $E\in\frakM_g^{\rm sa}$.  For every $\rho>0$ there is a unique
+fixed-determinant projectively ASD connection $A_{E,\rho}$ on
+$E|_{H_-\times\Sigma_g}$ whose boundary metric is the family of
+Narasimhan--Seshadri metrics on the stable seam fibers.  Together with the
+holomorphic classifying map
+\[
+                         u_E:H_+\longrightarrow M_g,
+\]
+it is an exact solution of the $\rho$-rescaled mixed equation.  It has
+relative clutching charge one and normalized mixed energy $\frac12$.  For
+$\rho>0$ the solution depends smoothly on $(E,\rho)$.
+\end{theorem}
+
+\begin{proof}
+Each stable odd-degree bundle on a seam fiber has a unique
+fixed-determinant Hermitian--Einstein metric.  Simplicity removes every
+noncentral ambiguity, and elliptic parameter dependence makes these
+metrics a smooth family $H_\Gamma$ on
+$E|_{\Gamma\times\Sigma_g}$.
+
+Donaldson's boundary-value theorem
+\cite[Theorem~1]{Donaldson92} gives a unique Hermitian metric
+$H_{E,\rho}$ with fixed determinant satisfying
+\begin{equation}\label{eq:HYM-Dirichlet}
+ H_{E,\rho}|_{\Gamma\times\Sigma_g}=H_\Gamma,
+ \qquad
+ i\Lambda_{\omega_\rho}F_{H_{E,\rho}}^\perp=0.
+\end{equation}
+On a K\"ahler surface, integrability and the trace-free Hermitian
+Yang--Mills equation are equivalent to projective anti-self-duality.  The
+Chern connection of $H_{E,\rho}$ is therefore the required
+$A_{E,\rho}$.  No stability of $E$ with respect to $\omega_\rho$ is
+needed: the Dirichlet theorem applies to every holomorphic bundle on a
+compact K\"ahler manifold with boundary.  This point is essential because
+the polarization \eqref{eq:omega-rho} approaches the chamber opposite to
+the one used to define $\frakM_g$.
+
+On $H_+$, seam admissibility gives the holomorphic map $u_E$.  Its
+pullback universal bundle is $E|_{H_+\times\Sigma_g}$, and its canonical
+flat representative along $\Gamma$ is the Chern connection of
+$H_\Gamma$.  Thus the two sides satisfy the exact matching condition.
+Holomorphicity gives the positive equation.
+
+The Chern--Weil filling identity and $p_1(\ad E)=-2$ give relative charge
+one and energy $\frac12$.  The linearization of
+\eqref{eq:HYM-Dirichlet} in the Hermitian metric direction is the
+Dirichlet Chern Laplacian on trace-free self-adjoint endomorphisms.  Its
+kernel is zero by integration by parts.  Elliptic parameter dependence
+and the implicit-function theorem give smooth dependence on $(E,\rho)$.
+\end{proof}
+
+For a full-rank $E$, the positive map is part of a basepoint-free minimal line and
+the negative half is its unique Dirichlet ASD completion.  For a rank-drop
+$E$ with basepoint in $H_-$, the positive map is constant and the entire
+modification lies on the gauge hemisphere.  Thus every individual
+algebraic type in Proposition~\ref{prop:framed-splitting} is realized by
+an exact local mixed
+solution.  In genus one the second type is the pure gauge bubble.
+
+\subsection{Fredholm reduction}\label{sec:fredholm-reduction}
+Fix $E\in\frakM_g^{\rm sa}$ and $\rho>0$.  Infinitesimal deformations of
+the reconstructed pair split into a Dolbeault deformation of $E$ and a
+trace-free Hermitian-metric deformation with zero Dirichlet value.  The
+metric block is invertible by the last paragraph of the proof of
+Theorem~\ref{thm:reconstruction}.  Domain reparameterizations are added
+only after this fixed-domain problem is coupled to the residual solution.
+
+\begin{proposition}[fixed-scale Fredholm-to-Dolbeault reduction]
+\label{prop:fredholm-dolbeault}
+Let $\cD^{\rm mix}_{E,\rho}$ be DFL's gauge-fixed mixed operator, with
+the relative boundary condition and canonical linearized matching
+correspondence in its domain.  Infinitesimal holomorphic doubling gives
+a natural real-linear isomorphism
+\begin{equation}\label{eq:dolbeault-tangent-obstruction}
+ \ker\cD^{\rm mix}_{E,\rho}
+ \cong H^1(\PP^1\times\Sigma_g,\End_0E).
+\end{equation}
+The mixed operator is surjective.  Hence the fixed-domain mixed bubble is
+regular and its determinant line has the complex orientation transported
+through \eqref{eq:dolbeault-tangent-obstruction}.  Evaluation at infinity and
+quotienting by $G_\RR$ are separate finite-dimensional operations imposed
+only after coupling to the residual component.
+\end{proposition}
+
+\begin{proof}
+DFL's operator has components
+\[
+                 (d_A^+\zeta,-d_A^*\zeta,D_u\nu).
+\]
+Its domain satisfies
+$*\zeta|_\Gamma=0$ and
+$(\zeta|_{\{z\}\times\Sigma_g},\nu(z))\in T\cL_{\rm NS}$, while its
+formal adjoint uses the same canonical correspondence
+\cite[(1.11), (1.13), and (5.1)]{DaeFukLip21b}.  Their local estimates,
+patched over the compact hemispheres, make this a Fredholm boundary
+problem.
+
+DFL regularity makes every kernel element smooth.  The K\"ahler identity
+identifies the negative component $a^{0,1}$ with a Dolbeault cocycle.  On
+the positive side, harmonic inclusion for the universal connection
+identifies a map variation with the infinitesimal deformation of the
+pulled-back universal bundle.  The matching condition says that the two
+seam classes agree; their difference is
+$\bar\partial_\alpha\xi$ for a smooth infinitesimal complex gauge
+transformation.  Extend $\xi$ smoothly across a collar and differentiate
+the finite-scale doubling construction of Lemma~\ref{lem:doubling}.
+This produces the class in the right side of
+\eqref{eq:dolbeault-tangent-obstruction}.  Different extensions change it
+by a Dolbeault coboundary.
+
+If this class vanishes, the positive harmonic variation is zero and the
+negative variation changes only the Hermitian metric of a fixed
+holomorphic bundle.  Its boundary value is zero.  The linearized
+Dirichlet HYM equation has
+\[
+ \langle L^{\rm Dir}_{E,\rho}s,s\rangle
+       =2\|\bar\partial_{A_{E,\rho}}s\|^2.
+\]
+It has zero kernel, proving injectivity.  Conversely, Mu\~noz identifies
+the primitive moduli with the smooth projective bundle
+$\PP(\cE_\zeta^\vee)\to J(\Sigma_g)$.  Integrate a class in $H^1$ to a
+curve in this projective bundle, apply Theorem~\ref{thm:reconstruction}
+at the fixed scale, and differentiate.  This proves surjectivity in
+\eqref{eq:dolbeault-tangent-obstruction}.
+
+It remains to rule out a DFL cokernel.  Deform the coefficients to product
+form in a seam collar and use DFL's bounded domain-straightening maps
+\cite[Proposition~5.27]{DaeFukLip21b}.  The K\"ahler identities identify
+the gauge symbol and Green form with the Dolbeault--Dirac symbol and Green
+form.  Fiberwise Hodge decomposition pairs every nonzero exact vertical
+mode with its coexact mate; the two half-line operators are adjoints and
+have cancelling indices.  Irreducibility removes the zero exact mode.
+The remaining harmonic matching condition is the graph transmission
+condition.  Its Sobolev domain is the domain of the uncut closed operator
+\cite[Example~3.23]{BaerBallmann16}.  Relative index gluing therefore gives
+\[
+ \ind_\RR\cD^{\rm mix}_{E,\rho}
+ =\ind_\RR\sqrt2(\bar\partial_E^*\oplus\bar\partial_E)
+ =2(h^1-h^0-h^2).
+\]
+Stability gives $h^0=0$, while Riemann--Roch gives
+\[
+ h^1-h^2=3g-1.
+\]
+The smooth projective-bundle description gives $h^1=3g-1$, including on
+the Segre locus.  Thus the real kernel dimension equals the real index,
+and the cokernel is zero.  DFL's adjoint regularity and its identical
+Lagrangian matching condition show that this is the analytic cokernel.
+Since the cokernel vanishes, \eqref{eq:dolbeault-tangent-obstruction}
+transports the complex orientation to the determinant line.
+\end{proof}
+
+The rank-drop normal can be read explicitly.  At a tensor
+$[v\otimes a]\in\PP(V\otimes\CC^2)$, let
+$\ell_v=\CC v$ and $\ell_a=\CC a$.  The normal to the Segre locus is
+\begin{equation}\label{eq:Segre-normal}
+ \Hom(\ell_v,V/\ell_v)\otimes
+ \Hom(\ell_a,\CC^2/\ell_a),
+\end{equation}
+of complex dimension $g-1$.  In genus two it is a complex line; after its
+basepoint is fixed, both real components remain as smoothing directions
+from rank drop to a full-rank bubble.  The seam-preserving affine group has
+no rotational factor and does not remove the phase.  Thus the genus-two
+Segre locus has real codimension two inside the primitive face.  In genus
+one the normal has rank zero, leaving the elliptic excess family.
+
+\subsection{Primitive no-neck at good circles}\label{sec:primitive-no-neck}
+Let $(A_\nu,u_\nu)$ be a sequence with one primitive matching center
+$z_\nu\to z_0$ and concentration scales $\rho_\nu\to0$, and suppose its
+doubled bundles have a limit $E$ in the three-colored master
+compactification described after Proposition~\ref{prop:framed-splitting}.
+Write
+$\cE_\nu(a,b)$ for the normalized mixed energy in the paired half-annulus
+$a<|z-z_\nu|<b$.
+
+\begin{proposition}[primitive good-circle no-neck]
+\label{prop:primitive-no-neck}
+After passage to a subsequence, there are radii
+\[
+                 \rho_\nu\ll a_\nu\ll b_\nu\longrightarrow0
+\]
+such that
+\begin{equation}\label{eq:no-neck}
+                         \cE_\nu(a_\nu,b_\nu)\longrightarrow0.
+\end{equation}
+The capped region inside $a_\nu$ has clutching sector one and energy
+tending to $\frac12$.  Hence no positive-energy atom or further analytic
+scale lies between the primitive core and the residual solution.  On the
+two cut circles, the spliced representatives converge in a common seam
+gauge to the same flat attaching representative.
+\end{proposition}
+
+\begin{proof}
+The stable limit is regular at infinity.  For a sufficiently large
+rescaled radius $R$, cap its tail in a contractible fine-moduli chart.
+The finite charge identity in Proposition~\ref{prop:framed-splitting}
+shows that, for $R$ and then $\nu$
+large, the capped region $|z-z_\nu|\leq R\rho_\nu$ has clutching sector
+one.  This includes rank drop because the lost map degree is exactly the
+length-one elementary modification.  The local charge theorem gives the
+same sector for the outer atom.  Every annulus between the two caps
+therefore has sector zero.
+
+Put $E_\nu(r)=\cE_\nu(0,r)$.  First choose the outer cuts from smooth
+convergence on compact subsets of the punctured disc to the residual
+solution.  DFL removability extends that solution over $z_0$, so a
+diagonal choice gives $b_\nu\to0$, with
+$b_\nu/\rho_\nu\to\infty$, such that the outer-tail energy relative to
+the residual solution and $b_\nu E_\nu'(b_\nu)$ both tend to zero.
+
+Since
+\[
+ \int_{r_1}^{r_2}rE_\nu'(r)\,d\log r
+       =E_\nu(r_2)-E_\nu(r_1),
+\]
+choose $R_\nu\to\infty$ slowly enough that
+$R_\nu^2\rho_\nu<b_\nu$, and subdivide the logarithmic region from
+$R_\nu\rho_\nu$ to $R_\nu^2\rho_\nu$ into dyadic shells.  Bounded total
+energy and coarea give a shell of energy tending to zero and a radius
+$a_\nu$ in it for which
+\begin{equation}\label{eq:good-circle}
+ a_\nu E_\nu'(a_\nu)+b_\nu E_\nu'(b_\nu)\longrightarrow0.
+\end{equation}
+
+At either good circle form DFL's spliced connection $B_{\nu,r}$ on
+$S^1\times\Sigma_g$: it joins the gauge semicircle to a connection
+representing the holomorphic semicircle through the flat interpolation
+strip.  The small-energy mean-value estimate on the selected shell and
+the proof of \cite[Lemma~4.62]{DaeFukLip21b} give the localized slice bound
+\[
+ |\CS_{\beta_{\nu,r}}(B_{\nu,r})|
+             \leq C rE_\nu'(r).
+\]
+The flat references at the two radii are joined by the seam path, so the
+Chern--Simons functional is independent of that choice.  The Stokes
+calculation of \cite[Lemma~4.67]{DaeFukLip21b}, now on the annulus, gives
+\[
+ \cE_\nu(a_\nu,b_\nu)
+ =\CS(B_{\nu,b_\nu})-\CS(B_{\nu,a_\nu})
+\]
+with the normalization of \eqref{eq:top-energy}.  The possible integral
+change of lift is zero because the annulus has clutching sector zero.
+Equation~\eqref{eq:good-circle} proves \eqref{eq:no-neck}.
+
+The total local energy tends to $\frac12$, the annular energy vanishes,
+and the outer-tail energy tends to that of the removable residual
+solution.  Thus the sector-one inner core has energy $\frac12$ in the
+limit.  A further atom would have positive
+half-integral charge, whereas a diffuse remainder is excluded by the
+same Chern--Simons identity.  Finally, DFL's small-energy Coulomb gauges
+on the two selected shells converge to the flat seam representatives;
+stable reduction at infinity identifies both with the attaching value.
+\end{proof}
+
+\subsection{Inverse-adiabatic Dirichlet estimates}
+\label{sec:uniform-inverse}
+Put $\tau=\rho^2$.  Since the K\"ahler form is a product, the trace-free
+HYM equation is equivalent to
+\begin{equation}\label{eq:tau-HYM}
+ i\Lambda_{H_-}F_H^\perp
+       +\tau i\Lambda_{\Sigma_g}F_H^\perp=0.
+\end{equation}
+Thus the limit $\tau=0$ is elliptic in the base variable and regards the
+surface variable as a parameter.  This is the useful direction of the
+inverse-adiabatic limit.
+
+For the following statements, $W^{r,s;p}_{B,\Sigma}$ controls mixed
+derivatives with at most $r$ base derivatives and at most $s$ surface
+derivatives in fixed product charts.  On the HYM-equation
+component we use the equivalent $\rho$-weighted target norm obtained by
+multiplying the equation by $\rho^2$, as in
+\eqref{eq:tau-HYM}.  Fixed weights are added at the attaching end.
+
+\begin{theorem}[inverse-adiabatic Dirichlet regularity]
+\label{thm:inverse-adiabatic}
+Let $C\subset\frakM_g^{\rm sa}/G_\RR$ be compact.  The Dirichlet metrics
+$H_{E,\rho}$ extend smoothly in $(E,\tau)$ to $\tau=0$ in every
+anisotropic $W^{r,s;p}_{B,\Sigma}$ space.  The limiting metric $H_{E,0}$ is
+the unique fixed-determinant metric satisfying
+\begin{equation}\label{eq:base-flat-limit}
+ i\Lambda_{H_-}F_{H_{E,0}}^\perp=0,
+ \qquad H_{E,0}|_{\Gamma\times\Sigma_g}=H_\Gamma.
+\end{equation}
+In particular, relative to a smooth reference family, the metrics,
+connections, and all fixed-coordinate derivatives are bounded uniformly
+for $E\in C$ and $0\leq\rho\leq\rho_0$.  This conclusion holds through
+the rank-drop locus.
+\end{theorem}
+
+\begin{proof}
+Fix $x\in\Sigma_g$.  The restriction of $E$ to
+$H_-\times\{x\}$ is a holomorphic bundle on a disc.  Donaldson's
+Dirichlet theorem in complex dimension one gives the unique
+fixed-determinant solution of \eqref{eq:base-flat-limit} with the
+prescribed boundary metric.  Equivalently, it is the harmonic metric for
+a disc with target the nonpositively curved symmetric space of positive
+Hermitian matrices of determinant one.  Ordinary parameter-dependent
+Dirichlet theory makes these solutions smooth in $(E,x)$ and gives a
+smooth metric $H_{E,0}$ on the product.
+
+Write nearby metrics as $H_{E,0}e^s$, where $s$ is trace-free,
+self-adjoint, and zero on the boundary.  The derivative at
+$(s,\tau)=(0,0)$ of the left side of \eqref{eq:tau-HYM} is the
+base Dirichlet Chern Laplacian
+\[
+              L^B_{E,0}s
+       =i\Lambda_{H_-}\bar\partial_B\partial_{H_{E,0},B}s.
+\]
+For each $x$, integration by parts identifies its quadratic form with
+$2\|\bar\partial_Bs\|^2$.  Its kernel is zero by the boundary condition,
+and the Dirichlet operator on the disc has index zero.  It is therefore
+an isomorphism.  Differentiating in the parameter $x$ gives the standard
+parameter-elliptic estimates, so
+\[
+ L^B_{E,0}:W^{r+2,s;p}_{B,\Sigma,0}
+       \longrightarrow W^{r,s;p}_{B,\Sigma}
+\]
+is an isomorphism for every $r,s$ and $p>1$.
+
+It remains to justify uniformity for the exact solutions rather than use
+an implicit-function theorem with a surface-derivative loss.  Put
+$h_\rho=H_{E,0}^{-1}H_{E,\rho}$.  Because $H_{E,0}$ is base-flat,
+$\Lambda_{\omega_\rho}F_{H_{E,0}}^\perp$ is bounded independently of
+$\rho$.  The Chern-connection trace inequality gives
+\[
+ -\Delta_{\omega_\rho}\log\tr h_\rho\leq C.
+\]
+If $-\Delta_{H_-}\phi=1$ and $\phi|_\Gamma=0$, then
+$-\Delta_{\omega_\rho}(\rho^2\phi)=1$.  Since $h_\rho=\id$ on the
+boundary, the maximum principle gives
+\begin{equation}\label{eq:metric-C0-close}
+                 \log\tr h_\rho\leq\log2+C\rho^2.
+\end{equation}
+The determinants agree, so \eqref{eq:metric-C0-close} makes
+$s_\rho=\log h_\rho$ uniformly small in $C^0$.
+
+This initial smallness gives the sharper order in $\tau$.  Define
+\[
+ \Phi(H,\tau)=i\Lambda_{H_-}F_H^\perp
+              +\tau i\Lambda_{\Sigma_g}F_H^\perp.
+\]
+The fundamental theorem of calculus along
+$H_{E,0}e^{t s_\rho}$ gives the exact equation
+\begin{equation}\label{eq:integrated-HYM-linearization}
+ \left(\int_0^1
+   D_H\Phi(H_{E,0}e^{t s_\rho},\tau)\,dt\right)s_\rho
+ =-\tau i\Lambda_{\Sigma_g}F_{H_{E,0}}^\perp.
+\end{equation}
+For $\rho$ small, the averaged operator has the same uniform base
+Dirichlet coercivity as $L^B_{E,0}$; the $C^0$ smallness permits its
+coefficient error to be absorbed.  Base Dirichlet regularity therefore
+first gives $\|s_\rho\|_{W^{2,0;p}_{B,\Sigma}}\leq C\tau$.
+
+Apply surface and parameter difference quotients to
+\eqref{eq:integrated-HYM-linearization}.  At every order the highest
+derivative $v$ satisfies
+the linearized Dirichlet equation, whose normalized quadratic form obeys
+\begin{equation}\label{eq:anisotropic-energy}
+ \|\nabla_Bv\|_{L^2}^2
+       +\tau\|\nabla_\Sigma v\|_{L^2}^2
+ \leq C\bigl(\|f\|_{H^{-1}_B}^2+\|v\|_{L^2}^2\bigr).
+\end{equation}
+Here $f$ contains only lower-order difference quotients.  The base
+Dirichlet Poincar\'e inequality absorbs the last term, with a constant
+independent of $\tau$.  Difference-quotient induction, followed by base
+Dirichlet regularity and Sobolev embedding, gives
+\[
+ \|s_\rho\|_{W^{r,s;p}_{B,\Sigma}}\leq C_{r,s,p}\tau
+\]
+at every finite pair of orders.  At each induction step, derivatives of
+the averaged operator multiply already controlled lower derivatives of
+$s_\rho$, while the differentiated right side of
+\eqref{eq:integrated-HYM-linearization} retains its factor $\tau$.
+Differentiating the equation in $\tau$ and repeating the same estimate
+gives all $\tau$ derivatives.  Compactness of $C$ makes all constants
+uniform.  This proves the claimed smooth extension, and
+Donaldson uniqueness identifies it with the family in
+Theorem~\ref{thm:reconstruction}.  Rank drop
+creates an unstable \emph{surface} fiber, but the limiting Dirichlet
+operator acts in the base disc, where every restricted bundle is
+holomorphically trivial; hence it introduces no exceptional model.
+\end{proof}
+
+\begin{proposition}[uniform metric-block coercivity]
+\label{prop:metric-coercivity}
+Let $L_{E,\rho}^{\rm Dir}$ be the trace-free self-adjoint Dirichlet
+Chern Laplacian at a reconstructed bubble.  There is a constant $c>0$,
+independent of $E\in\frakM_g^{\rm sa}$ and $0<\rho\leq1$, such that
+\begin{equation}\label{eq:metric-coercivity}
+ \langle L_{E,\rho}^{\rm Dir}s,s\rangle
+ \geq c\rho^{-2}\|s\|_{L^2(\omega_\rho)}^2,
+ \qquad s|_{\Gamma\times\Sigma_g}=0.
+\end{equation}
+Consequently its $L^2$ inverse has norm at most $c^{-1}\rho^2$.
+\end{proposition}
+
+\begin{proof}
+The Bochner--Kodaira identity on endomorphisms gives
+\[
+ 2\|\bar\partial_{A_{E,\rho}}s\|^2
+ =\|\nabla_{A_{E,\rho}}s\|^2
+  +\langle i[\Lambda_{\omega_\rho}F_{A_{E,\rho}},s],s\rangle.
+\]
+The last term vanishes because the connection is projectively HYM.
+Kato's inequality and the scalar Dirichlet Poincar\'e inequality on
+$H_-$ imply
+\[
+ \|\nabla_{A_{E,\rho}}s\|_{L^2(\omega_\rho)}^2
+ \geq \|d|s|\|_{L^2(\omega_\rho)}^2
+ \geq c\rho^{-2}\|s\|_{L^2(\omega_\rho)}^2.
+\]
+This argument contains no curvature bound and is therefore unaffected by
+rank drop.
+\end{proof}
+
+\begin{theorem}[uniform reduced inverse]\label{lem:uniform-inverse}
+Let $C$ be a compact subset of $\frakM_g^{\rm sa}/G_\RR$.  On the
+complement of the Dolbeault tangent space, the mixed linearization at the
+reconstructed bubbles has a right inverse $Q_{E,\rho}$ satisfying
+\begin{equation}\label{eq:uniform-inverse}
+                         \|Q_{E,\rho}\|\leq C_0
+\end{equation}
+for $E\in C$ and $0<\rho\leq\rho_0$.
+\end{theorem}
+
+\begin{proof}
+Fix $p>4$ and put $\tau=\rho^2$.  We first specify the norms in the
+statement.  After the collar Cauchy--Riemann identification below, write
+$s$ for the full coexact--metric pair and $\chi$ for the full
+exact--unitary-gauge pair; each displayed scalar norm is applied
+componentwise.  The first pair, with zero Dirichlet value, has norm
+\[
+ \begin{split}
+ \|s\|_{\mathcal M_\tau^p}={}&\|s\|_{L^p}
+ +\|\nabla_Bs\|_{L^p}+\|\nabla_B^2s\|_{L^p}
+ +\rho\|\nabla_\Sigma s\|_{L^p}\\
+ &+\rho\|\nabla_B\nabla_\Sigma s\|_{L^p}
+ +\tau\|\nabla_\Sigma^2s\|_{L^p}.
+ \end{split}
+\]
+For the exact--gauge pair, with covariant Neumann boundary
+condition, use
+\[
+ \|\chi\|_{\mathcal G_\tau^p}
+ =\|\chi\|_{W^{2,p}_\Sigma}
+ +\rho^{-1}\|\nabla_B\chi\|_{W^{1,p}_\Sigma}
+ +\rho^{-2}\|\nabla_B^2\chi\|_{L^p}.
+\]
+The Dolbeault component has its fixed $W^{1,p}$ graph norm.  On the target
+leave the integrability, positive Cauchy--Riemann, and Coulomb rows
+unscaled, and multiply only the scalar HYM row by $\rho^2$.  These direct
+sum norms are denoted by $\mathcal X_{E,\tau}^p$ and
+$\mathcal Y_\tau^p$.
+
+We next verify that these are norms on DFL's first-order boundary problem,
+rather than on a formal second-order replacement.  In DFL's seam collar,
+write a spatial one-form as $b=q+\tau_0ds$, where $\tau_0$ is a field
+component.  Their Hodge decomposition (5.17)--(5.21) is
+\begin{equation}\label{eq:dfl-collar-hodge}
+ q=h+d_\alpha\zeta+*_\Sigma d_\alpha\zeta'.
+\end{equation}
+Here $h$ is harmonic and
+\[
+ \zeta,\zeta'\in
+ W^{1,p}_{s,\theta}W^{1,p}_\Sigma
+ \cap L^p_{s,\theta}W^{2,p}_\Sigma.
+\]
+The boundary conditions are
+\begin{equation}\label{eq:dfl-collar-boundary}
+ \tau_0|_{s=0}=0,\qquad \zeta'|_{s=0}=0,\qquad
+ (h|_{s=0},\nu|_{s=0})\in V_\alpha,
+\end{equation}
+where $V_\alpha$ is the harmonic Narasimhan--Seshadri graph.  The exact
+potential $\zeta$ is unrestricted at the seam.  The surface zero-form
+Laplacian has a uniform positive gap because every seam connection is
+irreducible.  Hence \eqref{eq:dfl-collar-hodge} and its inverse are
+uniformly bounded in the displayed anisotropic spaces.  This works with
+the full collar fields and requires no extension of a seam first jet.
+
+Freeze the coefficients and take
+$d_\alpha^*d_\alpha e=\mu e$, $\mu>0$.  Substitution of
+\[
+ q=x\mu^{-1/2}d_\alpha e
+   +y\mu^{-1/2}*_\Sigma d_\alpha e
+\]
+in DFL (5.7) pairs $(y,\tau_0)$ and $(x,\varphi)$ into two
+Cauchy--Riemann matrices.  After the $\theta$ derivative is added and the
+system is squared, the off-diagonal first derivatives cancel.  With the
+row normalization above, the two scalar symbols are
+\begin{equation}\label{eq:two-parameter-symbols}
+ |\xi_B|^2+\rho^2\mu,\qquad
+ \rho^{-2}|\xi_B|^2+\mu.
+\end{equation}
+The first has the Dirichlet condition in
+\eqref{eq:dfl-collar-boundary}; the second has the complementary Neumann
+condition supplied by the adjoint equation.  They are respectively the
+metric and unitary-gauge blocks.  Base Dirichlet Poincar\'e gives a gap for
+the first symbol, uniformly when $\rho^2\mu$ tends to zero.  The lower bound
+$\mu\geq\mu_0>0$ gives a gap for the second symbol, including its
+base-constant mode.  Reflection and the multipliers in
+\eqref{eq:two-parameter-symbols} give
+\begin{equation}\label{eq:two-block-estimates}
+ \|s\|_{\mathcal M_\tau^p}
+ \leq C\|L_{E,\tau}^{\rm Dir}s\|_{L^p},
+ \qquad
+ \|\chi\|_{\mathcal G_\tau^p}
+ \leq C\|G_{E,\tau}^{\rm Neu}\chi\|_{L^p}.
+\end{equation}
+
+The harmonic term in \eqref{eq:dfl-collar-hodge}, coupled to $\nu$ by
+$V_\alpha$, is the Dolbeault transmission block of
+Proposition~\ref{prop:fredholm-dolbeault}.  On the complement of its kernel,
+its smallest singular value is uniformly positive over $C$.  DFL's
+domain-straightening map in Proposition 5.27 acts separately on the
+harmonic, exact, and coexact entries of the full collar field.  Its formula
+and inverse are uniformly bounded in the norms above.  A partition of
+unity, coefficient freezing, and \eqref{eq:two-block-estimates} therefore
+give
+\begin{equation}\label{eq:uniform-dfl-with-compact-term}
+ \|x\|_{\mathcal X_{E,\tau}^p}
+ \leq C\bigl(
+ \|\cD^{\rm mix}_{E,\rho}x\|_{\mathcal Y_\tau^p}
+ +\|x\|_{L^p}\bigr).
+\end{equation}
+The coefficient bounds needed to absorb the frozen errors follow from
+Theorem~\ref{thm:inverse-adiabatic}.  The cross terms are triangular:
+holomorphic variation enters the HYM and Coulomb rows, whereas unitary
+gauge invariance and the K\"ahler identities prevent a gauge-to-HYM or
+metric-to-Coulomb term.  Solving the harmonic row first and then the two
+rows in \eqref{eq:two-block-estimates} gives uniformly bounded Schur
+coordinates.
+
+It remains to remove the last term in
+\eqref{eq:uniform-dfl-with-compact-term}.  Otherwise there are
+$E_j\to E_\infty$, $\rho_j\to0$, and reduced fields $x_j$ of unit graph
+norm with $\cD^{\rm mix}_{E_j,\rho_j}x_j\to0$.  In the Schur coordinates,
+the harmonic component converges to its Dolbeault kernel projection.
+Orthogonality to the smoothly varying kernel makes that projection zero.
+The two estimates in \eqref{eq:two-block-estimates} then make the metric and
+gauge components tend to zero.  This contradicts the unit graph norm.
+Thus
+\[
+ \|x\|_{\mathcal X_{E,\tau}^p}
+ \leq C\|\cD^{\rm mix}_{E,\rho}x\|_{\mathcal Y_\tau^p}
+\]
+on the reduced complement.  Fixed-scale surjectivity from
+Proposition~\ref{prop:fredholm-dolbeault} and the open-mapping theorem give
+the right inverse and \eqref{eq:uniform-inverse}.
+\end{proof}
+
+On the seam-admissible locus, $G_\RR$ normalizes every gauge-side
+basepoint.  A sequence whose basepoint approaches the seam is governed by
+the center--scale ratio in \eqref{eq:rank-drop-exact-normal-form}: finite
+ratio returns to the full-rank mixed chart, negative infinite ratio returns
+to the normalized gauge rank-drop chart, and positive infinite ratio is the
+ordinary holomorphic-sphere stratum treated in
+Proposition~\ref{prop:ordinary-bubbles}.
+
+\begin{proposition}[uniform attachment decay]\label{lem:attachment-decay}
+Let $C$ be as in Theorem~\ref{lem:uniform-inverse}.  In a common seam gauge
+near infinity there are constants $C_k$ such that
+\begin{equation}\label{eq:attachment-decay}
+ \sum_{j=0}^k|\zeta|^j
+ \bigl|\nabla^j\bigl((A_{E,\rho},u_E)
+                   -(A_\infty,u_\infty)\bigr)\bigr|
+ \leq C_k|\zeta|
+\end{equation}
+for $E\in C$ and $0<\rho\leq\rho_0$, where $\zeta=1/w$ is the removable
+coordinate at the attaching point.
+\end{proposition}
+
+\begin{proof}
+Theorem~\ref{thm:inverse-adiabatic} gives uniform smooth bounds up to the
+boundary point $\zeta=0$.  In temporal seam gauge, the value there is the
+Narasimhan--Seshadri representative of $E_\infty$.  The positive
+classifying maps form a compact smooth family with the same value.
+Taylor's theorem gives \eqref{eq:attachment-decay}; the powers of
+$|\zeta|$ record the scale-invariant derivative norm.  For
+$\rho$ bounded away from zero the same estimate follows from ordinary
+compact parameter elliptic theory.  Proposition~\ref{prop:primitive-no-neck}
+identifies these representatives with the clean cut-circle limits of an
+arbitrary degenerating sequence.
+\end{proof}
+
+\begin{theorem}[primitive master compactness]
+\label{thm:primitive-master-compactness}
+Let $(A_\nu,u_\nu)$ be mixed solutions with one matching concentration
+point of primitive charge and no ordinary instanton charge.  Normalize the
+center by the energy barycenter, the scale by a fixed energy radius, and
+the remaining seam-preserving affine freedom.  After passage to a
+subsequence, precisely one of the following occurs.
+\begin{enumerate}
+\item The coefficient pairs converge at finite seam ratio to a full-rank
+$E\in\frakM_g^{\rm sa}$.  On every fixed rescaled core, the solutions
+converge in the graph norm of Theorem~\ref{lem:uniform-inverse} to
+$(A_{E,\rho_\nu},u_E)$.
+\item After negative affine recentering, they converge to a rank-drop
+$E\in\frakM_g^{\rm sa}$ whose basepoint lies in $H_-$.  The same strong
+convergence holds to its Dirichlet reconstruction.
+\item The seam ratio tends to positive infinity.  The seam-centered
+component converges strongly to the constant mixed solution, while
+recentering at the escaping basepoint gives a unique simple minimal sphere.
+The convergence there is smooth away from the node.
+\end{enumerate}
+In every case the annulus from the primitive core to the residual solution
+has vanishing limiting energy.  There is no further analytic scale or
+positive-energy component.
+\end{theorem}
+
+\begin{proof}
+Apply finite-scale holomorphic doubling before taking a limit.  On the
+rescaled discs this gives bundles
+\[
+                     E_\nu\longrightarrow D_{R_\nu}\times\Sigma_g,
+                     \qquad R_\nu\longrightarrow\infty,
+\]
+framed on regular outer circles chosen from smooth convergence to the
+removable residual solution.  The classifying loop there lies in a
+contractible fine-moduli chart and converges to the attaching value.
+Cap it continuously in that chart.  This cap is used only for relative
+degree; it is not asserted to be holomorphic.  It may be chosen with
+symplectic area tending to zero.
+
+Apply Lemma~\ref{lem:disc-reduction} on each expanding disc.  The
+fixed-family identity \eqref{eq:finite-charge-splitting} gives
+\[
+                         d_\nu+\ell_\nu=1.
+\]
+The stable-reduction map is holomorphic on the disc, so its area is
+$d_\nu/2+o(1)$, the error being the area of the shrinking cap.  Gromov
+compactness followed by removal at infinity produces a stable map on
+$\PP^1$, and the finitely many modification supports have a convergent
+subsequence.  Positivity and the displayed identity leave either one
+degree-one component or one length-one modification.  Mu\~noz's
+classification identifies the result with one primitive coefficient pair.
+The exact normal form \eqref{eq:rank-drop-exact-normal-form} then gives the
+finite-ratio, negative-rank-drop, and positive-sphere alternatives.  It
+also shows that a sphere and the limiting quasimap basepoint are two
+compactifications of the same unit of charge, not two components to be
+counted separately.
+
+Consider the first two alternatives and fix a rescaled core $K_R$.  For
+large $\nu$, stable reduction supplies complex gauges in which the
+Dolbeault operators converge smoothly to that of $E$ on $K_R$.  The seam
+Narasimhan--Seshadri metrics converge smoothly because all seam fibers are
+stable and their trace-free zero-form Laplacians have a uniform spectral
+gap.  Compare the original rescaled HYM metric with the reconstructed
+metric in these gauges.  Their seam values agree in the limit.  On the
+outer semicircle their difference tends to zero by residual convergence
+and Proposition~\ref{lem:attachment-decay}.
+
+Extend that outer boundary difference through a collar and subtract it.
+If $e^{r_\nu}$ is the remaining metric ratio, then $r_\nu$ has zero
+boundary value and satisfies an integrated linearized HYM equation
+\begin{equation}\label{eq:compactness-metric-ratio}
+ \left(\int_0^1
+ D_H\Phi(H_{\rm rec}e^{t r_\nu},\rho_\nu^2)\,dt\right)r_\nu
+ =f_\nu,
+ \qquad \|f_\nu\|_{\mathcal Y_{\rho_\nu^2}^p(K_R)}\longrightarrow0.
+\end{equation}
+The maximum principle first gives $r_\nu\to0$ in $C^0$.  The metric and
+gauge block estimates in \eqref{eq:two-block-estimates} then give
+\[
+ \|r_\nu\|_{\mathcal M_{\rho_\nu^2}^p(K_R)}
+ +\|\chi_\nu\|_{\mathcal G_{\rho_\nu^2}^p(K_R)}\longrightarrow0,
+\]
+where $\chi_\nu$ is the unitary difference in the Coulomb slice.  The
+harmonic part is precisely the convergent Dolbeault coefficient.  The
+collar decomposition \eqref{eq:dfl-collar-hodge} therefore proves strong
+convergence in the full graph norm.  The argument is uniform through
+gauge-side rank drop because the unstable fiber stays in the interior;
+the seam spectral gap and base Dirichlet estimate do not degenerate.
+
+In the third alternative, the exact coefficient normal form converges on
+seam-centered compact sets to the constant stable bundle, so the preceding
+argument gives the constant mixed limit there.  In the coordinate centered
+at the escaping basepoint the positive maps converge to
+\[
+                            \eta\longmapsto[v\eta+w].
+\]
+This is a simple minimal sphere.  Its linearized operator is surjective by
+the regularity argument in Section~\ref{sec:compact-stratification}; removal
+and elliptic bootstrapping give smooth convergence away from the node.
+
+Finally let $R\to\infty$ along the good circles in
+Proposition~\ref{prop:primitive-no-neck}.  Its Chern--Simons identity makes
+the intervening energy tend to zero, and small-energy regularity upgrades
+this to first-order convergence on the selected annuli.  The primitive
+charge has already been exhausted.  A further matching component or sphere
+would cost another half-unit, while an instanton would cost one unit.
+This proves exhaustion and the theorem.
+\end{proof}
+
+\subsection{The primitive gluing collar}\label{sec:primitive-gluing}
+Let $x_0=(A_0,u_0)$ be a regular index-zero residual mixed solution and
+let
+\[
+                         e_0:\RR\longrightarrow M_g
+\]
+be its evaluation along the matching line.  The primitive bubble stratum
+over $x_0$ is
+\begin{equation}\label{eq:bubble-stratum}
+ \cB_g(x_0)=
+ \left(
+ \RR\,{}_{e_0}\!\times_{\ev_\infty}\frakM_g^{\rm sa}
+ \right)/G_\RR.
+\end{equation}
+When the fiber product is regular, the dimension calculation
+\eqref{eq:bubble-dim-ledger} gives
+\begin{equation}\label{eq:bubble-stratum-dim}
+                           \dim_\RR\cB_g(x_0)=3.
+\end{equation}
+For $g\geq3$ the generic fiber product is empty by
+\eqref{eq:image-codim}; the construction below applies on every regular
+nonempty stratum before that final generic choice.
+
+\begin{theorem}[primitive mixed gluing]\label{thm:primitive-gluing}
+Suppose $x_0$ and the fiber product in \eqref{eq:bubble-stratum} are
+regular.  For every compact $C\subset\cB_g(x_0)$ there are $\rho_0>0$
+and a smooth map
+\begin{equation}\label{eq:gluing-map}
+ \Glue:C\times(0,\rho_0)
+       \longrightarrow\cM_\eta(\alpha,\beta)_4
+\end{equation}
+with the following properties.
+\begin{enumerate}
+\item As $\rho\to0$, it converges in the
+Gromov--Uhlenbeck--stable-reduction topology to the corresponding
+residual-plus-bubble configuration.
+\item It is a local diffeomorphism onto a neighborhood of the bubbled face.
+\item Every mixed solution sufficiently close to $C$ is represented
+uniquely by \eqref{eq:gluing-map}, modulo gauge and $G_\RR$.
+\end{enumerate}
+Thus $\rho=0$ is a collar face of the compactified index-four moduli space.
+\end{theorem}
+
+\begin{proof}
+We give the construction with the estimates needed later.  In the
+removable coordinate $\zeta=1/w$, the bubble and residual solutions have
+the same stable flat seam value at $\zeta=0$.  Choose
+\begin{equation}\label{eq:gluing-radii}
+                      R_\rho=\rho^{-1/2},
+ \qquad r_\rho=\rho R_\rho=\rho^{1/2},
+ \qquad T_\rho=\frac12|\log\rho|.
+\end{equation}
+Cut the bubble at $|w|=R_\rho$, cut the residual solution at physical
+radius $r_\rho$, and identify the annuli by $z=\rho w$.  Use a common
+cutoff which is affine in logarithmic radius on a subcylinder of length
+comparable to $T_\rho$.  Its cylindrical derivative is at most
+$C/T_\rho$.  Use the same cutoff on both sides of the seam and the same
+flat representative.  The matching condition is preserved exactly.  The
+secondary perturbations vanish on this neighborhood and introduce no
+rescaled error.
+
+The residual Taylor error is $O(r_\rho)$, the bubble-tail error is
+$O(R_\rho^{-1})$ by Proposition~\ref{lem:attachment-decay}, and the cutoff
+commutator has $L^p$ size $O(T_\rho^{-\kappa})$, where
+$\kappa=1-1/p>0$: its pointwise size is $O(T_\rho^{-1})$ and its transition
+cylinder has length $O(T_\rho)$.  In the target norm of
+Theorem~\ref{lem:uniform-inverse},
+\begin{equation}\label{eq:pregluing-error}
+ \|\cF(x_{\rm pre})\|_{\mathcal Y_{\rho^2}^p}
+ \leq C\bigl(\rho^{1/2}+T_\rho^{-\kappa}\bigr)
+\end{equation}
+uniformly over $C$.
+
+Let $Q_0$ be a right inverse for the regular index-zero residual operator
+and let $Q_{E,\rho}$ be the reduced inverse from
+Theorem~\ref{lem:uniform-inverse}.  If $K_0$ and $K_E$ are the two kernels,
+regularity of the evaluation fiber product is surjectivity of
+\[
+ \mathfrak e:\RR_s\oplus K_0\oplus K_E\longrightarrow TM_g,
+ \qquad
+ \mathfrak e(\dot s,\xi_0,\xi_E)
+ =d\ev_0(\dot s,\xi_0)-d\ev_\infty(\xi_E).
+\]
+Choose a uniformly bounded right inverse for this finite-dimensional map
+over $C$.  Cut a target field into residual, bubble, and neck pieces, apply
+$Q_0$ and $Q_{E,\rho}$, correct their harmonic attaching mismatch with
+that right inverse, and splice the source fields with the logarithmic
+cutoff.  The harmonic neck modes are exactly those treated by
+$\mathfrak e$; irreducibility removes trace-free exact zero modes.
+
+The resulting approximate inverse satisfies
+\[
+ \|D_\rho Q_\rho^{\rm app}-\id\|
+ \leq C\bigl(T_\rho^{-1}+\rho^{1/2}\bigr).
+\]
+The cutoff term is small because its logarithmic derivative tends to zero,
+the coefficient term is controlled by
+Proposition~\ref{lem:attachment-decay}, and the collapsing block is
+controlled by Theorem~\ref{lem:uniform-inverse}.  A Neumann series gives a
+right inverse $Q_\rho$ with
+\begin{equation}\label{eq:glued-inverse}
+                              \|Q_\rho\|\leq C.
+\end{equation}
+
+The nonlinear term obeys the standard quadratic estimate
+\[
+ \|\mathcal N(\xi)-\mathcal N(\xi')\|
+ \leq C(\|\xi\|+\|\xi'\|)\|\xi-\xi'\|.
+\]
+The contraction equation
+\[
+ \xi=-Q_\rho\bigl(\cF(x_{\rm pre})+\mathcal N(\xi)\bigr)
+\]
+therefore has a unique solution satisfying
+\[
+            \|\xi\|\leq C(\rho^{1/2}+T_\rho^{-\kappa}).
+\]
+It varies smoothly in the bubble parameters and $\rho>0$ and defines
+\eqref{eq:gluing-map}.
+
+For the boundary smooth structure use
+\[
+ r=T_\rho^{-1}=\frac{2}{|\log\rho|},
+ \qquad \rho=e^{-2/r}.
+\]
+In this profile every positive power of $\rho$ is flat at $r=0$, and the
+cutoff is fixed after dividing the neck coordinate by $T_\rho$.  The
+parameter-dependent contraction theorem makes the corrected family smooth
+for $r\geq0$.  Increasing $r$ has the same inward orientation as increasing
+$\rho$.
+
+For uniqueness, fix center and scale by the energy barycenter and the
+half-energy radius and impose Coulomb gauge.  The derivative of these two
+conditions on translation and positive dilation is nonsingular.  Two glued
+solutions with the
+same limit differ in the reduced complement; \eqref{eq:glued-inverse} and
+the quadratic estimate force the difference to vanish.
+
+Conversely, Theorem~\ref{thm:primitive-master-compactness} assigns every
+nearby solution a residual solution, primitive coefficient, center, and
+scale, and makes it converge to the corresponding pregluing in the source
+graph norm on both cores and the complete neck.  It therefore lies in the
+same contraction ball as the correction constructed above.  Uniqueness of
+the fixed point proves local surjectivity without assuming uniqueness of an
+abstract stable-reduction limit.
+
+Changing cutoffs, gauges, or exponential charts changes the pregluing by a
+term tending to zero in the source norm.  The two corrections solve the
+same equation in the same center--scale slice, so contraction uniqueness
+identifies them.  Coefficient-chart overlaps are smooth by Dirichlet
+reconstruction, including at gauge rank drop.  At positive infinite ratio,
+the exact coefficient normal form is the ordinary nodal-sphere smoothing;
+standard simple-sphere gluing gives the compatible raw compactification
+chart.  This proves the overlap assertion and completes the collar theorem.
+\end{proof}
+
+A rank-drop basepoint on the gauge side produces no additional end:
+$G_\RR$ normalizes it, so it belongs to the same Dirichlet family as the
+full-rank bubbles.  A positive-side rank-drop limit is instead a constant
+mixed component with an ordinary minimal sphere.  Its standard nodal sphere
+collar is part of the raw compactification and is compatible with the
+finite seam-ratio chart through
+\eqref{eq:rank-drop-exact-normal-form}; Proposition~\ref{prop:ordinary-bubbles}
+shows that the point incidence misses it.  Thus
+Theorem~\ref{thm:primitive-gluing} is required only on the full-rank and
+gauge rank-drop colors of the primitive matching face.
+
+\section{Transversality, incidence, and the boundary formula}
+\label{sec:boundary-formula}
+
+\subsection{Compact stratification}\label{sec:compact-stratification}
+Through Fredholm index four, the compactified mixed moduli space has the
+following strata:
+\begin{enumerate}
+\item the unbroken, unbubbled mixed stratum;
+\item ordinary gauge and symplectic Floer breakings;
+\item interior sphere and outer-boundary disc strata, which have
+codimension at least two in the point cut by
+Proposition~\ref{prop:ordinary-bubbles};
+\item the primitive matching face constructed in
+Theorem~\ref{thm:primitive-gluing};
+\item the full-rank and Segre rank strata inside that face.
+\end{enumerate}
+There are no further scale-tree strata.  Theorem~\ref{thm:local-charge} and
+Corollary~\ref{cor:primitive-atom} give one charge-one atom;
+Proposition~\ref{prop:framed-splitting} gives each individual doubled
+family's algebraic type as a minimal line or one rank-drop modification;
+Proposition~\ref{prop:primitive-no-neck}
+excludes hidden analytic necks; and Theorem~\ref{thm:primitive-gluing}
+constructs a collar of the resulting face.
+
+The obstruction to extending DFL's perturbation construction verbatim
+from index three to index four is now visible.  Their local
+cokernel-separation argument is index independent, but their finite-cover
+argument needs compactness of the nonregular locus.  At index four that
+compactness becomes available only after the primitive face has been
+added.
+
+The ordinary bubbling strata cause no further transversality problem.
+Index exhaustion makes every sphere or disc component minimal and hence
+simple.  Away from the matching neighborhood, the usual universal
+almost-complex-structure argument regularizes these components and their
+nodal evaluation maps.  In the region where the complex structure is the
+fixed structure $J_*$, a minimal sphere is one of the extension lines in
+$M_g$.  For its bundle $E$ on $\PP^1\times\Sigma_g$, stability of the
+fibers gives $R^0\pi_*\End_0E=0$ and identifies
+$R^1\pi_*\End_0E$ with the pullback of $TM_g$.  The Leray sequence and
+the vanishing in Proposition~\ref{prop:fredholm-dolbeault} therefore give
+$H^1(\PP^1,f^*TM_g)=0$, which is surjectivity of the sphere operator.  A
+minimal outer-boundary disc is regular for a
+generic allowed domain-dependent almost complex structure.  The standard
+simple-curve gluing construction then gives neighborhoods of these
+codimension-two strata; for the sphere case see
+\cite[Chapter~10]{McDuffSalamon04}, and for the monotone Lagrangian
+boundary case see \cite{Oh93}.  These
+ordinary neighborhoods are used below only to compactify the
+transversality problem; Proposition~\ref{prop:ordinary-bubbles} shows that
+the point cut misses them.
+
+\subsection{Evaluation transversality}\label{sec:evaluation-transversality}
+Let $\cP$ be the DFL space of standard secondary perturbations: holonomy
+perturbations on the gauge side and domain-dependent almost-complex
+variations on the symplectic side, supported away from the matching
+neighborhood.
+
+Let $\cS$ be a stratum in an algebraic Whitney stratification for which
+$i_g$ and the restrictions of $\ev_\infty$ to the full-rank and Segre
+strata are stratified submersions.  On the universal residual moduli space
+consider
+\begin{equation}\label{eq:universal-seam-evaluation}
+ \Ev_\gamma:\cM^{\rm univ}_0(\alpha,\beta)\times\RR_s\longrightarrow M_g,
+ \qquad
+ \Ev_\gamma([A,u],\eta,s)=[A|_{(s,0)\times\Sigma_g}].
+\end{equation}
+The matching condition gives the same value from $u$.
+
+\begin{proposition}[relative seam evaluation]\label{lem:seam-evaluation}
+After an arbitrarily small finite-dimensional enlargement of $\cP$, the
+map \eqref{eq:universal-seam-evaluation} is transverse to every stratum
+$\cS$ occurring in the compact energy range.  The enlargement is
+supported away from the matching neighborhood and can be made relative to
+all previously regular moduli spaces.
+\end{proposition}
+
+\begin{proof}
+Write $\cF_\eta$ for the mixed equation and fix a point at which
+$\Ev_\gamma$ lies in $\cS$.  Transversality of
+$(\cF,\Ev_\gamma)$ to the zero section times $\cS$ is equivalent to
+surjectivity of
+\begin{equation}\label{eq:augmented-evaluation-linearization}
+ (\xi,\dot\eta,\dot s)\longmapsto
+ \left(
+ D_{(A,u)}\xi+P_{(A,u)}\dot\eta,
+ \pi_{N\cS}\,d\Ev_\gamma(\xi,\dot s)
+ \right).
+\end{equation}
+Suppose a pair $(\lambda,\nu)$ annihilates its image.  Here $\lambda$ is
+an adjoint mixed field and $\nu\in N^*\cS$.  Variation in $\dot\eta$
+shows that $\lambda$ annihilates every allowed holonomy and
+almost-complex direction.  On the complement of the evaluation point it
+satisfies DFL's homogeneous adjoint equation.  If its gauge component is
+nonzero on the allowed support, the holonomy direction constructed in the
+proof of \cite[Proposition~3.23]{DaeFukLip21a} pairs nontrivially with it.
+If the gauge component vanishes but the symplectic component is nonzero,
+DFL's variation of the almost complex structure at a point where $du$ is
+nonzero does the same.  Their constant-map argument covers the remaining
+case.  Thus $\lambda$ vanishes on the perturbation supports.  Unique
+continuation on both pieces makes it vanish away from the evaluation
+point.
+
+The weak adjoint equation is now
+\begin{equation}\label{eq:adjoint-evaluation-source}
+                       D_{(A,u)}^*\lambda+\Ev_\gamma^*\nu=0.
+\end{equation}
+The adjoint field belongs to the ordinary dual Sobolev space, so vanishing
+off one point means that $\lambda=0$ as an $L^q$ field.  Equation
+\eqref{eq:adjoint-evaluation-source} reduces to $\Ev_\gamma^*\nu=0$.
+Smooth configuration variations realize an arbitrary tangent vector in
+$TM_g$ at the seam trace: prescribe the matching trace locally and extend
+it to the two configuration spaces.  Hence $\nu=0$, proving surjectivity of
+\eqref{eq:augmented-evaluation-linearization}.
+
+The relevant universal zero set is compact after the ordinary and
+primitive strata have been added.  Finitely many of the separating
+directions above therefore suffice.  Sard--Smale applied to this
+finite-dimensional family gives the assertion.  The usual descending
+smallness choice makes the construction relative to earlier regular
+spaces and preserves DFL's nonnegative-energy bound.
+\end{proof}
+
+Choose a Whitney stratification of the algebraic image of $i_g$ and apply
+Proposition~\ref{lem:seam-evaluation} simultaneously to its finitely many strata
+in the compact energy range.  For $g\geq3$, the residual path misses the
+image by \eqref{eq:image-codim}.  For $g=2$, it avoids the branch locus and
+meets the regular four-sheeted locus.  When $g=1$, the target is a point;
+the excess Jacobian is regularized by the universal incidence section
+rather than by evaluation.
+
+\begin{proposition}[relative index-four regularity]
+\label{prop:index-four-regularity}
+The secondary perturbations can be chosen so that all mixed moduli spaces
+needed by the point operation are regular through index four, including
+their residual, broken, primitive, and rank strata.  The perturbations
+remain identically zero in the fixed matching neighborhood.
+\end{proposition}
+
+\begin{proof}
+First choose the DFL perturbations so that all lower-index residual and
+broken strata are regular.  Proposition~\ref{lem:seam-evaluation} makes
+the primitive evaluation fiber products regular.  Fixed-scale regularity
+and Theorem~\ref{thm:primitive-gluing} then give parameterized collars of
+the primitive faces.  Ordinary breaking collars are regular by DFL Floer
+gluing, and the simple sphere and disc collars are regular by the preceding
+ordinary-bubble argument.
+
+These constructions also apply to a sufficiently small family of
+secondary perturbations: the right inverses and gluing maps vary
+continuously, so regularity of the compact union of boundary strata is an
+open condition.  Remove smaller collar neighborhoods from the
+parameterized compactified index-four space.  Properness of DFL compactness
+together with Theorem~\ref{thm:primitive-gluing} makes the remaining
+universal core compact.  At each nonregular solution in this core, DFL's
+local cokernel-separation argument supplies finitely many perturbation
+directions that kill its cokernel.  A finite subcover and Sard's theorem,
+exactly as in the proof of \cite[Proposition~3.23]{DaeFukLip21a}, give one
+arbitrarily small parameter for which the core is regular.  Smallness
+preserves the already regular collar strata.  All perturbation directions
+are supported away from the seam, so the local charge, stable-reduction,
+Dirichlet, and primitive gluing models are unchanged.
+\end{proof}
+
+\subsection{Extension of the point incidence}\label{sec:incidence-extension}
+Blow up the pair $(z-z_0,\rho)$ near a primitive matching point.  The front
+face has affine coordinate $w=(z-z_0)/\rho$.  In the common flat seam gauge
+on a good-circle annulus, let $g_0$ and $g_E$ be the framed transition
+functions of the residual and reconstructed bubble bundles.  For
+$\rho>0$, splice $g_0^{-1}g_E$ with the logarithmic cutoff used in the
+linear gluing construction.  At $\rho=0$, retain the residual cocycle on
+the principal component and the bubble cocycle on the front face, identified
+at $w=\infty$.  No-neck convergence makes the cocycles converge on the
+overlap.  This constructs the universal projective bundle on the gluing
+blowup.
+
+The fine-moduli ambiguity tensors a rank-two universal bundle by a line
+from the parameter space; its adjoint is unchanged.  We therefore obtain a
+canonical adjoint bundle over the compactified chart, up to an isomorphism
+fixed at the interpolation ends.  It is smooth on every stratum and through
+gauge rank drop by the uniform reconstruction theorem.  On the positive
+infinite-ratio chart it is the standard universal bundle over the ordinary
+stable-map sphere collar.  Its front-face clutching class is the class used
+in Theorem~\ref{thm:local-charge}, so there is no additional neck class.
+
+Two sections of the extended bundle define a stratified codimension-four
+linear-dependence cycle on
+\[
+               \overline{\cM}_\eta(\alpha,\beta)_4\times\RR_t.
+\]
+
+\begin{proposition}[relative point-incidence transversality]
+\label{prop:incidence-transversality}
+The two interpolating sections can be chosen, relative to the fixed
+transverse representatives at $t=\pm\infty$, so that their rank-one
+degeneracy locus is transverse to every stratum of the index-three and
+compactified index-four universal evaluation maps.  The rank-zero locus is
+empty.  On the genus-one primitive stratum the induced normal section of
+the excess determinant line is transverse to zero.
+\end{proposition}
+
+\begin{proof}
+At a point of the rank-one stratum, independent pointwise variations of
+the two sections surject onto the normal space of the determinantal variety
+in $\Hom(\CC^2,\CC^3)$.  The same statement, with a larger normal space,
+holds at the rank-zero stratum.  Section variations supported in an
+arbitrarily small neighborhood of a given evaluation point realize these
+pointwise variations.  Relative Thom transversality, applied successively
+to the finite Whitney stratification from
+Proposition~\ref{prop:index-four-regularity}, therefore gives simultaneous
+transversality while leaving collars of $t=\pm\infty$ fixed.  The
+rank-zero stratum has real codimension twelve, greater than the dimension
+of every evaluation stratum here, and is consequently empty.  On the
+genus-one excess family, prescribe the first complex normal derivative as
+a section of the rank-two coefficient bundle.  Its real rank is four while
+the base has real dimension two, so relative transversality makes it
+nowhere zero.  Project the second normal derivative to the resulting
+complex cokernel line.  A further relative variation makes that section
+transverse to zero.  These are the two derivatives used in
+Proposition~\ref{prop:algebraic-local-determinant}.
+\end{proof}
+
+Near a primitive face, \eqref{eq:bubble-stratum-dim} and the interpolation
+parameter give dimension four.  Proposition~\ref{prop:incidence-transversality}
+cuts the face in an oriented zero-manifold and its gluing collar in a
+one-manifold.
+Together with Proposition~\ref{prop:ordinary-bubbles} and
+Proposition~\ref{prop:index-four-regularity}, this gives the required
+compactness statement.
+
+\begin{proposition}[compact point-cut moduli spaces]
+\label{prop:point-manifolds}
+For compatible generic choices, $\cL_0^q(\alpha,\beta)$ is an oriented
+zero-manifold and $\overline{\cL}_1^q(\alpha,\beta)$ is a compact oriented
+one-manifold.  Its finite-$t$ boundary consists only of ordinary Floer
+breakings and primitive matching configurations.
+\end{proposition}
+
+\begin{proof}
+Propositions~\ref{prop:index-four-regularity} and
+\ref{prop:incidence-transversality} give the asserted dimensions and
+orientations on the top stratum and on each compactification stratum.  The
+primitive gluing collar makes the primitive cut compact, while
+Proposition~\ref{prop:ordinary-bubbles} excludes the ordinary sphere and
+disc faces.  DFL compactness, index-four exhaustion, and primitive stable
+reduction leave only the boundary types listed in the statement.  The
+index-three cut is bubble-free by Proposition~\ref{prop:index-exhaustion};
+its zero-dimensional compactification therefore has no additional ends.
+\end{proof}
+
+\subsection{Determinant locality}\label{sec:determinant-locality}
+Orient $G_\RR$ by translation followed by positive dilation, orient the
+matching-center and interpolation lines $\RR_s,\RR_t$ by increasing
+coordinate, and write $\mathfrak g_\RR$ for the oriented Lie algebra of
+$G_\RR$.  Let $\mathcal N_{p_1}$ be the complex rank-two normal bundle of
+the rank-one determinantal stratum in
+$\Hom(\CC^2,\CC^3)$, with DFL's positive $p_1$ coorientation.
+
+\begin{proposition}[determinant excision]\label{prop:determinant-excision}
+At a regular primitive configuration $(x_0,E)$, the determinant line of
+the glued index-four operator has a natural excision isomorphism
+\begin{equation}\label{eq:det-excision}
+ \det\cD_{\rm gl}
+ \cong
+ \det\cD_{x_0}\otimes
+ \det\cD_{E,\rho}^{\rm mix}\otimes
+ \det\RR_s\otimes
+ (\det TM_g)^*\otimes
+ (\det\mathfrak g_\RR)^*\otimes
+ \RR_\rho.
+\end{equation}
+Here $\RR_\rho$ is the gluing-normal line, oriented by increasing
+$\rho$.  The isomorphism is continuous across the full-rank and rank-drop
+strata.  On the boundary point cut, its finite-dimensional local factor is
+\begin{equation}\label{eq:local-orientation-line}
+ \begin{split}
+ \mathfrak o_g(E)={}&
+ \det\cD_{E,\rho}^{\rm mix}\otimes
+ \det\RR_s\otimes(\det TM_g)^*\otimes
+ (\det\mathfrak g_\RR)^*\\
+ &\otimes\det\RR_t\otimes(\det\mathcal N_{p_1})^*.
+ \end{split}
+\end{equation}
+Thus the orientation line of a primitive point-cut boundary point is
+$\det\cD_{x_0}\otimes\mathfrak o_g(E)$.
+\end{proposition}
+
+\begin{proof}
+The patched inverse in Theorem~\ref{thm:primitive-gluing} deforms the
+linearized glued operator, through Fredholm operators, to the direct sum of
+the residual and fixed-domain bubble operators together with the
+finite-dimensional matching map.  At the level of kernels that map is
+\begin{equation}\label{eq:matching-linear-map}
+ \RR_s\oplus H^1(\PP^1\times\Sigma_g,\End_0E)
+ \longrightarrow TM_g,
+ \qquad
+ (\dot s,\dot E)\longmapsto
+ de_0(\dot s)-d\ev_\infty(\dot E).
+\end{equation}
+It is onto precisely when the evaluation fiber product
+\eqref{eq:bubble-stratum} is regular.  Proposition~\ref{lem:seam-evaluation}
+provides this condition after the generic relative choice of perturbations.
+Its kernel contains
+the infinitesimal $G_\RR$ orbit, and the tangent of the primitive face is
+the quotient by that orbit.  The determinant functor applied to the two
+resulting short exact sequences gives all factors in
+\eqref{eq:det-excision}.  The gluing parameter supplies $\RR_\rho$.
+
+Proposition~\ref{prop:fredholm-dolbeault} identifies the bubble determinant
+with the complex determinant of the Dolbeault complex and shows that its
+obstruction space vanishes.  The matching target $TM_g$ has its complex
+orientation.  The constructions depend continuously on $E$, including on
+the Segre locus, because the patched inverses and the Dolbeault family do.
+Finally, adding $\RR_t$ and applying the determinant functor to the
+surjective normal derivative of the point incidence contracts
+$\det\mathcal N_{p_1}$ and gives \eqref{eq:local-orientation-line}.
+\end{proof}
+
+All factors in $\mathfrak o_g(E)$ are supported in the standard
+surface-seam neighborhood.  They are independent of the two
+three-manifolds and of the residual operator; the latter contributes only
+$\det\cD_{x_0}$, with the orientation used in the comparison count $N$.
+Consequently the primitive contribution is multiplication of the
+comparison count by a universal integer
+\begin{equation}\label{eq:local-coefficient}
+                              c_g^{\rm loc}\in\ZZ
+\end{equation}
+depending only on the genus, the integral $p_1$ convention, and DFL's
+seam orientation.  Summing over index-zero residual solutions gives
+\begin{equation}\label{eq:B-local}
+                              B_q=c_g^{\rm loc}N.
+\end{equation}
+
+\begin{proposition}[algebraic local determinant]\label{prop:algebraic-local-determinant}
+With the complex orientations in
+Proposition~\ref{prop:fredholm-dolbeault}, the absolute local count is four
+in genus two.  In genus one the excess local determinant line over
+$J(\Sigma_1)$ is canonically
+\begin{equation}\label{eq:torus-det-identification}
+                              \det\cE_\zeta.
+\end{equation}
+Hence its absolute local count is eight.
+\end{proposition}
+
+\begin{proof}
+The Dolbeault reduction makes the finite-dimensional normal problem
+complex linear.  In genus two, evaluation at infinity is the holomorphic
+map $i_2:N_2\to M_2$.  Over a regular value, the remaining normalized
+affine, center, and interpolation variables form the standard complex
+rank-two normal slice to the two-section determinantal cycle.  To see its
+relative degree, fix an extension basis $(v,w)$ with $v$ representing the
+attaching line.  A nearby pencil is
+\[
+                  [v z_0+(a v+c w)z_1].
+\]
+The complex number $c$ is the Segre smoothing coordinate.  The matching
+center and normalized interpolation displacement form a second complex
+coordinate $\zeta$; the real affine quotient removes the complementary
+translation and positive-dilation directions.  Before applying relative
+transversality on the complement, prescribe the two-section pair on a
+tubular neighborhood of this slice to be the Thom model whose
+incidence-normal map is
+\[
+                         (c,\zeta)\longmapsto(c,\zeta)
+\]
+on every small normal disk.  It is nonzero on the disk boundary and has one
+transverse zero of complex multiplicity one.  The pair extends over the
+complement by Proposition~\ref{prop:incidence-transversality}.  Any two such
+Thom choices are homotopic through nonzero boundary maps and have the same
+degree.  The ordinary positive-sphere chart has
+negative expected incidence dimension, while the map extends transversely
+across the real-codimension-two gauge rank-drop stratum, so no degree escapes
+through the compactification.  Thus every point of $i_2^{-1}(y)$ has
+complex multiplicity one.  Proposition
+\ref{prop:degree-four} gives four such points counted with multiplicity.
+
+For $g=1$, the character variety is a point and every projective coefficient
+pair has rank one.  After the basepoint and the real affine orbit are normalized,
+the remaining excess parameter is $L\in J(\Sigma_1)$.  Applying the
+determinant functor to the Dolbeault normal complex and to the rank-one
+incidence normal sequence cancels the fixed domain, affine, and Dirichlet
+metric factors.  More explicitly, the normal incidence complex over $L$
+is
+\begin{equation}\label{eq:torus-coefficient-complex}
+ \CC_{\rm norm}\longrightarrow
+ H^0(\PP^1,\cO(1))\otimes(\cE_1)_L.
+\end{equation}
+The source is the trivial complex line obtained from the center and
+interpolation normal after the affine quotient; the target records the two
+extension coefficients.  Use the relative freedom in the first normal
+derivative of the incidence pair to make this arrow a nowhere-zero smooth
+bundle map.  Its cokernel is then a complex line bundle $Q$ fitting into
+\[
+ 0\longrightarrow\CC_{\rm norm}\longrightarrow\cE_\zeta
+   \longrightarrow Q\longrightarrow0.
+\]
+The remaining normal derivative of the incidence pair projects to a
+section $\sigma_Q$ of $Q$.  A primitive configuration lies in the point cut
+exactly when $\sigma_Q$ vanishes, and
+Proposition~\ref{prop:incidence-transversality} makes this section
+transverse to zero.  Since the source line is canonically trivial,
+\[
+                  Q\cong\det\cE_\zeta,
+\]
+which is \eqref{eq:torus-det-identification}.  This calculation is
+unaffected by the metric block because that block is an invertible family
+with its canonical determinant trivialization.  Equation
+\eqref{eq:torus-degree-eight} gives
+\begin{equation*}
+ \left\langle c_1(\det\cE_\zeta),[J(\Sigma_1)]\right\rangle=8.
+\end{equation*}
+The complex zero-set orientation gives the asserted absolute counts.
+\end{proof}
+
+\subsection{Evaluation of the local coefficient}\label{sec:coefficients}
+For $g\geq3$, Proposition~\ref{lem:seam-evaluation} and
+\eqref{eq:image-codim} make the attachment fiber product empty.  Hence
+\begin{equation}\label{eq:higher-coefficient}
+                           c_g^{\rm loc}=0,
+                    \qquad g\geq3.
+\end{equation}
+
+Proposition~\ref{prop:algebraic-local-determinant} gives absolute local
+counts four and eight in genera two and one, respectively.
+
+It remains to compare these complex orientations with DFL's coherent mixed
+orientation.  The excision isomorphism \eqref{eq:det-excision} proves that
+this comparison is the same universal sign on every target.  Evaluate it
+on the cylinder splitting of $\Sigma_g\times S^1$.  DFL orient their
+index-$8k+4$ gauge path by gluing the positive generator sphere to a
+constant strip and require the symplectic orientations to agree with that
+sphere-gluing map \cite[Remark~4.76]{DaeFukLip21a}.  Independently,
+Proposition~\ref{prop:cylinder-identities} gives $+8N$ and $+4N$ from the
+Floer and quantum ring relations.  Since $N$ is an isomorphism, the local
+complex orientations agree with the DFL boundary orientation.  Therefore
+\begin{equation}\label{eq:integral-coefficients}
+ c_g^{\rm loc}=
+ \begin{cases}
+ 8,&g=1,\\
+ 4,&g=2,\\
+ 0,&g\geq3.
+ \end{cases}
+\end{equation}
+This calibration is not circular: it uses surface compatibility, not
+point compatibility.
+
+\subsection{The oriented boundary count}\label{sec:oriented-boundary}
+
+\begin{theorem}[point-class comparison]\label{thm:main}
+Let $(Y_\#,E_\#)$ have an admissible splitting
+$Y_\#=Y\cup_\Sigma(-Y')$ in the embedded-Lagrangian DFL setting.  Assume
+the flat connections are irreducible and use compatible standard
+perturbations that vanish near the matching line.  Let
+$q\in\Sigma_j$ and write $g_j$ for the genus of that component.  Over
+$\QQ$, the comparison chain map and the positive quarter-Pontryagin point
+operations satisfy
+\begin{equation}\label{eq:main}
+ N m_q^G-m_q^S N
+ =d_SK_q+K_qd_G+\kappa_{g_j}N,
+ \qquad
+ \kappa_g=
+ \begin{cases}
+ 2,&g=1,\\
+ 1,&g=2,\\
+ 0,&g\geq3.
+ \end{cases}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The zero-dimensional index-three point cut defines $K_q$ by
+\eqref{eq:K-integral}; it is bubble-free by
+Proposition~\ref{prop:index-exhaustion}.  Proposition~\ref{prop:point-manifolds}
+gives a compact oriented one-manifold at index four.
+
+Its ordinary broken boundary points contribute
+$d_SK_q+K_qd_G$.  Escape of the interpolation parameter to the gauge and
+symplectic ends contributes $Nm_q^G-m_q^SN$ with DFL's end convention;
+this is the same orientation calculation as
+\cite[Proposition~7.12]{DaeFukLip21a}.  By
+Proposition~\ref{prop:ordinary-bubbles}, no finite-$t$ interior sphere or
+outer disc contributes.  Corollary~\ref{cor:primitive-atom},
+Proposition~\ref{prop:framed-splitting}, and
+Theorem~\ref{thm:primitive-gluing} show that the only remaining boundary
+is the primitive matching face.  Determinant locality and
+\eqref{eq:integral-coefficients} make its integral contribution
+$c_{g_j}^{\rm loc}N$.
+
+The signed boundary count of a compact oriented one-manifold is zero.
+Using the integral identity \eqref{eq:boundary-with-B} and dividing by four
+gives \eqref{eq:main}.
+\end{proof}
+
+The same construction with one additional continuation parameter proves
+independence of the interpolation sections and secondary perturbations.
+The parameterized compactification has the same primitive faces; the
+local coefficient is unchanged by determinant locality, and its remaining
+boundary gives the standard chain homotopy between choices.
+
+\section{Integral normalization and consequences}
+\label{sec:integral}
+
+\begin{theorem}[integral point cycle]\label{thm:integral}
+Before division by four, the operations represented by the positive
+integral degeneracy cycle satisfy
+\begin{equation}\label{eq:integral-main}
+ N b_q^G-b_q^S N
+ =d_SK_q^{p_1}+K_q^{p_1}d_G+c_{g_j}N,
+ \qquad
+ c_g=
+ \begin{cases}
+ 8,&g=1,\\
+ 4,&g=2,\\
+ 0,&g\geq3.
+ \end{cases}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+This is the oriented boundary count in the proof of
+Theorem~\ref{thm:main} before the definitions
+$m_q^G=\frac14b_q^G$, $m_q^S=\frac14b_q^S$, and
+$K_q=\frac14K_q^{p_1}$ are applied.
+\end{proof}
+
+\begin{corollary}\label{cor:corrected-operator}
+Define
+\[
+                  \widehat m_q^S=m_q^S+\kappa_{g_j}\id.
+\]
+Then $N$ intertwines $m_q^G$ and $\widehat m_q^S$ up to chain homotopy:
+\begin{equation}\label{eq:corrected-intertwining}
+             Nm_q^G-\widehat m_q^S N=d_SK_q+K_qd_G.
+\end{equation}
+In particular, the induced Atiyah--Floer isomorphism intertwines these
+corrected point operations on homology.
+\end{corollary}
+
+\begin{proof}
+Move $\kappa_{g_j}N$ to the left-hand side of
+\eqref{eq:main} and use the definition of $\widehat m_q^S$.
+\end{proof}
+
+\subsection{The full corrected operation algebra}
+\label{subsec:full-operation-algebra}
+
+Theorem~\ref{thm:main} completes the list of generator comparisons.  We record
+the resulting algebra statement, first in the integral normalization used by
+the degeneracy-cycle constructions and then in the quarter-Pontryagin
+normalization of the introduction.
+
+Give $H_k(\Sigma;\ZZ)$ degree $4-k$.  For a commutative ring $R$, let
+$V_R=H_*(\Sigma;\ZZ)\otimes_{\ZZ}R$ and define
+\begin{equation}\label{eq:integral-observable-algebra}
+ \mathbb A_{p_1}(\Sigma;R)
+ =T_R(V_R)\big/
+   \left\langle x\otimes y-(-1)^{|x||y|}y\otimes x\right\rangle
+ =:\operatorname{Sym}^{\rm gr}_R(V_R)
+\end{equation}
+for homogeneous $x,y$.  This presentation fixes the meaning of
+``graded-commutative'' over rings with two-torsion.  In particular, it
+imposes $2x^2=0$, but not $x^2=0$, for an odd generator.  If $2$ is
+invertible in $R$, then
+\begin{equation}\label{eq:usual-observable-algebra}
+ \mathbb A_{p_1}(\Sigma;R)
+ \cong
+ \operatorname{Sym}_R(H_0(\Sigma;R)\oplus H_2(\Sigma;R))
+ \otimes_R\Lambda_R H_1(\Sigma;R).
+\end{equation}
+
+\begin{lemma}[integral operation relations]
+\label{lem:integral-operation-relations}
+On gauge and symplectic Floer homology with coefficients in $R$, the
+integral universal-class operations satisfy
+\[
+ b_xb_y=(-1)^{|x||y|}b_yb_x
+\]
+for homogeneous $x,y\in V_R$.  Hence the homology actions factor through
+\eqref{eq:integral-observable-algebra}.  For an odd loop class this asserts
+$2b_x^2=0$; no vanishing of $b_x^2$ in characteristic two is used.
+\end{lemma}
+
+\begin{proof}
+Work first over $\ZZ$.  The operation $b_x$ is the cap operation associated
+with the slant class $p_1(\mathbb V)/x$ on the relevant configuration space;
+DFL construct its gauge and symplectic representatives from the same
+oriented integral degeneracy locus in Section~7.2 of
+\cite{DaeFukLip21a}.  For two classes, use trajectories with two ordered
+marked cutdowns.  Stretching the interval between the marked points gives
+the composite $b_xb_y$.  Bringing the points together gives the cutdown by
+the cup product
+\[
+ (p_1(\mathbb V)/x)\smile(p_1(\mathbb V)/y).
+\]
+The compactified one-parameter family has only its two endpoint cutdowns
+and Floer breakings; the latter are the differential terms in the resulting
+chain homotopy.  This is the usual cap-module proof on the gauge side and
+the quantum-module proof on the symplectic side, with sphere terms included
+in the quantum product.  Interchanging the two factors in the coincident
+cutdown changes its orientation by $(-1)^{|x||y|}$.  Reversing the
+deformation therefore proves the displayed relation on homology.
+
+All parameter spaces, degeneracy cycles, and determinant orientations in
+this argument are integral.  Tensoring the resulting chain homotopies with
+$R$ proves the assertion over an arbitrary commutative ring.  Taking $x=y$
+odd gives exactly $2b_x^2=0$.
+\end{proof}
+
+For $\sigma\in H_k(\Sigma;\ZZ)$, let $b_\sigma^G$ and $b_\sigma^S$
+denote the gauge and symplectic operations obtained from the positive
+integral degeneracy cycle $p_1/[\sigma]$.  The constructions are extended
+$R$-linearly after changing coefficients.  Surface and loop operations are
+left unchanged.  For $q\in\Sigma_j$, set
+\begin{equation}\label{eq:integral-corrected-point}
+ \widehat b_q^S=b_q^S+c_{g_j}\id,
+ \qquad
+ c_g=
+ \begin{cases}
+  8,&g=1,\\
+  4,&g=2,\\
+  0,&g\geq3.
+ \end{cases}
+\end{equation}
+The resulting homology actions are denoted by $\rho_{G,p_1}^R$ and
+$\widehat\rho_{S,p_1}^R$, and the scalar extension of $N$ is denoted by
+$N_R$.
+
+\begin{corollary}[full corrected operation algebra]
+\label{thm:full-operation-algebra}
+Under the hypotheses of Theorem~\ref{thm:main}, for every commutative ring
+$R$ the base-changed comparison isomorphism is an isomorphism of
+$\mathbb A_{p_1}(\Sigma;R)$-modules:
+\begin{equation}\label{eq:full-integral-action}
+ N_R\rho_{G,p_1}^R(a)
+ =\widehat\rho_{S,p_1}^R(a)N_R,
+ \qquad a\in\mathbb A_{p_1}(\Sigma;R).
+\end{equation}
+For each chosen word representing $a$, the equality is induced by an
+explicit chain homotopy.  No strict chain-level graded-commutativity or
+homotopy-coherence assertion is included.
+\end{corollary}
+
+\begin{proof}
+Work first over $\ZZ$.  For a homogeneous generator $x$, write $A_x$ for
+the gauge operation and $B_x$ for the corrected symplectic operation.  The
+detailed DFL surface and loop cutdowns use the integral degeneracy locus
+representing $p_1$.  Their comparison theorem therefore supplies maps $K_x$
+for $x\in H_1(\Sigma)\oplus H_2(\Sigma)$ such that
+\begin{equation}\label{eq:generator-graded-homotopy}
+ NA_x-B_xN=d_SK_x+(-1)^{|x|}K_xd_G.
+\end{equation}
+For $x\in H_0(\Sigma)$, Theorem~\ref{thm:integral} gives the same identity
+after the correction in \eqref{eq:integral-corrected-point} is moved to the
+symplectic side.
+
+Suppose \eqref{eq:generator-graded-homotopy} has been extended to homogeneous
+words $u$ and $v$.  Define
+\begin{equation}\label{eq:product-homotopy}
+                 K_{uv}=K_uA_v+(-1)^{|u|}B_uK_v.
+\end{equation}
+Then
+\begin{align*}
+ NA_uA_v-B_uB_vN
+ &=(NA_u-B_uN)A_v+B_u(NA_v-B_vN)\\
+ &=d_SK_{uv}+(-1)^{|u|+|v|}K_{uv}d_G.
+\end{align*}
+The second equality is the graded Leibniz rule, using that $A_v$ and $B_u$
+are chain maps of degrees $|v|$ and $|u|$.  Induction proves the identity for
+every word, and linearity treats every polynomial expression.  Passing to
+homology proves \eqref{eq:full-integral-action} for every ordered word.
+Lemma~\ref{lem:integral-operation-relations} shows that the resulting
+homology operators factor through \eqref{eq:integral-observable-algebra};
+the construction of $K_a$ may depend on the chosen word representing $a$.
+
+DFL prove that $N$ is an isomorphism of chain complexes over $\ZZ$.
+Tensoring $N$, its inverse, the operation maps, and the displayed homotopies
+with an arbitrary commutative ring $R$ preserves all identities.  No
+flatness hypothesis on $R$ is required.
+\end{proof}
+
+\begin{corollary}[quarter-Pontryagin normalization]
+\label{cor:full-quarter-operation-algebra}
+Suppose $4$ is invertible in $R$ and put $m_\sigma=\frac14b_\sigma$.  Then
+Corollary~\ref{thm:full-operation-algebra} holds for the normalized observable
+action, with the corrected point class
+\begin{equation}\label{eq:quarter-corrected-point}
+ \widehat m_q^S=m_q^S+\kappa_{g_j}\id,
+ \qquad
+ (\kappa_1,\kappa_2,\kappa_{g\geq3})=(2,1,0).
+\end{equation}
+In particular, over $\QQ$ the DFL comparison intertwines the full corrected
+Donaldson observable algebra
+\begin{equation*}
+ \operatorname{Sym}\bigl(H_0(\Sigma;\QQ)\oplus H_2(\Sigma;\QQ)\bigr)
+ \otimes\Lambda H_1(\Sigma;\QQ).
+\end{equation*}
+\end{corollary}
+
+\begin{proof}
+Divide each integral generator identity and its homotopy by four.  The point
+coefficients in \eqref{eq:integral-corrected-point} become respectively
+$2$, $1$, and $0$.
+\end{proof}
+
+\begin{corollary}[operation images and kernels]
+\label{cor:operation-images-kernels}
+For every coefficient ring covered by
+Corollary~\ref{thm:full-operation-algebra}, conjugation by $N_R$ identifies the
+two image operation algebras.  Moreover,
+\begin{equation}\label{eq:operation-kernels}
+ \ker\rho_{G,p_1}^R=\ker\widehat\rho_{S,p_1}^R,
+\end{equation}
+so the identity on $\mathbb A_{p_1}(\Sigma;R)$ induces an isomorphism of the
+two operation quotients.
+\end{corollary}
+
+\begin{proof}
+Equation~\eqref{eq:full-integral-action} and invertibility of $N_R$ give
+\eqref{eq:operation-kernels}; the same conjugacy identifies the images.
+\end{proof}
+
+\begin{remark}\label{rem:operation-algebra-boundary}
+Corollary~\ref{thm:full-operation-algebra} concerns the action of the full
+observable algebra.  It does not say that the mixed comparison map preserves
+a gauge-theoretic pair-of-pants product, and the wordwise homotopies
+\eqref{eq:product-homotopy} do not constitute an $A_\infty$ module morphism.
+An integral operation representing $\frac14p_1/[\sigma]$ still requires the
+divisibility data discussed in Remark~\ref{rem:coefficients}; the
+all-coefficient statement instead uses the integral $p_1$ cycle.
+\end{remark}
+
+\begin{remark}\label{rem:uncorrected-false}
+The correction in genera one and two cannot be removed by changing the
+compactification.  Proposition~\ref{prop:cylinder-identities} detects it
+algebraically on $\Sigma_g\times S^1$.  It is therefore part of the point
+operation itself under the DFL comparison, rather than an artifact of the
+proof.
+\end{remark}
+
+\begin{remark}\label{rem:coefficients}
+The quarter-Pontryagin statement is asserted over $\QQ$.  An integral
+operation representing $\frac14p_1/[q]$ requires a divisibility choice for
+the universal bundle that is not used here.  The integral theorem is
+Theorem~\ref{thm:integral}, formulated directly with the degeneracy cycle
+$p_1/[q]$.
+\end{remark}
+
+\section*{Availability}
+The manuscript source is available at
+\begin{center}
+\url{https://github.com/bwuebben/donaldson-atiyah-floer}.
+\end{center}
+
+\begin{thebibliography}{DFL21b}
+
+\bibitem[AB83]{AtiyahBott83} M.~F. Atiyah and R.~Bott,
+\emph{The Yang--Mills equations over Riemann surfaces}, Philos. Trans.
+Roy. Soc. London Ser. A \textbf{308} (1983), no.~1505, 523--615.
+
+\bibitem[BB16]{BaerBallmann16} C.~B\"ar and W.~Ballmann,
+\emph{Guide to boundary value problems for Dirac-type operators},
+Arbeitstagung Bonn 2013, Progr. Math., vol.~319, Birkh\"auser/Springer,
+Cham, 2016, 43--80.
+
+\bibitem[Ati88]{Atiyah88} M.~F. Atiyah, \emph{New invariants of
+$3$- and $4$-dimensional manifolds}, The mathematical heritage of Hermann
+Weyl (Durham, NC, 1987), Proc. Sympos. Pure Math. \textbf{48}, Amer. Math.
+Soc., Providence, RI, 1988, 285--299.
+
+\bibitem[BW18]{BottmanWehrheim18} N.~Bottman and K.~Wehrheim,
+\emph{Gromov compactness for squiggly strip shrinking in pseudoholomorphic
+quilts}, Selecta Math. (N.S.) \textbf{24} (2018), no.~4, 3381--3443.
+
+\bibitem[DFL26]{DaeFukLip21a} A.~Daemi, K.~Fukaya, and M.~Lipyanskiy,
+\emph{Lagrangians, $SO(3)$-instantons and the Atiyah--Floer conjecture},
+accepted for publication, 2026; \texttt{arXiv:2109.07032}.
+
+\bibitem[DFL24]{DaeFukLip21b} A.~Daemi, K.~Fukaya, and M.~Lipyanskiy,
+\emph{Lagrangians, $SO(3)$-instantons and mixed equation},
+Geom. Funct. Anal. \textbf{34} (2024), no.~3, 659--732.
+
+\bibitem[Don92]{Donaldson92} S.~K. Donaldson, \emph{Boundary value
+problems for Yang--Mills fields}, J. Geom. Phys. \textbf{8} (1992),
+no.~1--4, 89--122.
+
+\bibitem[DK90]{DonaldsonKronheimer90} S.~K. Donaldson and P.~B. Kronheimer,
+\emph{The geometry of four-manifolds}, Oxford Mathematical Monographs,
+Oxford University Press, New York, 1990.
+
+\bibitem[DS94]{DosSal94} S.~Dostoglou and D.~A. Salamon,
+\emph{Self-dual instantons and holomorphic curves}, Ann. of Math. (2)
+\textbf{139} (1994), no.~3, 581--640.
+
+\bibitem[DS07]{DosSal07} S.~Dostoglou and D.~A. Salamon,
+\emph{Corrigendum to ``Self-dual instantons and holomorphic curves''},
+Ann. of Math. (2) \textbf{165} (2007), no.~2, 665--673.
+
+\bibitem[MS04]{McDuffSalamon04} D.~McDuff and D.~Salamon,
+\emph{$J$-holomorphic curves and symplectic topology}, American
+Mathematical Society Colloquium Publications, vol.~52, American
+Mathematical Society, Providence, RI, 2004.
+
+\bibitem[Mu\~n99a]{Munoz99a} V.~Mu\~noz, \emph{Ring structure of the
+Floer cohomology of $\Sigma\times S^1$}, Topology \textbf{38} (1999),
+no.~3, 517--528.
+
+\bibitem[Mu\~n99b]{Munoz99b} V.~Mu\~noz, \emph{Quantum cohomology of the
+moduli space of stable bundles over a Riemann surface}, Duke Math. J.
+\textbf{98} (1999), no.~3, 525--540.
+
+\bibitem[NS65]{NarSes65} M.~S. Narasimhan and C.~S. Seshadri,
+\emph{Stable and unitary vector bundles on a compact Riemann surface},
+Ann. of Math. (2) \textbf{82} (1965), no.~3, 540--567.
+
+\bibitem[Oh93]{Oh93} Y.-G. Oh, \emph{Floer cohomology of Lagrangian
+intersections and pseudo-holomorphic disks. I}, Comm. Pure Appl. Math.
+\textbf{46} (1993), no.~7, 949--993.
+
+\bibitem[Owe01]{Owens01} B.~Owens, \emph{Instantons on cylindrical
+manifolds and stable bundles}, Geom. Topol. \textbf{5} (2001), 761--797.
+
+\bibitem[Tom20]{Toma20} M.~Toma, \emph{Properness criteria for families
+of coherent analytic sheaves}, Algebr. Geom. \textbf{7} (2020), no.~4,
+486--502.
+
+\bibitem[Weh05a]{Wehrheim05a} K.~Wehrheim, \emph{Anti-self-dual
+instantons with Lagrangian boundary conditions. II. Bubbling}, Comm. Math.
+Phys. \textbf{258} (2005), no.~2, 275--315.
+
+\bibitem[Weh06]{Wehrheim05b} K.~Wehrheim, \emph{Energy identity for
+anti-self-dual instantons on $\CC\times\Sigma$}, Math. Res. Lett.
+\textbf{13} (2006), no.~1, 161--166.
+
+\end{thebibliography}
+
+\bigskip
+\noindent{\sc Bernd Johannes Wuebben, New York, NY,}
+\texttt{wuebben@gmail.com}
+
+\end{document}
