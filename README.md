@@ -14,13 +14,22 @@ source file together with its compiled PDF.
 
 Daemi, Fukaya, and Lipyanskiy proved the admissible embedded-Lagrangian
 Atiyah–Floer comparison and its surface and loop operation compatibilities.
-This paper treats the remaining point operation. It compactifies the
-index-four matching-line boundary, proves converse gluing, and computes the
-oriented contribution. In the positive quarter-Pontryagin normalization, the
-symplectic point operation must be shifted by 2, 1, or 0 when the marked point
-lies on a component of genus one, two, or at least three. Together with the
-surface and loop results, this gives the full corrected observable-algebra
-action in the admissible setting.
+This paper proves compatibility of the integral point operations in that
+setting. It identifies the bubbling ends of the index-four point cut,
+proves converse gluing, and compares the actual gluing orientations.
+In the positive integral Pontryagin normalization, the symplectic point
+operation is shifted by 8, 4, or 0 when the marked component has genus one,
+two, or at least three. One coherent orientation system works for both
+matching components, and the original geometric count supplies the chain
+homotopy. Together with the surface and loop comparisons and integral
+operation relations, this gives the corrected observable-algebra action
+over every commutative coefficient ring. When four is invertible,
+quarter-Pontryagin normalization gives the shifts 2, 1, and 0.
+
+The manuscript concerns the stated admissible embedded-Lagrangian setting
+and does not assert a general ambient compactification or higher-coherence
+extension. The current version is dated **8 September 2026** and has
+**219 pages**, including a separate linked contents page.
 
 - [PDF](af-ops/point-operations-and-matching-line-bubbles.pdf)
 - [LaTeX source](af-ops/point-operations-and-matching-line-bubbles.tex)
