@@ -34,23 +34,29 @@ extension. The current version is dated **8 September 2026** and has
 - [PDF](af-ops/point-operations-and-matching-line-bubbles.pdf)
 - [LaTeX source](af-ops/point-operations-and-matching-line-bubbles.tex)
 
-### One-bubble neighborhoods of Seiberg–Witten strata in SO(3)-monopole moduli spaces
+### One-bubble neighborhoods in SO(3)-monopole moduli spaces
 
-Feehan and Leness constructed local gluing and obstruction maps near
-Seiberg–Witten strata. Their level-one calculation also requires continuity,
-embedding, surjectivity onto an Uhlenbeck-open neighborhood, and orientation
-properties assigned to a companion gluing theorem and retained as a
-hypothesis. This paper proves those properties at the one-bubble level over a
-compact regular Seiberg–Witten moduli space of nonzero-spinor solutions, under
-the stated four-manifold hypotheses. The proof combines global equivariant
-stabilization, a scale-uniform augmented parametrix, parameter recovery, a
-two-sided no-neck estimate, reverse gluing, and determinant-line excision.
-Substitution into the published cohomological calculation yields the
-arbitrary-dimensional Jacobi-polynomial pairing, with the zero-dimensional
-and low-degree formulas as corollaries.
+This paper proves an oriented neighborhood theorem at the first Uhlenbeck
+level of SO(3)-monopole moduli spaces, over compact regular Seiberg–Witten
+bases of arbitrary dimension whose solutions have nonzero spinor. The
+obstruction zero set parametrizes an Uhlenbeck-open neighborhood of the
+ideal stratum. The proof establishes strong approximation in critical
+norms for arbitrary convergent one-bubble sequences, recovers the relative
+frame across the neck, and identifies the standard monopole orientation
+by comparison with Donaldson's instanton-addition map.
+
+The construction supplies the analytic neighborhood input to the published
+Feehan–Leness level-one link pairing. The polynomial pairing and its
+low-degree consequences retain their stated topological hypotheses,
+including abundance, effectiveness, and simple type for the degree
+comparison. The theorem concerns one charge-one bubble over a regular
+nonzero-spinor base; higher levels and collision strata require further
+arguments. The current version is dated **9 September 2026** and has
+**57 pages**.
 
 - [PDF](w-glue-1/one-bubble-neighborhoods-of-seiberg-witten-strata.pdf)
 - [LaTeX source](w-glue-1/one-bubble-neighborhoods-of-seiberg-witten-strata.tex)
+- [Paper overview and build instructions](w-glue-1/README.md)
 
 ## Building the papers
 
