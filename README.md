@@ -33,6 +33,7 @@ extension. The current version is dated **8 September 2026** and has
 
 - [PDF](af-ops/point-operations-and-matching-line-bubbles.pdf)
 - [LaTeX source](af-ops/point-operations-and-matching-line-bubbles.tex)
+- [Paper overview and build instructions](af-ops/README.md)
 
 ### One-bubble neighborhoods in SO(3)-monopole moduli spaces
 
