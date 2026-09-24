@@ -101,7 +101,9 @@ statement holds for every connected cobordism between connected
 three-manifolds, equipped with an embedded arc joining the ends, with a framing of its normal bundle, and an $\SO(3)$ bundle trivialized over the ends and along the arc. As a
 consequence the symplectic cobordism maps are independent of the handle
 decomposition and of the Heegaard data, and form a functor isomorphic to
-framed instanton homology. The analytic input consists of two new results
+framed instanton homology. At the data where both constructions are defined,
+with secondary perturbations invariant under that symmetry, our isomorphisms
+coincide with those of Daemi, Fukaya and Lipyanskiy reduced modulo two. The analytic input consists of two new results
 for the mixed equation. The first is an adiabatic limit in which the metric
 on a compression body collapses next to a holomorphic strip: the compression
 body becomes the Lagrangian boundary condition of its flat connections, two
@@ -238,6 +240,19 @@ with handlebody Lagrangians enter only as sets, to identify generators and
 gradings. The quilted description of the compression cup, which rests on
 the composition theorems of Wehrheim--Woodward and Lekili--Lipyanskiy, is
 recorded in Remark~\ref{rem:quilted-cup} and is not used.
+
+The maps $N_p$ are constructed by the method of \cite{DFL}. Where the primary
+perturbations already regularize the gauge complex, as in \cite[Lemma~2.56]{DFL}, and the
+secondary perturbations are invariant under the framed symmetry, $N_p$, computed with
+$f=0$ and with the almost complex structures and secondary perturbations of \cite{DFL}, is
+the isomorphism of \cite[Theorem~3.29]{DFL} reduced modulo two, as a chain map
+(Proposition~\ref{prop:dfl-comparison}). Consequently, at admissible presentations with such
+primary data, Theorem~\ref{thm:A} holds for the isomorphism of Daemi, Fukaya and Lipyanskiy
+itself, reduced modulo two, and this isomorphism on homology is independent of the choices
+within that class, a point not addressed in \cite{DFL} (Corollary~\ref{cor:dfl-natural}). DFL
+state that such primary data exist after a constant rescaling of the metric
+\cite[Proposition~6.8]{DFL}; whether they exist at the fixed metric data of our presentations
+is a transversality question that we leave open (Remark~\ref{rem:dfl-regular}).
 
 \subsection{The collapse theorem}
 
@@ -403,11 +418,12 @@ orientations of the gauge side. Neither is addressed here. The objects
 carry the trivial bundle on the original three-manifold. Disconnected
 objects, the units and counits of a field theory, and closed pairings are
 not treated. The mixed maps $N_p$ are constructed by the method of
-\cite{DFL}, with the invariant perturbations of Section~\ref{sec:models};
-we do not identify them with the isomorphism of \cite{DFL} for general data, and the
-proof of Theorem~\ref{thm:A} does not require such an identification
-(Remark~\ref{rem:dfl-map}). The transitive system of Theorem~\ref{thm:A} is constructed
-from the gauge side; we do not compare it with the Cerf-theoretic identifications
+\cite{DFL}, with the invariant perturbations of Section~\ref{sec:models}; they agree with the
+isomorphism of \cite{DFL}, reduced modulo two, at the data where both are defined
+(Proposition~\ref{prop:dfl-comparison}); the existence of such data at the metric data of a
+presentation is left open (Remark~\ref{rem:dfl-regular}). The maps of the transitive system
+of Theorem~\ref{thm:A} are symplectic words; their independence of the word is proved through
+the gauge side, and we do not compare them with the Cerf-theoretic identifications
 of \cite{WW-fft}.
 
 \subsection*{Organization}
@@ -725,13 +741,18 @@ $H^1(C;\ad)\to H^1(\Sigma_h;\ad)$ is injective.
 
 \emph{Primary perturbations.} Following \cite[Section~2.3]{DFL}, a
 \emph{primary perturbation} of $C$ is a holonomy perturbation $\mathfrak h$
-supported in the interior of $C$, small enough that the perturbed flat
+supported in the interior of $C^\circ$, the part of $C$ outside the unit collar on which
+\cite[(2.1) and p.~9]{DFL} require the perturbations to vanish (the special quintuple
+and the torus analysis of Section~\ref{sec:torus} use this collar unperturbed), small
+enough that the perturbed flat
 connections still form a compact manifold whose restriction
 $L_{\mathfrak h}(C)\subset\Msf_h$ is an embedded Lagrangian. It is Hamiltonian isotopic
 to $L(C)$: for $\mathfrak h$ small the implicit function theorem makes $L_{\mathfrak h}(C)$
 $C^1$-close to $L(C)$, hence the graph of a closed one-form in a Weinstein
 neighbourhood, and the one-form is exact because $L(C)$ is simply connected.
-(\cite{DFL} call these perturbations cylinder functions.) The universal restriction map from pairs (perturbation, flat
+(\cite{DFL} call these perturbations cylinder functions. In their notation $C_0$ and $C_1$
+are the halves $Y_1=Y_0\cup[0,1]\times\Sigma$ and $Y_1'$ of $Y_\#$ cut along $\{0\}\times\Sigma$
+\cite[p.~79]{DFL}, and $C_i^\circ$ is $Y_0$, $Y_0'$; Section~\ref{sec:torus} writes $(Y_\pm)_0$.) The universal restriction map from pairs (perturbation, flat
 connection) to $\Msf_h$ is a submersion \cite[Section~2.3]{DFL}, so
 finitely many primary perturbations make any finite collection of such
 Lagrangians pairwise transverse with empty triple intersections.
@@ -748,8 +769,9 @@ for $M$ consist of:
   the boundary sums taken inside $b(B^3)$ through the equatorial disk,
   so that $C_0\cup C_1$ is the torus-summed object $M^\#$ of
   Definition~\ref{def:category}, with $h=g+1\ge2$;
-\item metrics on $C_0$, $C_1$ that are products near the boundary and
-  agree on $\Sigma_h$ and on a collar of $T^2$ carrying the flat metric fixed
+\item identifications of collars of $\partial C_0$, $\partial C_1$ as in \cite[Section~2.1]{DFL},
+  and metrics on $C_0$, $C_1$ that are products on these collars and
+  agree on $\Sigma_h$ and on the collar of $T^2$, which carries the flat metric fixed
   in Section~\ref{sec:category} (the same for all presentations) (\emph{metric data});
 \item primary perturbations $\mathfrak h_0$, $\mathfrak h_1$ with
   $L_{\mathfrak h_0}(C_0)\pitchfork L_{\mathfrak h_1}(C_1)$ (\emph{primary data});
@@ -796,7 +818,11 @@ arbitrarily small, and do not change the critical set or the Hessians
 (Proposition~\ref{prop:input-functions}). Regularity is achieved by $f$ rather than
 by the primary perturbations because in the two-handle comparison the primary
 perturbation of the middle compression body must vanish
-(Remark~\ref{rem:dfl-map}). The gauge complex
+(Remark~\ref{rem:dfl-map}). If the trajectories of $\mathrm{CS}_{\mathfrak h}$ of index at most seven
+are already regular, $f=0$ is allowed; we then call the primary data
+\emph{DFL-regular}. These are the primary data required in \cite[Lemma~2.56]{DFL} and
+Theorem~3.29 there; see Remark~\ref{rem:dfl-regular} on their existence at the metric data
+of a presentation. The gauge complex
 $C_G(M,p)$ is the Floer complex of $\mathrm{CS}_{\mathfrak h}+f$ modulo $\phi_M$. Its
 homology is canonically $\Ish(M)$.
 
@@ -831,10 +857,32 @@ So some holonomy direction pairs nontrivially with $\psi$, and the Sard--Smale
 theorem makes all such trajectories regular for generic $f$.
 
 \emph{Invariance and finiteness.} Averaging over $\phi_M$ preserves the
-construction because the supports of a cylinder function and of its translate
-by $\alpha_M$ are disjoint. There are finitely many energy levels below the
+construction: a cylinder function whose gradient is supported, in the configuration
+space, near $\gamma(s_0)$ has its $\alpha_M$-translate supported near $\alpha_M\cdot\gamma(s_0)$,
+and these neighbourhoods are disjoint because $\phi_M$ acts freely. There are finitely many energy levels below the
 index-seven bound, and the choice is made by induction on the energy.
 \end{proof}
+
+\begin{remark}\label{rem:dfl-regular}
+DFL state that DFL-regular data exist after a constant rescaling of the metric of $M^\#$
+\cite[Lemma~2.56 and Proposition~6.8]{DFL}. Their inductive step adds cylinder functions
+with loops in $\operatorname{int}C_0$ and in $\operatorname{int}C_1$, and uses, for each cokernel
+element $\psi$ of the linearization at a trajectory $\gamma$, the independence of $\psi$ and
+$\partial_s\gamma$ on one of the two pieces, which is inferred there from their linear
+independence on $M^\#\setminus\Sigma$; the rescaling then moves a unit collar off the
+supports. It preserves the regularity of the trajectories, which it only reparametrizes in
+time, and the Lagrangians, since the two-form $*_3\nabla h$ does not change under a constant
+rescaling of the metric, but it changes the flat metric of the torus collar. At the metric
+data of a presentation the same step is needed with $C_i^\circ$ in place of
+$\operatorname{int}C_i$. Neither version follows from the $L^2$-orthogonality of $\psi$ and
+$\partial_s\gamma$ on $M^\#$ alone: $\psi=c_i\,\partial_s\gamma$ modulo gauge on $C_i$ with constants
+$c_0\ne c_1$ is compatible with it, and for such $\psi$ every cylinder function with loops in
+one piece pairs to zero. The argument of \cite[Section~5.5, Proposition~5.17]{Donaldson-book}
+goes through if, at each stage of the induction, every such pair $(\gamma,\psi)$ admits a time
+near which $\psi$ is not a constant multiple of $\partial_s\gamma$ modulo gauge on $C_0^\circ$ or on
+$C_1^\circ$ and the restricted path is injective and irreducible. We do not settle this here,
+and the results below that concern DFL-regular data are stated for data that have them.
+\end{remark}
 
 \subsection{The mixed isomorphism}\label{subsec:mixed-iso}
 
@@ -1008,20 +1056,82 @@ opposite sign.
 \end{remark}
 
 \begin{remark}\label{rem:dfl-map}
-The map $N_p$ is defined by the construction of \cite[Section~3.2]{DFL},
-with the end perturbations of Proposition~\ref{prop:input-functions}
-added and the secondary perturbations restricted to the class invariant
-under $\phi_M$. We do not prove that $N_p$ agrees with the isomorphism of
-\cite[Theorem~3.29]{DFL}, which is defined with unrestricted secondary
-perturbations and without end perturbations; DFL regularize the gauge complex
-by perturbing the primary cylinder functions \cite[Lemma~2.56]{DFL}, which is
-not available for the data used in the two-handle comparison, where the
-primary perturbation of the middle compression body must vanish. The
-end perturbations of Proposition~\ref{prop:input-functions} replace that
-step, and the proof of Theorem~\ref{thm:mixed-iso} does not use
-\cite[Lemma~2.56]{DFL}. The proof of
-Theorem~\ref{thm:A} uses only properties (i) and (ii).
+The map $N_p$ is defined by the construction of \cite[Section~3.2]{DFL}, with two
+changes: the gauge complex may be regularized by an end perturbation instead of by
+the primary perturbations, and the secondary perturbations are invariant under
+$\phi_M$. The first is needed in the two-handle comparison, where the primary
+perturbation of the middle compression body must vanish, so that
+\cite[Lemma~2.56]{DFL} is not available there. The second makes the counts
+independent of the lift of a generator to the determinant-one configuration space:
+DFL count solutions asymptotic to a fixed representative of each generator
+\cite[p.~27]{DFL}, and pass to the quotient by the involution $\iota$ of
+\cite[p.~18]{DFL}, which is $\alpha_M$. Where both constructions apply they agree
+(Proposition~\ref{prop:dfl-comparison}).
 \end{remark}
+
+
+\begin{proposition}[comparison with the DFL isomorphism]\label{prop:dfl-comparison}
+Let $p$ be presentation data, or more generally a pair of torus compression bodies as in
+Remark~\ref{rem:clean-pairs} with collars and metrics as in
+Definition~\ref{def:presentation}(iii) but an arbitrary flat metric on the torus collar, with
+DFL-regular primary data. Take $f=0$; a
+family of almost complex structures as in \cite[Section~3.1 and Lemma~2.35]{DFL},
+equal near $\theta=\pm1$ to DFL's standard structure (which is $J$ under
+Convention~\ref{conv:orientation}); and a $\phi_M$-invariant secondary perturbation
+$\eta$, sufficiently small and supported, with the deformation of the almost complex
+structure, in a compact set away from the matching line as in
+\cite[Proposition~3.23(i)]{DFL}, for which the mixed moduli spaces of expected dimension
+at most three are regular. Such $\eta$ exist, the isomorphism $N^{\rm DFL}$ of
+\cite[Theorem~3.29]{DFL} is defined at these data, and
+\[
+N_p=N^{\rm DFL}\otimes\FF\colon C_G(M,p)\to C_S(M,p)
+\]
+as chain maps.
+\end{proposition}
+
+\begin{proof}
+\emph{The complexes.} DFL's gauge complex is generated by the critical points of
+the perturbed functional modulo determinant-one gauge transformations and the
+involution $\iota$ given by the class Poincaré dual to a component of the matching
+surface \cite[pp.~18--19, Lemmas~2.43 and~2.45]{DFL}. In the framed splitting this
+component may be taken to be the torus, so $\iota=\alpha_M$ and DFL's generators are
+ours. With $f=0$ the gauge equations agree, so the differentials agree mod two; the
+strip complexes agree because the Lagrangians and almost complex structures do.
+Regular families equal to the standard structure near $\theta=\pm1$ exist, since the
+transversality perturbations for nonconstant strips can be supported in the interior of
+the strip.
+
+\emph{The equations.} With $f=0$, equation~\eqref{eq:mixed} is \cite[(3.22)]{DFL}
+on the same special quintuple; Convention~\ref{conv:orientation} records that the
+two sign conventions define the same equation.
+
+\emph{The counts.} DFL's zero-dimensional space $\cM_\eta(\tilde a,x)_0$ consists of
+solutions asymptotic to a fixed determinant-one representative $\tilde a$ of $a$,
+modulo determinant-one gauge transformations. The automorphism $\alpha_M$ extends over
+the special quintuple \cite[Remark~3.7]{DFL}, it maps solutions for $\eta$ to solutions
+for $\alpha_M^*\eta$, and $\alpha_M^*\eta=\eta$ by invariance. So it identifies the spaces
+for the two representatives $\tilde a$, $\alpha_M\tilde a$, and $\cM_\eta(\tilde a,x)_0$ maps
+bijectively onto our $\cM^0(a,x)$, the space of solutions modulo the gauge group
+enlarged by $\phi_M$ (which acts freely by Theorem~\ref{thm:regularity}(i)). Hence the
+counts agree mod two.
+
+\emph{Existence of $\eta$ and DFL's hypotheses.} By Theorem~\ref{thm:regularity}(ii) the
+linearized operator together with the $\phi_M$-invariant holonomy directions supported
+in a compact set away from the matching line is onto at every solution, and the
+Sard--Smale theorem, applied finitely many dimensions at a time, gives $\eta$, small
+and compactly supported away from the matching line, with all moduli spaces of
+expected dimension at most three regular. These are the requirements of
+\cite[Propositions~3.23 and~3.26]{DFL}, whose remaining conclusions (nonnegative
+energy, the unique solution in $\cM_\eta(a,a)_0$, compactness and the boundary
+description) follow from smallness and compact support as in
+\cite[Section~5]{DFL}.
+\end{proof}
+
+If for an admissible presentation $p$ with primary data $\mathfrak h$ and some finite family $G$
+there are DFL-regular primary data $\mathfrak h+g$ with $g\in\operatorname{span}G$ arbitrarily small
+(Remark~\ref{rem:dfl-regular}), then those with $g$ small enough are admissible, by the
+monotonicity of the admissible neighbourhoods (the paragraph after
+Proposition~\ref{prop:duality}), and Proposition~\ref{prop:dfl-comparison} applies there.
 
 \subsection{Energy, gradings and filtrations}\label{subsec:energy-convention}
 
@@ -5078,7 +5188,8 @@ below is defined intrinsically, by the grading $m$ of
 Section~\ref{subsec:continuations}; it is a critical point of the height
 function, its maximum or its minimum according to whether the perturbed
 Lagrangian is the first or the second entry of the pair. \emph{Lower Lagrangians.} Then choose small primary data $\widetilde P_i$ of $U_i$, in a
-neighbourhood of $L(U_i)$ that is small relative to $t$. In
+neighbourhood of $L(U_i)$ that is small relative to $t$ (the neighbourhoods $\mathcal N(t)$ fixed
+after Proposition~\ref{prop:duality}). In
 $X=\Msf_h^-\times\Msf_g$ put
 \[
 A_0=\widetilde P_0^-\times R_0,\qquad A_1=\widetilde P_1^-\times R_1 ,
@@ -7465,8 +7576,10 @@ same way: height first, then the neighbourhood $\mathcal U(t)$, then the lower L
 A \emph{height Lagrangian at height $t$} for $k=0$ is an upper Lagrangian $R$ of
 Section~\ref{subsec:folded} for the product compression body: the primary data
 of $U$ perturbed by $t$ times the height function, with its unique maximal
-generator $q^*$. A small further perturbation of $R$ supported away from the
-critical set keeps it a height Lagrangian at height $t$.
+generator $q^*$. A further perturbation of $R$ supported away from the critical set, of
+$C^1$-size at most $\delta(t)$ for a function $\delta$ depending only on the splitting, the
+metric data and the height function, keeps it a height Lagrangian at height $t$; the generic
+perturbations used below can be taken that small.
 
 \begin{proposition}[small-primary naturality]\label{prop:small-primary}
 Fix a splitting, metric data and a finite family of primary
@@ -7478,9 +7591,9 @@ $N_Q\circ \mathrm{cont}_G(P,Q)=\mathrm{cont}_S(P,Q)\circ N_P$ on homology.
 
 \begin{proof}
 The quantifiers are chosen in this order. First fix the height $t$. Let
-$\mathcal U(t)$ be a neighbourhood so small that every choice of primary data in it and its
-reflection are lower Lagrangians small relative to $t$ in the sense of
-Section~\ref{subsec:folded}; the condition is symmetric under reflection,
+$\mathcal U(t)$ be the set of primary data whose Lagrangians, and those of their reflections,
+lie in the neighbourhoods $\mathcal N(t)$ fixed after Proposition~\ref{prop:duality}; the
+condition is symmetric under reflection,
 which exchanges the two Lagrangians of the pair. Then, given regular
 $P,Q\in\mathcal U(t)$, choose one height Lagrangian $A$ at height $t$ for the
 reflected presentation which, by a small generic perturbation
@@ -7517,11 +7630,28 @@ $N_R\mathrm{cont}_G(P,R)=\mathrm{cont}_S(P,R)N_P$. Hence $\mathrm{cont}_S(P,R)=\
 cancelling the isomorphism $\mathrm{cont}_S(P,R)$ gives $N_PN_{\bar P}^\vee=1$.
 \end{proof}
 
-\emph{The admissible neighbourhoods.} For each splitting, metric data and finite
-family $F$ as in Definition~\ref{def:presentation}, fix once and for all a height
-$t_F$ below the threshold of Proposition~\ref{prop:small-primary}, and let
-$\mathcal U(F)$ be the neighbourhood $\mathcal U'(t_F)$ of
-Proposition~\ref{prop:duality}. These propositions use
+\emph{The admissible neighbourhoods.} The conditions that define $\mathcal U(t)$ and
+$\mathcal U'(t)$ in the proofs of Propositions~\ref{prop:small-primary}
+and~\ref{prop:duality} concern only the Lagrangians of the primary data and of their
+reflections, which must be lower Lagrangians small relative to $t$ and $t'$; the
+height thresholds depend only on the splitting, the metric data and the height
+functions of Section~\ref{subsec:folded}, which are fixed with the splitting; the
+incidence conditions are imposed on the height Lagrangians, not on the primary data.
+For each splitting, metric data and $t$ fix an open $C^1$-neighbourhood $\mathcal N(t)$ of the
+pair $(L(U_0),L(U_1))$, and the corresponding neighbourhood of the reflected pair, so small
+that the unfolding and grading statements of Section~\ref{subsec:continuations},
+Theorem~\ref{thm:folded-triangle} and Proposition~\ref{prop:cup-formula} hold for every
+lower pair in them and every height Lagrangian at height $t$ satisfying the incidence
+conditions; this is possible because the height Lagrangians at height $t$ form a
+$C^1$-bounded class. Take $\mathcal U(t)$ to be the set of primary data whose Lagrangians,
+and those of their reflections, lie in these neighbourhoods, and
+$\mathcal U'(t)=\mathcal U(t)\cap\mathcal U(t')$;
+these sets satisfy the requirements in the proofs above. For each splitting and metric data fix once
+and for all a height $t_*$ below these thresholds, and for each finite family $F$ as
+in Definition~\ref{def:presentation} let $\mathcal U(F)=\mathcal U'(t_*)\cap\operatorname{span}F$.
+Then $\mathcal U(F)=\mathcal U(F')\cap\operatorname{span}F$ for $F\subset F'$, and in particular
+if $P\in\mathcal U(F)$ and $G$ is a finite family, then $P+g\in\mathcal U(F\cup G)$ for all
+sufficiently small $g\in\operatorname{span}G$. These propositions use
 Theorem~\ref{thm:mixed-iso} only for presentation data, so this defines
 $\mathcal U(F)$. Two admissible choices of primary data in $\mathcal U(F_1)$ and $\mathcal U(F_2)$
 are joined through intermediate choices in
@@ -7732,20 +7862,20 @@ at a vertex whose second body is unperturbed. The two are joined by
 primary-data changes, as follows. Give $C\circ p$ the metric data that
 agrees on $V_0$ with the metric of $r$ on its first body; the output of the
 cancelling two-handle has bodies $(V_0,C_2)$, where $C_2$ is the second body of
-$r$ with the metric of $r$. Choose first the heights $t_F$ of Proposition~\ref{prop:small-primary} for the splittings and metric data of
-$C\circ p$ and of $r$, then $t$ and the two-handle height $t'$ so small that
+$r$ with the metric of $r$. Take first the heights $t_*$ fixed after Proposition~\ref{prop:duality} for the splittings and metric data of
+$C\circ p$ and of $r$, then $t$ and the two-handle height $t_2$ so small that
 all data below lie in the corresponding neighbourhoods and in the admissible
 neighbourhoods, and then the lower Lagrangians of $p$ as in
 Theorem~\ref{thm:one-handle}. Let $R_0'$ be a height Lagrangian obtained from $R_0$
 by a small perturbation supported away from its critical set, transverse to
-$L(V_1)$ and to $L_{t'h_Q}(C_2)$ and missing their intersection; this is a
+$L(V_1)$ and to $L_{t_2h_Q}(C_2)$ and missing their intersection; this is a
 generic condition. Put
 \begin{itemize}[leftmargin=2em]
 \item $(C\circ p)'$: the presentation $C\circ p$ with primary data $(R_0',0)$;
-\item $r'$: the presentation $r$ with primary data $(R_0',t'h_Q)$.
+\item $r'$: the presentation $r$ with primary data $(R_0',t_2h_Q)$.
 \end{itemize}
 Both are admissible. The subordinate triple of the cancelling two-handle is
-$(C_0,C_1,C_2)=(V_0,V_1,C_2)$ with primary data $(R_0',0,t'h_Q)$, which
+$(C_0,C_1,C_2)=(V_0,V_1,C_2)$ with primary data $(R_0',0,t_2h_Q)$, which
 satisfies the hypotheses of Section~\ref{subsec:triple-data}, so
 Theorem~\ref{thm:two-handle} holds from $(C\circ p)'$ to $r'$. Define
 \[
@@ -7760,13 +7890,13 @@ followed by a three-handle $W_3$, both in $Q\times[0,1]$. Reversing the
 orientation of the cobordism exchanges them with a one-handle followed by a
 cancelling two-handle, so Lemma~\ref{lem:output-identification} applied to the
 reversed cobordism gives $W_3\circ W_2'\cong1_M$ and $G(p,r)=\Ish(W_3)\Ish(W_2')$.
-The triple of $W_2'$ is $(V_0,C_2,V_1)$ with primary data $(R_0'',0,t''h_Q)$,
+The triple of $W_2'$ is $(V_0,C_2,V_1)$ with primary data $(R_0'',0,t_2'h_Q')$, where $h_Q'$ is the corresponding height function on $V_1$,
 chosen in the same way, and
 \[
 D_{p,r}=V_C\circ \mathrm{cont}_S\bigl((C\circ p)'',C\circ p\bigr)\circ S_{W_2'}\circ
 \mathrm{cont}_S(r,r''),
 \]
-where $r''$ carries $(R_0'',0)$ and $(C\circ p)''$ carries $(R_0'',t''h_Q)$.
+where $r''$ carries $(R_0'',0)$ and $(C\circ p)''$ carries $(R_0'',t_2'h_Q')$.
 Theorems~\ref{thm:two-handle} and~\ref{thm:three-handle} and
 Proposition~\ref{prop:small-primary} give $H(N_p)G(p,r)=D_{p,r}H(N_r)$.
 Then $D_{p,r}S_{r,p}H(N_p)=H(N_p)G(p,r)G(r,p)=
@@ -7985,6 +8115,38 @@ presentation graph and the invertibility of $N$. The argument does not
 give integral statements: over $\ZZ$ the squares would be needed with
 signs, and Lemma~\ref{lem:field} fails.
 \end{remark}
+
+\subsection{The isomorphism of Daemi, Fukaya and Lipyanskiy}
+
+\begin{corollary}\label{cor:dfl-natural}
+Let $p_0$, $p_1$ be admissible presentations of $M_0$, $M_1$ with DFL-regular primary
+data, and let $N^{\rm DFL}_{p_i}$ be the isomorphisms of \cite[Theorem~3.29]{DFL} at the
+data of Proposition~\ref{prop:dfl-comparison}. Then for every morphism $(W,E,\nu)$ and
+every admissible decomposition $d$,
+\[
+H(N^{\rm DFL}_{p_1}\otimes\FF)\circ\Ish(W,E,\nu)=S_d(W,E,\nu)\circ H(N^{\rm DFL}_{p_0}\otimes\FF).
+\]
+In particular, for two such choices of data at presentations $p,q$ of one object,
+$H(N^{\rm DFL}_q\otimes\FF)\circ G(q,p)=\Gamma(q,p)\circ H(N^{\rm DFL}_p\otimes\FF)$ as maps from
+the gauge homology at $p$, where $G(q,p)$ is the gauge continuation and $\Gamma(q,p)$ the
+symplectic transitive system of Theorem~\ref{thm:A}, defined by holomorphic curve counts.
+So within this class of data, including changes of the Heegaard splitting, the reduction
+modulo two of the isomorphism of \cite{DFL} on homology does not depend on the choices.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:dfl-comparison}, $N^{\rm DFL}_{p_i}\otimes\FF=N_{p_i}$ at these data,
+and Theorem~\ref{thm:A} applies to $N_{p_i}$. The second statement is the case of the
+identity morphism: on the gauge homology at $p$ and $q$ the identity of $\Ish(M)$ is the
+gauge continuation $G(q,p)$, and $S(1_M)_{qp}=\Gamma(q,p)$ by Lemma~\ref{lem:descent}.
+\end{proof}
+
+The corollary applies wherever admissible presentations with DFL-regular primary data
+exist. Their existence at the fixed metric data of a presentation is the transversality
+question of Remark~\ref{rem:dfl-regular}. Where they exist, Theorem~\ref{thm:A} shows that
+the vertex map at any admissible presentation of the same object is, on homology, the
+reduction modulo two of the isomorphism of \cite{DFL} at such a presentation, composed
+with the maps $G$ and $\Gamma$.
 
 \appendix
 %======================================================================

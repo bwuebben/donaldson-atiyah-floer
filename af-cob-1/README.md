@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology
 
-Bernd Johannes Wuebben · 24 September 2026 · 111 pages
+Bernd Johannes Wuebben · 24 September 2026 · 113 pages
 
 - [Read the paper](cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -33,7 +33,10 @@ three-manifolds. The cobordism is equipped with an embedded arc joining the
 ends, a framing of the arc's normal bundle, and an SO(3) bundle trivialized
 over the ends and along the arc. As a consequence, the symplectic cobordism
 maps are independent of the handle decomposition and of the Heegaard data,
-and form a functor isomorphic to framed instanton homology.
+and form a functor isomorphic to framed instanton homology. At the data where
+both constructions are defined, with secondary perturbations invariant under
+the ℤ/2 symmetry, our isomorphisms coincide with those of Daemi, Fukaya and
+Lipyanskiy reduced modulo two.
 
 The analytic input consists of two new results for the mixed equation.
 
@@ -62,8 +65,12 @@ The analytic input consists of two new results for the mixed equation.
   closed pairings are not treated.
 - **The isomorphisms.** They are constructed by the method of Daemi, Fukaya
   and Lipyanskiy, with perturbations invariant under the framed symmetry.
-  Their identification with the Daemi–Fukaya–Lipyanskiy isomorphism for
-  general data is not asserted, and the proof does not require it.
+  Where both constructions are defined, they coincide with the
+  Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, as chain maps. At
+  admissible presentations with such data, the main theorem therefore holds
+  for that isomorphism itself. Whether such presentations exist at the fixed
+  metric data used here is a transversality question left open in the
+  paper.
 
 ## Build
 
