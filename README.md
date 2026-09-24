@@ -35,6 +35,30 @@ extension. The current version is dated **8 September 2026** and has
 - [LaTeX source](af-ops/point-operations-and-matching-line-bubbles.tex)
 - [Paper overview and build instructions](af-ops/README.md)
 
+### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology
+
+Daemi, Fukaya, and Lipyanskiy proved that framed instanton homology is
+isomorphic to the Lagrangian Floer homology of a Heegaard splitting, by
+counting solutions of a mixed equation. This paper proves that, with
+coefficients in 𝔽₂, mixed isomorphisms of this type intertwine the
+Kronheimer–Mrowka cobordism maps with symplectic maps defined by holomorphic
+curves alone, for every connected cobordism between connected
+three-manifolds. Consequently the symplectic maps are independent of the
+handle decomposition and the Heegaard data and form a functor isomorphic to
+framed instanton homology. The analytic input is an adiabatic limit in which
+a compression body collapses next to a holomorphic strip, and an excision
+theorem along a torus for the mixed equation.
+
+The theorem is stated over 𝔽₂ and for connected objects. The isomorphisms
+are constructed by the Daemi–Fukaya–Lipyanskiy method with invariant
+perturbations; their identification with the Daemi–Fukaya–Lipyanskiy map
+for general data is not asserted. The current version is dated
+**24 September 2026** and has **111 pages**.
+
+- [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
+- [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
+- [Paper overview and build instructions](af-cob-1/README.md)
+
 ### One-bubble neighborhoods in SO(3)-monopole moduli spaces
 
 This paper proves an oriented neighborhood theorem at the first Uhlenbeck
@@ -61,12 +85,15 @@ arguments. The current version is dated **9 September 2026** and has
 
 ## Building the papers
 
-Both manuscripts are self-contained and use standard LaTeX packages. With a
+The manuscripts are self-contained and use standard LaTeX packages. With a
 current TeX Live installation:
 
 ```bash
 cd af-ops
 latexmk -pdf point-operations-and-matching-line-bubbles.tex
+
+cd ../af-cob-1
+latexmk -pdf cobordism-maps-and-atiyah-floer-isomorphisms.tex
 
 cd ../w-glue-1
 latexmk -pdf one-bubble-neighborhoods-of-seiberg-witten-strata.tex
