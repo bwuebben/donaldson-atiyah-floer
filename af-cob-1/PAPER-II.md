@@ -1,4 +1,4 @@
-# Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II: integer coefficients
+# Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
 Bernd Johannes Wuebben · 26 September 2026 · 38 pages · First draft
 

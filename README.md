@@ -35,7 +35,7 @@ extension. The current version is dated **8 September 2026** and has
 - [LaTeX source](af-ops/point-operations-and-matching-line-bubbles.tex)
 - [Paper overview and build instructions](af-ops/README.md)
 
-### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology
+### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology I
 
 Daemi, Fukaya, and Lipyanskiy proved that framed instanton homology is
 isomorphic to the Lagrangian Floer homology of a Heegaard splitting, by
@@ -62,7 +62,7 @@ version is dated
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
 - [Paper overview and build instructions](af-cob-1/README.md)
 
-### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II: integer coefficients
+### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
 This sequel develops the signed cobordism comparison over ℤ for the
 geometric symplectic maps of Paper I. It transports orientations from the
