@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-Bernd Johannes Wuebben · 26 September 2026 · 38 pages · First draft
+Bernd Johannes Wuebben · Revised 26 September 2026 · 44 pages · Conditional draft
 
 - [Read Paper II](cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
@@ -28,7 +28,7 @@ maps and with relative-spin quilt orientations is left open.
 
 ## Status and scope
 
-**This is a conditional first draft.** The principal comparison assumes
+**This is a revised conditional draft.** The principal comparison assumes
 Paper I's analytic results and three additional hypotheses in Section 2:
 uniform regularity and compatible Fredholm realizations on completed
 mixed domains; an oriented mixed torus-completion comparison; and

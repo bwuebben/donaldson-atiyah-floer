@@ -54,9 +54,10 @@ are constructed by the Daemi–Fukaya–Lipyanskiy method with invariant
 perturbations. Where both constructions are defined, they coincide with the
 Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist at
 the fixed metric data used here (Appendix C). Integer coefficients are the
-subject of the conditional first draft of Paper II below. The current
-version is dated
-**25 September 2026** and has **136 pages**.
+subject of the conditional draft of Paper II below. The current
+manuscript is dated **25 September 2026**, revised **26 September 2026**,
+and has **142 pages**. The revision expands the collapse and boundary
+estimates and the construction of invariant regular data.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -70,12 +71,14 @@ gauge theory and compares collapse, torus excision, reflection, and
 compression cups and caps. The resulting comparison allows one overall
 sign per cobordism.
 
-**Conditional first draft, 26 September 2026, 38 pages.** The theorem
+**Conditional draft, revised 26 September 2026, 44 pages.** The theorem
 assumes uniform regularity on completed mixed domains, oriented torus
 completion, and determinant-one self-gluing, in addition to Paper I's
 analytic results. The gauge orientation convention is explicit;
 identification with homology-oriented integral instanton maps and with
-relative-spin quilt orientations remains open.
+relative-spin quilt orientations remains open. The revision adds the
+configuration-family collapse determinant comparison and explicit
+folding and capping orientation diagrams.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)

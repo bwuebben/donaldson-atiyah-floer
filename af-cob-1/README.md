@@ -1,10 +1,10 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology I
 
-Bernd Johannes Wuebben · 25 September 2026 · 136 pages
+Bernd Johannes Wuebben · 25 September 2026 · Revised 26 September 2026 · 142 pages
 
 - [Read the paper](cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms.tex)
-- [Paper II: integer coefficients, conditional first draft](PAPER-II.md)
+- [Paper II: integer coefficients, conditional draft](PAPER-II.md)
 - [Donaldson and Atiyah–Floer manuscript collection](../README.md)
 
 ## Abstract
@@ -61,7 +61,7 @@ The analytic input consists of two new results for the mixed equation.
   counts would need coherent orientations, compared with the homology
   orientations of the gauge side. The homological algebra used to pass from
   homology to chain homotopy also requires a field. Integer coefficients are
-  treated in [Paper II](PAPER-II.md), a conditional first draft of the
+  treated in [Paper II](PAPER-II.md), a conditional draft of the
   comparison over ℤ up to one sign for each cobordism, with its gauge
   orientation convention stated explicitly.
 - **Objects.** The objects are connected and carry the trivial bundle on

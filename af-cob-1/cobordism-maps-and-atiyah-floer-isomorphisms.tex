@@ -107,8 +107,9 @@ coincide with those of Daemi, Fukaya and Lipyanskiy reduced modulo two. The anal
 for the mixed equation. The first is an adiabatic limit in which the metric
 on a compression body collapses next to a holomorphic strip: the compression
 body becomes the Lagrangian boundary condition of its flat connections, two
-ends appear along which the matching surface runs to infinity, with a Morse--Bott family of stationary solutions, the index-zero counts are unchanged,
-and a single affine relation between energy and index holds at every scale.
+ends appear along which the matching surface runs to infinity, with a Morse--Bott family of stationary solutions. The index-zero
+counts are unchanged, and a single affine relation between energy
+and index holds at every scale.
 The second is an excision theorem for the mixed equation along a torus, in a situation where no closed three-manifold separates the two sides.
 \end{abstract}
 
@@ -358,7 +359,17 @@ $T^2$ with a planar region. We separate the two sides by a flat product region o
 $2\lambda$ (the \emph{bridge}), on whose boundary only flatness of the torus restriction is
 imposed (the \emph{flat-fibre condition}); the boundary on which it is imposed is the
 \emph{flat face}, and letting the bridge become infinite gives the \emph{completed tail}. The
-proof proceeds by a closed cut at a fixed bridge width, a homotopy of the width and a completion of the torus region (Section~\ref{sec:torus}, plan of the proof). Three features make the completion work. The linearized operator at the odd flat torus is invertible on any base of bounded geometry, with the flat-fibre boundary condition and with bound given by the spectral gap $\mu_T$ of the fibre (Proposition~\ref{prop:flat-fibre}), so all estimates are uniform in the collar length. Small-energy regularity holds up to the flat face, because the boundary flux is cubic in the curvature (Theorem~\ref{thm:flat-boundary-regularity}). Solutions decay exponentially along the completed tail (Proposition~\ref{prop:tail-decay}).
+proof proceeds by a closed cut at a fixed bridge width, a homotopy
+of the width and a completion of the torus region
+(Section~\ref{sec:torus}, plan of the proof). On the plane,
+half-plane and straight strips, the linearized operator at the odd
+flat torus has an inverse bounded by $\mu_T^{-1}$, independently
+of strip width (Proposition~\ref{prop:flat-fibre}). Small-energy
+regularity up to the flat face follows by placing the connection
+in a Neumann slice and absorbing the nonlinear coexact boundary
+trace (Theorem~\ref{thm:flat-boundary-regularity}). Solutions decay
+exponentially along the completed tail
+(Proposition~\ref{prop:tail-decay}).
 
 \subsection{Strategy}
 
@@ -949,13 +960,15 @@ Fix a Heegaard splitting and metric data as in Definition~\ref{def:presentation}
 There are separated families $F$ as in Definition~\ref{def:presentation}, and for each of them
 generic primary data in a neighbourhood of zero in $\operatorname{span}F$ have transverse
 Lagrangians. Let $F$ be a separated family as in Definition~\ref{def:presentation} and
-$\mathfrak h\in\mathcal U(F)$ primary data with transverse Lagrangians. Then there are a finite family $G$ of cylinder functions with loops
-in $\operatorname{int}C_0^\circ\sqcup\operatorname{int}C_1^\circ$ and arbitrarily small split
-additions $g\in\operatorname{span}G$ such that $\mathrm{CS}_{\mathfrak h+g}$ has the same critical
+$\mathfrak h\in\mathcal U(F)$ primary data with transverse Lagrangians. Then there are
+arbitrarily small split additions $g$, each lying in the span of a finite family $G$ of
+cylinder functions with loops in
+$\operatorname{int}C_0^\circ\sqcup\operatorname{int}C_1^\circ$, such that
+$\mathrm{CS}_{\mathfrak h+g}$ has the same critical
 points as $\mathrm{CS}_{\mathfrak h}$, the primary data $\mathfrak h+g$ are DFL-regular, and
 $\mathfrak h+g\in\mathcal U(F\cup G)$; presentation data with primary data $\mathfrak h+g$ are
-therefore admissible. The loops of $G$ may be taken in $\operatorname{int}C_0^\circ$ alone. The
-metric data are not changed.
+therefore admissible. The family $G$ may depend on the required smallness of $g$, and its loops
+may be taken in $\operatorname{int}C_0^\circ$ alone. The metric data are not changed.
 \end{theorem}
 
 Lemma~\ref{lem:dfl-detect} and Theorem~\ref{thm:dfl-regular} are proved in
@@ -1611,10 +1624,13 @@ Morse--Bott family, treated in extended weighted spaces). Only closed and ordina
   in index at most zero (at most one when chain identities are needed),
   and every nonconstant trajectory on a joined end has index at least
   one.
-\item\label{H:support} \emph{Supports.} All holonomy dependence regions (the unions of the loops of the holonomy
-  perturbations), the regions where the cutoffs $\chi$ multiplying the end perturbations are nonconstant, and
-  the parameter derivatives lie in compact regions
-  away from the necks.
+\item\label{H:support} \emph{Supports.} The autonomous primary and end
+  perturbations are fixed on the ends and on the corresponding product
+  necks. The additional secondary perturbations, the nonautonomous
+  cutoff changes, and the parameter derivatives have their output and
+  entire loop-dependence regions in a common compact set away from
+  the inserted necks. This compact set is fixed after the finite
+  selection of secondary directions and before neck lengths vary.
 \item\label{H:energy} \emph{Energy.} On solutions, analytic energy equals
   topological energy plus terms bounded independently of neck lengths
   and family parameters.
@@ -1751,9 +1767,15 @@ $\exp\xi$. Let $\psi$ be a cut-off function equal to $1$ on a disc, and let
 $e\ne e'$ be sections of $\ad F$ with eigenvalues $\pm i$ that agree where
 $\psi<1$, with $e$ parallel on the disc. Then $2\pi\psi e$ and $2\pi\psi e'$
 have the same exponential, while $d_\alpha(2\pi\psi e)\ne d_\alpha(2\pi\psi e')$.
-Both forms are arbitrarily small in $L^2$ for a logarithmic choice of $\psi$
-and a rescaling of $e'-e$ into a small disc, because the $L^2$ norm of
-$1$-forms on a surface is invariant under rescaling. By the Sobolev
+Choose $e'=\operatorname{Ad}_{\exp\eta}e$ with a nonzero bump $\eta$
+supported where $\psi=1$ and with arbitrarily small
+$\|d\eta\|_{L^2}$. Then
+$\|d_\alpha(2\pi\psi e')\|_{L^2}\le
+2\pi\|d\psi\|_{L^2}+C\|d\eta\|_{L^2}$.
+A logarithmic cutoff makes the first term small as well. Thus the
+two distinct forms can lie in any $L^2$ ball; rescaling a fixed
+profile alone would not decrease its surface Dirichlet energy.
+By the Sobolev
 embedding, an $L^2_{l-1}$-ball of fixed radius lies in
 $\cB^{(q)}_{<\eps_q}$.
 \end{remark}
@@ -1819,8 +1841,9 @@ on $\Sigma$, to which the composition estimates of Moser type apply
 maps from a finite-dimensional space into a Hilbert space. The equation
 $\mathcal F$ is quadratic in the connection up to the perturbation terms, and
 acts pointwise on the section, with bounds uniform over unit patches; the
-perturbations, and in a family the variation of the metric, are supported in
-compact subsets of the pieces away from the necks by \ref{H:support}. Hence the
+fixed autonomous primary and end terms have uniform bounds on unit
+patches. The additional secondary terms and nonautonomous parameter
+variations have compact dependence regions as in \ref{H:support}. Hence the
 second derivative of $\mathcal G_p$ is bounded independently of $R$, the norms
 adding over a partition into pieces and necks.
 
@@ -1917,8 +1940,11 @@ points being nondegenerate and irreducible; on ordinary necks and ends by the
 corresponding estimate for holomorphic strips of small energy with transverse
 Lagrangian boundary conditions \cite[Proposition~2.3.1]{Simcevic}, after the
 Hamiltonian term on the neck is removed by the flow it generates, with the
-higher derivatives bounded by elliptic estimates on unit squares in a chart
-adapted to the two Lagrangians \cite[Lemma~C.3]{RS-strips};
+higher derivatives uniformly bounded by the half-disk estimates of
+\cite[Lemma~C.3]{RS-strips}, applied at each boundary with its own
+Lagrangian. The linear elliptic equation for the time derivative
+then upgrades the derivative decay of \cite[Proposition~2.3.1(ii)]{Simcevic}
+to decay of all orders on smaller unit patches;
 and on the mixed ends by \cite[Proposition~5.29]{DFL}. Patching the gauge
 transformations over bands on which the limits are irreducible, we obtain
 gauge transformations $g_n$ with $\|g_n^*y_n-p_n\|\to0$ in the distance fixed
@@ -1941,10 +1967,14 @@ cross-sections (on $Y$ with no boundary condition, by the variational
 characterization of $\lambda_1(B)$), have $L^2$ norm tending to zero on the
 necks and ends; on the compact parts of the pieces it would converge to a
 parallel section vanishing on an open set, hence to zero, every component of a
-piece having an end. This contradicts $\|\xi_n\|_{L^2}=1$. By
-\eqref{eq:neck-weight}, the bilinear form
+piece having an end. This contradicts $\|\xi_n\|_{L^2}=1$.
+Write $C_P$ for this uniform scalar Poincar\'e constant and, in
+addition to \eqref{eq:neck-weight}, take $\delta C_P<1/2$.
+Choose the smoothing below with $|dW|\le1$. The bilinear form
 $\langle d_p(e^{-\delta W}V),d_p(e^{\delta W}U)\rangle_{L^2}$, where $W$ is a
-smoothing of the end coordinate of the mixed ends, is coercive on $L^2_1$. The
+smoothing of the end coordinate of the mixed ends, satisfies
+$B(U,U)=\|d_pU\|^2-\delta^2\|(dW)U\|^2\ge
+(1-\delta^2C_P^2)\|d_pU\|^2$ and is coercive on $L^2_1$. The
 Lax--Milgram lemma and elliptic estimates on unit patches then give an inverse
 of $\Delta_p$ on the weighted spaces and, with the Neumann problem on $Y$ for
 the asymptotic values, on the spaces with asymptotic values on the mixed ends,
@@ -2086,6 +2116,19 @@ $\mathcal H$ is $M_2(\CC)$, and since $i\mathcal H\subset\mathcal H$ its
 real span is the same. A sign change does not change a real linear span.
 \end{proof}
 
+For the regularity assertion, distinguish the output support of a
+holonomy term from the region traversed by its loops. On each gauge
+component choose an open output region $O$ containing the outputs of
+all fixed perturbation derivatives. It may extend down original ends.
+Every component of $O$ is joined through permitted loop-dependence
+regions to an original end whose limiting connection is flat on an
+odd surface collar and on which the lifting characters vanish.
+Prospective directions have arbitrary compact output support in $O$
+and compact loop dependence in these regions. On a torus joined
+problem take the union of the two such regions on its two sides;
+the loops need not cross the inserted torus bridge. The compact
+support set for the eventual finite collection is chosen afterwards.
+
 \begin{theorem}[invariant regularity]\label{thm:regularity}
 \begin{enumerate}[label=(\roman*)]
 \item Let $Y$ be a closed connected three-manifold containing a surface
@@ -2094,12 +2137,18 @@ real span is the same. A sign change does not change a real linear span.
   $g$ fixes a connection that is flat on a collar of $\Sigma$, then
   $g=1$. In particular $\Phi$ acts freely on critical points and on
   finite-energy solutions.
-\item At every solution of a piece, joined or family problem, the
-  linearized operator together with the invariant holonomy directions
-  supported in a prescribed open set is onto.
-\item Generic small invariant perturbations, chosen finitely many at a
-  time after the compactness step of each index, make all spaces used in
-  Theorems~\ref{thm:neck} and~\ref{thm:family} regular.
+\item For a gauge or mixed problem with the output and detection
+  regions just specified, the linearized operator together with all
+  permitted invariant holonomy directions is onto at every solution.
+  On purely symplectic components use the ordinary permitted
+  almost-complex and Hamiltonian variations instead.
+\item Under the compactness and gluing hypotheses of
+  Theorems~\ref{thm:neck} and~\ref{thm:family}, generic small invariant
+  perturbations make the required low-index spaces regular.
+  Finitely many directions are selected at each index, relative to
+  already regular broken strata and parameter boundary regions.
+  Their common compact dependence region is then fixed before
+  neck lengths are varied.
 \end{enumerate}
 \end{theorem}
 
@@ -2111,25 +2160,77 @@ continuation of parallel sections along paths, $Y$ being connected. The
 hypotheses cannot be dropped, as the example of $T^3$ with holonomy the
 Klein four-group shows.
 
-(ii) Let $\psi$ be an element of the cokernel of the linearized operator
-enlarged by the invariant holonomy directions. The holonomy perturbations
-are nonlocal, so we first project $\psi$ off the gauge directions, using the
-Neumann inverse of $d_A^*d_A$; after this the adjoint equation for $\psi$ is a
-local elliptic system. Pairing with the holonomy directions shows that $\psi$ is
-pointwise orthogonal, on the support of their forms, to every
-$\pi_{\mathfrak{su}(2)}\mathrm{Hol}_\gamma$ with $\gamma$ a loop of zero lifting class
-based at an arbitrary point. These span $\mathfrak{su}(2)$ pointwise by
-Lemma~\ref{lem:invariant-span}, since loops in the odd surface of a collar have
-zero lifting class. Hence $\psi$ vanishes on an open set, and by unique continuation
-\cite{Aronszajn} for the gauge part and for the section, together with the
-matching conditions, it vanishes everywhere.
+(ii) Write the full gauge-fixed derivative at a solution as
+\[
+D(a,v)=\bigl(d_A^*a,(d_A^++K_A)a,D_uv\bigr),
+\]
+where $K_A$ includes all primary and secondary holonomy derivatives.
+Let $(\mu,\xi,z)$ annihilate this operator and all prospective
+columns. A Neumann gauge variation $(d_Af,0)$ is an admissible
+source; its surface harmonic class is zero. Gauge covariance at a
+solution gives $(d_A^++K_A)d_Af=0$, so
+$\langle\mu,d_A^*d_Af\rangle=0$.
+The scalar Neumann operator is onto at each such solution. Indeed
+its end operators have positive scalar gaps; on a completed torus
+end use the odd-fibre gap. The compact-remainder argument therefore
+makes it Fredholm at weight zero. Integration by parts identifies
+its kernel with decaying parallel sections, which vanish by
+irreducibility. Self-adjointness gives index zero, and sufficiently
+small weights preserve that index and introduce no kernel. This
+pointwise argument precedes any regularity or finite-set assertion
+for the mixed solution spaces. Hence $\mu=0$.
 
-(iii) Standard: after compactness at a given index, finitely many
-perturbation directions span the cokernels on a neighbourhood of the
-compact solution set; the Sard--Smale theorem applies to the resulting
-finite-dimensional family, and the smallness is preserved by induction
-over the finitely many indices involved. Each term is individually
-$\Phi$-invariant, so no averaging is needed.
+At the limiting odd reference surface, Lemma~\ref{lem:invariant-span}
+provides finitely many holonomies spanning the adjoint fibre over
+$\mathbb R$. Move their loops slightly into the protected flat
+collar and then to a sufficiently far, finite slice of the original
+end. Convergence to the limiting connection preserves this span.
+Conjugate the loops by a common path to any prospective output ball
+in $O$. The path and its reverse cancel in every lifting character,
+so these loops still have zero character. Thicken them smoothly to
+holonomy families. Their self-dual output forms can be chosen
+arbitrarily in the ball; the real coefficients expressing a target
+vector in the spanning holonomies are computed at this solution
+and frozen as perturbation data. Pairing with all such columns
+therefore gives $\xi|_O=0$.
+
+All fixed nonlocal derivatives have output in $O$. Consequently,
+for every test variation $a$,
+$\langle K_A^*\xi,a\rangle=\langle\xi,K_Aa\rangle=0$.
+Thus the remaining interior adjoint equation is genuinely local:
+$d_A^{+,*}\xi=0$. Applying $d_A^+$ gives an elliptic second-order
+equation with scalar principal symbol. Unique continuation
+\cite{Aronszajn} implies $\xi=0$ on each connected gauge component.
+This argument eliminates the nonlocal adjoints before using unique
+continuation; projection to a gauge slice alone would not do so.
+
+On an open matching arc choose an arbitrary section trace, represent
+its components by harmonic forms on the matching surfaces, and
+extend them independently into the gauge collars with zero normal
+component. These are admissible coupled variations. Since both
+gauge cokernel components vanish, their Green pairing forces the
+section adjoint to have zero boundary trace on that arc. Mixed
+adjoint regularity supplies this trace. Extension by zero across a
+smaller arc, followed by unique continuation for the real
+Cauchy--Riemann equation, gives $z=0$. Purely symplectic components
+are regularized separately by their usual $J$ and Hamiltonian
+variations \cite[Theorem~3.9]{WW-relative}; they do not use holonomy
+columns. The ordinary gauge pieces here have framed reference ends
+with the same protected odd collar. Closed gauge factors evaluated
+in the excision theorem retain the source results of
+\cite[Section~5.3]{KM-unknot}.
+
+(iii) At a fixed solution finitely many columns suffice because the
+cokernel is finite dimensional. At each index, remove neighbourhoods
+of the already regular broken strata and of fixed regular parameter
+faces. Compactness of the remaining locus gives a finite collection
+of columns by a finite cover. Parameter cutoffs implement relative
+choices. Sard--Smale then gives a generic small regular choice.
+Only now take a compact set containing the output supports and the
+entire loop images of these columns, and place the original-end
+truncations farther out. This set is independent of subsequently
+inserted lengths. Each column is individually invariant, so no
+averaging or loss of span occurs.
 \end{proof}
 
 %======================================================================
@@ -2676,12 +2777,72 @@ The bound follows.
 
 \subsection{Regularity along the collapsing seam}\label{subsec:seam-regularity}
 
-We use the small-energy estimates for the mixed equation in the fixed product
-geometry of \cite[(1.1)]{DFL-mixed}: there are $e_*>0$ and constants $C_k$ such that
-a solution on a unit half-ball centred on the seam, with energy $e\le e_*$ on the
-ball of twice the radius, satisfies $|\nabla^kF_A|+|\nabla^k du|\le C_k\sqrt e$ on the
-unit half-ball, up to the seam \cite[Theorem~4.2 and Lemma~4.25]{DFL-mixed}; away
-from the seam these are the interior estimates of \cite[Lemma~4.50]{DFL-mixed}.
+We will use the following quantitative consequence of fixed-geometry
+mixed regularity. The energy is measured on a larger patch than
+the one on which derivatives are estimated.
+
+\begin{lemma}[Quantitative local seam estimate]\label{lem:quantitative-seam}
+Consider the unperturbed mixed equation in the product geometry of
+\cite[(1.1)]{DFL-mixed}, with fixed surface metric and its induced
+complex structure. Let $Q_2$ be a gauge half-disk times the matching
+surface, together with the section half-disk, and let $Q_1$ be the
+concentric patch of half the radius. There are $e_*>0$ and $C_k$
+such that every solution of energy $e\le e_*$ on $Q_2$ satisfies
+\[
+ \sup_{Q_1}(|\nabla_A^kF_A|+|\nabla^kdu|)\le C_k\sqrt e.
+\]
+The constants are uniform on compact families of these product data.
+\end{lemma}
+\begin{proof}
+Choose nested intermediate patches. Mixed small-energy regularity
+and compactness give gauges in which solutions of energy below a
+fixed concentration threshold have bounded smooth coefficients on
+these patches \cite[Theorem~4.2, Lemma~4.25 and pp.~38--39]{DFL-mixed}.
+As the energy tends to zero their limits are flat connections and
+constant sections. The possible flat surface classes form a compact
+space, so finitely many gauge and target charts suffice. These are
+qualitative coefficient bounds; the energy rate is obtained next.
+
+Let $t$ be the coordinate tangent to the seam and set
+$\zeta=\iota_{\partial_t}F_A$, $\xi=\partial_tu$.
+Covariant differentiation of the unperturbed mixed equation in
+this product coordinate shows that $(\zeta,\xi)$ satisfies its
+linearized equation. The gauge row is zero by the Yang--Mills
+identity $d_A^*F_A=0$. Its normal component on the seam is zero,
+since anti-self-duality identifies $F_{ts}$ with the curvature of
+the flat surface restriction. Differentiating that restriction and
+its class gives the closed-trace and harmonic-matching conditions.
+Thus $(\zeta,\xi)$ lies in the local mixed boundary domain,
+including the gauge row, as in the translation-field argument of
+\cite[Proposition~5.29]{DFL}. Use matched scalar cutoffs on the
+gauge and section patches, with identical seam values and supports
+away from the artificial edges. Their commutators are zeroth order.
+The local all-order boundary estimates of
+\cite[Theorems~5 and 5.9, Remarks~5.73 and 5.76]{DFL-mixed},
+with the uniformity of \cite[Remark~4.19]{DFL}, give
+\[
+ \|\zeta\|_{H^{j+1}(Q_1)}+\|\xi\|_{H^{j+1}(Q_1)}
+ \le C_j\bigl(\|\zeta\|_{L^2(Q')}+\|\xi\|_{L^2(Q')}\bigr)
+ \le C'_j\sqrt e,
+\]
+where $Q_1\Subset Q'\Subset Q_2$. One can equivalently trivialize the moving matching domain by
+its smooth chart $Q$ and commute $Q\partial_tQ^{-1}$, rather than
+raw tangential differentiation, before recovering normal derivatives
+from the equation. Use successively smaller patches. The
+qualitative smooth bounds
+control every coefficient and its commutators at each fixed order.
+They also give uniform constants over the finite chart cover.
+
+For an anti-self-dual two-form on this product, contraction with
+$\partial_t$ determines all its components and
+$|F_A|^2=2|\zeta|^2$. The Cauchy--Riemann equation similarly
+determines $du$ from $\xi$. These identities and Sobolev embedding
+prove the claimed bounds. The threshold is chosen once below
+concentration; only $C_k$ depends on the derivative order.
+\end{proof}
+
+Away from the seam we use the corresponding interior estimates
+\cite[Lemma~4.50]{DFL-mixed}.
 
 The following lemma is the source of all uniform local control near the
 collapse. For a seam point $b$ (on $I$, or on an endpoint neck) let
@@ -2793,10 +2954,9 @@ $I$) or $\Phi_b$ with $\Phi_b'=1/{\mathfrak s}$ (on the necks), the collapsing
 compression and the section have exactly the product mixed geometry of
 \cite[(1.1)]{DFL-mixed} with the fixed surface metric, and unit patches
 correspond to regions of size $C{\mathfrak s}_b$. Energy is conformally
-invariant. So the small-energy estimates of \cite[Theorem~4.2 and
-Lemma~4.25]{DFL-mixed}, which are stated for that fixed product geometry,
-and \cite[Lemma~4.50]{DFL-mixed}, which allows a $C^k$-compact family of
-metrics, apply on every unit patch with constants independent of $\eps$
+invariant. So Lemma~\ref{lem:quantitative-seam} in that fixed product
+geometry and the interior estimate \cite[Lemma~4.50]{DFL-mixed},
+which allows a $C^k$-compact family of metrics, apply on every unit patch with constants independent of $\eps$
 and $b$: on a patch of energy at most $e_0$ the curvature, the section
 derivative and all their covariant derivatives are bounded by $C\sqrt e$
 in the rescaled coordinates.
@@ -3259,13 +3419,40 @@ $\sup_r|\xi(t,r)|\le C(\|\partial_r\xi(t,\cdot)\|+\|\mathcal B_tU\|)$,
 using Lemma~\ref{lem:tie} for the distance of $\nu_0$ from $TP$. Squaring and
 integrating over $t$,
 \[
-\mathcal J+\|\xi\|^2\le\varsigma\|\partial_r\xi\|^2+C\int\|\mathcal B_tU\|^2dt
+\mathcal J+\|\xi\|^2\le C_P\left(\|\partial_r\xi\|^2+\int\|\mathcal B_tU\|^2dt\right),
 \]
-with $\varsigma$ as small as we wish once $T_0$ is large. The proof of
-Proposition~\ref{prop:garding} on the support of $z$ gives
-$\|z\|_X^2\le C(\|D_{\mathfrak s}z\|_Y^2+\mathcal J+\|\xi\|^2)+o(1)\|z\|_X^2$, the error coefficients
-involving $Q$ and $K_u$ tending to zero as $T_0\to\infty$; inserting the displayed
-inequality absorbs $\mathcal J$ and $\|\xi\|^2$, and no $L^2$ remainder is left.
+where $C_P$ is fixed by the transverse limiting pair. It need not be small.
+Return to the energy identities \eqref{eq:gauge-identity} and
+\eqref{eq:strip-identity}, before replacing the boundary terms by an
+unweighted $L^2$ remainder. Put
+\[
+\mathcal E_0=\|\partial_t\xi\|^2+\|\partial_r\xi\|^2+
+\int\bigl({\mathfrak s}\|\mathsf D_tU\|^2+
+{\mathfrak s}^{-1}\|\mathcal B_tU\|^2\bigr).
+\]
+The coefficients involving $\dot q$, the derivatives of the strip, and
+the moving Lagrangian frames tend to zero on the ends. Their contributions,
+including the lower-order term of the strip operator, are at most
+$o_{T_0}(1)(\mathcal E_0+\mathcal J+\|\xi\|^2)$ after Young's inequality.
+The bounded scale derivative contributes at most a fixed multiple of
+$H^2\int{\mathfrak s}\|U\|^2$, after absorbing one quarter of the
+$\mathcal B_tU$ term. Lemma~\ref{lem:tie} and the preceding Poincar\'e bound give
+\[
+\int{\mathfrak s}\|U\|^2+
+\mathcal J+\|\xi\|^2\le C(1+C_P)\mathcal E_0,
+\qquad
+\int{\mathfrak s}\|U\|^2\le C{\mathfrak s}_1(1+C_P)\mathcal E_0.
+\]
+Consequently
+\[
+\mathcal E_0\le C\|D_{\mathfrak s}z\|_Y^2+
+\bigl(o_{T_0}(1)(1+C_P)+C H^2{\mathfrak s}_1(1+C_P)\bigr)\mathcal E_0.
+\]
+Choose $T_0$ first and then ${\mathfrak s}_1$ to absorb the last term.
+The complementary spatial estimate and the same Poincar\'e bound recover
+the full $X$ norm from $\mathcal E_0$. For the adjoint the extra scalar
+endomorphism is bounded by $CH$ and is treated by the identical small-scale
+estimate. This proves both assertions without a small Poincar\'e constant.
 \end{proof}
 
 Combining Proposition~\ref{prop:garding} on $[-T_0-1,T_0+1]$ with
@@ -4149,6 +4336,11 @@ $\|a\|^2_{L^2(g_\eps)}=\int|a|^2_{\widehat g_\eps}d\mu_\eps$, which is
 $\int{\mathfrak s}|(p,b)|^2dt\,dV_C$ on the compression, with $p={\mathfrak s}\psi$.
 
 
+Write $H^j_{\rm uloc}(\widehat g_\eps)$ for the supremum of the
+$H^j$ norms over a uniform cover by unit patches in the rescaled
+metric, with covariant derivatives taken using the reference
+connection.
+
 \begin{lemma}[scalar inverse]\label{lem:scalar-inverse}
 Let $\mathcal L_\eps=\lambda_\eps^2d^{*,g_\eps}_{\mathbb A}d_{\mathbb A}$ with Neumann condition, for a
 reference $\mathbb A$ within a fixed small $C^k$-distance of $W_\eps$ in the rescaled
@@ -4201,7 +4393,6 @@ decreasing exponential weight. The weights of the original ends, whose logarithm
 gradients are smaller than $\gamma$, are handled in the same way.
 \end{proof}
 
-
 %======================================================================
 \section{The collapse theorem: gluing and surjectivity}\label{sec:collapse-coverage}
 %======================================================================
@@ -4221,14 +4412,14 @@ that lose no logarithm; only then does it enter the uniqueness ball.
 
 \subsection{Strong norms and the strong inverse}\label{subsec:charts}
 
-\emph{Strong norms.} On the small compression, with $w$ the fixed end weight
+\emph{Strong norms.} On the small compression, with $\mathsf w$ the fixed end weight
 (equal to one on the region $N\cap X_\eps$ where $X_\eps$ differs from $X_0$, Definition~\ref{def:insertion}(iv)), put
 \[
-\|f\|_{Y^m_\eps}^2=\sum_{i+r\le m}\|\nabla^i_t(w{\mathfrak s}^{1/2}f)\|^2_{L^2_tH^r(C)},
+\|f\|_{Y^m_\eps}^2=\sum_{i+r\le m}\|\nabla^i_t(\mathsf w{\mathfrak s}^{1/2}f)\|^2_{L^2_tH^r(C)},
 \]
 \[
-\|z\|_{X^m_\eps}^2=\|wv\|^2_{H^m_t}+\sum_{i=0}^m\|w{\mathfrak s}^{-1/2}\nabla^i_tW\|^2_{L^2_t
-H^{m+1-i}(C)}+\|w{\mathfrak s}^{1/2}\nabla_t^{m+1}U\|^2_{L^2_tL^2(C)},
+\|z\|_{X^m_\eps}^2=\|\mathsf wv\|^2_{H^m_t}+\sum_{i=0}^m\|\mathsf w{\mathfrak s}^{-1/2}\nabla^i_tU_\perp\|^2_{L^2_t
+H^{m+1-i}(C)}+\|\mathsf w{\mathfrak s}^{1/2}\nabla_t^{m+1}U\|^2_{L^2_tL^2(C)},
 \]
 and on the other gauge regions and the section weighted $H^m$ and $H^{m+1}$,
 patched by cutoffs of bounded overlap, with the free limiting vectors at the
@@ -4259,16 +4450,19 @@ domain. We prove by induction on $j\le m$ that
 For $j=0$ this is Proposition~\ref{prop:attachment-inverse}. Commuting $D_\eps$ through
 $\mathcal V^j$ gives
 \[
-D_\eps(\mathcal V^jz)=\mathcal V^jD_\eps z+\sum_{i<j}\bigl({\mathfrak s}^{-1}a_{ij}(t)\,\mathcal B^{[j-i]}_t
-\mathcal V^iU+b_{ij}\mathcal V^iz\bigr),
+D_\eps(\mathcal V^jz)=\mathcal V^jD_\eps z+
+\sum_{i<j}\sum_{k=0}^{j-i}{\mathfrak s}^{-1}a_{ijk}(t)
+\mathcal B^{[k]}_t\mathcal V^iU+\sum_{i<j}b_{ij}\mathcal V^iz,
 \]
-where $a_{ij}$ and $b_{ij}$ are bounded, the factor ${\mathfrak s}^{-1}$ comes from the
-derivatives of the scale, and $b_{ij}$ collects the terms of order zero. By
-Lemma~\ref{lem:transport}, $\mathcal B^{[j-i]}_t$ annihilates the harmonic fields and
-$\|\mathcal B^{[j-i]}_tU\|\le C\|\mathcal B_tU\|$, so no factor ${\mathfrak s}^{-1}$ multiplies a slow
+where $\mathcal B^{[0]}_t=\mathcal B_t$, all coefficients are bounded,
+and $b_{ij}$ collects the terms of order zero. Differentiating the scale
+produces the terms with $k=0$, even when the background is constant. By
+Lemma~\ref{lem:transport}, for every $k\ge0$ the operator
+$\mathcal B^{[k]}_t$ annihilates the harmonic fields and
+$\|\mathcal B^{[k]}_tU\|\le C\|\mathcal B_tU\|$, so no factor ${\mathfrak s}^{-1}$ multiplies a slow
 term and
 \[
-\|{\mathfrak s}^{-1}a_{ij}\mathcal B^{[j-i]}_t\mathcal V^iU\|_{Y_\eps}\le C\|{\mathfrak s}^{-1/2}\mathcal B_t\mathcal V^iU\|\le
+\|{\mathfrak s}^{-1}a_{ijk}\mathcal B^{[k]}_t\mathcal V^iU\|_{Y_\eps}\le C\|{\mathfrak s}^{-1/2}\mathcal B_t\mathcal V^iU\|\le
 C\|\mathcal V^iz\|_{X_\eps}.
 \]
 Applying Proposition~\ref{prop:attachment-inverse} to $\mathcal V^jz$, which costs one factor
@@ -4343,124 +4537,303 @@ finite-dimensional equation
 which exists by the implicit function theorem, since $\vartheta\mapsto[\alpha_{t,v,0}+\mathcal
 S_{\alpha_{t,v,0}}(0,\vartheta)]$ is the harmonic chart of $\Msf$ at $e_t(v)$, with derivative
 $de_t(v)$ at $0$; the class map is smooth on flat connections of class $H^{1/2}$ near
-$\alpha_{t,v,0}$. Define
-\[
-\mathcal R_t(v,w)=\chi(r)\,\mathcal S_{\alpha_{t,v,r}}\bigl(\phi_{t,r},\vartheta_t(v,w)\bigr).
-\]
-Then $\mathcal R_t$ is tangential, the trace $\alpha_{t,v,0}+\phi_{t,0}+\mathcal R_t|_{\partial C}$
-is flat with class $e_t(v+\tau_tw)$, and $\mathcal R_t(v,0)=0$. At $w=0$ the derivative in $w$ of
-the left side of \eqref{eq:class-equation} is the class of $\phi_{t,0}(\dot w)$ plus
-$de_t(v)\dot\vartheta$, and that of the right side is $de_t(v)\tau_t\dot w$, which is the class of
-$\phi_{t,0}(\dot w)$ by the normalization of $T_{t,v}$. Hence $D_w\vartheta_t(v,0)=0$ and
-$D_w\mathcal R_t(v,0)=0$. The correction is computed surface by surface, with $r$ as a parameter,
-and the only boundary quantity it uses is the finite-dimensional vector $\vartheta_t(v,w)$.
+$\alpha_{t,v,0}$. At $w=0$ the derivative of the left side in the class equation is
+$de_t(v)(\tau_t\dot w+\dot\vartheta)$, whereas that of the right side
+is $de_t(v)\tau_t\dot w$. Thus $\vartheta_t(v,0)=0$ and
+$D_w\vartheta_t(v,0)=0$ for every $v$.
 
-\begin{lemma}[local quadratic estimate]\label{lem:block}
-Let $Q=[0,2]\times C$, $m\ge4$, and let $q$ be a path in $P$ with $\|q\|_{C^{m+1}}\le K$. Write
-$\|w\|_{H^m_+}=\|w\|_{H^m(Q)}+\|\nabla_Cw\|_{H^m(Q)}$. There are $r_0$, $C$ depending on $m$,
-$K$ and the odd compression body such that for $\|v\|_{H^m}+\|U_\perp\|_{H^m_+}\le r_0$,
+\emph{Extension in the normal direction.} The harmonic parameter is a
+function of the boundary trace of $w$. Its extension must respect
+both the time and the normal derivatives in $X^m_\eps$.
+Choose a nonnegative $\rho\in C^\infty_c((-1,1))$ with integral one.
+At a fixed scale $s\in(0,1]$, in a smooth frame of $T_{q(t)}\Msf$, set
 \[
-\|\mathfrak B(v,U_\perp)-\mathcal BW\|_{H^m(Q)}\le C(\|v\|_{H^m}+\|U_\perp\|_{H^m})\|U_\perp\|_{H^m_+},
+(\mathcal E_s\vartheta)(t,r)
+ =\int\rho(u)\vartheta(t-sru)\,du,\qquad r\ge0.
 \]
-with the corresponding difference estimate, and the surface correction satisfies
-\begin{gather*}
-\|\mathcal R(v,w)\|_{H^m_+}\le C\|w\|_{H^m}\|w\|_{H^m_+},\\
-\|D\mathcal R(v,w)[\dot v,\dot w]\|_{H^m_+}\le C\bigl(\|w\|_{H^m_+}(\|\dot v\|_{H^m}+\|\dot
-w\|_{H^m})+\|w\|_{H^m}\|\dot w\|_{H^m_+}\bigr).
-\end{gather*}
+Its boundary value is $\vartheta(t)$. For a varying scale, choose
+unit time intervals, a subordinate partition $\sum\psi_j=1$, and
+larger intervals on which ${\mathfrak s}/{\mathfrak s}(j)$ and its
+logarithmic derivatives are bounded. Extend $\psi_j\vartheta$ by
+$\mathcal E_{{\mathfrak s}(j)}$ and sum, with a time cutoff equal to
+one on the slightly enlarged support of each summand. The collar
+radius is fixed small enough that all translates used in this formula
+remain in the larger interval. Denote the result by
+$\mathcal E_{\mathfrak s}\vartheta$. The overlap and cutoff constants
+are independent of the minimum scale and of the number of intervals.
+Define the exact correction by
+\begin{equation}\label{eq:trace-extension-chart}
+\Theta(t,r)=(\mathcal E_{\mathfrak s}\vartheta(v,w))(t,r),\qquad
+\mathcal R(v,w)(t,r)=\chi(r)\mathcal S_{\alpha_{t,v,r}}
+                  (\phi_{t,r},\Theta(t,r)).
+\end{equation}
+At $r=0$ this is the solution of \eqref{eq:class-equation}. Thus the
+trace is flat with the prescribed class. The correction and its
+first derivative in $w$ vanish at $w=0$, so \eqref{eq:exact-chart}
+and the linearized operator are unchanged.
+
+Here is the estimate for this extension. On a constant-scale patch,
+write $\mathcal X_s^m$ for the complementary part of $X^m_\eps$,
+with end weight one. The trace norm $\mathcal T_s^m$ is given, in
+local time Fourier coordinates and surface spectral coordinates, by
+\[
+\|f\|_{\mathcal T_s^m}^2=
+\int\sum_\lambda s^{-1}(1+\xi^2+\lambda^2)^m
+ (1+\lambda^2+s^2\xi^2)^{1/2}|\widehat f(\xi,\lambda)|^2\,d\xi.
+\]
+Equivalent norms are obtained with a finite surface atlas and smooth
+cutoffs. For a finite-dimensional harmonic coefficient omit $\lambda$.
+The trace and extension estimates are
+\begin{equation}\label{eq:anisotropic-trace}
+\|w|_{\partial C}\|_{\mathcal T_s^m}\le C_m\|w\|_{\mathcal X_s^m},
+\qquad
+\|\chi\mathcal E_s\vartheta\|_{\mathcal X_s^m}
+ \le C_m\|\vartheta\|_{\mathcal T_s^m}.
+\end{equation}
+For the first, apply the normal one-dimensional trace inequality
+with parameter $(1+\lambda^2+s^2\xi^2)^{1/2}$ to the time and
+surface transform. Tangential differentiation gives the factor
+$(1+\xi^2+\lambda^2)^m$. The resulting bulk norm is equivalent to
+the displayed complementary norm in $X^m_\eps$: terms containing
+$s^2\xi^2$ and a spatial derivative are dominated by its spatial
+sum, and the remaining highest time term is
+$s\|\partial_t^{m+1}w\|^2$. For the second estimate the multiplier
+is $\widehat\rho(sr\xi)$. Its derivatives decrease rapidly for
+$sr|\xi|\gg1$. Integrating each normal derivative in $r$ gives
+\[
+\int_0^{r_1}|\partial_r^j(\chi(r)\widehat\rho(sr\xi))|^2\,dr
+ \le C_j(1+s|\xi|)^{2j-1},
+\]
+with the same assertion for $j=0$. Since $s\le1$, inserting the
+time derivatives and summing proves \eqref{eq:anisotropic-trace}.
+In particular the top time derivative is estimated through a
+half-order boundary norm, not an $L^2$ trace of that derivative.
+
+\begin{lemma}[quadratic estimates in the matching chart]\label{lem:block}
+Fix $m\ge4$ and a compact smooth family of reference paths $q$.
+In the chart \eqref{eq:trace-extension-chart}, write
+$\mathcal F_\eps(W_\eps+z)=f_\eps+D_\eps z+N_\eps(z)$.
+For a sufficiently small ball, with constants independent of $\eps$,
+\begin{equation}\label{eq:strong-quadratic}
+\|N_\eps(z)-N_\eps(z')\|_{Y^m_\eps}
+ \le C_m(\|z\|_{X^m_\eps}+\|z'\|_{X^m_\eps})
+             \|z-z'\|_{X^m_\eps}.
+\end{equation}
+Let $\mathsf d(z)$ be the supremum of $\|v\|_{C^0}+
+\|U_\perp\|_{C^0}$ on compression patches, of $\|a\|_{C^0}$ on
+other gauge patches, and of $\|\nu\|_{C^0}$ on section patches.
+On a small smooth coefficient neighbourhood one also has
+\begin{equation}\label{eq:low-quadratic}
+\|N_\eps(z)\|_{Y_\eps}\le C\mathsf d(z)\|z\|_{X_\eps}.
+\end{equation}
+If $z_*$ is in the strong ball and $z$ is smooth with small
+coefficient size, then
+\begin{equation}\label{eq:asymmetric-quadratic}
+\|N_\eps(z)-N_\eps(z_*)\|_{Y_\eps}
+ \le C(\mathsf d(z)+\|z_*\|_{X^m_\eps})\|z-z_*\|_{X_\eps}.
+\end{equation}
+The same local assertions hold on the component and exterior domains.
 \end{lemma}
 
 \begin{proof}
-Let $Q_1=[0,2]\times[0,r_1)\times\partial C$ be the collar part of $Q$. We use the following
-fact. \emph{(S) Let $\mathsf L_{t,r}$ be a family of operators on sections over $\partial C$ of order
-$-k\le0$, that is, bounded $H^\sigma(\partial C)\to H^{\sigma+k}(\partial C)$ for $0\le\sigma\le m+1$,
-whose coefficients are smooth functions of $(t,r)$ and of $v(t)$. Then $f\mapsto \mathsf L_{t,r}f(t,r)$
-is bounded on $H^m(Q_1)$ and on $H^m_+(Q_1)$, with a norm depending on $\|v\|_{H^m}$; for
-$k\ge1$ so is $f\mapsto\nabla_{\partial C}\mathsf L_{t,r}f(t,r)$.} Indeed
-$\partial_t^i\partial_r^j(\mathsf L_{t,r}f)=\sum\binom{i}{i'}\binom{j}{j'}(\partial_t^{i'}\partial_r^{j'}\mathsf L_{t,r})
-(\partial_t^{i-i'}\partial_r^{j-j'}f)$; each $\partial_t^{i'}\partial_r^{j'}\mathsf L_{t,r}$ is again of order
-$-k$, with operator norm bounded for $i'\le m-1$ and square integrable in $t$ for $i'=m$, because
-$v\in H^m\subset C^{m-1}$; surface derivatives are applied after the operator; and integration
-over $(t,r)$ gives the claim, the factor with $i'=m$ being paired with
-$f\in L^\infty_{t,r}L^2(\partial C)$ for the $H^m$ bound and with $f\in L^\infty_{t,r}H^1(\partial C)$
-for the $H^m_+$ bound; both hold for $m\ge3$ by the Sobolev inequality in the two
-variables $(t,r)$. No trace of $f$ on a surface $\Sigma_r$ is taken: $r$ is a parameter throughout. The algebra
-property of $H^m(Q_1)$, $m\ge4>\frac12\dim Q_1$, is used for products.
+We first describe the surface estimate that is needed in addition to
+\eqref{eq:anisotropic-trace}. Freeze $t,v$ and use the harmonic frame
+$\mathfrak i_{t,v,0}$. Thus the prescribed linear class is
+$h=\mathfrak i_{t,v,0}^{-1}H_\alpha\phi=\tau_tw$, and $A(v,h)$
+is the flat slice representative of $e_t(v+h)$ relative to
+$\alpha=B_t(v)|_\Sigma$. We write $A(h)$ while $v$ is fixed.
+For differentiation, use the following gauge equation also for
+nonclosed $\phi$, with $h=\mathfrak i_{t,v,0}^{-1}H_\alpha\phi$.
+It defines an extension of the harmonic class parameter off the
+closed-form subspace; on that subspace it equals the parameter in
+\eqref{eq:class-equation}. The class equation is
+implemented by solving
+\[
+d_\alpha^*\bigl(g^*A(h)-\alpha-\phi\bigr)=0,
+\qquad g=\exp\eta.
+\]
+For a fixed $p>2$ this is an equation from $W^{1,p}$ to
+$W^{-1,p}$, with invertible derivative $d_\alpha^*d_\alpha$ at
+zero. Small $C^0$ norm of $\phi$ gives a small $W^{1,p}$ solution
+$\eta$; hence $\eta$ is small in $C^0$. The differentiated equation,
+viewed from $H^1$ to $H^{-1}$, gives
+\[
+\|D\eta[\dot\phi]\|_{H^1}\le C\|\dot\phi\|_{L^2}.
+\]
+Indeed its leading coefficient is close in $C^0$ to that of the
+covariant Laplacian, and its remaining coefficients are small in
+$L^p$. H\"older's inequality and the surface Sobolev inequality
+absorb those terms using the irreducible scalar gap.
 
-\emph{The transport.} $T_{t,v}$ is of order zero in the sense of (S), and $T_{t,v}-1$ has norm
-$O(\|v\|_{H^m})$ on $H^m$ and $H^m_+$. Hence $\|\phi\|_{H^m_+(Q_1)}\le C\|w\|_{H^m_+}$ and
-$\|\phi\|_{H^m(Q_1)}\le C\|w\|_{H^m}$.
+Now $\vartheta=H_\alpha(g^*A(h)-\alpha-\phi)$ in the chosen
+harmonic frame. Harmonic projection kills the exact part of
+$D\eta$, and the linear terms $\dot h-H_\alpha\dot\phi$ cancel.
+The remaining terms contain $\phi$, $g-1$, or the nonlinear part
+of the flat slice. Pairing with smooth harmonic forms and using
+the preceding estimate gives
+\begin{equation}\label{eq:class-map-L2}
+|D_\phi\vartheta[\dot\phi]|
+ \le C\|\phi\|_{C^0}\|\dot\phi\|_{L^2}.
+\end{equation}
+For example, the commutator term is bounded by
+$C\|g^*A(h)-\alpha\|_{L^2}\|D\eta[\dot\phi]\|_{L^2}$.
+The quantitative differentiated estimates, in the fixed frame, are
+\begin{align}
+|D_\phi^2\vartheta[\psi_1,\psi_2]|&\le
+ C\|\psi_1\|_2\|\psi_2\|_2,\nonumber\\
+|D_vD_\phi\vartheta[b,\psi]|&\le
+ C|b|\|\phi\|_2\|\psi\|_2,\nonumber\\
+|D_v\vartheta[b]|&\le C|b|\|\phi\|_2^2.
+\label{eq:class-map-mixed}
+\end{align}
+To see these bounds, differentiate the weak gauge equation, retaining
+it in divergence form. Each differentiated gauge term has at most
+one derivative of a gauge parameter. A first variation lies in
+$H^1$; products of an undifferentiated $H^1$ variation and an
+$L^2$ differentiated variation lie in $L^r$ for every $r<2$.
+The inverse weak Laplacian gives $W^{1,r}$ for the next gauge
+variation. Surface Sobolev embedding and H\"older's inequality
+then bound its harmonic pairings in $L^1$. Repeating this argument
+at any fixed finite order gives bounded multilinear harmonic
+pairings, choosing the intermediate exponents sufficiently close
+to two. No derivative of $\phi$ is used in these estimates.
+Differentiating the smooth finite-dimensional flat slice and
+harmonic projection adds only terms with the same bounds. The
+identities $\vartheta(v,0)=D_\phi\vartheta(v,0)=0$ eliminate the
+constant and linear terms in every $v$-derivative. Integrating the
+bounded $D_vD_\phi^2\vartheta$ gives the last two estimates in
+\eqref{eq:class-map-mixed}, and integrating these differential
+bounds gives their difference versions.
 
-\emph{The finite-dimensional parameter.} The left side of \eqref{eq:class-equation} is a smooth
-function of $v$, $\vartheta$ and $\phi_{t,0}\in H^{1/2}(\partial C)$, and $\vartheta_t(v,w)$ vanishes
-to second order in $\phi_{t,0}$ at $w=0$. By the trace theorem, for $i\le m-1$,
-$\|\partial_t^i\phi_{t,0}\|_{L^2_tH^{1/2}}\le C\|\partial_t^i w\|_{L^2_tH^1(C)}\le C\|w\|_{H^m}$,
-while for $i=m$ the bound is $C\|\partial_t^mw\|_{L^2_tH^1(C)}\le C\|w\|_{H^m_+}$. In the chain
-rule for $\partial_t^m\vartheta$ the $m$-th derivative of $\phi_{t,0}$ occurs only linearly,
-multiplied by a coefficient that vanishes at $\phi_{t,0}=0$. Hence
-\begin{gather*}
-\|\vartheta\|_{H^m}\le C\|w\|_{H^m}\|w\|_{H^m_+},\\
-\|D\vartheta[\dot v,\dot w]\|_{H^m}\le C\bigl(\|w\|_{H^m_+}(\|\dot v\|_{H^m}+\|\dot w\|_{H^m})
-+\|w\|_{H^m}\|\dot w\|_{H^m_+}\bigr).
-\end{gather*}
-This is the only place where a boundary trace enters; it enters through a finite-dimensional
-quantity, and the normal derivative contained in $H^m_+$ controls it.
+Here is an explicit strong trace bound. On a constant-scale patch
+put $Z=\|z\|_{X_s^m}$. The trace theorem and the linear matching
+identity give
+\[
+\|\phi\|_{H^m_tL^2_\Sigma}\le C\sqrt{s}\,Z,\qquad
+\|\phi\|_{H^{m+1/2}_tL^2_\Sigma}
+ +\|v\|_{H^{m+1/2}_t}\le CZ.
+\]
+For the second bound on $v$, use
+$v=\Pi\nu|_\Sigma-\Pi\tau_tw$: the section has $H^{m+1}$
+regularity and its trace has $H^{m+1/2}$ regularity, while the
+harmonic part of the complementary trace is bounded by
+\eqref{eq:anisotropic-trace}. The transport $T_{t,v}$ obeys the
+same estimates by the product rule. The one-dimensional tame
+product inequalities, applied to the differentiated harmonic
+pairings above, now give
+\begin{align*}
+\|\vartheta\|_{H^m_t}&\le C\|\phi\|_{H^m_tL^2_\Sigma}^2
+ (1+\|v\|_{H^m_t}),\\
+\|\vartheta\|_{H^{m+1/2}_t}&\le
+ C\|\phi\|_{H^m_tL^2_\Sigma}
+ \bigl(\|\phi\|_{H^{m+1/2}_tL^2_\Sigma}
+       +\|\phi\|_{H^m_tL^2_\Sigma}\|v\|_{H^{m+1/2}_t}\bigr).
+\end{align*}
+Since $\|\vartheta\|_{\mathcal T_s^m}$ is equivalent to
+$s^{-1/2}\|\vartheta\|_{H^m_t}+\|\vartheta\|_{\dot H^{m+1/2}_t}$,
+these prove $\|\vartheta\|_{\mathcal T_s^m}\le C\sqrt{s}\,Z^2$
+in a fixed small ball. The differentiated inequalities give
+\[
+\|\vartheta(z)-\vartheta(z')\|_{\mathcal T_s^m}
+ \le C\sqrt{s}(\|z\|_{X_s^m}+\|z'\|_{X_s^m})
+                  \|z-z'\|_{X_s^m}.
+\]
+These are the weighted class-parameter estimates used below.
 
-\emph{The surface correction.} Solve $\zeta=\mathfrak i\vartheta+\mathsf K_\alpha(\phi+\zeta,\phi+\zeta)$ in
-$H^m_+(Q_1)$. By (S) with $k=1$ and the algebra property,
-$\|\mathsf K_\alpha(a,b)\|_{H^m}+\|\nabla_{\partial C}\mathsf K_\alpha(a,b)\|_{H^m}\le C\|a\|_{H^m}\|b\|_{H^m}$, and
-the normal derivative $\partial_r\mathsf K_\alpha(a,b)=(\partial_r\mathsf K_\alpha)(a,b)+\mathsf K_\alpha(\partial_ra,b)
-+\mathsf K_\alpha(a,\partial_rb)$ gives
-$\|\mathsf K_\alpha(a,b)\|_{H^m_+}\le C(\|a\|_{H^m}\|b\|_{H^m_+}+\|a\|_{H^m_+}\|b\|_{H^m})$. Since
-$\|\mathfrak i\vartheta\|_{H^m_+}\le C\|\vartheta\|_{H^m}$, the contraction principle gives, for
-$\|\phi\|_{H^m_+}+\|\vartheta\|_{H^m}$ small, $\|\zeta\|_{H^m_+}\le
-C(\|\vartheta\|_{H^m}+\|\phi\|_{H^m}\|\phi\|_{H^m_+})$, and the derivative of $\zeta$ in
-$(\phi,\vartheta)$ satisfies the corresponding bilinear bound; the dependence on $v$ through
-$\alpha$ is smooth, and $\mathcal S_\alpha(0,0)=0$ for every $\alpha$. With the bounds for $\phi$ and
-$\vartheta$, this proves the two estimates for $\mathcal R=\chi\zeta$.
+The spatial part of $\mathcal S_\alpha$ is controlled by its
+formula $\mathfrak i\Theta+\mathsf K_\alpha(\phi+\zeta,\phi+\zeta)$.
+The operator $\mathsf K_\alpha$ gains one surface derivative.
+Time and normal derivatives commute through it with bounded
+lower-order commutators; the coefficients depend smoothly on the
+fixed family and on $v$. For $m\ge4$, the bulk $H^m$ algebra
+inequality and the boundary $H^{m-1/2}$ algebra inequality control
+all products below the highest order. At the highest time order,
+use \eqref{eq:class-map-L2}, its differentiated equation, and
+\eqref{eq:anisotropic-trace}. The half-order time seminorm is
+estimated by differences before differentiating the extension.
+This gives the tame quadratic bound for $\mathcal R$ in
+$\mathcal X_s^m$. The same argument applies to the difference of
+two corrections. No extra top-order boundary trace is taken.
 
-\emph{The quadratic estimate.} Write $U_\perp=(p,w)$ and let
-$a=B_t(v)-B_t+T_{t,v}w+\mathcal R_t(v,w)$ be the spatial increment of the chart. The spatial part
-of the mixed operator in the chart is $\mathfrak B_t(v,U_\perp)=\mathcal B_t(p,a)+(0,-{*}\tfrac12[a\wedge
-a]+[a,p])$, with the conventions of Section~\ref{subsec:model}. As $B_t(v)$ is flat and in the
-Coulomb slice, $\mathfrak B_t(v,0)=0$, and
-\begin{multline*}
-\mathfrak B_t(v,U_\perp)-\mathcal B_tU_\perp=\mathcal B_t\bigl(0,(T_{t,v}-1)w+\mathcal R_t(v,w)\bigr)\\
-+\bigl(0,-{*}[b_v\wedge(T_{t,v}w+\mathcal R_t)]-{*}\tfrac12[(T_{t,v}w+\mathcal R_t)\wedge(T_{t,v}w+\mathcal R_t)]
-+[a,p]\bigr),
-\end{multline*}
-where $b_v=B_t(v)-B_t=O(|v|)$. The first term is bounded in $H^m(Q)$ by
-$C\|v\|_{H^m}\|w\|_{H^m_+}+C\|\mathcal R\|_{H^m_+}$, and the bracket terms by
-$C(\|v\|_{H^m}+\|U_\perp\|_{H^m})\|U_\perp\|_{H^m}$, by the algebra property. With the bound for $\mathcal R$
-this is the first estimate. The difference estimate follows by applying the same argument to the
-derivative along the segment joining $(v,U_\perp)$ and $(v',U'_\perp)$, using the bound for $D\mathcal R$.
+At first order this argument uses only small coefficients. For
+clarity, the harmonic trace norm with $m=0$ is equivalent to
+$s^{-1}\|\vartheta\|_2^2+\|\vartheta\|_{\dot H^{1/2}_t}^2$.
+Apply \eqref{eq:class-map-L2} to the differences in the second
+term. Terms involving a difference of $v$ are treated by splitting
+the difference integral at $|t-u|=s$. On the near part,
+$|v(t)-v(u)|^2\le |t-u|\int_u^t|v'|^2$ supplies the weighted
+quantity $s\|v'\|_2^2$; on the far part use $2\|v\|_\infty$
+and the $s^{-1}\|\phi\|_2^2$ term. The two factors of $\phi$ in
+a $v$-derivative ensure that the undifferentiated factor is a
+small coefficient. This proves the absolute first-order estimate
+for the boundary correction. Expanding about a strong reference
+puts its differentiated coefficients on that reference and treats
+the unknown remainder quadratically; it gives the asymmetric
+version by the same difference-integral argument. More explicitly,
+write $y=z-z_*$ and use the integral Taylor formula at $z_*$.
+Terms quadratic in its complementary remainder are bounded by
+$C\mathsf d(y)\|y\|_{X_s}$. In the linear and mixed terms,
+$\|\phi_*\|_{C^1_tC^0_\Sigma}\le C\sqrt{s}\,a$ and
+$\|v_*\|_{C^1}\le Ca$, where $a=\|z_*\|_{X_s^m}$.
+Multiplication by these coefficients is bounded on the half-order
+time norm. A term linear in the slow remainder has coefficient
+$O(s a^2)$ by \eqref{eq:class-map-mixed}; this cancels the
+$s^{-1/2}$ in the low-frequency trace norm, and the high-frequency
+part is controlled by the matching bound
+$\|v_y\|_{H^{1/2}}\le C\|y\|_{X_s}$.
+The near/far split treats the remaining mixed differences.
+Consequently
+\[
+\|\vartheta(z)\|_{\mathcal T_s^0}\le C\mathsf d(z)\|z\|_{X_s},
+\quad
+\|\vartheta(z)-\vartheta(z_*)\|_{\mathcal T_s^0}
+ \le C(\mathsf d(z)+a)\|z-z_*\|_{X_s}.
+\]
+
+The other chart terms have the same estimates directly. In the
+surface Hodge transport, the principal symbols do not change with
+the reference flat connection. Thus $T_{t,v}-1$ has order at most
+$-1$ on the fixed surface and is bounded on $C^0$, with norm
+$O(|v|)$; its finite-dimensional harmonic part has the same bound.
+The spatial operator vanishes on the exact flat family $B_t(v)$.
+Every singular remaining term has a complementary factor, measured
+with $s^{-1/2}$ in $X_s$. A differentiated slow factor in the
+temporal terms carries $s^{1/2}$: in particular
+$s^{1/2}|v'w|$ is bounded by $\|w\|_\infty$ times the weighted
+temporal norm of $v$. The terms from $T_{t,v}-1$, the scalar row,
+and the local bracket are bounded in this way. The pure section
+operator has the usual quadratic estimate in its fixed chart.
+These estimates prove all three inequalities at constant scale.
+Finally freeze the weights on the unit patches used above and sum.
+Bounded logarithmic derivatives, bounded overlap and the support
+of $\rho$ give the same constants for the varying-scale extension.
 \end{proof}
 
-The same surface-by-surface argument gives the estimates used at first order
-and for the temporal component. For $\|\phi\|_\infty$ and $|\vartheta|$ small,
-$\|\mathcal S_\alpha(\phi,\vartheta)\|_{H^1(\Sigma_r)}\le C(|\vartheta|+\|\phi\|_\infty\|\phi\|_{L^2})$ and
-$|\vartheta_t(v,w)|\le C\|w(t)\|^2_{H^1(C)}$. The temporal component of the chart nonlinearity,
-consisting of $\partial_t(B_t(v)-B_t-j_tv)$, $\partial_t((T_{t,v}-1)w)$,
-$\partial_t\mathcal R_t(v,w)$ and ${\mathfrak s}^{-1}[a,p]$, carries the weight ${\mathfrak s}^{1/2}$ with no
-factor ${\mathfrak s}^{-1}$ on slow terms, and its top time derivatives are controlled by
-${\mathfrak s}^{1/2}\|\nabla^{m+1}_tU\|$. At the level of first-order norms this gives
-$\|N(z)\|_Y\le C\mathsf d(z)\|z\|_X$. Here, for a field $z$ on any of the domains $X_\eps$,
-$E_\eps$ or $\mathcal T_\pm$, the \emph{coefficient size} $\mathsf d(z)$ is the supremum over the unit
-patches of that domain of $\|v\|_{C^1}+\|U_\perp\|_{C^0}$ on patches of the compression, where
-$z=(v,U_\perp)$ in the exact matching chart, of $\|a\|_{C^0}$ on the other gauge patches, and of
-$\|\nu\|_{C^0}$ on section patches (the patches of $N\cap X_\eps$ are described next). The same
-argument on the other patches, where the nonlinearity is the quadratic term of the ordinary
-mixed equation, gives the bound there. This is the form used in
-Lemmas~\ref{lem:neck-first-order} and~\ref{lem:exterior-comparison} and in the
-proof of Proposition~\ref{prop:coverage}.
-
-On the region $N\cap X_\eps$ cover by unit patches $Q_k$ in the conformal cylinder
-coordinate; all logarithmic derivatives of ${\mathfrak s}$ are bounded, so
-${\mathfrak s}/{\mathfrak s}(k)\in[e^{-2H},e^{2H}]$ on $Q_k$, and multiplication by
-$({\mathfrak s}/{\mathfrak s}(k))^{\pm1/2}$ is bounded on $H^m(Q_k)$ uniformly. Freezing the weights at
-${\mathfrak s}(k)\le1$ and summing Lemma~\ref{lem:block} over patches gives the quadratic
-estimate $\|N_\eps(z)-N_\eps(z')\|_{Y^m}\le C(\|z\|_{X^m}+\|z'\|_{X^m})\|z-z'\|_{X^m}$ with
-constants independent of $\eps$ and of the neck lengths.
+The chart is locally invertible also in uniformly local rescaled
+H\"older norms: use $T=t/s$ on a constant-scale patch. The extension
+is then $\int\rho(u)\vartheta(T-ru)du$, bounded in $C^\alpha$;
+the surface constructions and harmonic projections are smooth in
+these norms, and the correction has zero derivative at zero.
+The inverse function theorem gives a uniform small neighbourhood.
+Smooth fields with small $C^0$ coefficients and uniformly bounded
+higher rescaled derivatives enter it by interpolation. This is the
+neighbourhood used for the unknown solutions in the proof of surjectivity.
+First differentiate the inverse equation in time and in the surface
+directions. The leading operator remains a small perturbation of
+the identity on the local H\"older space. Then recover normal
+regularity from the explicit extension: each normal derivative of
+$\int\rho(u)\vartheta(T-ru)du$ is an integral of a time derivative
+of $\vartheta$, already controlled by the first step. This triangular
+induction preserves every fixed higher rescaled local bound; a
+normal derivative of the extension is not a lower-order commutator. At a fixed positive $\eps$ the changed region
+is compact, so these smooth local bounds imply finite first-order
+norm there. On the original ends subtract the free stationary
+limits first. The extension has uniformly bounded time support and
+is bounded on the fixed weighted spaces; the trace estimates and
+the small-coefficient inverse give the same weighted bounds for the
+remainders. Thus the inverse preserves the end limits and finite
+$X_\eps$ norm; this assertion uses the trace estimates as well as
+local H\"older invertibility.
 
 \subsection{The approximate solution and existence}
 
@@ -4585,8 +4958,11 @@ which is small for $s_0$ large, and on windows $[S,L-S]$ with
 $S\to\infty$ it tends to zero.
 
 \begin{lemma}[convergence to the flat family]\label{lem:entry}
-Fix $e_0>0$ small. For $\nu$ large, on every interval of the neck on
-which the energy is at most $e_0$, the following hold uniformly in the
+Fix $e_0>0$ small. Let $J$ be an interval in the neck and let $J^+$
+contain its closed three-unit neighbourhood in the complete neck
+coordinate. Include in $J^+$ the full fixed-radius seam half-disks
+used below. If the energy $e$ on this larger region is at most $e_0$,
+then, for $\nu$ large, the following hold on $J$, uniformly in its
 position and in $\nu$:
 \begin{enumerate}[label=(\roman*)]
 \item the spatial curvatures satisfy
@@ -4605,7 +4981,9 @@ position and in $\nu$:
 (i) Near a seam center $b$ use the holomorphic coordinate $\Phi_b$ with
 $\Phi_b'(s)=1/{\mathfrak s}(s)$; in it the collapsing compression and the section
 have exactly the fixed product mixed geometry, and fixed patches
-correspond to regions of size $C{\mathfrak s}_b$. The energy on each such patch
+correspond to regions of size $C{\mathfrak s}_b$. Choose their inner
+patches to cover $J$ and their larger patches inside $J^+$, decreasing
+the fixed patch radius if necessary. The energy on each larger patch
 is at most $e$, by conformal invariance. The mixed mean-value inequality
 \cite[Theorem~4.2]{DFL-mixed}, the interior estimate
 \cite[Lemma~4.50]{DFL-mixed} and the derivative bounds of
@@ -4620,8 +4998,9 @@ fixed branch, together with its part (iii), gives the last statement.
 \end{proof}
 
 Lemma~\ref{lem:entry} is applied with a fixed small bound $e_0$ rather
-than with vanishing energy. It therefore holds on the whole neck
-$[s_0,L-s_0]$ for a fixed $s_0$, and gives a uniform Hölder bound for the
+than with vanishing energy. Apply it to $[s_0,L-s_0]$ using the energy
+on $[s_0-3,L-s_0+3]$ and its seam patches, choosing $s_0$ larger first.
+It gives a uniform Hölder bound for the
 section on unit patches of the complete section geometry, including the
 region between the exterior and the windows. With vanishing energy on the
 windows $[S,L-S]$ it gives convergence into any prescribed flat neighbourhood
@@ -4936,20 +5315,29 @@ transformation $U_\nu=W_\eps+x$ with $x$ of finite $X_\eps$ norm,
 $\|x\|_{Z_\eps}\le C\sqrt{\mathsf A}(\tau_{\rm cut}+\eps^{1/4}+R^{\beta-\delta_*})$ and coefficient size
 $\mathsf d(x)\to0$.
 
-\emph{Coordinates.} Lemma~\ref{lem:global-gauge} produces $x$ as an affine
-connection difference in the reference Coulomb gauge, while
-Proposition~\ref{prop:existence} works in the exact matching chart. The two are
-related by the chart map $\Phi_t$ of Section~\ref{subsec:charts}: the affine
-difference is $\Phi_t(U)-W_\eps$, whose spatial part differs from the chart
-coordinate by $B_t(v)-B_t-j_tv+(T_{t,v}-1)w+\mathcal R_t(v,w)$, which is quadratic
-in $(v,w)$ with the bounds of Lemma~\ref{lem:block}, and whose temporal part is
-affine. On small coefficient neighbourhoods the change of coordinates and its
-inverse are therefore bounded in $Z_\eps$ uniformly in $\eps$ (the difference being
-pointwise quadratic, of size at most $C\mathsf d\,\|x\|_{Z_\eps}$) and preserve finiteness
-of the $X_\eps$ norm at fixed $\eps$; and
-the gauge-fixing component of $\mathcal F_\eps$ in the chart is the affine Coulomb condition
-composed with this change. We use the chart coordinate below and keep the
-name $x$.
+\emph{Coordinates.} Write $a_{\rm aff}$ for the affine difference
+produced by Lemma~\ref{lem:global-gauge}. Its coefficients tend to
+zero, and its higher rescaled local norms are bounded. The rescaled
+H\"older inverse of the chart therefore applies. Write $x$ for the
+resulting exact matching coordinate; it is smooth, has finite
+$X_\eps$ norm, and $\mathsf d(x)\to0$. We need only
+\begin{equation}\label{eq:weak-chart-comparison}
+\|x\|_{Z_\eps}\le C\|a_{\rm aff}\|_{Z_\eps}
+                     +C\mathsf d(x)\|x\|_{X_\eps}.
+\end{equation}
+Indeed $a_{\rm aff}-x$ is the sum of the slow quadratic term,
+the transport correction, and $\mathcal R(v,w)$, with the analogous
+section correction. The first two are bounded in $Z_\eps$ by
+$C\mathsf d(x)\|x\|_{X_\eps}$. For the third use the trace and
+extension estimates \eqref{eq:anisotropic-trace} at order zero and
+the surface estimate \eqref{eq:class-map-L2}. Its physical $Z$ norm
+has the factor ${\mathfrak s}^{1/2}$, so the bound follows from the
+first-order correction estimate. The section correction has the
+ordinary $C^0$ quadratic bound. This proves
+\eqref{eq:weak-chart-comparison}; it makes no assertion that the
+boundary-dependent correction is bounded on bulk $L^2$ alone.
+The gauge-fixing row is the affine Coulomb condition composed with
+the chart.
 
 \emph{Step 2: a priori estimate in the first-order norm.} Write
 $\mathcal F_\eps(W_\eps+x)=f_\eps+D_\eps x+N_\eps(x)$ with $\|f_\eps\|\le Ce_\eps$
@@ -4957,8 +5345,10 @@ by~\eqref{eq:approx-error} and $\|N_\eps(x)\|_{Y_\eps}\le C\mathsf d(x)\|x\|_{X_
 the pure harmonic spatial term vanishes on the exact flat family
 by~\eqref{eq:exact-chart}, every remaining singular term contains a
 complementary field measured by its graph weight, and the section uses only
-$C^0$ smallness. Proposition~\ref{prop:attached-garding} and absorption of
-$\mathsf d(x)\to0$ give
+$C^0$ smallness. Proposition~\ref{prop:attached-garding},
+\eqref{eq:weak-chart-comparison}, and \eqref{eq:low-quadratic} give
+$\|x\|_{X_\eps}\le C(e_\eps+\|a_{\rm aff}\|_{Z_\eps})+
+C\mathsf d(x)\|x\|_{X_\eps}$. Absorbing the last term gives
 \[
 \|x\|_{X_\eps}\le C\bigl(e_\eps+\sqrt{\mathsf A}(\tau_{\rm cut}+\eps^{1/4}+R^{\beta-\delta_*})\bigr)
 \le C\eps^{\sigma_{\rm c}}
@@ -5302,7 +5692,11 @@ map of Theorem~\ref{thm:mixed-iso} for that pair.
 \end{lemma}
 
 \begin{proof}
-The space of such domains and data, with fixed end types, is connected: the
+First give each mixed end its cylindrical conformal representative.
+Conformal invariance preserves the solution space and surjectivity
+modulo gauge; the Coulomb row and weighted realization are chosen
+for this representative. The space of these domains and data,
+with fixed end types, is connected: the
 conformal structure of the section region, the placement of the seam, the
 metrics near the mixed ends and the neck lengths vary in convex sets, and the
 changes are compactly supported. Theorem~\ref{thm:family} gives a chain
@@ -5848,38 +6242,79 @@ the theorem follows.
 The constant $\mu_T>0$ of Section~\ref{subsec:torus-domains}, the square root of the lowest eigenvalue of the twisted Laplacian of $\alpha$, is the spectral gap that makes the following operators invertible.
 
 \begin{proposition}[the operator at the odd flat torus]\label{prop:flat-fibre}
-Let $B$ be an oriented surface with boundary of bounded geometry (a
-half-plane, a strip, a convex domain, or $\RR^2$), and let
-$D=(d_\alpha^*,\sqrt2\,d_\alpha^+)$ act on $\ad$-valued one-forms on $T\times B$
-with the domain $a(\nu)=0$ on $T\times\partial B$ and $d_\alpha$-closed torus
-restriction on $T\times\partial B$. Then $D$ and its adjoint are invertible, with
-$\|D^{-1}\|_{L^2\to L^2}=1/\mu_T$ independently of $B$. The same holds with weights
-$e^{\delta\tau}$, $|d\tau|\le1$, $\tau$ constant on the torus fibres, for
-$|\delta|<\mu_T$, with $\|D^{-1}\|\le(\mu_T-|\delta|)^{-1}$. For an anti-self-dual $A$ on
-$T\times\{s\ge0\}$ with flat torus restriction on the boundary,
+Let $B$ be the Euclidean plane, a half-plane, or a straight strip,
+with the product metric on $T\times B$. Let
+$D=(d_\alpha^*,\sqrt2\,d_\alpha^+)$ act on $\ad$-valued one-forms,
+with $a(\nu)=0$ and $d_\alpha(a|_T)=0$ on the boundary. Both $D$
+and its adjoint are invertible and
+$\|D^{-1}\|_{L^2\to L^2}\le\mu_T^{-1}$, independently of the strip
+width. Conjugating by $e^{\delta\tau}$, where $|d\tau|\le1$ and
+$\tau$ is constant on torus fibres, gives the bound
+$(\mu_T-|\delta|)^{-1}$ for $|\delta|<\mu_T$.
+
+For the boundary-flux statement use oriented coordinates $(s,t,x,y)$,
+where $s\ge0$ is the inward normal base coordinate and $(x,y)$ are
+oriented orthonormal coordinates on the flat torus. If $A$ is
+anti-self-dual and has flat torus restriction at $s=0$, then
 \[
-\int_T\langle\nabla_sF_A,F_A\rangle=4\int_T\langle[F_{sx},F_{sy}],u\rangle,
-\qquad d_{A_t}u=\iota_{\partial_t}F_A|_T ,
+\int_T\langle\nabla_sF_A,F_A\rangle
+ =4\int_T\langle[F_{sx},F_{sy}],u\rangle,
+\qquad d_{A|_T}u=\iota_{\partial_t}F_A|_T .
 \]
-so the boundary flux is cubic in the curvature.
+The scalar $u$ is unique because $H^0(T;\ad\alpha)=0$.
 \end{proposition}
 
 \begin{proof}
-Splitting along the torus, $D$ becomes $d+d^*$ on forms on $B$ with absolute
-boundary conditions plus a zeroth-order term $\Lambda_T$, of size at least $\mu_T$, that anticommutes with it, so
-$\|Da\|^2=\|\mathfrak Du\|^2+\|\Lambda_Tu\|^2\ge\mu_T^2\|u\|^2$, where $\mathfrak D=d+d^*$ on the base. The two boundary
-conditions remove the first-order cross term and the torus symplectic term:
-closedness of the fibre restriction kills the former, and closedness together
-with $H^1(T;\ad)=0$ kills the latter; boundary curvature enters only the $H^1$
-constant. By Green's formula with the domain of $D$ (free normal component
-$a_t$ and exact fibre restriction $a_T$), the adjoint has domain
-$\omega(\nu,\tau_B)=0$ for the tangential base direction $\tau_B$ and
-$d^*_\alpha((\iota_\nu\omega)|_T)=0$, with no condition on the scalar, and satisfies the
-same identity. The weighted version conjugates by $e^{\delta\tau}$, which
-commutes with the fibrewise operators because $\tau$ is constant on fibres. The
-flux identity follows from the Bianchi identity and flatness on the boundary:
-in the gauge with fibre restriction $\alpha$ and $A_s=0$, the linear terms in
-$\partial_t$ cancel after integration over $T$ because $[D_x,D_y]=F_\alpha=0$.
+\emph{The operator and its boundary conditions.}
+Complexify the flat adjoint bundle and decompose into its twisted
+Fourier modes. There is no zero mode. On a mode of torus frequency
+$k\ge\mu_T$, rotate the orthonormal torus frame so that its covector
+is $k\,dx$ and write $a=f\,ds+g\,dt+p\,dx+q\,dy$.
+In the isometric identification of self-dual forms with three
+components, the four components of $Da$ are
+\[
+-f_s-g_t-ikp,\quad g_s-f_t+ikq,\quad
+p_s-ikf-q_t,\quad q_s+p_t-ikg.
+\]
+At a straight boundary the conditions are $f=q=0$: the latter is
+exactly the closedness of the torus restriction for this mode.
+Integration by parts cancels all cross terms and gives
+\[
+\|Da\|^2=\|\partial_sa\|^2+\|\partial_ta\|^2+k^2\|a\|^2.
+\]
+The boundary Green form pairs the free components $g,p$ with the
+second and third output components. Thus those output components
+vanish in the adjoint domain. In invariant notation these conditions
+are $\omega(\nu,\tau_B)=0$ and
+$d_\alpha^*((\iota_\nu\omega)|_T)=0$; the scalar output is free.
+The same calculation for the adjoint gives the identical coercive
+bound. Summing over the torus modes proves the estimates on the
+plane, half-plane and strip. The closed-range theorem and the
+vanishing adjoint kernel give surjectivity. The argument uses no
+constant depending on the distance between the two strip boundaries.
+Conjugation by the weight adds a zeroth-order principal-symbol term
+of norm at most $|\delta|$; a Neumann series proves the weighted claim.
+
+\emph{The flux.} Locally along the boundary, choose a gauge with
+$A|_T=\alpha$, extend it by $A_s=0$, and set $\Phi=A_t$ there.
+The anti-self-duality equations give
+\[
+F_{st}=F_{xy}=0,\qquad F_{sx}=-D_y\Phi,\qquad
+F_{sy}=D_x\Phi,\qquad u=-\Phi.
+\]
+Differentiate the anti-self-duality identities in the collar, use
+Bianchi there, and then restrict to the face. This gives
+\[
+\int_T\langle\nabla_sF_A,F_A\rangle
+=2\int_T\bigl(\langle D_x\Phi,D_tD_y\Phi\rangle
+             -\langle D_y\Phi,D_tD_x\Phi\rangle\bigr).
+\]
+The ordinary $t$-derivatives cancel after torus integration by parts,
+since $[D_x,D_y]=0$. The remaining commutators give
+$-4\int_T\langle\Phi,[D_x\Phi,D_y\Phi]\rangle$, which is the
+asserted expression. All terms are gauge invariant, so the local
+calculation suffices along the face. The odd-torus scalar gap bounds
+$u$ by $d_{A|_T}u$, explaining the cubic curvature order.
 \end{proof}
 
 \begin{corollary}[the stationary operator at the odd flat torus]\label{cor:flat-fibre-line}
@@ -5951,36 +6386,90 @@ boundary diameter.
 matching surface; its proof uses the Lagrangian boundary condition only through
 local charts, and applies to the one-point moduli space. We prove (b) in three steps.
 
-\emph{Curvature bound.} Put $f(s,t)=\int_{T\times\{(s,t)\}}|F_A|^2$ on $D^+_2$. For an
-anti-self-dual connection on the flat product the Weitzenböck formula reads
-$\nabla_A^*\nabla_AF_A=-\{F_A,F_A\}$, with no curvature term; integrating over the torus
-fibres gives $(\partial_s^2+\partial_t^2)f\ge-C\sup|F_A|\,f$ in the interior. On the boundary
-diameter, $\partial_sf=2\int_T\langle\nabla_sF_A,F_A\rangle$, which by the flux identity of
-Proposition~\ref{prop:flat-fibre} is cubic: $u$ is determined fibrewise by
-$d_{A_t}u=\iota_{\partial_t}F_A|_T$, and since $H^0(T;\ad\alpha)=0$ and $A_t$ is close to $\alpha$,
-$\|u\|\le C\|F_A\|$ on each fibre; so $|\partial_sf|\le C\sup|F_A|\,f$. The mean-value
-inequality for functions on a half-disk satisfying these two inequalities
-\cite{Wehrheim-lagrangian}, with Heinz's argument for the factor $\sup|F_A|$,
-gives $\sup_{D^+_{3/2}}f\le C\epsilon^2$ once $\epsilon^2\le\hbar$, and interior estimates on
-$T$ times small disks turn this into $\sup_{Q_{3/2}}|F_A|^2\le C\epsilon^2$.
-
-\emph{Gauge.} For $\epsilon$ small the restrictions of $A$ to the fibres are $C^0$-close to
-$\alpha$ up to gauge. The Neumann Laplacian of $\alpha$ is invertible because
-$H^0(T;\ad\alpha)=0$, so the implicit function theorem, with compactness below the
-threshold, gives a gauge on $Q_{3/2}$ in which $A=\alpha+a$ with $d_\alpha^*a=0$,
-$a(\nu)=0$ on the face and $\|a\|_{L^2_1(Q_{3/2})}\le C\epsilon$.
-
-\emph{Derivative bounds.} In this gauge the equations read $Da=-\sqrt2(a\wedge a)^+$,
-with $D=(d_\alpha^*,\sqrt2d_\alpha^+)$ as in Proposition~\ref{prop:flat-fibre}, and the
-flat-fibre condition reads $d_\alpha a_T=-\tfrac12[a_T\wedge a_T]$ on the face, whose linear
-part is the boundary condition of that proposition. This boundary problem is
-elliptic \cite{BB}, so local regularity up to the face gives
+\emph{A fixed Neumann slice.} Choose rounded contractible domains
+$\Omega_1\Subset\Omega_2\Subset D^+_2$, with relative closure along
+the physical diameter, such that $D^+_1\Subset\Omega_1$.
+The qualitative compactness argument of
+\cite[Theorem~4.2, Lemma~4.25 and pp.~38--39]{DFL-mixed}, applied
+with the one-point torus moduli space, implies that connections
+whose energy tends to zero converge smoothly in gauges on
+$T\times\Omega_2$ to a flat connection. That connection is gauge
+equivalent to $\alpha$: the base is contractible and the odd torus
+has a single flat class. On a slightly smaller rounded domain,
+still denoted by $\Omega_2$, impose
 \[
-\|a\|_{H^{k+1}(Q_1)}\le C_k\bigl(\|(a\wedge a)^+\|_{H^k(Q_{3/2})}
-+\|[a_T\wedge a_T]\|_{H^{k+1/2}(\partial Q_{3/2})}+\|a\|_{L^2(Q_{3/2})}\bigr),
+d_\alpha^*a=0,\qquad a(\nu)=0
+       \quad\hbox{on the whole boundary of }T\times\Omega_2.
 \]
-and bootstrapping from $\|a\|_{L^2_1}\le C\epsilon$, with the quadratic right side, gives
-$\|a\|_{C^k(Q_1)}\le C_k\epsilon$ and the bounds on $\nabla^k_AF_A$.
+There is no prescribed gauge on the artificial boundary. The scalar
+Neumann linearization is invertible since $H^0(T;\ad\alpha)=0$,
+so the slice follows from the implicit function theorem. In this
+slice $a$ tends to zero smoothly as the energy tends to zero.
+The absolute twisted cohomology in degree one vanishes on
+$T\times\Omega_2$. The Hodge estimate and four-dimensional
+Sobolev embedding therefore give
+\[
+\|a\|_{H^1}\le C\|d_\alpha a\|_2
+ \le C\bigl(\epsilon+\|a\|_4^2\bigr)
+ \le C\epsilon+C'\|a\|_{H^1}^2.
+\]
+Qualitative smallness absorbs the last term. Thus
+$\|a\|_{H^1(T\times\Omega_2)}\le C\epsilon$.
+
+\emph{The boundary estimate.} On the physical face let
+$P_{\rm coex}$ denote fibrewise coexact projection and set
+$Q_T=d_\alpha^*(d_\alpha d_\alpha^*)^{-1}$ on torus two-forms.
+Flatness is equivalent to
+\[
+P_{\rm coex}a_T=-\tfrac12Q_T[a_T\wedge a_T].
+\]
+The operator $Q_T$ is bounded on each isotropic Sobolev space
+on $T\times\RR_t$; no gain in the $t$ direction is asserted.
+For a form $w$ supported in a coordinate half-disk and with zero
+normal component, the linear estimate is
+\[
+\|w\|_{H^{j+1}}\le C_j\bigl(\|Dw\|_{H^j}
+ +\|P_{\rm coex}w_T\|_{H^{j+1/2}}+\|w\|_2\bigr).
+\]
+For zero coexact trace, its $H^1$ version is the Fourier calculation
+in Proposition~\ref{prop:flat-fibre}. Tangential derivatives commute
+with $D$ and preserve the boundary condition; the equation recovers
+normal derivatives. For nonzero trace, subtract its Poisson extension,
+which maps $H^{j+1/2}$ to $H^{j+1}$ and has zero normal component.
+This proves the displayed estimate at every integer $j\ge0$.
+
+Choose a scalar base cutoff $\chi$ and apply the estimate to
+$w=\chi a$. Its equation and boundary value are
+\[
+Dw=-\sqrt2\chi(a\wedge a)^++[D,\chi]a,
+\qquad P_{\rm coex}w_T=-\tfrac12Q_T[a_T\wedge w_T].
+\]
+At each fixed order, qualitative smooth smallness of $a$ makes
+multiplication by $a$, both in the interior and on the boundary,
+small in the displayed norms. The trace theorem therefore absorbs
+the terms containing the highest derivatives of $w$ into the same
+$H^{j+1}$ norm on the left. The cutoff commutator contains only
+$j$ derivatives of $a$. Induction on nested half-disks, starting
+with the $H^1$ estimate, proves the $H^{j+1}$ bound $C_j\epsilon$.
+Interior patches have the same argument without the trace term.
+Sobolev embedding then gives the asserted connection and curvature
+bounds at each fixed order, initially below an order-dependent
+threshold $\hbar_k$.
+
+\emph{A common energy threshold.} Fix $\hbar$ below the concentration
+threshold in the cited compactness theorem and small enough to
+enter the single low-order Neumann slice on $T\times\Omega_2$.
+The family of energy at most $\hbar$ is smoothly precompact modulo
+gauge on smaller domains: any failure would give concentration,
+whose energy is bounded below by that threshold. The normalized
+Neumann representatives are consequently smoothly precompact on
+$T\times\Omega_1$; the slice correction is unique near the identity
+and elliptic regularity controls it at every higher order. Let
+$M_k$ be a bound for their $C^k$ connection and curvature norms.
+For energies $E\in[\hbar_k,\hbar]$ use
+$M_k\le(M_k/\sqrt{\hbar_k})\sqrt E$, and for $E<\hbar_k$ use the
+linear estimate just proved. Increasing $C_k$ gives (b) with one
+$\hbar$ for all $k$.
 
 (c) Given $\epsilon>0$, choose a compact set outside which the energy is less than
 $\min(\epsilon^2,\hbar)$; for $|z|$ large $T\times D_2(z)$ lies outside it, and (b), or its
@@ -6081,8 +6570,18 @@ there is $e_0>0$, independent of $\mathsf R$ and $\lambda$, such that a solution
 energy on $[\theta-2,\theta+2]$ is less than $e_0$ has its slice at $\theta$ in $\mathcal N_\epsilon$. On
 $Y'$ this follows by contradiction from the local compactness theorem
 \cite[Theorem~5.2]{DFL}, \cite[Theorem~3]{DFL-mixed}, in its local form: a sequence of
-solutions on $[\theta-2,\theta+2]\times Y'$ whose energy tends to zero converges, after gauge
-transformations, in $C^\infty$ on $[\theta-1,\theta+1]\times Y'$ to a stationary pair. On the collar,
+solutions on $[\theta-2,\theta+2]\times Y''$, where
+$Y''=Y\cup\{r\le4\}$, whose kinetic energy tends to zero converge,
+after gauge transformations, in $C^\infty$ on
+$[\theta-1,\theta+1]\times Y'$ to a stationary pair. For
+$\mathsf R\in[0,4]$ use $\psi_\mathsf R$ and
+Theorem~\ref{thm:flat-boundary-regularity} at the physical face;
+compactness of this parameter interval makes the bounds uniform.
+Part (i) is gauge invariant. On the unperturbed collar interior
+regularity and Theorem~\ref{thm:flat-boundary-regularity}(a) give
+a smooth representative, with local gauges patched as in Step~1
+of Lemma~\ref{lem:adapted}. Apply the torus slice lemma to this
+representative. On the collar,
 small-energy regularity (Theorem~\ref{thm:flat-boundary-regularity}(b),
 Remark~\ref{rem:interior-boxes}) at orders at most three on the boxes $T\times D_2(z)$, and
 Lemma~\ref{lem:torus-slice} below on the base $[1,\mathsf R]\times[\theta-1,\theta+1]$, with
@@ -6140,14 +6639,20 @@ be its gauge-covariant $\theta$-derivative, whose $L^2$ norm on $[\theta,\infty)
 On the collar, small-energy regularity at order $k$ gives
 $\sup_{T\times D_1(z)}|\nabla^k_A\zeta|\le C_k\|F_A\|_{L^2(T\times D_2(z))}$ once the energy of $T\times D_2(z)$ is
 below the threshold at order $k$, and that energy is at most $2E(\theta(z)-2)$. On $Y'$, $\zeta$
-lies in the kernel of the linearization of the mixed equation at $U$, by the translation
-invariance of the end (the proof of \cite[Proposition~5.29]{DFL}); the local elliptic
-estimates of \cite[Theorem~4.17 and Remark~4.19]{DFL} at interior points, at the seam and at
-the Lagrangian arc, whose constants are uniform on a $C^{k+3}$-neighbourhood of the stationary
-pairs, give $\sup_{[\theta,\theta+1]\times Y'}|\nabla^k_A\zeta|\le C_k\|\zeta\|_{L^2([\theta-1,\theta+2]\times Y'')}$ for a
-slightly larger compact $Y''$, as long as $U$ lies in that neighbourhood on
-$[\theta-1,\theta+2]\times Y''$ up to gauge; by local compactness, as in the first step, this holds
-when $E(\theta-2)$ is below a threshold depending on $k$. Choose $e'_m\le e_0$ below these
+satisfies the linearized equation by translation invariance.
+In temporal gauge its gauge row vanishes:
+$d_A^*\zeta=-d_B^*(*F_B+\nabla h(B))=0$, by Bianchi and gauge
+invariance of the cylinder function \cite[Proposition~2.10]{DFL}.
+At the seam its normal component is $F_A(\partial_\theta,\partial_s)=0$:
+anti-self-duality identifies this component with the curvature on
+the flat surface slice. Thus it belongs to the boundary domain
+of the gauge-fixed linearization. The local estimates of
+\cite[Proposition~5.27 and Remark~4.19]{DFL}, on the larger region
+$Y''$, give
+$\sup_{[\theta,\theta+1]\times Y'}|\nabla_A^k\zeta|
+\le C_k\|\zeta\|_{L^2([\theta-1,\theta+2]\times Y'')}$
+when the kinetic energy is below a threshold depending on $k$.
+Choose $e'_m\le e_0$ below these
 thresholds and below half the thresholds of small-energy regularity, for $k\le m+1$. Summing the collar bounds over a cover of bounded overlap, for
 $\theta\ge\theta_0+2$ and $k\le m+1$,
 \begin{equation}\label{eq:zeta-bounds}
@@ -6345,9 +6850,12 @@ strip is compact, and there $V$ is locally gauge equivalent to a smooth connecti
 regularity of the anti-self-duality equation, no perturbation acting on the torus region.
 Enlarging $C'_k$ gives (i). (ii) Fix $m$, and let $S_m\ge S'_m+2$ be such that, by (i),
 $\|F_A\|_{C^m_A}\le e_T$ on $r\ge S_m$. By small-energy regularity, which is linear in the square
-root of the local energy, $\|\nabla_A^iF_A\|_{L^2(T\times Q)}\le C_i\|F_A\|_{L^2(T\times2Q)}$ for $i\le m$
-and every unit square $Q$ with $r\ge S_m$ on $Q$; the weight varies by at most the factor
-$e^{2\delta}$ on $2Q$. Summing over a cover by unit squares with bounded overlap,
+root of the local energy, cover each unit square $Q$ by a fixed
+finite collection of disks $D_1(z)$ whose larger disks $D_2(z)$
+lie in $\{r\ge S'_m\}$. Apply the estimate on these larger disks
+for every $i\le m$, taking the minimum of the finitely many energy
+thresholds. The weight varies by a bounded factor on each disk.
+Summing over a cover with bounded overlap,
 \[
 \sum_{i\le m}\int_{r\ge S}e^{2\delta\tau_0}\|\nabla_A^iF_A\|^2_{L^2(T)}\,dz
 \le C\int_{S-2}^\infty f(r)\,dr\le Cf(S_0)e^{-\gamma_T'(S-2-S_0)}\qquad(S\ge S_m+2) .
@@ -6419,14 +6927,18 @@ in a local Coulomb gauge, as in the proof of \cite[Proposition~3.6]{DFL}; for th
 elliptic regularity for pseudo-holomorphic maps with Lagrangian boundary conditions
 \cite[Theorem~B.4.1]{MS}; at the other points, by elliptic regularity of the perturbed
 anti-self-duality equation in a local Coulomb gauge. The holonomy terms are not local, so
-the last step is carried out level by level on a fixed locally finite atlas, with local
-Coulomb gauges fixed once at level $m$. If the chart representatives are of class $L^2_k$ and
+the last step is carried out level by level on nested locally finite
+covers. In each initial ball use radii $\rho_i(1+2^{-k})$ at
+level $k$, with the balls of radius $\rho_i$ still covering.
+Fix the local Coulomb gauges at level $m$ and shrink one step
+for each interior elliptic estimate. If the chart representatives are of class $L^2_k$ and
 the transition functions of class $L^2_{k+1}$, then every holonomy term is of class $L^2_k$ on
 every chart: the holonomies along the loops, based at the points of the chart, are products
 of parallel transports along subarcs contained in single charts and of transition functions
 at the switching points, and the terms are obtained from them by smooth functions and by
 integration against smooth compactly supported densities
-\cite[Section~6]{DFL}, \cite[Sections~3.4--3.5]{KM-unknot}. The elliptic estimate for
+\cite[Proposition~3.1 and Section~3.2]{Kronheimer-higher}.
+The elliptic estimate for
 $(d^*,d^+)$ with a source of class $L^2_k$ then gives class $L^2_{k+1}$. No holonomy term acts
 near the genus matching faces, on the torus region or on the section (the primary loops lie
 in the interiors of the compression pieces, and the secondary perturbations are supported in
@@ -6519,7 +7031,8 @@ perturbations and almost complex structures of Section~\ref{subsec:folded}, with
 perturbations supported in the cores away from the torus region and the matching lines),
 or for data that differ from these by compactly supported changes of the metric, cylinder-function terms,
 four-dimensional holonomy terms and deformations of the almost complex structure, all
-vanishing near the genus matching lines. Then there is an even gauge transformation of class
+vanishing near the genus matching lines and, when present, the
+flat torus face. Then there is an even gauge transformation of class
 $H^{m+1}_{\rm loc}$ after which $U$ is smooth up to the genus matching faces, the flat face and
 the Lagrangian arcs; its gauge-end limits are the fixed representatives; it converges on the
 gauge and strip ends in every $C^k$ at every rate below the spectral gaps; and on each mixed
@@ -6543,7 +7056,8 @@ Remark~\ref{rem:clean-pairs}); those of $\overline{\mathsf E}$ lie in the piece 
 contain the matching lines (Lemma~\ref{lem:closed-cut-embedding}(ii)); the further
 perturbation of Proposition~\ref{prop:closed-cut} is chosen away from the matching lines; and
 the neck with $f_Z$ and the change of metric lie in a collar of $Z_{\rm cut}$, which meets the
-genus parts only along $\eta^{(\pm)}_-(t)\times\Sigma_\pm$ with $t$ near $-3$, at distance at least two
+genus parts in $\{|\operatorname{Re}+3|<1\}\cup
+\{|\operatorname{Re}-2\lambda-3|<1\}$, at distance at least two
 from the matching lines.
 \end{proof}
 
@@ -6601,9 +7115,14 @@ solutions $V_\beta$ on the completed domains and broken trajectories $\Gamma_\el
 the original ends with
 $d-\sum_\beta\ind(V_\beta)-\sum_\ell\ind(\Gamma_\ell)=4n$, $n\in\ZZ_{\ge0}$. If all $\ind(V_\beta)\ge0$, all $\ind(\Gamma_\ell)\ge1$ and $d\le3$, then $n=0$ and no energy
 is lost: after gauge transformations $U_j$ converges to the limit pieces in
-$C^\infty$ on compact subsets, and for every $\varsigma>0$ there are a compact set $K$ in
-the completed domain and $j_0$ such that the energy of $U_j$ outside $K$ is less than
-$\varsigma$ for $j\ge j_0$. The same statements hold for sequences of solutions on a fixed
+$C^\infty$ on compact subsets of each component of the broken limit.
+For every $\varsigma>0$ there are compact sets in all its components
+such that, for large $j$, the energy outside their images in the
+finite domain is less than $\varsigma$; trajectory components are
+translated by their breaking parameters. If no trajectory breaks,
+these are fixed compact sets in the completed core domains. In
+particular this is the case when $d=0$ under the stated index assumptions.
+The same statements hold for sequences of solutions on a fixed
 completed domain $W_\infty$ or $W_{-,\infty}\sqcup W_{+,\infty}$.
 \end{proposition}
 
@@ -6642,8 +7161,10 @@ energy gives $n\ge0$. If $n=0$, the limit of the analytic energies equals the su
 energies of the limit pieces. The energy on a compact set converges to that of the
 limit on the same set, by the smooth convergence away from the concentration set,
 and every concentration point carries a fixed quantum; so there is no concentration
-and the energy outside a compact set $K$ converges to that of the limit pieces
-outside $K$, which is small for $K$ large. For a fixed completed domain the same
+and the energy outside the union of compact sets in the core and
+translated trajectory components is small when those sets are large.
+When there is no breaking, only the core compact sets are required.
+For a fixed completed domain the same
 argument applies with $\mathcal R_j$ replaced by a fixed truncation.
 \end{proof}
 
@@ -6989,9 +7510,13 @@ vanishes, and the framed groups glue by the fibre product
 \cite[Proposition~5.4]{KM-unknot}. Hypotheses \ref{H:lattice}--\ref{H:framing} hold,
 \ref{H:lattice} by Theorem~\ref{thm:torus-period}(ii). By Theorem~\ref{thm:neck},
 for $\ell\ge\ell_0$ the data $\mathfrak d_Z(\ell)$ are regular in index at most zero, and a
-further invariant perturbation supported in the pieces, in compact sets away from the
-matching lines and the neck, small enough not to
-change the index-zero sets, makes them regular in index one; the joined count is
+further invariant perturbation, at this fixed finite $\ell$,
+makes the index-one spaces regular. Its output region includes the
+compact neck where the fixed term $\chi f_Z$ has output; it remains
+away from the matching lines. Choose it small enough that openness
+of regularity and compactness preserve the already regular
+index-zero count. This finite-length regularization is not required
+to have support avoiding that closed neck; the joined count is
 then the composite of the count of $\mathrm{(I)}$ and that of $\mathrm{(II)}$. By
 Lemma~\ref{lem:vertex-identification}, whose mixed-end clause covers the passage from
 the slices $D_{i,\lambda_0}$ of $\mathrm{(I)}$ to the ends of the quintuple of $(D_0,D_1)$ with the
@@ -7032,9 +7557,9 @@ the fixed data and on the finite sets of completed solutions, not on $\mathsf L$
 
 \begin{lemma}[regular completed pieces]\label{lem:completed-regular}
 For generic secondary perturbations in the invariant class of
-Theorem~\ref{thm:regularity}, supported in a fixed
-compact subset of the core of $X_D$ away from the torus region, the matching lines
-and the ends, the completed domains carry no solutions of negative index, and all
+Theorem~\ref{thm:regularity}, one can choose a common compact
+output and dependence region in the original core, away from the
+inserted torus region and the matching lines, such that the completed domains carry no solutions of negative index, and all
 solutions of index at most one are regular. The index-zero sets are finite.
 \end{lemma}
 
@@ -7045,11 +7570,26 @@ occurs. A sequence of solutions of index $d$ on the fixed completed domain has, 
 Proposition~\ref{prop:torus-loss} for a fixed completed domain, a limit of total
 index $d-4n$ with $n\ge0$ and nonnegative trajectory contributions; since no lower
 index occurs, the limit has index $d$, there are no chains and $n=0$, so the space
-is compact. Theorem~\ref{thm:regularity}(ii) gives universal surjectivity with
-invariant holonomy directions supported in the prescribed region, and
-Theorem~\ref{thm:regularity}(iii) gives finitely many directions and a generic small
-choice making index $d$ regular; a negative index then does not occur. Repeating
-up to index one, with the smallness preserved at each step, proves the lemma.
+is compact. Apply Theorem~\ref{thm:regularity}(ii) with output region in the
+original pieces, including their original ends, and excluding the
+inserted torus collar. Every fixed primary or secondary output lies
+there. Each side retains an original odd reference end; in the
+joined problem use its two separate output regions. Thus the
+hypotheses of the output-annihilator argument hold without loops
+crossing the bridge. Part (iii) selects finitely many directions and
+a generic small choice making index $d$ regular; a negative index
+then does not occur. At the subsequent steps remove neighbourhoods
+of already regular broken trajectories before taking a finite cover.
+Ordinary end gluing remains valid with the completed torus tail:
+the cutoff and error are on the original end, while the fixed tail
+is controlled by its positive torus gap and the compact-remainder
+Fredholm estimate. No invertibility of an unregularized completed
+operator is used in this local gluing assertion.
+Repeat through index one. The selected loop images and outputs have
+compact union. Enlarge the common core and original-end truncations
+to contain this union, and fix them before the finite collar or
+bridge lengths vary. Beyond those truncations the original
+asymptotic equations are unchanged. This proves the lemma.
 Finiteness at index zero follows from compactness and regularity.
 \end{proof}
 
@@ -7144,7 +7684,8 @@ the index is $8\kappa+\mathfrak c(x)-\mathfrak c(a)$ with constants independent 
 $\ind D_{P_\mathsf L}=\ind D_V=0$ (the sum of the two indices, by
 Theorem~\ref{thm:torus-period}(ii)). (iv) follows from
 Propositions~\ref{prop:tail-decay}(i) and~\ref{prop:tail-decay}(ii) and
-Lemma~\ref{lem:adapted}(ii).
+Lemma~\ref{lem:adapted}(i)--(ii), using (i) for the pointwise
+$C^m$ bound.
 \end{proof}
 
 \begin{lemma}[uniform scalar inverse]\label{lem:torus-scalar}
@@ -8065,10 +8606,12 @@ Hamiltonian one-form $H\,dt$, whose restriction to the boundary vanishes
 \cite[Section~14.4]{Oh-book}. In this form the continuation is Wehrheim and
 Woodward's data-change map on fixed Lagrangians, and it is a chain map, equals
 the identity for constant data, is compatible with composition and is
-independent of the path up to chain homotopy
+invariant under homotopies of the transformed data with fixed ends
 \cite[Theorems~3.9, 3.13, 4.1, 4.2 and Example~2.6]{WW-relative}. Both boundary
-Lagrangians may move. In small convex neighbourhoods of exact-graph
-primitives the continuation depends only on the endpoints.
+Lagrangians may move. We restrict paths and their homotopies to the
+small convex neighbourhoods of exact-graph primitives furnished by the
+primary balls. Thus the continuations used here depend only on their
+endpoints; no assertion about arbitrary Hamiltonian loops is needed.
 
 \emph{The auxiliary pairs.} The pair $(A_0,L_C)$ in $X$ unfolds to the pair
 $(R_0,\widetilde P_0\circ L_C)$ in $\Msf_g$, and $(L_C,A_1)$ to
@@ -8488,8 +9031,18 @@ in the common standard collar, where all diagrams of the path are standard and
 all isotopies are the identity, and stabilize every vertex of the path in
 $Q_0$. The stabilized vertices form a path of the same kind, and the two ends
 are joined to their unstabilized versions by edges~\ref{P:stab}. Hence the
-torus genus is at least two throughout. Finally, the metric and primary data of a fixed splitting form a connected set of choices, joined by
-edges~\ref{P:model}.
+torus genus is at least two throughout. For a fixed splitting,
+shrink the admissible collars so that the fixed height solid tori
+remain in the compression interiors. Cutting along the framing
+sphere $S$ gives neat collars on the two sides, matched along the
+collar of $\partial D$. Uniqueness of neat collars up to relative
+isotopy, followed by isotopy extension fixing $\Sigma_h$ and
+preserving $S$, joins the collar choices away from the fixed torus
+collar. Product metrics on a fixed collar form a convex set. The ambient
+small primary parameter neighbourhoods are also convex. An edge
+\ref{P:model} joins admissible endpoints within these neighbourhoods;
+its intermediate primary pairs need not stay transverse. Thus the
+choices are joined by edges~\ref{P:model}.
 \end{proof}
 
 
@@ -9183,7 +9736,7 @@ N'=2\langle(L-N)\hat x,\hat x'\rangle=-2\|(L-N)\hat x\|^2-2\langle(L-N)\hat x,B\
 \le-\|(L-N)\hat x\|^2+\beta^2 .
 \]
 
-(b) Hence $N+\int_{-\infty}^s\beta^2$ is nonincreasing, $N$ is bounded below on $(-\infty,0]$,
+(b) Hence $N-\int_{-\infty}^s\beta^2$ is nonincreasing, $N$ is bounded below on $(-\infty,0]$,
 and $N_{-\infty}=\lim_{s\to-\infty}N(s)\in(-\infty,\infty]$ exists. If $N_{-\infty}>0$, then by
 (a) $(\log\|x\|)'\le-c<0$ near $-\infty$, and $\|x(s)\|\to\infty$ as $s\to-\infty$, which is
 excluded; so $N_{-\infty}\le0$. By (a), $\int_{-\infty}^0\|(L-N)\hat x\|^2<\infty$, so
@@ -9745,7 +10298,10 @@ Lemma~\ref{lem:dfl-detect}(iii) with $i=1$ as well gives additions in both piece
 have loops in $\operatorname{int}C_0^\circ\sqcup\operatorname{int}C_1^\circ$, and the metric data are
 never changed.
 
-Let $G$ be the family of all cylinder functions added. The set $\mathcal U'(t_*)$ of the paragraph
+Fix the required smallness of the total addition before the finite induction, choosing each
+increment small enough to meet this requirement. Let $G$ be the family of all cylinder
+functions added; this family may depend on the prescribed smallness bound.
+The set $\mathcal U'(t_*)$ of the paragraph
 after Proposition~\ref{prop:duality} is open, since it is defined by $C^1$-neighbourhoods of the
 Lagrangians, which depend continuously on the primary data; so $\mathfrak h+g\in\mathcal U'(t_*)$
 once $g$ is small enough, and each stage allows arbitrarily small additions. Then
@@ -9851,6 +10407,10 @@ sequence, and Khovanov homology}, arXiv:1702.02259.
 A.~Juh\'asz, D.~P. Thurston and I.~Zemke, \emph{Naturality and mapping
 class groups in Heegaard Floer homology}, Mem. Amer. Math. Soc.
 \textbf{273} (2021), no.~1338; arXiv:1210.4996.
+
+\bibitem{Kronheimer-higher}
+P.~B. Kronheimer, \emph{Four-manifold invariants from higher-rank
+bundles}, J. Differential Geom. \textbf{70} (2005), 59--112.
 
 \bibitem{KM-unknot}
 P.~B. Kronheimer and T.~S. Mrowka, \emph{Khovanov homology is an
