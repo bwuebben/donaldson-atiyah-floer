@@ -52,9 +52,10 @@ theorem along a torus for the mixed equation.
 The theorem is stated over 𝔽₂ and for connected objects. The isomorphisms
 are constructed by the Daemi–Fukaya–Lipyanskiy method with invariant
 perturbations. Where both constructions are defined, they coincide with the
-Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two; the existence of such
-data at the fixed metric data used here is left open. The current version is
-dated **24 September 2026** and has **113 pages**.
+Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist at
+the fixed metric data used here (Appendix C). Integer coefficients are the
+subject of a sequel in preparation. The current version is dated
+**25 September 2026** and has **136 pages**.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)

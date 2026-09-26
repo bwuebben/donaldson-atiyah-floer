@@ -79,7 +79,7 @@
 and Atiyah--Floer isomorphisms\\ for framed instanton homology}
 \author{Bernd Johannes Wuebben}
 
-\date{24 September 2026}
+\date{25 September 2026}
 \subjclass[2020]{57K31, 57R58 (primary); 53D40, 58J05 (secondary)}
 \keywords{Atiyah--Floer conjecture, framed instanton homology, Lagrangian
 Floer homology, mixed equation, cobordism maps, adiabatic limits}
@@ -115,7 +115,9 @@ The second is an excision theorem for the mixed equation along a torus, in a sit
 \maketitle
 
 \setcounter{tocdepth}{1}
+\newpage
 \tableofcontents
+\newpage
 
 %======================================================================
 \section{Introduction}\label{sec:intro}
@@ -249,10 +251,16 @@ the isomorphism of \cite[Theorem~3.29]{DFL} reduced modulo two, as a chain map
 (Proposition~\ref{prop:dfl-comparison}). Consequently, at admissible presentations with such
 primary data, Theorem~\ref{thm:A} holds for the isomorphism of Daemi, Fukaya and Lipyanskiy
 itself, reduced modulo two, and this isomorphism on homology is independent of the choices
-within that class, a point not addressed in \cite{DFL} (Corollary~\ref{cor:dfl-natural}). DFL
-state that such primary data exist after a constant rescaling of the metric
-\cite[Proposition~6.8]{DFL}; whether they exist at the fixed metric data of our presentations
-is a transversality question that we leave open (Remark~\ref{rem:dfl-regular}).
+within that class, a point not addressed in \cite{DFL} (Corollary~\ref{cor:dfl-natural}).
+Admissible presentations with such primary data exist at every Heegaard splitting and all metric
+data, with the fixed flat metric on the torus collar (Theorem~\ref{thm:dfl-regular}, proved in
+Appendix~\ref{app:dfl-regular}). Daemi, Fukaya and Lipyanskiy obtain such primary data after a
+constant rescaling of the metric \cite[Proposition~6.8]{DFL}; Theorem~\ref{thm:dfl-regular} proves their existence without
+rescaling, starting from primary data that are linear combinations of averaged holonomy traces
+around pairwise disjoint embedded solid tori (Remark~\ref{rem:dfl-regular}). It follows that the
+vertex map at every admissible presentation is, on homology, the isomorphism of \cite{DFL}
+reduced modulo two at an admissible presentation with the same splitting and metric data,
+composed with gauge and symplectic continuation maps (Section~\ref{sec:assembly}).
 
 \subsection{The collapse theorem}
 
@@ -414,14 +422,17 @@ three-handle squares follow by reflection.
 The theorem is stated over $\FF$. Over $\ZZ$ the symplectic counts
 require coherent orientations of the polygon and quilt moduli spaces,
 together with a comparison of those orientations with the homology
-orientations of the gauge side. Neither is addressed here. The objects
+orientations of the gauge side. Neither is addressed here. Integer
+coefficients are the subject of a sequel \cite{Wuebben-II}, in preparation,
+whose aim is Theorem~\ref{thm:A} over $\ZZ$ for the maps of this paper, up to
+one sign for each cobordism. The objects
 carry the trivial bundle on the original three-manifold. Disconnected
 objects, the units and counits of a field theory, and closed pairings are
 not treated. The mixed maps $N_p$ are constructed by the method of
 \cite{DFL}, with the invariant perturbations of Section~\ref{sec:models}; they agree with the
 isomorphism of \cite{DFL}, reduced modulo two, at the data where both are defined
-(Proposition~\ref{prop:dfl-comparison}); the existence of such data at the metric data of a
-presentation is left open (Remark~\ref{rem:dfl-regular}). The maps of the transitive system
+(Proposition~\ref{prop:dfl-comparison}), and such data exist at admissible presentations with
+the metric data of any presentation (Theorem~\ref{thm:dfl-regular}). The maps of the transitive system
 of Theorem~\ref{thm:A} are symplectic words; their independence of the word is proved through
 the gauge side, and we do not compare them with the Cerf-theoretic identifications
 of \cite{WW-fft}.
@@ -434,7 +445,7 @@ isomorphism and fixes conventions. Section~\ref{sec:handles} contains the
 topology of handle decompositions and bundles. Section~\ref{sec:families}
 treats neck-stretching, families and regularity in the invariant
 perturbation class. Sections~\ref{sec:collapse}--\ref{sec:collapse-coverage}
-prove Theorem~\ref{thm:B}. Section~\ref{sec:two-handles} proves the two-handle square, Section~\ref{sec:torus} proves the excision theorem along a torus (Theorem~\ref{thm:C}), which the one-handle comparison requires, Section~\ref{sec:one-three} proves the one- and three-handle squares, Section~\ref{sec:presentations} treats changes of presentation and frame, and Section~\ref{sec:assembly} proves Theorem~\ref{thm:A}. A table of notation follows.
+prove Theorem~\ref{thm:B}. Section~\ref{sec:two-handles} proves the two-handle square, Section~\ref{sec:torus} proves the excision theorem along a torus (Theorem~\ref{thm:C}), which the one-handle comparison requires, Section~\ref{sec:one-three} proves the one- and three-handle squares, Section~\ref{sec:presentations} treats changes of presentation and frame, and Section~\ref{sec:assembly} proves Theorem~\ref{thm:A}. Appendix~\ref{app:dfl-regular} proves that primary perturbations regularizing the gauge complex, as required in \cite{DFL}, exist at the metric data of a presentation. A table of notation follows.
 
 \subsection*{Notation}
 
@@ -757,6 +768,36 @@ connection) to $\Msf_h$ is a submersion \cite[Section~2.3]{DFL}, so
 finitely many primary perturbations make any finite collection of such
 Lagrangians pairwise transverse with empty triple intersections.
 
+\emph{Trace functions.} The determinant connection is fixed, so the holonomy of $B$ around a
+loop $\ell$ is $\lambda_\ell\,g_\ell(B)$ with $g_\ell(B)\in\SU(2)$ and $\lambda_\ell\in U(1)$
+independent of $B$ \cite[Section~5.6, p.~147]{Donaldson-book}; $\lambda_\ell$ is determined up to
+sign. Over the loops of one embedding below we choose it continuously; this is possible because
+they are parametrized by a disk, and the choice is unique up to one sign. For an embedding
+$\gamma\colon S^1\times D^2\to\operatorname{int}C^\circ$ and a two-form $\mu$ supported in the
+interior of $D^2$ with $\int\mu=1$, the \emph{averaged trace function} is
+$\tau_{\gamma}(B)=\int_{D^2}\tau_z(B)\,\mu$, where $\tau_z(B)=\tr g_\ell(B)$ for the loop
+$\ell=\gamma(S^1\times\{z\})$; a cylinder function is
+$G(\tau_{\gamma_1},\dots,\tau_{\gamma_n})$ with $G$ smooth, the $\gamma_j$ being allowed to be
+immersions \cite[Section~6.1]{DFL}. Daemi, Fukaya and Lipyanskiy use the trace of the holonomy
+itself; since $\tr g_\ell=\lambda_\ell^{-1}\tr\mathrm{Hol}_\ell$ with $\lambda_\ell$ independent of
+$B$, the results of \cite[Section~6]{DFL} used below hold for these functions with the same
+proofs. On flat connections $\tau_\gamma$ is $\tr g_\ell$ for the core
+$\ell=\gamma(S^1\times\{0\})$, and, with $\lambda$ transported along a free homotopy, it depends
+only on the free homotopy class of the core. The transport is ambiguous only along a
+self-homotopy sweeping a torus on which $w_2$ of the bundle is nonzero, and there
+$\tr g_\ell$ vanishes on flat connections, because the lifts of the two generators of that torus
+anticommute. A finite family $F$ of primary perturbations of $(C_0,C_1)$ is \emph{separated} if
+there are finitely many embeddings $\gamma_\alpha\colon S^1\times D^2\to\operatorname{int}C_0^\circ
+\sqcup\operatorname{int}C_1^\circ$ with pairwise disjoint images such that every member of $F$ is
+a real affine combination of averaged trace functions of the $\gamma_\alpha$. The height
+functions of Sections~\ref{sec:two-handles} and~\ref{sec:torus} enter the arguments only through
+their restrictions to flat connections. We fix, once for each Heegaard splitting, a realization of
+them as affine combinations of averaged trace functions of embedded solid tori, all the solid
+tori used in one compression body being pairwise disjoint, with parallel copies where two cores
+are freely homotopic; for instance $h_Q=\sum_j(1-\tfrac12\tau_{\gamma_j})$ in
+Section~\ref{sec:two-handles}, where the signs of the $\lambda$ are chosen so that
+$\tau_{\gamma_j}=\tr b_j$ on flat connections, with the lifts $b_j$ fixed there.
+
 \subsection{Admissible presentations}\label{subsec:admissible}
 
 \begin{definition}\label{def:presentation}
@@ -773,6 +814,13 @@ for $M$ consist of:
   and metrics on $C_0$, $C_1$ that are products on these collars and
   agree on $\Sigma_h$ and on the collar of $T^2$, which carries the flat metric fixed
   in Section~\ref{sec:category} (the same for all presentations) (\emph{metric data});
+  the product collar $I\times\Sigma_h$ of $\Sigma_h$ in $M^\#$ given by these identifications
+  is compatible with the gluing sphere $S=b(\partial B^3)$ of Definition~\ref{def:category}:
+  it meets $S$ in $I\times\partial D$, where $D$ is the equatorial disk of (ii), so that,
+  with $T^\circ=T^3\setminus\operatorname{int}B_T$ as in Section~\ref{sec:category},
+  every collar line through a point of $\Sigma_h\cap T^\circ$ lies in $T^\circ$ and every
+  collar line through a point of $\Sigma_h\setminus T^\circ$ lies in
+  $M\setminus b(\operatorname{int}B^3)$;
 \item primary perturbations $\mathfrak h_0$, $\mathfrak h_1$ with
   $L_{\mathfrak h_0}(C_0)\pitchfork L_{\mathfrak h_1}(C_1)$ (\emph{primary data});
 \item the regularizing data of Section~\ref{subsec:complexes}, with the
@@ -781,7 +829,7 @@ for $M$ consist of:
 \end{enumerate}
 They form an \emph{admissible presentation} if, for some finite family $F$ of
 primary perturbations containing the height functions of
-Sections~\ref{sec:two-handles} and~\ref{sec:torus} and enough further
+Sections~\ref{sec:two-handles} and~\ref{sec:torus}, in the realization fixed above, and enough further
 perturbations that the universal restriction map of the span of $F$ is a
 submersion at every flat connection (possible by compactness and
 \cite[Section~2.3]{DFL}), the primary data lie in the neighbourhood $\mathcal U(F)$ of zero
@@ -821,8 +869,8 @@ perturbation of the middle compression body must vanish
 (Remark~\ref{rem:dfl-map}). If the trajectories of $\mathrm{CS}_{\mathfrak h}$ of index at most seven
 are already regular, $f=0$ is allowed; we then call the primary data
 \emph{DFL-regular}. These are the primary data required in \cite[Lemma~2.56]{DFL} and
-Theorem~3.29 there; see Remark~\ref{rem:dfl-regular} on their existence at the metric data
-of a presentation. The gauge complex
+Theorem~3.29 there; they exist at the metric data of every presentation
+(Theorem~\ref{thm:dfl-regular}). The gauge complex
 $C_G(M,p)$ is the Floer complex of $\mathrm{CS}_{\mathfrak h}+f$ modulo $\phi_M$. Its
 homology is canonically $\Ish(M)$.
 
@@ -863,25 +911,82 @@ and these neighbourhoods are disjoint because $\phi_M$ acts freely. There are fi
 index-seven bound, and the choice is made by induction on the energy.
 \end{proof}
 
+\emph{Existence of DFL-regular primary data.} Let $\mathfrak h$ be primary data with transverse
+Lagrangians. For $i\in\{0,1\}$ let $\cB(C_i^\circ)$ be the space of connections on $C_i^\circ$
+modulo all determinant-one gauge transformations of $C_i^\circ$, with no boundary condition, and
+let $X_i\subset\cB(C_i^\circ)$ be the finite set of restrictions of the critical points of
+$\mathrm{CS}_{\mathfrak h}$. A \emph{split addition} is a finite sum $g=g_0+g_1$ of cylinder
+functions, $g_i$ with loops in $\operatorname{int}C_i^\circ$ and vanishing on a neighbourhood of
+$X_i$. For an irreducible connection $B$ on $C_i^\circ$ let $\pi^i_B$ be the $L^2$-orthogonal
+projection of $L^2(C_i^\circ;\Lambda^1\otimes\ad)$ onto the orthogonal complement of the closed
+subspace $d_BL^2_1(C_i^\circ)$. One-forms on $M^\#$ are \emph{linearly independent modulo gauge
+on $C_i^\circ$} at $B$ if the images of their restrictions under $\pi^i_B$ are linearly
+independent. Trajectories are taken in temporal gauge, in the determinant-one theory, between
+lifts of critical points; the cokernel of the linearization at a trajectory $\gamma=(A_s)_{s\in\RR}$
+is represented by the decaying solutions $\psi$ of the adjoint equation, and $\psi(s)$ is a
+one-form on $M^\#$ (Lemma~\ref{lem:app-trajectories}).
+
+\begin{lemma}\label{lem:dfl-detect}
+Let $\mathfrak h$ be primary data in the span of a separated family, with transverse
+Lagrangians, and let $g$ be a split addition so small that $\mathrm{CS}_{\mathfrak h+g}$ and
+$\mathrm{CS}_{\mathfrak h}$ have the same critical points. Let $\gamma=(A_s)_{s\in\RR}$ be a
+nonconstant trajectory of $\mathrm{CS}_{\mathfrak h+g}$, of any index and in any path class, and
+$\psi\ne0$ an element of the cokernel of its linearization. Then for each $i\in\{0,1\}$:
+\begin{enumerate}[label=(\roman*)]
+\item the path $s\mapsto[A_s|_{C_i^\circ}]$ in $\cB(C_i^\circ)$ is injective and does not meet
+  $X_i$;
+\item there is $T$ such that for every $s_0<-T$ the restriction $A_{s_0}|_{C_i^\circ}$ is
+  irreducible, and $\partial_s\gamma(s_0)$ and $\psi(s_0)$ are linearly independent modulo gauge
+  on $C_i^\circ$;
+\item there is a cylinder function $g_i'$ with loops in $\operatorname{int}C_i^\circ$, vanishing
+  on a neighbourhood of $X_i$, such that
+  $\int_\RR\langle\nabla g_i'(A_s),\psi(s)\rangle\,ds\ne0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{theorem}\label{thm:dfl-regular}
+Fix a Heegaard splitting and metric data as in Definition~\ref{def:presentation}(i)--(iii).
+There are separated families $F$ as in Definition~\ref{def:presentation}, and for each of them
+generic primary data in a neighbourhood of zero in $\operatorname{span}F$ have transverse
+Lagrangians. Let $F$ be a separated family as in Definition~\ref{def:presentation} and
+$\mathfrak h\in\mathcal U(F)$ primary data with transverse Lagrangians. Then there are a finite family $G$ of cylinder functions with loops
+in $\operatorname{int}C_0^\circ\sqcup\operatorname{int}C_1^\circ$ and arbitrarily small split
+additions $g\in\operatorname{span}G$ such that $\mathrm{CS}_{\mathfrak h+g}$ has the same critical
+points as $\mathrm{CS}_{\mathfrak h}$, the primary data $\mathfrak h+g$ are DFL-regular, and
+$\mathfrak h+g\in\mathcal U(F\cup G)$; presentation data with primary data $\mathfrak h+g$ are
+therefore admissible. The loops of $G$ may be taken in $\operatorname{int}C_0^\circ$ alone. The
+metric data are not changed.
+\end{theorem}
+
+Lemma~\ref{lem:dfl-detect} and Theorem~\ref{thm:dfl-regular} are proved in
+Appendix~\ref{app:dfl-regular}. Near $s=-\infty$ both $\partial_s\gamma$ and $\psi$ are governed by
+eigenvectors of the Hessian at the limiting critical point, with eigenvalues of opposite signs.
+The Hessian acts on each piece separately, so eigenvectors with distinct eigenvalues stay
+independent modulo gauge on each piece, provided no eigenvector vanishes on the unperturbed part
+of the neck. That last property is where separatedness is used
+(Proposition~\ref{prop:nontrapping}).
+
 \begin{remark}\label{rem:dfl-regular}
-DFL state that DFL-regular data exist after a constant rescaling of the metric of $M^\#$
-\cite[Lemma~2.56 and Proposition~6.8]{DFL}. Their inductive step adds cylinder functions
-with loops in $\operatorname{int}C_0$ and in $\operatorname{int}C_1$, and uses, for each cokernel
-element $\psi$ of the linearization at a trajectory $\gamma$, the independence of $\psi$ and
-$\partial_s\gamma$ on one of the two pieces, which is inferred there from their linear
-independence on $M^\#\setminus\Sigma$; the rescaling then moves a unit collar off the
-supports. It preserves the regularity of the trajectories, which it only reparametrizes in
-time, and the Lagrangians, since the two-form $*_3\nabla h$ does not change under a constant
-rescaling of the metric, but it changes the flat metric of the torus collar. At the metric
-data of a presentation the same step is needed with $C_i^\circ$ in place of
-$\operatorname{int}C_i$. Neither version follows from the $L^2$-orthogonality of $\psi$ and
-$\partial_s\gamma$ on $M^\#$ alone: $\psi=c_i\,\partial_s\gamma$ modulo gauge on $C_i$ with constants
-$c_0\ne c_1$ is compatible with it, and for such $\psi$ every cylinder function with loops in
-one piece pairs to zero. The argument of \cite[Section~5.5, Proposition~5.17]{Donaldson-book}
-goes through if, at each stage of the induction, every such pair $(\gamma,\psi)$ admits a time
-near which $\psi$ is not a constant multiple of $\partial_s\gamma$ modulo gauge on $C_0^\circ$ or on
-$C_1^\circ$ and the restricted path is injective and irreducible. We do not settle this here,
-and the results below that concern DFL-regular data are stated for data that have them.
+Daemi, Fukaya and Lipyanskiy obtain DFL-regular primary data after a constant rescaling of the
+metric of $M^\#$ \cite[Lemma~2.56 and Proposition~6.8]{DFL}. The cylinder functions added in the
+inductive step of their proof are split, with loops in the interior of one of the two pieces,
+and the step on \cite[p.~80]{DFL} passes from the linear independence of $\psi$ and
+$\partial_s\gamma$ on $M^\#\setminus\Sigma$ to split cylinder functions that pair nontrivially
+with $\psi$. For split functions the relevant conditions concern one piece: independence modulo
+gauge there, and injectivity and irreducibility of the restricted path. Independence on one piece
+does not follow from the $L^2$-orthogonality of $\psi$ and $\partial_s\gamma$ on $M^\#$:
+$\psi=c_i\,\partial_s\gamma$ modulo gauge on $C_i$, with constants $c_0\ne c_1$, is compatible with
+it, and for such $\psi$ every cylinder function with loops in one piece pairs to zero.
+Lemma~\ref{lem:dfl-detect} provides these conditions on each piece when the base data lie in a
+separated family. Theorem~\ref{thm:dfl-regular} is therefore an alternative proof of the existence
+statement of \cite[Proposition~6.8]{DFL} for base data in a separated family, with the added
+perturbations supported in $\operatorname{int}C_0^\circ\sqcup\operatorname{int}C_1^\circ$ and without
+rescaling. For a general base perturbation in the Banach space of \cite[Section~6.1]{DFL} the
+argument would need the conclusion of Proposition~\ref{prop:nontrapping}, which we prove only for
+separated data. The rescaling preserves the regularity of the trajectories, which it only
+reparametrizes in time, and the Lagrangians, since $*_3\nabla h$ does not change under a constant
+rescaling of the metric; it changes the flat metric of the torus collar, which
+Definition~\ref{def:presentation}(iii) fixes.
 \end{remark}
 
 \subsection{The mixed isomorphism}\label{subsec:mixed-iso}
@@ -954,8 +1059,9 @@ modulo the gauge group enlarged by $\phi_M$.
 
 \begin{theorem}\label{thm:mixed-iso}
 \begin{enumerate}[label=(\roman*)]
-\item For $f$ sufficiently small and generic invariant secondary
-  perturbations $\eta$, every $\cM^d(a,x)$ with $d\le1$ is regular, the
+\item For $f$ sufficiently small and invariant secondary perturbations $\eta$
+  that are sufficiently small, including the deformation of the almost complex
+  structure, and generic, every $\cM^d(a,x)$ with $d\le1$ is regular, the
   zero-dimensional spaces are finite, and
   \[
   N_p(a)=\sum_x\#\cM^0(a,x)\,x
@@ -976,15 +1082,16 @@ presentations are the vertices of a graph whose edges are changes of
 presentation.
 
 \begin{proof}
-\emph{Energy and index.} For a solution of~\eqref{eq:mixed} in the
-homotopy class of $(A,u)$, the analytic energy equals the topological
-energy plus $2\|\eta(A)\|^2$ plus the term
-$\int\chi'(s)f(A_s)\,ds$, whose absolute value is at most $\sup|f|$,
-since $\int|\chi'|=1$ and $f$ vanishes at the critical point at the
+\emph{Energy and index.} Let $\kappa$ be the topological energy normalized as in
+\cite[Proposition~3.20]{DFL} (Section~\ref{subsec:energy-convention}). For a solution
+of~\eqref{eq:mixed} in the homotopy class of $(A,u)$, the analytic energy equals
+\[
+8\pi^2\kappa(A,u)+2\|\eta(A)\|^2_{L^2(X)}+\int\chi'(s)f(A_s)\,ds ,
+\]
+as in \cite[(3.24)]{DFL} with the additional end term, whose absolute value is at most
+$\sup|f|$, since $\int|\chi'|=1$ and $f$ vanishes at the critical point at the
 gauge end. The index is
-$\ind D_{(A,u)}=8\kappa(A,u)+\mathfrak c(x)-\mathfrak c(a)$, where
-$\kappa$ is the topological energy normalized as in
-\cite[Proposition~3.20]{DFL}; the \emph{asymptotic labels} of a configuration are the
+$\ind D_{(A,u)}=8\kappa(A,u)+\mathfrak c(x)-\mathfrak c(a)$; the \emph{asymptotic labels} of a configuration are the
 critical points, intersection points or components of critical manifolds to which it
 converges at its ends. For two configurations with the same labels,
 $2(\kappa-\kappa')\in\ZZ$ \cite[Lemma~3.15]{DFL}, and $\mathfrak c$ is the function on
@@ -1007,15 +1114,29 @@ and energy concentration are excluded in dimension at most one by the
 index-energy relation and monotonicity \cite[Section~5.4]{DFL}. Hence
 $\partial_SN_p=N_p\partial_G$.
 
-\emph{Triangularity.} If $\sup|f|+\sup\|\eta\|^2$ is less than the
-smallest positive topological energy that can occur, an index-zero
-solution has $\kappa\ge0$, so $\mathfrak c(a)\ge\mathfrak c(x)$, and
-equality forces $\kappa=0$. The index-zero solutions with $\kappa=0$
-converge, as $(f,\eta)\to0$, to the constant pairs of
-\cite[Section~3.2]{DFL}, which are regular by
-\cite[Proposition~3.19]{DFL}; by the implicit function theorem there is
-exactly one near each constant pair. This is the argument of
-\cite[Theorem~3.29]{DFL}.
+\emph{Triangularity.} Fix $\kappa_+>0$ below every positive value of
+$|\mathfrak c(a)-\mathfrak c(x)|/8$. An index-zero solution from $a$ to $x$ has
+$\kappa=(\mathfrak c(a)-\mathfrak c(x))/8$ by the index formula, and since its analytic
+energy is nonnegative,
+$8\pi^2\kappa\ge-\sup|f|-2\sup_A\|\eta(A)\|^2_{L^2(X)}$. So if
+$\sup|f|+2\sup_A\|\eta(A)\|^2_{L^2(X)}<8\pi^2\kappa_+$, then $\kappa\ge0$, hence
+$\mathfrak c(a)\ge\mathfrak c(x)$, with equality only if $\kappa=0$. The constant pairs of
+\cite[Section~3.2]{DFL} are regular by \cite[Proposition~3.19]{DFL}, so by the implicit
+function theorem, for small $(f,\eta)$, a fixed neighbourhood of each constant pair contains
+exactly one solution, of index zero and with $\kappa=0$. The second threshold, below which
+these are all the index-zero solutions with $\kappa=0$, is obtained by contradiction. Suppose
+that for data $(f_n,\eta_n)\to0$ there are index-zero solutions $c_n$ with $\kappa=0$ outside
+these neighbourhoods. Their analytic energies are at most
+$\sup|f_n|+2\sup_A\|\eta_n(A)\|^2_{L^2(X)}\to0$. A nonconstant trajectory of
+$\mathrm{CS}_{\mathfrak h}+f_n$ between critical points, or a nonconstant holomorphic strip, has
+energy bounded below independently of $n$, because $f_n$ vanishes near the critical set; so no
+energy escapes along the ends, and a subsequence of $(c_n)$ converges to a configuration of zero
+energy with the same asymptotic labels, that is, to a constant pair. The decay of the $c_n$ along
+the ends is uniform in $n$, again because $f_n$ vanishes near the critical set, so the
+convergence holds in the topology in which the neighbourhoods above are open, and $c_n$ lies in
+one of them for large $n$, a contradiction. Below both thresholds, therefore, the index-zero
+solutions with $\kappa=0$ are exactly one for each generator, from the generator to itself. This
+is the argument of \cite[Theorem~3.29]{DFL}.
 
 \emph{Independence.} At fixed $f$, a path of choices $(\chi_t,\eta_t)$ has
 parameter derivative supported in a compact core, and defines a
@@ -1127,11 +1248,11 @@ description) follow from smallness and compact support as in
 \cite[Section~5]{DFL}.
 \end{proof}
 
-If for an admissible presentation $p$ with primary data $\mathfrak h$ and some finite family $G$
-there are DFL-regular primary data $\mathfrak h+g$ with $g\in\operatorname{span}G$ arbitrarily small
-(Remark~\ref{rem:dfl-regular}), then those with $g$ small enough are admissible, by the
-monotonicity of the admissible neighbourhoods (the paragraph after
-Proposition~\ref{prop:duality}), and Proposition~\ref{prop:dfl-comparison} applies there.
+By Theorem~\ref{thm:dfl-regular}, at every Heegaard splitting and all metric data there are
+admissible presentations with DFL-regular primary data $\mathfrak h+g$, where $\mathfrak h\in\mathcal
+U(F)$, for a separated family $F$ as in Definition~\ref{def:presentation}, is any primary data with
+transverse Lagrangians and $g$ is an arbitrarily small split addition;
+Proposition~\ref{prop:dfl-comparison} applies at these presentations.
 
 \subsection{Energy, gradings and filtrations}\label{subsec:energy-convention}
 
@@ -1507,11 +1628,45 @@ Morse--Bott family, treated in extended weighted spaces). Only closed and ordina
 
 \subsection{Neck gluing}
 
+\emph{Function spaces.} Fix an integer $l\ge3$. On a piece, a joined problem
+or a family fibre, connections and sections are of class $L^2_{l,\mathrm{loc}}$
+and gauge transformations of class $L^2_{l+1,\mathrm{loc}}$. On closed and
+ordinary ends, and in particular on every neck, the norms are unweighted:
+$L^2_l$ on configurations and tangent vectors, $L^2_{l-1}$ on the target of
+the equations. On the mixed ends we use the spaces of
+\cite[Definitions~3.8--3.9, (4.5) and (4.8)]{DFL}. The weight is
+$e^{\delta\theta}$ in the end coordinate $\theta$ of a mixed end and $1$
+elsewhere; a tangent vector is the cut-off pull-back of a tangent vector to
+the limiting Lagrangian plus a remainder in $L^2_{l,\delta}$; the target is
+$L^2_{l-1,\delta}$. Configurations are compared in the corresponding
+distance: the $L^2_l$ distance off the mixed ends, the $L^2_{l,\delta}$
+distance of the decaying parts on the mixed ends, and the distance of the
+limits. The weight $\delta>0$ is smaller than the constant $\delta_0$ of
+\cite[(4.24)]{DFL}, so that the linearized operators are Fredholm, and
+smaller than the exponential rate of \cite[Proposition~5.29]{DFL}, so that
+solutions lie in these spaces. Moreover
+\begin{equation}\label{eq:neck-weight}
+\delta<\mu_*,
+\end{equation}
+where $\mu_*$ is defined as follows. For a mixed end with three-manifold $Y$
+and a connection $B$ on $Y$ representing a point of the limiting Lagrangian,
+let $\lambda_1(B)$ be the lowest eigenvalue of $d_B^*d_B$ on
+$\Omega^0(Y;\ad E)$ with the Neumann condition at $\partial Y$. It is
+positive: an element of the kernel is parallel, and $B|_{\partial Y}$ is flat
+on a bundle with $w_2\ne0$ on every component of $\partial Y$, so it has no
+nonzero parallel section. The eigenvalue depends continuously on $B$ and only
+on its gauge class, and the limiting Lagrangians are compact
+\cite[paragraph after Proposition~2.16]{DFL}. Hence $\mu_*$, the minimum of
+$\lambda_1(B)^{1/2}$ over the mixed ends and the points of their limiting
+Lagrangians, is positive. All three conditions on $\delta$ are upper bounds.
+Theorem~\ref{thm:neck} is stated and proved in these spaces, and regularity
+means surjectivity of the linearized operator between them.
+
 \begin{theorem}[neck gluing]\label{thm:neck}
 Let pieces $X_1,\dots,X_k$ be joined along a tree of closed or ordinary
 ends with lengths $R=(R_e)$, under
-\ref{H:lattice}--\ref{H:framing}. There is $R_0$ such that for
-$\min_eR_e\ge R_0$:
+\ref{H:lattice}--\ref{H:framing}, in the function spaces just fixed. There
+is $R_0$ such that for $\min_eR_e\ge R_0$:
 \begin{enumerate}[label=(\roman*)]
 \item the joined problem has no solutions of negative index;
 \item gluing is a $\Phi$-equivariant bijection from the union, over
@@ -1520,15 +1675,177 @@ $\min_eR_e\ge R_0$:
   elements are regular;
 \item the joined count is the composite of the component counts over
   $\FF$;
-\item the same holds with one component an index-one trajectory, modulo translation, and with one component an index $-1$ piece of a
+\item the same holds with one component an index-one trajectory on an end of the joined domain, modulo translation, and with one component an index $-1$ piece of a
   family together with the parametrized operator.
 \end{enumerate}
 \end{theorem}
 
+\emph{The chart at a preglued configuration.} Let $p=p_R$ be the preglued
+configuration of a matched tuple of component solutions. Its connection lives
+on the four-dimensional part $X_R$ of the joined domain and its section on the
+two-dimensional part. The boundary of $X_R$ is the union $S$ of the matching
+surfaces $\mathbb U_\partial\times\Sigma$ of the pieces, with collars
+$[-2,0]_s\times\RR_\theta\times\Sigma$ and outward normal $\partial_s$; we write
+$\iota_n$ for the normal component at $S$. Let $B_p$ be the space of
+\cite[Section~4.1]{DFL} formed on the joined domain: pairs $w=(\zeta,\nu)$ in
+the function spaces above that satisfy the linearized matching,
+class-matching and Lagrangian conditions (iii)--(iv) there, with the norm
+$|w|$ of \cite[(4.5)]{DFL}. Let $E_p\subset B_p$ be the subspace cut out by
+$\iota_n\zeta|_S=0$, and $F_p$ the target \cite[(4.8)]{DFL}. On a piece of
+DFL type the chart $P_p$ is that of \cite[Section~4.1]{DFL}. On the joined
+domain it is its analogue: $P_p(w)$ is obtained from $p+w$ by three
+corrections, all supported in the pieces. On the collar of every component
+of $S$, including a component of genus one, where the moduli space of flat
+connections on that component is a point and the matching condition is the flatness
+of the slices, the slice $A_{s,\theta}+\zeta_{s,\theta}$ is replaced by
+\[
+A_{s,\theta}+\zeta_{s,\theta}+\rho(s)\bigl(E_{\tau(0,\theta)}(A_{s,\theta},\zeta_{s,\theta})
+-A_{s,\theta}-\zeta_{s,\theta}\bigr),
+\]
+with the maps $E_t$ of \cite[Lemma~4.1 and the paragraph after
+Lemma~4.4]{DFL} and DFL's cut-off functions $\rho$ and $\tau$. On the mixed
+ends, DFL's finite-dimensional term moves the limits onto fixed families
+$B_b$, $B'_{b'}$ of connections representing points of the limiting
+Lagrangians. The section is $e_\tau(\nu)$, fibrewise over $u_p$, with the maps
+$e_t$ of \cite[Lemma~4.4]{DFL}. The families are
+normalized by $\frac{d}{db}B_b|_{b=0}=b$ and by the vanishing of the normal
+component of $B_b-B$ on $\partial Y$, and likewise for $B'_{b'}$. The chart is
+used with end gauge $1$. Put
+\[
+\mathcal G_p(w):=\bigl(\mathcal F(P_p(w)),\,d_p^*\zeta\bigr),
+\]
+where $\mathcal F$ is the perturbed mixed equation, with its Cauchy--Riemann
+component regarded as a map into $\RR^N$ for a fixed embedding of the target
+symplectic manifold into $\RR^N$. The zeros of $\mathcal G_p$ on $E_p$ are the
+points $w$ of the slice \cite[(4.7)]{DFL} for which $P_p(w)$ is a solution.
+
+\begin{remark}[the radius in {\cite[Lemma~4.1]{DFL}}]\label{rem:dfl-radius}
+The chart applies $E_t$ to the slices $\zeta_{s,\theta}$, and we use
+\cite[Lemma~4.1(iii)]{DFL} with its radius measured in $L^q$ for a fixed
+$q>2$. Let $\cB:=L^2_{l-1}(\Sigma;\Lambda^1\otimes\ad F)$ and
+$\cB^{(q)}_{<\eps}:=\{c\in\cB:\|c\|_{L^q}<\eps\}$. The statement used is the
+following: there is $\eps_q>0$ such that for every connection $\sigma$ of class
+$L^2_{l-1}$ on $F$, every $t\in[-1,1]$ and every $s\in[0,1]$, the map
+$c\mapsto c+s\bigl(E_t(\sigma,c)-\sigma-c\bigr)$ is a diffeomorphism of
+$\cB^{(q)}_{<\eps_q}$ onto an open neighbourhood of $0$ in $\cB$, and, for $\sigma$
+of class $L^2_k$ with $k\ge l-1$, restricts to a diffeomorphism at the Sobolev
+level $k$. For $s=1$ this is (iii)
+of \cite[Lemma~4.1]{DFL} with the $L^2$-ball $\cB_{<\eps}$ replaced by
+$\cB^{(q)}_{<\eps_q}$. This ball is invariant under gauge transformations, so
+(i) of that lemma keeps its meaning, and $\eps_q$ does not depend on $\sigma$.
+The proof is DFL's, with the inverse function theorem made quantitative in
+$L^q$ by the following estimate. Write $c=c_0+d_\alpha\xi+{*}d_\alpha\xi'$ with respect to the flat connection
+$\alpha$ of \cite[Lemma~4.2]{DFL}. Then $L^q$ elliptic estimates, Kato's
+inequality and Morrey's inequality give
+$\sup_\Sigma|\xi|+\|d_\alpha\xi\|_{L^q}\le C\|c\|_{L^q}$, with $C$ independent
+of $\alpha$ by gauge invariance and the compactness of the moduli space. So on
+a ball of fixed radius the derivative of the map differs from the identity by
+at most $\frac12$ in the $L^q$ operator norm. This makes the map injective
+there, and makes its derivative injective at every level $k\ge l-1$; being a
+compact perturbation of an invertible operator at that level, the derivative
+is an isomorphism.
+
+With an $L^2$-ball the statement cannot hold. By (ii) and (iv) of
+\cite[Lemma~4.1]{DFL}, $E(\alpha,d_\alpha\xi)$ depends on $\xi$ only through
+$\exp\xi$. Let $\psi$ be a cut-off function equal to $1$ on a disc, and let
+$e\ne e'$ be sections of $\ad F$ with eigenvalues $\pm i$ that agree where
+$\psi<1$, with $e$ parallel on the disc. Then $2\pi\psi e$ and $2\pi\psi e'$
+have the same exponential, while $d_\alpha(2\pi\psi e)\ne d_\alpha(2\pi\psi e')$.
+Both forms are arbitrarily small in $L^2$ for a logarithmic choice of $\psi$
+and a rescaling of $e'-e$ into a small disc, because the $L^2$ norm of
+$1$-forms on a surface is invariant under rescaling. By the Sobolev
+embedding, an $L^2_{l-1}$-ball of fixed radius lies in
+$\cB^{(q)}_{<\eps_q}$.
+\end{remark}
+
+\begin{lemma}[the chart at a preglued configuration]\label{lem:neck-chart}
+There are $R_0$, $\kappa_*>0$, $r_*>0$ and $C$, independent of $R$ with
+$\min_eR_e\ge R_0$ and of the matched tuple, such that:
+\begin{enumerate}[label=(\alph*)]
+\item $P_p$ is defined and injective on $\{w\in B_p:|w|<\kappa_*\}$ and takes
+  values in the mixed configuration space;
+\item on that ball $\mathcal G_p$ is twice continuously differentiable with
+  $\|d^2\mathcal G_p\|\le C$, and the same holds in a family for
+  $(t,w)\mapsto\bigl(\mathcal F^{\lambda_*+t}(P_p(w)),d_p^*\zeta\bigr)$ with
+  $|t|<\kappa_*$, where $\lambda_*$ is the base parameter;
+\item every configuration $x$ with $\|x-p\|<r_*$ whose limits on the mixed
+  ends lie in the families $B_b$, $B'_{b'}$ is $P_p(w)$ for some $w$ with
+  $|w|<\kappa_*$, and $|w|\le C\|x-p\|$.
+\end{enumerate}
+\end{lemma}
+
 \begin{proof}
+The necks lie in closed and ordinary ends, so they meet neither $S$, nor its
+collar, nor the mixed ends. Hence the collars, the slices of $p$ on them and
+the mixed ends are those of the finitely many component solutions and do not
+depend on $R$, and every unit patch of the joined domain is isometric to one of
+finitely many models, on which $p$ is bounded in every $C^k$ norm.
+
+(a) By the trace theorem on unit patches,
+$\sup_{s,\theta}\|\zeta_{s,\theta}\|_{L^q(\Sigma)}+\sup|\nu|\le C|w|$. For $|w|$
+small the slices therefore lie in the ball of Remark~\ref{rem:dfl-radius}, and
+$\nu$ lies in a fixed neighbourhood of the zero section on which the maps $e_t$
+are fibrewise diffeomorphisms. $P_p(w)$ satisfies the matching,
+class-matching and Lagrangian conditions by \cite[Lemma~4.1(iv), Lemma~4.4(iv)
+and the paragraph after it]{DFL}. It determines $w$: the end parameters
+through its limits, $\nu$ through the injectivity of the $e_t$, and $\zeta$
+slice by slice through Remark~\ref{rem:dfl-radius}.
+
+(b) The difference $P_p(w)-p-w$ is the sum of the collar terms $\mathcal N_i(\zeta)$
+of the pieces, which depend only on $\zeta$ on the collar of the piece $i$ and
+on its slices; the finite-dimensional end term; and a term on the section given
+pointwise by the family $e_t$. The last two are smooth, with bounds uniform
+over unit patches. Each $\mathcal N_i$ is smooth, with $\mathcal N_i(0)=0$ and
+$d\mathcal N_i(0)=0$, on a ball of the space of forms on the collar that are
+sums of cut-off pull-backs of profiles in $L^2_l([-2,0]\times\Sigma)$ at
+$\theta\to\pm\infty$ and a remainder in $L^2_{l,\delta}$. Indeed, where the slice
+has small curvature, DFL's construction expresses $E_t(\sigma,c)$ through the
+flat connection $\alpha$ of \cite[Lemma~4.2]{DFL}, the Hodge decomposition of
+$c$ with respect to $\alpha$, the exponential of the potential of its exact
+part, and a horizontal lift of the path $r\mapsto e_t([\alpha],rc_0)$ of its
+harmonic part $c_0$. These ingredients depend smoothly on $\alpha$ in every
+Sobolev norm on $\Sigma$, by the inverse function theorem applied at each
+Sobolev level to the map $(\alpha,\eta)\mapsto\alpha+{*}d_\alpha\eta$ of
+\cite[Lemma~4.2]{DFL} and by Hodge theory for the irreducible flat connection
+$\alpha$. Along the collar, $\alpha=\alpha_{s,\theta}$ is smooth in $(s,\theta)$,
+with bounded derivatives that converge exponentially along the mixed ends. So
+$\mathcal N_i$ is assembled from three kinds of terms: slice-wise linear operators
+with bounded $(s,\theta)$-derivatives, which act boundedly on $L^2_l$ of the
+collar; entire functions of $\ad\xi$, which are smooth because $L^2_l$ of a
+four-manifold of bounded geometry is an algebra for $l\ge3$, also with the
+weight on one factor; and a finite-rank term, smooth into every Sobolev space
+on $\Sigma$, to which the composition estimates of Moser type apply
+\cite[Chapter~13, Proposition~3.9]{Taylor-PDE3}; their proof holds verbatim for
+maps from a finite-dimensional space into a Hilbert space. The equation
+$\mathcal F$ is quadratic in the connection up to the perturbation terms, and
+acts pointwise on the section, with bounds uniform over unit patches; the
+perturbations, and in a family the variation of the metric, are supported in
+compact subsets of the pieces away from the necks by \ref{H:support}. Hence the
+second derivative of $\mathcal G_p$ is bounded independently of $R$, the norms
+adding over a partition into pieces and necks.
+
+(c) The inverse is constructed slice by slice. The end parameters are read
+from the limits of $x$, the families $B_b$ being injective immersions near
+$b=0$ by the normalization. The section coordinate $\nu$ is $e_\tau^{-1}$ of the
+section of $x$, pointwise. On each collar, $\zeta$ solves
+$(\mathrm{id}+\mathcal N_i)(\zeta)=a$, where $a$ is $x-p$ minus the end term; since
+$d\mathcal N_i(0)=0$, the inverse function theorem solves this uniquely on a ball
+of fixed radius. The resulting $w$ lies in $B_p$. At $s=0$ the slice of $x$ is
+$E_t(A_\theta,\zeta_\theta)$ with $A_\theta$ flat, and it is flat; since
+$E_t(A_\theta,\cdot)$ maps the small $d_{A_\theta}$-closed forms onto the flat
+connections near $A_\theta$ and is injective, $d_{A_\theta}\zeta_\theta=0$. The class
+matching follows from $[E_t(\alpha,c)]=e_t([\alpha],[c])$ for $d_\alpha$-closed $c$
+and the injectivity of $e_t$, and the Lagrangian condition from the choice of
+$e_1$ as the exponential map of a metric in which the Lagrangian is totally
+geodesic \cite[Lemma~4.4 and its proof]{DFL}. The constants depend only on the
+pieces.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:neck}]
 The proof is the standard neck-stretching argument of \cite[Chapters~3--5]{Donaldson-book};
-we describe its four steps and the one point that differs for the mixed
-equation.
+we describe its four steps and the two points that differ for the mixed
+equation, the chart in which the contraction is run and the gauge slice used
+for surjectivity. Monotonicity is used only through compactness.
 
 \emph{Compactness.} By \ref{H:energy} and \ref{H:lattice} the energy is bounded
 at fixed index. By the compactness theorems for the pieces
@@ -1543,25 +1860,131 @@ index zero, all breaking except at the joined necks.
 necks the extended Hessian, including the gauge-fixing component, has a
 spectral gap because the critical points are nondegenerate and irreducible;
 on ordinary necks the intersections are transverse. Hence the linearized
-operator of the joined problem at the preglued configuration has a right
-inverse bounded independently of the neck lengths, by the patching argument of
-the proof of \cite[Proposition~3.9]{Donaldson-book}.
+operator $D_p\colon E_p\to F_p$ of the joined problem at the preglued
+configuration $p$, which on pieces of DFL type is the operator of
+\cite[(4.8)]{DFL} with the gauge-fixing component $d_p^*$, has a right inverse
+$Q_p$ with $\|Q_p\|\le C_Q$ independent of the neck lengths, by the patching
+argument of the proof of \cite[Proposition~3.9]{Donaldson-book}. The patching
+takes place on the necks, where the norms are unweighted.
 
-\emph{Existence and local uniqueness.} The preglued configuration has error
-decaying exponentially in $\min_eR_e$, because the component solutions converge
-exponentially to nondegenerate limits. The quadratic estimate holds with
-uniform constants: on closed necks this is \cite[Theorem~4.17]{Donaldson-book},
-and on ordinary necks, whose geometry is translation invariant, it follows from
-the local estimates of \cite[Section~4]{DFL-mixed} on unit patches. The contraction
-mapping principle gives a unique solution near the preglued configuration.
-This is the only point where the mixed equation enters, and monotonicity is
-used only through compactness.
+\emph{Existence and local uniqueness.} Because the component solutions converge
+exponentially to nondegenerate limits, the preglued configuration satisfies
+$\|\mathcal F(p)\|_{F_p}\le C_ee^{-\delta_e\min_eR_e}$ for some $\delta_e>0$. The
+matching, class-matching and Lagrangian conditions of the mixed configuration
+space are nonlinear, and an affine contraction does not preserve them. We
+therefore run the contraction in the chart $P_p$ of
+Lemma~\ref{lem:neck-chart} at the preglued configuration, with end gauge $1$
+and on the slice \cite[(4.7)]{DFL}, that is, for the map $\mathcal G_p$ on $E_p$.
+On a piece of DFL type this is the chart of \cite[Section~4.1]{DFL} restricted
+to the Coulomb slice of \cite[Proposition~4.6]{DFL}. The Cauchy--Riemann
+component of $\mathcal G_p(w)$ is a section along the section of $P_p(w)$ rather
+than along $u_p$. The contraction mapping principle is therefore applied after
+projecting that component pointwise onto the tangent spaces along $u_p$, and,
+in the setting of (iv) with a family, the self-dual component onto the
+self-dual forms of the metric at the base parameter. A zero of the projected
+map near $0$ is a zero of $\mathcal G_p$, since these projections are injective
+on the nearby tangent spaces and self-dual forms. By the normalization
+$\frac{d}{db}B_b|_{b=0}=b$, the derivative of the projected map at $0$ differs
+from $D_p$ by a zeroth-order term bounded by the error of $p$, of norm at most
+$Ce^{-\delta_e\min_eR_e}$; for $\min_eR_e$ large it therefore has a right inverse
+$Q'_p$ with $\|Q'_p\|\le2C_Q$ and $\im Q'_p=\im Q_p$. The normalization of the
+normal component of $B_b-B$ makes the chart preserve the normal condition at
+$S$, so the contraction takes place in $E_p$. By Lemma~\ref{lem:neck-chart},
+the chart is defined on a ball whose radius does not depend on the neck
+lengths, and the second derivative of the projected map is bounded there
+independently of the neck lengths. The contraction mapping principle, with
+$Q'_p$, gives a solution $P_p(z_R)$ with $z_R\in\im Q_p$ and
+$|z_R|\le Ce^{-\delta_e\min_eR_e}$; this is the glued solution. The contraction
+constant is at most $\frac12$ on the ball of $\im Q_p$ of a radius $\rho_0$ that
+does not depend on the neck lengths, so $z_R$ is the only zero of $\mathcal G_p$
+in $\im Q_p\cap\{|z|<\rho_0\}$. At index zero $\im Q_p=E_p$, and this is the
+whole ball. In the setting of (iv) with a family, the contraction is run in
+$(t,z)\in\RR\oplus E_p$ with the parametrized operator
+$(t,z)\mapsto D_pz+t\,\partial_\lambda\mathcal F$.
 
-\emph{Surjectivity.} By compactness and energy exhaustion, every sequence of
-solutions with $\min_eR_e\to\infty$ is eventually exponentially close to a
-preglued configuration on the necks, uniformly because the cross-sections are
-invertible, and hence lies in the neighbourhood where the contraction gives
-uniqueness \cite[Section~5.3]{Donaldson-book}. Equivariance and the
+\emph{Surjectivity.} Let $y_n$ be solutions of the joined problem with
+$\min_eR_{e,n}\to\infty$, in a fixed class of index zero. By the compactness
+step, after passing to a subsequence and applying gauge transformations, $y_n$
+converges on compact subsets of the pieces to a matched tuple $c=(c_i)$ of
+index-zero component solutions, and its energy on the necks and on the ends
+outside a fixed compact set tends to zero, since at index zero no energy is
+lost and no nonconstant trajectory splits off. Exponential decay for solutions
+of small energy then controls $y_n$ in these regions, with constants
+independent of the neck lengths: on closed necks and gauge ends by
+\cite[Propositions~4.3--4.4]{Donaldson-book}, which hold for the
+holonomy-perturbed equation by \cite[Section~5.5]{Donaldson-book}, the critical
+points being nondegenerate and irreducible; on ordinary necks and ends by the
+corresponding estimate for holomorphic strips of small energy with transverse
+Lagrangian boundary conditions \cite[Proposition~2.3.1]{Simcevic}, after the
+Hamiltonian term on the neck is removed by the flow it generates, with the
+higher derivatives bounded by elliptic estimates on unit squares in a chart
+adapted to the two Lagrangians \cite[Lemma~C.3]{RS-strips};
+and on the mixed ends by \cite[Proposition~5.29]{DFL}. Patching the gauge
+transformations over bands on which the limits are irreducible, we obtain
+gauge transformations $g_n$ with $\|g_n^*y_n-p_n\|\to0$ in the distance fixed
+above, weighted on the mixed ends only, where $p_n$ is the preglued
+configuration of $c$.
+
+To bring $g_n^*y_n$ into the slice of the chart at $p_n$ with control
+independent of the neck lengths, let
+$\Delta_p\xi:=\bigl(d_p^*d_p\xi,\ \iota_nd_p\xi|_S\bigr)$ act on the Lie algebra
+of the gauge group: infinitesimal gauge transformations of class $L^2_{l+1}$ off
+the mixed ends that are asymptotic on each mixed end to the pull-back of a
+section of $\ad E$ over $Y$, with a remainder in $L^2_{l+1,\delta}$. Its
+asymptotic operators are positive: on closed necks and gauge ends because the
+critical points are irreducible, and on the mixed ends because
+$\lambda_1(B)\ge\mu_*^2$. Consequently $\|\xi\|_{L^2}\le C\|d_p\xi\|_{L^2}$ for
+every $\xi\in L^2_1(X_R)$, with no boundary condition and with $C$ independent of
+the neck lengths. If this failed, a sequence with $\|\xi_n\|_{L^2}=1$ and
+$\|d_{p_n}\xi_n\|_{L^2}\to0$ would, by the Poincar\'e inequalities on the
+cross-sections (on $Y$ with no boundary condition, by the variational
+characterization of $\lambda_1(B)$), have $L^2$ norm tending to zero on the
+necks and ends; on the compact parts of the pieces it would converge to a
+parallel section vanishing on an open set, hence to zero, every component of a
+piece having an end. This contradicts $\|\xi_n\|_{L^2}=1$. By
+\eqref{eq:neck-weight}, the bilinear form
+$\langle d_p(e^{-\delta W}V),d_p(e^{\delta W}U)\rangle_{L^2}$, where $W$ is a
+smoothing of the end coordinate of the mixed ends, is coercive on $L^2_1$. The
+Lax--Milgram lemma and elliptic estimates on unit patches then give an inverse
+of $\Delta_p$ on the weighted spaces and, with the Neumann problem on $Y$ for
+the asymptotic values, on the spaces with asymptotic values on the mixed ends,
+bounded independently of the neck lengths. Bring the mixed-end limits into the
+families $B_b$, $B'_{b'}$ by a gauge transformation on the fixed
+three-manifolds $Y$, $Y'$, using the Coulomb gauge with the Neumann condition
+at $B$ and \cite[Proposition~2.10]{DFL}. The inverse function theorem, applied
+to the action of the decaying gauge group in the chart $P_p$, whose
+linearization $(\xi,w)\mapsto w-d_p\xi$ at the origin is inverted by means of
+$\Delta_p^{-1}$, then writes every configuration within a distance $r_C$ of $p$
+as $g^*P_p(w)$, with $w$ in the slice \cite[(4.7)]{DFL} and $|w|$ bounded by a
+fixed multiple of that distance. By Lemma~\ref{lem:neck-chart}, $r_C$ and the
+multiple do not depend on the neck lengths. This is
+\cite[Proposition~4.6]{DFL} at $p$, with radii independent of the neck
+lengths.
+
+Hence $y_n$ is gauge equivalent to $P_{p_n}(w_n)$, with $w_n$ in the slice and
+$|w_n|\to0$. Since $P_{p_n}(w_n)$ is a solution, $w_n$ is a zero of
+$\mathcal G_{p_n}$ in $E_{p_n}$. At index zero, $|w_n|<\rho_0$ for $n$ large, and by
+the uniqueness in the previous step $P_{p_n}(w_n)$ is the glued solution. At
+augmented index zero in a family the same argument applies to $(t,w)$, with the
+compactness step of Theorem~\ref{thm:family} and the slice at the base
+parameter. With one index-one trajectory, the zeros of $\mathcal G_p$ in a ball
+of radius independent of the neck length form an arc through the glued point,
+a graph over the kernel of $D_p$ with values in $\im Q_p$. Varying the gluing
+parameter moves the glued point along this arc with speed bounded below, so
+every solution near the broken configuration is a glued one. The gluing map
+is therefore continuous and locally injective in the gluing parameter, and it
+leaves every compact subset of the one-dimensional moduli space as the parameter
+tends to infinity; its image lies in a noncompact component, which is an
+interval, on which a continuous locally injective map is monotone. Hence the
+gluing map is injective. Distinct
+component tuples give distinct glued solutions for large neck lengths. If the
+glued solutions of $c$ and $c'$ are gauge equivalent along a sequence of neck
+lengths tending to infinity, both converge in $L^2_l$ on each compact subset of
+the pieces, to $c_i$ and $c'_i$. The relating gauge transformations are
+therefore bounded in $L^2_{l+1}$ there, a diagonal subsequence converges, and
+its limit relates $c_i$ to $c'_i$; so $c=c'$. This is the argument of
+\cite[Section~4.4, Proposition~4.16 and Theorem~4.17]{Donaldson-book}, with the
+Coulomb condition replaced by the slice of the chart. Equivariance and the
 fibre-product description of the framed quotient follow from \ref{H:framing}.
 \end{proof}
 
@@ -4870,7 +5293,10 @@ gives $N_{02}$ composed with the gauge triangle.}
 Let $D$ be any domain of DFL type for a pair $(P,P')$ covered by
 Theorem~\ref{thm:mixed-iso} and Remark~\ref{rem:clean-pairs}, with the same
 end types as the special quintuple of \cite[Section~3.1]{DFL}, and regular
-invariant data. The translation-invariant data on the mixed ends may differ
+invariant data of the following form: near each seam the metric is of the form
+used in the proof of Theorem~\ref{thm:family}, with the fixed surface metric, and the
+section almost complex structure is $*_\Sigma$; on each mixed end the metric is
+conformal to a product $d\theta^2+g_{\rm slice}$. The translation-invariant data on the mixed ends may differ
 from those of the quintuple. Then its index-zero count is chain homotopic to the vertex
 map of Theorem~\ref{thm:mixed-iso} for that pair.
 \end{lemma}
@@ -4887,7 +5313,32 @@ product geometry of the quintuple, matched along the seam) is a family whose
 parameter derivative is independent of the end coordinate there; the flat
 references on $C$ and the constant sections do not depend on the end metric,
 and the mixed ends have a uniform gap on the complement of the stationary
-kernel, so Lemma~\ref{lem:family-stationary} gives the chain homotopy.
+kernel. Lemma~\ref{lem:family-stationary} then gives the chain homotopy once its
+hypothesis of uniform energy decay on the mixed ends is verified. By conformal
+invariance of the two equations and their energies (Lemma~\ref{lem:conformal-models})
+we compute in the product metric on each mixed end. We choose the path
+within the data of the statement, with the complex structure of the section on each
+mixed end equal to the standard one pulled back by $(\sigma,\theta)\mapsto(\varphi(\sigma),\theta)$,
+where $\varphi$ is a diffeomorphism of the section interval equal to the identity near the
+seam and to a translation near the Lagrangian arc; changes of the width of the interval
+are made by such maps. Along a compact path of these data the three steps of the proof
+of Proposition~\ref{prop:growing-ends}(i) hold with constants independent of the
+parameter. First, local compactness and the seam estimates hold with constants
+uniform over $C^\infty$-compact families of such data (the compactness paragraph of the
+proof of Theorem~\ref{thm:family}), and Gromov compactness is uniform for $J$ in a
+compact family; so there is a threshold, independent of the parameter, below which the
+kinetic energy on an interval of fixed length forces the slices into a fixed neighbourhood
+of the critical family. Second, the local action on that neighbourhood, the Chern--Simons
+functional with the primary function plus the symplectic action of the section,
+involves neither the metric nor $J$, so its critical set does not depend on the parameter.
+The Coulomb--Neumann slices and the charts in which it is expanded depend continuously on
+the parameter, so the remainder bounds of the expansion hold with uniform constants; the
+gradient is taken in the $L^2$ inner product of the parameter, and these inner products are
+uniformly equivalent. With the uniform gap this gives
+$|\mathcal F-\mathcal F_{\rm crit}|\le C\|\nabla\mathcal F\|^2$ with $C$ independent of the parameter. Third, the product metric and the form of $j$ on the
+end give $\partial_\theta\mathcal F=-\|\nabla\mathcal F\|^2$. Hence the kinetic energy beyond
+$\theta$ decays at a rate $c$ independent of the parameter. With the weight $\delta$ of
+Lemma~\ref{lem:family-stationary} chosen below $c$, this is its hypothesis.
 \end{proof}
 
 The DFL pieces produced by the degenerations below are such domains, so the
@@ -5590,42 +6041,138 @@ $\zeta$ is a nonzero kernel element orthogonal to the kernel, a contradiction.
 \end{proof}
 
 \begin{proposition}[uniform decay on growing mixed ends]\label{prop:growing-ends}
-There are $e_0,c,C_m$, independent of $\mathsf R\in[0,\infty]$ and of $\lambda\ge\lambda_0$,
-such that a solution of the autonomous mixed equation on a half-cylinder over
-$Y_\mathsf R$ (or $D_{i,\lambda}$) with kinetic energy less than $e_0$ converges to a
-stationary solution $(B_q,q)$ in the sense of~\eqref{eq:end-decay} below: its kinetic
-energy beyond $\theta$ decays at rate $2c$, and, in a temporal gauge, its difference
-from the stationary limit, section included, has $H^m$ norm on unit intervals
-$[\theta,\theta+1]$ of the whole slice decaying at rate $c$.
+There are $e_0,c>0$ and, for every $m\ge0$, numbers $e'_m\in(0,e_0]$ and $C_m$, all
+independent of $\mathsf R\in[0,\infty]$ and of $\lambda\ge\lambda_0$, with the following
+properties. Let $U$ be a finite-energy solution of the autonomous mixed equation on a
+half-cylinder $[\theta_0,\infty)$ over $Y_\mathsf R$ (or $D_{i,\lambda}$), and let $E(\theta)$ be its
+kinetic energy beyond $\theta$.
+\begin{enumerate}[label=(\roman*)]
+\item If $E(\theta_0)<e_0$, then $E(\theta)\le e^{4c}E(\theta_0)e^{-2c(\theta-\theta_0)}$ for
+  $\theta\ge\theta_0$, and $U$ converges to a stationary solution $(B_q,q)$.
+\item (A priori estimate.) If moreover $U$ is smooth and $E(\theta_0)<e'_m$, then the limit of
+  $U$ in a temporal gauge is smooth, and in the temporal gauge normalized by a
+  $\theta$-independent even gauge transformation so that the limit is exactly $\pi^*B_q$,
+  \begin{equation}\label{eq:end-decay}
+  \|U-\pi^*B_q\|_{H^m([\theta,\theta+1]\times Y_\mathsf R)}\le C_mE(\theta_0)^{1/2}e^{-c(\theta-\theta_0)}
+  \qquad(\theta\ge\theta_0+2),
+  \end{equation}
+  where the section minus the constant $q$ is included in the norm (and $Y_\mathsf R$ is
+  replaced by $D_{i,\lambda}$ in the joined case).
+\end{enumerate}
 \end{proposition}
 
 \begin{proof}
-\emph{Convergence into a neighbourhood of the critical family.} On each unit
-interval $[\theta,\theta+1]$ the kinetic energy is less than $e_0$. On the compact part of the
-slice local compactness applies, and on the collar
-Theorem~\ref{thm:flat-boundary-regularity}(b), summed over a cover of $T\times[0,\mathsf R]$ by
-half-disks and disks with bounded overlap, bounds the curvature linearly by the
-square root of the local energy. Hence for $e_0$ below a threshold independent of
-$\mathsf R$ every slice lies in a fixed neighbourhood of the critical family.
+In a temporal gauge the solution is a path $\theta\mapsto(B(\theta),\nu(\theta))$ of slice
+configurations, a connection on the slice and a path in $\Msf$ across the section interval,
+subject to the matching condition at the surface, the Lagrangian condition at the end of
+the interval and, for $\mathsf R<\infty$, the flat-fibre condition at $r=\mathsf R$. It is the downward
+gradient flow of the local action $\mathcal F$, the Chern--Simons functional with the primary
+function plus the symplectic action of $\nu$. Let $Y'$ be the fixed compact part of the slice
+consisting of $Y$ (of the two genus pieces, in the joined case) and the part $r\le3$ of the
+collar (of the bridge); it contains the loops of the primary perturbation. On the rest of
+the slice no perturbation acts, and anti-self-duality on the product gives
+$|F_A|^2=2|\iota_{\partial_\theta}F_A|^2$ there.
 
-\emph{Gradient inequality.} On this neighbourhood the local action $\mathcal F$ is well
-defined, with critical set the critical family, which is Morse--Bott with the
-uniform gap $\gamma$ of Proposition~\ref{prop:stationary-gap}. Expanding $\mathcal F$ about
-the nearest critical point, in the slice orthogonal to the kernel, gives
-$|\mathcal F-\mathcal F_{\rm crit}|\le C\|\nabla\mathcal F\|^2$ with $C$ depending only on $\gamma$; the
-flat-fibre condition removes the boundary term at $r=\mathsf R$ in the Hessian, so $C$ is
-independent of $\mathsf R$.
+\emph{The neighbourhood.} For $\epsilon>0$ let $\mathcal N_\epsilon$ be the set of slice
+configurations that, after an even gauge transformation of the slice, differ from a
+stationary pair $(B_q,q)$ by a field $\xi$ with $\|\xi\|_{L^2_1}+\|\xi\|_{C^1}\le\epsilon$, the norms
+being taken over the whole slice with the covariant derivative of $B_q$. For every $\epsilon>0$
+there is $e_0>0$, independent of $\mathsf R$ and $\lambda$, such that a solution whose kinetic
+energy on $[\theta-2,\theta+2]$ is less than $e_0$ has its slice at $\theta$ in $\mathcal N_\epsilon$. On
+$Y'$ this follows by contradiction from the local compactness theorem
+\cite[Theorem~5.2]{DFL}, \cite[Theorem~3]{DFL-mixed}, in its local form: a sequence of
+solutions on $[\theta-2,\theta+2]\times Y'$ whose energy tends to zero converges, after gauge
+transformations, in $C^\infty$ on $[\theta-1,\theta+1]\times Y'$ to a stationary pair. On the collar,
+small-energy regularity (Theorem~\ref{thm:flat-boundary-regularity}(b),
+Remark~\ref{rem:interior-boxes}) at orders at most three on the boxes $T\times D_2(z)$, and
+Lemma~\ref{lem:torus-slice} below on the base $[1,\mathsf R]\times[\theta-1,\theta+1]$, with
+\eqref{eq:torus-slice} for $k\le2$, write the connection as $\alpha+b+\phi_1dr+\phi_2d\theta$ with
+$b,\phi$ and their first derivatives bounded pointwise by the fibre norms of $F_A$ and its
+covariant derivatives of order at most three. These are bounded by the $L^2$ norms of $F_A$ on
+the boxes; summing over a cover of bounded overlap bounds the $L^2_1$ and $C^1$ norms of the
+slice field $b+\phi_1dr$ on the collar by $CE(\theta-2)^{1/2}$, with $C$ independent of $\mathsf R$
+and $\lambda$. On the overlap $1\le r\le3$ the two gauges differ by an even gauge
+transformation which maps a configuration close to $\alpha$ to one close to $\alpha$; it is
+close to the even stabilizer of $\alpha$, which is trivial, so it is $\exp\varphi$ with $\varphi$
+small, and a cutoff of $\varphi$ in $r$ joins the two gauges.
 
-\emph{Decay.} Along a solution $\partial_\theta\mathcal F=-\|\nabla\mathcal F\|^2\le-(\mathcal F-\mathcal F_{\rm
-crit})/C$, so the kinetic energy $\mathcal F(\theta)-\mathcal F_{\rm crit}$ beyond $\theta$ decays at
-the rate $2c=1/C$, and the length of the path of slices over $[\theta,\infty)$ is at most
-the sum over unit intervals of the square roots of their kinetic energies, which
-decays at the rate $c$; so the solution converges to a stationary solution $(B_q,q)$.
-In a temporal gauge the difference from $\pi^*B_q$ solves the linearized equation with
-coefficients bounded by the same quantity, and local elliptic estimates on
-$[\theta-1,\theta+2]$ times the slice, uniform in $\mathsf R$ by
-Theorem~\ref{thm:flat-boundary-regularity} on the collar, give the $H^m$ bound on
-$[\theta,\theta+1]$ at the rate $c$.
+\emph{Gradient inequality.} Fix $\epsilon$ small. A configuration in $\mathcal N_\epsilon$ is written
+as $(B_q,q)+Q_q(\xi)$, where $\xi$ satisfies $d^*_{B_q}\xi=0$, has vanishing normal component on
+the boundary of the slice, satisfies the linearized matching, Lagrangian and flat-fibre
+conditions and is $L^2$-orthogonal to the tangent space of the critical family at $q$; here $q$
+is chosen by the implicit function theorem, the critical family being compact modulo gauge
+and Morse--Bott, and $Q_q(\xi)=\xi+O(|\xi|^2)$ is the chart of \cite[Section~4.1]{DFL} (the maps
+$E_\tau$ on a collar of the surface, and a metric in which the Lagrangian is totally geodesic
+on the section interval), together with the fibrewise correction of
+Lemma~\ref{lem:face-chart}(a) at the flat face. In this chart
+\begin{gather*}
+\mathcal F-\mathcal F_{\rm crit}=\tfrac12\langle\mathcal A_q\xi,\xi\rangle+R_3,\qquad
+\nabla\mathcal F=\mathcal A_q\xi+R_2,\\
+|R_3|\le C\|\xi\|_{C^1}\|\xi\|_{L^2_1}^2,\qquad\|R_2\|_{L^2}\le C\|\xi\|_{C^1}\|\xi\|_{L^2_1},
+\end{gather*}
+where $\mathcal A_q=\mathcal A_{q,\mathsf R}$ is the operator of
+Proposition~\ref{prop:stationary-gap} and the gradient is identified with a vector at $\xi$
+through the derivative of $Q_q$, which differs from the inclusion by $O(\|\xi\|_{C^1})$. The
+remainders are the cubic terms of the Chern--Simons functional and of the symplectic
+action, the second-order terms of the chart, and those of the primary function, which is
+smooth \cite[Section~6]{DFL} and supported in $Y$; $C$ is independent of $\mathsf R$ and $\lambda$
+because the slice is covered by unit patches of finitely many isometry types. The
+flat-fibre condition removes the boundary term at $r=\mathsf R$ in the Hessian. By
+Proposition~\ref{prop:stationary-gap}, $\|\mathcal A_q\xi\|\ge\gamma\|\xi\|$, and the elliptic
+estimate $\|\xi\|_{L^2_1}\le C(\|\mathcal A_q\xi\|+\|\xi\|)$, uniform because it is local and the slice has
+bounded geometry (as in model (E) of the proof of Proposition~\ref{prop:torus-inverse}), gives $\|\xi\|_{L^2_1}\le C\|\mathcal A_q\xi\|$. For $\epsilon$
+small, $\|\nabla\mathcal F\|\ge\frac12\|\mathcal A_q\xi\|$ and
+\[
+|\mathcal F-\mathcal F_{\rm crit}|\le\tfrac12\|\mathcal A_q\xi\|\|\xi\|+C\epsilon\|\xi\|^2_{L^2_1}
+\le C'\|\mathcal A_q\xi\|^2\le4C'\|\nabla\mathcal F\|^2,
+\]
+with $C'$ depending only on $\gamma$ and on the constants above.
+
+\emph{Decay.} For $\theta\ge\theta_0+2$ the slice lies in $\mathcal N_\epsilon$, and along the solution
+$\partial_\theta\mathcal F=-\|\nabla\mathcal F\|^2\le-(\mathcal F-\mathcal F_{\rm crit})/(4C')$. So the kinetic energy
+$E(\theta)=\mathcal F(\theta)-\mathcal F_{\rm crit}$ decays at the rate $2c=1/(4C')$ beyond $\theta_0+2$;
+since $E$ is nonincreasing, this gives the bound of (i). The length of the path of slices over $[\theta,\infty)$ is at most the sum over
+unit intervals of the square roots of their kinetic energies, which decays at the rate $c$;
+so the solution converges to a stationary solution $(B_q,q)$.
+
+\emph{The a priori estimate.} Let $U$ be smooth, and let $\zeta=(\iota_{\partial_\theta}F_A,\partial_\theta u)$
+be its gauge-covariant $\theta$-derivative, whose $L^2$ norm on $[\theta,\infty)$ is $E(\theta)^{1/2}$.
+On the collar, small-energy regularity at order $k$ gives
+$\sup_{T\times D_1(z)}|\nabla^k_A\zeta|\le C_k\|F_A\|_{L^2(T\times D_2(z))}$ once the energy of $T\times D_2(z)$ is
+below the threshold at order $k$, and that energy is at most $2E(\theta(z)-2)$. On $Y'$, $\zeta$
+lies in the kernel of the linearization of the mixed equation at $U$, by the translation
+invariance of the end (the proof of \cite[Proposition~5.29]{DFL}); the local elliptic
+estimates of \cite[Theorem~4.17 and Remark~4.19]{DFL} at interior points, at the seam and at
+the Lagrangian arc, whose constants are uniform on a $C^{k+3}$-neighbourhood of the stationary
+pairs, give $\sup_{[\theta,\theta+1]\times Y'}|\nabla^k_A\zeta|\le C_k\|\zeta\|_{L^2([\theta-1,\theta+2]\times Y'')}$ for a
+slightly larger compact $Y''$, as long as $U$ lies in that neighbourhood on
+$[\theta-1,\theta+2]\times Y''$ up to gauge; by local compactness, as in the first step, this holds
+when $E(\theta-2)$ is below a threshold depending on $k$. Choose $e'_m\le e_0$ below these
+thresholds and below half the thresholds of small-energy regularity, for $k\le m+1$. Summing the collar bounds over a cover of bounded overlap, for
+$\theta\ge\theta_0+2$ and $k\le m+1$,
+\begin{equation}\label{eq:zeta-bounds}
+\sup_{[\theta,\theta+1]\times Y_\mathsf R}|\nabla^k_A\zeta|+\|\nabla^k_A\zeta\|_{L^2([\theta,\theta+1]\times Y_\mathsf R)}\le C_kE(\theta-2)^{1/2},
+\end{equation}
+with $C_k$ independent of $\mathsf R$, $\lambda$ and $U$. In a temporal gauge, which is smooth,
+$\partial_\theta A=\iota_{\partial_\theta}F_A$. Expanding the covariant derivative of $A(\theta)$ about that of
+$A(\theta_0+2)$ and inducting on $k$, \eqref{eq:zeta-bounds} and integration in $\theta$ bound the
+derivatives of $A(\theta)-A(\theta_0+2)$ uniformly in $\theta$, and $A(\theta)$ converges in every
+$C^k$ to a limit $B$, which is therefore smooth. By (i), $B$ and $B_q$ represent the same
+point of the critical manifold, a quotient by the determinant-one group, so $B=g^*B_q$ for an
+even gauge transformation $g$ of the slice, smooth because $dg=gB-B_qg$. In the normalized
+temporal gauge $A^N=(g^{-1})^*A$ the limit is $B_q$, and
+$A^N(\theta)-B_q=-\int_\theta^\infty\iota_{\partial_\theta}F_{A^N}\,d\theta'$. Now
+$\nabla_{B_q}=\nabla_{A^N}-[A^N-B_q,\cdot\,]$, so $\nabla^k_{B_q}\zeta$ is $\nabla^k_A\zeta$ plus terms that are
+polynomial in the derivatives of order less than $k$ of $A^N-B_q$ and linear in those of $\zeta$. Inducting on $k$ and
+integrating from infinity, \eqref{eq:zeta-bounds} and (i) give
+\begin{multline*}
+\sup_{Y_\mathsf R}|\nabla^k_{B_q}(A^N(\theta)-B_q)|+\|\nabla^k_{B_q}(A^N(\theta)-B_q)\|_{L^2(Y_\mathsf R)}\\
+\le C_k\sum_{n\ge0}E(\theta+n-2)^{1/2}\le C'_kE(\theta_0)^{1/2}e^{-c(\theta-\theta_0)}
+\end{multline*}
+for $k\le m$, the lower-order coefficients being bounded at each stage by the previous
+one. The $\theta$-derivatives of $A^N-\pi^*B_q$ are the covariant $\theta$-derivatives of $\zeta$,
+bounded by \eqref{eq:zeta-bounds}, and the section is treated in the same way with
+$\partial_\theta u$. This proves \eqref{eq:end-decay}.
 \end{proof}
 
 \subsection{Decay along the infinite torus collar}\label{subsec:torus-slice}
@@ -5633,15 +6180,7 @@ $[\theta,\theta+1]$ at the rate $c$.
 A gauge transformation of the odd bundle over a region of $T\times\RR^2$ is
 \emph{even} if it lifts to the determinant-one group. The even stabilizer of
 $\alpha$ is trivial (Section~\ref{subsec:torus-domains}); the full stabilizer is
-the Klein four-group, whose three nontrivial elements are odd. We use
-Proposition~\ref{prop:growing-ends} in the following form: if $E(\theta_0)<e_0$ is
-the kinetic energy of a solution beyond $\theta_0$ on a half-cylinder over $Y_\mathsf R$
-(or $D_{i,\lambda}$), then in a temporal gauge, for $\theta\ge\theta_0+1$,
-\begin{equation}\label{eq:end-decay}
-E(\theta)\le E(\theta_0)e^{-2c(\theta-\theta_0)},\qquad
-\|U-\pi^*B\|_{H^m([\theta,\theta+1]\times Y_\mathsf R)}\le C_mE(\theta_0)^{1/2}e^{-c(\theta-\theta_0)},
-\end{equation}
-where $\pi^*B$ is the stationary limit and the section is included in the norm.
+the Klein four-group, whose three nontrivial elements are odd.
 For a connection $A$ on $T\times\Omega$, $\Omega\subset\RR^2$ with coordinates
 $z=(z_1,z_2)$, write $F_{jT}=(\iota_{\partial_{z_j}}F_A)|_{T\times\{z\}}$ and $F_T$ for the
 restriction of $F_A$ to a torus fibre.
@@ -5713,20 +6252,19 @@ the lower-order products are absorbed because $\|F_A\|_{C^{k+1}_A}\le e_T$.
 
 \begin{proposition}[decay along the completed tail]\label{prop:tail-decay}
 Let $V=(A,u)$ be a finite-energy solution on $W_\infty$ (or on $W_{\pm,\infty}$).
-Let $\gamma_T=\mu_T/4$, fix $m$, and let $0\le\delta\le\delta_T$, where
+Let $\gamma_T=\mu_T/4$ and $0\le\delta\le\delta_T$, where
 \[
 \delta_T=\min\{\mu_T/4,\ \mu_T^2/8,\ c/2\},
 \]
-$c$ is the rate in~\eqref{eq:end-decay}, and the weight on the torus region is
-$\tau_0(\theta)$ with $|\tau_0'|\le1$ and $|\tau_0''|\le1$. There are $S_0\ge3$ and
-$C_m$ such that:
+$c$ is the rate of Proposition~\ref{prop:growing-ends}, and the weight on the torus region is
+$\tau_0(\theta)$ with $|\tau_0'|\le1$ and $|\tau_0''|\le1$. There is $S_0\ge3$ such that:
 \begin{enumerate}[label=(\roman*)]
-\item $\sup_{T\times D_1(z)}|\nabla_A^kF_A|\le C_ke^{-\gamma_T(r(z)-S_0)}$ for every $z$
-  with $r(z)\ge S_0+2$, uniformly in $\theta(z)$;
-\item Lemma~\ref{lem:torus-slice} applies on $\Omega=(S_0,\infty)\times\RR_\theta$,
-  and in the torus slice $A=\alpha+a_V$ with
+\item for every $k$ there is $C_k$ with $\sup_{T\times D_1(z)}|\nabla_A^kF_A|\le C_ke^{-\gamma_T(r(z)-S_0)}$
+  for every $z$ with $r(z)\ge S_0+2$, uniformly in $\theta(z)$;
+\item Lemma~\ref{lem:torus-slice} applies on $\Omega=(S_0,\infty)\times\RR_\theta$, and for every
+  $m$ there are $S_m\ge S_0$ and $C_m$ such that in the torus slice $A=\alpha+a_V$
   \[
-  \|a_V\|_{H^m_\delta(T\times[S,\infty)\times\RR)}\le C_me^{-\gamma_T(S-S_0)}\qquad(S\ge S_0+2),
+  \|a_V\|_{H^m_\delta(T\times[S,\infty)\times\RR)}\le C_me^{-\gamma_T(S-S_0)}\qquad(S\ge S_m+2),
   \]
   where $H^m_\delta$ is weighted by $e^{\delta\tau_0(\theta)}$.
 \end{enumerate}
@@ -5737,9 +6275,10 @@ $C_m$ such that:
 $S\to\infty$, since these regions decrease to the empty set and carry no
 perturbation. By small-energy regularity (Remark~\ref{rem:interior-boxes}) applied on the
 boxes $T\times D_2(z)$ with $r(z)\ge S_0-1$, for $S_0$ large we have
-$\sup_{r\ge S_0-1}|\nabla_A^kF_A|\le e_T$ for $k\le m$, together with local gauges
+$\sup_{r\ge S_0-1}|\nabla_A^kF_A|\le e_T$ for $k\le2$, together with local even gauges
 in which $\|A-\alpha\|_{C^1}\le e_T$. So Lemma~\ref{lem:torus-slice} applies on
-$(S_0-1,\infty)\times\RR$, and on each fibre $A=\alpha+b$ with $\|b\|_{C^0}\le Ce_T$.
+$(S_0-1,\infty)\times\RR$, and on each fibre $A=\alpha+b$ with $\|b\|_{C^0}\le Ce_T$. This
+fixes $S_0$, independently of $k$ and $m$.
 
 \emph{A differential inequality.} Put $e(z)=\int_{T\times\{z\}}|F_A|^2$. On the flat
 product the anti-self-dual curvature satisfies the Weitzenböck identity
@@ -5758,14 +6297,26 @@ $\int_T|\nabla_{A,T}F_A|^2\ge\tfrac34\mu_T^2e$ for $e_T$ small, and therefore
 (\partial_{z_1}^2+\partial_{z_2}^2)e\ge\mu_T^2e\qquad\text{on }r\ge S_0-1 .
 \end{equation}
 
-\emph{Integrability in $\theta$.} On each mixed end the slice is $Y_\infty$, and by
-Proposition~\ref{prop:growing-ends} and~\eqref{eq:end-decay} the curvature of $V$ on
-$[\theta,\theta+1]\times Y_\infty$ has $H^2$ norm at most $Ce^{-c|\theta|}$; by the trace
-and Sobolev inequalities on unit boxes, $e+|\partial_\theta e|\le Ce^{-2c|\theta|}$
-uniformly in $r$ for $|\theta|$ large. Since $2\delta\le c<2c$, the function
+\emph{Integrability in $\theta$.} Let $E_\pm(\theta)$ be the kinetic energy of $V$ on the mixed
+end $\pm\theta\to\infty$ beyond $|\theta|$, and let $\Theta_*\ge4$ be such that $E_\pm(\Theta_*-2)$ is
+less than $e_0$ and than half the threshold of small-energy regularity at order two. For
+$r(z)\ge S_0-1$ and $|\theta(z)|\ge\Theta_*$ the box $T\times D_2(z)$ lies in the unperturbed
+collar of a mixed end, where $|F_A|^2=2|\iota_{\partial_\theta}F_A|^2$ by anti-self-duality; so its
+energy is at most $2E_\pm(|\theta(z)|-2)\le Ce^{-2c|\theta(z)|}$, by
+Proposition~\ref{prop:growing-ends}(i). Small-energy regularity on the box
+(Remark~\ref{rem:interior-boxes}) gives $\sup_{T\times D_1(z)}|\nabla^i_AF_A|\le Ce^{-c|\theta(z)|}$ for
+$i\le2$, uniformly in $r$. The function $e$ and its first two base derivatives are integrals
+over $T$ of expressions quadratic in $F_A$ and its covariant derivatives of order at most
+two, so $e+|\partial e|+|\partial^2e|\le Ce^{-2c|\theta|}$ for $|\theta|\ge\Theta_*$, uniformly in
+$r\ge S_0-1$, where $\partial$ is any base derivative; for $|\theta|\le\Theta_*$ these quantities
+are bounded by the smallness step. Since $2\delta\le c<2c$, the function
 $f(r)=\int_\RR e^{2\delta\tau_0(\theta)}e(r,\theta)\,d\theta$ is finite and of class
-$C^2$ for $r\ge S_0-1$, the integrations by parts below have no boundary terms,
-and $\int_{S_0}^\infty f(r)\,dr<\infty$.
+$C^2$ for $r\ge S_0-1$, and the integrations by parts below have no boundary terms.
+Finally, for $|\theta|\ge\Theta_*$ the same identity gives
+$\int_\theta^{\theta\pm1}\int_{S_0}^\infty e\,dr\,d\theta'\le2E_\pm(|\theta|)\le Ce^{-2c|\theta|}$; with
+$e^{2\delta\tau_0}\le Ce^{2\delta|\theta|}$ and $2\delta<2c$ the sum over unit intervals converges, and
+the range $|\theta|\le\Theta_*$ contributes at most a constant times the energy of $V$. Hence
+$\int_{S_0}^\infty f(r)\,dr<\infty$.
 
 \emph{Decay.} By~\eqref{eq:fibre-subharmonic},
 \[
@@ -5782,18 +6333,29 @@ Hence
 f(r)\le f(S_0)e^{-\gamma_T'(r-S_0)}\qquad(r\ge S_0).
 \]
 
-\emph{Higher norms.} By small-energy regularity, which is linear in the square root of
-the local energy, $\|\nabla_A^iF_A\|_{L^2(T\times Q)}\le C_i\|F_A\|_{L^2(T\times2Q)}$ for every
-unit square $Q$ with $r\ge S_0+1$ on $Q$; the weight varies by at most the factor
+\emph{Higher norms.} (i) Fix $k$. The energy of $T\times D_2(z)$ is at most
+$\int_{r(z)-2}^{r(z)+2}f$, because $e^{2\delta\tau_0}\ge1$; let $S'_k\ge S_0+2$ be such that this is
+below the threshold of small-energy regularity at order $k$ for $r(z)\ge S'_k$. For such $z$,
+small-energy regularity bounds $\sup_{T\times D_1(z)}|\nabla^k_AF_A|$ by
+$C_k(\int_{r(z)-2}^{r(z)+2}f)^{1/2}\le C'_ke^{-\gamma_T(r(z)-S_0)}$, since $\gamma_T'/2>\gamma_T$. On the
+strip $S_0+2\le r(z)\le S'_k$ the same supremum is bounded: for $|\theta(z)|$ large the box lies
+in the unperturbed collar of a mixed end with energy below that threshold, by
+Proposition~\ref{prop:growing-ends}(i), and small-energy regularity applies; the rest of the
+strip is compact, and there $V$ is locally gauge equivalent to a smooth connection by interior
+regularity of the anti-self-duality equation, no perturbation acting on the torus region.
+Enlarging $C'_k$ gives (i). (ii) Fix $m$, and let $S_m\ge S'_m+2$ be such that, by (i),
+$\|F_A\|_{C^m_A}\le e_T$ on $r\ge S_m$. By small-energy regularity, which is linear in the square
+root of the local energy, $\|\nabla_A^iF_A\|_{L^2(T\times Q)}\le C_i\|F_A\|_{L^2(T\times2Q)}$ for $i\le m$
+and every unit square $Q$ with $r\ge S_m$ on $Q$; the weight varies by at most the factor
 $e^{2\delta}$ on $2Q$. Summing over a cover by unit squares with bounded overlap,
 \[
 \sum_{i\le m}\int_{r\ge S}e^{2\delta\tau_0}\|\nabla_A^iF_A\|^2_{L^2(T)}\,dz
-\le C\int_{S-2}^\infty f(r)\,dr\le Cf(S_0)e^{-\gamma_T'(S-2-S_0)} .
+\le C\int_{S-2}^\infty f(r)\,dr\le Cf(S_0)e^{-\gamma_T'(S-2-S_0)}\qquad(S\ge S_m+2) .
 \]
-Integrating~\eqref{eq:torus-slice} with $k=m-1$ against the weight gives (ii),
-since $\gamma_T'/2>\gamma_T$. For (i), small-energy regularity on $T\times D_2(z)$ bounds
-$\sup_{T\times D_1(z)}|\nabla^k_AF_A|$ by $C_k(\int_{r(z)-2}^{r(z)+2}f)^{1/2}$, because
-$e^{2\delta\tau_0}\ge1$.
+On $(S_m,\infty)\times\RR$ Lemma~\ref{lem:torus-slice} applies with $\|F_A\|_{C^m_A}\le e_T$, and by
+fibrewise uniqueness its torus slice is the restriction of that on $(S_0,\infty)\times\RR$.
+Integrating~\eqref{eq:torus-slice} with $k=m-1$ against the weight gives (ii), since
+$\gamma_T'/2>\gamma_T$.
 \end{proof}
 
 For each mixed end we use the stationary representatives $B_q$ of
@@ -5809,58 +6371,185 @@ gauge along a collar is available. On $Y_\mathsf R$ and on $D_{i,\lambda}$ the f
 independent of $\mathsf R$ and $\lambda$ away from the collar, and equal to $\alpha$ on the
 collar (on the bridge in the joined case). Its tangent vectors are supported
 away from the torus collar and have vanishing normal components at the genus
-boundary.
+boundary. More is true: every $B_q$ is in temporal gauge on the product collars of the
+genus boundary surfaces, so the normal component of $B_q-B_{q'}$ vanishes on these
+collars for all $q,q'$ in the domain of the family, not only to first order. Such a family
+is defined near a base point. Where finitely many base points occur, as for the limits of
+the finite completed index-zero sets in Section~\ref{subsec:torus-completion}, we fix one
+family near each distinct base point, on pairwise disjoint neighbourhoods in the critical
+manifold, and solutions with the same limit use the same family.
+
+From now on we fix a level $m\ge4$.
 
 \begin{lemma}[adapted representatives]\label{lem:adapted}
 Let $V$ be a finite-energy solution on $W_\infty$ with limits $q_e$ at the mixed
-ends $e$. There are $S_V\ge S_0+3$, $\Theta_V$ and a representative $V^{\rm ad}$ of
-$V$, obtained from $V$ by an even gauge transformation, such that:
+ends $e$. There are $S_V\ge S_m+3$, $\Theta_V$ and a representative $V^{\rm ad}=(A^{\rm ad},u)$ of
+$V$, obtained from $V$ by an even gauge transformation of class $H^{m+1}_{\rm loc}$, which is
+smooth on $W_\infty$ up to the genus matching faces and the Lagrangian arcs, such that:
 \begin{enumerate}[label=(\roman*)]
-\item on $T\times[S_V,\infty)\times\RR_\theta$, $V^{\rm ad}=\alpha+a_V$ is the torus slice, so
-  Proposition~\ref{prop:tail-decay}(ii) applies to $a_V$;
-\item on each mixed end $e$, with outward end coordinate $\theta$,
+\item on $T\times[S_V,\infty)\times\RR_\theta$, $A^{\rm ad}=\alpha+a_V$ is the torus slice, so
+  Proposition~\ref{prop:tail-decay}(ii) applies to $a_V$; moreover $a_V$ has bounded
+  derivatives of every order there, and for every $k$ there are $S(k)$ and $C_k$ with
+  $\sup_{T\times D_1(z)}|\nabla^k_\alpha a_V|\le C_ke^{-\gamma_T(r(z)-S_0)}$ for $r(z)\ge S(k)$;
+\item on each mixed end $e$, with outward end coordinate $\theta$, for every $k$ there is $C_k$
+  with
+  \[
+  \bigl\|(A^{\rm ad}-\pi^*B_{q_e},\ u-q_e)\bigr\|_{H^k([\theta,\theta+1]\times Y_{e,\infty})}\le C_ke^{-c\theta}
+  \qquad(\theta\ge\Theta_V),
+  \]
+  on the whole slice, its torus part included; in particular, since $\delta<c$,
   $V^{\rm ad}-\pi^*B_{q_e}$ (and the section minus the constant $q_e$) lies in
   $H^m_\delta(\{\theta\ge\Theta_V\})$, and its norm on $\{\theta\ge\Theta\}$ tends to $0$
   as $\Theta\to\infty$;
-\item on the original gauge and ordinary ends $V^{\rm ad}$ has the standard
-  exponential asymptotics at nondegenerate ends \cite[Section~4.1]{Donaldson-book},
-  \cite{RS-strips}.
+\item on the gauge end the limit is exactly the fixed representative of the critical
+  point, and on the gauge and strip ends $V^{\rm ad}$ converges to its limit in every $C^k$ at
+  every exponential rate below the spectral gap of the asymptotic operator
+  \cite[Section~4.1]{Donaldson-book}, \cite{RS-strips}.
 \end{enumerate}
-The same holds on $W_{\pm,\infty}$, for pairs on $W_{-,\infty}\sqcup W_{+,\infty}$, and with
-$\alpha$ replaced by the joined stationary connections $B_p\cup\alpha\cup B_q$ on the
-slices $D_{i,\lambda}$ when applied to finite joined configurations.
+The same holds on $W_{\pm,\infty}$ and for pairs on $W_{-,\infty}\sqcup W_{+,\infty}$. Solutions on the
+finite domains are treated in Lemma~\ref{lem:torus-regularity}.
 \end{lemma}
 
 \begin{proof}
-On each mixed end $e$ choose a temporal gauge in which $V$ converges to a
-stationary pair. The stationary limit is gauge equivalent to $\pi^*B_{q_e}$ by a
-gauge transformation independent of $\theta$; composing with it, the limit is
-exactly $\pi^*B_{q_e}$, and~\eqref{eq:end-decay} gives (ii) for this representative
-$V^E_e$ on $\{\theta\ge\Theta_V-1\}$ once $\Theta_V$ is beyond the threshold of
-Proposition~\ref{prop:growing-ends}, because $\delta<c$. On
-$T\times[S_V-1,\infty)\times\RR$ let $V^T$ be the torus slice of
-Proposition~\ref{prop:tail-decay}. On the overlap $\{\theta\ge\Theta_V-1,\ r\ge S_V-1\}$
-both representatives are $\alpha$ plus a term that is small in $C^1$ and tends to
-zero with $\theta$: the first because $B_{q_e}=\alpha$ on the collar, the second by
-Proposition~\ref{prop:tail-decay}(i). The relative gauge transformation is even and
-maps a connection close to $\alpha$ to one close to $\alpha$, so it is close to the
-even stabilizer of $\alpha$, which is trivial; it is $\exp\varphi$ with $\varphi$ small, and
-the torus-slice argument (fibrewise $d_\alpha\varphi$ and the base derivatives of $\varphi$
-are controlled by the two connection differences) gives
-$\|\varphi\|_{H^{m+1}_\delta(\{\theta\ge\Theta,\ r\ge S_V-1\})}\to0$ as $\Theta\to\infty$. Replace
-$V^E_e$ on the end by $\exp(\chi(r)\varphi)^*V^E_e$, with $\chi(r)=0$ for $r\le S_V-1$ and
-$\chi(r)=1$ for $r\ge S_V$; it agrees with $V^T$ for $r\ge S_V$ and with $V^E_e$ for
-$r\le S_V-1$, and it still satisfies (ii). Finally extend over the core. The even
-gauge transformation relating $V$ to these representatives on the outer region
-$O=\{r\ge S_V\}\cup\{|\theta|\ge\Theta_V\}$ and on the original ends (in this section, the
-ends of $W_\infty$ other than the torus region) lifts to the
-determinant-one group, so the obstruction to extending it over the core $K$ lies in
-$H^4(K,K\cap O;\ZZ)$, which vanishes because $K$ meets the free genus matching
-faces; the normalization of the temporal gauge at each mixed end is even for the
-same reason, the critical manifolds being quotients by the determinant-one
-group. The extension changes $V$ only on compact sets disjoint from $\{r\ge S_V\}\cup\{\theta\ge\Theta_V\}$, after enlarging $S_V$ and
-$\Theta_V$.
+\emph{Step 1: a smooth representative.} Every point of $W_\infty$ has a neighbourhood on
+which $V$ is gauge equivalent, by a gauge transformation of class $H^{m+1}$, to a smooth
+solution: near the genus matching faces, on charts $D_-(\rho)\times\Sigma'$ together with the
+half-disks $D_+(\rho)$ of the section, by the seam regularity theorem \cite[Theorem~1]{DFL-mixed}
+in a local Coulomb gauge, as in the proof of \cite[Proposition~3.6]{DFL}; for the section, by
+elliptic regularity for pseudo-holomorphic maps with Lagrangian boundary conditions
+\cite[Theorem~B.4.1]{MS}; at the other points, by elliptic regularity of the perturbed
+anti-self-duality equation in a local Coulomb gauge. The holonomy terms are not local, so
+the last step is carried out level by level on a fixed locally finite atlas, with local
+Coulomb gauges fixed once at level $m$. If the chart representatives are of class $L^2_k$ and
+the transition functions of class $L^2_{k+1}$, then every holonomy term is of class $L^2_k$ on
+every chart: the holonomies along the loops, based at the points of the chart, are products
+of parallel transports along subarcs contained in single charts and of transition functions
+at the switching points, and the terms are obtained from them by smooth functions and by
+integration against smooth compactly supported densities
+\cite[Section~6]{DFL}, \cite[Sections~3.4--3.5]{KM-unknot}. The elliptic estimate for
+$(d^*,d^+)$ with a source of class $L^2_k$ then gives class $L^2_{k+1}$. No holonomy term acts
+near the genus matching faces, on the torus region or on the section (the primary loops lie
+in the interiors of the compression pieces, and the secondary perturbations are supported in
+the core away from the matching lines), so the seam charts do not enter the induction. By
+induction the chart representatives are smooth, and so are the transition functions, since
+$dt_{ij}=t_{ij}A_j-A_it_{ij}$ with smooth $A_i$, $A_j$. Hence $V$ is a smooth connection on a smooth
+bundle $P'$ with a continuous bundle isomorphism $\Phi\colon P'\to P$. A smooth isomorphism $\Psi$
+that is $C^0$-close to $\Phi$ exists, and $g=\Psi\Phi^{-1}$ is $C^0$-close to the identity, hence even;
+$V^{\rm sm}=g\cdot V$ is smooth.
+
+\emph{Step 2: the ends.} (a) Let $K_e=Y_{e,\infty}\cap\{r\le S_V+3\}$, a compact part of the slice
+containing $Y$, and let $\Theta_0$ be such that on each mixed end the kinetic energy of $V$ beyond
+$\Theta_0$ is below $e'_0$. By Proposition~\ref{prop:growing-ends}(ii) the temporal gauge of $V^{\rm sm}$
+on $\{\theta\ge\Theta_0\}$ has a smooth limit, and after a $\theta$-independent even gauge transformation,
+smooth because it relates two smooth stationary connections, the limit is $\pi^*B_{q_e}$; call
+the result $V^N$. The normalization is even because the critical manifolds are quotients by
+the determinant-one group. For every $k$, the $C^k$ norm of $V^N-\pi^*B_{q_e}$ on
+$[\theta,\theta+1]\times K_e$, section minus $q_e$ included, is at most $C_ke^{-c\theta}$ for $\theta\ge\Theta_0$: for
+large $\theta$ by~\eqref{eq:end-decay} with $m=k+3$, applied beyond a $\theta$ at which the kinetic
+energy is below $e'_{k+3}$, and Sobolev embedding; on the remaining finite range by
+compactness.
+(b) By the smallness step of the proof of Proposition~\ref{prop:tail-decay},
+Lemma~\ref{lem:torus-slice} applies to $V^{\rm sm}$ on $(S_V-1,\infty)\times\RR$; the fibrewise implicit
+function theorem with parameters, at smooth data, gives a smooth gauge, so the torus slice
+$V^T=\alpha+a_V$ is smooth.
+(c) Let $\Theta_1\ge\Theta_0$ be large. On $\{\theta\ge\Theta_1,\ S_V-1\le r\le S_V\}$ the representatives $V^N$
+and $V^T$ are related by an even gauge transformation $h$, smooth because it relates smooth
+connections. It maps a
+connection close to $\alpha$ to one close to $\alpha$ (the first because $B_{q_e}=\alpha$ on the
+collar), so it is close to the even stabilizer of $\alpha$, which is trivial, and $h=\exp\varphi$ with
+$\varphi$ small. From $\nabla_\alpha h=h\,a_V-(V^N-\alpha)h$ and the injectivity of $d_\alpha$ on
+$\ad$-valued functions on each fibre,
+\[
+\|\varphi\|_{C^{k+1}(T\times D_1(z))}\le C_k\bigl(\|a_V\|_{C^k(T\times D_2(z))}+\|V^N-\alpha\|_{C^k(T\times D_2(z))}\bigr).
+\]
+Both terms are $O(e^{-c\theta(z)})$: the second by (a); the first by~\eqref{eq:torus-slice} on
+$\{r>S_V-1,\ \theta>\Theta\}$ for large $\Theta$, whose torus slice is the restriction of $V^T$ by
+fibrewise uniqueness, because small-energy regularity and
+Proposition~\ref{prop:growing-ends}(i) give
+$\sup_{T\times D_1(z)}|\nabla^i_AF_A|\le C_iE(\theta(z)-2)^{1/2}\le C'_ie^{-c\theta(z)}$, uniformly in $r$.
+(d) Put $V^{E}=\exp(\chi(r)\varphi)^*V^N$, with $\chi(r)=0$ for $r\le S_V-1$ and $\chi(r)=1$ for $r\ge S_V$. It
+agrees with $V^T$ for $r\ge S_V$ and with $V^N$ for $r\le S_V-1$.
+(e) On the gauge and strip ends, $V^{\rm sm}$ converges in a temporal gauge, in every $C^k$ and at
+every rate below the spectral gap, to a nondegenerate critical point, respectively to a
+transverse intersection point \cite[Section~4.1]{Donaldson-book}, \cite{RS-strips}; a
+smooth normalization independent of the end coordinate makes the gauge-end limit the fixed
+representative.
+
+\emph{Step 3: assembly.} Let $\Theta_V\ge\Theta_1$. On the outer region $O=\{r\ge S_V\}\cup\{|\theta|\ge\Theta_V\}$, together with
+the gauge and strip ends, Step 2 gives representatives related to $V^{\rm sm}$ by smooth even
+gauge transformations that agree on the overlaps. They lift to the determinant-one group, so
+the obstruction to extending them over the core $K$ lies in $H^4(K,K\cap O;\ZZ)$, which vanishes
+because $K$ meets the free genus matching faces. A continuous even extension therefore
+exists; it can be taken smooth relative to a neighbourhood of $K\cap O$ within its homotopy
+class, hence even. The result is $V^{\rm ad}$, which is smooth.
+
+\emph{Step 4: (i).} Given $k$, let $S(k)\ge S_0+3$ be such that the bounds of
+Proposition~\ref{prop:tail-decay}(i) at orders at most $k+2$ are at most $e_T$ on
+$\{r\ge S(k)-1\}$. On $(S(k)-1,\infty)\times\RR$
+Lemma~\ref{lem:torus-slice} applies with $\|F_A\|_{C^{k+2}_A}\le e_T$, its torus slice is the
+restriction of $V^{\rm ad}$ by fibrewise uniqueness, and~\eqref{eq:torus-slice} at order $k+1$,
+with $H^2(T)\subset C^0(T)$, bounds $\sup_{T\times D_1(z)}|\nabla^k_\alpha a_V|$ by
+$C_ke^{-\gamma_T(r(z)-S_0)}$ for $r(z)\ge S(k)$. On $\{S_V\le r\le S(k)\}$ the derivatives of $a_V$ of
+order $k$ are bounded by Step 2(c) for $|\theta|$ large and by compactness otherwise. Since
+$S_V\ge S_m+3$, Proposition~\ref{prop:tail-decay}(ii) applies to $a_V$.
+
+\emph{Step 5: (ii).} For $\theta\ge\Theta_V$ split the slice into three parts. On $\{r\le S_V-1\}$,
+$V^{\rm ad}=V^N$ and (a) applies. On the band $S_V-1\le r\le S_V$, $V^{\rm ad}-\alpha$ is obtained from
+$V^N-\alpha$ by the gauge transformation $\exp(\chi\varphi)$, and it is $O(e^{-c\theta})$ in every $C^k$ by (a)
+and (c). On $\{r\ge S_V\}$, $V^{\rm ad}-\pi^*B_{q_e}=a_V$; there, for $\theta$ beyond the threshold at
+which $\|F_A\|_{C^{k+1}_A}\le e_T$ on $\{r>S_V-1,\ \theta'>\theta-1\}$, integrating the square
+of~\eqref{eq:torus-slice} at order $k$ gives
+\begin{align*}
+\|a_V\|_{H^{k+1}([\theta,\theta+1]\times\{r\ge S_V\})}&\le C_k\sum_{i\le k+1}\|\nabla^i_AF_A\|_{L^2([\theta,\theta+1]\times\{r\ge S_V\})}\\
+&\le C'_k\|F_A\|_{L^2([\theta-1,\theta+2]\times\{r\ge S_V-1\})}\le C''_kE(\theta-1)^{1/2},
+\end{align*}
+by small-energy regularity summed over unit squares and $|F_A|^2=2|\iota_{\partial_\theta}F_A|^2$ on the
+collar, and this is $O(e^{-c\theta})$ by Proposition~\ref{prop:growing-ends}(i). On the finite
+range of $\theta$ below that threshold the norm is finite by Step 4. Gauge transformations do
+not change the section, and (a) bounds $u-q_e$ on the section interval. Since $\delta<c$, (ii)
+follows.
+
+\emph{Step 6: (iii)} is Step 2(e), which Step 3 does not change.
 \end{proof}
+
+\begin{lemma}[regularity on the torus domains]\label{lem:torus-regularity}
+Let $U$ be a finite-energy solution of class $H^m_{\rm loc}$ on $W_{\pm,\mathsf R}$ with $\mathsf R<\infty$, or on
+$W^J_\lambda$ with $\lambda\ge\lambda_0$, for the data of this section (the primary data, end
+perturbations and almost complex structures of Section~\ref{subsec:folded}, with secondary
+perturbations supported in the cores away from the torus region and the matching lines),
+or for data that differ from these by compactly supported changes of the metric, cylinder-function terms,
+four-dimensional holonomy terms and deformations of the almost complex structure, all
+vanishing near the genus matching lines. Then there is an even gauge transformation of class
+$H^{m+1}_{\rm loc}$ after which $U$ is smooth up to the genus matching faces, the flat face and
+the Lagrangian arcs; its gauge-end limits are the fixed representatives; it converges on the
+gauge and strip ends in every $C^k$ at every rate below the spectral gaps; and on each mixed
+end its difference from its stationary limit, section included, has $C^k$ norm on
+$[\theta,\theta+1]$ times the compact slice at most $C_ke^{-c\theta}$, for every $k$.
+\end{lemma}
+
+\begin{proof}
+Steps 1, 2(e), 3 and 6 of the proof of Lemma~\ref{lem:adapted} apply on the domain at hand,
+with three changes. At the flat face the local smooth gauges are given by
+Theorem~\ref{thm:flat-boundary-regularity}(a); no holonomy term acts there. The mixed-end
+slices are compact, so Proposition~\ref{prop:growing-ends}(ii) applies on the whole slice and
+no torus slice is needed: the normalized temporal gauge serves on the whole end. The
+additional terms are compactly supported and of the kinds handled in Step 1, the
+cylinder-function terms living on a compact cylinder over a closed three-manifold
+\cite[Sections~3.4--3.5]{KM-unknot}; they vanish near the genus matching lines, where Step 1
+uses the seam regularity theorem. This covers the closed-cut data $\mathfrak d_Z(\ell)$ and the
+interpolation of Lemma~\ref{lem:closed-cut-data}: the secondary data of $N_Z$ are supported
+away from the matching lines (Section~\ref{subsec:mixed-iso} and
+Remark~\ref{rem:clean-pairs}); those of $\overline{\mathsf E}$ lie in the piece $\mathrm{(II)}$, which does not
+contain the matching lines (Lemma~\ref{lem:closed-cut-embedding}(ii)); the further
+perturbation of Proposition~\ref{prop:closed-cut} is chosen away from the matching lines; and
+the neck with $f_Z$ and the change of metric lie in a collar of $Z_{\rm cut}$, which meets the
+genus parts only along $\eta^{(\pm)}_-(t)\times\Sigma_\pm$ with $t$ near $-3$, at distance at least two
+from the matching lines.
+\end{proof}
+
+The moduli spaces on $W_{\pm,\mathsf R}$ and $W^J_\lambda$ used in this section therefore consist of
+classes of smooth solutions with these asymptotics, as on the domains of
+\cite[Proposition~3.6]{DFL}.
 
 \subsection{Energy, index and the loss formula}
 
@@ -5966,8 +6655,9 @@ Theorem~\ref{thm:family} except compact support of $\partial_\lambda F$, and ins
 on each mixed end the critical set is connected, and it and a smooth family of
 stationary references $R_q$ are independent of $\lambda$, with $F_\lambda(R_q)=0$; there $\partial_\lambda F_\lambda$
 is independent of the end coordinate, and it vanishes on the gauge and ordinary
-ends; and the stationary operators have a gap and the decay of
-Proposition~\ref{prop:growing-ends} holds uniformly along the family. Then the
+ends; and the stationary operators have a gap and the energy decay of
+Proposition~\ref{prop:growing-ends}(i) holds along the family, with constants $e_0$ and $c$
+independent of $\lambda$ and with $c$ larger than the weight $\delta$ of the weighted spaces. Then the
 conclusions of Theorem~\ref{thm:family} hold.
 \end{lemma}
 
@@ -5992,8 +6682,12 @@ condition~\ref{H:lattice} its index is at least four. Such a trajectory cannot s
 family of fibre index at most one whose other components, being regular, have index at
 least $-1$. The preglued configuration agrees with the
 core on the mixed end, so the parameter derivative vanishes on the joined end and neck.
-Family compactness uses the uniform decay and the $\lambda$-independent constants
-of Theorem~\ref{thm:torus-period}.
+The solutions are smooth up to gauge (\cite[Proposition~3.6]{DFL},
+Lemma~\ref{lem:torus-regularity}), and the argument of the proof of
+Proposition~\ref{prop:growing-ends}(ii), applied to each solution at its own parameter, shows
+that it decays at the rate $c>\delta$ in every $H^k$ of its mixed-end slices, so it lies in the
+weighted domain. Family compactness uses the uniform energy decay and the $\lambda$-independent
+constants of Theorem~\ref{thm:torus-period}.
 \end{proof}
 
 \begin{proposition}\label{prop:collar-length}
@@ -6022,8 +6716,8 @@ to $\alpha$ on the bridge, depend on the width only through the length of the fl
 region; differentiating $F_\lambda(R_{\lambda,q})=0$ shows that the nondecaying part of the parameter derivative vanishes. After pulling back by width-changing diffeomorphisms
 that are the identity outside the bridge, the hypotheses of
 Lemma~\ref{lem:family-stationary} hold; on the compact range $[a,b]$ each slice has a
-gap, depending continuously on the width, so the gap and the decay are uniform
-along the family.
+gap, depending continuously on the width, so the gap is uniform along the family, and so is
+the energy decay, by the argument of the proof of Proposition~\ref{prop:growing-ends}(i).
 \end{proof}
 
 \subsection{The closed cut}\label{subsec:closed-cut}
@@ -6295,7 +6989,8 @@ vanishes, and the framed groups glue by the fibre product
 \cite[Proposition~5.4]{KM-unknot}. Hypotheses \ref{H:lattice}--\ref{H:framing} hold,
 \ref{H:lattice} by Theorem~\ref{thm:torus-period}(ii). By Theorem~\ref{thm:neck},
 for $\ell\ge\ell_0$ the data $\mathfrak d_Z(\ell)$ are regular in index at most zero, and a
-further invariant perturbation supported in the pieces, small enough not to
+further invariant perturbation supported in the pieces, in compact sets away from the
+matching lines and the neck, small enough not to
 change the index-zero sets, makes them regular in index one; the joined count is
 then the composite of the count of $\mathrm{(I)}$ and that of $\mathrm{(II)}$. By
 Lemma~\ref{lem:vertex-identification}, whose mixed-end clause covers the passage from
@@ -6313,16 +7008,26 @@ collared domains $W_\mathsf L=W_{\pm,\mathsf R}$ and for $\lambda$ on the joined
 and $W_\infty$ stands for $W_{\pm,\infty}$ or $W_{-,\infty}\sqcup W_{+,\infty}$. The index $e$ runs
 over the mixed ends; the critical manifold of the end $e$ is $\mathcal C_e$ ($P$ or $Q$ on a
 separate side, $P_i\times Q_i$ on a joined end) and its slice is $Y_{e,\mathsf L}$ ($Y_\mathsf R$,
-$Y'_\mathsf R$ or $D_{i,\lambda}$). Fix $m\ge4$. The weight $\tau$ of
+$Y'_\mathsf R$ or $D_{i,\lambda}$). The level $m\ge4$ is the one fixed before
+Lemma~\ref{lem:adapted}. The weight $\tau$ of
 Definition~\ref{def:torus-domains} is chosen with $\tau=\tau_0(\theta)$ on $N_X$ and on the
 torus region, $|\tau_0'|\le1$, $|\tau_0''|\le1$, $\tau_0(\theta)=|\theta|$ for $|\theta|\ge2$ and
 $\tau\ge0$. Fix $\delta$ with
 \[
-0<\delta\le\delta_T,\qquad\delta<\gamma/2,
+0<\delta\le\delta_T,\qquad\delta<\gamma/2,\qquad\delta<1,\qquad\delta<\mu_o\ \text{for every gauge and strip end }o,
 \]
-where $\delta_T$ is as in Proposition~\ref{prop:tail-decay} and $\gamma$ is the gap of
-Proposition~\ref{prop:stationary-gap}, and with $\delta$ below the weights of the
-original mixed ends in \cite[Definition~3.9]{DFL}. Constants $C$, $C_{\rm inv}$, $C_{\rm quad}$ and $r_1$ depend on
+where $\delta_T$ is as in Proposition~\ref{prop:tail-decay}, $\gamma$ is the gap of
+Proposition~\ref{prop:stationary-gap}, and $\mu_o>0$ is the spectral gap of the asymptotic
+operator at $o$: the extended Hessian, gauge-fixing component included, at the
+nondegenerate irreducible critical point of a gauge end, and $J\partial_t$ with the Lagrangian
+boundary conditions at the transverse intersection point of a strip end. We also take $\delta$
+below the weights of the original mixed ends in \cite[Definition~3.9]{DFL}. Thus $\delta$ lies
+below the spectral gaps at all ends: at the mixed ends by $\delta<\gamma/2$, and at the gauge and
+strip ends by $\delta<\mu_o$. In particular the completed solutions converge on the gauge and
+strip ends at a rate larger than $\delta$ (Lemma~\ref{lem:adapted}(iii)), and model (O) in the
+proof of Proposition~\ref{prop:torus-inverse} applies. The condition $\delta<\gamma/2$ also places
+$\delta$ below the Neumann gap $\gamma_s$ of the gauge Laplacian of $B_{q_e}$ on $Y_{e,\mathsf L}$, which is
+positive and uniform in $\mathsf L$ (proof of Lemma~\ref{lem:torus-scalar}). Constants $C$, $C_{\rm inv}$, $C_{\rm quad}$ and $r_1$ depend on
 the fixed data and on the finite sets of completed solutions, not on $\mathsf L$.
 
 \begin{lemma}[regular completed pieces]\label{lem:completed-regular}
@@ -6411,7 +7116,7 @@ $(V_-,V_+)$ define $P_\lambda(V_-,V_+)$ on $W^J_\lambda$ by the same truncation 
 $r_\pm=\lambda/2$, with $\alpha$ on the middle of the bridge, joined by the bridge
 identification. Then, with $P=P_\mathsf L$:
 \begin{enumerate}[label=(\roman*)]
-\item $P_\mathsf L$ is a configuration with the labels of $V$ (of the pair), equals $\alpha$ near
+\item $P_\mathsf L$ is a smooth configuration with the labels of $V$ (of the pair), equals $\alpha$ near
   the face, and on each mixed end converges to $\pi^*B_{q_e}$ on $Y_{e,\mathsf L}$ (to
   $B_{p}\cup\alpha\cup B_q$ on $D_{i,\lambda}$);
 \item $\mathfrak M(P_\mathsf L)$ is supported in $T\times[\mathsf L/2,\mathsf L/2+1]\times\RR$ (on both sides of the
@@ -6424,7 +7129,8 @@ identification. Then, with $P=P_\mathsf L$:
 \end{lemma}
 
 \begin{proof}
-(i) is immediate from Lemma~\ref{lem:adapted}. (ii) Only the truncation band
+(i) is immediate from Lemma~\ref{lem:adapted}, whose representative $V^{\rm ad}$ is smooth, with
+$a_V$ smooth and $\chi_\mathsf L$ a smooth cutoff. (ii) Only the truncation band
 carries an error. There the equation is the unperturbed anti-self-duality
 equation, and since $F^+_{\alpha+a_V}=0$,
 \[
@@ -6716,14 +7422,26 @@ the face term are supported away from the torus region, because $k_e$, the famil
 $B_q$ and the maps $E_\tau$ for $\Sigma'$ are. Put $P^{(p)}=\Psi_{\mathsf L}(0,p)$, the reference with
 its mixed-end limits moved to $\exp_{q_e}p_e$; it equals $P$ on the torus region. Define
 \[
-\mathcal F_{\mathsf L}(z)=\Bigl(d_{A_P}^*\zeta,\ \mathfrak M\bigl(\Psi_{\mathsf L}(z)\bigr)\Bigr)\in Y_\mathsf L .
+\mathcal F_{\mathsf L}(z)=\Bigl(d_{A_P}^*\zeta,\ \Pi_P\,\mathfrak M\bigl(\Psi_{\mathsf L}(z)\bigr)\Bigr)\in Y_\mathsf L ,
 \]
+where the two components of $\mathfrak M$ are read as follows. The anti-self-duality component
+is taken in $\Lambda^+\otimes\ad$ for the metric of $W_\mathsf L$: the curvature and every
+perturbation term are projected onto their self-dual parts. The Cauchy--Riemann component of
+$\mathfrak M(\Psi_\mathsf L(z))$ is a section of $\Lambda^{0,1}\otimes u^*_{\Psi_\mathsf L(z)}T\Msf$, while $Y_\mathsf L$ is
+built on $u_P$. We embed $\Msf$ isometrically in a Euclidean space $\RR^N$, read this component
+in $\Lambda^{0,1}\otimes\RR^N$, and let $\Pi_P$ act on it at each point $y\in\mathbb U_+$ by the orthogonal
+projection of $\RR^N$ onto $T_{u_P(y)}\Msf$; on the other component $\Pi_P$ is the identity. Since
+$u_P$ is smooth with derivatives bounded independently of $\mathsf L$ (the section region of $W_\mathsf L$
+is that of $X_D$), $\Pi_P$ is bounded on $H^{m-1}_\delta$. For $\|z\|$ small, $\sup|u_{\Psi_\mathsf L(z)}-u_P|\le
+C\|z\|$ is small, so $|\Pi_Pv|\ge\frac12|v|$ for $v\in T_{u_{\Psi_\mathsf L(z)}(y)}\Msf$: $\Pi_P$ is injective on these
+tangent spaces.
 
 \begin{lemma}[chart and quadratic estimate]\label{lem:torus-quadratic}
 There are $\mathsf L_0$, $r_1$ and $C_{\rm quad}$ such that for $\mathsf L\ge \mathsf L_0$ and $P=P_{\mathsf L}(V)$:
 \begin{enumerate}[label=(\alph*)]
 \item $\Psi_{\mathsf L}(z)$ satisfies the nonlinear matching, Lagrangian and flat-fibre
-  conditions, and zeros of $\mathcal F_\mathsf L$ are solutions of the mixed equation.
+  conditions, and zeros of $\mathcal F_\mathsf L$ in the ball of radius $r_1$ are solutions of the mixed
+  equation.
   Conversely, if $U$ satisfies these conditions and $\|U-P^{(p)}\|_{H^m_\delta}+|p|\le r_1/C_{\rm quad}$,
   then there are $\xi$ with $\|\xi\|_{H^{m+1}_\delta}\le C_{\rm quad}\|U-P^{(p)}\|_{H^m_\delta}$ and $w$ with
   \[
@@ -6743,8 +7461,9 @@ There are $\mathsf L_0$, $r_1$ and $C_{\rm quad}$ such that for $\mathsf L\ge \m
 $\Psi_{\mathsf L}(z)-\zeta-\operatorname{Ext}_\delta(\cdot)$ equals $\alpha$ on the collar of the face; the
 matching and Lagrangian conditions hold by the construction of
 \cite[Section~4.1]{DFL}, which involves only the fixed collars of the genus faces,
-the section and the parts of the mixed ends away from the torus collar. For the
-converse, first invert the chart at fixed $p$: at the face by
+the section and the parts of the mixed ends away from the torus collar. For $r_1$ small,
+$\Pi_P$ is injective on the tangent spaces along $u_{\Psi_\mathsf L(z)}$, so $\mathcal F_\mathsf L(z)=0$ implies
+$\mathfrak M(\Psi_\mathsf L(z))=0$. For the converse, first invert the chart at fixed $p$: at the face by
 Lemma~\ref{lem:face-chart}(c), and at the genus faces by the inverse function
 theorem for the maps $E_\tau$ on the collar \cite[Section~4.1]{DFL}, whose estimates
 are uniform because this region is fixed or, along the ends, translation
@@ -6755,7 +7474,9 @@ faces, for $\xi$, where $\zeta(\cdot)$ is the decaying coordinate of the inverte
 the derivative in $\xi$ at $\xi=0$, $U=P$, $p=0$ is the Neumann problem of
 Lemma~\ref{lem:torus-scalar}, the second derivatives are bounded uniformly since
 $m\ge4$ and $W_\mathsf L$ has bounded geometry, and the implicit function theorem applies.
-(b) is immediate: the gauge-fixing component does not involve $p$, the corrections
+(b) is immediate: the Cauchy--Riemann component of $\mathfrak M(P_\mathsf L)$ vanishes, so its
+linearization at $P$ takes values in $\Lambda^{0,1}\otimes u_P^*T\Msf$, where $\Pi_P$ is the identity; the
+gauge-fixing component does not involve $p$; and the corrections
 $\rho(s)(E-\cdot)$ and $B_{\exp p}-\widehat B_{e,p}$ are of second order, and
 $D\Psi_{\mathsf L}(0)(w,p)=w+\sum_e\beta_ek_e(p_e)$.
 
@@ -6791,16 +7512,23 @@ $\mathcal G_{\mathsf L}(V):=\Psi_{\mathsf L}(z_{\mathsf L}(V))$ is a regular sol
 \end{proposition}
 
 \begin{proof}
-By Proposition~\ref{prop:torus-inverse} and Lemma~\ref{lem:torus-quadratic}, the map
+The map $\mathcal F_\mathsf L$ takes values in $Y_\mathsf L$ because its target is projected explicitly: the
+anti-self-duality component onto the self-dual forms of $W_\mathsf L$, and the Cauchy--Riemann
+component pointwise onto the tangent spaces along the preglued section $u_P$. By
+Proposition~\ref{prop:torus-inverse} and Lemma~\ref{lem:torus-quadratic}, the map
 $z\mapsto-D_{\mathsf L}^{-1}(\mathcal F_{\mathsf L}(0)+N_{\mathsf L}(z))$ sends the ball of radius $r$ into itself when
 $C_{\rm inv}\|\mathcal F_{\mathsf L}(0)\|\le r/2$, which holds for $\mathsf L\ge \mathsf L_1$ by
 Lemma~\ref{lem:preglued}(ii), and it is a contraction with constant
 $2C_{\rm inv}C_{\rm quad}r\le\tfrac12$. If $z,z'$ are two zeros in the ball, then
 $z-z'=-D_{\mathsf L}^{-1}(N_{\mathsf L}(z)-N_{\mathsf L}(z'))$, so $\|z-z'\|\le\tfrac12\|z-z'\|$ and $z=z'$; uniqueness
-holds in the whole ball of fixed radius $r$. The derivative
+holds in the whole ball of fixed radius $r$. Since $r\le r_1$, the zero $z_\mathsf L(V)$ gives a solution
+$\mathcal G_\mathsf L(V)$ (Lemma~\ref{lem:torus-quadratic}(a)). The derivative
 $D\mathcal F_{\mathsf L}(z_\mathsf L)=D_\mathsf L+DN_{\mathsf L}(z_\mathsf L)$ with $\|DN_{\mathsf L}(z_\mathsf L)\|\le2C_{\rm quad}r\le(2C_{\rm inv})^{-1}$ is invertible.
 It is the linearization of the mixed equation at $\mathcal G_{\mathsf L}(V)$ in the chart, with
-the Coulomb condition on the decaying coordinate and the stationary fields $k_e$; since this
+the Coulomb condition on the decaying coordinate and the stationary fields $k_e$, followed by
+$\Pi_P$; at the solution $\mathcal G_\mathsf L(V)$ the Cauchy--Riemann part of the linearization takes values
+in $\Lambda^{0,1}\otimes u^*_{\mathcal G_\mathsf L(V)}T\Msf$, on which $\Pi_P$ is an isomorphism onto
+$\Lambda^{0,1}\otimes u_P^*T\Msf$, bounded with bounded inverse. Since this
 slice and the Coulomb slice of the solution itself are both transverse to the
 gauge orbits, surjectivity of the linearization does not depend on the slice, and
 $\mathcal G_{\mathsf L}(V)$ is regular.
@@ -6839,15 +7567,16 @@ region and the kinetic energy on the ends. We write $E_j(\Omega)$ for the energy
 $U_j$ on a region $\Omega$ and $o_j(1)$ for quantities tending to zero as $j\to\infty$ with
 $\Theta$ and $S$ fixed.
 
-\emph{The mixed ends.} The kinetic energy of $U_j$ beyond $\Theta-1$ converges to that
-of $V$, which is at most $Ce^{-2c(\Theta-1-\Theta_V)}$ by~\eqref{eq:end-decay}; for $\Theta$ large
-it is below the threshold of Proposition~\ref{prop:growing-ends}, which is uniform
-in $\mathsf L$. In a temporal gauge on $R_E^e$, normalized by a gauge transformation
-independent of $\theta$ so that the limit is exactly $\pi^*B_{q_{j,e}}$, the
-representative $U_j^E$ satisfies, by~\eqref{eq:end-decay} summed over unit
-intervals with the weight $e^{\delta\theta}$ and $\delta<c$,
+\emph{The mixed ends.} Replacing $U_j$ by an even gauge transform
+(Lemma~\ref{lem:torus-regularity}), we may assume that $U_j$ is smooth. The kinetic energy of
+$U_j$ beyond $\Theta-2$ converges to that of $V$, which is at most $Ce^{-2c(\Theta-2-\Theta_V)}$ by
+Proposition~\ref{prop:growing-ends}(i); for $\Theta$ large it is below the threshold $e'_m$ of
+Proposition~\ref{prop:growing-ends}(ii), which is uniform in $\mathsf L$. In a temporal gauge on
+$R_E^e$, normalized by a gauge transformation independent of $\theta$ so that the limit is
+exactly $\pi^*B_{q_{j,e}}$, the representative $U_j^E$ satisfies, by~\eqref{eq:end-decay} with
+$\theta_0=\Theta-2$, summed over unit intervals with the weight $e^{\delta\theta}$ and $\delta<c$,
 \[
-\|U^E_j-\pi^*B_{q_{j,e}}\|_{H^m_\delta(R^e_E)}\le Ce^{\delta\Theta}E_j(\{\theta\ge\Theta-1\})^{1/2}
+\|U^E_j-\pi^*B_{q_{j,e}}\|_{H^m_\delta(R^e_E)}\le Ce^{\delta\Theta}E_j(\{\theta\ge\Theta-2\})^{1/2}
 \le Ce^{-(c-\delta)\Theta}+o_j(1).
 \]
 The slices $Y_{e,\mathsf L_j}$ include the whole torus collar, so this controls the corners
@@ -7635,7 +8364,10 @@ $\mathcal U'(t)$ in the proofs of Propositions~\ref{prop:small-primary}
 and~\ref{prop:duality} concern only the Lagrangians of the primary data and of their
 reflections, which must be lower Lagrangians small relative to $t$ and $t'$; the
 height thresholds depend only on the splitting, the metric data and the height
-functions of Section~\ref{subsec:folded}, which are fixed with the splitting; the
+functions of Section~\ref{subsec:folded}, which are fixed with the splitting, in the
+realization chosen in Section~\ref{subsec:compressions}: affine combinations of averaged trace
+functions of pairwise disjoint embedded solid tori, with parallel copies for freely homotopic
+cores; the
 incidence conditions are imposed on the height Lagrangians, not on the primary data.
 For each splitting, metric data and $t$ fix an open $C^1$-neighbourhood $\mathcal N(t)$ of the
 pair $(L(U_0),L(U_1))$, and the corresponding neighbourhood of the reflected pair, so small
@@ -8119,7 +8851,8 @@ signs, and Lemma~\ref{lem:field} fails.
 \subsection{The isomorphism of Daemi, Fukaya and Lipyanskiy}
 
 \begin{corollary}\label{cor:dfl-natural}
-Let $p_0$, $p_1$ be admissible presentations of $M_0$, $M_1$ with DFL-regular primary
+Every object has admissible presentations with DFL-regular primary data, at every Heegaard
+splitting and all metric data. Let $p_0$, $p_1$ be admissible presentations of $M_0$, $M_1$ with DFL-regular primary
 data, and let $N^{\rm DFL}_{p_i}$ be the isomorphisms of \cite[Theorem~3.29]{DFL} at the
 data of Proposition~\ref{prop:dfl-comparison}. Then for every morphism $(W,E,\nu)$ and
 every admissible decomposition $d$,
@@ -8135,18 +8868,29 @@ modulo two of the isomorphism of \cite{DFL} on homology does not depend on the c
 \end{corollary}
 
 \begin{proof}
+The first sentence is Theorem~\ref{thm:dfl-regular}, applied with any separated family as in
+Definition~\ref{def:presentation} and generic primary data near zero in $\mathcal U(F)$.
 By Proposition~\ref{prop:dfl-comparison}, $N^{\rm DFL}_{p_i}\otimes\FF=N_{p_i}$ at these data,
-and Theorem~\ref{thm:A} applies to $N_{p_i}$. The second statement is the case of the
-identity morphism: on the gauge homology at $p$ and $q$ the identity of $\Ish(M)$ is the
+and Theorem~\ref{thm:A} applies to $N_{p_i}$. The statement for two choices of data at one
+object is the case of the identity morphism: on the gauge homology at $p$ and $q$ the identity of $\Ish(M)$ is the
 gauge continuation $G(q,p)$, and $S(1_M)_{qp}=\Gamma(q,p)$ by Lemma~\ref{lem:descent}.
 \end{proof}
 
-The corollary applies wherever admissible presentations with DFL-regular primary data
-exist. Their existence at the fixed metric data of a presentation is the transversality
-question of Remark~\ref{rem:dfl-regular}. Where they exist, Theorem~\ref{thm:A} shows that
-the vertex map at any admissible presentation of the same object is, on homology, the
-reduction modulo two of the isomorphism of \cite{DFL} at such a presentation, composed
-with the maps $G$ and $\Gamma$.
+Let $p$ be an admissible presentation of $M$, with family $F_p$, and let $q$ be an
+admissible presentation with the same splitting and metric data and DFL-regular primary data,
+admissible for a family $F_q$ (Theorem~\ref{thm:dfl-regular}). The case $W=1_M$ of
+Theorem~\ref{thm:A}, with Proposition~\ref{prop:dfl-comparison} at $q$, gives
+\[
+H(N_p)=\Gamma(p,q)\circ H(N^{\rm DFL}_q\otimes\FF)\circ G(q,p)
+\]
+on homology, where $G(q,p)$ is the gauge continuation map. Both primary data lie in
+$\mathcal U(F_p\cup F_q)$, by the monotonicity of the admissible neighbourhoods (the paragraph
+after Proposition~\ref{prop:duality}), so Proposition~\ref{prop:small-primary} applies to them in
+the family $F_p\cup F_q$; with the invertibility of $H(N_p)$ it identifies $\Gamma(q,p)$ with the
+symplectic continuation map. So the vertex map at
+any admissible presentation is, on homology, the reduction modulo two of the isomorphism of
+\cite{DFL} at an admissible presentation with the same splitting and metric data, composed with
+gauge and symplectic continuation maps.
 
 \appendix
 %======================================================================
@@ -8176,13 +8920,16 @@ the hypotheses that have to be checked.
   domains of DFL type with their weighted spaces, and the Fredholm property of the
   mixed operator. Used in Sections~\ref{sec:models}, \ref{sec:collapse}
   and~\ref{sec:two-handles}. Hypotheses: those of~(1).
-\item \cite[Section~4.1 with (4.3) and Lemma~4.4, Proposition~4.6, Section~4.2.1 with
-  (4.16), Propositions~4.65, 4.69, 5.27 and~5.28]{DFL}: the cutoff maps $E_\tau$ and a
-  metric in which the Lagrangian is totally geodesic, the Coulomb slice (used in
-  Section~\ref{sec:torus} in a variant), the slice operator on a cylinder quintuple,
-  additivity of energy and index under cutoff gluing, and exponential decay on mixed
-  ends. Used in Section~\ref{sec:torus}. Hypotheses: nondegenerate or Morse--Bott ends
-  as stated there.
+\item \cite[Section~4.1 with (4.3), (4.5), (4.7), (4.8), Lemmas~4.1, 4.2 and~4.4,
+  Proposition~4.6, Section~4.2.1 with (4.16) and (4.24), Propositions~2.10, 4.65, 4.69,
+  5.27, 5.28 and~5.29]{DFL}: the chart $P_p$ and the cutoff maps $E_\tau$, the flat
+  extension of \cite[Lemma~4.2]{DFL}, a metric in which the Lagrangian is totally
+  geodesic, the Coulomb slice and its variant, the Coulomb gauge on the three-manifold,
+  the slice operator on a cylinder quintuple, additivity of energy and index under
+  cutoff gluing, and exponential decay on mixed ends. Used in
+  Sections~\ref{sec:families} and~\ref{sec:torus}. Lemma~4.1 is used with its radius
+  measured in $L^q$ for some $q>2$ (Remark~\ref{rem:dfl-radius}). Hypotheses:
+  nondegenerate or Morse--Bott ends as stated there.
 \item \cite[Theorems~1 and~3, Theorem~4.2, Lemmas~4.25 and~4.50, Theorem~4.44]{DFL-mixed}:
   seam regularity, compactness, seam estimates and removal of seam
   singularities for the mixed equation.
@@ -8213,14 +8960,19 @@ the hypotheses that have to be checked.
   Section~\ref{subsec:continuations} is arranged in this form.
 \item \cite[Section~14.4]{Oh-book}: continuation with moving Lagrangian
   boundary conditions.
-\item \cite[Propositions~3.8--3.10, Theorems~4.17 and~5.4, Section~5.3]{Donaldson-book}:
-  additivity of the index under gluing along acyclic ends, weights and
-  kernels, neck gluing with surjectivity, and gluing at index $-1$ in families;
+\item \cite[Propositions~3.8--3.10, 4.3, 4.4 and~4.16, Theorems~4.17 and~5.4,
+  Sections~5.3 and~5.5]{Donaldson-book}: additivity of the index under gluing along
+  acyclic ends, weights and kernels, exponential decay of solutions of small energy
+  on long tubes, also for the holonomy-perturbed equation, neck gluing with
+  surjectivity, and gluing at index $-1$ in families;
   the addition property of \cite[Section~3.3]{Donaldson-book}, on which the excision argument of Lemma~\ref{lem:excision} is modelled.
 \item Gluing along ordinary strip necks with transverse intersections is
   proved in Theorem~\ref{thm:neck} by the argument of
   \cite[Section~3]{Donaldson-book} with the local estimates of
-  \cite[Section~4]{DFL-mixed}; monotonicity enters only through
+  \cite[Section~4]{DFL-mixed} and the exponential decay of holomorphic strips
+  of small energy \cite[Proposition~2.3.1]{Simcevic}, whose hypotheses
+  (compact monotone symplectic manifold, compact monotone Lagrangians of minimal
+  Maslov number at least three) hold here; monotonicity enters only through
   compactness. For exact Lagrangians the corresponding statement is
   \cite[Proposition~2.22]{Seidel-LES}.
 \item \cite[Theorem~B.4.1]{MS}: boundary regularity for $J$-holomorphic
@@ -8273,6 +9025,733 @@ The splitting maps depend on choices, so the homotopy $H$ is not
 canonical, and no higher coherence is asserted. Over $\ZZ$ the lemma
 fails, which is one reason Theorem~\ref{thm:A} is stated over $\FF$.
 
+%======================================================================
+\section{Existence of DFL-regular primary data}\label{app:dfl-regular}
+%======================================================================
+
+We prove Lemma~\ref{lem:dfl-detect} and Theorem~\ref{thm:dfl-regular}. The scheme of the
+induction is that of \cite[proof of Proposition~6.8]{DFL} and
+\cite[Section~5.5.1]{Donaldson-book}; the new input is Lemma~\ref{lem:dfl-detect}, whose proof
+occupies Sections~\ref{subsec:app-setting}--\ref{subsec:app-proof-lemma}.
+
+\subsection{Setting}\label{subsec:app-setting}
+
+Fix a Heegaard splitting and metric data as in Definition~\ref{def:presentation}(i)--(iii),
+and write $\Sigma=\Sigma_h\sqcup T^2$. Following \cite[Section~2.1, (2.1)]{DFL}, $M^\#$
+contains a product region $(-2,2)\times\Sigma$ with the metric $dt^2+g_\Sigma$, and
+\[
+M^\#=C_0^\circ\cup N\cup C_1^\circ,\qquad N=[-1,1]\times\Sigma,\qquad
+C_0^\circ\cap N=\{1\}\times\Sigma,\qquad C_1^\circ\cap N=\{-1\}\times\Sigma ;
+\]
+in the notation of \cite{DFL}, $C_0^\circ=Y_0$ and $C_1^\circ=Y_0'$. All gauge groups are
+determinant-one \cite[Section~2.2]{DFL}, connections are of class $L^2_l$ with $l\ge2$, and
+$L^2$ inner products use $\langle a,b\rangle=-\tr(ab)$. Gauge transformations of $C_i^\circ$ carry
+no boundary condition. At an irreducible connection $B$ on $C_i^\circ$ the operator
+$d_B\colon L^2_1(C_i^\circ)\to L^2(C_i^\circ)$ is injective and satisfies
+$\|\zeta\|_{L^2_1}\le C(\|d_B\zeta\|+\|\zeta\|)$, so by the compactness of $L^2_1\subset L^2$ it
+has closed range. The projection $\pi^i_B$ of Section~\ref{subsec:complexes} is
+$\pi^i_Bb=b-d_B\zeta$, where $\zeta$ solves the Neumann problem $d_B^*d_B\zeta=d_B^*b$,
+$*d_B\zeta=*b$ on $\partial C_i^\circ$, and it depends continuously on $B$ in operator norm near
+irreducible connections.
+
+Let $\mathfrak h$ be primary data and $g$ a split addition, and put $h=\mathfrak h+g=h_0+h_1$,
+where $h_i=\mathfrak h_i+g_i$ depends only on the restriction to $C_i^\circ$. Put
+\[
+V(A)=*F_A+\nabla h(A),\qquad K_A=DV_A=*d_A+\operatorname{Hess}_Ah .
+\]
+For a cylinder function $h$, the gradient $\nabla h(B)$ lies in $\ker d_B^*$ and is supported in
+the images of the immersions of $h$; the map $B\mapsto\nabla h(B)$ is smooth, with
+$\|\nabla h(B)-\nabla h(B')\|_{L^p}\le C\|B-B'\|_{L^p}$, and $\operatorname{Hess}_Bh$ is bounded on
+$L^2_k$ for $0\le k\le l$ and depends smoothly on $B$ \cite[Proposition~6.1]{DFL}; it is
+symmetric \cite[Lemma~2.13]{DFL}.
+
+The images of the immersions used by $\mathfrak h$ and $g$ are compact subsets of
+$\operatorname{int}C_0^\circ\sqcup\operatorname{int}C_1^\circ$. Fix $\eps\in(0,1)$ such that
+$U=(-1-\eps,1+\eps)\times\Sigma$ is disjoint from all of them, and put
+\[
+V_0=(1,1+\eps)\times\Sigma\subset\operatorname{int}C_0^\circ,\qquad
+V_1=(-1-\eps,-1)\times\Sigma\subset\operatorname{int}C_1^\circ .
+\]
+On $U$ we have $V(A)=*F_A$. As in Section~\ref{subsec:complexes}, $X_i\subset\cB(C_i^\circ)$ is the
+set of restrictions of the critical points of $\mathrm{CS}_{\mathfrak h}$.
+
+\begin{lemma}[locality]\label{lem:app-locality}
+For $x\in C_i^\circ$ the value $V(A)(x)$ depends only on $A|_{C_i^\circ}$, and $(K_Ab)(x)$ only
+on $b|_{C_i^\circ}$; write $V^{(i)}$ and $K^{(i)}$ for the resulting maps on $C_i^\circ$. For every
+$\zeta\in\Omega^0(C_i^\circ;\ad)$, with no boundary condition,
+\[
+K^{(i)}_A(d_A\zeta)=[V^{(i)}(A),\zeta].
+\]
+The same identity holds on $M^\#$ with $V$ and $K$.
+\end{lemma}
+
+\begin{proof}
+The gradient of $h_{1-i}$ vanishes on $C_i^\circ$, and $*F_A$ is local. The function $h_i$ is
+invariant under all determinant-one gauge transformations of $C_i^\circ$, because its loops lie
+in the interior and traces of holonomy are invariant under conjugation; so
+$V^{(i)}(u\cdot A)=uV^{(i)}(A)u^{-1}$ for such $u$. Differentiating at $u=1$ in the direction
+$\zeta$, with $u\cdot A=A-(d_Au)u^{-1}$, gives the identity. The argument on $M^\#$ is the same.
+\end{proof}
+
+\subsection{Trajectories and cokernels}
+
+Trajectories of $\mathrm{CS}_h$ are written in temporal gauge as solutions
+$\gamma=(A_s)_{s\in\RR}$ of $\partial_sA_s=-V(A_s)$ between determinant-one lifts of critical
+points, in any path class. Reversing $s$ gives the opposite convention and changes the signs of
+all eigenvalues below; the argument uses only that two of them have opposite signs. The
+\emph{extended Hessian}
+\[
+L_A(b,c)=(K_Ab-d_Ac,\,-d_A^*b)
+\]
+acts on $H=L^2(M^\#;(\Lambda^1\oplus\Lambda^0)\otimes\ad)$ with domain $L^2_1$
+(compare \cite[(2.23)]{Donaldson-book}) and is symmetric. Let $\tilde a$ be a lift of a
+nondegenerate critical point; it is irreducible (Lemma~\ref{lem:app-irreducible}). Then $L_{\tilde a}$ is self-adjoint with
+compact resolvent, and $\ker L_{\tilde a}=0$: if $K_{\tilde a}b=d_{\tilde a}c$ and
+$d_{\tilde a}^*b=0$, then $\|d_{\tilde a}c\|^2=\langle b,K_{\tilde a}d_{\tilde a}c\rangle
+=\langle b,[V(\tilde a),c]\rangle=0$ by Lemma~\ref{lem:app-locality}, so $c=0$ by
+irreducibility and $b=0$ by nondegeneracy. The linearization at a trajectory $\gamma$, with the
+Coulomb condition, is $D_\gamma=\partial_s+L_{A_s}$ (compare \cite[Section~3.1]{Donaldson-book}), and its
+cokernel consists of the $L^2$ solutions of $\partial_sy=L_{A_s}y$, which are smooth and decay
+exponentially at both ends.
+
+\begin{lemma}\label{lem:app-trajectories}
+Let $\gamma=(A_s)$ be a trajectory of $\mathrm{CS}_h$.
+\begin{enumerate}[label=(\roman*)]
+\item $x(s)=(\partial_sA_s,0)$ satisfies $\partial_sx=-L_{A_s}x$.
+\item If $y=(\phi,c)$ is in the cokernel of $D_\gamma$, then $c\equiv0$; hence
+  $d^*_{A_s}\phi_s=0$ and $\partial_s\phi=K_{A_s}\phi$.
+\item Two trajectories of $\mathrm{CS}_h$ that agree at one time agree at all times. If $\gamma$
+  is nonconstant, then $\partial_sA_s\ne0$ for every $s$, and if $y\ne0$ in (ii), then
+  $\phi_s\ne0$ for every $s$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Differentiating the flow gives $\partial_s\dot A=-K_A\dot A$, where $\dot A=\partial_sA$, and
+$d_A^*\dot A=-d_A^*V(A)=0$ by the Bianchi identity and the gauge invariance of $h$.
+
+(ii) The equation reads $\partial_s\phi=K_A\phi-d_Ac$, $\partial_sc=-d_A^*\phi$. Define $\{a,b\}$
+by $\langle\zeta,\{a,b\}\rangle=\langle[a,\zeta],b\rangle$ for all sections $\zeta$. Then
+$\partial_s(d^*_{A_s})b=\{\dot A_s,b\}$, and taking adjoints in Lemma~\ref{lem:app-locality} on
+$M^\#$ gives $d_A^*K_Ab=\{V(A),b\}$. Hence
+\[
+\partial_s(d_A^*\phi)=\{\dot A+V(A),\phi\}-d_A^*d_Ac=-d_A^*d_Ac ,
+\]
+so $\partial_s^2c=d_A^*d_Ac$ and
+$\tfrac{d^2}{ds^2}\|c\|^2=2\|\partial_sc\|^2+2\|d_Ac\|^2\ge0$. The function $\|c\|^2$ is convex
+and tends to zero at both ends, so $c\equiv0$.
+
+(iii) We use the theorem of Agmon and Nirenberg in the form \cite[Theorem~C.1]{SW-lagrangian},
+in $L^2(M^\#)$, as in the proof of \cite[Proposition~8.6]{SW-lagrangian}; since $M^\#$ is closed
+there are no boundary terms. For two trajectories $A$, $B$ put $x=A-B$. Then
+\[
+\partial_sx+*d_{B}x=-\tfrac12*[x\wedge x]-\bigl(\nabla h(A)-\nabla h(B)\bigr),
+\]
+whose $L^2$ norm is at most $c_1(s)\|x\|$ with $c_1$ locally bounded, by
+\cite[Proposition~6.1(ii)]{DFL}. The operators $*d_{B(s)}$ are symmetric, and
+$\tfrac{d}{ds}\langle x,*d_Bx\rangle-2\langle\partial_sx,*d_Bx\rangle=\langle
+x,*[\partial_sB\wedge x]\rangle\le c_3(s)\|x\|^2$. So \cite[Theorem~C.1(i)]{SW-lagrangian}
+gives $x\equiv0$ forward in time from a time at which $x$ vanishes, and backward after
+reversing time, which replaces the operators by their negatives. The linear equations of (i)
+and (ii) are treated in the same way, with the symmetric operators $\pm L_{A_s}$, for which
+$c_1=0$ and $c_3=\|\partial_sL_{A_s}\|$ is locally bounded by \cite[Proposition~6.1(iii)]{DFL}.
+\end{proof}
+
+\subsection{Asymptotics at $-\infty$}
+
+\begin{lemma}\label{lem:app-asymptotics}
+Let $H$ be a real Hilbert space, $L$ a self-adjoint operator on $H$ with compact resolvent and
+$\ker L=0$, and $B\colon(-\infty,0]\to\mathcal L(H)$ continuous with
+$\beta(s):=\|B(s)\|\le C_0e^{\delta s}$ for some $\delta>0$. Let
+$x\in C^1((-\infty,0];\operatorname{dom}L)$, with $\operatorname{dom}L$ carrying the graph norm,
+solve $x'=-(L+B)x$, with $x(s)\ne0$ for all $s$, $x(s)\to0$ as $s\to-\infty$, and
+\begin{equation}\label{eq:app-R}
+\|Lx(s)\|\le C_1\sup_{|\sigma-s|\le1}\|x(\sigma)\|\qquad(s\le-1).
+\end{equation}
+Then there are $\lambda>0$ and $v\ne0$ with $Lv=-\lambda v$ such that $e^{-\lambda s}x(s)\to v$ as
+$s\to-\infty$. If instead $x'=(L+B)x$, the same holds with $Lv=\lambda v$.
+\end{lemma}
+
+\begin{proof}
+Put $\hat x=x/\|x\|$ and $N=\langle L\hat x,\hat x\rangle$.
+
+(a) We have $(\log\|x\|)'=-N-\langle B\hat x,\hat x\rangle$ and
+$\hat x'=-(L-N)\hat x-B\hat x+\langle B\hat x,\hat x\rangle\hat x$. Since
+$\langle(L-N)\hat x,\hat x\rangle=0$,
+\[
+N'=2\langle(L-N)\hat x,\hat x'\rangle=-2\|(L-N)\hat x\|^2-2\langle(L-N)\hat x,B\hat x\rangle
+\le-\|(L-N)\hat x\|^2+\beta^2 .
+\]
+
+(b) Hence $N+\int_{-\infty}^s\beta^2$ is nonincreasing, $N$ is bounded below on $(-\infty,0]$,
+and $N_{-\infty}=\lim_{s\to-\infty}N(s)\in(-\infty,\infty]$ exists. If $N_{-\infty}>0$, then by
+(a) $(\log\|x\|)'\le-c<0$ near $-\infty$, and $\|x(s)\|\to\infty$ as $s\to-\infty$, which is
+excluded; so $N_{-\infty}\le0$. By (a), $\int_{-\infty}^0\|(L-N)\hat x\|^2<\infty$, so
+$\|(L-N_{-\infty})\hat x(s_k)\|\to0$ along a sequence $s_k\to-\infty$. Hence
+$N_{-\infty}\in\operatorname{spec}L$, and $N_{-\infty}=-\lambda$ with $\lambda>0$ since
+$0\notin\operatorname{spec}L$.
+
+(c) Let $P$ be the orthogonal projection onto the finite-dimensional space $\ker(L+\lambda)$,
+$Q=1-P$, and $Q_\pm$ the spectral projections of $L$ onto the parts of the spectrum above and
+below $-\lambda$; let $g>0$ be the distance from $-\lambda$ to the rest of the spectrum. Choose
+$s_1$ with $|N+\lambda|\le g/4$ on $(-\infty,s_1]$. For $y=Q_+\hat x$ and $z=Q_-\hat x$, which
+have norm at most one, (a) gives on $(-\infty,s_1]$
+\[
+(\|y\|^2)'\le-\tfrac32g\|y\|^2+4\beta\|y\|\le-g\|y\|^2+\tfrac8g\beta^2,\qquad
+(\|z\|^2)'\ge\tfrac32g\|z\|^2-4\beta\|z\|\ge g\|z\|^2-\tfrac8g\beta^2 .
+\]
+Integrating the first inequality from $-\infty$, and the second backward from $s_1$, gives
+$\|Q\hat x(s)\|\le Ce^{\delta's}$ for any fixed $\delta'<\min(\delta,g/2)$.
+
+(d) The function $N$ is bounded on $(-\infty,0]$, so $(\log\|x\|)'$ is bounded, and
+\eqref{eq:app-R} bounds $\|L\hat x\|$. Hence
+$|N+\lambda|=|\langle(L+\lambda)Q\hat x,Q\hat x\rangle|\le Ce^{\delta's}$ is integrable, and by (a)
+$e^{-\lambda s}\|x(s)\|$ converges to some $c\in(0,\infty)$.
+
+(e) $(e^{-\lambda s}Px)'=-e^{-\lambda s}PBx$ has norm at most $C\beta$, so $e^{-\lambda s}Px$
+converges to some $v$, while $e^{-\lambda s}Qx=e^{-\lambda s}\|x\|\,Q\hat x\to0$. So
+$e^{-\lambda s}x\to v$, with $\|v\|=c>0$ and $Lv=-\lambda v$. The second statement follows by
+applying the first to $-L$ and $-B$.
+\end{proof}
+
+\begin{corollary}\label{cor:app-leading}
+Let $\gamma=(A_s)$ be a nonconstant trajectory of $\mathrm{CS}_h$, and $y=(\phi,0)\ne0$ in the
+cokernel of $D_\gamma$. Let $\tilde a$ be the limit of $A_s$ as $s\to-\infty$. There are
+$\lambda,\mu>0$ and nonzero $v,w\in\ker d^*_{\tilde a}$ with $K_{\tilde a}v=-\lambda v$ and
+$K_{\tilde a}w=\mu w$ such that, in $L^2(M^\#)$,
+\begin{equation}\label{eq:app-leading}
+\partial_sA_s=e^{\lambda s}(v+o(1)),\qquad \phi_s=e^{\mu s}(w+o(1))\qquad(s\to-\infty).
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+In a temporal gauge, $A_s$ converges to a lift $\tilde a$ of a critical point exponentially fast
+in every $C^k$ norm \cite[Theorem~4.2 and Proposition~4.3]{Donaldson-book}, whose proofs apply
+to the holonomy-perturbed equation with nondegenerate critical points
+\cite[Section~5.5]{Donaldson-book}. Apply Lemma~\ref{lem:app-asymptotics} with
+$H=L^2(M^\#;(\Lambda^1\oplus\Lambda^0)\otimes\ad)$, $L=L_{\tilde a}$ and
+$B(s)=L_{A_s}-L_{\tilde a}$ to $x=(\partial_sA_s,0)$ and to $y$
+(Lemma~\ref{lem:app-trajectories}(i),(ii)). The operator $B(s)$ consists of brackets with
+$A_s-\tilde a$ and of $\operatorname{Hess}_{A_s}h-\operatorname{Hess}_{\tilde a}h$, so
+$\|B(s)\|\le C\|A_s-\tilde a\|_{L^2_l}\le C_0e^{\delta s}$ by \cite[Proposition~6.1(iii)]{DFL}.
+The solutions vanish nowhere by Lemma~\ref{lem:app-trajectories}(iii), and \eqref{eq:app-R} is
+the interior elliptic estimate for $\partial_s+L_{A_s}$ on the slabs $[s-1,s+1]\times M^\#$, whose
+coefficients are bounded uniformly in $s$, since $\operatorname{Hess}_{A_s}h$ is bounded on $L^2_k$
+for $k\le2\le l$. The limits have vanishing $\Lambda^0$-components, because $x$ and $y$ have, so
+they are eigenvectors of $K_{\tilde a}$ in $\ker d^*_{\tilde a}$.
+\end{proof}
+
+The two eigenvalues in \eqref{eq:app-leading}, $-\lambda<0<\mu$, have opposite signs; this is
+what replaces the $L^2$-orthogonality of $\partial_s\gamma$ and $\psi$ used in
+\cite[p.~79]{DFL}.
+
+\subsection{Eigenvectors on one piece}
+
+\begin{lemma}\label{lem:app-irreducible}
+The restriction to $C_i^\circ$ of a lift $\tilde a$ of a critical point of $\mathrm{CS}_h$ is
+irreducible. If $A_s\to\tilde a$ as $s\to-\infty$, then $A_s|_{C_i^\circ}$ is irreducible for all
+$s$ near $-\infty$.
+\end{lemma}
+
+\begin{proof}
+On $V_i\cap((-2,2)\times T^2)$, an interval times $T^2$, the connection $\tilde a$ satisfies
+$*F_{\tilde a}=V(\tilde a)=0$. The bundle is odd on $T^2$, so the holonomy of this flat
+connection lifts to the quaternion group in $\SU(2)$, which fixes no nonzero vector of
+$\mathfrak{su}(2)$. A parallel section of $\ad$ over the connected $C_i^\circ$ therefore vanishes
+on this open set, hence everywhere. Irreducibility is an open condition, and
+$A_s\to\tilde a$ in $C^\infty$.
+\end{proof}
+
+\begin{lemma}\label{lem:app-eigen}
+Let $a$ be a nondegenerate critical point of $\mathrm{CS}_h$, $i\in\{0,1\}$, and
+$v_1,v_2\in\ker d_a^*$ eigenvectors of $K_a$ with eigenvalues $\nu_1\ne\nu_2$.
+\begin{enumerate}[label=(\roman*)]
+\item If $v_j|_{C_i^\circ}$ lies in the closure of $d_aL^2_1(C_i^\circ)$, then
+  $v_j|_{C_i^\circ}=0$.
+\item If $v_1|_{C_i^\circ}\ne0\ne v_2|_{C_i^\circ}$, then $\pi^i_av_1$ and $\pi^i_av_2$ are
+  linearly independent.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Since $V(a)=0$, Lemma~\ref{lem:app-locality} gives $K^{(i)}_a(d_a\zeta)=0$ for smooth $\zeta$, and
+hence, by continuity of $K^{(i)}_a$ from $L^2$ to distributions on
+$\operatorname{int}C_i^\circ$, for every $b$ in the closure of $d_aL^2_1(C_i^\circ)$. On
+$C_i^\circ$ the eigenvector equation reads $K^{(i)}_av_j=\nu_jv_j$, and $\nu_j\ne0$ by
+nondegeneracy; this gives (i). For (ii) suppose $\pi^i_av_2=c\,\pi^i_av_1$, so that
+$v_2=cv_1+b$ on $C_i^\circ$ with $b$ in the closure of $d_aL^2_1$. If $c=0$ this contradicts
+(i). Otherwise applying $K^{(i)}_a$ gives $\nu_2(cv_1+b)=c\nu_1v_1$, so
+$c(\nu_2-\nu_1)v_1=-\nu_2b$ on $C_i^\circ$, and $v_1|_{C_i^\circ}$ lies in the closure of
+$d_aL^2_1$, which contradicts (i).
+\end{proof}
+
+\subsection{Non-trapping}
+
+The following Carleman estimate is proved by the method of \cite[Lemmas~5 and~6]{Booss-ucp},
+after a change of variables that makes the inner product on the slices independent of the
+normal variable; we give the proof in full because the slices below are tori and the operator
+contains a nonlocal term acting slice by slice.
+
+\begin{lemma}\label{lem:app-carleman}
+Let $N_1$ be a compact region in a Riemannian three-manifold and $t\in C^\infty(N_1)$ with
+$dt\ne0$ and $N_1=t^{-1}([\tau_0,\tau_1])$, whose level sets $S_t$ are closed surfaces. Let
+$E\to N_1$ be a Hermitian bundle with a Clifford multiplication
+$\mathbf c\colon T^*N_1\to\operatorname{End}(E)$, $\mathbf c(\xi)^*=-\mathbf c(\xi)$,
+$\mathbf c(\xi)^2=-|\xi|^2$, let $\nabla$ be a Hermitian connection on $E$ and $\Theta$ a smooth
+endomorphism, and put $D=\sum_j\mathbf c(e^j)\nabla_{e_j}+\Theta$ for local orthonormal frames.
+Let $K$ act on $L^2(N_1;E)$ slice by slice: there are operators $K_t$ on $L^2(S_t;E)$, with the
+area measure, such that $\|K_t\|\le b$ and $(Ku)|_{S_t}=K_t(u|_{S_t})$. Then there are
+$T_0,C,R_0>0$, depending on $N_1$, $D$ and $b$, such that for every
+$[t_0,t_1]\subset[\tau_0,\tau_1]$ with $T:=t_1-t_0\le T_0$:
+\begin{enumerate}[label=(\roman*)]
+\item for every $R\ge R_0$ and every $v\in L^2_1$ with compact support in $t^{-1}((t_0,t_1))$,
+  \begin{equation}\label{eq:app-carleman}
+  R\int e^{R(t_1-t)^2}|v|^2\le C\int e^{R(t_1-t)^2}|(D+K)v|^2 ;
+  \end{equation}
+\item if $u\in L^2_1(t^{-1}([t_0,t_1]);E)$ satisfies $(D+K)u=0$ and vanishes on
+  $\{t<t_0+\eta\}$ for some $0<\eta<T$, then $u=0$ on $\{t\le t_0+T/2\}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+It suffices to prove \eqref{eq:app-carleman} for smooth $v$, since both sides are continuous in
+$L^2_1$.
+
+(a) \emph{Coordinates.} Let $X=\nabla t/|\nabla t|^2$. Its flow gives a diffeomorphism
+$\Phi\colon[\tau_0,\tau_1]\times S\to N_1$, $S=S_{\tau_0}$, with $t(\Phi(t,y))=t$. Since $X$ is
+orthogonal to the level sets, $\Phi^*g=|\nabla t|^{-2}dt^2+h_t$ with no cross terms. Write
+$\Phi^*d\mathrm{vol}=\kappa\,dt\,d\mathrm{vol}_S$ with $\kappa>0$, for a fixed area form
+$d\mathrm{vol}_S$ on $S$.
+
+(b) \emph{A unitary change of variables.} Let $P_t$ be parallel transport for $\nabla$ along the
+flow lines, and put $(\mathcal Uu)(t,y)=\kappa^{1/2}P_t^{-1}u(\Phi(t,y))$. Then $\mathcal U$ is a
+unitary map from $L^2(N_1;E)$ to $L^2([\tau_0,\tau_1]\times S,\,dt\,d\mathrm{vol}_S;E|_S)$, and
+the inner product on each slice is now $L^2(S,d\mathrm{vol}_S)$, independent of $t$.
+
+(c) \emph{Normal form.} Let $e_0=\nabla t/|\nabla t|$, and let $e_1,e_2$ be tangent to the level
+sets. Then $D=|\nabla t|\,\mathbf c(e^0)\nabla_X+D_S+\Theta$ with
+$D_S=\sum_{k=1,2}\mathbf c(e^k)\nabla_{e_k}$, and $\mathcal U\nabla_X\mathcal U^{-1}=\partial_t
+-\tfrac12\partial_t\log\kappa$. Hence
+\[
+\mathcal UD\,\mathcal U^{-1}=\sigma(\partial_t+\mathcal B_t),\qquad
+\sigma=|\nabla t|\,P_t^{-1}\mathbf c(e^0)P_t,\qquad
+\mathcal B_t=-\tfrac12\partial_t\log\kappa+\sigma^{-1}\,\mathcal U(D_S+\Theta)\,\mathcal U^{-1},
+\]
+where $\sigma$ is invertible, $\sigma^{-1}=-|\nabla t|^{-1}P_t^{-1}\mathbf c(e^0)P_t$, and
+$\mathcal B_t$ is a first-order operator on $S$. For $\xi\in T^*_yS$ let $\eta$ be the covector at
+$\Phi(t,y)$ with $\eta(X)=0$ whose pullback to $S$ is $\xi$; since $X$ is normal to the level
+set, $\eta$ is orthogonal to $e^0$. The principal symbol of $\mathcal B_t$ at $\xi$ is
+$-i|\nabla t|^{-1}P_t^{-1}\mathbf c(e^0)\mathbf c(\eta)P_t$. It is self-adjoint, because
+$\mathbf c(\eta)\mathbf c(e^0)=-\mathbf c(e^0)\mathbf c(\eta)-2\langle e^0,\eta\rangle
+=-\mathbf c(e^0)\mathbf c(\eta)$, and invertible for $\xi\ne0$, because
+$(\mathbf c(e^0)\mathbf c(\eta))^2=-|\eta|^2$. Put $B_t=\tfrac12(\mathcal B_t+\mathcal B_t^*)$ and
+$C_t=\tfrac12(\mathcal B_t-\mathcal B_t^*)$, adjoints in $L^2(S,d\mathrm{vol}_S)$. Then $B_t$ is
+symmetric and elliptic of first order, $C_t$ is a skew-adjoint endomorphism, since the
+principal symbols cancel, and both depend smoothly on $t$. Fix constants $c,c_1,s_\sigma$,
+uniform over $[\tau_0,\tau_1]$, with $\|f\|_{H^1(S)}\le c(\|f\|+\|B_tf\|)$,
+$|\langle f,(-\partial_tB_t+[B_t,C_t])f\rangle|\le c_1\|f\|\,\|f\|_{H^1(S)}$ (the operator is of
+first order) and $\|\sigma^{-1}\|\le s_\sigma$.
+
+(d) \emph{The estimate for $\partial_t+B_t+C_t$.} Let $w$ be smooth on $[t_0,t_1]\times S$ and
+vanish near $t_0$ and $t_1$. Put $\mathcal S_t=B_t+R(t_1-t)$, which is symmetric, and
+$J=\int_{t_0}^{t_1}\|\partial_tw+C_tw+\mathcal S_tw\|^2dt$. Since the slice inner product does not depend
+on $t$,
+\[
+2\,\mathrm{Re}\int\langle\partial_tw,\mathcal S_tw\rangle\,dt=-\int\langle w,(\partial_t\mathcal S_t)w\rangle\,dt
+=R\int\|w\|^2dt-\int\langle w,(\partial_tB_t)w\rangle\,dt ,
+\]
+and since $C_t$ is skew, $2\,\mathrm{Re}\langle C_tw,\mathcal S_tw\rangle=\langle w,[B_t,C_t]w\rangle$.
+Expanding the square,
+\[
+J\ge\int\|\mathcal S_tw\|^2+R\int\|w\|^2+J_3,\qquad
+J_3=\int\langle w,(-\partial_tB_t+[B_t,C_t])w\rangle .
+\]
+With $\|B_tw\|\le\|\mathcal S_tw\|+RT\|w\|$,
+\[
+|J_3|\le cc_1\int\|w\|\bigl(\|\mathcal S_tw\|+(1+RT)\|w\|\bigr)
+\le\tfrac12\int\|\mathcal S_tw\|^2+\bigl(cc_1(1+RT)+\tfrac12(cc_1)^2\bigr)\int\|w\|^2 .
+\]
+For $T\le T_0:=1/(4cc_1)$ and $R\ge4cc_1+2(cc_1)^2$ this gives $J\ge\frac R2\int\|w\|^2$. For
+smooth $v$ supported in $t^{-1}((t_0,t_1))$ put $w=e^{R(t_1-t)^2/2}\,\mathcal Uv$. Then
+$e^{R(t_1-t)^2/2}(\partial_t+B_t+C_t)\mathcal Uv=(\partial_t+B_t+C_t+R(t_1-t))w$ and
+$(\partial_t+B_t+C_t)\mathcal Uv=\sigma^{-1}\mathcal UDv$. Since $\mathcal U$ is unitary and the
+weight depends only on $t$,
+\[
+R\int e^{R(t_1-t)^2}|v|^2\le 2s_\sigma^2\int e^{R(t_1-t)^2}|Dv|^2 .
+\]
+
+(e) \emph{Absorption of $K$.} By the coarea formula $d\mathrm{vol}=|\nabla t|^{-1}dA_t\,dt$, and
+the weight is constant on each slice, so
+$\int e^{R(t_1-t)^2}|Kv|^2\le b'^2\int e^{R(t_1-t)^2}|v|^2$ with
+$b'^2=b^2\sup|\nabla t|/\inf|\nabla t|$. With $C_D=2s_\sigma^2$,
+\[
+R\int e^{R(t_1-t)^2}|v|^2\le2C_D\int e^{R(t_1-t)^2}|(D+K)v|^2+2C_Db'^2\int e^{R(t_1-t)^2}|v|^2 ,
+\]
+and for $R\ge R_0:=\max\bigl(4cc_1+2(cc_1)^2,\,4C_Db'^2\bigr)$ this is \eqref{eq:app-carleman}
+with $C=4C_D$.
+
+(f) \emph{Continuation.} Let $\varphi(t)=1$ for $t\le t_0+0.8T$ and $\varphi(t)=0$ for
+$t\ge t_0+0.9T$, and put $v=\varphi u$. Then $v\in L^2_1$ has compact support in
+$t^{-1}((t_0,t_1))$, because $u=0$ on $\{t<t_0+\eta\}$. Since $K$ commutes with multiplication by
+functions of $t$, $(D+K)v=\varphi'(t)\,\mathbf c(dt)u$, which is supported where
+$(t_1-t)^2\le T^2/25$, while $(t_1-t)^2\ge T^2/4$ on $\{t\le t_0+T/2\}$, where $v=u$. By
+\eqref{eq:app-carleman},
+\[
+\int_{\{t\le t_0+T/2\}}|u|^2\le\frac CR\,e^{-\frac{21}{100}RT^2}\int|\varphi'\,\mathbf c(dt)u|^2 ,
+\]
+which tends to zero as $R\to\infty$.
+\end{proof}
+
+\begin{proposition}\label{prop:nontrapping}
+Let $\mathfrak h$ be primary data in the span of a separated family with embeddings
+$\gamma_\alpha$, and choose $r<1$ such that every two-form $\mu$ in the averaged trace functions
+of $\mathfrak h$ is supported in the disk $D_r$ of radius $r$. Put
+$\Omega'=M^\#\setminus\bigcup_\alpha\gamma_\alpha(S^1\times\bar D_r)$. Let $a$ be a critical point
+of $\mathrm{CS}_{\mathfrak h}$ and $v\in\ker d_a^*$ an eigenvector of $K_a$. If $v$ vanishes on a
+nonempty open subset of $\Omega'$, then $v=0$.
+\end{proposition}
+
+\begin{proof}
+A critical point of $\mathrm{CS}_{\mathfrak h}$ is gauge equivalent to a smooth connection, by
+elliptic bootstrapping with $\nabla\mathfrak h\colon L^2_k\to L^2_k$ for every $k$
+\cite[Proposition~6.1]{DFL}; we work in such a gauge. Let $\nu$ be the eigenvalue.
+\emph{Outside the solid tori.} On $\Omega'$ the Hessian of
+$\mathfrak h$ vanishes, so $a$ is flat there and $*d_av=\nu v$, $d_a^*v=0$. Applying $*d_a$ gives
+$d_a^*d_av=\nu^2v$, so $\Delta_av=\nu^2v$ on $\Omega'$, a second-order system whose principal part
+is the scalar Laplacian in every component. The set $\Omega'$ is connected: it is the complement
+in the connected $M^\#$ of finitely many disjoint closed solid tori, each of which has a connected
+collar $\gamma_\alpha(S^1\times\{r<|z|<1\})$ in $\Omega'$, so a decomposition of $\Omega'$ into two
+open sets would give one of $M^\#$. By elliptic regularity $v$ is smooth on $\Omega'$. By the
+unique continuation theorem of \cite{Aronszajn}, which applies to such systems
+\cite[Remark~3]{Aronszajn} (see also \cite[Remark~8(a)]{Booss-ucp}), applied on an exhaustion of
+$\Omega'$ by connected relatively compact open subsets, $v=0$ on $\Omega'$.
+
+\emph{Inside a solid torus.} Fix $\alpha$ and use the coordinates $(\theta,z)\in S^1\times D^2$ of
+$\gamma_\alpha$. Since the images are disjoint and $\mathfrak h$ is a linear combination of averaged
+trace functions, on $\gamma_\alpha(S^1\times D^2)$ the operator $\operatorname{Hess}_a\mathfrak h$ is a
+linear combination of Hessians of averaged trace functions of $\gamma_\alpha$. The gradient of such
+a function at $\gamma_\alpha(\theta,z)$ is determined by $\mu(z)$ and by the traceless part of the
+holonomy around the loop $\gamma_\alpha(S^1\times\{z\})$ based at that point
+\cite[Lemma~5.12]{Donaldson-book}; its derivative in a direction $b$ is therefore an integral
+along that loop of $b$, transported by $a$, with bounded kernel. So the operator
+$\widetilde B(c,b)=(0,\operatorname{Hess}_a\mathfrak h\,(b))$ maps sections over a union of loops
+$\gamma_\alpha(S^1\times\{z\})$ to sections over the same union, with a uniform bound on $L^2$ of
+such unions. With $\mathcal D_a(c,b)=(d_a^*b,\,d_ac+*d_ab)$ on
+$E=(\Lambda^0\oplus\Lambda^1)\otimes\ad\otimes\CC$, the section $u=(0,v)$ satisfies
+\[
+(\mathcal D_a-\nu)u+\widetilde Bu=0 .
+\]
+The operator $\mathcal D_a-\nu$ has the form of Lemma~\ref{lem:app-carleman}, with
+$\mathbf c(\xi)(c,b)=(-\iota_{\xi^\sharp}b,\,\xi c+*(\xi\wedge b))$, which is skew and satisfies
+$\mathbf c(\xi)^2=-|\xi|^2$, with $\nabla$ the Levi-Civita connection coupled to $a$, and
+$\Theta=-\nu$.
+
+Let $\omega'$ be the set of $z\in D^\circ$ such that $u$ vanishes on $\gamma_\alpha(S^1\times W)$
+for a neighbourhood $W$ of $z$. It is open, and it contains $\{r<|z|<1\}$ by the first step.
+Suppose $\omega'\ne D^\circ$. Its complement in $D^\circ$ is compact, being closed in $D^\circ$ and
+contained in $\bar D_r$, and $D^\circ$ is connected; so there is $z_1\in\omega'$ whose distance
+$\rho$ to $D^\circ\setminus\omega'$ is less than $(1-r)/2$, hence less than
+$\dist(z_1,\partial D)$. Let $z_0\in D^\circ\setminus\omega'$ attain this distance. Then
+$D(z_1,\rho)\subset\omega'$. Fix $0<\eta_1<\rho$ and $T_1>0$ with
+$\rho+T_1<\dist(z_1,\partial D)$, put $t=|z-z_1|-\rho$, and let
+$N_1=\gamma_\alpha(S^1\times\{-\eta_1\le t\le T_1\})$. On $N_1$ we have $dt\ne0$, and the level
+sets $S_t=\gamma_\alpha(S^1\times\{|z-z_1|=\rho+t\})$ are closed tori, each a union of loops
+$\gamma_\alpha(S^1\times\{z\})$, so $K=\widetilde B$ acts slice by slice with a uniform bound.
+Let $T_0$ be given by Lemma~\ref{lem:app-carleman} for $N_1$, and choose $0<\eta<T'$ with
+$T'\le T_1$, $\eta\le\eta_1$ and $T'+\eta\le T_0$. Lemma~\ref{lem:app-carleman}(ii) with
+$[t_0,t_1]=[-\eta,T']$, of length $T'+\eta$, where $u=0$ for $t<0=t_0+\eta$, gives $u=0$ on
+$\{t\le(T'-\eta)/2\}$. Together with $u=0$ over $D(z_1,\rho)$, this is a neighbourhood of
+$\gamma_\alpha(S^1\times\{z_0\})$, so $z_0\in\omega'$, a contradiction. Hence $v$ vanishes on every
+solid torus, and $v=0$.
+\end{proof}
+
+\begin{corollary}\label{cor:app-nontrapping}
+Let $\mathfrak h$ and $g$ be as in Lemma~\ref{lem:dfl-detect}, with $\eps$ as in
+Section~\ref{subsec:app-setting}. For every critical point $a$ of $\mathrm{CS}_{\mathfrak h+g}$,
+every eigenvector $v\ne0$ of $K_a$ in $\ker d_a^*$ and each $i$, we have $v|_{V_i}\ne0$, and
+hence $\pi^i_av\ne0$.
+\end{corollary}
+
+\begin{proof}
+The critical points of $\mathrm{CS}_{\mathfrak h+g}$ are those of $\mathrm{CS}_{\mathfrak h}$, and
+$g$ vanishes on a neighbourhood of each of them, so $K_a$ is the Hessian of
+$\mathrm{CS}_{\mathfrak h}$ at $a$. The open set $V_i$ lies in $\Omega'$ by the choice of $\eps$,
+so Proposition~\ref{prop:nontrapping} gives $v|_{V_i}\ne0$, and
+Lemma~\ref{lem:app-eigen}(i) gives $\pi^i_av\ne0$.
+\end{proof}
+
+\subsection{Restricted paths}
+
+For a trajectory $\gamma=(A_s)$ of $\mathrm{CS}_h$ put
+$\Gamma_i(s)=[A_s|_{C_i^\circ}]\in\cB(C_i^\circ)$, extended continuously to $\pm\infty$ by the
+restrictions of the limits.
+
+\begin{lemma}\label{lem:app-hybrid}
+Suppose that $\mathrm{CS}_h$ and $\mathrm{CS}_{\mathfrak h}$ have the same critical points, and
+let $\gamma$ be a trajectory of $\mathrm{CS}_h$ and $i\in\{0,1\}$. Either $\Gamma_i$ is constant,
+or it is injective on $\RR$ and $\Gamma_i(\RR)\cap X_i=\varnothing$.
+\end{lemma}
+
+\begin{proof}
+Take $i=0$; the case $i=1$ is symmetric. Put $O_1=\RR\times\operatorname{int}C_0^\circ$ and
+$O_2=\RR\times(U\cup C_1^\circ)$. Then $O_1\cup O_2=\RR\times M^\#$ and
+$O_1\cap O_2=\RR\times V_0$.
+
+\emph{Returns.} Suppose $\Gamma_0(s_1)=\Gamma_0(s_0)$ with $\tau=s_1-s_0\ne0$. Choose a gauge
+transformation $k$ of $C_0^\circ$ with $k\cdot A_{s_1}=A_{s_0}$ on $C_0^\circ$; it is smooth. It
+extends to a determinant-one gauge transformation of $M^\#$, since the obstructions lie in
+$H^j(M^\#,C_0^\circ;\pi_{j-1}\SU(2))=0$ for $j\le3$. Put $\tilde\gamma(s)=k\cdot\gamma(s+\tau)$, a
+trajectory of $\mathrm{CS}_h$ in temporal gauge with $\tilde\gamma(s_0)=\gamma(s_0)$ on $C_0^\circ$.
+On the open set $V_0$ both $\tilde\gamma$ and $\gamma$ solve the unperturbed equation
+$\partial_sA+*F_A=0$, so they agree on $\RR\times V_0$ by \cite[Lemma~8.7(i)]{SW-lagrangian}.
+Define $\Xi$ to be $\tilde\gamma$ on $O_1$ and $\gamma$ on $O_2$. It is smooth, and it is a
+trajectory of $\mathrm{CS}_h$: on $O_1$ the equation involves only the restriction to $C_0^\circ$
+(Lemma~\ref{lem:app-locality}), where $\Xi=\tilde\gamma$; on $O_2$ it involves the unperturbed
+region $U$ and the restriction to $C_1^\circ$, where $\Xi=\gamma$. Since $\Xi(s_0)=\gamma(s_0)$ on
+$M^\#$, Lemma~\ref{lem:app-trajectories}(iii) gives $\Xi=\gamma$, so $\tilde\gamma=\gamma$ on
+$\RR\times C_0^\circ$. Hence $\Gamma_0$ is periodic with period $\tau$; it converges as
+$s\to-\infty$, so it is constant.
+
+\emph{Critical passages.} Suppose $\Gamma_0(s_1)$ is the restriction of a critical point, with
+lift $\tilde c$. The same argument, with $\tilde\gamma$ the constant trajectory at $k\cdot\tilde c$
+for a gauge transformation $k$ with $k\cdot\tilde c=A_{s_1}$ on $C_0^\circ$, applies: $\tilde c$ is
+flat on $V_0$ and $V(\tilde c)=0$ on $M^\#$. It gives $\Gamma_0\equiv\Gamma_0(s_1)$.
+\end{proof}
+
+\subsection{Holonomy detection and localization}
+
+\begin{lemma}\label{lem:app-detection}
+Let $B$ be a smooth irreducible connection on $C_i^\circ$. All trace functions below are averaged
+trace functions of embeddings into $\operatorname{int}C_i^\circ$.
+\begin{enumerate}[label=(\roman*)]
+\item If a smooth one-form $b$ on $C_i^\circ$ satisfies $D\tau_B(b)=0$ for every trace function
+  $\tau$, then $b\in d_B\Omega^0(C_i^\circ)$.
+\item If $S$ is a finite-dimensional space of smooth one-forms on $C_i^\circ$ with
+  $S\cap d_B\Omega^0(C_i^\circ)=0$, there are finitely many trace functions whose derivatives at
+  $B$ are jointly injective on $S$.
+\item If $\mathcal K\subset\cB(C_i^\circ)$ is compact and $[B]\notin\mathcal K$, finitely many
+  trace functions separate $[B]$ from $\mathcal K$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Letting $\mu$ concentrate at a point shows that the derivative in the direction $b$ of the
+trace of the holonomy around every embedded loop in $\operatorname{int}C_i^\circ$ vanishes, and by
+approximation \cite[p.~141]{Donaldson-book} the same holds for every piecewise smooth loop. Fix
+$p\in\operatorname{int}C_i^\circ$. Since $B$ is irreducible, there are loops $\delta_1,\dots,\delta_m$
+based at $p$ whose holonomies do not commute. Fix a unitary frame of the fibre at $p$, and write
+the holonomies of $\delta_1,\dots,\delta_m$ and of a further loop $\delta$ based at $p$ as
+$\lambda_jg_j$ and $\lambda g$, with $g_j,g\in\SU(2)$ and $\lambda_j,\lambda\in U(1)$ independent of
+$B$, as in Section~\ref{subsec:compressions}. Identify $\SU(2)$ with the unit quaternions, let
+$\rho$ be the homomorphism from the free group on $m+1$ letters to $\SU(2)$ sending the letters
+to $g_1,\dots,g_m,g$, and extend it to an algebra map $\rho\colon\RR[F_{m+1}]\to\mathbb H$. For a
+word $W$ the holonomy around the corresponding loop is $\lambda_W\rho(W)$ with $\lambda_W\in U(1)$
+independent of $B$, so the derivative of $\tr\rho(W)$ in the direction $b$ vanishes. Let
+$\dot\rho(W)\in\mathbb H$ be the derivative of $\rho(W)$ in the direction $b$, extended linearly.
+Then $\dot\rho(UV)=\dot\rho(U)\rho(V)+\rho(U)\dot\rho(V)$ and $\tr\dot\rho=0$ on
+$\RR[F_{m+1}]$. The image of $\rho$ is the real span of a noncommutative subgroup of the unit
+quaternions; the proper subalgebras of $\mathbb H$ are $\RR$ and copies of $\CC$, which are
+commutative, so the image is $\mathbb H$. If $\rho(x)=0$, then
+$\tr(\dot\rho(x)\rho(y))=\tr\dot\rho(xy)-\tr(\rho(x)\dot\rho(y))=0$ for all $y$, and since the
+trace form of $\mathbb H$ is nondegenerate, $\dot\rho(x)=0$. Hence $\dot\rho=D\circ\rho$ for a
+derivation $D$ of $\mathbb H$. Every derivation of $\mathbb H$ is inner, so
+$D=[\eta,\cdot\,]$ with $\eta\in\operatorname{Im}\mathbb H=\mathfrak{su}(2)$, and $\eta$ is
+unique because $g_1,\dots,g_m$ do not commute. So the derivative of the holonomy in the direction
+$b$ is the infinitesimal conjugation by $\eta$ for every loop based at $p$, and one $\eta$ serves
+for all of them. Let $\zeta_0$ be a smooth section whose value at $p$ induces this infinitesimal
+conjugation. Then the derivative of the holonomy in the direction $b'=b-d_B\zeta_0$ vanishes for
+every loop based at $p$, and $\zeta_1(q)=\int_\ell b'$, computed in a parallel frame along a path
+$\ell$ from $p$ to $q$, is independent of $\ell$ and satisfies $d_B\zeta_1=b'$
+\cite[(6.4)]{DFL}. So $b=d_B(\zeta_0+\zeta_1)$.
+
+(ii) By (i), no nonzero element of $S$ is annihilated by the derivatives of all trace functions,
+so these derivatives span the dual of $S$, and $\dim S$ of them suffice.
+
+(iii) A connection is determined up to gauge equivalence by its holonomy representation up to
+conjugacy, and this representation by the traces of all words \cite[Lemma~5.13 and
+p.~141]{Donaldson-book}. So for each $[B']\in\mathcal K$ some loop, which may be taken embedded,
+has trace of holonomy at $B'$ different from that at $B$, and so has an averaged trace function
+with $\mu$ concentrated near the centre. This is an open condition in $[B']$, and $\mathcal K$ is
+compact.
+\end{proof}
+
+\begin{lemma}\label{lem:app-localize}
+Let $\nu\colon\RR\to\RR^n$ be $C^2$ and $W\colon\RR\to\RR^n$ be $C^1$ and integrable. Let
+$s_0\in\RR$ and $\delta>0$ be such that $\nu$ is an injective immersion on $(s_0-\delta,s_0+\delta)$,
+$\nu(s_0)$ is not in the closure of $\nu(\RR\setminus(s_0-\delta,s_0+\delta))$, and
+$W(s_0)\notin\RR\,\nu'(s_0)$. Then every neighbourhood of $\nu(s_0)$ contains the support of a
+function $G\in C^\infty_c(\RR^n)$ with $\int_\RR\langle\nabla G(\nu(s)),W(s)\rangle\,ds\ne0$.
+\end{lemma}
+
+\begin{proof}
+Write $\nu_0=\nu(s_0)$. Near $s_0$ the distance $|\nu(s)-\nu_0|$ is strictly monotone on each
+side of $s_0$, because $\nu'(s_0)\ne0$, and the rest of $\nu(\RR)$ stays at positive distance
+from $\nu_0$, by injectivity on $(s_0-\delta,s_0+\delta)$ and the closure hypothesis. So for small
+$r$ the preimage of the ball of radius $r$ about $\nu_0$ is an interval $J\ni s_0$ of length
+$O(r)$. Choose $n\perp\nu'(s_0)$ with $\langle n,W(s_0)\rangle=1$, a function
+$\chi\in C^\infty_c([0,1))$ with $\chi\ge0$ and $\chi=1$ near $0$, and put
+$G(x)=\chi(|x-\nu_0|/r)\,\langle n,x-\nu_0\rangle$. Along $\nu$ we have
+$\langle n,\nu(s)-\nu_0\rangle=O((s-s_0)^2)$, so the term of
+$\int\langle\nabla G(\nu),W\rangle$ containing the derivative of $\chi$ is $O(r^2)$, while the
+term $\int\chi(|\nu-\nu_0|/r)\langle n,W\rangle$ equals $c_\chi r/|\nu'(s_0)|+O(r^2)$ with
+$c_\chi=\int_\RR\chi(|x|)\,dx>0$. For small $r$ the integral is nonzero.
+\end{proof}
+
+\begin{lemma}\label{lem:app-reduction}
+Let $\mathfrak h$, $g$, $\gamma=(A_s)$ and $\psi=(\phi,0)$ be as in Lemma~\ref{lem:dfl-detect},
+$i\in\{0,1\}$ and $s_0\in\RR$. Suppose that $B=A_{s_0}|_{C_i^\circ}$ is irreducible, that
+$\pi^i_B\partial_sA_{s_0}$ and $\pi^i_B\phi_{s_0}$ are linearly independent, and that
+$\Gamma_i(s_0)\notin\Gamma_i([-\infty,\infty]\setminus\{s_0\})\cup X_i$. Then the conclusion (iii)
+of Lemma~\ref{lem:dfl-detect} holds.
+\end{lemma}
+
+\begin{proof}
+Let $S$ be the span of $\pi^i_B\partial_sA_{s_0}$ and $\pi^i_B\phi_{s_0}$. These are smooth, by
+elliptic regularity for the Neumann problem that defines $\pi^i_B$, and orthogonal to
+$d_BL^2_1(C_i^\circ)$, so $S\cap d_B\Omega^0=0$. Trace functions are invariant under
+all gauge transformations of $C_i^\circ$, so their derivatives at $B$ vanish on $d_BL^2_1$. By
+Lemma~\ref{lem:app-detection}(ii) there are trace functions $\tau'$ with $D\tau'_B$ injective on
+$S$; then $D\tau'_B(\partial_sA_{s_0})=D\tau'_B(\pi^i_B\partial_sA_{s_0})\ne0$, so $\tau'\circ\Gamma_i$
+is an injective immersion on some interval $(s_0-\delta,s_0+\delta)$. The set
+$\mathcal K=\Gamma_i([-\infty,s_0-\delta]\cup[s_0+\delta,\infty])\cup X_i$ is compact and does not
+contain $\Gamma_i(s_0)$, so Lemma~\ref{lem:app-detection}(iii) gives trace functions $\tau''$
+separating $\Gamma_i(s_0)$ from $\mathcal K$. Put $\tau=(\tau',\tau'')$, $\nu=\tau\circ\Gamma_i$ and
+$W(s)=D\tau_{A_s}(\phi_s)$, which is integrable because $\phi$ decays exponentially and the
+gradients of trace functions are bounded. The hypotheses of Lemma~\ref{lem:app-localize} hold:
+$\nu(\RR\setminus(s_0-\delta,s_0+\delta))\subset\tau(\mathcal K)$, a compact set not containing
+$\nu(s_0)$, and $\nu'(s_0)=D\tau_B(\pi^i_B\partial_sA_{s_0})$ and
+$W(s_0)=D\tau_B(\pi^i_B\phi_{s_0})$ are linearly independent. It gives $G$ supported in a ball about
+$\nu(s_0)$ whose closure misses $\tau(\mathcal K)\supset\tau(X_i)$. The cylinder function
+$g_i'=G\circ\tau$ has loops in $\operatorname{int}C_i^\circ$ and vanishes on the neighbourhood
+$\tau^{-1}(\RR^n\setminus\operatorname{supp}G)$ of $X_i$, and by the chain rule
+$\int\langle\nabla g_i'(A_s),\phi_s\rangle\,ds=\int\langle\nabla G(\nu(s)),W(s)\rangle\,ds\ne0$.
+\end{proof}
+
+\subsection{Proof of Lemma~\ref{lem:dfl-detect}}\label{subsec:app-proof-lemma}
+
+By Lemma~\ref{lem:app-trajectories}(ii) the cokernel element is $\psi=(\phi,0)$. Fix $i$ and let
+$\tilde a$ be the limit of $A_s$ as $s\to-\infty$. By Corollary~\ref{cor:app-leading},
+\eqref{eq:app-leading} holds with eigenvalues $-\lambda<0<\mu$ of $K_{\tilde a}$. By
+Corollary~\ref{cor:app-nontrapping}, $\pi^i_{\tilde a}v\ne0\ne\pi^i_{\tilde a}w$, and since
+$-\lambda\ne\mu$, Lemma~\ref{lem:app-eigen}(ii) shows that $\pi^i_{\tilde a}v$ and
+$\pi^i_{\tilde a}w$ are linearly independent. The restriction of $\tilde a$ to $C_i^\circ$ is
+irreducible (Lemma~\ref{lem:app-irreducible}), so $\pi^i_{A_s}\to\pi^i_{\tilde a}$ in operator norm,
+and by \eqref{eq:app-leading}
+\[
+e^{-\lambda s}\pi^i_{A_s}\partial_sA_s\to\pi^i_{\tilde a}v,\qquad
+e^{-\mu s}\pi^i_{A_s}\phi_s\to\pi^i_{\tilde a}w .
+\]
+Linear independence of a pair of vectors is an open condition, so there is $T$ such that (ii)
+holds for all $s_0<-T$. In particular $\pi^i\partial_sA_{s_0}\ne0$, so $\Gamma_i$ is not constant,
+and Lemma~\ref{lem:app-hybrid} gives (i). The limits $\Gamma_i(\pm\infty)$ lie in $X_i$, so by (i)
+$\Gamma_i(s_0)\notin\Gamma_i([-\infty,\infty]\setminus\{s_0\})\cup X_i$ for every $s_0$, and
+Lemma~\ref{lem:app-reduction} at any $s_0<-T$ gives (iii). \qed
+
+\subsection{Proof of Theorem~\ref{thm:dfl-regular}}
+
+\begin{lemma}\label{lem:app-separated}
+\begin{enumerate}[label=(\roman*)]
+\item For every Heegaard splitting and metric data there are separated families $F$ as in
+  Definition~\ref{def:presentation}.
+\item For every family $F$ as in Definition~\ref{def:presentation}, generic primary data in a
+  neighbourhood of zero in $\operatorname{span}F$ have transverse Lagrangians.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Fix $i$. For a flat connection $B$ on $C_i$ let
+$\mathcal H_B=\{b:\ d_Bb=0,\ d_B^*b=0,\ *b|_{\partial C_i}=0\}$. It maps isomorphically onto
+$H^1(C_i;\ad B)$. By Definition~\ref{def:clean-datum}(C2), $B$ is irreducible and
+$H^2(C_i;\ad B)=0$, so $\dim\mathcal H_B=-3\chi(C_i)$ is independent of $B$, and $\mathcal H_B$
+depends continuously on $B$ in a local slice of the flat connections. Let $0\ne b\in\mathcal H_B$.
+If $b|_{C_i^\circ}\in d_B\Omega^0(C_i^\circ)$, then the class of $b$ vanishes, because
+$C_i^\circ\hookrightarrow C_i$ is a homotopy equivalence; so $b=d_B\zeta$ on $C_i$ and
+$\|b\|^2=\langle\zeta,d_B^*b\rangle+\int_{\partial C_i}\langle\zeta,*b\rangle=0$, a contradiction.
+Hence the restrictions to $C_i^\circ$ of the elements of $\mathcal H_B$ form a space $S$ with
+$S\cap d_B\Omega^0(C_i^\circ)=0$, and Lemma~\ref{lem:app-detection}(ii) gives finitely many averaged
+trace functions of embeddings into $\operatorname{int}C_i^\circ$ whose derivatives at $B$ are
+jointly injective on $\mathcal H_B$. At a flat connection $B'$ and for $d_{B'}b=0$, the derivative in the direction $b$ of
+$\tr g_\ell$ is unchanged by a homotopy of $\ell$, with $\lambda$ transported along it: the first
+variation of the holonomy between homotopic loops differs by the integral of $d_{B'}b$ over the swept
+surface. So on $\mathcal H_{B'}$ the derivative of an averaged trace function equals that of
+$\tr g_\ell$ for its core $\ell$, and up to sign it depends only on the free homotopy class of
+$\ell$. Injectivity on $\mathcal H_{B'}$ is open in $B'$, and the space of gauge equivalence classes
+of flat connections on $C_i$ is compact, so the cores $\ell_1,\dots,\ell_n$ of finitely many of the
+functions above serve every flat connection on $C_i$. Let $W$ be the complement in
+$\operatorname{int}C_i^\circ$ of the solid tori of the height functions. It is connected, and every
+loop in $C_i^\circ$ is freely homotopic into $W$: push it off the cores of those solid tori by
+general position, then radially out of each of them. By general position there are pairwise
+disjoint embedded loops $\ell_k'\subset W$ with $\ell_k'$ freely homotopic to $\ell_k$. Take pairwise
+disjoint thin tubular neighbourhoods of them in $W$, and any $\mu$. At every flat $B'$ the
+derivatives on $\mathcal H_{B'}$ of the resulting averaged trace functions agree up to sign with those
+of the $\tr g_{\ell_k}$, so they are jointly injective. Let $F$ consist of the height functions and
+these averaged trace functions; it is separated.
+
+By the proofs of \cite[Propositions~6.5 and~6.7]{DFL}, with the Banach space of perturbations
+replaced by $\operatorname{span}F$, the universal restriction map is a submersion at a flat
+connection $B$ on $C_i$ provided two cokernels vanish. The first,
+$H^1(C_i,\partial C_i;\ad B)\cong H^2(C_i;\ad B)^*$, is zero by
+Definition~\ref{def:clean-datum}(C2). The second consists of the $b\in\mathcal H_B$ annihilated by
+$D\tau_B$ for every $\tau\in F$, and it is zero by construction. So $F$ satisfies the submersion
+clause of Definition~\ref{def:presentation}.
+
+(ii) The submersion clause of Definition~\ref{def:presentation} holds at every flat connection
+and is an open condition, so it holds over a neighbourhood of zero in $\operatorname{span}F$, and
+transversality of the two Lagrangians for generic primary data there follows as in
+\cite[proof of Lemma~2.56, p.~78]{DFL}.
+\end{proof}
+
+\begin{lemma}\label{lem:app-critical}
+Let $\mathfrak h$ have transverse Lagrangians. For every sufficiently small split addition $g$,
+$\mathrm{CS}_{\mathfrak h+g}$ and $\mathrm{CS}_{\mathfrak h}$ have the same critical points, with
+the same Hessians.
+\end{lemma}
+
+\begin{proof}
+Critical points correspond to intersection points of the Lagrangians
+\cite[Lemmas~2.45 and~2.47]{DFL}. For $g$ small the perturbed flat connections on $C_i$ are
+$C^1$-close to those for $\mathfrak h$, by the implicit function theorem. Those whose restrictions
+to $\Sigma_h$ are near a point of $L_{\mathfrak h_0}(C_0)\cap L_{\mathfrak h_1}(C_1)$ are near the
+corresponding perturbed flat connection, where $g_i$ vanishes; so near the intersection the
+Lagrangians do not change. Away from a neighbourhood of the intersection the two Lagrangians
+for $\mathfrak h$ are at positive distance, and so are those for $\mathfrak h+g$ when $g$ is
+small. The Hessians agree because $g$ vanishes near the critical points.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:dfl-regular}]
+The first statement is Lemma~\ref{lem:app-separated}(i) and~(ii). Let $\mathfrak h\in\mathcal U(F)$ have
+transverse Lagrangians; its critical points are nondegenerate \cite[Lemmas~2.45
+and~2.47]{DFL}. We follow \cite[proof of Proposition~6.8]{DFL}, by induction over the index
+$k\le7$ in the determinant-one theory, starting below the indices at which trajectories exist for
+energy reasons \cite[p.~79]{DFL}. Suppose a split addition $g_{k-1}$ has been found, as small as
+Lemma~\ref{lem:app-critical} requires, such that all trajectories of
+$\mathrm{CS}_{\mathfrak h+g_{k-1}}$ of index less than $k$ are regular. The non-regular
+trajectories of index $k$ form a compact set, by the induction hypothesis and $k\le7$
+\cite[p.~79]{DFL}, and so does the set of pairs $(\gamma,\psi)$ with $\gamma$ such a trajectory, up
+to translation, and $\psi$ a unit cokernel element \cite[p.~144]{Donaldson-book}. For each such pair
+Lemma~\ref{lem:dfl-detect}(iii), applied with $i=0$ to $\mathfrak h$ and $g_{k-1}$, gives a
+cylinder function with loops in $\operatorname{int}C_0^\circ$, vanishing near $X_0$, whose
+gradient pairs nontrivially with $\psi$. The pairing is continuous in $(\gamma,\psi)$ and
+invariant under translation, so finitely many such functions $g^{(1)},\dots,g^{(m)}$ suffice for
+all pairs. The linearization of the family of equations parametrized by
+$P_\#=\operatorname{span}\{g^{(j)}\}$ is then onto at every non-regular trajectory of index $k$,
+and the Sard--Smale theorem gives arbitrarily small $\rho\in P_\#$ for which all trajectories of
+index $k$ of $\mathrm{CS}_{\mathfrak h+g_{k-1}+\rho}$ are regular \cite[p.~80]{DFL},
+\cite[pp.~143--144]{Donaldson-book}. For $\rho$ small the trajectories of lower index stay regular,
+by compactness and openness, and $g_k=g_{k-1}+\rho$ is a split addition to which
+Lemma~\ref{lem:app-critical} applies. After the stage $k=7$ the primary data $\mathfrak h+g$,
+$g=g_7$, are DFL-regular and have the critical points of $\mathfrak h$. Using
+Lemma~\ref{lem:dfl-detect}(iii) with $i=1$ as well gives additions in both pieces. The additions
+have loops in $\operatorname{int}C_0^\circ\sqcup\operatorname{int}C_1^\circ$, and the metric data are
+never changed.
+
+Let $G$ be the family of all cylinder functions added. The set $\mathcal U'(t_*)$ of the paragraph
+after Proposition~\ref{prop:duality} is open, since it is defined by $C^1$-neighbourhoods of the
+Lagrangians, which depend continuously on the primary data; so $\mathfrak h+g\in\mathcal U'(t_*)$
+once $g$ is small enough, and each stage allows arbitrarily small additions. Then
+$\mathfrak h+g\in\mathcal U'(t_*)\cap\operatorname{span}(F\cup G)=\mathcal U(F\cup G)$.
+\end{proof}
+
 
 \begin{thebibliography}{99}
 
@@ -8305,6 +9784,12 @@ Birkh\"auser, Basel, 1995, 195--256.
 C.~B\"ar and W.~Ballmann, \emph{Guide to elliptic boundary value problems
 for Dirac-type operators}, in: Arbeitstagung Bonn 2013, Progr. Math.
 \textbf{319}, Birkh\"auser, 2016, 43--80; arXiv:1307.3021.
+
+\bibitem{Booss-ucp}
+B.~Boo{\ss}-Bavnbek, \emph{Unique continuation property for Dirac operators, revisited}, in:
+K.~Grove, I.~H.~Madsen and E.~K.~Pedersen (eds.), Geometry and Topology: Aarhus (1998), Contemp.
+Math. \textbf{258}, Amer. Math. Soc., Providence, RI, 2000, 21--32; lemma and remark numbers as in the
+preprint version, IMFUFA Tekst 367, Roskilde Universitetscenter, 1999, pp.~23--37.
 
 \bibitem{BW-squiggly}
 N.~Bottman and K.~Wehrheim, \emph{Gromov compactness for squiggly strip
@@ -8455,6 +9940,14 @@ Value Problems}, Lecture Notes in Math. \textbf{1607}, Springer, 1995.
 P.~Seidel, \emph{A long exact sequence for symplectic Floer cohomology},
 Topology \textbf{42} (2003), 1003--1063.
 
+\bibitem{Simcevic}
+T.~Sim\v{c}evi\'c, \emph{A Hardy space approach to Lagrangian Floer gluing},
+Ph.D. thesis, ETH Z\"urich, Diss. ETH No.~22118, 2014; arXiv:1410.5998.
+
+\bibitem{Taylor-PDE3}
+M.~E. Taylor, \emph{Partial Differential Equations III: Nonlinear Equations},
+2nd ed., Appl. Math. Sci. \textbf{117}, Springer, 2011.
+
 \bibitem{Wehrheim-lagrangian}
 K.~Wehrheim, \emph{Lagrangian boundary conditions for anti-self-dual
 instantons and the Atiyah--Floer conjecture}, J. Symplectic Geom.
@@ -8477,6 +9970,10 @@ Symplectic Geom. \textbf{13} (2015), 849--904.
 \bibitem{WW-quilt}
 K.~Wehrheim and C.~T. Woodward, \emph{Quilted Floer cohomology}, Geom.
 Topol. \textbf{14} (2010), 833--902.
+
+\bibitem{Wuebben-II}
+B.~J. Wuebben, \emph{Cobordism maps and Atiyah--Floer isomorphisms for framed
+instanton homology~II: integer coefficients}, in preparation.
 
 \bibitem{Xu}
 G.~Xu, \emph{A compactness theorem for $SO(3)$ anti-self-dual equation with

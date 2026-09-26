@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology
 
-Bernd Johannes Wuebben · 24 September 2026 · 113 pages
+Bernd Johannes Wuebben · 25 September 2026 · 136 pages
 
 - [Read the paper](cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -59,7 +59,9 @@ The analytic input consists of two new results for the mixed equation.
 - **Coefficients.** The theorem is stated over 𝔽₂. Over ℤ the symplectic
   counts would need coherent orientations, compared with the homology
   orientations of the gauge side. The homological algebra used to pass from
-  homology to chain homotopy also requires a field.
+  homology to chain homotopy also requires a field. Integer coefficients are
+  the subject of a sequel in preparation, whose aim is the main theorem over
+  ℤ, up to one sign for each cobordism.
 - **Objects.** The objects are connected and carry the trivial bundle on
   the original three-manifold. Disconnected objects, units and counits, and
   closed pairings are not treated.
@@ -68,9 +70,10 @@ The analytic input consists of two new results for the mixed equation.
   Where both constructions are defined, they coincide with the
   Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, as chain maps. At
   admissible presentations with such data, the main theorem therefore holds
-  for that isomorphism itself. Whether such presentations exist at the fixed
-  metric data used here is a transversality question left open in the
-  paper.
+  for that isomorphism itself. Such presentations exist at the fixed metric
+  data used here, without rescaling the metric (Appendix C): the
+  perturbations are built from holonomy traces of disjoint solid tori, and a
+  unique continuation argument on torus collars supplies the transversality.
 
 ## Build
 
