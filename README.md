@@ -54,12 +54,32 @@ are constructed by the Daemi–Fukaya–Lipyanskiy method with invariant
 perturbations. Where both constructions are defined, they coincide with the
 Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist at
 the fixed metric data used here (Appendix C). Integer coefficients are the
-subject of a sequel in preparation. The current version is dated
+subject of the conditional first draft of Paper II below. The current
+version is dated
 **25 September 2026** and has **136 pages**.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
 - [Paper overview and build instructions](af-cob-1/README.md)
+
+### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II: integer coefficients
+
+This sequel develops the signed cobordism comparison over ℤ for the
+geometric symplectic maps of Paper I. It transports orientations from the
+gauge theory and compares collapse, torus excision, reflection, and
+compression cups and caps. The resulting comparison allows one overall
+sign per cobordism.
+
+**Conditional first draft, 26 September 2026, 38 pages.** The theorem
+assumes uniform regularity on completed mixed domains, oriented torus
+completion, and determinant-one self-gluing, in addition to Paper I's
+analytic results. The gauge orientation convention is explicit;
+identification with homology-oriented integral instanton maps and with
+relative-spin quilt orientations remains open.
+
+- [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
+- [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
+- [Paper II overview, scope, and build instructions](af-cob-1/PAPER-II.md)
 
 ### One-bubble neighborhoods in SO(3)-monopole moduli spaces
 
@@ -96,6 +116,7 @@ latexmk -pdf point-operations-and-matching-line-bubbles.tex
 
 cd ../af-cob-1
 latexmk -pdf cobordism-maps-and-atiyah-floer-isomorphisms.tex
+latexmk -pdf cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex
 
 cd ../w-glue-1
 latexmk -pdf one-bubble-neighborhoods-of-seiberg-witten-strata.tex
