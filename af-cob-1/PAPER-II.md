@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-Bernd Johannes Wuebben · Revised 27 September 2026 · 44 pages · Conditional draft
+Bernd Johannes Wuebben · Revised 27 September 2026 · 50 pages · Conditional draft
 
 - [Read Paper II](cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
@@ -29,11 +29,13 @@ maps and with relative-spin quilt orientations is left open.
 ## Status and scope
 
 **This is a revised conditional draft.** The principal comparison assumes
-Paper I's analytic results and three additional hypotheses in Section 2:
+Paper I's analytic results and two additional hypotheses in Section 2:
 uniform regularity and compatible Fredholm realizations on completed
-mixed domains; an oriented mixed torus-completion comparison; and
-nonseparating determinant-one self-gluing. Verifying these hypotheses
-remains necessary for an unconditional integral theorem.
+mixed domains (Hypothesis 2.1), and an oriented mixed torus-completion
+comparison (Hypothesis 2.2). Verifying these hypotheses remains necessary
+for an unconditional integral theorem. Ordinary determinant-one
+self-gluing is proved separately as Proposition 2.3 for the stated
+regular excision data.
 
 The comparison uses the geometric symplectic maps of Paper I, with
 transported orientations and one overall sign for each cobordism.
@@ -52,18 +54,25 @@ counits, or closed pairings.
 
 ## Revision of 27 September 2026
 
+Former Hypothesis 2.3 is now Proposition 2.3. Its proof gives ordinary
+nonseparating determinant-one self-gluing for the regular excision data
+used in the paper, with the exact lifting multiplicity and graded trace.
+The parameter-orientation conversion and the unperturbed unit-cap
+calculation are explicit. The capped and inverse-excision comparisons
+use the same torus end data. These ordinary gauge-theoretic arguments do
+not discharge the two remaining mixed hypotheses.
+
 The auxiliary integer grading now uses the relative class after
 subtracting the endpoint action from symplectic area. For moved
 primary data, these are the actual critical actions, with signs fixed
-by the ordered Lagrangian pair. All three analytic hypotheses remain.
+by the ordered Lagrangian pair.
 
 The definition of an operator realization now applies a chart change
 to both the equation and gauge-fixing rows. The canonical determinant
 orientation assertion is restricted to regular zeros of index zero.
 The collapse hypothesis explicitly includes the affine gauge centers
 and moving stationary limits used in the contraction comparison.
-That additional analytic requirement remains an assumption; this
-revision does not remove any of the three hypotheses.
+That additional analytic requirement remains part of Hypothesis 2.1.
 
 ## Build
 

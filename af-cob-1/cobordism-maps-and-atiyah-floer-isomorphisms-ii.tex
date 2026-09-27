@@ -95,8 +95,8 @@ maps and with relative-spin quilt orientations is left open.
 \maketitle
 \begin{center}
 \small\textit{First draft. The principal comparison is conditional on
-Hypotheses~\ref{hyp:regularity}, \ref{hyp:completion}, and
-\ref{hyp:selfgluing}. Their verification remains part of the integral
+Hypotheses~\ref{hyp:regularity} and \ref{hyp:completion}.
+Their verification remains part of the integral
 extension.}
 \end{center}
 \setcounter{tocdepth}{1}
@@ -174,19 +174,21 @@ the constant reference configurations.
 \item An oriented torus-completion comparison, compatible with
 ordinary gluing and with the reference configurations used to
 normalize the vertex maps.
-\item Determinant-one self-gluing along the nonseparating hypersurface
-in the gauge excision cobordism, with its gluing multiplicities and
-determinant-line identifications.
 \end{enumerate}
-These are mathematical hypotheses, not assertions that follow merely
-from the existence of the corresponding mod-two count. In particular,
-the first draft does not claim an unconditional integral version of
-the mixed excision theorem.
+These hypotheses require more than the existence of the corresponding
+mod-two counts. In particular, the integral mixed excision theorem
+remains conditional.
+
+The ordinary determinant-one self-gluing used in gauge excision is
+established in Proposition~\ref{prop:selfgluing}, for the regular
+cut data constructed in its proof. This is an application of ordinary
+instanton compactification and gluing, with the lifting groups and
+orientation convention retained explicitly.
 
 \begin{thmletter}[Conditional integral comparison]\label{thm:A}
 Assume the analytic results of Paper~I and
-Hypotheses~\ref{hyp:regularity}, \ref{hyp:completion}, and
-\ref{hyp:selfgluing}. With the orientation and admissibility
+Hypotheses~\ref{hyp:regularity} and \ref{hyp:completion}.
+With the orientation and admissibility
 conventions of this paper, the mixed maps
 \[
  N_p:C_G(M,p)\longrightarrow\CF(M,p)
@@ -510,28 +512,44 @@ reflection invariance, or the cobordism comparison. It is precisely
 the extension of the torus-completion argument for which a complete
 integral verification is still needed.
 
-\begin{hypothesis}[Determinant-one self-gluing]\label{hyp:selfgluing}
-Let $X$ be a gauge cobordism occurring in the torus-excision
-construction, and cut it along its designated closed hypersurface
-$Y$. Suppose the limiting critical points on $Y$ are irreducible
-and nondegenerate and the data are translation invariant on the
-neck. For sufficiently large neck length the index-zero solutions
-on $X$ are obtained by gluing the matched determinant-one solutions
-on the cut cobordism. The fiber of this gluing has the lifting
-multiplicity described in Lemma~\ref{lem:gluing-multiplicity}.
-There are no additional index-zero limits. The determinant-line
-gluing uses the graded symmetry of Section~\ref{sec:algebra}; its
-sign depends only on the ordered end degrees and the fixed
-orientation choices. The corresponding one-dimensional families
-give the composition homotopies.
-\end{hypothesis}
+\begin{proposition}[Ordinary determinant-one self-gluing]
+\label{prop:selfgluing}
+Consider the nonsingular gauge cobordisms and designated closed cuts
+in the torus-excision construction of Section~\ref{sec:excision}.
+Fix the ordinary Floer data on the original ends, including their
+trajectory perturbations. The end critical sets are finite,
+irreducible and nondegenerate, the low-dimensional trajectories are
+regular, and the restricted lifting groups act freely on these sets.
+There are compatible data on the new torus ends and invariant
+secondary perturbations, supported in fixed compact end collars,
+for which the cut moduli spaces and the required parameter families
+are regular. For these choices the following hold.
+\begin{enumerate}[label=(\alph*)]
+\item For fixed regular cut data and all sufficiently large neck
+lengths, the index-zero solutions are exactly the gluings of matched
+determinant-one cut solutions on the prescribed bundle. The gluing
+fiber is the torsor of Lemma~\ref{lem:gluing-multiplicity}, and one
+neck threshold works for the entire count.
+\item Determinant gluing uses the graded symmetry of
+Section~\ref{sec:algebra}. Its signs are determined by the ordered
+degrees and the fixed orientation choices. In the nonseparating
+torus case the determinant-one count is twice the graded partial
+trace, before the larger lifting-group quotient is taken.
+\item Relative regular families give the integral composition and
+change-of-data homotopies. In a family the data parameter is shared
+by the pieces and occurs once in the linearization.
+\end{enumerate}
+\end{proposition}
 
-Ordinary composition and trace constructions in instanton Floer
-theory provide the models for this hypothesis
-\cite[Sections~5.2--5.3]{KM-unknot},
-\cite[Section~2.5]{KM-sutures}. Here its nonseparating form and
-the precise determinant-one multiplicity are part of the assumption.
-We do not infer this form from a trace in a quotient complex.
+The proof is in Section~\ref{sec:ordinary-selfgluing}. It applies the
+ordinary instanton compactification of~\cite[Section~3.9]{KM-unknot}
+and its signed self-gluing formula~\cite[Proposition~5.5]{KM-unknot}.
+Regular cut data are essential: nondegeneracy of the end critical
+points alone does not regularize a cut solution. Part~(c) is a
+statement about universal moduli spaces, rather than a pointwise
+gluing bijection in every fiber of a universally regular family.
+Neither mixed Hypothesis~\ref{hyp:regularity} nor
+Hypothesis~\ref{hyp:completion} is used in this proposition.
 
 \section{Complexes, graded signs and determinant lines}\label{sec:algebra}
 
@@ -1768,9 +1786,9 @@ free. Its transitivity follows by comparing the two
 gluing identifications on the two copies of $Y$.
 The Mayer--Vietoris sequence identifies $K_Y$ with the
 image of the connecting map from $H^0(Y;\ZZ/2)$.
-The analytic assertion that every required matched
-solution glues and that there are no others is
-Hypothesis~\ref{hyp:selfgluing}.
+The matching and analytic assertions needed for the excision
+cobordisms are proved below in
+Proposition~\ref{prop:selfgluing}.
 \end{proof}
 
 A finite lifting group acts freely on the solutions
@@ -1782,6 +1800,389 @@ which is the identity on an end is the identity
 everywhere on a connected cobordism. The almost-complex
 orientation construction preserves signs under the
 whole group. Thus~\eqref{eq:orbit-count} applies.
+
+\subsection{Ordinary self-gluing with regular cut data}
+\label{sec:ordinary-selfgluing}
+
+We prove Proposition~\ref{prop:selfgluing} using ordinary instanton
+theory. Write $\mathcal E$ for the cobordism defining $\mathsf E$ and
+put $V=\mathcal E\cup_{Z'}\overline{\mathcal E}$. The local polygon
+description gives a nonseparating cut $\Sigma=T^2\times\gamma$;
+its complement $V^\circ$ is connected and retains the original
+$Z$ ends. The bundle is odd on the torus fiber. The other composite
+has a separating torus cut. All components of the cobordisms that
+we regularize have an original cylindrical end; the standard caps
+are kept fixed. The geometric cap comparison and the larger lifting
+groups will be described in the next subsection.
+
+\begin{proof}[Proof of Proposition~\ref{prop:selfgluing}]
+\emph{Perturbations and relative regularity.}
+Keep the entire ordinary end functional fixed, including the
+trajectory perturbation in $\mathrm{CS}_h+f$ from Paper~I.
+Only the secondary cobordism perturbations vary. On each new
+three-torus use a fixed flat product metric and the unperturbed
+equation, throughout all the comparison families below. The odd
+bundle has two determinant-one flat critical points, both acyclic.
+The class $\PD[T^2\times\{\mathrm{point}\}]$ interchanges them;
+their relative grading is four modulo eight
+\cite[Proposition~5.2 and Lemma~5.3]{KM-unknot}. Thus the critical
+points have the same parity and the required lifting action is free.
+
+Every nonconstant unperturbed torus trajectory has full index
+at least four. Indeed, the two end Hessians are conjugate by an
+adjoint gauge transformation, so their spectral correction terms
+agree. The cylinder index and energy are $8\kappa$ and
+$8\pi^2\kappa$, respectively, with $\kappa\in\frac12\ZZ$.
+Positive energy therefore implies index at least four. The required
+compactifications have total dimension at most two. After joint
+regularization of their cut pieces, a torus trajectory of index at
+least four would leave a negative augmented index for the remaining
+pieces, counting the data parameter once. Such a stratum is empty.
+Consequently no torus trajectory perturbation is needed in this
+dimension range. We do not assert regularity of the higher-index
+unperturbed torus trajectories. The caps use these same unperturbed
+end data and have no secondary perturbation.
+
+Choose a product collar joining each component to an autonomous
+end, and a compact interval $J$ in that collar. The metric is fixed
+there, including in parameter families. If $F_Y$ is the image on
+the collar cross-section $Y$ of the allowed lifting group, use
+secondary functionals
+\begin{equation}\label{eq:ordinary-secondary}
+ q_s(B)=\sum_\ell c_\ell\psi_\ell(s)h_\ell(B),
+ \qquad \operatorname{supp}\psi_\ell\subset J,
+\end{equation}
+where the $h_\ell$ are $F_Y$-invariant holonomy cylinder functions
+on $Y$. Their holonomy loops lie in a single slice. Elements of
+the kernel of the restriction to $F_Y$ impose no further condition.
+Use a countable dense collection of profiles and cylinder functions,
+with a weighted Banach completion controlling all required smooth
+norms. The holonomy estimates of
+\cite[Propositions~3.7 and~3.15]{KM-instantons} persist: time
+derivatives multiply the corresponding profile bounds, and the
+derivative in $B$ is bounded on $L^2$ on bounded sets of data.
+
+This allows sums of compact time profiles in the secondary
+perturbation construction of~\cite[Section~3.7]{KM-unknot}.
+For the compactness estimate, include the fixed primary cutoff
+terms in $q_s$. In a consistent gradient normalization,
+\begin{equation}\label{eq:ordinary-energy}
+ \frac{d}{ds}(\mathrm{CS}+q_s)(B(s))
+ =-\|\dot B(s)\|^2+\partial_s q_s(B(s)).
+\end{equation}
+The additional integral is bounded by the $L^1$ norm of the time
+derivatives of the coefficients, uniformly under stretching.
+Its support remains compact. The spatial holonomy estimates,
+local regularity and autonomous middle-neck equation are the same
+as in the ordinary broken-metric construction. No perturbation
+depends on connections on both sides of a cut.
+
+We give the transversality argument because averaging a generic
+perturbation does not by itself prove invariant regularity.
+First, slice continuation holds for these time-dependent collar
+equations. On a compact slab write the equation for a difference
+or an adjoint field as
+\[
+ (\partial_s+H(s)+K(s))u=0.
+\]
+Here $H$ is formally self-adjoint on a common smooth domain,
+$H'$ is $L^2$-bounded and $K$ is $L^2$-bounded. For the one-form
+equation, $H=\pm *d_{B(s)}$; the connection derivative is order
+zero. The difference of two nonlinear holonomy terms has this
+bounded form by integration of their derivatives along the segment
+between the two connections. For a compactly supported smooth $v$
+and a concave weight $\varphi$ with $-\varphi''\ge c>0$,
+\begin{align*}
+ \|(\partial_s+H+\lambda\varphi')v\|^2
+ &=\|v'\|^2+\|(H+\lambda\varphi')v\|^2
+   -\int\langle v,H'v\rangle
+   -\lambda\int\varphi''\|v\|^2.
+\end{align*}
+Absorbing $K$ gives, for large $\lambda$,
+\begin{equation}\label{eq:ordinary-continuation}
+ (c\lambda-C)\|e^{-\lambda\varphi}u\|^2
+ \le 2\|e^{-\lambda\varphi}(\partial_s+H+K)u\|^2.
+\end{equation}
+Choose $\varphi$ increasing on a short slab. If a solution vanishes
+before a slice, cut it off farther into the slab; the cutoff error
+has strictly larger $\varphi$ than a neighborhood of the slice.
+Letting $\lambda$ tend to infinity proves vanishing in that
+neighborhood. Reversing $s$ proves the opposite continuation.
+Vanishing on a whole slice suffices, since the equation then makes
+all time derivatives vanish there and extension by zero is smooth.
+This estimate does not require ellipticity of $*d_B$ on all
+one-forms.
+
+Suppose an allowed automorphism fixes a slice of a solution. Extend
+it constantly in temporal gauge. Invariance and slice continuation
+make it fix the entire end and its limiting critical point.
+Freeness of $F_Y$ at that point forces its lifting class to vanish;
+irreducibility then makes its even lift central. Thus each collar
+slice has a free $F_Y$ orbit and trivial effective even stabilizer.
+The cylinder-function density in the proof of
+\cite[Proposition~3.10]{KM-instantons} detects every nonzero smooth
+direction transverse to gauge there. It also does so invariantly:
+take a small finite-dimensional slice through the direction and
+its finitely many disjoint translates, prescribe equivariant
+first jets on their union, approximate by cylinder functions, and
+average. Freeness ensures that the prescribed derivative survives.
+
+Let $L_A$ be the linearized perturbed ASD equation. A cokernel
+element for $(d_A^*,L_A)$ is a pair $(\xi,b)$, with $b$ self-dual.
+Gauge equivariance at a solution gives $L_A d_A=0$, hence
+$d_A^*d_A\xi=0$. The $L^2$ end condition and integration by parts
+give $\xi=0$. On the collar write $b$ using a one-form $y(s)$.
+The remaining adjoint equations give
+\[
+ d_{B(s)}^*y=0,\qquad
+ -\partial_s y+*d_{B(s)}y+K(s)y=0.
+\]
+If this cokernel annihilates every secondary variation, then
+\[
+ \int_J\psi(s)\langle y(s),\nabla h(B(s))\rangle\,ds=0
+\]
+for every time profile and invariant cylinder function. Time
+localization, invariant density and the Coulomb equation imply
+$y=0$ on $J$. Equation~\eqref{eq:ordinary-continuation} propagates
+this to the unperturbed core. Local unique continuation for the
+ordinary ASD adjoint gives vanishing on the connected core, and
+slice continuation handles its other collars. This proves
+surjectivity of the universal linearization. All nonlocal terms
+in this argument are supported on product end collars; spatial
+unique continuation through nonlocal interior terms is not used.
+
+Sard--Smale now supplies invariant regular data. For a broken
+configuration with pieces indexed by $i$ and one parameter $b\in B$,
+the joint linearization is
+\begin{equation}\label{eq:ordinary-joint-family}
+ ((\xi_i)_i,\dot b)\longmapsto
+       (D_i\xi_i+\partial_b\mathcal F_i\dot b)_i.
+\end{equation}
+Independent secondary variations on the pieces kill every component
+of a joint cokernel by the preceding argument. There is only one
+$T_bB$ summand. Choose regular data on fixed faces first, extend over
+their collars, and use parameter-dependent variations supported
+away from them. Intersect the residual sets for the finitely many
+cut patterns and countably many relative classes. Fixed regular
+caps require no variation. This gives the relative regular families
+of~\cite[Proposition~3.10 and Section~3.9]{KM-unknot} in the invariant
+class just constructed.
+
+\emph{Matching on the prescribed bundle and finiteness.}
+An even gauge transformation is a section of the bundle with fiber
+$\SU(2)$ and conjugation structure action; no lift of the underlying
+$\SO(3)$ bundle is required. The fiber is 2-connected, and
+conjugation acts trivially on $\pi_3$. If gauge values are prescribed
+on boundary components $B_0$ of a compact cobordism $W$, the sole
+extension obstruction is in
+\[
+ H^4(W,B_0;\ZZ)\cong H_0(W,\partial W\setminus B_0;\ZZ).
+\]
+It vanishes when every component has an unprescribed boundary end.
+Apply this to the two new boundaries of $V^\circ$, leaving its
+original $Z$ ends free. Equal critical classes can therefore be
+represented by equal connections under the prescribed gluing
+identification, with allowed even changes at the original ends.
+They glue on the specified global bundle. For capping, keep the
+cap representatives fixed and make the changes on $V^\circ$.
+
+Components of the even gauge group on a connected closed
+three-manifold are classified by $H^3(Y;\ZZ)=\ZZ$. On a connected
+$W$ the obstruction for prescriptions on its whole boundary is
+the signed sum
+\[
+ \bigoplus_{Y\subset\partial W}H^3(Y;\ZZ)
+      \longrightarrow H^4(W,\partial W;\ZZ)\cong\ZZ.
+\]
+It is onto, with kernel the extendible prescriptions. Thus relative
+classes for a fixed tuple of critical end classes form a
+$\ZZ$-torsor, whose generator changes the ASD index by eight.
+Every such class can be represented on the fixed bundle in this
+nonsingular setting~\cite[Section~3.7]{KM-unknot}. Central
+stabilizers introduce no additional degree. A fixed index and tuple
+therefore allow at most one relative class. The critical sets are
+finite. In a regular family, each component index is bounded below
+by minus the base dimension; at fixed total dimension this leaves
+finitely many index allocations. The shared parameter is counted
+once in the total dimension.
+
+The final secondary data may be finite sums in
+\eqref{eq:ordinary-secondary}. On a bounded neighborhood of data,
+\eqref{eq:ordinary-energy} and the ordinary index-energy relation
+bound the index below. The preceding class calculation makes the
+bounded index ranges finite. The regular low-dimensional
+compactifications have regular gluing neighborhoods at their broken
+strata. Surjectivity is open on their finite union: a sequence of
+nonregular solutions for convergent data would limit either to a
+regular point or to a regular broken configuration, contradicting
+the local estimate in either case. Finite sums are dense, also
+for smooth coefficient families on a compact base. Approximate
+within this open set, relative to the prescribed face collars.
+This preserves the original end equations and all supports.
+
+\emph{Local gluing and exhaustion.}
+At an irreducible nondegenerate critical connection $\beta$, the
+extended scalar-plus-one-form Hessian $B_\beta$ is invertible.
+Its spectral gap gives a uniform inverse for
+$\partial_s+B_\beta$ on the full cylinder. A regular index-zero
+cut solution $A$ has an invertible full operator $D_A$.
+For self-gluing, patch its inverse on the connected cut piece,
+including both stubs, with the cylinder inverse. Cutoffs with
+derivatives $O(T^{-1})$ give an approximate right inverse $R_T$ and,
+separately, the estimate
+\[
+ \|D_{A_T}R_T-1\|\le C(T^{-1}+\eta_T),\qquad
+ \|u\|_{H^1}\le C\|D_{A_T}u\|_{L^2}
+                    +C(T^{-1}+\eta_T)\|u\|_{H^1},
+ \quad \eta_T\longrightarrow0.
+\]
+There is one copy of $D_A$, rather than one for each stub.
+Compactly supported secondary terms and slice-local primary terms
+commute with these cutoffs. The full inverse is uniformly bounded
+for large $T$. Exponential pregluing error and the uniform quadratic
+estimate in a sufficiently high Sobolev norm give a unique nearby
+solution in the Coulomb slice. Stabilization gives the same charts
+and determinant maps for regular universal families.
+
+Use the broken-metric compactification argument of
+\cite[Section~3.9]{KM-unknot}, with empty singular locus.
+Its definition permits a nonseparating cut, and the odd torus
+satisfies the required non-integral condition. On the new torus
+ends we use the index exclusion above in place of regularity of
+all trajectories: any nonconstant torus trajectory removes at
+least four from the index available to the regular joint cut
+operator. This remains impossible in the two-parameter corner
+families. The retained strata have regular original-end
+trajectories, regular joint cut operators and acyclic matching
+limits, exactly the inputs to the local compactification and
+gluing arguments. In total dimension
+at most one, the cut solutions form the broken-metric boundary;
+further neck breaking has higher codimension, and bubbling is
+excluded by low-dimensional compactness. The local gluing charts
+give its collars. Finiteness of the union over relative classes
+then gives one neck threshold: any additional solutions at lengths
+tending to infinity would converge to a boundary point and hence
+belong to its gluing collar.
+
+For disjoint cuts use the multi-parameter corner model; the
+two-parameter index-zero family has dimension two, still below the
+source's bubbling threshold. A simultaneous stretching of two
+components is the diagonal in the two gluing
+parameters; the product gluing collars restrict to its collar.
+Equivalently the two-edge composition cycle is obtained by one
+separating gluing followed by one self-gluing. The cuts $\Sigma$
+and $Z'$ intersect, so their comparison instead joins finite
+stretching parameters by a relative regular path. It does not
+stretch intersecting cuts simultaneously.
+
+\emph{The lifting fiber.}
+Compare the even lifts on the components of a cut manifold. Their
+values at paired ends agree up to central signs. Changing a lift
+by the center on one component changes the incident signs by the
+graph coboundary. The remaining choices form the first cohomology
+of the cut graph over $\FF$, identified with $K_Y$ by
+Mayer--Vietoris. These classes have actual gauge representatives.
+For a connected cut, choose a unit section $n$ of the adjoint
+bundle on $Y$ and, on its normal collar, use the adjoint of
+\[
+ \cos(\pi t)+\sin(\pi t)n,\qquad 0\le t\le1,
+\]
+with $t$ constant near the endpoints. The section exists because
+the Euler class of an oriented rank-three bundle is 2-torsion
+and $H^3(Y;\ZZ)$ is torsion-free. The adjoint transformation is
+identity at both ends, while its lift runs from $+1$ to $-1$;
+its lifting class is $\PD[Y]$.
+
+The action is transitive by comparison of the lifts. It is free:
+a fixed solution would give a parallel automorphism, even on an
+original irreducible end, hence identity there and everywhere.
+The almost-complex determinant orientations preserve this action.
+Thus the multiplicities are two for the nonseparating $\Sigma$
+cut and the two-edge $Z'$ composition cycle, and one for a
+separating cut or a cap tree.
+
+\emph{Trace signs and homotopies.}
+First use the induced almost-complex structures at the ends, with
+the orientation torsors of~\cite[Section~5.1]{KM-unknot}.
+Apply its Proposition~5.5 with the enlarged group exactly
+$K_\Sigma=\langle\PD[\Sigma]\rangle$. This group restricts trivially
+to $V^\circ$, to $\Sigma$ and to the original ends. The trace
+therefore uses the full determinant-one complex on $\Sigma$.
+The free orientation-preserving action just proved recovers the
+raw count as twice that trace. The larger quotient is taken only
+after this step.
+
+The alternating sign here is an analytic determinant sign, as in
+the proof of~\cite[Proposition~5.5]{KM-unknot}. In the periodic
+model $\partial_s+B$, a simple real eigenvalue crossing changes
+the real zero Fourier mode once; the nonzero modes occur in
+complex pairs. The sign is spectral-flow parity, hence the parity
+of the critical generator, with one fixed reference normalization.
+Excision localizes the comparison to the neck. The cut operator
+and any stabilization occur on both sides; continuous changes of
+cutoffs introduce no further sign. Internal basis changes cancel,
+and the index-eight change of relative class preserves the complex
+normalization. This explains why there is no independent sign
+choice for each generator or relative class.
+
+With the traced factor last, write $F_{jj}$ for the diagonal block
+of a degree-$f$ map $F$ on a tensor end with torus basis $g_j$.
+The right tensor convention gives
+\begin{equation}\label{eq:ordinary-right-trace}
+ \operatorname{Tr}_R(F)=\sum_j(-1)^{(f+1)|g_j|}F_{jj}.
+\end{equation}
+For $f=0$ this is the alternating trace just normalized. Moving
+the traced line past the degree-$f$ map supplies the additional
+$(-1)^{f|g_j|}$. Conjugation by the tensor isomorphism $T$ of
+Section~\ref{sec:algebra} gives the same formula algebraically.
+The trace commutes with the Hom differential and satisfies
+\[
+ \operatorname{Tr}_R((U\otimes_R1)F(V\otimes_R1))
+       =U\operatorname{Tr}_R(F)V.
+\]
+Consequently the external conversion maps can be inserted with
+their actual degrees. Both torus generators have one parity $p$,
+so comparison with unit cap coefficients $u,v\in\{1,-1\}$ has
+factor $(-1)^{(f+1)p}/(uv)$, up to the fixed overall orientation.
+Interior conversions retain Convention~\ref{conv:interior-line}.
+
+Finally use the parameter-first orientation of
+Section~\ref{sec:determinants}, with outward-normal-first boundary
+orientations. The source convention in
+\cite[Section~3.9]{KM-unknot} is fiber-first. For an $r$-parameter
+family the permutation of its determinant factors contributes
+\[
+ (-1)^{r\operatorname{ind}D}.
+\]
+For a zero-dimensional one-parameter count the vertical index
+is $-1$, so this changes the sign of the count. For the universal
+one-dimensional space the vertical index is zero, so its orientation
+and its endpoint maps are unchanged. For two parameters the
+permutation sign is one; boundary faces use the same one-parameter
+rule.
+
+We include the separate generator-order conversion. At the induced
+end gradings the unconverted cobordism maps $F_i$ are even. Write
+$d_0$ and $H_0$ for the source differential and its fiber-first
+homotopy count, so its oriented boundary formula is
+$F_1-F_0=d_0H_0+H_0d_0$. Placing an odd trajectory determinant
+after its input generator changes $d_0$ to $d=d_0\eps$ and
+$H_0$ to $H_0\eps$. The parameter-first change contributes the
+additional minus sign, so the homotopy operator in our convention is
+\[
+ K=-H_0\eps,\qquad
+ dK+Kd=d_0H_0+H_0d_0=F_1-F_0.
+\]
+Here $\eps$ is the parity operator on the appropriate source
+complex; the calculation uses that $d_0$ and $H_0$ are odd.
+On disconnected ends the whole ordered input generator line gives
+the tensor rule~\eqref{eq:tensor}. Thus the parameterized boundary
+formula agrees with~\eqref{eq:family-boundary}. Arbitrary external
+conversions, including odd ones, are then governed by the Hom
+Leibniz rule. All these choices are uniform across matrix entries.
+This proves all three assertions in the stated orientation
+convention.
+\end{proof}
 
 \subsection{The capped comparison}
 Let $V=\mathcal E\cup_{Z'}\overline{\mathcal E}$ be
@@ -1848,17 +2249,46 @@ off-diagonal block with $\Delta(s\alpha,\beta)$.
 Thus, after summing over endpoint lifts, diagonal
 and off-diagonal blocks have the same sum.
 
-Each cap has one regular flat solution in its
-specified bundle and therefore invariant $\pm g_1$
-(or the corresponding dual generator). The odd
-bundle on $T^2$ has no infinitesimal flat deformations,
-which gives regularity. The index-energy formula
-excludes a nonflat solution of index zero. Hence
-the cap coefficient is a unit over $\ZZ$.
+We verify the cap count for the unperturbed torus data chosen in
+Proposition~\ref{prop:selfgluing}. Complete $T^2\times D^2$ by a
+product cylindrical end, giving $T^2\times S$, where $S$ is a
+complete disk with a cylindrical end. Give $T^2$ a flat metric
+and use a product metric on the cap. Let $A_0$ be the pullback
+of the odd flat connection on $T^2$. Its adjoint local system
+on $T^2$ is acyclic: it splits into the three nontrivial real
+sign local systems. The torus Hodge Laplacian therefore has a
+positive lower bound in every degree. The product Hodge Laplacian
+on $T^2\times S$ has the same lower bound, since its two summands
+are nonnegative.
+
+For the full flat operator $D_0=d_{A_0}^*\oplus\sqrt2d_{A_0}^+$,
+the identities
+\[
+ D_0^*D_0=\Delta_{A_0,1},\qquad
+ D_0D_0^*=\Delta_{A_0,0}\oplus\Delta_{A_0,2}^+
+\]
+show that its kernel and cokernel vanish. Elliptic estimates and
+the positive gap give an inverse on the cylindrical Sobolev
+spaces. Thus the flat cap has index zero and is regular.
+
+Call its boundary lift $g_1$. The other lift $g_2$ has relative
+grading four modulo eight, whereas changing a relative class
+at a fixed lift changes the cap index by eight. Hence an
+index-zero cap can approach only $g_1$, in the zero-charge class
+of $A_0$. Its unperturbed ASD energy is $8\pi^2\kappa=0$,
+so it is flat. The flat odd torus connection has a unique flat
+extension across the disk in the prescribed bundle: the disk
+meridian is contractible and $\pi_1(T^2\times S)=\pi_1(T^2)$.
+The two boundary lifts distinguish whether the meridional
+determinant-one lift extends; only $g_1$ does. Consequently there
+is exactly one determinant-one cap class. Its signed coefficient
+is a unit, and the reversed cap gives the corresponding dual
+unit. This calculation is at the full two-generator torus
+complex, before any lifting-group quotient.
 
 \begin{proposition}\label{prop:capped}
-Under Hypothesis~\ref{hyp:selfgluing}, the quotient
-counts for $V$ and $V'$ have the same absolute
+For the regular data of Proposition~\ref{prop:selfgluing}, the
+quotient counts for $V$ and $V'$ have the same absolute
 multiplicity. In each fixed degree they agree up
 to the determinant-gluing sign.
 \end{proposition}
@@ -1881,8 +2311,8 @@ group has order $2$. The result is
 \]
 If the second cap selects $g_2$, the symmetry of
 the off-diagonal block gives the same sum. The
-orientation signs are those in the gluing
-hypothesis. All group actions preserve the
+orientation signs are those in
+Proposition~\ref{prop:selfgluing}. All group actions preserve the
 orientations, so no cancellation occurs inside
 an orbit. The two numerical factors agree.
 \end{proof}
@@ -3689,13 +4119,11 @@ slice and weight estimates,
 and continuity of the
 orientation identifications
 in the torus completion.
-The nonseparating self-gluing
-statement must also be verified
-with the lifting groups and
-ordered determinant lines used
-here. These steps are separate
-from the orbit-count algebra in
-Proposition~\ref{prop:capped}.
+The ordinary nonseparating self-gluing is supplied by
+Proposition~\ref{prop:selfgluing}; its regularization uses only
+collar-supported ordinary gauge perturbations. It supplies neither
+regularity on a completed mixed domain nor the oriented mixed
+completion comparison.
 
 Several further extensions ask
 different questions. Exact
@@ -3936,27 +4364,14 @@ length proves none of
 these uniform assertions
 by itself.
 
-For the gauge self-gluing,
-one must additionally check
-that the compactified
-one-dimensional stretching
-family has no omitted
-end, and that the kernel
-of the restriction of
-lifting classes is exactly
-the gluing fiber in
-Lemma~\ref{lem:gluing-multiplicity}.
-The finite group
-calculation in
-Section~\ref{sec:excision}
-then gives integral unit
-multiplicity. Keeping these
-analytic statements
-separate makes clear what
-is assumed by the first
-draft and what the
-orientation algebra proves
-from them.
+For ordinary gauge self-gluing,
+Proposition~\ref{prop:selfgluing} applies the low-dimensional
+instanton compactification, verifies matching on the prescribed
+bundle and identifies the lifting fiber. Its orientation comparison
+first traces over the full determinant-one torus complex and then
+takes the larger quotient. Together with the finite group calculation
+in Section~\ref{sec:excision}, this gives integral unit multiplicity.
+The two mixed hypotheses remain separate analytic inputs.
 
 \section{A sign calculation for projective composition}\label{app:signs}
 
@@ -4047,6 +4462,11 @@ Cambridge Tracts in Math. \textbf{147}, Cambridge Univ. Press, 2002.
 A.~Floer and H.~Hofer, \emph{Coherent orientations for periodic
 orbit problems in symplectic geometry}, Math. Z. \textbf{212}
 (1993), 13--38.
+
+\bibitem{KM-instantons}
+P.~B. Kronheimer and T.~S. Mrowka,
+\emph{Knot homology groups from instantons},
+J. Topol. \textbf{4} (2011), 835--918; arXiv:0806.1053v2.
 
 \bibitem{KM-unknot}
 P.~B. Kronheimer and T.~S. Mrowka,
