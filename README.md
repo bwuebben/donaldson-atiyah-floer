@@ -55,11 +55,13 @@ perturbations. Where both constructions are defined, they coincide with the
 Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist at
 the fixed metric data used here (Appendix C). Integer coefficients are the
 subject of the conditional draft of Paper II below. The current
-manuscript is dated **25 September 2026**, revised **26 September 2026**,
-and has **144 pages**. The revision expands the collapse and boundary
+manuscript is dated **25 September 2026**, revised **27 September 2026**,
+and has **145 pages**. The revision expands the collapse and boundary
 estimates and the construction of invariant regular data. The torus
 gluing argument includes corrected stationary tangent lifts, explicit
-boundary-domain transport and a direct scalar Neumann estimate.
+boundary-domain transport and a direct scalar Neumann estimate. The
+energy identities and auxiliary integer gradings retain the full
+normalization, endpoint actions and ordered unit-cap bounds.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -82,7 +84,8 @@ relative-spin quilt orientations remains open. The current revision
 corrects the full operator realization and explicitly includes the
 affine-center comparison in the collapse hypothesis. The determinant
 comparison and folding and capping diagrams retain that conditional
-scope.
+scope. The auxiliary grading now distinguishes its relative class from
+total symplectic area, with the actual endpoint action subtracted.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)

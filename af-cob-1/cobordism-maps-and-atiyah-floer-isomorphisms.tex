@@ -682,8 +682,9 @@ For $h\ge1$ let $\Sigma_h$ be a closed oriented surface of genus $h$ and
 $F_h\to\Sigma_h$ the $\SO(3)$ bundle with $w_2\ne0$. Let $\Msf_h$ be the
 moduli space of flat connections on $F_h$ modulo determinant-one
 automorphisms. It is a closed, simply connected, monotone symplectic
-manifold of dimension $6h-6$, with $\pi_2(\Msf_h)=\ZZ$ and minimal Chern
-number $2$ \cite{AB, Newstead}. Its tangent space at $[\alpha]$ is
+manifold of dimension $6h-6$. For $h\ge2$ it has
+$\pi_2(\Msf_h)=\ZZ$ and minimal Chern number $2$; for $h=1$ it is
+a point \cite{AB, Newstead}. Its tangent space at $[\alpha]$ is
 $H^1(\Sigma_h;\ad\alpha)$.
 
 \begin{convention}[orientation]\label{conv:orientation}
@@ -1099,11 +1100,15 @@ presentation.
 \cite[Proposition~3.20]{DFL} (Section~\ref{subsec:energy-convention}). For a solution
 of~\eqref{eq:mixed} in the homotopy class of $(A,u)$, the analytic energy equals
 \[
-8\pi^2\kappa(A,u)+2\|\eta(A)\|^2_{L^2(X)}+\int\chi'(s)f(A_s)\,ds ,
+8\pi^2\kappa(A,u)+2\|\eta(A)\|^2_{L^2(X)}+2\int\chi'(s)f(A_s)\,ds ,
 \]
 as in \cite[(3.24)]{DFL} with the additional end term, whose absolute value is at most
-$\sup|f|$, since $\int|\chi'|=1$ and $f$ vanishes at the critical point at the
-gauge end. The index is
+$2\sup|f|$, since $\int|\chi'|=1$ and $f$ vanishes at the critical point at the
+gauge end. Indeed, if $K=F_A+*_3\nabla\mathfrak h$ and
+$P=\chi*_3\nabla f$, then $P\wedge P=0$ and, with the inner product
+$-\tr$, the cross term is
+$2\int\tr(K\wedge P)=-2\int\chi\,\frac{d}{ds}f(A_s)\,ds
+=2\int\chi'f(A_s)\,ds$. The index is
 $\ind D_{(A,u)}=8\kappa(A,u)+\mathfrak c(x)-\mathfrak c(a)$; the \emph{asymptotic labels} of a configuration are the
 critical points, intersection points or components of critical manifolds to which it
 converges at its ends. For two configurations with the same labels,
@@ -1131,8 +1136,8 @@ $\partial_SN_p=N_p\partial_G$.
 $|\mathfrak c(a)-\mathfrak c(x)|/8$. An index-zero solution from $a$ to $x$ has
 $\kappa=(\mathfrak c(a)-\mathfrak c(x))/8$ by the index formula, and since its analytic
 energy is nonnegative,
-$8\pi^2\kappa\ge-\sup|f|-2\sup_A\|\eta(A)\|^2_{L^2(X)}$. So if
-$\sup|f|+2\sup_A\|\eta(A)\|^2_{L^2(X)}<8\pi^2\kappa_+$, then $\kappa\ge0$, hence
+$8\pi^2\kappa\ge-2\sup|f|-2\sup_A\|\eta(A)\|^2_{L^2(X)}$. So if
+$2\sup|f|+2\sup_A\|\eta(A)\|^2_{L^2(X)}<8\pi^2\kappa_+$, then $\kappa\ge0$, hence
 $\mathfrak c(a)\ge\mathfrak c(x)$, with equality only if $\kappa=0$. The constant pairs of
 \cite[Section~3.2]{DFL} are regular by \cite[Proposition~3.19]{DFL}, so by the implicit
 function theorem, for small $(f,\eta)$, a fixed neighbourhood of each constant pair contains
@@ -1140,7 +1145,7 @@ exactly one solution, of index zero and with $\kappa=0$. The second threshold, b
 these are all the index-zero solutions with $\kappa=0$, is obtained by contradiction. Suppose
 that for data $(f_n,\eta_n)\to0$ there are index-zero solutions $c_n$ with $\kappa=0$ outside
 these neighbourhoods. Their analytic energies are at most
-$\sup|f_n|+2\sup_A\|\eta_n(A)\|^2_{L^2(X)}\to0$. A nonconstant trajectory of
+$2\sup|f_n|+2\sup_A\|\eta_n(A)\|^2_{L^2(X)}\to0$. A nonconstant trajectory of
 $\mathrm{CS}_{\mathfrak h}+f_n$ between critical points, or a nonconstant holomorphic strip, has
 energy bounded below independently of $n$, because $f_n$ vanishes near the critical set; so no
 energy escapes along the ends, and a subsequence of $(c_n)$ converges to a configuration of zero
@@ -1277,17 +1282,18 @@ energy of a solution is $8\pi^2\kappa$ plus the secondary terms
 \cite[(3.24)]{DFL}. For two configurations with the same asymptotic labels
 $2(\kappa-\kappa')\in\ZZ$ \cite[Lemma~3.15]{DFL}; we write $\kappa_0$ for the
 resulting coset representative.
-Thus the smallest change of index between homotopy classes with the same
-labels is $4$. In the gauge-theoretic normalization used by some
-authors, $\kappa=\tfrac1{8\pi^2}\int\tr(F_A\wedge F_A)$ plus the
-area term; a unit of $2\kappa$ corresponds to an $\SO(3)$ instanton of
-energy $\int|F_A|^2=2\pi^2$ with the inner product $-\tfrac12\tr$ on
-$\mathfrak{su}(2)$, or $4\pi^2$ with the inner product $-\tr$. We fix the
-inner product $-\tr$ in Convention~\ref{conv:orientation}. The half-unit
-occurs because the framed quotient uses the full $\SO(3)$ automorphism
-group through $\phi$; for the determinant-one group alone the minimal
-step would be twice as large, which is harmless for every argument
-below.
+Thus every nonzero index difference between classes with the same
+labels has absolute value at least $4$. We use only this divisibility,
+without asserting that every allowed set of classes realizes the
+smallest possible period. In this normalization a change
+$\Delta\kappa=\tfrac12$ changes $8\pi^2\kappa$ by $4\pi^2$.
+For a pure strip the topological energy is
+$\kappa(u)=\frac1{4\pi^2}\int u^*\omega$, since its full Dirichlet
+energy is twice its symplectic area
+\cite[Proposition~4.69]{DFL}. In particular, a positive generator
+sphere, when $h\ge2$, contributes $\Delta\kappa=\tfrac12$ and index $4$ already
+in the determinant-one surface moduli space. No enlargement of
+the gauge group is needed for this sphere contribution.
 
 %======================================================================
 \section{Handle decompositions and bundles}\label{sec:handles}
@@ -2770,8 +2776,10 @@ Proposition~\ref{prop:caps} the cap indices are equal, so
 $\ind D_U=\ind D_V=c+8\kappa_0(V)=c+8\kappa(U)$ by~\ref{hyp:X5}.
 
 For a solution, the analytic energy equals $8\pi^2\kappa$ plus
-$2\|\eta\|^2\le2b^2$ plus the term $\int\chi'f$ of the end perturbations,
-bounded by $\sup|f|$; the first two terms are \cite[(3.24)]{DFL}, and the term $\int\chi'f$ is estimated as in the proof of Theorem~\ref{thm:mixed-iso}.
+$2\|\eta\|^2\le2b^2$ plus the terms $2\int\chi'f$ of the end perturbations,
+bounded by twice the sum of their $C^0$ norms; the first two terms are
+\cite[(3.24)]{DFL}, and the end terms are estimated as in the proof
+of Theorem~\ref{thm:mixed-iso}.
 The bound follows.
 \end{proof}
 
@@ -5460,6 +5468,24 @@ alone. The critical points are the $2^r$ points $a_S$ with $b_j=-1$ for
 $j\in S$ and $b_j=1$ otherwise; $a_S$ has Morse index $m(a_S)=3|S|$, and there
 is a unique maximum $q_*=a_{\{1,\dots,r\}}$.
 
+For these auxiliary data we distinguish the relative class from the
+total perturbed energy. For a gauge, mixed or strip configuration
+from $a$ to $x$, put
+\begin{equation}\label{eq:aux-class}
+\kappa_{\mathrm{aux}}=
+\kappa-\frac{t}{4\pi^2}\bigl(h_Q(a)-h_Q(x)\bigr).
+\end{equation}
+Here $\kappa$ is the topological energy of
+Section~\ref{subsec:energy-convention}. Thus, for a strip,
+$4\pi^2\kappa_{\mathrm{aux}}=
+\int u^*\omega-t(h_Q(a)-h_Q(x))$.
+The relative class vanishes on a reference path in the clean
+intersection $Q$ and takes values in $\tfrac12\ZZ$.
+For a filling with outgoing limit $a$, we instead normalize
+$\kappa_{\mathrm{aux}}$ to vanish on its flat disk-extendible
+reference with that limit. The following proof verifies these
+normalizations and the associated index formulas.
+
 \begin{lemma}\label{lem:aux-index}
 Use the conventions under which the anti-self-duality equation on an
 outgoing end $[0,\infty)\times Y$ is the downward gradient flow of the
@@ -5467,14 +5493,16 @@ Chern--Simons functional perturbed by $+t\,h_Q$ with $t>0$.
 \begin{enumerate}[label=(\roman*)]
 \item For the gauge filling $F_r=\natural^r(S^1\times D^3)\natural(T^2\times D^2)$
   of $Y_{12}^\#$ with outgoing limit $a$, on the component of the flat
-  fillings, $\ind=3r-m(a)$; other components have index $3r-m(a)+8\kappa$.
+  fillings, $\ind=3r-m(a)$; other components have index
+  $3r-m(a)+8\kappa_{\mathrm{aux}}$.
 \item For a gauge, mixed or ordinary configuration from $a$ to $x$, with
-  $\kappa$ normalized to vanish on constant configurations,
-  $\ind=m(a)-m(x)+8\kappa$, and the energy is
-  $8\pi^2\kappa+t\,(h_Q(a)-h_Q(x))$ plus secondary terms.
-\item If $t\max h_Q$ plus the size of all secondary terms is less than the
-  smallest positive value of $8\pi^2\kappa$, every counted configuration has
-  $\kappa\ge0$.
+  the relative class just defined,
+  $\ind=m(a)-m(x)+8\kappa_{\mathrm{aux}}$, and the full analytic energy is
+  $8\pi^2\kappa_{\mathrm{aux}}+2t\,(h_Q(a)-h_Q(x))$
+  plus secondary terms.
+\item If $2t\max h_Q+2\|f\|_\infty+
+  2\sup_A\|\eta(A)\|_2^2<4\pi^2$ on each counted domain,
+  every counted configuration has $\kappa_{\mathrm{aux}}\ge0$.
 \end{enumerate}
 Reversing one of the three conventions (the sign of the flow, the sign of
 $t$, outgoing versus incoming end) replaces $3r-m(a)$ by $m(a)$ and the
@@ -5494,16 +5522,55 @@ asymptotic operator on the tangent space $TQ$ of the critical manifold
 moves from $-\delta$ to $t\operatorname{Hess}_a h_Q$, which has $m(a)$ negative
 and $3r-m(a)$ positive eigenvalues; for an outgoing end each eigenvalue
 crossing from negative to positive increases the index by one. Hence
-$\ind=3r-m(a)$. Equivalently, for small $t$ the solutions are flat fillings
-$A_p$, $p\in Q$, followed on the end by the flow $\dot p=-t\nabla h_Q$ ending
-at $a$, and they form the stable manifold of $a$, of dimension $3r-m(a)$.
-Other components differ by the index of an instanton class.
-(ii) By additivity: a filling to $a$ followed by a configuration from $a$ to
-$x$ is a filling to $x$, and constant mixed pairs have index zero, so the
-same function $m$ serves on the gauge and symplectic sides. The energy
-formula is the index-energy law with the perturbation term.
-(iii) The energy is nonnegative and the lattice of topological energies is
-discrete.
+$\ind=3r-m(a)$. This is a spectral-flow calculation; it does not
+identify solutions of the perturbed four-dimensional equation with
+finite-dimensional gradient trajectories in $Q$.
+Relative to the flat reference, a point insertion changes
+$\kappa_{\mathrm{aux}}$ by $1$ and the index by $8$. The possible
+nonextending meridional lifting character changes these by a half-integer
+and an integer congruent to $4$ modulo $8$, respectively.
+Indeed, the filling retracts onto $T^2\vee\bigvee^rS^1$, and
+the quotient of the boundary lifting classes by those extending
+over it is generated by the torus meridian. With that character
+fixed, relative $H^4$ records the point insertion. The
+Pontryagin-square congruence gives the stated half-integral lattice
+and the formula in (i).
+
+(ii) Join $a$ to $x$ by a path of flat classes in $Q$, constant
+near its endpoints. Before the height perturbation, the cylinder
+with positive weights at both clean ends has index $-3r$.
+The physical incoming and outgoing conditions admit $m(a)$ and
+$3r-m(x)$ small modes, respectively. Hence its perturbed index
+is $m(a)-m(x)$. Formula (2.52) of \cite{DFL} gives its
+topological energy $t(h_Q(a)-h_Q(x))/(4\pi^2)$.
+Changing the relative class changes energy and index by
+$k/2$ and $4k$, with $k\in\ZZ$.
+Gluing this reference to the constant mixed pair at $x$ and
+using \cite[Lemma~4.62, Proposition~4.65]{DFL} proves the mixed
+formula. Gluing the constant mixed pair at $a$ to a strip and
+using \cite[Proposition~4.69]{DFL} proves the strip formula.
+In particular, the same integer function $m$ serves on both sides;
+it is the relative class $\kappa_{\mathrm{aux}}$, rather than
+the total perturbed energy $\kappa$, which occurs in this formula.
+The full energy identity follows from~\eqref{eq:aux-class} and
+the identity in the proof of Theorem~\ref{thm:mixed-iso}.
+
+(iii) On the outgoing filling collar, let $\beta$ and $\rho$
+be increasing cutoffs switching on $t h_Q$ and $f$, respectively.
+Integration by parts gives the full energy
+\[
+8\pi^2\kappa_{\mathrm{aux}}-2t h_Q(a)
+ +2t\int\beta'h_Q(A_s)\,ds
+ +2\int\rho'f(A_s)\,ds+2\|\eta(A)\|_2^2.
+\]
+Since $0\le h_Q\le\max h_Q$ and both cutoffs have total
+variation one, the absolute value of the height correction is
+at most $2t\max h_Q$. The same bound applies to the endpoint
+term in (ii). The remaining corrections are bounded by
+$2\|f\|_\infty+2\sup_A\|\eta(A)\|_2^2$.
+Nonnegative analytic energy and
+$\kappa_{\mathrm{aux}}\in\tfrac12\ZZ$ therefore exclude every
+negative relative class under the stated inequality.
 \end{proof}
 
 With Scaduto's $\ZZ/4$ grading, $\mathrm{gr}=m-r$ modulo four on every
@@ -5530,7 +5597,7 @@ violates the conclusion.
 
 \begin{definition}
 On $\CF(P_1,P_2)$ define the relative grading $m$ by $m(a)-m(x)=\ind(u)-
-8\kappa(u)$ for any strip class $u$ from $a$ to $x$; it is independent of $u$
+8\kappa_{\mathrm{aux}}(u)$ for any strip class $u$ from $a$ to $x$; it is independent of $u$
 by monotonicity, and for $t$ small it is the Morse index of $h_Q$. Let
 $\theta_S\in\CF(P_1,P_2)$ be the unique generator of maximal $m$; it is the
 maximum $q_*$ of $h_Q$. Let $\theta_G\in C_G(Y_{12})$ be the relative invariant
@@ -5545,16 +5612,27 @@ classes are nonzero, and $N_{12}\theta_G=\theta_S$.
 \end{proposition}
 
 \begin{proof}
-By Lemma~\ref{lem:aux-index} an index-zero filling has $\kappa=0$ and
-$m(a)=3r$, and for small $t$ the flat fillings flowing to $q_*$ form the
-stable manifold of the maximum, a single point, which is regular because
-the operator of part (i) of that lemma is invertible. So $\theta_G=q_*$. (This
+By Lemma~\ref{lem:aux-index} an index-zero filling has
+$\kappa_{\mathrm{aux}}=0$ and $m(a)=3r$, so $a=q_*$.
+First set $f=\eta=0$. The filling energy identity in that lemma
+then gives
+$E=-2t\max h_Q+2t\int\beta'h_Q(A_s)\,ds\le0$.
+Thus $E=0$. In temporal gauge the end is stationary at the flat
+maximum, and the connection on the unperturbed core is flat.
+The boundary fundamental group surjects onto that of the filling,
+so this boundary class has exactly one flat extension. Its fixed-limit
+operator is invertible by part (i). For sufficiently small secondary
+regularizations this is still the complete count: any additional
+index-zero solutions along data tending to zero would have energy
+tending to zero, hence no bubbles or nonconstant end trajectories,
+and would enter the inverse-function neighbourhood of that solution.
+Therefore $\theta_G=q_*$. (This
 agrees with \cite[Sections~7.7--7.8]{Scaduto}, where the relative invariant of
 $\natural^r(S^1\times D^3)$ is a basis element of the free group
 $\Ish(\#^r(S^1\times S^2))$ of rank $2^r$, by the boundary-sum identity
 \cite[Section~7.2]{Scaduto} and \cite[Proposition~5.4]{KM-unknot} at the
 connected cut $T^3$.) A trajectory from $q_*$ has index
-$3r-m(x)+8\kappa$ with $\kappa\ge0$, which is never one, so $q_*$ is a
+$3r-m(x)+8\kappa_{\mathrm{aux}}$ with $\kappa_{\mathrm{aux}}\ge0$, which is never one, so $q_*$ is a
 cycle on both sides. By Lemma~\ref{lem:aux-index} the map $N_{12}$ of
 Theorem~\ref{thm:mixed-iso} satisfies the hypothesis of
 Lemma~\ref{lem:calibration}, so $N_{12}q_*=q_*$. The filtrations on the
@@ -5935,7 +6013,7 @@ configuration on one fibre is a reference on every fibre and the
 topological energy involves no metric (so the index of a fixed reference
 is constant in $\tau$ by continuity of the Fredholm family, and the law at
 $\tau=0$ is Theorem~\ref{thm:collapse}(i)); an energy bound independent of
-$\tau$, the terms $\int\chi'f$ being bounded by the $C^0$ norms of the
+$\tau$, the terms $2\int\chi'f$ being bounded by twice the $C^0$ norms of the
 end perturbations; family compactness, with weak limits identified
 with the prescribed bundle $E$ by modifying bundle isomorphisms only on
 small balls around the concentration points joined by arcs to an incoming
@@ -8796,8 +8874,22 @@ endpoints; no assertion about arbitrary Hamiltonian loops is needed.
 \emph{The auxiliary pairs.} The pair $(A_0,L_C)$ in $X$ unfolds to the pair
 $(R_0,\widetilde P_0\circ L_C)$ in $\Msf_g$, and $(L_C,A_1)$ to
 $(\widetilde P_1\circ L_C,R_1)$; their intersections are the critical sets of the
-height functions of Section~\ref{subsec:folded}. On $\CF_X(A_0,L_C)$ and $\CF_X(L_C,A_1)$ define the relative grading $m$ by
-$m(a)-m(x)=\ind(u)-8\kappa(u)$ for any strip class $u$ from $a$ to $x$; it is
+height functions of Section~\ref{subsec:folded}. For each ordered pair,
+let $\mathcal A_i$ be its critical action: the values at intersections
+of its local exact-graph primitive, with the sign determined by the
+order of the pair. Set
+\[
+4\pi^2\kappa_{\mathrm{aux}}(u)
+ =\int u^*\omega_X-\bigl(\mathcal A_i(a)-\mathcal A_i(x)\bigr).
+\]
+At the flat height data $\mathcal A_i$ is the corresponding signed
+height function $t h_i$. Under small primary changes it is the
+actual graph primitive, including its higher-order terms. Its
+values agree with the perturbed gauge action: along a critical
+branch both have derivative equal to the varying perturbation
+evaluated on that branch, and they agree at the flat reference.
+On $\CF_X(A_0,L_C)$ and $\CF_X(L_C,A_1)$ define the relative grading $m$ by
+$m(a)-m(x)=\ind(u)-8\kappa_{\mathrm{aux}}(u)$ for any strip class $u$ from $a$ to $x$; it is
 independent of $u$ by monotonicity. For $t$ small it coincides with the Morse
 index of the height function (for $i=0$) or with the Morse index of its
 negative (for $i=1$), and there is a unique generator $q_i^*$ of maximal $m$.
@@ -8861,29 +8953,59 @@ bijection from solutions on $D$ to solutions on $S$ with boundary on
 $(A_0,\Delta,A_1)$: a solution on $S$ glues to a Lipschitz map on $D$ that solves
 the equation weakly across the arc, hence is smooth; linearized operators
 correspond. The two ends of $S$ adjacent to the $\Delta$-arc double to strip
-ends of $D$ labelled $(\widetilde P_i,R_i)$, and the output end doubles to one
+ends of $D$ labelled $(R_0,\widetilde P_0)$ and
+$(\widetilde P_1,R_1)$, respectively, and the output end doubles to one
 incoming and one outgoing end, which is the folding $\mathcal K$ followed by
 $\mathcal B$. So $U_C(x)$ is the count of disks with boundary arcs labelled
 $R_1,\widetilde P_1,\widetilde P_0,R_0$ with $x$ at the incoming end and $q_0^*$,
-$q_1^*$ at the two auxiliary ends. The top generator $q_i^*$ of
-$\CF(\widetilde P_i,R_i)$ is the image of the unit cap, defined as follows. In a
-Weinstein neighbourhood of $\widetilde P_i$ let $H_i$ be a function equal to $t$
-times the height function pulled back to the neighbourhood, so that its
-Hamiltonian flow $\phi^s$ carries $\widetilde P_i$ to $R_i$ at $s=1$ up to a
-Hamiltonian isotopy supported away from the intersection points, and the
-top generator $q_i^*$ is a critical point of $H_i$ lying on
-$\widetilde P_i\cap\phi^s(\widetilde P_i)$ for every $s$. As in
-Section~\ref{subsec:continuations}, pull back by $\phi^s$: the cap becomes a disk
-with one outgoing end, the fixed boundary label $\widetilde P_i$, and a
-Hamiltonian one-form $\beta H_i$ whose restriction to the boundary vanishes,
-which is the surface $S^\cup$ of \cite{WW-relative} with perturbation data. A cap with output $x$
-has index $m(q_i^*)-m(x)+8\kappa$: by additivity of the index, gluing the
+$q_1^*$ at the two auxiliary ends. We construct the unit cap for
+each of these ordered pairs. In a Weinstein neighbourhood of
+$\widetilde P_i$, write $R_i=\operatorname{graph}(dg_i)$.
+For the first pair, fibre translation by $-dg_0$ takes
+$(\operatorname{graph}(dg_0),0)$ to
+$(0,\operatorname{graph}(-dg_0))$. Realize this translation by a
+Hamiltonian isotopy with cutoff equal to one near the whole graph
+path. The second pair is already $(0,\operatorname{graph}(dg_1))$.
+Thus the ordered primitives are
+$f_0=-g_0-\min(-g_0)$ and $f_1=g_1-\min g_1$.
+Put $M_i=\max f_i$. For the small primary data in use, $f_i$
+has its unique maximum at $q_i^*$. Extend $f_i$ constantly in the
+cotangent fibres near the zero section and cut it off farther away
+by a function in $[0,1]$. The resulting $K_i$ satisfies
+$0\le K_i\le M_i$ and $K_i(q_i^*)=M_i$. Choose the cutoff
+equal to one on the whole graph path. With
+$\iota_{X_{K_i}}\omega=-dK_i$, the inverse time-one flow
+carries the zero section to $\operatorname{graph}(df_i)$.
+
+Use a disk with one outgoing strip end, with
+boundary on that zero section and Hamiltonian one-form
+$\beta(s)\chi(\theta)(K_i-M_i)\,d\theta$.
+Here $\beta$ increases from zero to one, while $\chi\ge0$ is
+supported away from the strip sides and has integral one.
+On the end, conjugating by the inverse Hamiltonian flow gives
+the ordinary strip for $(0,\operatorname{graph}(df_i))$ and fixes
+its critical chords. Transport the first cap back by the actual
+translation, including its almost-complex and Hamiltonian data.
+Its ordered labels are then $(R_0,\widetilde P_0)$; those of the
+second cap are $(\widetilde P_1,R_1)$. A cap with output $x$
+has index $m(q_i^*)-m(x)+8\kappa_{\mathrm{aux}}$: by additivity of the index, gluing the
 constant cap at $q_i^*$ to a strip from $q_i^*$ to $x$ gives the grading
 difference of Section~\ref{subsec:continuations}, and the constant cap has
-index zero. By Lemma~\ref{lem:aux-index}(ii)--(iii), in the form of
-Lemma~\ref{lem:aux-index-folded}, counted caps have $\kappa\ge0$, so an
-index-zero cap has $\kappa=0$ and output $q_i^*$; it has energy zero and is
-constant. The constant map at $q_i^*$ is a regular solution, since $dH_i(q_i^*)=0$ and $q_i^*$ is a nondegenerate critical point. Gluing
+index zero. The full energy identity for this cap is
+\[
+E_{\mathrm{cap}}=8\pi^2\kappa_{\mathrm{aux}}
+ -2(K_i(x)-M_i)
+ +2\int\beta'\chi(K_i(u)-M_i)\,ds\,d\theta.
+\]
+The integral is nonpositive and the endpoint term is at most
+$2M_i$. Thus $2M_i<4\pi^2$ excludes negative relative classes.
+The index formula then forces an index-zero cap to have
+$\kappa_{\mathrm{aux}}=0$ and output $q_i^*$. Its energy is
+zero, so it is the constant cap. At this solution the linear
+energy identity, with the nonpositive Hessian of $K_i-M_i$,
+forces a decaying kernel field to be horizontal with zero
+outgoing value, hence zero. Index zero gives regularity.
+Gluing
 the two unit caps into the auxiliary ends \cite[Theorem~3.13]{WW-relative}
 produces a strip with moving boundary from
 $(\widetilde P_0,\widetilde P_1)$ to $(R_0,R_1)$, whose map is the continuation
@@ -8911,7 +9033,12 @@ this paper.
 The statements of Lemma~\ref{lem:aux-index} hold for the fillings
 $F_i=V_i\times[0,1]$ of $Z_i=V_i\cup(-V_i)=(\#^{g-1}S^1\times S^2)\#T^3$ and the
 pairs $(A_0,L_C)$ and $(L_C,A_1)$, with $r=g-1$, the height functions defining $R_i$, and the
-top generators $q_i^*$.
+top generators $q_i^*$. Under sufficiently small changes of the
+lower primary data, the relative classes and integer gradings are
+transported from these height data. The endpoint height differences
+are then replaced by the differences of the actual critical actions
+$\mathcal A_i$. The filling and mixed maximum coefficients remain
+one; their representing solutions need not remain flat.
 \end{lemma}
 
 \begin{proof}
@@ -8920,6 +9047,23 @@ onto a wedge of $r$ circles and a torus, so that $H^1_c=H^2=0$ with twisted
 coefficients, and that the critical manifold is $\SU(2)^r$ with the height
 function; both hold for $F_i$. The mixed maps of the pairs $(A_0,L_C)$ and $(L_C,A_1)$ are those
 of Remark~\ref{rem:clean-pairs}.
+For the last assertion, fix the height parameter $t>0$ and then
+shrink the lower-primary neighbourhood. The finitely many critical
+points remain nondegenerate, and their indices and reference classes
+continue. The nonperiodic action and profile terms in the energy
+identities vary continuously and remain bounded strictly below the
+first possible nonzero period $4\pi^2$. Thus negative relative
+classes remain excluded. At the original height data the maximum
+filling and mixed coefficients each consist of one regular solution;
+the implicit function theorem continues these solutions. If further
+index-zero solutions existed for arbitrarily small changes, fixed-$t$
+compactness would give a limiting configuration at the height data.
+Positive index loss for bubbles and positive index for nonconstant
+regular end trajectories exclude both at total index zero. The limit
+is therefore the original maximum solution, and convergence in its
+Fredholm chart contradicts local uniqueness. This proves persistence
+of the complete coefficients, without asserting constancy of their
+representatives under the primary change.
 \end{proof}
 
 \subsection{The folded triangle}

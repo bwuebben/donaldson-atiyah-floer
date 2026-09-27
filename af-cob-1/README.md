@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology I
 
-Bernd Johannes Wuebben · 25 September 2026 · Revised 26 September 2026 · 144 pages
+Bernd Johannes Wuebben · 25 September 2026 · Revised 27 September 2026 · 145 pages
 
 - [Read the paper](cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -76,6 +76,15 @@ The analytic input consists of two new results for the mixed equation.
   data used here, without rescaling the metric (Appendix C): the
   perturbations are built from holonomy traces of disjoint solid tori, and a
   unique continuation argument on torus collars supplies the transversality.
+
+## Revision of 27 September 2026
+
+The energy identities now use the full analytic normalization,
+including the switched perturbation terms. The auxiliary integer
+grading distinguishes its relative class from total symplectic area
+and retains the actual endpoint actions under primary changes. The
+filling and unit-cap arguments include their energy bounds and the
+ordered Lagrangian pairs.
 
 ## Revision of 26 September 2026
 

@@ -52,6 +52,11 @@ counits, or closed pairings.
 
 ## Revision of 27 September 2026
 
+The auxiliary integer grading now uses the relative class after
+subtracting the endpoint action from symplectic area. For moved
+primary data, these are the actual critical actions, with signs fixed
+by the ordered Lagrangian pair. All three analytic hypotheses remain.
+
 The definition of an operator realization now applies a chart change
 to both the equation and gauge-fixing rows. The canonical determinant
 orientation assertion is restricted to regular zeros of index zero.
