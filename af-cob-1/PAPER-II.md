@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-Bernd Johannes Wuebben · Revised 26 September 2026 · 44 pages · Conditional draft
+Bernd Johannes Wuebben · Revised 27 September 2026 · 44 pages · Conditional draft
 
 - [Read Paper II](cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
@@ -49,6 +49,16 @@ The paper treats connected objects with trivial bundles and connected
 cobordisms carrying a framed arc and a bundle trivialized at the ends
 and along the arc. It does not treat disconnected objects, units,
 counits, or closed pairings.
+
+## Revision of 27 September 2026
+
+The definition of an operator realization now applies a chart change
+to both the equation and gauge-fixing rows. The canonical determinant
+orientation assertion is restricted to regular zeros of index zero.
+The collapse hypothesis explicitly includes the affine gauge centers
+and moving stationary limits used in the contraction comparison.
+That additional analytic requirement remains an assumption; this
+revision does not remove any of the three hypotheses.
 
 ## Build
 

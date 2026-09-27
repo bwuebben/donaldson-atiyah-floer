@@ -73,14 +73,16 @@ gauge theory and compares collapse, torus excision, reflection, and
 compression cups and caps. The resulting comparison allows one overall
 sign per cobordism.
 
-**Conditional draft, revised 26 September 2026, 44 pages.** The theorem
+**Conditional draft, revised 27 September 2026, 44 pages.** The theorem
 assumes uniform regularity on completed mixed domains, oriented torus
 completion, and determinant-one self-gluing, in addition to Paper I's
 analytic results. The gauge orientation convention is explicit;
 identification with homology-oriented integral instanton maps and with
-relative-spin quilt orientations remains open. The revision adds the
-configuration-family collapse determinant comparison and explicit
-folding and capping orientation diagrams.
+relative-spin quilt orientations remains open. The current revision
+corrects the full operator realization and explicitly includes the
+affine-center comparison in the collapse hypothesis. The determinant
+comparison and folding and capping diagrams retain that conditional
+scope.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)

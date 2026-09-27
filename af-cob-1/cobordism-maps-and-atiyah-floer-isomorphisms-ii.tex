@@ -439,12 +439,26 @@ spaces is Fredholm; its kernels and cokernels are smooth. Changes
 of chart and the admissible changes of realization of
 Definition~\ref{def:realization} give continuous families of
 Fredholm operators and the same determinant line.
+For each fixed positive collapse parameter, this also holds for
+the affine gauge centers in the contraction charts of Paper~I
+and their interpolation to the connection at the configuration.
+The comparison includes moving stationary limits: representatives
+are spatially Coulomb for the chosen center, and changes of these
+representatives transport the full source and both operator rows.
+These affine centers need not agree with the configuration off a
+compact set. This family retains the contraction equation's target
+trivialization and the actual primal and weak adjoint domains.
+The resulting Fredholm family is required over the whole contraction
+segment, including configurations which are not solutions.
 \item At ordinary ends the weights lie in common spectral gaps.
 At mixed ends the stationary coordinates are separated from the
 decaying part. Regular zero-dimensional solutions and the constant
 reference pairs have invertible realized operators. On compact
 families the estimates, slice radii, and smallness thresholds can
-be chosen uniformly, including at infinite torus length.
+be chosen uniformly, including at infinite torus length. For each
+fixed positive collapse parameter, the scalar inverse and its
+smallness threshold also apply to the affine-center interpolation
+in part~(a).
 \item The mixed shifting construction, its relative family form,
 and node gluing are continuous in the smooth topology. They commute
 with ordinary end gluing. A compact family of shifted configurations
@@ -978,11 +992,18 @@ with the tangent space to the configuration space.
 An admissible realization of the linearized problem at $c$
 is an operator of the form
 \begin{equation}\label{eq:realization}
- L_c=\bigl(\mathcal S\,d\mathcal F_{\Phi(0)}\,d\Phi_0,
-              \lambda^2d_{A'}^{*,g'}\bigr).
+ L_c=\bigl(\mathcal S\,d\mathcal F_c,
+              \lambda^2d_{A'}^{*,g'}\pi_A\bigr)\,d\Phi_0.
 \end{equation}
 It acts on the prescribed weighted spaces with stationary
-mixed-end coordinates included. Here $\mathcal S$ is a
+mixed-end coordinates included. Here $\pi_A$ denotes the connection
+component of a physical tangent vector. At mixed ends we use
+spatially Coulomb stationary tangent representatives and matching
+lifts whose remaining divergence decays, so that the scalar row
+takes values in the weighted target. Both rows are transported
+by the chart differential. A change of stationary lifts likewise
+transports their finite scalar columns as well as the equation
+columns. The map $\mathcal S$ is a
 continuously chosen invertible target identification, equal
 to the identity outside a compact set; $A'$ is a smooth
 slice center differing from the connection in $c$ only on
@@ -1005,12 +1026,13 @@ Under Hypothesis~\ref{hyp:regularity}, admissible realizations
 at a fixed configuration have canonically identified
 orientation double covers. The identification is continuous
 in compact families and commutes with ordinary gluing. At a
-regular zero it preserves the canonical determinant
+regular zero of index zero it preserves the canonical determinant
 orientation.
 \end{lemma}
 \begin{proof}
-Changes of charts and target identifications are paths of
-bounded invertible changes of source and target. They induce
+Changes of charts act on the entire operator in
+\eqref{eq:realization}. Together with target identifications,
+they are bounded invertible changes of source and target and induce
 the standard naturality maps on determinant lines. Varying
 a weight inside a gap gives a path of Fredholm realizations;
 kernel and cokernel elements have the stronger decay common
@@ -1022,7 +1044,7 @@ $d\mathcal F_c\,d_{A_c}=0$. The gauge-fixed operator is then
 block triangular. Its gauge block is invertible by the
 Poincare estimate and the smallness of $A'-A_c$; its other
 block is the intrinsic linearized equation on the quotient.
-Thus invertibility at a regular zero is unchanged.
+Thus invertibility at a regular zero of index zero is unchanged.
 
 Conformal changes in the specified unperturbed region do
 not change the anti-self-duality equation in four dimensions.
@@ -1034,7 +1056,7 @@ homotopy between two such paths gives an orientation cover
 over a square, so its endpoint identification is unchanged.
 The gluing statement follows by choosing the changes away
 from the ordinary gluing collars and then using continuity.
-At a regular zero every operator in these paths is
+At a regular zero of index zero every operator in these paths is
 invertible, so the canonical orientation is preserved.
 \end{proof}
 
@@ -1528,19 +1550,25 @@ edge of a square. The straight coordinate segment from
 the preglue to the solution stays in the region where
 the derivative differs from the invertible approximate
 operator by a sufficiently small bounded operator.
-Consequently this edge is invertible. At the solution,
-change from the contraction realization to the
-admissible orientation realization by
-Lemma~\ref{lem:realization}; this vertical edge is
-invertible. At the approximate configuration use the
+Consequently this edge is invertible. Its affine gauge center
+is the preglued connection. Along the segment it may differ
+from the current connection at the stationary limits, so this
+is not automatically a compactly supported change of center
+in Definition~\ref{def:realization}. Use the extended Fredholm
+family stipulated in Hypothesis~\ref{hyp:regularity}(a),
+including its stationary representatives and both operator rows.
+At the solution, the scalar estimate and smallness threshold
+in Hypothesis~\ref{hyp:regularity}(b) make the interpolating
+gauge block invertible. The block argument of
+Lemma~\ref{lem:realization} therefore makes this vertical
+edge invertible. At the approximate configuration use the
 same source and target identifications as those defining
 \eqref{eq:collapse-det}; the comparison gives the other
 invertible vertical edge.
 
-The family in the interior of the square consists of
-admissible Fredholm realizations. This uses
-Hypothesis~\ref{hyp:regularity} and the exact matching
-chart, including the conformal gauge row. The fourth
+The family in the interior of the square is the Fredholm
+family required by Hypothesis~\ref{hyp:regularity}(a),
+with the exact matching chart and the conformal gauge row. The fourth
 edge is the path of orientation operators at the
 configurations between the preglue and the solution.
 We need not assert that this entire edge is invertible.
