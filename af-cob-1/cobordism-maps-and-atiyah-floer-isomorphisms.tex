@@ -7550,9 +7550,10 @@ below the weights of the original mixed ends in \cite[Definition~3.9]{DFL}. Thus
 below the spectral gaps at all ends: at the mixed ends by $\delta<\gamma/2$, and at the gauge and
 strip ends by $\delta<\mu_o$. In particular the completed solutions converge on the gauge and
 strip ends at a rate larger than $\delta$ (Lemma~\ref{lem:adapted}(iii)), and model (O) in the
-proof of Proposition~\ref{prop:torus-inverse} applies. The condition $\delta<\gamma/2$ also places
-$\delta$ below the Neumann gap $\gamma_s$ of the gauge Laplacian of $B_{q_e}$ on $Y_{e,\mathsf L}$, which is
-positive and uniform in $\mathsf L$ (proof of Lemma~\ref{lem:torus-scalar}). Constants $C$, $C_{\rm inv}$, $C_{\rm quad}$ and $r_1$ depend on
+proof of Proposition~\ref{prop:torus-inverse} applies. We further
+decrease $\delta$, if necessary, by the scalar coercivity condition
+specified before Lemma~\ref{lem:torus-scalar}.
+Constants $C$, $C_{\rm inv}$, $C_{\rm quad}$ and $r_1$ depend on
 the fixed data and on the finite sets of completed solutions, not on $\mathsf L$.
 
 \begin{lemma}[regular completed pieces]\label{lem:completed-regular}
@@ -7596,21 +7597,55 @@ Finiteness at index zero follows from compactness and regularity.
 We fix such data on $W_{\pm,\infty}$ and use the same secondary perturbations on
 $W_{\pm,\mathsf R}$ and $W^J_\lambda$ (split in the joined case). The primary data, end perturbations and almost complex structures are those of Section~\ref{subsec:folded}.
 
-\emph{Asymptotic values.} Let $P$ be a smooth configuration on $W_\mathsf L$
-($\mathsf L\le\infty$) which on each mixed end $e$ converges to $\pi^*B_{q_e}$ and the constant
-section $q_e$, and which equals $\alpha$ on a collar of the flat face in the separate
-case. For each $e$ fix an exponential map $\exp_{q_e}\colon T_{q_e}\mathcal C_e\to \mathcal C_e$ of a metric
-in which the Lagrangian boundary conditions are totally geodesic
-\cite[Lemma~4.4]{DFL}, and a cutoff $\beta_e(\theta)$ of the outward end coordinate,
-equal to $0$ for $\theta\le\theta_e$ and to $1$ for $\theta\ge\theta_e+1$, with $\theta_e$ fixed. Put
+\emph{Asymptotic values and their tangent lifts.}
+Let $P$ be a smooth configuration on $W_\mathsf L$
+($\mathsf L\le\infty$) converging on each mixed end $e$ to
+$R_e=(\pi^*B_{q_e},q_e)$ in all the weighted norms used below.
+In the separate case suppose that $P=\alpha$ on a collar of the
+flat face. Choose local stationary representatives equal to $\alpha$
+on the torus collar, in product gauge near the genus face, and
+put
 \[
-k_e(v)=\Bigl(\pi^*\tfrac{d}{ds}\Big|_{s=0}B_{\exp_{q_e}(sv)},\ v\Bigr),\qquad v\in T_{q_e}\mathcal C_e,
+k_e(v)=\Bigl(\pi^*\tfrac{d}{ds}\Big|_{s=0}
+ B_{\exp_{q_e}(sv)},v\Bigr),\qquad v\in T_{q_e}\mathcal C_e.
 \]
-the tangent vector of the stationary family together with the constant section
-vector, transported along the section strip. Its connection part is supported
-away from the torus collar, it has vanishing normal component on the genus
-matching faces, and its restriction to $\Sigma'$ is closed with class $v$, so
-$\beta_ek_e(v)$ satisfies the linearized matching condition.
+The adapted exponential is fixed on the whole far strip of each
+mixed end \cite[Lemma~4.4 and Section~4.1]{DFL}. Choose a cutoff
+$\beta_e(\theta)$ with a fixed transition band, after a common
+truncation on which $P$ is close to $R_e$.
+
+A cutoff of $k_e(v)$ need not satisfy the linearized matching
+condition at $P$. We use the following corrected lift
+$K_{P,e}(v)$. Write $a_e=B_{q_e}|_{\Sigma'}$. On the far genus
+trace express
+\[
+ A_P|_{\Sigma'}=E_{a_e}(b_P),\qquad
+ u_P|_{\mathbb U_\partial}=e_{q_e}(v_P),\qquad [b_P]=v_P,
+\]
+using the flat surface chart of \cite[Lemmas~4.1 and~4.4]{DFL}.
+Transport the surface trace of $k_e(v)$ by $DE_{a_e}(b_P)$ and
+its section vector by $De_{q_e}(v_P)$, with the corresponding
+adapted exponential along the strip. Differentiating flatness
+and the identity $[E_{a_e}(b)]=e_{q_e}([b])$ proves the linearized
+matching condition at $P$ and tangency on the Lagrangian arcs.
+Multiply by $\beta_e$. Extend the difference between this genus
+trace and that of $\beta_e k_e^A(v)$ into the fixed genus collar,
+with zero normal component, and add it to $\beta_e k_e^A(v)$.
+A weighted right inverse of the trace of fixed normal support is
+used for this extension. The difference has zero stationary limit.
+Thus $K_{P,e}$ has zero normal component, satisfies the actual
+linearized boundary conditions, vanishes on the torus region, and
+\begin{equation}\label{eq:corrected-profile}
+ K_{P,e}(v)-\beta_e k_e(v)\in H^m_\delta,\qquad
+ \|K_{P,e}(v)-\beta_e k_e(v)\|_{H^m_\delta}\le C|v|.
+\end{equation}
+Section differences here are read in the fixed end trivializations.
+The constants are uniform for the preglues below: the genus collars
+are fixed and their reference errors obey uniform weighted bounds.
+The extension may have longitudinal tails; only its trace identity
+and fixed normal support are used. Choose the local stationary
+parameter frames consistently on the fixed cores. In the joined
+case all these choices are products of the choices on the two sides.
 
 \begin{definition}[gluing spaces]\label{def:torus-norms}
 Let $P$ be as above. Let $\mathcal X^m_\mathsf L$ be the space of pairs $w=(\zeta,\nu)$ with
@@ -7631,21 +7666,32 @@ Y_\mathsf L=H^{m-1}_\delta\bigl(W_\mathsf L;(\Lambda^0\oplus\Lambda^+)\otimes\ad
 H^{m-1}_\delta\bigl(\mathbb U_+;\Lambda^{0,1}\otimes u_P^*T\Msf\bigr),
 \]
 \[
-D_{\mathsf L}(w,p)=\Bigl(d_{A_P}^*\zeta,\ \mathfrak L_P\bigl(w+\textstyle\sum_e\beta_ek_e(p_e)\bigr)\Bigr),
+D_{\mathsf L}(w,p)=\Bigl(d_{A_P}^*\zeta,\ \mathfrak L_P\bigl(w+\textstyle\sum_e K_{P,e}(p_e)\bigr)\Bigr),
 \]
 where $\mathfrak L_P$ is the linearization at $P$ of the mixed operator
 $\mathfrak M$ (the perturbed anti-self-duality operator and the section operator).
 \end{definition}
 
-The image $\mathfrak L_P(\beta_ek_e(v))$ of a cut-off stationary field equals $\sigma(d\beta_e)k_e(v)$ plus
-$\beta_e(\mathfrak L_P-\mathfrak L_{\pi^*B_{q_e}})k_e(v)$, because the stationary operator
-annihilates $k_e(v)$; the first term is supported in a fixed compact band and the
-second decays like $P-\pi^*B_{q_e}$. So $D_\mathsf L\colon X_\mathsf L\to Y_\mathsf L$ is bounded, with the part acting on asymptotic values bounded by $C|p|$. The operator $D_\mathsf L$ differs from the operator on the extended weighted spaces of Theorem~\ref{thm:torus-period}, whose asymptotic values are represented by the cut-off Coulomb kernel representatives, by an operator that vanishes on $\mathcal X^m_\mathsf L$;
-this difference has finite rank, so $D_\mathsf L$ is Fredholm with the index of
-Theorem~\ref{thm:torus-period}. The gauge-fixing component of $D_\mathsf L$ acts on the decaying part
-$\zeta$ only. This differs from \cite[Proposition~4.6]{DFL}, where $d_A^*\zeta=0$ is imposed on the
-whole field including its asymptotic part: here the Coulomb condition is imposed on
-the decaying coordinate of the chart (Lemma~\ref{lem:torus-quadratic}).
+The image of a profile is bounded in the weighted target. Indeed,
+$\mathfrak L_P(\beta_e k_e(v))$ is the sum of
+$\sigma(d\beta_e)k_e(v)$ and
+$\beta_e(\mathfrak L_P-\mathfrak L_{R_e})k_e(v)$;
+the second term decays with $P-R_e$, and
+\eqref{eq:corrected-profile} handles the added correction. Hence the
+part of $D_\mathsf L$ acting on asymptotic values has norm at most
+$C|p|$. To compare indices with Theorem~\ref{thm:torus-period},
+represent its extended domain by the same decaying space and the
+same finite stationary parameter space, using Coulomb stationary
+representatives corrected at the actual matching trace. The two
+operators agree on the decaying summand. Their bounded stationary
+columns, including their scalar rows, differ by a finite-rank map.
+Thus $D_\mathsf L$ is Fredholm with the index of that theorem.
+This argument compares indices, not kernels at a nonsolution.
+The gauge row of $D_\mathsf L$ acts on $\zeta$ alone; the scalar
+row of another realization must therefore also be retained in this
+comparison. The nonlinear slice below imposes Coulomb gauge on
+this decaying coordinate, rather than on the entire stationary
+increment as in \cite[Proposition~4.6]{DFL}.
 
 \begin{lemma}[preglued references]\label{lem:preglued}
 For $V\in\cM^0(W_\infty)$ let $V^{\rm ad}=\alpha+a_V$ on $r\ge S_V$ be as in
@@ -7688,46 +7734,74 @@ Lemma~\ref{lem:adapted}(i)--(ii), using (i) for the pointwise
 $C^m$ bound.
 \end{proof}
 
+For the gluing estimates choose the weight $\delta>0$ below all
+end gaps and decay rates, and further decrease it so that
+$\delta C_P<1/2$, where $C_P$ is the uniform unweighted scalar
+Poincar\'e constant constructed in the following proof. The weight
+function has zero normal derivative on the physical boundary and
+bounded derivatives at every order used. These choices are
+independent of the growing torus length.
+
 \begin{lemma}[uniform scalar inverse]\label{lem:torus-scalar}
-There are $r_0$, $\mathsf L_0$ and $C$ such that for $\mathsf L\in[\mathsf L_0,\infty]$ and every connection $A$
-on $W_\mathsf L$ with $\|A-A_{P_{\mathsf L}(V)}\|_{C^m}\le r_0$ (for $\mathsf L=\infty$, with $P_\infty(V)=V^{\rm ad}$), the
-Neumann problem
+There are $r_0$, $\mathsf L_0$ and $C$ such that for
+$\mathsf L\in[\mathsf L_0,\infty]$ and every connection $A$ with
+$\|A-A_{P_\mathsf L(V)}\|_{C^m}\le r_0$, the Neumann map
 \[
-\xi\longmapsto\bigl(d_A^*d_A\xi,\ \nabla_n\xi|_{\partial W_\mathsf L}\bigr),\qquad
-H^{m+1}_\delta(W_\mathsf L;\ad)\to H^{m-1}_\delta(W_\mathsf L;\ad)\oplus H^{m-1/2}_\delta(\partial W_\mathsf L;\ad),
+ \xi\longmapsto\bigl(d_A^*d_A\xi,
+              \nabla_n\xi|_{\partial W_\mathsf L}\bigr)
 \]
-where $\partial W_\mathsf L$ consists of the genus matching faces and the flat face, is an
-isomorphism with inverse bounded by $C$.
+is an isomorphism from $H^{m+1}_\delta(W_\mathsf L;\ad)$ to
+$H^{m-1}_\delta(W_\mathsf L;\ad)\oplus
+ H^{m-1/2}_\delta(\partial W_\mathsf L;\ad)$, with inverse norm
+at most $C$. At infinity $P_\infty(V)=V^{\rm ad}$. The boundary
+consists of the genus matching faces and, when present, the flat face.
 \end{lemma}
 
 \begin{proof}
-It suffices to treat $A=A_{P_{\mathsf L}(V)}$; write $\Delta_A=d_A^*d_A$. For $\xi$ with vanishing
-normal derivative, the estimate $\|\xi\|_{H^1_\delta}\le C(\|\Delta_A\xi\|_{H^{-1}_\delta}+\|\xi\|_{L^2(K)})$,
-with a fixed compact $K$, is proved by the partition of the proof of
-Proposition~\ref{prop:torus-inverse} below, with the following models. On the
-torus region, where $A$ is within $Ce^{-\gamma_T(S-S_0)}$ of $\alpha$, the Neumann Laplacian
-of $\alpha$ satisfies $\langle\Delta\xi,\xi\rangle=\|d\xi\|^2\ge\|d_T\xi\|^2\ge\mu_T^2\|\xi\|^2$ on
-any base, and the weight changes it by terms of order $\delta\le\mu_T/4$. On the
-mixed ends the slice Neumann Laplacian of $B_{q_e}$ on $Y_{e,\mathsf L}$ has a gap $\gamma_s>0$
-uniform in $\mathsf L$: the collar part is controlled by the torus mass, and a normalized
-counterexample has a nonzero weak limit on $Y_{e,\infty}$ which is a parallel
-section, hence zero, because $B_{q_e}$ is irreducible; so
-$-\partial_\theta^2+\Delta_{Y_{e,\mathsf L}}$ is invertible on weighted spaces for $\delta^2<\gamma_s^2$.
-This holds for the weights used here, since $\gamma\le\gamma_s$: on pairs
-$(\varphi,d_B\varphi')$ the stationary operator squares to the Neumann Laplacian,
-because the primary Hessian annihilates infinitesimal gauge directions at a
-critical point, and $\delta<\gamma/2$. The
-original ends have acyclic slices, and the core is compact. Higher derivatives
-follow from local elliptic estimates on unit patches. If the uniform bound failed,
-a normalized sequence would have a nonzero limit $\xi_\infty$ on $W_\infty$ with
-$\Delta_V\xi_\infty=0$, Neumann boundary values and weighted decay; then
-$\|d_V\xi_\infty\|^2=0$, so $\xi_\infty$ is parallel and vanishes on a torus fibre, where
-$H^0(T;\ad\alpha)=0$; hence $\xi_\infty=0$, a contradiction. In the joined case the limit
-lives on the two sides and the same argument applies to each. The operator is
-formally self-adjoint, and its weighted index is zero because $\delta$ lies below all
-the gaps; so it is an isomorphism, and the boundary data are handled by a
-translated lifting of fixed width. A perturbation of $A$ of size $r_0$ in $C^m$ changes
-the operator by a term of norm $Cr_0$, which is absorbed for $r_0$ small.
+First prove an unweighted estimate with no boundary restriction on
+$\xi$. On the far torus region the fibre gap and
+Lemma~\ref{lem:preglued}(iv) give
+$\|\xi\|_{L^2}\le 2\mu_T^{-1}\|d_A\xi\|_{L^2}$ by integration
+over the planar base. There is no boundary term or factor depending
+on its area. The stationary spatial compressions have a uniform
+scalar gap as well. Otherwise normalized sections with covariant
+derivatives tending to zero would have vanishing mass on their
+torus collars, and a parallel limit on each fixed compact core.
+That limit vanishes on the overlap with the torus collar and hence
+on the connected core, a contradiction. The same argument covers
+the two cores of a joined slice. Integrating over the mixed-end
+coordinate and absorbing the uniformly small reference error gives
+the mixed-end estimate. The original gauge ends use their fixed
+irreducible cross-sections.
+
+On the whole domain a normalized counterexample now has mass only
+on the fixed compact cores. Rellich compactness gives a parallel
+limit there, zero on the controlled overlap bands, again a
+contradiction. Thus
+\[
+ \|\xi\|_{L^2}\le C_P\|d_A\xi\|_{L^2}
+\]
+uniformly at finite and infinite lengths. A sufficiently small
+$C^0$ change of $A$ preserves this estimate by absorption; take
+$C_P$ for that neighbourhood.
+
+With $U=e^{\delta\tau}\xi$, the conjugated weak Neumann form is
+\[
+ a_\delta(U,V)=
+ \langle d_AU-\delta d\tau\,U,d_AV+\delta d\tau\,V\rangle.
+\]
+Its diagonal is
+$\|d_AU\|^2-\delta^2\|d\tau\,U\|^2$, uniformly coercive by
+$|d\tau|\le1$ and $\delta C_P<1/2$. Lax--Milgram gives a unique
+weak solution for arbitrary bulk data in the dual of the full
+$H^1$ form domain and boundary data in $H^{-1/2}$. Since
+$\partial_n\tau=0$, conjugation leaves the Neumann operator
+unchanged. Local Neumann regularity on unit patches, summed with
+bounded overlap, gives the displayed higher-order estimate and
+surjectivity. The required coefficient derivative bounds are
+uniform in the stated $C^m$ neighbourhood. The argument applies
+directly to the completed domain and does not infer weighted
+surjectivity from formal self-adjointness.
 \end{proof}
 
 \begin{proposition}[uniform inverse]\label{prop:torus-inverse}
@@ -7759,13 +7833,28 @@ in the proof of Proposition~\ref{prop:flat-fibre} also bounds $\|\nabla\zeta\|$ 
 $\|D_\alpha\zeta\|$. Hence $\|\zeta\|_{H^1_\delta}\le C_T\|D_\alpha\zeta\|_{L^2_\delta}$ with $C_T$ depending only on
 $\mu_T$ and $\delta$.
 
-(E) The mixed end $e$, beyond $\Theta$, restricted to $r\le S+\ell$. There
-$D^{\rm dec}_\mathsf L=\sigma(\partial_\theta+\mathcal A_{q_e,\mathsf L})+\mathfrak b$, where $\mathcal A_{q_e,\mathsf L}$ is the
+(E) The mixed end $e$, beyond $\Theta$, restricted to $r\le S+\ell$.
+First identify the actual boundary domain with the stationary one.
+The surface Hodge and harmonic-block maps of
+\cite[Proposition~5.27]{DFL-mixed}, applied at paired depths in
+the fixed gauge and section collars, give an isomorphism
+$Q(\theta)$ from the stationary domain to the actual domain.
+It is the identity off those collars and extends by the identity
+over the added torus region. It and its inverse are bounded on
+$L^2$ and $H^1$, and their differences from the identity and their
+longitudinal derivatives tend uniformly to zero as
+$\Theta\to\infty$ \cite[Lemma~5.67]{DFL-mixed}.
+Use the corresponding fixed trivializations of the target.
+The transformed operator is
+$\sigma(\partial_\theta+\mathcal A_{q_e,\mathsf L})+\mathfrak b$, where $\mathcal A_{q_e,\mathsf L}$ is the
 stationary operator of Proposition~\ref{prop:stationary-gap} on the whole slice
 $Y_{e,\mathsf L}$ \cite[Section~4.2.1, (4.16)]{DFL} and $\|\mathfrak b\zeta\|_{L^2}\le\eta(\Theta)\|\zeta\|_{H^1}$ with
-$\eta(\Theta)\to0$ uniformly in $\mathsf L$ by Lemma~\ref{lem:preglued}(iv). A field supported
-in $\{\theta\ge\Theta\}$ and extended by zero is in the domain of the translation-invariant
-operator on $\RR_\theta\times Y_{e,\mathsf L}$. Since $\mathcal A=\mathcal A_{q_e,\mathsf L}$ is self-adjoint with
+$\eta(\Theta)\to0$ uniformly in $\mathsf L$ by
+Lemma~\ref{lem:preglued}(iv) and these transport bounds.
+For a cutoff field vanishing near $\theta=\Theta$, apply
+$Q^{-1}$ before extending by zero. The resulting field belongs
+to the stationary domain on $\RR_\theta\times Y_{e,\mathsf L}$.
+Since $\mathcal A=\mathcal A_{q_e,\mathsf L}$ is self-adjoint with
 spectrum meeting $(-\gamma,\gamma)$ only in $0$, and $0<\delta<\gamma$, Fourier transform in
 $\theta$ gives $\|(\partial_\theta+\mathcal A-\delta)^{-1}\|\le\min(\delta,\gamma-\delta)^{-1}$; the identity
 $\|\partial_\theta\xi\|^2+\|(\mathcal A-\delta)\xi\|^2=\|(\partial_\theta+\mathcal A-\delta)\xi\|^2$ and the elliptic
@@ -7773,7 +7862,8 @@ estimate $\|\xi\|_{H^1(Y_{e,\mathsf L})}\le C(\|\mathcal A\xi\|+\|\xi\|)$, which
 because it is local, $Y_{e,\mathsf L}$ has bounded geometry and on the collar
 $\mathcal A=\mathcal A_\alpha$ (Corollary~\ref{cor:flat-fibre-line}), give
 $\|e^{\delta\theta}\xi\|_{H^1}\le C_E\|e^{\delta\theta}(\partial_\theta+\mathcal A)\xi\|$ with $C_E$ independent of
-$\mathsf L$.
+$\mathsf L$. Transporting back and absorbing the
+$H^1$-to-$L^2$ error gives the estimate on the actual mixed end.
 
 (O) The original gauge and ordinary ends beyond $T_0$: translation-invariant
 operators with invertible asymptotic operators, as in
@@ -7837,32 +7927,51 @@ Since the part of $D_\mathsf L$ acting on asymptotic values is bounded by $C|p|$
 \|(w,p)\|_{X_\mathsf L}\le C\bigl(\|D_{\mathsf L}(w,p)\|_{Y_\mathsf L}+\|w\|_{L^2(K_1)}+|p|\bigr).
 \end{equation}
 
-\emph{Step 4: the limit operator is injective.} Let $D_V\colon X_\infty\to Y_\infty$ be
-defined as in Definition~\ref{def:torus-norms} on $W_\infty$ with $P=V^{\rm ad}$. We
-show that it is injective. Let $D_V(w,p)=0$, $w=(\zeta,\nu)$. Write $k_e=(k^A_e,v_e)$ and
-let $h_e(v)=(h^A_e(v),v)$ be the Coulomb kernel representative of $v$ used in
-Theorem~\ref{thm:torus-period}. Then $k^A_e(v)-h^A_e(v)=d_{B_{q_e}}\psi_e(v)$ for a function
-$\psi_e(v)$ on the slice with vanishing normal derivative, because both are tangent
-to the stationary family at $q_e$, represent the same vector $v$ and have
-vanishing normal components. The variation
+\emph{Step 4: the limit operator is injective.}
+Let $D_V$ be the operator of Definition~\ref{def:torus-norms} at
+$P=V^{\rm ad}$ on $W_\infty$, and suppose $D_V(w,p)=0$.
+Write $K_{V,e}=(K^A_{V,e},K^S_{V,e})$ and let
+$h_e(v)=(h_e^A(v),v)$ be the Coulomb stationary kernel
+representative of Theorem~\ref{thm:torus-period}. Since $k_e^A(v)$
+and $h_e^A(v)$ represent the same primary deformation and have
+zero normal component, their difference is
+$d_{B_{q_e}}\psi_e(v)$, with $\psi_e$ satisfying the spatial
+Neumann condition. Put
 \[
-\zeta_1=\zeta+\sum_e\beta_ek^A_e(p_e)-d_V\Bigl(\sum_e\beta_e\psi_e(p_e)\Bigr),\qquad
-\nu_1=\nu+\sum_e\beta_ev_e(p_e),
+ \zeta_1=\zeta+\sum_eK^A_{V,e}(p_e)
+             -d_V\Bigl(\sum_e\beta_e\psi_e(p_e)\Bigr),\qquad
+ \nu_1=\nu+\sum_eK^S_{V,e}(p_e).
 \]
-has connection part equal to $\sum\beta_eh^A_e(p_e)$ plus a decaying field, and
-$\mathfrak L_V(\zeta_1,\nu_1)=0$ because $V$ is a solution and the equation and the
-matching conditions are gauge invariant. The divergence $d_V^*\zeta_1$ is decaying,
-because $d_V^*\zeta=0$, $h_e$ is coclosed on the slice and the remaining terms contain
-$d\beta_e$ or $V-\pi^*B_{q_e}$. By Lemma~\ref{lem:torus-scalar} on $W_\infty$ there is a
-decaying $\xi$ with $d_V^*(\zeta_1+d_V\xi)=0$ and vanishing normal components. Then
-$(\zeta_1+d_V\xi,\nu_1)$ lies in the kernel of the operator on the extended weighted spaces of Theorem~\ref{thm:torus-period} at $V$, which is injective because it is onto and of
-index zero. So $p=0$, $\zeta_1+d_V\xi=0$ and $\nu=\nu_1=0$; with $p=0$ this reads
-$\zeta=-d_V\xi$, and $d_V^*\zeta=0$ gives $d_V^*d_V\xi=0$, hence $\xi=0$ by
-Lemma~\ref{lem:torus-scalar}, and $\zeta=0$. In the joined case $D_V$ is the direct sum
-of the operators of $V_-$ and $V_+$: the section structure is $J_-\times J_+$, the
-Lagrangians $A_i=\widetilde P_i^-\times R_i$ are products, the $\Sigma_h$-matching couples
-only the $-$ side and the $\Sigma_g$-matching only the $+$ side, and the stationary fields $k_e(v_-,v_+)=k_{e,-}(v_-)+k_{e,+}(v_+)$ split because the joined stationary family is
-$B_p\cup\alpha\cup B_q$. So it is injective as well.
+This variation satisfies the geometric linearized matching condition
+and $\mathfrak L_V(\zeta_1,\nu_1)=0$: the original variation
+uses the corrected lifts, and the subtracted term is an
+infinitesimal gauge transformation at the solution $V$.
+Its asymptotic representatives are $h_e(p_e)$. The remaining field
+is decaying by \eqref{eq:corrected-profile}; the other errors contain
+$d\beta_e$ or $V-R_e$ and its derivatives.
+
+The divergence of $\zeta_1$ and its normal trace are decaying.
+The latter need not vanish before the final gauge correction:
+the spatial Neumann condition on $\psi_e$ uses $B_{q_e}$,
+whereas $d_V$ uses the actual connection. Apply
+Lemma~\ref{lem:torus-scalar} with both these data to solve
+\[
+ d_V^*d_V\xi=-d_V^*\zeta_1,\qquad
+ \nabla_{n,V}\xi=-\iota_n\zeta_1.
+\]
+Then $(\zeta_1+d_V\xi,\nu_1)$ belongs to the kernel of the
+extended Coulomb realization in Theorem~\ref{thm:torus-period}.
+At $V$ that operator is onto and has index zero, so its kernel
+vanishes. Hence $p=0$, $\nu=0$ and $\zeta=-d_V\xi$.
+The original scalar and normal conditions give the homogeneous
+Neumann equation for $\xi$, and the scalar lemma implies
+$\xi=0$ and $\zeta=0$.
+
+In the joined case the section, the Lagrangians and all the
+profile corrections were chosen as products. The limiting
+operator is therefore the direct sum of the two separate
+operators, with their independent stationary coordinates, and
+is injective by the same argument.
 
 \emph{Step 5: contradiction.} Suppose $\mathsf L_j\to\infty$ and $(w_j,p_j)\in X_{\mathsf L_j}$ with
 $\|(w_j,p_j)\|=1$ and $D_{\mathsf L_j}(w_j,p_j)\to0$, for a fixed $V$ (the sets are finite). By
@@ -7901,7 +8010,8 @@ $\mathsf Q=d_\alpha^*(d_\alpha d_\alpha^*)^{-1}$ on fibrewise two-forms.
 \item The map $\Psi^{\rm face}(\zeta)=\zeta+\operatorname{Ext}_\delta\bigl(c(\zeta_T|_{r=\mathsf L})\bigr)$,
   defined on the ball of radius $r_3/C$ of fields satisfying the linear flat-fibre
   condition, takes values in fields $x$ for which $\alpha+x$ satisfies the nonlinear
-  flat-fibre condition and $x(\partial_r)=0$ at the face; it is inverted by
+  flat-fibre condition and $x(\partial_r)=\zeta(\partial_r)$ at the face;
+  in particular it preserves the zero-normal subspace. It is inverted by
   $x\mapsto x-\operatorname{Ext}_\delta\bigl(c(\Pi_{\rm cl}x_T|_{r=\mathsf L})\bigr)$, and both maps have
   first and second derivatives bounded independently of $\mathsf L$.
 \end{enumerate}
@@ -7940,42 +8050,85 @@ from those of $c$ and the boundedness of $\operatorname{Ext}_\delta$, the trace 
 $\Pi_{\rm cl}$.
 \end{proof}
 
-\emph{The chart.} For $z=(w,p)\in X_\mathsf L$ small, $w=(\zeta,\nu)$, let $\zeta'=\zeta+\sum_e\beta_ek_e(p_e)$
-and $\nu'=\nu+\sum_e\beta_ev_e(p_e)$ be the fields with the stationary fields added ($v_e(p_e)$ being the
-section part of $k_e(p_e)$). Let $\Psi_{\mathsf L}(z)$ be the configuration with connection
+\emph{The chart.}
+We specify the genus trace extension, including its stationary
+part. For a genus trace $f$ with stationary limits $f_e$, put
 \[
-A_P+\zeta'+\rho(s)\bigl(E(\cdot,\zeta')-\zeta'\bigr)
-+\sum_e\varphi_e\bigl(\pi^*B_{\exp_{q_e}p_e}-\widehat B_{e,p_e}\bigr)
-+\operatorname{Ext}_\delta\bigl(c(\zeta_T|_{r=\mathsf L})\bigr)
+ \mathcal T^{\rm ext}f=
+ \mathcal T_\delta\Bigl(f-\sum_e\beta_e f_e\Bigr)
+                  +\sum_e\beta_e\mathcal T_e f_e.
 \]
-and section $\exp_{u_P}(\nu')$ taken with the metrics of \cite[Lemma~4.4]{DFL}. Here
-the terms involving $E$ and $\widehat B_{e,p}$ are those of the chart of
-\cite[Section~4.1]{DFL}: the correction $\rho(s)(E(\cdot,\zeta')-\zeta')$ is built from the maps $E_\tau$ of
-\cite[(4.3) and Lemma~4.4]{DFL} for the component $\Sigma'$ only, on a fixed collar of
-the genus matching faces, and imposes the nonlinear matching and Lagrangian
-conditions; $\widehat B_{e,p}=\pi^*B_{q_e}+k^A_e(p)+\rho(s)(E_1(\cdot,k^A_e(p))-k^A_e(p))$, with $k^A_e$ the
-connection part of $k_e$, and
-$\varphi_e$ is a cutoff of $\theta$ equal to one where $\beta_e=1$ and supported in
-$\{\theta\ge\theta_e\}$, so that the limit at the end $e$ is exactly
-$\pi^*B_{\exp_{q_e}p_e}$. The last term is the face chart of
-Lemma~\ref{lem:face-chart}, absent in the joined case. All terms except $\zeta$ and
-the face term are supported away from the torus region, because $k_e$, the families
-$B_q$ and the maps $E_\tau$ for $\Sigma'$ are. Put $P^{(p)}=\Psi_{\mathsf L}(0,p)$, the reference with
-its mixed-end limits moved to $\exp_{q_e}p_e$; it equals $P$ on the torus region. Define
+Here $\mathcal T_\delta$ is a weighted right inverse of trace on
+fixed genus collars, and $\mathcal T_e$ is its spatial stationary
+counterpart. Both lift surface-tangential forms with zero normal
+and longitudinal components. Their norms are uniform, as for the
+Poisson extension in Lemma~\ref{lem:face-chart}(b). Thus no
+constant longitudinal mode is assigned a weighted Sobolev norm.
+
+For $z=(w,p)$, $w=(\zeta,\nu)$, set
 \[
-\mathcal F_{\mathsf L}(z)=\Bigl(d_{A_P}^*\zeta,\ \Pi_P\,\mathfrak M\bigl(\Psi_{\mathsf L}(z)\bigr)\Bigr)\in Y_\mathsf L ,
+ (\zeta',\nu')=w+\sum_e K_{P,e}(p_e),\qquad
+ Q_a(b)=E_a(b)-a-b,
 \]
-where the two components of $\mathfrak M$ are read as follows. The anti-self-duality component
-is taken in $\Lambda^+\otimes\ad$ for the metric of $W_\mathsf L$: the curvature and every
-perturbation term are projected onto their self-dual parts. The Cauchy--Riemann component of
-$\mathfrak M(\Psi_\mathsf L(z))$ is a section of $\Lambda^{0,1}\otimes u^*_{\Psi_\mathsf L(z)}T\Msf$, while $Y_\mathsf L$ is
-built on $u_P$. We embed $\Msf$ isometrically in a Euclidean space $\RR^N$, read this component
-in $\Lambda^{0,1}\otimes\RR^N$, and let $\Pi_P$ act on it at each point $y\in\mathbb U_+$ by the orthogonal
-projection of $\RR^N$ onto $T_{u_P(y)}\Msf$; on the other component $\Pi_P$ is the identity. Since
-$u_P$ is smooth with derivatives bounded independently of $\mathsf L$ (the section region of $W_\mathsf L$
-is that of $X_D$), $\Pi_P$ is bounded on $H^{m-1}_\delta$. For $\|z\|$ small, $\sup|u_{\Psi_\mathsf L(z)}-u_P|\le
-C\|z\|$ is small, so $|\Pi_Pv|\ge\frac12|v|$ for $v\in T_{u_{\Psi_\mathsf L(z)}(y)}\Msf$: $\Pi_P$ is injective on these
-tangent spaces.
+where $E_a$ is the flat surface chart compatible with the adapted
+section exponential. Apply $Q$ fibrewise to
+$b=\zeta'|_{\Sigma'}$, using $a=A_P|_{\Sigma'}$. At a stationary
+reference the resulting connection is
+\[
+ \widehat B_{e,p}=B_{q_e}+k_e^A(p)
+             +\mathcal T_e Q_{a_e}(k_e^A(p)|_{\Sigma'}).
+\]
+Choose $B_{\exp_{q_e}p}$ to have the same genus trace as
+$\widehat B_{e,p}$. The two traces represent the same class, so
+a smooth near-identity surface gauge provides this choice; extend
+it through the fixed genus collar and as the identity near the
+torus. Their first variations agree, so the adjustment is quadratic
+in $p$. In product gauge the difference
+$C_e(p)=B_{\exp_{q_e}p}-\widehat B_{e,p}$ has zero genus
+tangential and normal trace, vanishes on the torus collar, and
+satisfies $C_e(0)=DC_e(0)=0$.
+
+For fixed end cutoffs $\varphi_e$, equal to one sufficiently far
+out, define $\Psi_\mathsf L(z)$ to have connection
+\[
+ A_P+\zeta'
+ +\mathcal T^{\rm ext}\bigl(Q_{A_P|_{\Sigma'}}
+                                      (\zeta'|_{\Sigma'})\bigr)
+ +\sum_e\varphi_e\pi^*C_e(p_e)
+ +\operatorname{Ext}_\delta
+                    \bigl(c(\zeta_T|_{r=\mathsf L})\bigr)
+\]
+and section $e_{u_P}(\nu')$, with the adapted exponentials of
+\cite[Lemma~4.4]{DFL}. The face term is absent in the joined and
+completed cases. The genus trace is flat and has precisely the
+class of the section. The $C_e$ term preserves that trace and
+makes the limiting connection exactly $B_{\exp_{q_e}p_e}$.
+All profile and genus corrections vanish on the torus region.
+Write $P^{(p)}=\Psi_\mathsf L(0,p)$; it equals $P$ there.
+The same formula gives an unsliced chart if the normal component
+of the decaying field is allowed to vary. We use that version
+before imposing the Neumann gauge condition.
+
+Define
+\[
+ \mathcal F_\mathsf L(z)=
+ \bigl(d_{A_P}^*\zeta,
+                   \Pi_P\mathfrak M(\Psi_\mathsf L(z))\bigr)
+ \in Y_\mathsf L.
+\]
+The anti-self-duality row is read in $\Lambda^+\otimes\ad$ for
+the given metric. For the section row use its tangent-vector
+representation $\partial_su+J(u)\partial_\theta u$ from
+\eqref{eq:mixed}. Embed $\Msf$ isometrically in $\mathbb R^N$
+and project this vector orthogonally to $T_{u_P}\Msf$.
+When the target is written as a $(0,1)$-form, reconstruct that
+form from its projected value using the complex structure at
+$u_P$. This defines $\Pi_P$ on the section row; it is the identity
+on the other rows. The reference
+section has uniformly bounded derivatives, so this projection is
+bounded on the weighted target. For $z$ small it is an isomorphism
+on the tangent spaces along $u_{\Psi_\mathsf L(z)}$, with uniformly
+bounded inverse.
 
 \begin{lemma}[chart and quadratic estimate]\label{lem:torus-quadratic}
 There are $\mathsf L_0$, $r_1$ and $C_{\rm quad}$ such that for $\mathsf L\ge \mathsf L_0$ and $P=P_{\mathsf L}(V)$:
@@ -7998,50 +8151,76 @@ There are $\mathsf L_0$, $r_1$ and $C_{\rm quad}$ such that for $\mathsf L\ge \m
 \end{lemma}
 
 \begin{proof}
-(a) The flat-fibre condition holds by Lemma~\ref{lem:face-chart}(c), because
-$\Psi_{\mathsf L}(z)-\zeta-\operatorname{Ext}_\delta(\cdot)$ equals $\alpha$ on the collar of the face; the
-matching and Lagrangian conditions hold by the construction of
-\cite[Section~4.1]{DFL}, which involves only the fixed collars of the genus faces,
-the section and the parts of the mixed ends away from the torus collar. For $r_1$ small,
-$\Pi_P$ is injective on the tangent spaces along $u_{\Psi_\mathsf L(z)}$, so $\mathcal F_\mathsf L(z)=0$ implies
-$\mathfrak M(\Psi_\mathsf L(z))=0$. For the converse, first invert the chart at fixed $p$: at the face by
-Lemma~\ref{lem:face-chart}(c), and at the genus faces by the inverse function
-theorem for the maps $E_\tau$ on the collar \cite[Section~4.1]{DFL}, whose estimates
-are uniform because this region is fixed or, along the ends, translation
-invariant; the two collars are disjoint. This writes $U=\Psi_{\mathsf L}(\tilde w,p)$ with
-$\|\tilde w\|\le C(\|U-P^{(p)}\|+|p|)$. Then solve
-$d^*_{A_P}\bigl(\zeta(\exp(\xi)^*U)\bigr)=0$, with vanishing normal components on the
-faces, for $\xi$, where $\zeta(\cdot)$ is the decaying coordinate of the inverted chart:
-the derivative in $\xi$ at $\xi=0$, $U=P$, $p=0$ is the Neumann problem of
-Lemma~\ref{lem:torus-scalar}, the second derivatives are bounded uniformly since
-$m\ge4$ and $W_\mathsf L$ has bounded geometry, and the implicit function theorem applies.
-(b) is immediate: the Cauchy--Riemann component of $\mathfrak M(P_\mathsf L)$ vanishes, so its
-linearization at $P$ takes values in $\Lambda^{0,1}\otimes u_P^*T\Msf$, where $\Pi_P$ is the identity; the
-gauge-fixing component does not involve $p$; and the corrections
-$\rho(s)(E-\cdot)$ and $B_{\exp p}-\widehat B_{e,p}$ are of second order, and
-$D\Psi_{\mathsf L}(0)(w,p)=w+\sum_e\beta_ek_e(p_e)$.
+(a) The trace identities in the construction give the exact genus
+matching and Lagrangian conditions. Lemma~\ref{lem:face-chart}
+gives the flat-face condition; the collars are disjoint and their
+corrections have zero normal component. The injectivity of $\Pi_P$
+on the actual section target proves the assertion about zeros.
 
-(c) We list the terms of $\mathfrak M(\Psi_{\mathsf L}(z))$. On the torus region the equation is
-$F^+$, quadratic in the connection, and the face term is controlled by
-Lemma~\ref{lem:face-chart}; since $W_\mathsf L$ is a union of unit patches of finitely many
-isometry types and $H^m$ is an algebra in dimension four for $m\ge3$,
-$\|e^{\delta\tau}fg\|_{H^{m-1}}\le C\|e^{\delta\tau}f\|_{H^m}\|g\|_{H^m}$ with $C$ independent of $\mathsf L$. The
-genus matching charts and the section are those of \cite[Section~4.1]{DFL} on a
-region that is fixed or, along the mixed ends, translation invariant; their
-estimates are uniform by translation invariance. The primary holonomy terms on
-the mixed ends are autonomous and act slice by slice; their first and second
-derivatives are bounded on $H^m$ of unit patches by \cite[Proposition~6.1]{DFL},
-uniformly by translation. The secondary terms have compact support. It remains
-to see that the stationary fields do not produce nondecaying terms. Where $\beta_e=\varphi_e=1$,
-$\Psi_{\mathsf L}(z)=\pi^*B_q+y$ with $q=\exp_{q_e}p_e$ and $y=(A_P-\pi^*B_{q_e})+\zeta+(\text{the
-difference of the } E\text{-corrections at } (P,\zeta') \text{ and at } (\pi^*B_{q_e},k_e(p_e)))$,
-which is decaying and vanishes when $P=\pi^*B_{q_e}$ and $\zeta=0$. Since
-$\mathfrak M(\pi^*B_q)=0$ for every $q$, each derivative of $\mathfrak M(\Psi_\mathsf L)$ of order at
-least one in $p$ is the difference of the corresponding derivatives at $\pi^*B_q+y$
-and at $\pi^*B_q$, bounded by $C\|y\|_{H^m_\delta}$ in $Y_\mathsf L$. On the band where $\beta_e$ or
-$\varphi_e$ varies, which is compact and independent of $\mathsf L$, all terms are bounded. Hence
-the second derivatives are bounded uniformly, and the estimate for $N_\mathsf L$ follows
-from the mean value theorem.
+For the converse first use the unsliced chart. Extract $p$ from the
+stationary limits and subtract $\sum_e\varphi_e\pi^*C_e(p_e)$.
+The inverse surface exponential recovers the closed genus trace,
+and $\Pi_{\rm cl}$ recovers the closed torus trace. Subtract their
+extended nonlinear remainders and the corrected profiles $K_{P,e}$.
+Together with the inverse section exponential, this gives the
+unique decaying coordinate $\widetilde w$. The trace and extension
+bounds give
+$\|\widetilde w\|\le C\|U-P^{(p)}\|_{H^m_\delta}$ uniformly.
+
+Let $Z(\exp(\xi)^*U)$ be its connection coordinate after a small
+decaying gauge transformation. Solve
+\[
+ \bigl(d_{A_P}^*Z(\exp(\xi)^*U),
+                    \iota_n Z(\exp(\xi)^*U)\bigr)=0.
+\]
+At $\xi=0$, $U=P$ its derivative is, up to the fixed gauge-action
+sign, the scalar Neumann map in Lemma~\ref{lem:torus-scalar}.
+The unsliced chart is needed here since a general gauge transform
+need not initially have zero normal coordinate. All second
+derivatives are bounded uniformly for $m\ge4$. The quantitative
+implicit function theorem therefore gives the asserted fixed radius
+and bounds. At $U=P^{(p)}$ the coordinate is zero and the gauge
+correction is the identity, so the bound for $\xi$ involves only
+$\|U-P^{(p)}\|_{H^m_\delta}$.
+
+(b) Each nonlinear surface correction has zero first derivative
+at zero, as does $C_e(p)$. Hence
+\[
+ D\Psi_\mathsf L(0)(w,p)=w+\sum_e K_{P,e}(p_e).
+\]
+The reference section solves its equation, so differentiating its
+target projection adds no term. The gauge row acts on $\zeta$
+alone. This gives exactly $D_\mathsf L$.
+
+(c) The trace space $H^{m-1/2}$ on each three-dimensional face
+is an algebra. The surface Hodge operators and their derivatives
+are uniformly bounded: their scalar inverses have a common gap,
+and differentiating an inverse gives
+$\partial G=-G(\partial\Delta)G$. The exact and coexact potential
+maps have order minus one in the surface variables; their
+surface derivatives have order zero. Longitudinal derivatives
+differentiate only their uniformly bounded coefficients and
+arguments. The harmonic part has finite surface rank. These facts,
+Sobolev multiplication, and the uniformly bounded trace extensions
+give the $C^2$ bounds for the genus chart and its inverse.
+The flat-face chart has the bounds of Lemma~\ref{lem:face-chart}.
+On the torus the equation is quadratic curvature; bounded geometry
+and bounded overlap give multiplication constants independent of
+its length. Fixed holonomy families obey the corresponding local
+bounds by differentiating parallel transport; for the primary
+terms see \cite[Proposition~6.1]{DFL}. Secondary dependence and
+output sets stay in the fixed compact cores.
+
+Finally, on each far mixed end subtract the same chart expression
+at its stationary reference. Every remaining term contains a
+decaying reference error, a decaying coordinate, or a derivative
+of a cutoff on a fixed band. The separated extension
+$\mathcal T^{\rm ext}$ respects this decomposition. The stationary
+pair with limit $\exp_{q_e}p_e$ solves the equation exactly, so
+it contributes no nondecaying term after any differentiation in
+$p$. The weighted product estimates therefore bound the second
+derivative of $\mathcal F_\mathsf L$ uniformly. The displayed
+quadratic estimate follows by the mean value theorem.
 \end{proof}
 
 \begin{proposition}[existence and local uniqueness]\label{prop:torus-existence}
@@ -8066,7 +8245,8 @@ holds in the whole ball of fixed radius $r$. Since $r\le r_1$, the zero $z_\math
 $\mathcal G_\mathsf L(V)$ (Lemma~\ref{lem:torus-quadratic}(a)). The derivative
 $D\mathcal F_{\mathsf L}(z_\mathsf L)=D_\mathsf L+DN_{\mathsf L}(z_\mathsf L)$ with $\|DN_{\mathsf L}(z_\mathsf L)\|\le2C_{\rm quad}r\le(2C_{\rm inv})^{-1}$ is invertible.
 It is the linearization of the mixed equation at $\mathcal G_{\mathsf L}(V)$ in the chart, with
-the Coulomb condition on the decaying coordinate and the stationary fields $k_e$, followed by
+the Coulomb condition on the decaying coordinate and the corrected
+stationary lifts $K_{P,e}$, followed by
 $\Pi_P$; at the solution $\mathcal G_\mathsf L(V)$ the Cauchy--Riemann part of the linearization takes values
 in $\Lambda^{0,1}\otimes u^*_{\mathcal G_\mathsf L(V)}T\Msf$, on which $\Pi_P$ is an isomorphism onto
 $\Lambda^{0,1}\otimes u_P^*T\Msf$, bounded with bounded inverse. Since this

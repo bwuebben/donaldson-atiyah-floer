@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology I
 
-Bernd Johannes Wuebben · 25 September 2026 · Revised 26 September 2026 · 142 pages
+Bernd Johannes Wuebben · 25 September 2026 · Revised 26 September 2026 · 144 pages
 
 - [Read the paper](cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -76,6 +76,14 @@ The analytic input consists of two new results for the mixed equation.
   data used here, without rescaling the metric (Appendix C): the
   perturbations are built from holonomy traces of disjoint solid tori, and a
   unique continuation argument on torus collars supplies the transversality.
+
+## Revision of 26 September 2026
+
+The torus gluing argument now uses stationary tangent lifts satisfying
+the matching condition at the actual reference configuration. The
+revision also gives a direct scalar Neumann estimate, makes the
+mixed-end boundary-domain transport explicit, and expands the nonlinear
+matching chart and its gauge-fixing argument.
 
 ## Build
 

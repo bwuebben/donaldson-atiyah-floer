@@ -56,8 +56,10 @@ Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist 
 the fixed metric data used here (Appendix C). Integer coefficients are the
 subject of the conditional draft of Paper II below. The current
 manuscript is dated **25 September 2026**, revised **26 September 2026**,
-and has **142 pages**. The revision expands the collapse and boundary
-estimates and the construction of invariant regular data.
+and has **144 pages**. The revision expands the collapse and boundary
+estimates and the construction of invariant regular data. The torus
+gluing argument includes corrected stationary tangent lifts, explicit
+boundary-domain transport and a direct scalar Neumann estimate.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
