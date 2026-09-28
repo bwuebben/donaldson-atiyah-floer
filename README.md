@@ -56,12 +56,14 @@ Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist 
 the fixed metric data used here (Appendix C). Integer coefficients are the
 subject of the conditional draft of Paper II below. The current
 manuscript is dated **25 September 2026**, revised **27 September 2026**,
-and has **145 pages**. The revision expands the collapse and boundary
+and has **148 pages**. The revision expands the collapse and boundary
 estimates and the construction of invariant regular data. The torus
 gluing argument includes corrected stationary tangent lifts, explicit
 boundary-domain transport and a direct scalar Neumann estimate. The
 energy identities and auxiliary integer gradings retain the full
-normalization, endpoint actions and ordered unit-cap bounds.
+normalization, endpoint actions and ordered unit-cap bounds. The latest
+revision also proves regularity for the actual compression auxiliary
+strips and triangles and corrects the moving-boundary continuation setup.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -75,17 +77,22 @@ gauge theory and compares collapse, torus excision, reflection, and
 compression cups and caps. The resulting comparison allows one overall
 sign per cobordism.
 
-**Conditional draft, revised 27 September 2026, 50 pages.** The theorem
+**Conditional draft, revised 27 September 2026, 60 pages.** The theorem
 assumes uniform regularity on completed mixed domains and oriented mixed
 torus completion, in addition to Paper I's analytic results. Ordinary
 determinant-one self-gluing is proved in Proposition 2.3 for the stated
 regular excision data, including the graded trace, lifting multiplicity,
 parameter signs and unit-cap comparison. Hypotheses 2.1 and 2.2 remain.
 
+The latest revision proves physical weight independence, the fixed-scale
+affine-center comparison and mixed comparisons for changes of ordinary
+end data. These results do not discharge the two complete hypotheses.
+
 The gauge orientation convention is explicit; identification with
 homology-oriented integral instanton maps and with relative-spin quilt
 orientations remains open. The full operator realization retains both
-rows, and the collapse hypothesis includes the affine-center comparison.
+rows; the affine-center square is proved at each fixed positive collapse
+scale in its stated small neighborhood.
 The auxiliary grading distinguishes its relative class from total
 symplectic area, with the actual endpoint action subtracted.
 

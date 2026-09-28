@@ -6125,9 +6125,12 @@ manifold $X$ of dimension $2d$, and the
 universal restriction map for primary perturbations is a submersion
 \cite[Section~2.3]{DFL}. (With unperturbed data the triple intersection
 would contain the fibres of $L_C$ over $L(U_0)\cap L(U_1)$.) The pairs
-$(A_0,L_C)$ and $(L_C,A_1)$ unfold to $(R_0,\widetilde P_0\circ L_C)$ and
-$(\widetilde P_1\circ L_C,R_1)$, whose intersections are the critical sets of the
-height functions.
+$(A_0,L_C)$ and $(L_C,A_1)$ have intersection generators identified
+with those of $(R_0,\widetilde P_0\circ L_C)$ and
+$(\widetilde P_1\circ L_C,R_1)$, hence with the critical sets of the
+height functions. Their strip problems remain the product-target
+problems in $X$; exact unfolding is used only for the diagonal case
+$k=0$.
 
 The gauge pieces are $D_i=(-U_i)\cup_{T^2}V_i$, with $\partial D_i=(-\Sigma_h)
 \sqcup\Sigma_g$, and $C$. Flat connections on $D_i$ restrict bijectively to
@@ -8857,12 +8860,36 @@ every pair and triangle used below is monotone with minimal Maslov number $4$.
 
 \emph{Continuation between primary data.} For two admissible choices of primary data
 with the same splitting and metric data, the Lagrangians differ by Hamiltonian isotopies.
-The continuation map $\mathrm{cont}_S(P,P')$ is defined by pulling back by the Hamiltonian
-flow: a strip with moving boundary on $\phi_t(L)$ is the same as a strip with
-fixed boundary on $L$ for the transformed almost complex structure and the
-Hamiltonian one-form $H\,dt$, whose restriction to the boundary vanishes
-\cite[Section~14.4]{Oh-book}. In this form the continuation is Wehrheim and
-Woodward's data-change map on fixed Lagrangians, and it is a chain map, equals
+Choose Hamiltonian isotopies on the two boundary components and extend them
+over disjoint boundary collars. Their interpolation in the strip interior
+gives a domain-dependent Hamiltonian change of variables which straightens
+both labels, with fixed data on the far ends. The transformed equation
+has a Hamiltonian one-form $K=K_s\,ds+K_t\,dt$; its tangential boundary
+restriction need not vanish. With $\iota_{X_H}\omega=-dH$, the equation is
+\[
+v_s-X_{K_s}+J(v)(v_t-X_{K_t})=0.
+\]
+On a truncated strip its full analytic energy is
+\[
+E_K(v)=2\int v^*\omega-2\int_{\partial S}v^*K
+ +2\int_S\bigl(\partial_sK_t-\partial_tK_s
+                   +\omega(X_{K_s},X_{K_t})\bigr)(v)\,ds\,dt.
+\]
+Combining the cut-end terms with fixed reference areas gives the prescribed
+chord-action contributions. The physical
+boundary work and curvature term have uniform bounds on compact families
+of these data. Monotonicity therefore bounds energy at fixed index.
+On an inserted autonomous neck the curvature vanishes and a stationary
+chord has zero covariant energy, so the bound is independent of neck length.
+
+One may instead add a Hamiltonian boundary connection making the moving
+labels parallel before straightening. The resulting fixed-boundary
+perturbation has zero tangential boundary restriction. Interpolating the
+connections with fixed ends retains the preceding energy bound. Generic
+relative perturbations, the four-index bubble exclusion, and ordinary
+strip gluing give a chain homotopy between the two constructions. This
+identifies $\mathrm{cont}_S(P,P')$ with Wehrheim and Woodward's data-change
+map on fixed Lagrangians. It is a chain map, equals
 the identity for constant data, is compatible with composition and is
 invariant under homotopies of the transformed data with fixed ends
 \cite[Theorems~3.9, 3.13, 4.1, 4.2 and Example~2.6]{WW-relative}. Both boundary
@@ -8871,10 +8898,14 @@ small convex neighbourhoods of exact-graph primitives furnished by the
 primary balls. Thus the continuations used here depend only on their
 endpoints; no assertion about arbitrary Hamiltonian loops is needed.
 
-\emph{The auxiliary pairs.} The pair $(A_0,L_C)$ in $X$ unfolds to the pair
-$(R_0,\widetilde P_0\circ L_C)$ in $\Msf_g$, and $(L_C,A_1)$ to
-$(\widetilde P_1\circ L_C,R_1)$; their intersections are the critical sets of the
-height functions of Section~\ref{subsec:folded}. For each ordered pair,
+\emph{The auxiliary pairs.} We use the actual product-target pairs
+$(A_0,L_C)$ and $(L_C,A_1)$ in $X$. Their intersection points identify
+with those of $(R_0,\widetilde P_0\circ L_C)$ and
+$(\widetilde P_1\circ L_C,R_1)$, respectively, and hence with the critical
+sets of the height functions of Section~\ref{subsec:folded}. This is
+an identification of generators. For a general compression it is not
+an unfolding identification of strip moduli spaces; exact diagonal
+unfolding is used only when $k=0$. For each ordered pair,
 let $\mathcal A_i$ be its critical action: the values at intersections
 of its local exact-graph primitive, with the sign determined by the
 order of the pair. Set
@@ -8893,6 +8924,131 @@ $m(a)-m(x)=\ind(u)-8\kappa_{\mathrm{aux}}(u)$ for any strip class $u$ from $a$ t
 independent of $u$ by monotonicity. For $t$ small it coincides with the Morse
 index of the height function (for $i=0$) or with the Morse index of its
 negative (for $i=1$), and there is a unique generator $q_i^*$ of maximal $m$.
+
+\begin{lemma}[Regular auxiliary strips and triangles]
+\label{lem:auxiliary-split-regularity}
+The auxiliary pairs $(A_0,L_C)$ and $(L_C,A_1)$ admit regular
+zero-Hamiltonian strip data of split form. The lower almost-complex
+path may be fixed; the upper path may be prescribed near the two
+strip boundaries, with a nonempty free interval between them.
+If the ordinary lower strip datum is chosen regular first, the
+upper choices can also make the ordinary output regular. The
+resulting end data extend to regular zero-Hamiltonian split
+triangle data.
+The required relative parameter families are universally regular.
+Their moduli spaces in dimensions zero and one have only the
+usual ordinary-breaking and parameter-end strata. The generators
+$q_i^*$ are cycles for these choices.
+\end{lemma}
+\begin{proof}
+Put $M=\Msf_h$, $N=\Msf_g$, and write
+$J_X=(-J_M)\oplus J_N$. The upper projection $L_C\to N$ is an
+embedding: restriction to the upper surface determines the
+representation of the compression group. In particular,
+\begin{equation}\label{eq:upper-trace-injective}
+ TL_C\cap(TM\oplus\{0\})=0.
+\end{equation}
+For a strip $u=(u_M,u_N)$, constancy of $u_N$ forces the lower
+trace along its $L_C$ boundary to be constant. Extend $u_M$ by
+that constant across a small interval of this boundary. Equal
+traces give a weak $W^{1,p}$ solution, $p>2$, for smoothly extended
+coefficients. Interior regularity and unique continuation make
+$u_M$ constant. Hence a nonconstant strip has nonconstant upper
+component, even if its lower component is constant.
+
+For the upper component, the ordinary strip injective-point
+argument gives a dense open set of points where
+$\partial_su_N\ne0$ and the value $u_N(s,t)$ is neither an end
+value nor another value $u_N(s',t)$ with $s'\ne s$. The
+componentwise application is given in the proof of
+\cite[Theorem~3.2, Step~1a]{WW-constant}. It uses finite energy,
+the entire $s$-axis and convergence to the fixed end values;
+we do not invoke that theorem's later generic-Hamiltonian
+argument for arbitrary constant patches.
+
+Let $\eta=(\eta_M,\eta_N)$ annihilate the linearization together
+with the allowed $J_N(t)$ variations. If $\eta_N$ is nonzero,
+adjoint unique continuation gives a nonzero point in the free
+$t$-interval, and one may choose it in the preceding injective
+set. Compatible variations $Y$ send the nonzero vector $u_{N,t}$
+onto the full target tangent space. A variation supported near
+$(t,u_N(s,t))$ consequently has nonzero pairing with $\eta_N$,
+contrary to the annihilator condition. Thus $\eta_N=0$.
+Green's formula identifies the remaining adjoint boundary trace
+with an element of $TL_C$ whose upper component is zero.
+Equation~\eqref{eq:upper-trace-injective} makes the lower trace
+zero. Extending it by zero across that boundary interval and
+using adjoint regularity and unique continuation gives
+$\eta_M=0$. This proves full universal surjectivity without
+varying $J_M$. Reversing the strip boundary order gives the
+other auxiliary pair.
+
+At a constant strip $x$, the operator is $\partial_s+B_x$.
+The self-adjoint strip operator $B_x$ has kernel
+$T_xA_i\cap T_xL_C=0$. Its spectral gap and Fourier transform
+in $s$ give an inverse, also for small end weights. Constants
+are thus regular of index zero. Sard--Smale and a countable
+exhaustion now give regular upper paths for every required
+auxiliary pair. Intersect the residual sets with those for the
+ordinary upper strips, having fixed regular ordinary lower data first.
+The output operator for $(A_0,A_1)$ is their direct sum.
+Different triangle ends permit independent almost-complex paths;
+these paths extend to split structures on the triangle.
+
+For the triangle the same constant-upper argument would force
+a constant full map and hence a triple intersection, which is
+empty. Domain-dependent upper variations in a free interior
+disc therefore kill the upper adjoint; no global injectivity
+condition is required for these domain-dependent variations.
+Equation~\eqref{eq:upper-trace-injective} and boundary unique
+continuation kill the lower adjoint. This proves triangle
+regularity while retaining zero Hamiltonian, the fixed strip
+ends and the prescribed collar of the collapse interval. For
+$k=0$ select compatible doubling collars initially; variations
+in the free interior discs remain available.
+
+For a parameter family multiply these detecting variations by
+parameter bumps, zero near prescribed regular endpoint collars.
+The universal operator includes the data parameter once. If
+several ends share that parameter, use their independently
+supported variations in the one joint operator. Relative
+Sard--Smale gives universal regularity; it does not claim
+regularity of every vertical member.
+
+The area-index relation above gives a fixed-index energy bound.
+Every positive sphere or disk bubble removes at least four
+from the core index. A regular nonconstant autonomous strip
+has its nonzero translation vector, so its full index is at
+least one. A constant strip has index zero. Thus in full strip
+indices one and two no bubble can occur, and the index-two
+translation quotient has exactly two index-one strips at its
+boundary. The same residual-index argument applies to fixed
+triangles of dimensions zero and one and to the corresponding
+regular universal families, with the parameter counted once.
+For a shared-parameter strip problem the translation quotient
+is taken only after forming that universal operator. Ordinary
+nondegenerate strip gluing gives the boundary collars. Its
+converse follows from zero-loss compactness and exponential
+decay; a sequence outside the finitely many local gluing
+neighbourhoods would converge strongly into one of them.
+
+Finally the energy and index of an auxiliary strip from the
+maximal generator are
+\[
+ E(u)=8\pi^2\kappa_{\rm aux}
+          +2\bigl(\mathcal A_i(q_i^*)-\mathcal A_i(x)\bigr),
+ \qquad
+ \ind(u)=m(q_i^*)-m(x)+8\kappa_{\rm aux}.
+\]
+The small action oscillation is less than $2\pi^2$ and
+$2\kappa_{\rm aux}$ is integral, so energy excludes negative
+classes. The Morse difference is a nonnegative multiple of
+three, and $8\kappa_{\rm aux}$ a nonnegative multiple of four.
+Their sum is not one. No differential trajectory leaves $q_i^*$.
+Changing $J$ has altered neither these ordered actions nor their
+relative grading. This proves the cycle assertion directly on
+the product-target problem.
+\end{proof}
 
 \begin{definition}\label{def:cup}
 The \emph{compression cup} of a $k$-fold one-handle, at height Lagrangians, is
@@ -9069,8 +9225,8 @@ representatives under the primary change.
 \subsection{The folded triangle}
 
 \begin{theorem}\label{thm:folded-triangle}
-Let $N_0$, $N_1$ be the mixed maps of the pairs $(A_0,L_C)$ and $(L_C,A_1)$ (after
-unfolding, $(R_0,\widetilde P_0\circ L_C)$ and $(\widetilde P_1\circ L_C,R_1)$),
+Let $N_0$, $N_1$ be the mixed maps of the product-target pairs
+$(A_0,L_C)$ and $(L_C,A_1)$,
 with gauge inputs $Z_0=D_0\cup(-C)$ and $Z_1=C\cup(-D_1)$, both diffeomorphic to
 $V_i\cup(-V_i)=(\#^{g-1}S^1\times S^2)\#T^3$, and $N_Z$ the mixed map of
 $(A_0,A_1)$ with the data at width $\lambda_0$ of Theorem~\ref{thm:excision}. Then
@@ -10841,6 +10997,10 @@ instantons and the Atiyah--Floer conjecture}, J. Symplectic Geom.
 K.~Wehrheim and C.~T. Woodward, \emph{Floer cohomology and geometric
 composition of Lagrangian correspondences}, Adv. Math. \textbf{230}
 (2012), 177--228.
+
+\bibitem{WW-constant}
+K.~Wehrheim and C.~T. Woodward, \emph{Quilted Floer trajectories with
+constant components}, arXiv:1101.3770v1.
 
 \bibitem{WW-fft}
 K.~Wehrheim and C.~T. Woodward, \emph{Floer field theory for coprime rank

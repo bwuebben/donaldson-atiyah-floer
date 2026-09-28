@@ -441,42 +441,50 @@ spaces is Fredholm; its kernels and cokernels are smooth. Changes
 of chart and the admissible changes of realization of
 Definition~\ref{def:realization} give continuous families of
 Fredholm operators and the same determinant line.
-For each fixed positive collapse parameter, this also holds for
-the affine gauge centers in the contraction charts of Paper~I
-and their interpolation to the connection at the configuration.
-The comparison includes moving stationary limits: representatives
-are spatially Coulomb for the chosen center, and changes of these
-representatives transport the full source and both operator rows.
-These affine centers need not agree with the configuration off a
-compact set. This family retains the contraction equation's target
-trivialization and the actual primal and weak adjoint domains.
-The resulting Fredholm family is required over the whole contraction
-segment, including configurations which are not solutions.
+For the fixed-positive-scale contraction neighbourhoods, the extended
+affine-center comparison, including nonsolutions and moving stationary
+limits, is proved in Proposition~\ref{prop:affine-square} below.
 \item At ordinary ends the weights lie in common spectral gaps.
 At mixed ends the stationary coordinates are separated from the
 decaying part. Regular zero-dimensional solutions and the constant
-reference pairs have invertible realized operators. On compact
-families the estimates, slice radii, and smallness thresholds can
-be chosen uniformly, including at infinite torus length. For each
-fixed positive collapse parameter, the scalar inverse and its
-smallness threshold also apply to the affine-center interpolation
-in part~(a).
-\item The mixed shifting construction, its relative family form,
-and node gluing are continuous in the smooth topology. They commute
-with ordinary end gluing. A compact family of shifted configurations
-can be made exactly symplectically constant outside one common
-compact set, without changing a member already constant there.
-\item The solution and homotopy counts are independent of the
-choice of weights within the specified gaps. The pure symplectic
+reference pairs have invertible realized operators. The scalar and
+local elliptic estimates, slice radii, and finite-stabilization
+estimates are uniform on compact families of the noncollapsing torus
+models, including their completed limits. At positive collapse scale
+these assertions are local on compact scale intervals bounded away
+from zero. No uniform bound for the full mixed inverse or a fixed
+chart radius as the collapse scale tends to zero is asserted here;
+Lemma~\ref{lem:collapse-family} uses its stated logarithmic loss.
+\item Relative preparation makes the original tails of a compact
+configuration family stationary beyond a common cutoff, preserving
+members already stationary there. On one-input mixed domains the
+subsequent shift reaches a gauge path followed by a constant mixed
+pair. On positive-scale several-input domains it retains the ordinary
+cobordism and reaches the reference of
+Section~\ref{sec:determinants}; its relative form preserves that
+terminal subspace. These deformations are continuous in the smooth
+topology and coherent with ordinary end gluing. Limiting triangle
+orientations are defined by inverse collapse, not by shifting to a
+constant triangle. Interior-node gluing is continuous in the plumbing
+topology and is used on discs separated from matching and boundary
+collars. In the collapse application the positive plumbing parameter
+is fixed first and the endpoint insertion lies in an external strip.
+\item The weight comparison for physical solutions and homotopies
+is proved in Proposition~\ref{prop:weights}. The pure symplectic
 continuation, cap, and strip-gluing moduli spaces have the usual
 regular low-dimensional compactifications, with no additional
 bubbling boundary in the dimensions used here.
 \end{enumerate}
 \end{hypothesis}
 
-The relevant asymptotic restriction is strict: the weight is less
-than the smallest positive decay rate of every end occurring in
-that instance. Uniformity is asserted for a fixed compact family,
+The relevant asymptotic restriction is strict: the weights lie in
+the appropriate signed primal gaps; adjoints use the opposite
+signed dual weights. Every stationary and parameter column must
+belong to the weighted target. The affine
+comparison uses a common sufficiently small weight in its actual
+indicial gaps. It is not assigned the whole physical solution gap.
+Full-gap independence in part~(d) concerns the physical solutions
+and counts. Uniformity is asserted for a fixed compact family,
 not over all Heegaard splittings or all primary perturbations.
 When an end is completed, the same statement must hold on the
 completed domain. A finite-neck estimate by itself does not imply
@@ -484,8 +492,14 @@ this last assertion.
 
 \begin{hypothesis}[Oriented mixed torus completion]\label{hyp:completion}
 Consider the torus domains in the proof of the mixed excision
-theorem of Paper~I, with fixed admissible primary and secondary
-data. The determinant lines extend continuously across the
+theorem of Paper~I, with fixed admissible primary and ordinary-end
+data. Choose invariant secondary data regular on the completed
+cores and jointly regular in the shared-parameter comparison.
+Prescribed original regular maps are compared to these choices
+by finite fixed-end homotopies. Compact sources coupling the two
+cores are allowed in those finite comparisons, but are removed
+before spatial completion, where the section and sources split.
+The determinant lines extend continuously across the
 width and completion comparisons. Their identifications have the
 following properties:
 \begin{enumerate}[label=(\alph*)]
@@ -1031,6 +1045,11 @@ base coordinates near a seam; and $\lambda>0$ equals one
 outside a compact set. The chart has the same end and seam
 conventions as the original mixed problem. Changes of all
 these choices are taken inside their fixed components.
+In a comparison of weights, admissibility also requires that
+the full stationary and parameter columns belong continuously
+to every intervening weighted target. Membership of the weights
+in a spectral gap alone does not impose this condition on a
+nonsolution with slower asymptotic decay.
 \end{definition}
 
 The restriction on the target identification prevents an
@@ -1038,6 +1057,16 @@ arbitrary reversal of orientation from being included as a
 change of realization. The reference identification is the
 one induced by the geometric charts. Its admissible
 component is fixed before transporting orientations.
+
+For the collapse contraction we also use the extended realization
+of Proposition~\ref{prop:affine-square}. Its center and geometric
+target identification can have stationary limits different from
+those of the configuration and the identity, respectively. Its
+source representatives are Coulomb for the varying center, both
+rows are transported, and differentiation of the moving equation
+target contributes the residual term specified there. This is a
+separate fixed-positive-scale family, not a compactly supported
+change under Definition~\ref{def:realization}.
 
 \begin{lemma}[Realization comparison]\label{lem:realization}
 Under Hypothesis~\ref{hyp:regularity}, admissible realizations
@@ -1051,11 +1080,13 @@ orientation.
 Changes of charts act on the entire operator in
 \eqref{eq:realization}. Together with target identifications,
 they are bounded invertible changes of source and target and induce
-the standard naturality maps on determinant lines. Varying
-a weight inside a gap gives a path of Fredholm realizations;
-kernel and cokernel elements have the stronger decay common
-to the two weights, so their identifications are the natural
-ones. For a change of slice center at a solution, split the
+the standard naturality maps on determinant lines. An admissible
+weight interval gives a continuous Fredholm path after conjugation
+to fixed spaces, and hence an identification of orientation covers.
+At a solution, improved asymptotic decay identifies the kernels,
+cokernels and common stabilized determinant lines throughout the
+permitted gap. We do not assert this improved decay for an
+arbitrary nonsolution. For a change of slice center at a solution, split the
 tangent space into infinitesimal gauge directions and a
 fixed complement. Gauge invariance gives
 $d\mathcal F_c\,d_{A_c}=0$. The gauge-fixed operator is then
@@ -1085,6 +1116,207 @@ Coulomb center at a configuration which is not a solution
 is not justified by the block-triangular argument above.
 We will use a two-parameter determinant-line comparison
 when such a configuration occurs in the collapse argument.
+Likewise, a reference path in a small weighted space need not
+itself lie in every larger weighted space. For weight comparisons
+of its endpoint orientations, truncate its decaying coordinates
+on a common far end while retaining the exact stationary family.
+The truncation homotopy is taken at the initial small weight.
+The truncated path, together with the endpoint truncation segments
+at solutions or stationary references, admits the larger weights.
+Determinant transport around this homotopy gives the comparison;
+it does not improve the decay of the original nonsolution path.
+
+\subsection{Comparison of physical end weights}
+\label{subsec:weights}
+Reverse incoming ends to outward coordinates. Write an autonomous
+end operator as $\partial_s-\mathcal A_e$. Its stationary kernel
+is the primary tangent space on a mixed end; at an ordinary end
+it is zero. Choose $\gamma_e,\gamma_e^{\rm opp}>0$ so that the
+negative spectrum is at most $-\gamma_e$ and the positive spectrum
+is at least $\gamma_e^{\rm opp}$. They need not be equal. The
+permitted positive primal weights satisfy $r_e<\gamma_e$; the
+physical adjoint is paired at weight $-r_e$, not $r_e$. Mixed-end
+stationary coordinates remain a separate finite summand.
+
+\begin{proposition}\label{prop:weights}
+For the autonomous ends of the mixed domains and ordinary strips
+used here, physical solutions, their allowed gauge arrows, and
+their determinant lines are independent of the weights within
+these open gaps. At ordinary ends zero weight is also permitted.
+The identifications are transitive, respect the lifting actions
+and ordered gluing, and give the same oriented counts and
+homotopies whenever their small-weight compactifications have
+been established. This assertion does not place an arbitrary
+slowly decaying nonsolution in a faster weighted space.
+\end{proposition}
+\begin{proof}
+All comparisons use closed intervals strictly inside the gaps.
+At spatially completed torus ends no extra spatial weight is
+introduced. The longitudinal weights are constant on surface
+fibres, have zero normal derivative at physical faces and agree
+on matching traces. Write each longitudinal exponent as $r_eW_e$. Choose
+$|dW_e|\leq1$, with cutoff derivatives supported in disjoint
+longitudinal transitions. The complete stationary
+mixed operator is self-adjoint on its physical Green-form domain.
+On a completed compression, its compact-remainder estimate and
+the acyclic torus model give a normal gap; compact resolvent is
+not needed. The following argument uses its spectral projections.
+
+Start with the positive decay furnished by the mixed end estimates
+of Paper~I and \cite[Section~5.3]{DFL}. Choose a far end and put
+the solution in the stationary connection's small Coulomb slice,
+with Dirichlet condition on an artificial initial slice and the
+actual Neumann condition at physical faces. The small-weight
+scalar inverse provides this gauge, preserving the selected
+stationary arrow. Subtract the exact stationary primary limit
+and use its translation-invariant matching chart. The equation is
+\[
+ (\partial_s-\mathcal A_e)v=f(v),\qquad f(0)=df(0)=0,
+ \qquad v(s)\longrightarrow0.
+\]
+The chart and holonomy estimates give, on nested unit windows,
+\[
+ \|f(v)\|_{H^m([s,s+1])}
+ \leq C_m\|v\|_{H^{m+\ell_m}([s-1,s+2])}^2
+\]
+for a fixed finite loss $\ell_m$. Initial decay holds at every
+order, so rate $\alpha$ makes the right side have rate $2\alpha$.
+Writing $P_-,P_0,P_+$ for the spectral projections, variation of
+constants gives
+\begin{align*}
+ P_-v(s)&=e^{(s-S)\mathcal A_e}P_-v(S)
+       +\int_S^s e^{(s-\sigma)\mathcal A_e}P_-f(\sigma)\,d\sigma,\\
+ P_+v(s)&=-\int_s^\infty
+                  e^{(s-\sigma)\mathcal A_e}P_+f(\sigma)\,d\sigma,\\
+ P_0v(s)&=-\int_s^\infty P_0f(\sigma)\,d\sigma.
+\end{align*}
+The first integral improves to every rate below
+$\min(2\alpha,\gamma_e)$; the second retains rate $2\alpha$
+with denominator $\gamma_e^{\rm opp}+2\alpha$. The zero-mode
+integral uses the prescribed limiting primary coordinate. Local
+elliptic estimates on nested windows improve all derivatives.
+Iterating with strict margins gives every rate $b<\gamma_e$,
+without restricting $b$ by the opposite spectral gap. A rate
+$b>r_e$ gives membership in the desired weighted space. Compact
+families with common tail-entry windows and spectral margins
+have uniform bounds.
+
+Allowed arrows between these representatives have their prescribed
+stationary limit $g_\infty$. The temporal comparison equation
+$\partial_s g=g a_s-a'_s g$, integrated from infinity, gives
+the same rates for $g-g_\infty$. The spatial comparison equation
+and differentiation give all higher derivatives, after subtracting
+the stationary intertwining relation. The lifting classes and
+central transition data are unchanged. This concerns arrows
+between the controlled representatives, not arbitrary gauges
+applied to a stationary solution.
+
+Parameter derivatives require differentiating the stationary
+subtraction. In a family the identity $\mathcal F_b(0,q)=0$
+cancels the nondecaying parameter column. Its remainder and every
+finite stationary column then have all the above decay rates.
+The linearized equation improves the first parameter derivative;
+induction improves higher ones. Polynomial factors caused by
+parameter differentiation are absorbed in a strict rate margin.
+A common data parameter contributes only its one original column.
+
+Write the full realized operator as
+\[
+ D_r:X_r^{\rm dec}\oplus P\longrightarrow Y_r,
+ \qquad D_r(w,p)=D^{\rm dec}w+C p.
+\]
+On an end weight conjugation gives
+$\partial_s-\mathcal A_e-r_e$. Its inverse and adjoint inverse
+are uniformly bounded on a closed weight interval by the reciprocal
+spectral distance. Small coefficient and domain-transport errors
+are absorbed beyond a common cutoff. On an infinite spatial torus
+region the unweighted flat operator has mass $\mu_T>0$. The
+conjugation term has norm at most the largest relevant mixed-end
+exponent $r_T$; its inverse bound is at most
+$(\mu_T-r_T)^{-1}$. The permitted completed spatial gap is bounded
+by this essential-spectrum threshold. The original closed incoming
+weights do not vary on that added torus region. Compact-core
+primal and actual weak-adjoint estimates give Fredholmness over
+the entire weight rectangle. Smooth stationary and parameter
+columns remain in every target. If a scalar inverse at a larger
+weight is needed, scalar Fredholmness throughout its indicial gap,
+index zero from the small weight and the positive kernel energy
+identity give it. Scalar gauge modes occur in the full end operator,
+so the full permissible gap is no larger than that scalar threshold. This avoids extending the sufficient small-weight
+coercivity bound beyond its range.
+
+For $r_-\leq r_+$ the inclusions of physical fields give a
+commuting square of source and target inclusions, with identity
+on $P$. A kernel element is a stationary column plus a remainder.
+The coefficient errors and the images of stationary columns have
+every permitted rate. The same spectral formulas improve the
+remainder to every weight. This applies also to kernels with
+compactly supported stabilization columns and to universal kernels.
+
+For the cokernel use distributions paired in the unweighted
+physical density. A weak cokernel at $r_+$ lies at dual weight
+$-r_+$. Window estimates initially bound its growth by
+$e^{r_+s}$. Choose $\beta$ with $r_+<\beta<\gamma_e$; multiplying
+by the coefficient error gives a decaying forcing of rate
+$\beta-r_+$. The adjoint spectral formula excludes growing
+normal modes, whose rates are at least $\gamma_e$. Its zero
+mode has a finite limit. The resulting bounded field improves
+its forcing again, and its remainder has every rate below
+$\min(\gamma_e,\gamma_e^{\rm opp})$. It therefore belongs to
+the dual space at $-r_-$ as well. At an ordinary end there is
+no zero mode, so $r_-=0$ is included. Retain the conditions
+$C^*y=0$ and, in a universal problem, the parameter-column
+annihilator. These are the same convergent physical pairings
+at every weight. Hence the kernels and cokernel duals, and
+therefore the finite-dimensional cokernel quotients, are canonically
+identified. For unordered weight vectors insert their componentwise
+minimum and maximum.
+
+Choose finitely many smooth compactly supported target columns
+$\rho:V\to Y$ spanning the cokernel on a compact parameter patch.
+They work at every weight. With $E_r=\ker(D_r+\rho)$, the identity
+on actual fields identifies
+\[
+ \det D_r=\det E_r\otimes(\det V)^*.
+\]
+Enlarging the stabilization gives the same map by its exact
+sequence. These identifications are continuous, transitive and
+preserve canonical orientations at invertible operators. They
+commute with the allowed gauge arrows and shared parameter
+factor. The weight rectangle is contractible, so its transport
+has no additional choice of path or component sign.
+
+The reference-orientation paths can initially have slower tails.
+Prepare them by cutting off their decaying coordinates on a common
+far end, retaining the exact stationary coordinates and carrying the
+actual transition data through the preparation transport. The preparation homotopy is made at the
+initial small weight. A stationary endpoint is fixed; at a solution
+the endpoint segment has all permitted decay rates by the preceding
+argument. Thus the prepared path and its endpoint segments admit
+the full weight rectangle, even when the original path does not.
+Determinant transport on this rectangle and on the preparation
+homotopy proves compatibility with the original reference
+normalization. Affine-center comparisons are made first at their
+common small weight, as in Proposition~\ref{prop:affine-square}.
+The physical solution comparison then uses this proposition's
+full gap; no old spectrum is assigned to an affine operator.
+
+Finally consider a sequence in an already established small-weight
+compactification. Fix translations on its retained components.
+Energy exhaustion gives common tail-entry windows. The estimates
+above, with $r<b<\gamma_e$, bound a tail beyond $R$ by a constant
+times $e^{-(b-r)R}$ in the desired weighted norm. Compact convergence
+therefore improves to convergence in that weight. At ordinary
+breaks this is a componentwise assertion in the gluing charts;
+at spatial completion it retains the existing strong spatial
+tails. The small-weight forward gluing produces the same actual
+solutions, and the converse and uniqueness give the same local
+branches in larger weights. Common compactly supported stabilizations
+make the gluing exact sequences commute with inclusion of physical
+fields. Cutoffs, evaluation maps, stationary factors, and conversion
+lines are the same ordered geometric maps. Thus all boundary signs
+and the actual counts and homotopies are unchanged.
+\end{proof}
 
 \subsection{Shifting and relative orientations}
 A constant pair $C_x$ joins the gauge critical point $a_x$
@@ -1141,9 +1373,53 @@ The pure strip orientation is defined by applying
 \eqref{eq:Gamma} to $C_x\#u$ and cancelling the constant
 pair. This is the transported orientation construction
 of~\cite[Section~4.7]{DFL}. For a mixed triangle there are
-several gauge inputs; their lines are listed in cyclic
-order and the same construction is performed on all arms.
-Associativity is applied before any factor is reordered.
+two gauge inputs. Use the outgoing closed cut of Paper~I to write
+its gauge region as an ordinary two-input cobordism followed by
+a truncated output DFL domain. For the folded triangle the cut
+is $Z$ and the primary arms are $D_0,D_1$. No critical boundary
+condition is imposed on an arbitrary configuration at this finite
+cut. On a compact family at positive collapse scales, the compact
+metric interpolation of Paper~I first supplies its product collar.
+This operation has no asserted uniformity as the scale tends to zero.
+
+Prepare and positively extend the output DFL region as in the
+one-input construction. In its compactified collar coordinate
+$r\in[-2,0]$, localize the shift by
+\[
+ F_\kappa(r)=r+\kappa\chi(r),
+\]
+where $\chi$ is nondecreasing, zero near $-2$, and one throughout
+the output region. Extend by identity on the ordinary core.
+Since $F'_\kappa=1+\kappa\chi'>0$, this pulls back the whole
+connection smoothly; on the section use the usual translation.
+For a common large finite $\kappa$ the output region and a collar
+on both sides of its interface are the constant mixed pair $C_y$.
+The remaining connection is an ordinary cobordism configuration
+$A_E$, so the reference is $A_E\#C_y$, with the original inputs
+unchanged. In particular it is not a product of two gauge paths.
+
+Pull back the actual transition gauges as well. If $C_{i,\kappa}$
+is the parameter component of this pulled-back connection, solving
+$\partial_\kappa v_i=-C_{i,\kappa}v_i$ identifies its transitions
+with the initial ones. This retains the lifting classes and central
+cocycles. The stationary representatives are the actual primary
+paths, including the corner pullback, and both operator rows are
+transported. A common sufficiently small weight gives the family
+in Hypothesis~\ref{hyp:regularity}; no intermediate operator is
+assumed invertible.
+
+At the terminal configuration remove compact nonprimary terms
+whose dependence or output crosses the cut. On the constant mixed
+factor use its zero-secondary reference datum, retaining the fixed
+compatible end structures. These are compact Fredholm data
+homotopies, not assertions about unchanged solution counts. Ordinary
+determinant gluing then gives the ordinary cobordism line tensored
+with the canonically oriented constant-pair line. The relative
+construction preserves this terminal subspace, so the square
+argument above proves independence and coherence with ordinary
+gluing. Input lines stay in cyclic triangle order; any conversion
+line stays in its prescribed position. Associativity is applied
+before any factor is reordered.
 
 \subsection{Parameters and boundary orientations}
 A parameterized family is oriented by placing the oriented
@@ -1273,13 +1549,11 @@ constant and begins at the canonical sign $+1$.
 
 The filtration now gives an inverse integral matrix.
 Since $N_p$ commutes with the differentials, its inverse
-does too. Finally connect two choices of regularizing
-data by a generic small path, allowing the gauge end
-perturbation to vary and retaining the fixed primary
-data. The compactified one-dimensional mixed spaces give
-\eqref{eq:family-boundary}. The gauge continuation accounts
-for the changing gauge complex, while the strip end is
-unchanged. This proves the stated independence.
+does too. At fixed ordinary ends, a regular compact-data homotopy gives
+\eqref{eq:family-boundary}. A change of the gauge-end function
+is treated by the inserted-cylinder comparison in
+Proposition~\ref{prop:end-data}, which retains the actual ordinary
+continuation map. This proves the stated independence.
 \end{proof}
 
 The secondary perturbations are supported away from the
@@ -1289,6 +1563,222 @@ smallness neighborhood where all the reference
 constant-pair operators remain invertible. This is why
 an arbitrary path of perturbations cannot be substituted
 in the normalization argument.
+
+\subsection{Changing ordinary end data}
+\label{subsec:end-data}
+A change of a far-end equation is compared by inserting its
+ordinary continuation domain. It is not a compactly supported
+change on the original mixed domain.
+
+\begin{proposition}\label{prop:end-data}
+Fix primary data and a mixed vertex, including the closed-$Z$
+vertex at a fixed positive width. With the regularity and
+compactification inputs above, its mixed maps satisfy the following
+integral chain homotopies.
+\begin{enumerate}[label=(\roman*)]
+\item If $f_0,f_1$ are two sufficiently small invariant gauge
+trajectory perturbations vanishing near the whole primary critical
+set, with the same symplectic end datum, then
+\[
+ N_1\cont_G(f_0,f_1)-N_0=d_S H_G+H_Gd_{G,0}.
+\]
+\item If the gauge end is fixed and $J_0,J_1$ are regular ordinary
+strip structures on the same ordered primary pair, then
+\[
+ \cont_S(J_0,J_1)N_0-N_1=d_{S,1}H_S+H_Sd_G.
+\]
+In the closed-$Z$ case of part~(ii), the output pair is the product
+pair $(A_0,A_1)$ and the structures and continuation are split.
+\end{enumerate}
+Both homotopies count actual isolated universal solutions of vertical
+index $-1$. The assertion concerns these fixed-primary end changes;
+it is not a mixed continuation theorem for arbitrary primary paths
+or arbitrary correspondence-output pairs.
+\end{proposition}
+\begin{proof}
+First record the finite compact-data comparison required below.
+Gauge sources may vary with fixed compact dependence and output,
+and section structures may vary on a compact set, keeping all far
+ends, protected genus matching collars and collapse germs fixed.
+Coefficients at an ordinary physical Lagrangian boundary may vary
+through a compact compatible family; its totally real labels remain
+fixed. Keep split structures on a product target. The mixed local
+primal and weak-adjoint estimates vary continuously with these
+coefficients. A compact principal-coefficient change in the section
+is not called a relatively compact operator: local elliptic estimates,
+a finite parameter cover and the fixed end parametrices instead
+give Fredholm estimates with a compact remainder. Both full operator
+rows and all stationary columns are transported.
+
+For zero Hamiltonian the section energy is twice its symplectic
+area, even for domain-dependent $J$. There is no derivative-of-$J$
+term. The gauge modified-energy formula and the relative index-period
+formula give a uniform energy and lower-index bound. Compactness
+retains the coefficient family on the core; the usual nonnegative
+four-index loss and positive indices of ordinary breaks remain.
+Invariant compact gauge variations still detect the entire mixed
+cokernel with this prescribed $J$: the scalar inverse removes the
+scalar component; character-zero holonomy tests, including every
+nonlocal output in the detecting region, remove the gauge adjoint;
+and the matching Green form followed by zero extension and unique
+continuation removes the section adjoint on each component. This
+uses the genus matching arc and connected gauge region of the
+stated vertices.
+
+Finite selection is performed in increasing index from a common
+lower bound. Absence of lower-index cores makes the next-index
+space compact before its regularity is invoked. Freeze a finite
+set of detecting variations at that stage; small coefficients
+preserve the earlier absence and endpoint collars. Relative
+Sard transversality gives the required universal spaces. In their
+operator $(v,\tau)\mapsto D_bv+\tau C_b$, the single column $C_b$
+includes $(\partial_bJ_b)u_t$, target transport and gauge-source
+variation. Ordinary gluing copies this column once on the retained
+core. The compactified one-dimensional space has only its data
+endpoints and ordinary index-one breaks. Strong convergence and
+the ordinary bordered inverse give both directions of its collars.
+Parameter-first orientation gives the Hom identity
+\eqref{eq:family-boundary}. This proves the finite comparison even
+when the two data differ in compact section structure.
+
+For part~(i), let $\beta$ rise from zero to one on $[-1,1]$ and
+let $\chi$ be the mixed vertex switch, equal to one for $s\leq-3$
+and zero for $s\geq-2$. On its incoming gauge end insert the
+slice functional
+\[
+ q_T(s)=\chi(s)\bigl(f_0+\beta(s+T)(f_1-f_0)\bigr),
+ \qquad T\geq5.
+\]
+It retains $f_0$ on the far end and $f_1$ on the long intervening
+cylinder. Translate a fixed regular ordinary continuation
+perturbation with the $\beta$ band and retain the $N_1$ secondary
+on the mixed core. Their full dependence and output are disjoint
+for large $T$. Ordinary continuation is pinned by these data;
+a rigid continuation has full index zero, without a translation
+quotient. The smallness neighbourhood for $f_i$ is chosen so
+that no additional critical points occur: compactness of the
+perturbed critical equation would otherwise give a primary
+critical limit outside the neighbourhood where both functions
+vanish. Their original critical points and Hessians thus agree.
+
+The modified-curvature energy identity is
+\[
+ E_T=8\pi^2\kappa+2\|\eta_T(A)\|^2
+                 +2\int\partial_s q_T(s)(A_s)\,ds,
+ \qquad
+ \partial_s q_T=\beta'(s+T)(f_1-f_0)+\chi'(s)f_1.
+\]
+The last integral is bounded in absolute value by
+$\|f_1-f_0\|_\infty+\|f_1\|_\infty$, and the translated compact
+secondary supports have uniformly bounded norm. The autonomous
+$f_1$ gradient on the growing middle cylinder is part of modified
+curvature, not a compact source whose $L^2$ norm is assumed bounded.
+Reference configurations with the same intermediate critical lift
+have cancelling cut actions. Ordinary determinant gluing gives
+index additivity, so the period formula yields a uniform energy
+and lower-index bound before extraction.
+
+For part~(ii), choose a continuation structure $J_{01}(\sigma,t)$
+from $J_0$ to $J_1$, with zero Hamiltonian and constant end collars.
+It admits regular relative data within this restricted class.
+Indeed at a nonconstant solution, the set where $u_t\ne0$ is dense
+in any free transition region: vanishing on an open set would
+make $u_s$ zero there and unique continuation would make the
+solution constant. If a universal adjoint field is nonzero,
+choose such a point where it is also nonzero. Domain-dependent
+compatible variations $Y\mapsto Yu_t$ span the target fibre,
+contradicting the cokernel pairing. Domain localization removes
+any requirement that the whole strip image be injective. At a
+constant solution the linear energy identity on the fixed tangent
+Lagrangians makes the decaying kernel zero. Its index is zero by
+deformation to an autonomous constant strip; transversality keeps
+the asymptotic operators invertible during this index comparison.
+For product outputs use independent variations on each nonconstant
+factor; every constant factor has that inverse. Relative
+Sard--Smale, monotonicity and the four-index bubble exclusion give
+regular continuation spaces through index one, with the parameter
+counted once.
+
+On the outgoing ordinary strip of $N_0$, keep its original datum
+until $s=T-1$ and then use $J_{01}(s-T,t)$. The external equation
+is $J_1$ for every finite $T$. The gauge and stationary mixed
+ends remain fixed. The transition adds no Hamiltonian curvature
+or boundary work. Consequently the section area-index relation,
+fixed gauge-source bounds and cancellation of intermediate actions
+give the same length-independent energy and lower-index bounds.
+In both parts the finite-$T$ operator has fixed far-end equations;
+its length derivative is supported in the translated transition
+band. At $T=\infty$ use separate retained-core charts, rather
+than declaring that support fixed on the untranslated domain.
+
+We verify exhaustiveness in both constructions. In part~(i) the
+retained factors are the pinned gauge continuation and the $N_1$
+core; in part~(ii) they are the $N_0$ core and the pinned strip
+continuation. The fixed equations govern the intervening autonomous
+neck. Extraction gives these two cores and ordinary trajectories
+$W_j$, with
+\[
+ d-I_1-I_2-\sum_j\ind D_{W_j}=4n,\qquad
+ E_{\rm lost}=4\pi^2 n,\qquad n\geq0.
+\]
+The continuation contributes its full index. All retained cores
+are regular with nonnegative index; every nonconstant autonomous
+trajectory has positive full index. Hence negative-index solutions
+are absent for sufficiently large $T$, and at $d=0$ both cores
+have index zero, all ordinary breaks are absent and $n=0$.
+The common lower bound makes the negative-index conclusion
+simultaneous. On the gauge continuation core the source switches
+are retained; on the section continuation core no derivative-of-$J$
+energy is missing.
+
+Zero loss and the original end gaps give strong convergence on the
+components. Leaving an intermediate critical neighbourhood costs
+positive neck energy; inside it the gapped cylinder or strip inverse
+and the small nonlinear remainder control the neck by the component
+tails. The convergence therefore enters the strong pregluing charts.
+Conversely each pair of invertible zero-index core operators gives
+an ordinary bordered neck inverse and an exponentially small gluing
+error. Contraction gives one solution. There are finitely many rigid
+pairs, so one threshold works for all of them; strong convergence
+and uniqueness rule out any other solution or duplicate chart.
+
+The actual lifting quotient is retained in the gauge construction.
+The connected cylinder contributes no extra central matching
+class, and its arrows identify the two end lifting groups; the
+fibre product over the common critical orbit gives precisely
+matrix-composition multiplicity. A pure strip adds no gauge region
+or lifting factor. In both cases ordinary determinant gluing
+compares the product before cancelling the intermediate generator
+line. For a nonautonomous continuation keep its full stabilized
+operator on the compact core, its two prescribed end models, and
+the autonomous inverse only on the matched tail. The bordered
+exact sequence and the reference and cutoff squares therefore
+apply with both far ends fixed. They do not replace the compact
+continuation core by an autonomous trajectory. Relative mixed
+shifting and associativity preserve the constant-pair normalization;
+the constant strip has its canonical orientation. All maps here
+are even. Thus the exact rigid counts are
+\[
+ F_T=N_1\cont_G(f_0,f_1)\quad\text{in (i)},\qquad
+ F_T=\cont_S(J_0,J_1)N_0\quad\text{in (ii)}.
+\]
+No independent sign is chosen for a component or matrix entry.
+
+Choose one such finite $T_*$. If necessary make an arbitrarily
+small compact endpoint perturbation to regularize index one,
+preserving the already regular rigid count by compactness and
+local uniqueness. In part~(i), interpolate the inserted data to
+$N_0$ by replacing $\beta$ with $b\beta$ and interpolating the
+compact sources; the far input remains $f_0$. In part~(ii),
+interpolate to $N_1$ through compact compatible section changes
+and compact gauge sources, with far output $J_1$. Both paths
+fit the finite comparison proved at the start. Its actual
+vertical-index-minus-one count gives $H_G$ or $H_S$ and the
+displayed identities. Finally Proposition~\ref{prop:weights}
+extends these physical counts from their common small construction
+weight to the full permitted intervals. Slow reference paths
+are prepared before comparing their weights.
+\end{proof}
 
 \subsection{Parametric orientations}
 The same reasoning applies to compact parameter families
@@ -1311,8 +1801,11 @@ Sobolev quotient with the smooth quotient globally.
 Order three Lagrangians $L_0,L_1,L_2$ by the boundary
 orientation of the triangle. Write $C_{ij}=\CF(L_i,L_j)$.
 Use the end gradings induced by its chosen almost-complex gauge
-triangle. Transport orientations through the mixed triangle and
-put all generator lines before its determinant line.
+triangle. Orient the positive-scale mixed triangle by the ordinary
+cobordism reference above. The inverse collapse construction below,
+followed by ordered cancellation of its completing vertices,
+defines the pure triangle orientation. Put all generator lines
+before its determinant line.
 The resulting product
 \[
  \mu:C_{01}\otimes_R C_{12}\longrightarrow C_{02}
@@ -1343,8 +1836,8 @@ $m+|\theta|$. All subsequent changes of bases use this converted
 formula, with the right tensor convention.
 
 \subsection{The determinant comparison at the collapsed limit}
-The comparison must be defined on configurations along the shifting
-homotopies, where kernels and cokernels may occur. We first give
+The comparison must be defined on compact families of limiting
+configurations, where kernels and cokernels may occur. We first give
 that construction. Stationary mixed-end coordinates are included
 as finite-dimensional domain factors throughout. The fast factor
 is the determinant contribution from the complement of the harmonic
@@ -1352,10 +1845,16 @@ modes on the collapsing compression.
 
 \begin{lemma}[Collapse of stabilized families]\label{lem:collapse-family}
 Let $\{V_b\}_{b\in B}$ be a compact smooth family of limiting
-configurations in a relative shifting homotopy, with fixed end
-models and weights in common gaps. Suppose the configurations are
-exactly symplectically constant outside a common compact set, as
-in Hypothesis~\ref{hyp:regularity}(c). For sufficiently small
+configurations with the specified autonomous end models and
+separated stationary coordinates. Assume that their remainders
+have a common exponential rate $\beta$ at every required derivative
+order, and choose the comparison weights in common gaps strictly
+below that rate. Retain Paper~I's unperturbed
+collapse datum: the primary perturbation vanishes on the inserted
+compression, and both the dependence and output of every other
+perturbation avoid the prescribed collapse neighborhood.
+Primary data on the remaining pieces may vary in a compact
+regular family. For sufficiently small
 $\epsilon>0$, pregluing gives a continuous isomorphism of
 orientation lines
 \begin{equation}\label{eq:collapse-det}
@@ -1414,7 +1913,16 @@ coefficients. The zero-order term of the section linearization
 is retained. On the unchanged pieces the operator is the full
 $D_{V_b}$. The compactness of $B$ bounds all these coefficients.
 The end and transition estimates use only the fixed end operators,
-the separated stationary coordinates, and the common gaps.
+the separated stationary coordinates, and the common gaps. Choose
+the auxiliary exterior weight $\delta_*<\beta$. Paper~I's exterior
+truncation gives the stationary-column error
+\[
+ O(\epsilon^{1/4})+
+ O(\epsilon^{(\beta-\delta_*)/4}),
+\]
+uniformly over $B$. Its exponentially convergent coefficient
+estimates and their weak-adjoint counterparts therefore apply to
+the original configurations. Exact constant tails are not required.
 Put $\mathsf A=1+|\log\epsilon|$. First work on the auxiliary
 exterior of Paper~I, Section~7.7,
 with its free stationary limits and fixed positive end weight.
@@ -1481,8 +1989,10 @@ is the local compression scale ($\mathfrak s=\epsilon$ on the
 middle compression and $\mathfrak s=\epsilon e^s$ in the endpoint
 neck coordinate $s$ of Paper~I); the stationary factors
 are unchanged, and the fixed compact family has uniformly bounded
-coefficients. The truncations can be made in its common constant
-region. Multiplication by the polynomial inverse bound still gives an
+coefficients. Take $\sigma$ no larger than the positive exponents in
+these endpoint errors. The truncation estimates are uniform on the
+compact exponentially convergent family. Multiplication by the
+polynomial inverse bound still gives an
 error tending to zero. Hence
 $k\mapsto A_{\epsilon,b}^{-1}(0,k)$ identifies $K_b$ with
 $\ker(L_{W_\epsilon(V_b)},j_{\epsilon,b})$ and is asymptotic to
@@ -1522,11 +2032,39 @@ in Paper~I, with no additional stabilization required. This proves
 all the assertions.
 \end{proof}
 
-Apply the lemma to the compact configuration families in the
-relative shifting argument of Proposition~\ref{prop:transport}.
-Its ordinary-gluing compatibility propagates the constant-reference
-normalization over each required configuration component. We may
-now specialize to a regular index-zero limiting solution $V$.
+We use the lemma to \emph{define} the limiting triangle orientation.
+Complete its incoming ordinary strip ends with the already oriented
+one-input mixed vertices; the constant vertices at its generators
+suffice for this definition. Orient $L_{W_\epsilon(V)}$ by the
+positive-scale several-input construction above, pull its orientation
+back through~\eqref{eq:collapse-det}, and cancel the completing-vertex
+lines in cyclic order. A limiting triangle need not admit a shift
+to a constant triangle: the triple intersection of its boundary
+labels can be empty. The positive-scale shift need not preserve
+the image of collapse pregluing either. Neither assertion enters
+this definition.
+
+Continuity for $0<\epsilon<\epsilon_0$ on a compact configuration
+family compares sufficiently small scales. On overlaps choose a
+common smaller scale. Stabilization independence and ordinary
+gluing compare the auxiliary columns, completing vertices and necks.
+For a symplectic strip at an incoming end, apply the one-input
+comparison $C_x\#u\sim A\#C_y$ in its completing vertex, away from
+the central collapse neighbourhood, and absorb $A$ into the ordinary
+cobordism factor. Thus the full end-gluing diagram commutes before
+the vertex lines are cancelled. This proves coherence of the
+defined triangle orientation without an independent component sign.
+
+A nonsolution reference family supplied only in a strong weighted
+topology can first undergo relative end preparation. Define the
+orientation there and transport it back through the Fredholm
+preparation family; relative cutoff squares compare the choices.
+Alternatively use a smaller comparison weight below its remainder
+rate. This does not put a slow nonsolution into a faster realization.
+Actual solutions instead use their proved exponential decay in the
+lemma and are not replaced by truncated solutions.
+
+We may now specialize to a regular index-zero limiting solution $V$.
 Its complete realized operator, and the operator at its preglue,
 are invertible. Denote the actual nearby solution by
 $\mathcal G_\epsilon(V)$.
@@ -1557,42 +2095,252 @@ remaining edge must have the same property at its
 endpoints.
 \end{proof}
 
+\begin{proposition}[Affine centers at positive collapse scale]
+\label{prop:affine-square}
+Fix the collapse datum of Lemma~\ref{lem:collapse-family} and a
+sufficiently small positive scale $\epsilon$. Let
+$c_s=\Phi(sz_*)=(A_s,u_s)$, $0\leq s\leq1$, be the exact matching-chart
+segment from the preglue $c_0=W_\epsilon(V)$ to the solution
+$c_1=\mathcal G_\epsilon(V)$ supplied by Paper~I. At a common
+sufficiently small original-end weight there is a continuous
+Fredholm family $D_{s,t}$, $0\leq s,t\leq1$, whose $t=0$ edge is
+the full contraction derivative and whose $t=1$ edge is the
+physical orientation operator at $c_s$. It retains the finite
+stationary coordinates, both operator rows, and their physical
+weak-adjoint domains. If $V$ is regular of index zero, the other
+three edges are invertible.
+
+The Fredholm construction also holds in compact smooth families
+of these small matching-chart neighbourhoods, including
+nonsolutions. Its bounds may depend on the positive scale.
+\end{proposition}
+\begin{proof}
+Write $g=g_\epsilon$, $\lambda=\lambda_\epsilon$ and
+$\widehat g=\lambda^{-2}g$ for the metrics and rescaling in
+Paper~I, Sections~7--8. Put
+\begin{equation}\label{eq:affine-centers}
+ C_{s,t}=(1-t)A_0+tA_s.
+\end{equation}
+The center need not solve the primary equation at a mixed end.
+The exact chart fixes the normal connection trace, so the
+covariant Neumann condition is common to all these centers.
+A single normal gauge for $A_0$, applied to the whole family,
+makes this trace zero without changing the affine relation.
+For each fixed $\epsilon$, the changed compression region is
+compact and its minimum scale is positive. Paper~I's strong
+norms are then equivalent to ordinary weighted Sobolev norms,
+with the stationary coordinates adjoined; these equivalence
+constants need not be uniform as $\epsilon\to0$.
+
+At an original mixed end $e$, choose the primary representatives
+$B_e(p)$ in the spatial Neumann Coulomb slice of $B_e(0)$:
+\begin{equation}\label{eq:affine-end-slice}
+ d_{B_e(0)}^*(B_e(p)-B_e(0))=0,
+ \qquad (B_e(p)-B_e(0))(n)=0.
+\end{equation}
+The spatial scalar inverse and implicit function theorem give
+this local section of the actual primary family. Extend it into
+the matching chart after subtracting its stationary value. This
+ensures that the affine scalar equation has weighted target.
+If an initial local primary section is used instead, its small
+spatial gauge gives this normalization; extend that gauge with
+a fixed longitudinal cutoff. The correction is quadratic in the
+stationary parameters when the initial tangent is Coulomb. It
+occurs on the fixed original-end geometry and preserves the
+initial collapse operator and the quadratic estimates of Paper~I.
+The chart segment is smooth in all stationary-subtracted norms.
+
+We first compare scalar operators without assuming compact
+support of $C_{s,t}-A_s$. With
+$d\mu=\lambda^2dV_{\widehat g}=\lambda^{-2}dV_g$, the operator
+$P_{C,A}=\lambda^2d_C^{*,g}d_A$ has weak form
+\begin{equation}\label{eq:affine-scalar-form}
+ \langle\xi,P_{C,A}\eta\rangle_\mu
+ =\int\langle d_C\xi,d_A\eta\rangle_{\widehat g}\,d\mu.
+\end{equation}
+The two factors on the right are generally different. Let $C_P$
+be the Poincare constant for $A$, and let $a$ bound the bracket
+with $C-A$ in the rescaled metric. Then
+\[
+ \operatorname{Re}\langle\xi,P_{C,A}\xi\rangle_\mu
+ \geq(1-aC_P)\|d_A\xi\|_\mu^2.
+\]
+If $aC_P<1$, the bounded coercive form gives a weak inverse.
+Conjugating by an original-end weight $w=e^\omega$ adds form
+terms controlled by $\|d\omega\|_\infty$ and its square. For a
+common sufficiently small weight they are absorbed. Neumann
+elliptic regularity gives the higher Sobolev inverses at this
+fixed scale. The identical spatial argument makes $d_C^*d_B$
+invertible when $B$ is a primary limit and $C$ is sufficiently
+close to it, whether or not $C$ is primary flat.
+
+We next specify all stationary columns. Let $h_{s,0,e}(p)$ be
+the connection value of the contraction-chart column at the
+limit $B_e(s)$, and let $C=C_{s,t,e}$ be the corresponding
+limit of the center. Define
+\begin{equation}\label{eq:affine-columns}
+ \psi_{s,t,e}(p)=(d_C^*d_{B_e(s)})^{-1}d_C^*h_{s,0,e}(p),
+ \qquad h_{s,t,e}=h_{s,0,e}-d_{B_e(s)}\psi_{s,t,e}.
+\end{equation}
+The new value is $C$-Coulomb and has the same primary boundary
+class. At $t=0$ the correction vanishes by
+\eqref{eq:affine-end-slice}. Extend $\psi$ by a fixed end cutoff
+to $\Xi_{s,t}(p)$ and put
+\[
+ H_{s,t}(p)=H_{s,0}(p)-G_s\Xi_{s,t}(p),
+ \qquad G_s\xi=(d_{A_s}\xi,0),\qquad
+ J_{s,t}(w,p)=J_s^{\rm dec}w+H_{s,t}(p).
+\]
+Here $J_s^{\rm dec}$ is the decaying derivative of the exact
+chart. Reading the primary classes at infinity and subtracting
+$H_{s,t}$ proves that $J_{s,t}$ is a source isomorphism. It is
+the derivative of an actual matching chart: solve the nonlinear
+spatial $C$-Coulomb equation based at $B_e(s)$ and extend its
+small gauge with the same cutoff. This leaves the base
+configuration fixed and differentiates to the displayed formula.
+The scalar stationary image vanishes, and all remaining scalar
+columns belong to the weighted target. Equivariance gives
+\begin{equation}\label{eq:affine-residual-gauge}
+ \nabla\mathcal F_{c_s}G_s\Xi
+       =\rho_*(\Xi)\mathcal F(c_s).
+\end{equation}
+This weighted equation column is retained; it need not vanish
+at a nonsolution.
+
+For Fredholmness, first work in physical decaying spaces. The
+local primal and weak-adjoint estimates are
+\cite[Theorem~4.17 and Remark~4.19]{DFL}. Their boundary-domain
+transport is \cite[Proposition~5.27 and Lemma~5.67]{DFL-mixed}.
+The changed compact core is smooth at this fixed scale. At a
+mixed stationary limit the current-center cylinder has the form
+$\partial_\theta-\mathcal A_B$, with self-adjoint spatial
+operator and a positive normal gap $\gamma$. Its weighted
+whole-cylinder inverse satisfies
+\[
+ M_\delta\leq\frac1{\min(\delta,\gamma-\delta)},
+ \qquad 0<\delta<\gamma,
+\]
+as well as the spatial first-order estimate. Stationary
+coordinates are adjoined separately. Changing the scalar
+center to $C$ adds a zeroth-order row of norm at most
+$c\|C-B\|_{C^0}$. If $cM_\delta\|C-B\|_{C^0}<1/2$, a Neumann
+series supplies the affine cylinder inverse and the inverse
+of its actual adjoint. No self-adjoint spectral decomposition
+for the affine operator is required. The true end coefficients
+and matching domains converge to these models, so their errors
+are absorbed after a common far cutoff. Ordinary end models
+are unchanged. Compact-core center changes are relatively
+compact by Rellich. Hence, after weight conjugation,
+\[
+ \|v\|_{H^1}\leq C(\|D^{\rm dec}_{s,t}v\|_2+\|v\|_{L^2(K)}),
+ \quad
+ \|y\|_{H^1}\leq C(\|(D^{\rm dec}_{s,t})^\dagger y\|_2
+                                      +\|y\|_{L^2(K)}).
+\]
+Adding the finite stationary columns preserves Fredholmness.
+Higher estimates and smooth finite stabilizations identify the
+resulting determinant lines with the strong realizations.
+
+For clarity, the adjoint here is taken after weight conjugation.
+A zeroth-order physical center change leaves the principal Green
+form and its matching annihilator unchanged. Write $K_{s,t}(p)=D_{s,t}(0,p)$ for the full target column
+corresponding to the source lift $H_{s,t}$. A cokernel element
+satisfies both $(D^{\rm dec}_{s,t})^\dagger y=0$ and
+$K_{s,t}^*y=0$. A target map $S$
+pulls the weak domain back by $S^*$; it does not leave the old
+adjoint boundary label fixed. The source chart, which includes
+a boundary trace extension, need not extend to a bounded map
+on bulk $L^2$. We use it as a bounded isomorphism of Sobolev
+domains, which preserves the cokernel annihilator. Equivalently,
+complete its decaying source in the pulled-back norm
+$\|J_s^{\rm dec}w\|_{L^2}$ before forming a coordinate adjoint.
+Keep the finite stationary space as a separate summand.
+
+There is also a target derivative. On the section factor choose
+$S_c$ by pointwise parallel transport from $u(z)$ to $u_0(z)$
+along the short geodesic in the target. The gauge target is
+fixed. Shrinking the chart gives uniform normal neighbourhoods;
+$S_{c_0}=1$ and $\nabla S|_{c_0}=0$. Pointwise multiplication
+estimates preserve Paper~I's quadratic bound and initial
+operator. Differentiating gives
+\begin{equation}\label{eq:affine-target-residual}
+ d(S\mathcal F)_c[v]=S_c\nabla_v\mathcal F+R_cv,
+ \qquad R_cv=(\nabla_v S)_c\mathcal F(c).
+\end{equation}
+The coefficient of $R_c$ tends to zero on the original ends,
+where the residual tends to zero. It is compact from the
+weighted decaying $H^1$ domain to $L^2$, by compact truncation
+and Rellich, and its stationary columns are weighted finite
+rank. The anchoring gives $R_{c_0}=0$ even at the nonsolution
+preglue; also $R_{c_1}=0$ since $c_1$ is a solution. The target
+map itself may have a nonidentity stationary limit.
+
+The required square is
+\begin{equation}\label{eq:full-affine-square}
+ D_{s,t}=\left(S_{c_s}\nabla\mathcal F_{c_s}+(1-t)R_{c_s},
+       \lambda^2d_{C_{s,t}}^{*,g}\pi_A\right)J_{s,t}.
+\end{equation}
+The preceding estimates prove its Fredholmness and continuity
+everywhere. Its $t=0$ edge is exactly the derivative of the
+contraction equation, including the affine scalar row and
+\eqref{eq:affine-target-residual}. Paper~I's inverse and quadratic
+bounds make this entire edge invertible. Strong invertibility
+implies first-order invertibility: kernels regularize into the
+strong domain, and a weak cokernel would annihilate every smooth
+target reached by the strong inverse. Closed range and density
+exclude that cokernel. At $s=0$, the centers and source maps
+are constant and $R=0$, giving the invertible preglued operator
+used in \eqref{eq:collapse-det}.
+
+At $s=1$, equivariance gives $\nabla\mathcal F_{c_1}G_1=0$.
+The scalar inverse splits the source into horizontal vectors
+and decaying gauge directions. The resulting blocks are the
+intrinsic quotient linearization and $P_{C_{1,t},A_1}$. Changing
+\eqref{eq:affine-columns} changes only the representative of
+that quotient tangent; \eqref{eq:affine-residual-gauge} now
+vanishes. Regularity and index zero make the quotient block
+invertible, and scalar coercivity makes the second block
+invertible. This proves invertibility of the third edge.
+At $t=1$ the residual term is absent and the center is $A_s$,
+so the remaining edge is precisely the physical orientation
+operator path. No invertibility assertion is made along its
+interior.
+
+Finally the required smallness follows from the actual
+contraction bounds, not an unspecified fixed-scale neighbourhood.
+On the unchanged original ends the spatial gaps and cylinder
+constants are fixed. The stationary correction is bounded by
+$C(1+|\log\epsilon|)^{m+1}e_\epsilon\to0$, with $e_\epsilon$
+the pregluing error of Paper~I. Its strong-control estimate also
+gives $\|A_s-A_0\|_{C^0(\widehat g)}\to0$. The temporal component
+in this norm is the rescaled component, with no additional
+$\epsilon^{-1}$ factor. The preglue's uniform scalar Poincare
+estimate therefore persists, and both scalar and end
+smallness conditions hold for sufficiently small $\epsilon$.
+These facts do not give a uniform full mixed inverse at zero
+scale. Compact parameter families use finite local covers;
+actual gauge transitions transport both rows and all stationary
+columns. Ordinary gluing at fixed positive scale commutes with
+these identifications by the bordered determinant construction,
+with corrections placed on the mixed factors and fixed ordinary
+end models. No simultaneous independent neck-and-collapse
+estimate is needed for this square.
+\end{proof}
+
 \begin{proposition}\label{prop:collapse-sign}
 The map~\eqref{eq:collapse-det}, followed by transport
 from $W_\epsilon(V)$ to $\mathcal G_\epsilon(V)$, preserves
 the sign of the zero-dimensional solution.
 \end{proposition}
 \begin{proof}
-Use the contraction chart of Paper~I on one horizontal
-edge of a square. The straight coordinate segment from
-the preglue to the solution stays in the region where
-the derivative differs from the invertible approximate
-operator by a sufficiently small bounded operator.
-Consequently this edge is invertible. Its affine gauge center
-is the preglued connection. Along the segment it may differ
-from the current connection at the stationary limits, so this
-is not automatically a compactly supported change of center
-in Definition~\ref{def:realization}. Use the extended Fredholm
-family stipulated in Hypothesis~\ref{hyp:regularity}(a),
-including its stationary representatives and both operator rows.
-At the solution, the scalar estimate and smallness threshold
-in Hypothesis~\ref{hyp:regularity}(b) make the interpolating
-gauge block invertible. The block argument of
-Lemma~\ref{lem:realization} therefore makes this vertical
-edge invertible. At the approximate configuration use the
-same source and target identifications as those defining
-\eqref{eq:collapse-det}; the comparison gives the other
-invertible vertical edge.
-
-The family in the interior of the square is the Fredholm
-family required by Hypothesis~\ref{hyp:regularity}(a),
-with the exact matching chart and the conformal gauge row. The fourth
-edge is the path of orientation operators at the
-configurations between the preglue and the solution.
-We need not assert that this entire edge is invertible.
-Lemma~\ref{lem:square} nevertheless transports the
-canonical orientation between its endpoints. Combining
-this with~\eqref{eq:collapse-det} proves the claim.
+Use the family \eqref{eq:full-affine-square} of
+Proposition~\ref{prop:affine-square}. Its contraction edge is
+invertible by the nonlinear estimate, its preglue edge is the
+initial invertible collapse operator, and its solution edge is
+invertible by the quotient and scalar block decomposition.
+Lemma~\ref{lem:square} identifies the canonical orientations
+along the remaining physical operator path. Composing this
+identification with \eqref{eq:collapse-det} proves the claim.
 \end{proof}
 
 If the conformal metric in the collapse estimate is
@@ -3070,19 +3818,30 @@ The unit cap maps contract their paired generator and determinant
 factors by even evaluation maps. No assumption that the individual
 cap generator has even parity is needed.
 
-To prove commutativity with the specified orientations, shift the
-whole finite configuration family, including $u,w$ and the caps,
-to gauge paths followed by constant mixed pairs. At that end the
-diagram is ordinary gauge determinant associativity, tensored
-with canonical orientations of constant pairs and the two fixed
-unit cap maps. It therefore commutes there. Relative family
-shifting, Lemma~\ref{lem:collapse-family}, and
-Hypothesis~\ref{hyp:completion} transport this diagram back.
-These maps commute with ordinary end gluing before cancellation.
-This proves commutativity at the original configurations; orienting
-an isolated path would not have established that assertion.
+First consider the completed mixed triangle at positive scale.
+Its localized shift retains the ordinary two-input cobordism and
+ends at that cobordism followed by a constant mixed pair. There
+ordinary determinant associativity gives the end-gluing diagram,
+with the conversion line and the fixed unit cap maps in the order
+above. The relative family construction transports it over the
+positive-scale configuration families.
 
-For unfolding with $k=0$, first choose doubling data and a folded
+Pull back the entire ordered diagram through
+Lemma~\ref{lem:collapse-family}. Its ordinary-gluing compatibility
+applies to the strip and cap operators at their ends in the stated
+cofinal neck-and-scale range. Only after this diagram commutes do
+we cancel the completing vertices and contract the two cap factors.
+The fixed-width closed-cut line comparison retains the conversion
+factor; its completion is expressed through the separate output
+lines as in Hypothesis~\ref{hyp:completion}, not by completing the
+fixed closed-$Z$ input itself. This proves the first diagram for
+the limiting configurations. It does not shift a limiting triangle
+with empty triple intersection to a constant triangle.
+
+For unfolding with $k=0$, first choose doubling data retaining the
+Hodge almost-complex structure and zero inhomogeneous germ in the
+collapse neighbourhood, the compatible ordinary ends and the fixed
+cap models. Choose a folded
 configuration obtained from a smooth configuration on the unfolded
 strip. The two coefficient systems are then restrictions of one
 smooth system. At the $W^{1,p}\to L^p$ realization, $p>2$, equal
@@ -3102,7 +3861,8 @@ smooth the joined maps in a small collar of the diagonal and keep
 the end data fixed. The smoothing is a relative homotopy and
 changes no sphere class. Interpolate the auxiliary almost-complex
 and perturbation data to doubling data within the admitted data
-space; Hypothesis~\ref{hyp:regularity} gives the continuous
+space, preserving these germs and end values;
+Hypothesis~\ref{hyp:regularity} gives the continuous
 Fredholm families. Determinant transport extends the resulting
 comparison back to the original finite configuration families.
 The first gluing diagram and path independence in
@@ -3122,8 +3882,12 @@ incoming end of $Uc$, which runs from $x$ to $y$. The left arrow
 $U_{\rm ord}$ applies unfolding and reflection and then interchanges
 $F_c$ and $d_u$, with sign $(-1)^{|F_c|\ind(u)}$. At the
 operator level the maps are restriction, reflection and the same
-cutoff patching on disjoint regions. Their two composites agree;
-the displayed graded interchange expresses that agreement in the
+ordinary-end cutoff patching, whose supports are disjoint from
+the diagonal. Their two composites agree. This is a diagram on
+the zero-scale section problem; no unfolding map for the
+positive-scale gauge operator is asserted, and no additional
+commutation of unfolding with collapse is used. The
+displayed graded interchange expresses that agreement in the
 chosen tensor order. Cancelling the ordered
 stabilizations proves the displayed statement. The diagonal
 normal factor has its complex orientation and is even.
@@ -3163,13 +3927,14 @@ Under the analytic hypotheses,
 \end{proposition}
 \begin{proof}
 Choose a smooth reference configuration
-$c_0$ on the doubled disk. Attach a
-representative sphere on the first outgoing strip end, then move
-its node through the disk to the second outgoing end. The two
-resulting configurations lie in the
-same relative class: the path of the
-node and its trivialization explicitly
-gives a homotopy. Under diagonal unfolding the two sphere
+$c_0$ on the doubled disk. Insert a representative sphere on
+the first outgoing strip end at a fixed small positive plumbing
+parameter. Move this smooth inserted configuration through the
+unfolded disk to the second outgoing end, then refold. The middle
+is a compact smooth configuration homotopy; we do not apply an
+interior-node theorem at a node on the diagonal. The two resulting
+configurations lie in the same relative class. Under diagonal
+unfolding the two sphere
 classes are identified with the same generator of the relative
 sphere group. In the product description this moves the class
 between the two factors modulo the diagonal class. A reversal of
@@ -3182,8 +3947,18 @@ Its construction on the folded domain
 uses the collapse transport of
 Section~\ref{sec:collapse}, the
 closed-cut conversion, and
-Hypothesis~\ref{hyp:completion}. At the two ends, the first diagram of
-Lemma~\ref{lem:fold-coherence}, with the even node factor appended,
+Hypothesis~\ref{hyp:completion}. For the endpoint comparisons place
+the sphere in an ordinary strip factor attached away from the
+collapse neighbourhood. At the fixed positive plumbing parameter,
+Lemma~\ref{lem:collapse-family} commutes with gluing that entire
+strip. Its interior-node determinant comparison is the usual
+punctured Cauchy--Riemann bordering and complex evaluation map;
+the gauge rows are absent on this pure strip. Ordinary-gluing
+associativity thus gives the endpoint comparison with the complex
+even node factor appended last. The collapse scale and ordinary
+neck can be chosen after this plumbing parameter. No simultaneous
+node-and-collapse degeneration estimate is used. At the two ends,
+the first diagram of Lemma~\ref{lem:fold-coherence}
 identifies the transported orientation with both specified
 strip-node gluing orientations.
 No Koszul sign is introduced by moving
@@ -3708,22 +4483,39 @@ lie inside the corresponding balls.
 Choose the lower datum of a cup after
 $t_C$, sufficiently small relative to
 that height.
-\item Select the finite reference
-configurations needed for coherence.
-Choose their necks and the collapse
-scales, then the regularizing data,
-below all thresholds for those fixed
-geometric data. In particular, an
-auxiliary upper datum is a full
-presentation with its own vertex-map
-thresholds, not merely a pair of
-transverse Lagrangians.
-\item Choose the weights inside all
-end gaps in that instance, below the
-minimum of their decay rates. The
-completed-domain estimates are required
-at the same choices by
-Hypothesis~\ref{hyp:regularity}.
+\item Fix the ordinary gauge trajectory data and the symplectic
+strip-end data for every required end, including the intermediate
+closed cuts. Make the simultaneous regular end choices before
+selecting their weights. Choose a common sufficiently small weight
+below the relevant primal, adjoint and scalar thresholds. For
+configuration reference paths it must also lie below their
+remainder rates; relative end preparation then supplies faster
+reference paths when needed. The completed-domain estimates at
+these choices are part of Hypothesis~\ref{hyp:regularity}.
+\item Select the finite compact reference families needed for
+coherence, and regularize the limiting vertex, triangle and
+completed-core problems with these fixed ends. Their primary
+transport, finite stabilizations and compact secondary supports
+are fixed before taking a geometric limit. In particular an
+auxiliary upper datum is a full presentation with its own
+vertex-map thresholds. Keep the collapsing compression unperturbed,
+including the dependence regions of the holonomy terms.
+\item Choose the ordinary necks after these limiting data have
+been fixed. Then choose the collapse scales from the bounds for
+the compact reference families and the finite limiting index-zero
+solution sets, with their decay rates and the already fixed
+weights. For simultaneous determinant comparisons use the cofinal
+neck-and-scale regime in Lemma~\ref{lem:collapse-family}. No uniform
+threshold for all independent neck and collapse parameters is used.
+\item At the resulting positive geometric parameters choose any
+further compactly supported secondary regularizers within the
+openness thresholds for the endpoint counts, preserving every
+frozen end equation. Extend them relatively over the comparison
+families. If an end datum or a limiting regularization is changed,
+reselect the dependent necks and collapse scales and use the
+corresponding data homotopies. Independence over the full permitted
+weight range is applied only after this common small-weight
+construction, as in Hypothesis~\ref{hyp:regularity}(d).
 \end{enumerate}
 Every choice has a positive threshold
 once the preceding finite data have
@@ -3946,11 +4738,9 @@ A change of regularizing data uses
 the family defining
 Proposition~\ref{prop:N-isomorphism}.
 A change of strip-end almost-complex
-structure uses the analogous mixed
-continuation family; the end systems
-are identified by the determinant
-transport in
-Proposition~\ref{prop:transport}.
+structure uses Proposition~\ref{prop:end-data}(ii),
+with its actual outgoing continuation map and the
+fixed transported end systems.
 For a change of gauge base, both the
 gauge and symplectic generator lines
 are converted by the same

@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-Bernd Johannes Wuebben · Revised 27 September 2026 · 50 pages · Conditional draft
+Bernd Johannes Wuebben · Revised 27 September 2026 · 60 pages · Conditional draft
 
 - [Read Paper II](cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
@@ -54,6 +54,16 @@ counits, or closed pairings.
 
 ## Revision of 27 September 2026
 
+Proposition 5.3 compares physical solution counts and determinant lines
+throughout the permitted end-weight gaps. Proposition 6.4 constructs
+the actual chain homotopies for changes of ordinary gauge and symplectic
+end data at fixed primary data. Proposition 7.3 proves the affine-center
+Fredholm square at fixed positive collapse scale, retaining nonsolutions,
+moving stationary limits and both operator rows. The limiting triangle
+orientations are defined by inverse collapse with the ordered cap and
+strip diagrams retained. These are partial advances toward Hypotheses
+2.1 and 2.2; both complete hypotheses remain assumptions.
+
 Former Hypothesis 2.3 is now Proposition 2.3. Its proof gives ordinary
 nonseparating determinant-one self-gluing for the regular excision data
 used in the paper, with the exact lifting multiplicity and graded trace.
@@ -70,9 +80,11 @@ by the ordered Lagrangian pair.
 The definition of an operator realization now applies a chart change
 to both the equation and gauge-fixing rows. The canonical determinant
 orientation assertion is restricted to regular zeros of index zero.
-The collapse hypothesis explicitly includes the affine gauge centers
-and moving stationary limits used in the contraction comparison.
-That additional analytic requirement remains part of Hypothesis 2.1.
+The affine-center comparison uses a common sufficiently small weight
+in its actual indicial gaps. Uniform full mixed inverses as collapse
+scale tends to zero are not asserted. Physical solution weight
+independence is distinguished from the smaller admissible range of
+slow nonsolution reference paths.
 
 ## Build
 

@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology I
 
-Bernd Johannes Wuebben · 25 September 2026 · Revised 27 September 2026 · 145 pages
+Bernd Johannes Wuebben · 25 September 2026 · Revised 27 September 2026 · 148 pages
 
 - [Read the paper](cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -78,6 +78,12 @@ The analytic input consists of two new results for the mixed equation.
   unique continuation argument on torus collars supplies the transversality.
 
 ## Revision of 27 September 2026
+
+The latest revision gives a direct zero-Hamiltonian regularity proof
+for general-compression auxiliary strips and triangles. Exact unfolding
+is reserved for the diagonal compression. The moving-boundary
+continuation argument retains the full Hamiltonian one-form, its
+curvature and the boundary-work terms.
 
 The energy identities now use the full analytic normalization,
 including the switched perturbation terms. The auxiliary integer
