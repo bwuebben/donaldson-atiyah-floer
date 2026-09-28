@@ -112,13 +112,15 @@ frame across the neck, and identifies the standard monopole orientation
 by comparison with Donaldson's instanton-addition map.
 
 The construction supplies the analytic neighborhood input to the published
-Feehan–Leness level-one link pairing. The polynomial pairing and its
-low-degree consequences retain their stated topological hypotheses,
-including abundance, effectiveness, and simple type for the degree
-comparison. The theorem concerns one charge-one bubble over a regular
-nonzero-spinor base; higher levels and collision strata require further
-arguments. The current version is dated **9 September 2026** and has
-**57 pages**.
+Feehan–Leness level-one link pairing underlying their low-degree comparison
+for **Witten's conjecture**. The polynomial pairing and its consequences
+retain their stated hypotheses, including abundance, effectiveness at all
+relevant levels, and Seiberg–Witten simple type for the degree comparison.
+The introduction explains the connection to the later conditional Witten
+deduction; the theorem does not establish its all-level gluing hypothesis
+or enlarge the published degree range. Higher levels and collision strata
+require further arguments. The manuscript remains dated **9 September
+2026**, was revised **27 September 2026**, and has **58 pages**.
 
 - [PDF](w-glue-1/one-bubble-neighborhoods-of-seiberg-witten-strata.pdf)
 - [LaTeX source](w-glue-1/one-bubble-neighborhoods-of-seiberg-witten-strata.tex)

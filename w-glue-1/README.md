@@ -1,6 +1,8 @@
 # One-bubble neighborhoods in SO(3)-monopole moduli spaces
 
-Bernd Johannes Wuebben · 9 September 2026 · 57 pages
+Bernd Johannes Wuebben · 9 September 2026 · 58 pages
+
+Revised 27 September 2026; the manuscript date is unchanged.
 
 - [Read the paper](one-bubble-neighborhoods-of-seiberg-witten-strata.pdf)
 - [LaTeX source](one-bubble-neighborhoods-of-seiberg-witten-strata.tex)
@@ -26,8 +28,19 @@ instanton-addition map identifies the induced orientation with the
 standard monopole orientation. Under the additional topological
 hypotheses of Feehan and Leness, the construction supplies the analytic
 neighborhood input to their level-one link pairing. We state the
-resulting polynomial formula and its low-degree consequences for
-abundant, effective manifolds of Seiberg–Witten simple type.
+resulting polynomial formula and its low-degree consequences for Witten's
+conjecture on abundant, effective manifolds of Seiberg–Witten simple type.
+
+## Relation to Witten's conjecture
+
+The result supplies the one-bubble analytic neighborhood input to the
+Feehan–Leness level-one link calculation underlying their low-degree
+Donaldson–Seiberg–Witten comparison. The introduction explains its relation
+to their later conditional deduction of Witten's conjecture, and Corollary
+8.4 states the retained hypotheses and derives the terminal coefficients.
+The paper establishes neither a larger degree range nor the all-level
+gluing hypothesis needed for the general deduction. Charge-two collisions
+and compatibility across higher bubbling strata remain further problems.
 
 ## Scope
 

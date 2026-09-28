@@ -91,8 +91,8 @@ instanton-addition map identifies the induced orientation with the
 standard monopole orientation.  Under the additional topological
 hypotheses of Feehan and Leness, the construction supplies the analytic
 neighborhood input to their level-one link pairing.  We state the
-resulting polynomial formula and its low-degree consequences for
-abundant, effective manifolds of Seiberg--Witten simple type.
+resulting polynomial formula and its low-degree consequences for Witten's
+conjecture on abundant, effective manifolds of Seiberg--Witten simple type.
 \end{abstract}
 
 \maketitle
@@ -137,6 +137,32 @@ small-eigenvalue spaces.  We instead stabilize the normal family globally by a s
 finite-rank equivariant bundle.  Local cutoff reductions enter only through
 a common enlargement, so neither the gluing chart nor its orientation
 depends on a constant-rank spectral window.
+
+\subsection{Relation to Witten's conjecture}
+Witten's conjecture relates the Donaldson and Seiberg--Witten invariants
+of a four-manifold by an identity of generating series~\cite{Witten94}.
+The neighborhood problem above is an analytic input to the
+$SO(3)$-monopole approach to this identity.  In the degree range considered
+in~\cite{FeehanLenessLevelOne}, the link calculations for strata with
+nonzero Seiberg--Witten invariant involve only levels zero and one.
+Theorem~\ref{thm:intro-neighborhood} supplies the level-one neighborhood
+input under the regularity and nonzero-spinor assumptions stated below.
+Together with the published top-level calculation, it gives the
+low-degree comparison in Corollary~\ref{cor:degree}, retaining abundance,
+effectiveness, and Seiberg--Witten simple type.  Effectiveness remains an
+assumption on link pairings at every level; higher-level strata need not
+be absent.
+
+The later results of Feehan and Leness deduce Witten's conjecture for
+four-manifolds of Seiberg--Witten simple type with $b_1=0$ and odd
+$b_2^+\geq3$, conditional on the general monopole cobordism formula
+\cite[Theorem~1.1]{FeehanLenessSuperconformal},
+\cite[Corollary~1.3]{FeehanLenessWitten}.  The gluing hypothesis in that
+deduction concerns neighborhoods over every relevant symmetric-product
+stratum~\cite[Hypothesis~3.1 and Remark~3.4]{FeehanLenessWitten}.
+The present theorem establishes a one-bubble neighborhood, with its
+orientation and obstruction properties; it does not establish that
+all-level hypothesis or enlarge the published low-degree range.
 
 \subsection{Results}
 Let $b_1(X)=0$ and let $b_2^+(X)\geq3$ be odd.  Fix generic perturbation data,
@@ -315,8 +341,12 @@ If its rank is positive, its restriction cannot be transverse.  This is the
 statement used in the relative-Euler-class calculation of
 \cite[Section~5]{FeehanLenessLevelOne}; it also agrees with the qualification
 following Theorem~3.8 there.  The all-strata formulation in
-\cite[Hypothesis~7.8.1(2)]{FeehanLenessCobordism} uses a coarser
-stratification than~\eqref{eq:intro-three-strata}.
+\cite[Hypothesis~7.8.1(2)]{FeehanLenessCobordism} therefore requires
+qualification on the fine stratification~\eqref{eq:intro-three-strata}:
+the transversality supplied here is that of the total section at positive
+scale and of the background section on the middle stratum.  We use these
+precise properties in the level-one link calculation, rather than a
+transversality assertion on the lowest stratum.
 
 Under the additional topological hypotheses of the published
 calculations, Theorem~\ref{thm:intro-neighborhood} supplies the deferred
@@ -3766,11 +3796,11 @@ the first two conclusions and disclaims the third.
 \end{proof}
 
 Accordingly, the all-strata formulation in
-\cite[Hypothesis~7.8.1(2)]{FeehanLenessCobordism} must be read using the
-coarser stratification there.  For the fine decomposition
-\eqref{eq:three-strata}, the relative Euler construction uses Proposition
-\ref{prop:transversality} and does not require transversality on the lowest
-stratum.
+\cite[Hypothesis~7.8.1(2)]{FeehanLenessCobordism} is not asserted literally
+for the fine decomposition~\eqref{eq:three-strata}.  The relative Euler
+construction uses the positive-scale and middle-stratum transversality
+in Proposition~\ref{prop:transversality}; it does not require transversality
+on the lowest stratum.
 
 \subsection{Orientation under instanton addition}
 For a real Fredholm operator $F$, use
@@ -4539,7 +4569,9 @@ Our series conventions are
  \SW_X^w(h)=\sum_{K}(-1)^{(w^2+w\cdot K)/2}
  \SW_X(K)e^{\langle K,h\rangle},
 \]
-where $K$ runs over the Seiberg--Witten basic classes.  Congruences are
+where $K$ runs over the Seiberg--Witten basic classes and
+$\SW_X(K)=\sum_{c_1(\mathfrak s)=K}\SW_X(\mathfrak s)$, so that no
+injectivity of the first Chern class map is assumed.  Congruences are
 congruences of formal power series by total degree in $h$; a congruence
 modulo $h^k$ imposes no condition when $k\leq0$.
 
@@ -4580,10 +4612,16 @@ in the following application.
 
 \begin{corollary}[degree consequence]\label{cor:degree}\label{cor:intro-degree}
 Assume the hypotheses of Corollary~\ref{cor:pairing} for every level-one
-stratum entering the comparison.  Suppose also that $X$ is abundant,
-effective, and of
-Seiberg--Witten simple type, and choose the characteristic data as in
-\cite[Theorem~1.1]{FeehanLenessLevelOne}.  Then
+stratum entering the comparison, including those on the blow-up used
+below.  Suppose also that $X$ is abundant, effective, and of
+Seiberg--Witten simple type.  Let $B$ be its set of Seiberg--Witten basic
+classes, and choose $\Lambda,w\in H^2(X;\mathbb Z)$ satisfying
+\begin{equation}\label{eq:degree-characteristic-data}
+ \Lambda\in B^\perp,\qquad
+ \Lambda^2=4-(\chi(X)+\sigma(X)),\qquad
+ w-\Lambda\equiv w_2(X)\pmod2,
+\end{equation}
+as in~\cite[Theorem~1.1]{FeehanLenessLevelOne}.  Then
 \begin{align}\label{eq:series-congruence}
  \cD_X^w(h)&\equiv0\equiv\SW_X^w(h)
  &&\pmod{h^{c(X)-2}},\notag\\
@@ -4607,21 +4645,48 @@ the second when $c(X)\geq0$, with terms of negative exponent omitted:
 \end{corollary}
 
 \begin{proof}
-For abundant, effective manifolds of Seiberg--Witten simple type, choose the
-class $\Lambda$ and lift $w$ as in
-\cite[Theorem~1.1]{FeehanLenessLevelOne}.  The published top-level
-pairing~\cite{FeehanLenessII}, Corollary~\ref{cor:pairing}, the Donaldson and
-Seiberg--Witten blow-up formulas, and the superconformal-simple-type
-vanishing used in~\cite[Section~6]{FeehanLenessLevelOne} give
-\eqref{eq:series-congruence}.  Extracting the coefficients of the two final
-degrees gives~\eqref{eq:terminal-degrees}.
+Use the choices~\eqref{eq:degree-characteristic-data} in the comparison
+of~\cite[Section~6.3]{FeehanLenessLevelOne}.  Its degree restrictions put
+the strata with nonzero Seiberg--Witten invariant in levels zero and one;
+effectiveness makes the remaining link pairings vanish, including those
+at higher levels.  The published top-level pairing~\cite{FeehanLenessII},
+Corollary~\ref{cor:pairing}, and the Donaldson and Seiberg--Witten blow-up
+formulas therefore give the same comparison.  Together with the
+Seiberg--Witten moment vanishing
+in~\cite[Equation~(6.51)]{FeehanLenessLevelOne}, this gives
+\eqref{eq:series-congruence}.
+
+For clarity, set $c=c(X)$ and write $S_j(h)$ for the signed
+Seiberg--Witten sum of $\langle c_1(\mathfrak s),h\rangle^j$ appearing
+in~\eqref{eq:terminal-degrees}.  The characteristic conditions imply
+$w^2\equiv\sigma(X)\pmod4$, and the Donaldson dimension rule is
+\[
+ D_X^w(h^{\delta-2m}x^m)=0\quad\hbox{unless}\quad
+ \delta\equiv c\pmod4
+\]
+\cite[Equation~(6.53)]{FeehanLenessLevelOne}.  Thus the coefficients of
+degrees $c-2$ and $c$ in $\cD_X^w$ are respectively
+$D_X^w(h^{c-2}x)/(2(c-2)!)$ and $D_X^w(h^c)/c!$, whenever the indicated
+degrees are nonnegative.  Since $S_j=0$ for $j<c-2$, the corresponding
+coefficients on the right of~\eqref{eq:series-congruence} are
+\[
+ 2^{2-c}\frac{S_{c-2}}{(c-2)!},\qquad
+ 2^{2-c}\left(\frac{S_c}{c!}
+       +\frac{Q_X(h,h)S_{c-2}}{2(c-2)!}\right),
+\]
+where terms with negative indices are omitted.  Multiplication by the
+factorials gives~\eqref{eq:terminal-degrees}, agreeing with
+\cite[Equations~(6.57)--(6.58)]{FeehanLenessLevelOne}.
 \end{proof}
 
 As a normalization test, for a K3 surface one has $c(X)=2$ and only the zero
 basic class, with Seiberg--Witten invariant one in the standard homology
-orientation.  Formula~\eqref{eq:terminal-degrees} becomes
+orientation.  For admissible $(\Lambda,w)$ as in
+\eqref{eq:degree-characteristic-data}, the sign of the zero basic class
+is positive because $w^2\equiv0\pmod4$.
+Formula~\eqref{eq:terminal-degrees} becomes
 \begin{equation}\label{eq:k3-test}
- D_{K3}(x)=2,\qquad D_{K3}(h^2)=Q_{K3}(h,h),
+ D^w_{K3}(x)=2,\qquad D^w_{K3}(h^2)=Q_{K3}(h,h),
 \end{equation}
 the constant and quadratic coefficients of $e^{Q_{K3}(h,h)/2}$ in the
 convention with insertion $1+x/2$.  These coefficients agree with the
@@ -4645,6 +4710,17 @@ they do not give an unconditional Donaldson--Seiberg--Witten comparison.
 The discussion concerns one charge-one bubble over a compact regular
 nonzero-spinor background.  Nonregular bases, zero-spinor solutions,
 collision strata, and levels two and higher require additional arguments.
+At level two, a neighborhood of $M_{\mathfrak s}\times\operatorname{Sym}^2(X)$
+must accommodate both separated charge-one bubbles and concentration on
+the diagonal.  Extending reverse gluing to these regimes requires
+compatible charge-two models and uniform approximation and parameter
+recovery as the bubbling description changes.  The topological overlap
+constructions in~\cite{FeehanLenessCobordism} provide part of the existing
+framework.  Establishing the corresponding analytic neighborhood
+statements remains a further problem.  An extension to every relevant
+level, together with the other inputs to the cobordism formula, would
+address the gluing hypothesis retained in the conditional deduction of
+Witten's conjecture in~\cite{FeehanLenessWitten}.
 
 \begin{thebibliography}{AHS78}
 
@@ -4695,9 +4771,21 @@ no.~2, 221--326; arXiv:math/0106238.
 Seiberg--Witten invariants}, Mem.\ Amer.\ Math.\ Soc.\ \textbf{256} (2018),
 no.~1226; arXiv:math/0203047.
 
+\bibitem[FL19a]{FeehanLenessSuperconformal} P.~M.~N. Feehan and T.~G. Leness,
+\emph{The $SO(3)$ monopole cobordism and superconformal simple type},
+Adv.\ Math.\ \textbf{356} (2019), 106817, 38 pp.; arXiv:1408.5307.
+
+\bibitem[FL19b]{FeehanLenessWitten} P.~M.~N. Feehan and T.~G. Leness,
+\emph{Superconformal simple type and Witten's conjecture},
+Adv.\ Math.\ \textbf{356} (2019), 106821, 35 pp.; arXiv:1408.5085.
+
 \bibitem[Uhl82]{Uhlenbeck82} K.~K. Uhlenbeck,
 \emph{Connections with $L^p$ bounds on curvature}, Comm.\ Math.\ Phys.\
 \textbf{83} (1982), no.~1, 31--42.
+
+\bibitem[Wit94]{Witten94} E.~Witten,
+\emph{Monopoles and four-manifolds}, Math.\ Res.\ Lett.\ \textbf{1}
+(1994), no.~6, 769--796; arXiv:hep-th/9411102.
 
 \end{thebibliography}
 
