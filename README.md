@@ -77,16 +77,19 @@ gauge theory and compares collapse, torus excision, reflection, and
 compression cups and caps. The resulting comparison allows one overall
 sign per cobordism.
 
-**Conditional draft, revised 27 September 2026, 60 pages.** The theorem
-assumes uniform regularity on completed mixed domains and oriented mixed
-torus completion, in addition to Paper I's analytic results. Ordinary
-determinant-one self-gluing is proved in Proposition 2.3 for the stated
-regular excision data, including the graded trace, lifting multiplicity,
-parameter signs and unit-cap comparison. Hypotheses 2.1 and 2.2 remain.
+**Conditional draft, revised 29 September 2026, 72 pages.** The theorem
+assumes uniform regularity and compatible Fredholm realizations on the
+mixed domains and their completed limits (Hypothesis 2.1), in addition to
+Paper I's analytic results. The oriented mixed torus-completion comparison
+is now proved in Section 8 from these inputs, with an explicit integral
+chain homotopy; it is no longer a hypothesis. Ordinary determinant-one
+self-gluing is proved in Proposition 2.2 for the stated regular excision
+data, including the graded trace, lifting multiplicity, parameter signs
+and unit-cap comparison.
 
-The latest revision proves physical weight independence, the fixed-scale
+Earlier revisions prove physical weight independence, the fixed-scale
 affine-center comparison and mixed comparisons for changes of ordinary
-end data. These results do not discharge the two complete hypotheses.
+end data.
 
 The gauge orientation convention is explicit; identification with
 homology-oriented integral instanton maps and with relative-spin quilt

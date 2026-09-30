@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-Bernd Johannes Wuebben · Revised 27 September 2026 · 60 pages · Conditional draft
+Bernd Johannes Wuebben · Revised 29 September 2026 · 72 pages · Conditional draft
 
 - [Read Paper II](cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
@@ -14,8 +14,9 @@ comparison between framed instanton homology and the Lagrangian Floer
 homology of a Heegaard splitting. Orientations are transported from
 almost-complex orientations on the gauge side through moduli spaces of
 the mixed anti-self-duality and holomorphic curve equation. Subject to
-explicit analytic hypotheses on completed mixed domains and oriented
-gluing, we obtain a projective natural isomorphism for connected
+an explicit analytic hypothesis on uniform Fredholm realizations and
+regularity of the mixed domains, we obtain a projective natural
+isomorphism for connected
 cobordisms with a framed arc and a bundle trivialized at the ends.
 The symplectic maps are signed counts of the triangles, compression
 cups and caps used in the mod-two comparison. The principal additional
@@ -29,13 +30,15 @@ maps and with relative-spin quilt orientations is left open.
 ## Status and scope
 
 **This is a revised conditional draft.** The principal comparison assumes
-Paper I's analytic results and two additional hypotheses in Section 2:
-uniform regularity and compatible Fredholm realizations on completed
-mixed domains (Hypothesis 2.1), and an oriented mixed torus-completion
-comparison (Hypothesis 2.2). Verifying these hypotheses remains necessary
-for an unconditional integral theorem. Ordinary determinant-one
-self-gluing is proved separately as Proposition 2.3 for the stated
-regular excision data.
+Paper I's analytic results and one additional hypothesis in Section 2:
+uniform regularity and compatible Fredholm realizations on the mixed
+domains and their completed limits, including relative shifting
+(Hypothesis 2.1). The oriented comparison at torus completion is not
+assumed; Section 8 proves it from Hypothesis 2.1 and the unsigned analysis
+of Paper I. Verifying Hypothesis 2.1 remains necessary for an
+unconditional integral theorem. Ordinary determinant-one self-gluing is
+proved separately as Proposition 2.2 for the stated regular excision
+data.
 
 The comparison uses the geometric symplectic maps of Paper I, with
 transported orientations and one overall sign for each cobordism.
@@ -52,6 +55,24 @@ cobordisms carrying a framed arc and a bundle trivialized at the ends
 and along the arc. It does not treat disconnected objects, units,
 counits, or closed pairings.
 
+## Revision of 29 September 2026
+
+The integral mixed excision theorem (Theorem 8.17) is now proved from
+Hypothesis 2.1 and Paper I, with an explicit chain homotopy whose terms
+are signed counts in actual one-parameter families. Sections 8.5--8.11
+construct the orientation maps on the torus domains and at the closed
+cut, compare them with the split reference orientations, and prove that
+the folding identification is a closed map of the conversion parity.
+Lemma 8.7 gives the linear gluing of determinant lines across the torus
+bridge, where the cross-section runs into the mixed ends. The remaining
+steps are the signed counts at large torus length, the boundary
+orientation of the comparison families, and the closed-neck
+identification. The oriented torus-completion hypothesis of the
+previous revision is removed. Section 2.3 now states that on a completed
+domain the torus tail is an end with limit the odd flat connection, and
+Hypothesis 2.1 names the estimates for the weak adjoints and the
+finite-width joined torus domains explicitly.
+
 ## Revision of 27 September 2026
 
 Proposition 5.3 compares physical solution counts and determinant lines
@@ -64,7 +85,8 @@ orientations are defined by inverse collapse with the ordered cap and
 strip diagrams retained. These are partial advances toward Hypotheses
 2.1 and 2.2; both complete hypotheses remain assumptions.
 
-Former Hypothesis 2.3 is now Proposition 2.3. Its proof gives ordinary
+Former Hypothesis 2.3 became Proposition 2.3 (now Proposition 2.2). Its
+proof gives ordinary
 nonseparating determinant-one self-gluing for the regular excision data
 used in the paper, with the exact lifting multiplicity and graded trace.
 The parameter-orientation conversion and the unperturbed unit-cap
