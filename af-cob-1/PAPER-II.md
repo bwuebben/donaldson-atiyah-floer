@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-Bernd Johannes Wuebben · Revised 29 September 2026 · 72 pages · Conditional draft
+Bernd Johannes Wuebben · Revised 30 September 2026 · 82 pages · Draft
 
 - [Read Paper II](cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
@@ -13,10 +13,9 @@ We study the extension to integer coefficients of the cobordism
 comparison between framed instanton homology and the Lagrangian Floer
 homology of a Heegaard splitting. Orientations are transported from
 almost-complex orientations on the gauge side through moduli spaces of
-the mixed anti-self-duality and holomorphic curve equation. Subject to
-an explicit analytic hypothesis on uniform Fredholm realizations and
-regularity of the mixed domains, we obtain a projective natural
-isomorphism for connected
+the mixed anti-self-duality and holomorphic curve equation. Assuming
+the unsigned analytic results of the companion paper, we obtain a
+projective natural isomorphism for connected
 cobordisms with a framed arc and a bundle trivialized at the ends.
 The symplectic maps are signed counts of the triangles, compression
 cups and caps used in the mod-two comparison. The principal additional
@@ -29,16 +28,14 @@ maps and with relative-spin quilt orientations is left open.
 
 ## Status and scope
 
-**This is a revised conditional draft.** The principal comparison assumes
-Paper I's analytic results and one additional hypothesis in Section 2:
-uniform regularity and compatible Fredholm realizations on the mixed
-domains and their completed limits, including relative shifting
-(Hypothesis 2.1). The oriented comparison at torus completion is not
-assumed; Section 8 proves it from Hypothesis 2.1 and the unsigned analysis
-of Paper I. Verifying Hypothesis 2.1 remains necessary for an
-unconditional integral theorem. Ordinary determinant-one self-gluing is
-proved separately as Proposition 2.2 for the stated regular excision
-data.
+**This is a revised draft.** The principal comparison assumes the
+unsigned analytic results of Paper I and no further hypothesis. The
+analytic foundations on the mixed domains and their completed limits
+(Proposition 2.1) are proved in Appendix A, relative preparation and
+shifting in families (Proposition 2.2) in Appendix B, the oriented
+comparison at torus completion in Section 8, and ordinary determinant-one
+self-gluing, for the stated regular excision data, in Proposition 2.3.
+The manuscript has not yet been independently refereed.
 
 The comparison uses the geometric symplectic maps of Paper I, with
 transported orientations and one overall sign for each cobordism.
@@ -55,10 +52,28 @@ cobordisms carrying a framed arc and a bundle trivialized at the ends
 and along the arc. It does not treat disconnected objects, units,
 counits, or closed pairings.
 
+## Revision of 30 September 2026
+
+The two analytic hypotheses of the previous revision are now proved.
+Proposition 2.1 (Appendix A) supplies the charts, Fredholm realizations,
+weights and invertibility on the mixed domains and their completed
+limits, uniformly on the preglued families, together with the pure
+symplectic domains and interior nodes. Proposition 2.2 (Appendix B) is
+the family version of the preparation and shifting lemmas of
+Daemi–Fukaya–Lipyanskiy on the domains of this paper: a collar gauge and
+chart cutoffs at the ends, a positive extension of the section to the
+gauge side, translation, and a straightening step. The shift ends in the
+subspace of constant pairs built from any representative of the output
+critical point; a single fixed constant pair cannot absorb configurations
+of different topological energy. A localized form of the shift treats
+triangles, folded triangles and the joined torus domains. Lemma 9.1
+proves the folded form of the triangle comparison used in the cup
+formula (Proposition 9.2).
+
 ## Revision of 29 September 2026
 
 The integral mixed excision theorem (Theorem 8.17) is now proved from
-Hypothesis 2.1 and Paper I, with an explicit chain homotopy whose terms
+the analytic inputs and Paper I, with an explicit chain homotopy whose terms
 are signed counts in actual one-parameter families. Sections 8.5--8.11
 construct the orientation maps on the torus domains and at the closed
 cut, compare them with the split reference orientations, and prove that
@@ -85,7 +100,7 @@ orientations are defined by inverse collapse with the ordered cap and
 strip diagrams retained. These are partial advances toward Hypotheses
 2.1 and 2.2; both complete hypotheses remain assumptions.
 
-Former Hypothesis 2.3 became Proposition 2.3 (now Proposition 2.2). Its
+Former Hypothesis 2.3 became Proposition 2.3. Its
 proof gives ordinary
 nonseparating determinant-one self-gluing for the regular excision data
 used in the paper, with the exact lifting multiplicity and graded trace.

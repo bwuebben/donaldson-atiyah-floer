@@ -6,7 +6,7 @@
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \hypersetup{pdfauthor={Bernd Johannes Wuebben},
  pdftitle={Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II},
- pdfsubject={A conditional integral cobordism comparison with transported orientations},
+ pdfsubject={An integral cobordism comparison with transported orientations},
  pdfkeywords={Atiyah-Floer conjecture, framed instanton homology, determinant lines, coherent orientations, cobordism maps}}
 \setlength{\emergencystretch}{2em}
 \newtheorem{theorem}{Theorem}[section]
@@ -69,7 +69,7 @@
 \title[Atiyah--Floer cobordism maps II]{Cobordism maps and Atiyah--Floer isomorphisms\\
 for framed instanton homology II}
 \author{Bernd Johannes Wuebben}
-\date{26 September 2026}
+\date{30 September 2026}
 \subjclass[2020]{57K31, 57R58 (primary); 53D40, 58J05 (secondary)}
 \keywords{Atiyah--Floer conjecture, framed instanton homology, coherent
 orientations, determinant lines, Lagrangian Floer homology, cobordism maps}
@@ -79,10 +79,9 @@ We study the extension to integer coefficients of the cobordism
 comparison between framed instanton homology and the Lagrangian Floer
 homology of a Heegaard splitting. Orientations are transported from
 almost-complex orientations on the gauge side through moduli spaces of
-the mixed anti-self-duality and holomorphic curve equation. Subject to
-an explicit analytic hypothesis on uniform Fredholm realizations and
-regularity of the mixed domains, we obtain a projective natural
-isomorphism for connected
+the mixed anti-self-duality and holomorphic curve equation. Assuming
+the unsigned analytic results of the companion paper, we obtain a
+projective natural isomorphism for connected
 cobordisms with a framed arc and a bundle trivialized at the ends.
 The symplectic maps are signed counts of the triangles, compression
 cups and caps used in the mod-two comparison. The principal additional
@@ -95,10 +94,8 @@ maps and with relative-spin quilt orientations is left open.
 \end{abstract}
 \maketitle
 \begin{center}
-\small\textit{First draft. The principal comparison is conditional on
-Hypothesis~\ref{hyp:regularity}.
-Its verification remains part of the integral
-extension.}
+\small\textit{Draft. The principal comparison assumes the unsigned
+analytic results of Paper~I.}
 \end{center}
 \setcounter{tocdepth}{1}
 \tableofcontents
@@ -146,7 +143,7 @@ orientation lines with fixed object lines. Their placement relative
 to the generator lines matters when a conversion is odd. We denote
 the resulting gauge functor by $\IG$ to record this convention.
 
-\subsection{Statement and hypotheses}
+\subsection{Statement}
 The category $\bB$ is described in Section~\ref{sec:geometry}. An object
 is a closed connected oriented three-manifold with the framing data
 needed for its torus summand. A morphism is a connected oriented
@@ -166,15 +163,16 @@ cobordism, $S_d(W)$ is the composite of signed holomorphic triangle
 maps, compression cups, compression caps, and continuation maps.
 
 The geometric arguments use the unsigned compactness and gluing
-results of Paper~I and one additional hypothesis, stated precisely in
-Section~\ref{sec:analytic}: uniform regularity and compatible Fredholm
-realizations on the mixed domains and their completed limits,
-including families, changes of weights, relative shifting, and the
-constant reference configurations. It requires more than the existence
-of the corresponding mod-two counts. The oriented torus-completion
-comparison is not assumed: Section~\ref{sec:excision} derives the
-integral mixed excision theorem from this hypothesis and the unsigned
-analysis of Paper~I.
+results of Paper~I, together with two analytic inputs stated in
+Section~\ref{sec:analytic} and proved in the appendices: the Fredholm
+and determinant-line foundations of Proposition~\ref{prop:foundations},
+and relative preparation and shifting of compact families of mixed
+configurations (Proposition~\ref{prop:shifting}), the family version of
+the shifting lemmas of Daemi, Fukaya and Lipyanskiy on the domains used
+here. These require more than the existence of the corresponding
+mod-two counts. The oriented torus-completion comparison is derived in
+Section~\ref{sec:excision} from these inputs and the unsigned analysis
+of Paper~I.
 
 The ordinary determinant-one self-gluing used in gauge excision is
 established in Proposition~\ref{prop:selfgluing}, for the regular
@@ -182,9 +180,8 @@ cut data constructed in its proof. This is an application of ordinary
 instanton compactification and gluing, with the lifting groups and
 orientation convention retained explicitly.
 
-\begin{thmletter}[Conditional integral comparison]\label{thm:A}
-Assume the analytic results of Paper~I and
-Hypothesis~\ref{hyp:regularity}.
+\begin{thmletter}[Integral comparison]\label{thm:A}
+Assume the unsigned analytic results of Paper~I.
 With the orientation and admissibility
 conventions of this paper, the mixed maps
 \[
@@ -222,7 +219,7 @@ different matrix entries by unrelated signs is not.
 
 \subsection{The two orientation comparisons}
 The proof of Theorem~\ref{thm:A} separates two further statements.
-They use the same hypotheses as that theorem.
+They use the same assumptions as that theorem.
 
 \begin{thmletter}[Orientations under collapse]\label{thm:B}
 The bijection of regular index-zero solutions in the compression-body
@@ -320,7 +317,7 @@ counits, closed pairings, and nontrivial bundles on the objects are
 outside the present statement. Bundles on cobordisms may be
 nontrivial relative to the specified trivialized ends.
 
-\section{Geometric data and analytic hypotheses}\label{sec:geometry}
+\section{Geometric data and analytic foundations}\label{sec:geometry}
 
 \subsection{Framed objects and cobordisms}
 Fix an oriented ball in $M$ and form $M^\#=M\#T^3$ along that ball.
@@ -402,7 +399,7 @@ nondegenerate gauge limits or transverse Lagrangian intersection
 points. At mixed ends we retain the finite-dimensional stationary
 coordinates explicitly.
 
-The domains used below are the mixed vertex domain, mixed and folded
+The mixed domains used below are the mixed vertex domain, mixed and folded
 triangles, their strip gluings, the closed-cut mixed domain, the
 finite-width torus domains, their completed limits, and the collapse
 families. We also use ordinary strips, continuation strips, and the
@@ -419,67 +416,73 @@ the torus tail $T\times[0,\infty)_r\times\RR_\theta$ is one of these
 ends, with limit the odd flat connection $\alpha$: in the fixed product
 trivialization of the tail, the difference of the connection from
 $\alpha$ is a decaying part, measured in $H^m_\delta$ with the weight
-$\tau_0(\theta)$ of Paper~I, Definition~10.23. A continuous compact
+$\tau_0(\theta)$ of Paper~I, Definition~10.1. A continuous compact
 family means a family continuous in this topology. Sobolev completions are used locally to construct
 Fredholm operators and determinant lines. They do not replace the
 smooth topology when a holonomy family is differentiated repeatedly.
 
-\subsection{The analytic assumptions}\label{sec:analytic}
+\subsection{Analytic foundations and shifting}\label{sec:analytic}
 The unsigned moduli spaces, their energy-index estimates, and the
-low-dimensional compactifications are those of Paper~I. The
-following assumption specifies the additional uniform statements
-used in this draft. The ordinary local Fredholm and
-regularity results for the mixed equation are those of
-\cite{DFL,DFL-mixed}; the hypothesis below includes their use on the
-additional completed domains of this paper.
+low-dimensional compactifications are those of Paper~I. The linear
+analysis used in addition is collected in the next proposition. It is
+proved in Appendix~\ref{app:inputs} from the local theory of
+\cite{DFL,DFL-mixed}, the end models of Paper~I, and standard results
+on pseudoholomorphic curves.
 
-\begin{hypothesis}[Uniform realizations and regularity]\label{hyp:regularity}
-For each mixed domain listed above, and for each compact parameter
-family used below, the following hold.
+\begin{proposition}[Analytic foundations]\label{prop:foundations}
+For each domain listed above, and each compact family of smooth
+configurations and data used below, the following hold. The families
+may vary the almost-complex structures and perturbations smoothly, the
+metrics among those which near every matching seam are products up to
+a conformal factor depending on the base coordinates, the finite torus
+lengths and widths in compact ranges, and the collapse scale in compact
+intervals of positive scales; on the completed torus domains they are
+compact in the topology above.
 \begin{enumerate}[label=(\alph*)]
-\item Smooth configurations with fixed asymptotics admit local
-matching-boundary charts. The gauge-fixed linearization on weighted
-spaces is Fredholm; its kernels and cokernels are smooth. Changes
-of chart and the admissible changes of realization of
-Definition~\ref{def:realization} give continuous families of
-Fredholm operators and the same determinant line.
-For the fixed-positive-scale contraction neighbourhoods, the extended
-affine-center comparison, including nonsolutions and moving stationary
-limits, is proved in Proposition~\ref{prop:affine-square} below.
-\item At ordinary ends the weights lie in common spectral gaps.
-At mixed ends the stationary coordinates are separated from the
-decaying part. Regular zero-dimensional solutions and the constant
-reference pairs have invertible realized operators. The scalar and
-local elliptic estimates, for the operators and for their weak
-adjoints, slice radii, and finite-stabilization estimates are uniform on compact families of the noncollapsing torus
-models, including their completed limits. At positive collapse scale
-these assertions are local on compact scale intervals bounded away
-from zero. No uniform bound for the full mixed inverse or a fixed
-chart radius as the collapse scale tends to zero is asserted here;
-Lemma~\ref{lem:collapse-family} uses its stated logarithmic loss.
-\item Relative preparation makes the original tails of a compact
-configuration family stationary beyond a common cutoff, preserving
-members already stationary there. On one-input mixed domains the
-subsequent shift reaches a gauge path followed by a constant mixed
-pair. On several-input domains at positive collapse scale, and on the
-finite-width joined torus domains, which have no collapse scale, it
-retains the ordinary cobordism and reaches the reference of
-Section~\ref{sec:determinants}, taken for the torus domains at the
-closed cut of Paper~I, Lemma~10.18; its relative form preserves that
-terminal subspace. These deformations are continuous in the smooth
-topology and coherent with ordinary end gluing. Limiting triangle
-orientations are defined by inverse collapse, not by shifting to a
-constant triangle. Interior-node gluing is continuous in the plumbing
-topology and is used on discs separated from matching and boundary
-collars. In the collapse application the positive plumbing parameter
-is fixed first and the endpoint insertion lies in an external strip.
-\item The weight comparison for physical solutions and homotopies
-is proved in Proposition~\ref{prop:weights}. The pure symplectic
-continuation, cap, and strip-gluing moduli spaces have the usual
-regular low-dimensional compactifications, with no additional
-bubbling boundary in the dimensions used here.
+\item Every smooth configuration with fixed asymptotics has local
+matching-boundary charts. The realized operators of
+Definition~\ref{def:realization} and their formal adjoints on the dual
+weighted spaces satisfy local estimates and compact-remainder
+estimates uniform on the family. They are Fredholm, their kernels and
+cokernels consist of smooth elements, and they form continuous
+families. Changes of chart and the admissible changes of realization
+give the same determinant line. The fixed-positive-scale affine-center
+comparison, including nonsolutions and moving stationary limits, is
+Proposition~\ref{prop:affine-square}.
+\item At ordinary ends the weights lie in common spectral gaps; at
+mixed ends the stationary coordinates are separated from the decaying
+part. The scalar Neumann operator $d_A^*d_A$ is invertible on the
+weighted spaces at every configuration whose restriction to an odd
+surface or torus collar is irreducible, with bounds uniform on the
+family. Regular zero-dimensional solutions and the constant reference
+pairs with no secondary or inhomogeneous data have invertible realized
+operators, including the constant pairs on the finite, completed and
+joined torus domains and on the closed-cut piece; by openness the same
+holds for sufficiently small data. For the preglued families of
+Lemma~\ref{lem:bridge-gluing} the estimates of (a) are uniform as the
+torus lengths tend to infinity, with the completed domains as limits.
+At positive collapse scale they are local on compact scale intervals
+bounded away from zero; no uniform bound for the full mixed inverse or
+a fixed chart radius as the collapse scale tends to zero is asserted,
+and Lemma~\ref{lem:collapse-family} uses its stated logarithmic loss.
+The zero-scale limit domains are included.
+\item The weight comparison for physical solutions and homotopies is
+Proposition~\ref{prop:weights}. The pure symplectic continuation, cap
+and strip-gluing moduli spaces have regular low-dimensional
+compactifications, with no additional bubbling boundary in the
+dimensions used here, and along the gluing paths from preglued
+configurations to regular solutions determinant transport preserves
+the canonical orientations. On a disc containing an interior node and
+separated from the matching and boundary collars, the real
+Cauchy--Riemann part of a mixed or pure operator glues at the node:
+the determinant lines form a continuous line bundle in the plumbing
+topology, the node contributes its complex fibre, canonically oriented
+and even, and node gluing is associative and commutes with ordinary
+strip gluing. In the collapse application the positive plumbing
+parameter is fixed first and the endpoint insertion lies in an
+external strip.
 \end{enumerate}
-\end{hypothesis}
+\end{proposition}
 
 The relevant asymptotic restriction is strict: the weights lie in
 the appropriate signed primal gaps; adjoints use the opposite
@@ -487,21 +490,52 @@ signed dual weights. Every stationary and parameter column must
 belong to the weighted target. The affine
 comparison uses a common sufficiently small weight in its actual
 indicial gaps. It is not assigned the whole physical solution gap.
-Full-gap independence in part~(d) concerns the physical solutions
+Full-gap independence in part~(c) concerns the physical solutions
 and counts. Uniformity is asserted for a fixed compact family,
 not over all Heegaard splittings or all primary perturbations.
-When an end is completed, the same statement must hold on the
-completed domain. A finite-neck estimate by itself does not imply
-this last assertion.
 
-The oriented comparison at torus completion is not a further
-assumption. Section~\ref{sec:excision} proves it from
-Hypothesis~\ref{hyp:regularity} and the unsigned analysis of Paper~I,
-Section~10. There Hypothesis~\ref{hyp:regularity} is used on the
-finite-width joined torus domains (clause (c)), in the topology of
+The second input concerns relative preparation and shifting in
+families. Daemi, Fukaya and Lipyanskiy state the one-input shift on
+their special quintuple and sketch its family version
+\cite[Lemmas~4.62 and~4.64]{DFL}; the domains, topology and families
+used here, and the several-input form, are not covered there. The
+following proposition is proved in Appendix~\ref{app:shifting}.
+
+\begin{proposition}[Relative preparation and shifting]\label{prop:shifting}
+Let a compact family of smooth configurations be given on one of the
+domains below, with fixed asymptotic labels, where the data and geometry
+may vary as in Proposition~\ref{prop:foundations}.
+\begin{enumerate}[label=(\alph*)]
+\item On a one-input mixed domain (the vertex domain, a separate finite
+or completed torus domain, or the closed-cut piece with its ordinary
+input $Z$), relative preparation makes the original tails stationary
+beyond a common cutoff, preserving members already stationary there,
+and the subsequent shift deforms the family to gauge paths followed by
+a constant mixed pair $C^c$, where $c$ is a representative of the
+critical point over the output label (Appendix~\ref{app:shifting}),
+keeping members which are already of this form in that subspace.
+\item On the triangles and folded triangles at positive collapse scale,
+and on the finite-width joined torus domains, a deformation of the form
+described in Section~\ref{sec:determinants} retains the ordinary
+cobordism and reaches the reference described there, taken for the
+torus domains at the closed cut of Paper~I, Lemma~10.18; its relative
+form preserves that terminal subspace.
+\end{enumerate}
+These deformations are continuous in the topology of this section
+jointly in configurations and data, and coherent with ordinary end
+gluing. Limiting triangle orientations are defined by inverse collapse,
+not by shifting to a constant triangle.
+\end{proposition}
+
+The oriented comparison at torus completion is not an assumption.
+Section~\ref{sec:excision} proves it from
+Proposition~\ref{prop:foundations}, Proposition~\ref{prop:shifting}
+and the unsigned analysis of Paper~I, Section~10. There
+Proposition~\ref{prop:shifting} is used on the separate finite and
+completed torus domains and on the closed-cut piece, directly and through
+the localized shift on the joined domains, in the topology of
 Section~\ref{sec:geometry} in which the torus tail is an end with limit
-$\alpha$, and with local estimates for the operators and their weak
-adjoints (clause (b)). There the determinant lines of the torus domains receive
+$\alpha$. The determinant lines of the torus domains receive
 orientation maps which are natural under the lifting groups, compatible
 with gauge and strip gluing and with the conversion line at the closed
 cut, and equal to the product of the canonical orientations at split
@@ -546,7 +580,8 @@ Regular cut data are essential: nondegeneracy of the end critical
 points alone does not regularize a cut solution. Part~(c) is a
 statement about universal moduli spaces, rather than a pointwise
 gluing bijection in every fiber of a universally regular family.
-The mixed Hypothesis~\ref{hyp:regularity} is not used in this
+Neither Proposition~\ref{prop:foundations} nor
+Proposition~\ref{prop:shifting} is used in this
 proposition.
 
 \section{Complexes, graded signs and determinant lines}\label{sec:algebra}
@@ -1053,7 +1088,8 @@ separate fixed-positive-scale family, not a compactly supported
 change under Definition~\ref{def:realization}.
 
 \begin{lemma}[Realization comparison]\label{lem:realization}
-Under Hypothesis~\ref{hyp:regularity}, admissible realizations
+Under the Fredholm and continuity statements of
+Proposition~\ref{prop:foundations}(a), admissible realizations
 at a fixed configuration have canonically identified
 orientation double covers. The identification is continuous
 in compact families and commutes with ordinary gluing. At a
@@ -1093,9 +1129,9 @@ At a regular zero of index zero every operator in these paths is
 invertible, so the canonical orientation is preserved.
 \end{proof}
 
-The lemma uses the uniform analytic assertions in
-Hypothesis~\ref{hyp:regularity}; it is not a proof of their
-validity on a completed domain. In particular, moving a
+The lemma uses the Fredholm families of
+Proposition~\ref{prop:foundations}(a), including those on the completed
+domains. In particular, moving a
 Coulomb center at a configuration which is not a solution
 is not justified by the block-triangular argument above.
 We will use a two-parameter determinant-line comparison
@@ -1305,27 +1341,33 @@ and the actual counts and homotopies are unchanged.
 \subsection{Shifting and relative orientations}
 A constant pair $C_x$ joins the gauge critical point $a_x$
 to the symplectic intersection point $x$. Its operator is
-invertible. Let $L_S(x)=L_G(a_x)$. For a mixed configuration
+invertible. Let $L_S(x)=L_G(a_x)$. More generally, a constant pair
+$C^{c}$ may be built from any representative $c$ of the critical
+point over $x$ (Appendix~\ref{app:shifting}); it is gauge equivalent to
+$C_x$, its operator is invertible, its positive element corresponds to
+that of $C_x$ under conjugation, and the almost-complex orientation
+identifies $L_G(c)$ with $L_G(a_x)$, compatibly with transport
+(Appendix~\ref{app:shifting}). For a mixed configuration
 $c$ with gauge input $a$ and symplectic output $x$, shifting
 and gluing identify it, through a path of configurations,
-with a configuration of the form $A\# C_x$. Here $A$ is a
-gauge path from $a$ to an appropriate lift of $a_x$.
+with a configuration of the form $A\# C^{c'}$. Here $A$ is a
+gauge path from $a$ to a representative $c'$.
 
 \begin{proposition}\label{prop:transport}
-Under Hypothesis~\ref{hyp:regularity}, there is a relative
+By Propositions~\ref{prop:foundations} and~\ref{prop:shifting}, there is a relative
 orientation isomorphism
 \begin{equation}\label{eq:Gamma}
  \Gamma_c:L_G(a)\otimes\det D_c\longrightarrow L_S(x),
 \end{equation}
 defined up to positive scalar, which agrees with gauge
-orientation gluing at $A\#C_x$. It is independent of the
+orientation gluing at $A\#C^{c}$. It is independent of the
 shifting path, natural under the lifting group, and coherent
 under ordinary gauge and strip gluing.
 \end{proposition}
 \begin{proof}
 First consider a loop of configurations with fixed limits.
 The relative family shifting in
-Hypothesis~\ref{hyp:regularity}(c) deforms it to a loop of
+Proposition~\ref{prop:shifting} deforms it to a loop of
 symplectically constant configurations. A common gluing
 length works for the compact family. At that end of the
 deformation, the determinant bundle is the gauge
@@ -1337,9 +1379,9 @@ the loop is therefore trivial. This proves path independence
 of the orientation transported from the constant reference.
 
 For a strip attached at the output, first shift the original
-mixed configuration to $A\#C_x$. Then shift $C_x$ together
+mixed configuration to $A\#C^{c}$. Then shift $C^{c}$ together
 with the attached strip to another gauge path followed by
-$C_y$. Associativity of determinant gluing identifies both
+$C^{c'}$, with $c'$ a representative over $y$. Associativity of determinant gluing identifies both
 orders of this construction with gauge gluing at the final
 reference. Continuity transports that equality back to the
 original configuration. The gauge-end statement is the same
@@ -1366,20 +1408,35 @@ cut. On a compact family at positive collapse scales, the compact
 metric interpolation of Paper~I first supplies its product collar.
 This operation has no asserted uniformity as the scale tends to zero.
 
-Prepare and positively extend the output DFL region as in the
-one-input construction. In its compactified collar coordinate
-$r\in[-2,0]$, localize the shift by
+The finite-width joined torus domains $W^J_\lambda$ have the same
+structure, with no collapse scale. By Paper~I, Lemma~10.18, the closed
+cut $Z_{\rm cut}\cong Z$ decomposes $W^J_\lambda$ into the reverse
+excision cobordism, which is the ordinary two-input cobordism, and the
+closed-cut piece $M_\lambda$, a truncated output DFL region for the pair
+$(A_0,A_1)$ with arms $D_{0,\lambda},D_{1,\lambda}$; the cut has a
+product collar. The construction below applies verbatim with the
+output region $M_\lambda$ and the cut $Z_{\rm cut}$, on compact ranges of
+widths; no uniformity as $\lambda\to\infty$ is asserted.
+
+Prepare the output DFL region, and extend it positively by lifting its
+section to the gauge side as in the proof of \cite[Lemma~4.62]{DFL},
+keeping a fixed collar of the cut unchanged; this is part of
+Proposition~\ref{prop:shifting}. In the coordinate $r$ of
+Appendix~\ref{app:shift-local}, in which the cut is $\{-c_1\}\times Y_\#$
+with $c_1>5$, localize the shift by
 \[
  F_\kappa(r)=r+\kappa\chi(r),
 \]
-where $\chi$ is nondecreasing, zero near $-2$, and one throughout
-the output region. Extend by identity on the ordinary core.
+where $\chi$ is nondecreasing, zero near $-c_1$, and one on $[-5,\infty)$.
+Extend by identity on the ordinary core.
 Since $F'_\kappa=1+\kappa\chi'>0$, this pulls back the whole
 connection smoothly; on the section use the usual translation.
-For a common large finite $\kappa$ the output region and a collar
-on both sides of its interface are the constant mixed pair $C_y$.
+For a common large finite $\kappa$, followed by the straightening and the
+collar widening of Appendix~\ref{app:shift-shift}, the region $r\ge-4$ is a constant mixed
+pair $C^{c}$, with $c$ a representative over the output label $y$.
 The remaining connection is an ordinary cobordism configuration
-$A_E$, so the reference is $A_E\#C_y$, with the original inputs
+$A_E$ ending at $c$ on the parallel copy $\{-7/2\}\times Y_\#$ of the cut,
+so the reference is $A_E\#C^{c}$, with the original inputs
 unchanged. In particular it is not a product of two gauge paths.
 
 Pull back the actual transition gauges as well. If $C_{i,\kappa}$
@@ -1389,7 +1446,7 @@ with the initial ones. This retains the lifting classes and central
 cocycles. The stationary representatives are the actual primary
 paths, including the corner pullback, and both operator rows are
 transported. A common sufficiently small weight gives the family
-in Hypothesis~\ref{hyp:regularity}; no intermediate operator is
+in Proposition~\ref{prop:foundations}(a); no intermediate operator is
 assumed invertible.
 
 At the terminal configuration remove compact nonprimary terms
@@ -1529,10 +1586,12 @@ chosen small data. At a constant pair the linearization
 is invertible. The chart implicit-function theorem
 therefore supplies a nearby branch of regular solutions.
 The uniqueness statement in the triangularity argument
-identifies this branch with the diagonal solution. The
-fixed-center regularity in
-Hypothesis~\ref{hyp:regularity} makes the branch continuous
-for determinant-line transport. Its sign is locally
+identifies this branch with the diagonal solution. The charts and
+the continuous Fredholm families of
+Proposition~\ref{prop:foundations}(a) make the branch, which is
+continuous in the chart norm, continuous for determinant-line
+transport; the constant pair is invertible by
+Lemma~\ref{lem:constant-pairs}. Its sign is locally
 constant and begins at the canonical sign $+1$.
 
 The filtration now gives an inverse integral matrix.
@@ -1560,8 +1619,9 @@ change on the original mixed domain.
 
 \begin{proposition}\label{prop:end-data}
 Fix primary data and a mixed vertex, including the closed-$Z$
-vertex at a fixed positive width. With the regularity and
-compactification inputs above, its mixed maps satisfy the following
+vertex at a fixed positive width. With
+Proposition~\ref{prop:foundations}, Proposition~\ref{prop:shifting} and
+the compactifications of Paper~I, its mixed maps satisfy the following
 integral chain homotopies.
 \begin{enumerate}[label=(\roman*)]
 \item If $f_0,f_1$ are two sufficiently small invariant gauge
@@ -1743,7 +1803,9 @@ the autonomous inverse only on the matched tail. The bordered
 exact sequence and the reference and cutoff squares therefore
 apply with both far ends fixed. They do not replace the compact
 continuation core by an autonomous trajectory. Relative mixed
-shifting and associativity preserve the constant-pair normalization;
+shifting (Proposition~\ref{prop:shifting} and
+Proposition~\ref{prop:transport}) and associativity preserve the
+constant-pair normalization;
 the constant strip has its canonical orientation. All maps here
 are even. Thus the exact rigid counts are
 \[
@@ -1775,7 +1837,8 @@ intersections remain transverse. Locally choose
 fixed-center charts and stabilizations. A nearby regular
 solution has small coordinates in such a chart. The
 line orientation pulled back from
-Proposition~\ref{prop:transport} varies continuously,
+Proposition~\ref{prop:transport} varies continuously, by
+Proposition~\ref{prop:shifting} for families with varying data,
 while the canonical orientation of an invertible
 operator is continuous on the invertible locus. Their
 ratio is consequently locally constant. This fact will
@@ -1860,7 +1923,9 @@ collapse construction of Paper~I.
 and smooth compactly supported target columns
 $j_b:F\to Y_b$ so that
 $\widehat D_b=(D_{V_b},j_b):X_b\oplus F\to Y_b$ is onto.
-Such columns exist by smoothness of the cokernel and density of
+Such columns exist by smoothness of the cokernel on the limit domain
+(Proposition~\ref{prop:foundations}(a),(b), which includes the
+zero-scale limit domains) and density of
 compactly supported tests; a finite cover of $B$ and parameter
 cutoffs give one $F$. Write $K_b=\ker\widehat D_b$. These kernels
 form a vector bundle. Choose projections $\Gamma_b:X_b\oplus F\to K_b$
@@ -2043,12 +2108,9 @@ cobordism factor. Thus the full end-gluing diagram commutes before
 the vertex lines are cancelled. This proves coherence of the
 defined triangle orientation without an independent component sign.
 
-A nonsolution reference family supplied only in a strong weighted
-topology can first undergo relative end preparation. Define the
-orientation there and transport it back through the Fredholm
-preparation family; relative cutoff squares compare the choices.
-Alternatively use a smaller comparison weight below its remainder
-rate. This does not put a slow nonsolution into a faster realization.
+For a nonsolution reference family supplied only in a strong
+weighted topology, use a smaller comparison weight below its
+remainder rate. This does not put a slow nonsolution into a faster realization.
 Actual solutions instead use their proved exponential decay in the
 lemma and are not replaced by truncated solutions.
 
@@ -2196,8 +2258,9 @@ This weighted equation column is retained; it need not vanish
 at a nonsolution.
 
 For Fredholmness, first work in physical decaying spaces. The
-local primal and weak-adjoint estimates are
-\cite[Theorem~4.17 and Remark~4.19]{DFL}. Their boundary-domain
+local primal estimates are \cite[Theorem~4.17 and Remark~4.19]{DFL};
+the weak-adjoint estimates are \cite[Remark~4.33]{DFL} and
+\cite[Theorem~5]{DFL-mixed}. Their boundary-domain
 transport is \cite[Proposition~5.27 and Lemma~5.67]{DFL-mixed}.
 The changed compact core is smooth at this fixed scale. At a
 mixed stationary limit the current-center cylinder has the form
@@ -2849,7 +2912,8 @@ raw count as twice that trace. The larger quotient is taken only
 after this step.
 
 The alternating sign here is an analytic determinant sign, as in
-the proof of~\cite[Proposition~5.5]{KM-unknot}. In the periodic
+the proof of~\cite[Proposition~5.5]{KM-unknot}, which refers to
+\cite[Lemma~2.4]{KM-sutures}. In the periodic
 model $\partial_s+B$, a simple real eigenvalue crossing changes
 the real zero Fourier mode once; the nonzero modes occur in
 complex pairs. The sign is spectral-flow parity, hence the parity
@@ -3084,7 +3148,8 @@ large length, the collar and width families, and the closed-cut
 decomposition. We use those results as they are proved there. The
 domain list of Section~\ref{sec:geometry} includes the finite-width
 torus domains, their completed limits and the closed-cut mixed
-domain, so Hypothesis~\ref{hyp:regularity} applies to them and to
+domain, so Proposition~\ref{prop:foundations} and
+Proposition~\ref{prop:shifting} apply to them and to
 the compact families below. What we add is an orientation for every
 count and every one-dimensional family, and the resulting chain
 homotopy over $\ZZ$. No further analytic assumption is made.
@@ -3166,16 +3231,15 @@ quintuple of $(D_0,D_1)$. The inverse bounds are uniform on compact
 subfamilies.
 \end{lemma}
 \begin{proof}
-The closed-cut mixed domain belongs to the list of
-Section~\ref{sec:geometry}, and these are compact families of
-noncollapsing geometries used below, on which the constant pair
-remains a solution.
-Hypothesis~\ref{hyp:regularity}(b) asserts invertibility of the constant
-reference operators on these domains; continuity of the inverse and a
-finite cover give uniform bounds. At the special quintuple this is
-\cite[Proposition~3.19]{DFL}. The kernel can also be computed directly
-from the energy identity of \cite[Section~4.3]{DFL}, as for the vertex
-constant pair; we do not use that computation.
+This is part of Lemma~\ref{lem:constant-pairs} in
+Appendix~\ref{app:inputs}: the kernel vanishes by the quadratic identity
+of \cite[Lemma~4.40]{DFL} adapted to these domains, and the index is
+zero by \cite[Proposition~3.19]{DFL} at the special quintuple and
+continuity along the family. The proof of that lemma uses the local
+theory of Section~\ref{app:local}, Lemma~\ref{lem:compact-remainder},
+Paper~I, Theorem~10.13, Lemma~\ref{lem:split-preglue}(iii) and
+Lemma~\ref{lem:bridge-gluing}; none of the inputs of that lemma uses the
+present lemma.
 \end{proof}
 
 The determinant line of an invertible operator has the canonical
@@ -3229,11 +3293,15 @@ intersection is invertible. Thus \eqref{eq:RV} gives the right
 tensor differential \eqref{eq:tensor} on $C_V$.
 
 \emph{The decorated closed-cut map.} Call a configuration on
-$W^J_\lambda$ \emph{terminal} if it agrees with $C_{M,x}$ on $M_\lambda$
-and on a two-sided collar of $Z$. Its $\overline{\mathcal E}_\lambda$ factor $e$
-is an arbitrary configuration with the given inputs. Ordinary gluing
-at $Z$ identifies its determinant line with
-$\det D_e\otimes\det D_{C_{M,x}}$. Let
+$W^J_\lambda$ \emph{terminal} if it agrees with a constant pair $C^c_{M,x}$,
+for some representative $c$ of the critical point over $x$, on the part of
+$M_\lambda$ beyond a parallel copy of $Z$ in the product collar of the cut,
+and on a two-sided collar of that copy. Its remaining factor $e$, the
+reverse excision cobordism enlarged by the collar, is an arbitrary
+configuration with the given inputs. Ordinary gluing at the copy of $Z$
+identifies its determinant line with $\det D_e\otimes\det D_{C^c_{M,x}}$,
+and the lines at $c$ are identified with those at $\beta_x$ as in
+Section~\ref{sec:determinants}. Let
 $\gamma_e:I_a\otimes\det D_e\to L^{\overline{\mathcal E}}_G(\beta_x)$ be the
 almost-complex orientation of the gauge cobordism, with the ordered
 inputs, and let
@@ -3245,9 +3313,9 @@ conversion. Define
 \end{equation}
 The sign moves $Q_x$ from its fixed position after the input line to
 the position adjacent to the cut. For a general configuration $c$ on
-$W^J_\lambda$, the relative several-input shift of
-Hypothesis~\ref{hyp:regularity}(c) retains the ordinary cobordism and
-reaches a terminal configuration. Transport \eqref{eq:G-terminal}
+$W^J_\lambda$, the localized several-input shift of
+Section~\ref{sec:determinants} and Proposition~\ref{prop:shifting}
+retains the ordinary cobordism and reaches a terminal configuration. Transport \eqref{eq:G-terminal}
 back along it. This defines an even map
 \begin{equation}\label{eq:G-map}
  G_c:I_a\otimes Q_x\otimes\det D_c\longrightarrow Z_x .
@@ -3283,17 +3351,18 @@ the coherent orientations $q=q_x$ and $q_\beta$,
 \end{lemma}
 \begin{proof}
 Path independence is the relative argument in the proof of
-Proposition~\ref{prop:transport}. Apply the relative shift of
-Hypothesis~\ref{hyp:regularity}(c) to a path whose endpoints are
-terminal. The endpoint tracks and the final edge remain terminal,
+Proposition~\ref{prop:transport}. Apply the relative localized shift
+to a path whose endpoints are terminal. The endpoint tracks and the final edge remain terminal,
 where \eqref{eq:G-terminal} is continuous. The orientation double
 cover over the parameter square then shows that the original path
 preserves \eqref{eq:G-terminal}. Applying this to the concatenation
 of two shifting paths from $c$ proves independence, also when they
 reach different terminal components. The lifting arrows preserve
 the almost-complex orientations, the conversion character on
-$\phi_Z$ and the positive constant element, and commute with the
-shift. They therefore preserve \eqref{eq:G-map}.
+$\phi_Z$ and the positive constant element, and they map terminal
+configurations to terminal ones. The pullback of a shifting path by an
+arrow is a shifting path, so path independence shows that they preserve
+\eqref{eq:G-map}.
 
 For (i), the path $A$ is attached at an original input, away from the
 localized shift. At a terminal configuration, ordinary associativity
@@ -3303,11 +3372,11 @@ gives $\gamma_{A\#e}(i\otimes\kappa(d_A\otimes d_e))
 $t\ind D_A+t\ind D_e$. Continuity along the shift gives (i).
 
 For (ii), glue $u$ to the whole shifting family of $c$ with one
-long neck. At the terminal end the configuration is $e\#C_{M,x}\#u$;
-shift $C_{M,x}\#u$ to $B\#C_{M,y}$ with $B$ an ordinary path on $Z$
+long neck. At the terminal end the configuration is $e\#C^c_{M,x}\#u$;
+shift $C^c_{M,x}\#u$ to $B\#C^{c'}_{M,y}$ with $B$ an ordinary path on $Z$
 of index $n=\ind D_u$, and insert a long product neck at $Z$ so that
 $B$ lies on the $\overline{\mathcal E}_\lambda$ side beyond a two-sided
-collar of $Z$; then $e\#B\#C_{M,y}$ is terminal. The ordinary action of $B$ in the two
+collar of $Z$; then $e\#B\#C^{c'}_{M,y}$ is terminal. The ordinary action of $B$ in the two
 structures satisfies the line form of the right conversion
 convention \eqref{eq:Theta}:
 \[
@@ -3320,13 +3389,13 @@ the determinant of $e\#B$, with exponent $t(\ind D_e+n)$. The other
 factors agree by associativity and the definition of $R_M(u)$.
 Continuity gives (ii).
 
-For (iii), shift $c'$ on $M_\lambda$ to $B\#C_{M,x}$ and glue $A$ to
+For (iii), shift $c'$ on $M_\lambda$ to $B\#C^{c}_{M,x}$ and glue $A$ to
 the whole family at $Z$ with one long neck. Both sides of (iii) are
 continuous orientations of the same line along this family. At its
-end the configuration $A\#B\#C_{M,x}$ is terminal, and by
+end the configuration $A\#B\#C^{c}_{M,x}$ is terminal, and by
 \eqref{eq:G-terminal} its left side carries
 $(-1)^{t(\ind D_A+\ind D_B)}$. On the right,
-$\Gamma^M_{B\#C_{M,x}}$ is the action of $B$ in the structure of
+$\Gamma^M_{B\#C^{c}_{M,x}}$ is the action of $B$ in the structure of
 $M_\lambda$, which by the display above contributes
 $(-1)^{t\ind D_B}$; the prefactor contributes $(-1)^{t\ind D_A}$.
 The two sides agree at the end, hence along the family.
@@ -3336,7 +3405,7 @@ The two sides agree at the end, hence along the family.
 joined constant pair on $W^J_\lambda$ with output $x$. Its incoming
 labels are the critical points $a_{x_\pm}$, so its input line is
 $L_G(a_{x_-})\otimes L_G(a_{x_+})=V_x$. Its operator is invertible for
-every $\lambda$ (Lemma~\ref{lem:split-preglue}(iii) below). Evaluating \eqref{eq:G-map} on
+every $\lambda$ (Lemma~\ref{lem:split-preglue}(iv) below). Evaluating \eqref{eq:G-map} on
 the positive element gives an even isomorphism
 $G_{\mathrm{ref}}:V_x\otimes Q_x\to Z_x$. Define the even map
 \begin{equation}\label{eq:K0}
@@ -3344,7 +3413,14 @@ $G_{\mathrm{ref}}:V_x\otimes Q_x\to Z_x$. Define the even map
  K_{0,x}G_{\mathrm{ref}}(v\otimes q)=(-1)^{t|v|}q\otimes v .
 \end{equation}
 The lines are fixed and $G_{\mathrm{ref}}$ varies continuously with
-$\lambda$, so $K_{0,x}$ does not depend on $\lambda$. Let $K^q_x$ be
+$\lambda$, so $K_{0,x}$ does not depend on $\lambda$. Replacing
+$C^{(\lambda)}_{J,x}$ by the joined constant pair of another representative
+conjugates the operator by a gauge transformation. It is assembled from the
+automorphisms relating the representatives on the two sides; these are
+central on $T$, and after multiplying one of them by $-1$ they agree there
+and glue across the bridge. The positive elements correspond, and so do the
+identified lines, by the remark on representatives in
+Appendix~\ref{app:shifting}; hence $K_{0,x}$ is unchanged. Let $K^q_x$ be
 \emph{literal} contraction of the first factor with $q_x$: if
 $K_{0,x}(z)=q_x\otimes v$, then $K^q_x(z)=v$. It has degree $t$. Put
 \begin{equation}\label{eq:KR-def}
@@ -3382,16 +3458,21 @@ condition.
 \item Every compact family on the completed domains, in the topology of
 Section~\ref{sec:geometry}, is in torus normal form beyond some $r_0$
 after a continuous family of small even gauge transformations which
-are the identity for $r\le r_0-1$ and on all other ends.
+are the identity for $r\le r_0-1$ and on the ordinary ends.
 \item Let $\mathfrak F$ be a compact family of pairs in torus normal form
 beyond $r_0$. The residual of $P_\lambda(c)$ relative to $c$ is supported
 where $\chi_\lambda'\neq0$ or $\chi_\lambda^2\neq\chi_\lambda$, and tends to
 zero in every weighted norm, uniformly on $\mathfrak F$, as
 $\lambda\to\infty$. The same holds for $P_{\mathsf R}$ on one side.
-\item The constant pairs $C_{\pm,x_\pm}$ can be taken equal to $\alpha$ on
-the whole added tail. Then
+\item The constant pairs $C_{a,x_a}=C^{c_a}$ whose representatives $c_a$
+are $\alpha$ on $T$, such as those produced in Appendix~\ref{app:shifting},
+are equal to $\alpha$ on the whole added tail. Then
+$P_{\mathsf R}(C_{a,x_a})$ is the constant pair
+on $W_{a,\mathsf R}$, and
 $P_\lambda(C_{-,x_-},C_{+,x_+})=C^{(\lambda)}_{J,x}$ is the joined constant
-pair, and its operator is invertible for every $\lambda$.
+pair.
+\item The operators at these constant pairs are invertible for every
+$\mathsf R$ and every $\lambda$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -3424,9 +3505,11 @@ from the identity, supported in a fixed collar, with
 $B^{q_1}=\alpha$ on $T\times[b,\infty)$. They preserve primary classes
 and genus germs, and depend smoothly on compact families of primary
 data. The constant pairs are pullbacks of these representatives, so
-they equal $\alpha$ on the tail and the preglue has no cutoff error. It
-is the joined constant pair, which is a solution; its operator is
-invertible by Hypothesis~\ref{hyp:regularity}(b).
+they equal $\alpha$ on the tail and the truncation and the preglue have
+no cutoff error; the results are the constant pairs on $W_{a,\mathsf R}$
+and $W^J_\lambda$, which are solutions.
+
+(iv) This is Lemma~\ref{lem:constant-pairs}.
 \end{proof}
 
 The next lemma is the linear gluing across the torus bridge. The
@@ -3472,13 +3555,19 @@ listed at its beginning.
 \emph{Compact-remainder estimates.} Steps~1--3 of the proof of Paper~I,
 Proposition~10.26, use only the following: on the torus region beyond
 a fixed $S$ the operator is the flat odd-torus operator $D_\alpha$ of
-Paper~I, Proposition~10.3, plus a small zeroth-order term; on the
-mixed ends it is transported to the stationary models with errors
-tending to zero; the ordinary asymptotic operators are invertible;
-and local elliptic estimates hold on a fixed compact region. The
+Paper~I, Proposition~10.3, plus a small zeroth-order term, with the
+normal derivatives at a flat face recovered as in Paper~I,
+Theorem~10.5(b); on the mixed ends it is transported to the stationary
+models by the maps of \cite[Proposition~5.27]{DFL-mixed}, with errors
+tending to zero, and the slice estimates of Paper~I, Proposition~10.7
+and Corollary~10.4, hold; the ordinary asymptotic operators are
+invertible; local elliptic estimates hold on a fixed compact region;
+the coefficients are bounded in $C^m$ on unit patches of finitely many
+isometry types; and the weight satisfies $\delta<\gamma/2$,
+$\delta<\mu_T$, with $\tau=\tau_0(\theta)$ on the torus region. The
 smallness beyond $S$ follows from the uniform tails in the definition
-of torus normal form and Sobolev embedding; by Hypothesis~\ref{hyp:regularity}(b)
-and compactness of $\mathfrak F$ for the ends and the compact region,
+of torus normal form and Sobolev embedding; by the local estimates and
+end models of Section~\ref{app:local}, and compactness of $\mathfrak F$,
 these hold uniformly on $\mathfrak F\times[2r_0+2,\infty]$. The finite
 stationary columns and the scalar row of the physical realization are
 bounded, and they act through the fixed cores and the mixed ends.
@@ -3489,14 +3578,15 @@ The same argument therefore gives
 where $K_1$ is a fixed compact subset of the two cores and $p(x)$ the
 stationary coordinates. The adjoint of $D_\alpha$ is invertible with the
 same bound, the stationary models are self-adjoint, and the local
-estimates for the weak adjoint are part of
-Hypothesis~\ref{hyp:regularity}(a),(b). Hence the same steps give
+estimates for the weak adjoint are recorded in
+Section~\ref{app:local}. Hence the same steps give
 \[
  \|\eta\|\le C\bigl(\|D_\lambda(c)^*\eta\|+\|\eta\|_{L^2(K_1)}\bigr)
 \]
 on the dual weighted spaces.
 
-(i) At $\lambda=\infty$ each $D_\infty(c)$ is Fredholm. Smooth compactly
+(i) At $\lambda=\infty$ each $D_\infty(c)$ is Fredholm by
+Proposition~\ref{prop:foundations}(a). Smooth compactly
 supported target sections are dense, so finitely many of them span a
 complement of its range, and by continuity also near $c$. A finite
 cover of $\mathfrak F$ gives $\Lambda$. Suppose there were $\lambda_j\to\infty$,
@@ -3577,10 +3667,11 @@ Lemma~\ref{lem:bridge-gluing}. It is continuous on
 $\mathfrak F\times[\lambda_1,\infty]$ and natural under the joined lifting
 group $\Phi_J\cong\Phi_-\oplus\Phi_+$.
 
-The separate shifts of Hypothesis~\ref{hyp:regularity}(c) give, for
+The separate shifts of Proposition~\ref{prop:shifting} give, for
 $c\in\mathfrak F$, a homotopy $h\mapsto H_h(c)$, $h\in[0,1]$, continuous in
 the topology of Section~\ref{sec:geometry}, from $c$ to
-$(A_-\#C_{-,x_-},A_+\#C_{+,x_+})$ with $A_\pm$ ordinary paths. Its image
+$(A_-\#C^{c_-}_{-,x_-},A_+\#C^{c_+}_{+,x_+})$ with $A_\pm$ ordinary paths
+and representatives $c_\pm$ which are $\alpha$ on $T$. Its image
 is compact. By Lemma~\ref{lem:split-preglue}(i) it can be put in torus
 normal form beyond a common $r_0$, and by
 Lemma~\ref{lem:split-preglue}(iii) its endpoints equal $\alpha$ on the
@@ -3618,7 +3709,8 @@ pair of $W_{a,\mathsf R}$ by Lemma~\ref{lem:split-preglue}(iii). There
 $\Gamma^a$ is the ordinary orientation of $A$ followed by the positive
 element of the constant factor. The extension from $\mathsf R=\infty$ is
 the same: by Lemma~\ref{lem:bridge-gluing}(iv) it commutes with gluing
-$A$, and the constant factor is invertible for every $\mathsf R$ with
+$A$, and the constant factor is invertible for every $\mathsf R$
+(Lemma~\ref{lem:constant-pairs}) with
 positive element continuous up to $\mathsf R=\infty$.
 The two orientations therefore agree at $h=1$, and hence on the whole
 rectangle.
@@ -3636,7 +3728,7 @@ Each action is an isomorphism between fixed lines, defined through an
 invertible constant pair with a strip glued at its output. For finite
 $\mathsf R$ it varies continuously with $\mathsf R$, since the constant
 pairs are invertible for every $\mathsf R$
-(Hypothesis~\ref{hyp:regularity}(b)); at $\mathsf R=\infty$ use
+(Lemma~\ref{lem:constant-pairs}); at $\mathsf R=\infty$ use
 Lemma~\ref{lem:separate-completion} with $\mathfrak F=\{C_{a,x}\#u\}$,
 which is $\alpha$ on the tail, together with
 Lemma~\ref{lem:bridge-gluing}(iv) for the strip glued at the output. For $R_M$ use the width interval and the
@@ -3899,7 +3991,9 @@ cut-off translation vector $-\partial_su$ plus an error which is
 exponentially small in $T$. By the uniform right inverse, the
 $T$-derivative of $z_T$ is bounded by the $T$-derivative of the
 residual of $p_T$ and by $\|z_T\|$ times a bounded quantity, and both
-tend to zero \cite[Section~3.3]{Donaldson-book}, \cite{Floer-Hofer}.
+tend to zero. For pseudoholomorphic curves this $T$-derivative estimate,
+with exponential decay, is \cite[Theorem~6.4]{FOOO-decay}; the same
+argument applies on the fixed ordinary gauge end.
 Hence $\partial_TU_T=-\partial_su+o(1)$ on the strip core after
 projection to the slice. Linear gluing (Lemma~\ref{lem:line-gluing})
 identifies $\det A_c\otimes\det D_u$ with the determinant along the
@@ -4044,7 +4138,7 @@ $B=B_{\rm cut}+H_M\overline{\mathsf E}$,
 \subsection{The mixed excision identity}
 \label{subsec:mixed-excision}
 \begin{theorem}[Mixed excision]\label{thm:mixed-excision}
-Assume Hypothesis~\ref{hyp:regularity} and the analytic results of
+Assume the unsigned analytic results of
 Paper~I. With the conversion at the closed cut placed as in
 Convention~\ref{conv:interior-line} and $\mathcal K_R$ as in
 \eqref{eq:KR-def},
@@ -4245,8 +4339,57 @@ uses gauge duality and the mixed map at the
 reflected presentation; it makes no assumption
 about symplectic duality.
 
+The integral version of Paper~I, Theorem~11.8, is the folded form of
+the triangle comparison \eqref{eq:triangle-square}.
+
+\begin{lemma}[Folded triangle comparison]\label{lem:folded-triangle}
+Let $N_0$, $N_1$ be the integral mixed maps of the product-target pairs
+$(A_0,L_C)$ and $(L_C,A_1)$, with gauge inputs $Z_0=D_0\cup(-C)$ and
+$Z_1=C\cup(-D_1)$, and let $\mu_{\mathscr W}:C_G(Z_0)\otimes_R C_G(Z_1)\to
+C_G(Z)$ be the integral gauge map of the cobordism formed by the pieces
+$D_0$, $C$, $D_1$. With the conversion at $Z$ placed as in
+Convention~\ref{conv:interior-line},
+\[
+ \mu_X^\Theta(N_0\otimes_RN_1)\simeq\pm N_Z\Theta^{\mathrm r}\mu_{\mathscr W}.
+\]
+\end{lemma}
+\begin{proof}
+The unsigned argument is the proof of Paper~I, Theorem~11.8: the family
+of data of Paper~I, Lemma~9.12, collapses the middle compression body
+$C$, which is an odd compression body with Lagrangian $L_C$, stretches the
+two ordinary necks cutting off the vertex domains of $(A_0,L_C)$ and
+$(L_C,A_1)$, and stretches the closed cut $Z$. We orient every
+configuration in the family by the several-input construction of
+Section~\ref{sec:determinants}, with the conversion line at $Z$ in its
+fixed position. At the collapsed end, Theorem~\ref{thm:B} identifies the
+orientations of the index-zero solutions with the orientations of the
+symplectic triangle glued to the two mixed vertices. It applies to this
+collapse: Section~\ref{sec:collapse} rests on the collapse analysis of
+Paper~I, Sections~6--8, and the proof of Paper~I, Theorem~11.8, supplies its
+inputs for the collapse of $C=C_{h,g}$, with product target, both boundary surfaces
+matched and the lower sheet reversed, using the two-trace slice space
+$H^1(\Sigma_h;\ad)\oplus H^1(\Sigma_g;\ad)$; ordinary gluing along
+the two stretched necks (Lemma~\ref{lem:line-gluing}) gives the count
+$\mu_X^\Theta(N_0\otimes_RN_1)$, with the input lines in cyclic order. At
+the stretched cut, gluing at the connected closed cut $Z$ has no extra
+gluing fibre (Lemma~\ref{lem:gluing-multiplicity}). The stretched cut
+decomposes the domain into the triangle cobordism of $D_0$, $C$, $D_1$,
+glued at $Z$ to the closed-cut vertex. Lemma~\ref{lem:G-properties} is
+stated for $W^J_\lambda$, but its proof uses only a decomposition at a
+closed cut, the localized shift, which
+Proposition~\ref{prop:shifting}(b) supplies on folded triangles, and
+Convention~\ref{conv:interior-line}. The same proof gives parts (i)--(iii)
+for this decomposition, and part (iii) identifies the orientation with that
+of the gauge cobordism followed by the conversion and the mixed map; this
+gives $N_Z\Theta^{\mathrm r}\mu_{\mathscr W}$. Parts (i) and (ii) give the
+compatibility at the input and output breaks. The family between the two
+ends is a compact one-parameter family with compactly supported parameter
+derivative, and Lemma~\ref{lem:family-signs}, with $f=t$, turns its
+compactified index-zero space into the stated homotopy. The overall sign
+reflects the fixed orientation choices at the two ends.
+\end{proof}
+
 \begin{proposition}[Cup formula]\label{prop:cup-formula}
-Under Hypothesis~\ref{hyp:regularity},
 \begin{equation}\label{eq:cup-formula}
  \check U_C\simeq\pm N_q\IG(W_k)n_p.
 \end{equation}
@@ -4257,12 +4400,17 @@ compatible upper height datum $r$,
 \end{equation}
 \end{proposition}
 \begin{proof}
-Apply the integral triangle comparison to
-the two distinguished input cycles. It
-identifies the folded triangle output,
-up to a boundary and one sign, with
-$N_Z\Theta_{B_k}$, using the conversion
-at $Z$ on both sides. Apply
+Apply Lemma~\ref{lem:folded-triangle} to
+the two distinguished input cycles
+$q_i^*=\pm N_i\theta_i$. Since the gauge
+filling $B_k$ is the triangle cobordism
+glued to the two auxiliary fillings,
+$\Theta_{B_k}$ is homologous to
+$\pm\mu_{\mathscr W}(\theta_0\otimes\theta_1)$
+by gauge composition. Hence the
+folded triangle output is, up to a
+boundary and one sign,
+$N_Z\Theta^{\mathrm r}\Theta_{B_k}$. Apply
 \eqref{eq:excision-cycle} to the homogeneous
 cycle $\Theta_{B_k}$. The result is
 \[
@@ -4356,9 +4504,10 @@ holomorphic equation. Applying the same argument
 to that configuration shows independence of $x$.
 
 For a family with a persistent point, the
-constant-pair operators, the transported
-orientation, and the node-gluing map vary
-continuously by Hypothesis~\ref{hyp:regularity}.
+constant-pair operators and the node-gluing map vary
+continuously by Proposition~\ref{prop:foundations}, and the
+transported orientation of Proposition~\ref{prop:transport} by
+Proposition~\ref{prop:shifting}.
 The ratio is a continuous function to
 $\{1,-1\}$ and is therefore constant. To vary
 regularizing data, use the segment to zero data.
@@ -4805,7 +4954,7 @@ the end data fixed. The smoothing is a relative homotopy and
 changes no sphere class. Interpolate the auxiliary almost-complex
 and perturbation data to doubling data within the admitted data
 space, preserving these germs and end values;
-Hypothesis~\ref{hyp:regularity} gives the continuous
+Proposition~\ref{prop:foundations}(a) gives the continuous
 Fredholm families. Determinant transport extends the resulting
 comparison back to the original finite configuration families.
 The first gluing diagram and path independence in
@@ -4863,7 +5012,6 @@ The comparison with the dual system on $p$ is made only after
 the sphere characters have been identified.
 
 \begin{proposition}\label{prop:fold-character}
-Under Hypothesis~\ref{hyp:regularity},
 \[
  \chi^{\bar{\widetilde p}}(S_h)=\chi^r(S_h).
 \]
@@ -4922,9 +5070,10 @@ height and neck lengths so that
 ordinary gluing applies to this finite
 set. The determinant-line construction
 then extends over each configuration
-component by path independence. The
-regularity and completion hypotheses
-are needed on all the domains in this
+component by path independence.
+Proposition~\ref{prop:foundations} and
+Proposition~\ref{prop:shifting} are
+needed on all the domains in this
 finite construction; a comparison only
 at the constant solution would not
 suffice.
@@ -5226,8 +5375,8 @@ A homotopy of continuation data, constant
 near the ends, gives the corresponding
 homotopy by its oriented one-dimensional
 boundary. The pure symplectic compactness
-and gluing used here are included in
-Hypothesis~\ref{hyp:regularity}(d). For
+and gluing used here are
+Proposition~\ref{prop:foundations}(c). For
 constant data the zero-dimensional
 solutions are constant strips, with
 canonical positive orientation. This
@@ -5329,7 +5478,7 @@ and determinant transport on that
 path preserves the canonical
 orientation of a regular solution.
 This is the pure symplectic gluing
-input in Hypothesis~\ref{hyp:regularity}.
+input of Proposition~\ref{prop:foundations}(c).
 \end{proof}
 
 This completes Theorem~\ref{thm:C}.
@@ -5435,7 +5584,7 @@ below the relevant primal, adjoint and scalar thresholds. For
 configuration reference paths it must also lie below their
 remainder rates; relative end preparation then supplies faster
 reference paths when needed. The completed-domain estimates at
-these choices are part of Hypothesis~\ref{hyp:regularity}.
+these choices are Proposition~\ref{prop:foundations}(b).
 \item Select the finite compact reference families needed for
 coherence, and regularize the limiting vertex, triangle and
 completed-core problems with these fixed ends. Their primary
@@ -5459,7 +5608,7 @@ families. If an end datum or a limiting regularization is changed,
 reselect the dependent necks and collapse scales and use the
 corresponding data homotopies. Independence over the full permitted
 weight range is applied only after this common small-weight
-construction, as in Hypothesis~\ref{hyp:regularity}(d).
+construction, as in Proposition~\ref{prop:foundations}(c).
 \end{enumerate}
 Every choice has a positive threshold
 once the preceding finite data have
@@ -5696,7 +5845,11 @@ commutes with this conversion.
 An isomorphism of decorated data
 pulls back the equation, its
 linearization and the shifting
-construction. Choose pulled-back
+construction; the pullback of a
+shift is a shift, and the
+orientation maps do not depend on
+the shifting path
+(Proposition~\ref{prop:transport}). Choose pulled-back
 stabilizations in the determinant
 construction. The kernel gluing
 maps then commute with the
@@ -5842,29 +5995,16 @@ Paper~I by
 Section~\ref{subsec:zero}.
 \end{proof}
 
-\subsection{What remains for an unconditional extension}
-Theorem~\ref{thm:A} is a
-conditional integral comparison.
-Removing Hypothesis~\ref{hyp:regularity}
-requires a proof on the actual
-mixed domains and their completed
-limits of uniform regularity,
-uniform slice, weight and local
-elliptic estimates, for the
-operators and their adjoints,
-and relative shifting in the
-topology of Section~\ref{sec:geometry}.
-The oriented torus comparison,
-including the continuity of
-determinant lines through torus
-completion
-(Lemma~\ref{lem:bridge-gluing}),
-is derived from these inputs in
-Section~\ref{sec:excision}.
-The ordinary nonseparating self-gluing is supplied by
+\subsection{Scope and further questions}
+Theorem~\ref{thm:A} assumes the unsigned analytic results of Paper~I.
+The additional analysis used here, the linear foundations of
+Proposition~\ref{prop:foundations} and the relative preparation and
+shifting of Proposition~\ref{prop:shifting}, is proved in
+Appendices~\ref{app:inputs} and~\ref{app:shifting}, and the oriented
+torus comparison is derived in Section~\ref{sec:excision}. The ordinary
+nonseparating self-gluing is supplied by
 Proposition~\ref{prop:selfgluing}; its regularization uses only
-collar-supported ordinary gauge perturbations. It supplies no
-regularity statement on a completed mixed domain.
+collar-supported ordinary gauge perturbations.
 
 Several further extensions ask
 different questions. Exact
@@ -5885,66 +6025,347 @@ comparison with relative-spin
 orientations on the compression
 correspondences. None of these
 identifications follows from
-the conditional theorem by
+the integral theorem by
 reducing modulo two.
 
 \appendix
-\section{Analytic inputs and their precise uses}\label{app:inputs}
+\section{Analytic foundations}\label{app:inputs}
 
-This appendix records the analytic
-statements used in the draft and
-separates the ordinary inputs from
-the completed-domain hypotheses.
-All references to Paper~I mean
-the companion version accompanying this manuscript.
-The present paper does not
-supply an independent proof of
-that manuscript's unsigned
-collapse, torus excision, or
-generation results.
+This appendix proves Proposition~\ref{prop:foundations}. All
+references to Paper~I mean the companion version accompanying this
+manuscript. The present paper does not supply an independent proof of
+that manuscript's unsigned collapse, torus excision, or generation
+results; it uses them as they are stated there. The arguments below
+combine the local theory of \cite{DFL,DFL-mixed} with explicit end
+models. They are the local-plus-ends arguments of
+\cite[Lemma~4.34]{DFL}, carried out on the domains of this paper.
+Theorem, proposition and remark numbers in \cite{DFL-mixed} are those
+of arXiv:2109.07038v1.
 
-\subsection{Mixed Fredholm theory and shifting}
-The mixed linearization couples
-the anti-self-dual operator to a
-real Cauchy--Riemann operator by
-the linearized matching condition.
-For fixed admissible ends it is
-Fredholm on the prescribed
-weighted spaces. The local
-regularity and compactness
-statements for the original
-mixed equation are in
-\cite{DFL-mixed}; the vertex
-Fredholm and constant-pair
-statements used here are in
-\cite[Theorems~4.12, 4.17 and
-Proposition~3.19]{DFL}.
-The mixed shifting statements
-are \cite[Lemmas~4.62 and~4.64]{DFL}.
-Their use on the completed and
-folded domains, including the
-relative family form in the
-smooth topology, is explicitly
-covered by
-Hypothesis~\ref{hyp:regularity}.
+\subsection{Local theory and end models}\label{app:local}
+\emph{Local estimates.} On a compact region meeting the matching seam,
+with a product metric and the fixed almost-complex structure near the
+seam, the local estimates for the mixed operator are
+\cite[Theorem~4.17]{DFL}; they are uniform along $C^\infty$-convergent
+sequences of configurations by \cite[Remark~4.19]{DFL}. For
+domain-dependent almost-complex structures, and for the formal adjoint,
+the local estimates and weak regularity are \cite[Theorem~5]{DFL-mixed},
+with \cite[Remark~4.33]{DFL}; their uniformity on neighbourhoods of the
+configuration and of the data, for both the operator and its adjoint,
+is \cite[Remarks~5.73 and~5.76]{DFL-mixed}. Away from the seam these are
+the interior and boundary estimates for the anti-self-duality operator
+with the normal boundary condition and for real Cauchy--Riemann
+operators with totally real boundary conditions. Holonomy perturbations
+contribute zeroth-order terms with the bounds of
+\cite[Proposition~6.1]{DFL}. The conformal factor of
+Definition~\ref{def:realization} does not change the anti-self-duality
+equation; it rescales the scalar row by $f^{-2}$ and adds zeroth-order
+terms to it. A compact
+family in the topology of Section~\ref{sec:geometry} has coefficients
+converging in every $C^k$ norm on compact sets, so these estimates are
+uniform on it.
 
-At an ordinary strip end the
-asymptotic operator is
-$J\partial_t$ with the totally
-real endpoint conditions. At a
-gauge end it is the extended
-Hessian. A weight $\delta$ must
-be separated from the relevant
-spectrum; at a decaying end it
-must be smaller than the decay
-rate of the configuration and
-of the linearized kernel and
-cokernel elements. At a mixed
-end the stationary modes are
-split off before the weight is
-imposed. This last finite
-factor remains in determinant
-gluing and may not be discarded.
+\emph{Charts.} At a smooth configuration the matching-boundary chart is
+built from \cite[Lemmas~4.1, 4.2 and~4.4]{DFL} and the construction
+following Lemma~4.4, with the slice of \cite[Proposition~4.6]{DFL} and
+the $L^q$ radius of Paper~I, Remark~5.2; the $L^2$ radius stated in
+\cite[Lemma~4.1]{DFL} does not suffice. The construction is local, so
+on a compact family the charts vary continuously with their centers.
+Charts with a radius uniform as a torus length tends to infinity are
+used only at the preglued references of Paper~I, Definition~10.23 and
+Lemmas~10.27--10.28.
+
+\emph{End models.} (O) At an ordinary gauge or strip end the operator is
+translation invariant with invertible asymptotic operator, the extended
+Hessian at a nondegenerate irreducible critical point or $J\partial_t$
+with transverse boundary conditions. Weighted estimates hold for weights
+below the gap, by \cite[Section~3.3.1]{Donaldson-book} for gauge ends
+and by the same Fourier argument for strip ends. (E) At a mixed end the
+stationary operator is self-adjoint with kernel the tangent space of the
+primary critical family and a spectral gap
+\cite[Section~4.2.1 and Proposition~4.21]{DFL}. On the torus-extended
+slices $Y_{\mathsf R}$ and the joined slices $D_{i,\lambda}$ the gap is
+uniform for lengths bounded below (Paper~I, Proposition~10.7), and on
+compact ranges of lengths by continuity (proof of Paper~I,
+Proposition~10.17). The moving boundary domain is transported to a fixed
+one by \cite[Proposition~5.27 and Lemma~5.67]{DFL-mixed}, and the weighted
+estimate for weights in $(0,\gamma)$ follows by Fourier transform in the
+end coordinate, as in Step~1(E) of the proof of Paper~I,
+Proposition~10.26. (T) On a flat torus region the operator and its
+adjoint are the invertible operators of Paper~I, Proposition~10.3, with
+the stated weighted bounds; at a flat face the normal derivatives are
+recovered from the equation as in Paper~I, Theorem~10.5(b).
+
+\subsection{Proof of Proposition~\ref{prop:foundations}(a)}
+\begin{lemma}\label{lem:compact-remainder}
+Let $\mathfrak F$ be a compact family as in
+Proposition~\ref{prop:foundations}. There are a compact subset $K$ of the
+cores and a constant $C$ such that, for every member and every $x$ in
+the domain of its realized operator $D$ and every $\eta$ in the domain
+of its weak adjoint,
+\[
+ \|x\|\le C\bigl(\|Dx\|+\|x\|_{L^2(K)}+|p(x)|\bigr),\qquad
+ \|\eta\|\le C\bigl(\|D^*\eta\|+\|\eta\|_{L^2(K)}\bigr),
+\]
+where $p(x)$ denotes the stationary coordinates.
+\end{lemma}
+\begin{proof}
+Choose cutoffs subordinate to a fixed compact core, the ordinary ends,
+the mixed ends and, on torus domains, the torus region beyond a fixed
+radius. Their gradients can be made small on the noncompact overlaps,
+as in Step~2 of the proof of Paper~I, Proposition~10.26. On each end
+apply the corresponding model of Section~\ref{app:local}; the
+coefficients differ from the model by terms which are small beyond a
+common truncation, uniformly on $\mathfrak F$. On the core apply the
+local estimates. Summing and absorbing the small commutator and
+coefficient terms gives the first estimate for the decaying part; the
+finite stationary columns and the scalar row on them are bounded, which
+accounts for $|p(x)|$. The adjoint estimate is the same argument with
+the adjoint models, whose invertibility is recorded in
+Section~\ref{app:local}.
+
+Varying geometry is handled as follows. The collar identifications
+$\psi_{\mathsf R}$ of Paper~I, Definition~10.1(a), are the identity outside
+the region $N_X$, which is compact in the normal direction and extends
+along both mixed ends; they change the mixed-end slices from $Y$ to
+$Y_{\mathsf R}$. The width identifications in the proof of Paper~I,
+Proposition~10.17, are the identity outside the bridge. Pulled back by
+them, the metrics form a compact family of uniformly elliptic metrics,
+and on the mixed ends model (E) is applied on the slices $Y_{\mathsf R}$
+and $D_{i,\lambda}$ for lengths in the given compact range. At positive
+collapse scale, identify $X_\eps$, $\eps\in[\eps_1,\eps_2]$, with
+$X_{\eps_1}$ by the insertion coordinates of Paper~I,
+Definition~6.2; each member is a noncollapsing domain
+(Paper~I, Proposition~6.9). The zero-scale limit domains are obtained, in
+the proofs of Paper~I, Theorems~9.10 and~11.8, by joining DFL-type
+domains of compression pairs, with the new mixed ends of Paper~I,
+Proposition~6.9, and a polygon domain along ordinary strip ends; the
+joined domain has a compact core, and the argument above applies to it
+directly, with model (E) at the new ends. On the completed torus domains
+a compact family is in torus normal form after the gauge transformations
+of Lemma~\ref{lem:split-preglue}(i), and model (T) applies beyond a fixed
+radius.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:foundations}(a)]
+Charts are recorded in Section~\ref{app:local}. By
+Lemma~\ref{lem:compact-remainder} and Rellich's theorem on $K$, each
+realized operator has finite-dimensional kernel and closed range, and
+so does its adjoint; hence it is Fredholm with cokernel the kernel of
+the weak adjoint. Local regularity for the operator and its weak
+adjoint makes these elements smooth. After transport to fixed spaces by
+the boundary maps of Section~\ref{app:local} and the domain
+identifications above, the coefficients vary continuously in operator
+norm on the family, so the operators form continuous Fredholm families
+and their determinant lines form continuous line bundles. For the
+$W^{1,p}\to L^p$ realization, $p>2$, of the Cauchy--Riemann summand used
+in unfolding in Section~\ref{sec:reflection}, the standard
+$L^p$ theory of real Cauchy--Riemann operators with totally real
+boundary conditions and nondegenerate ends gives the Fredholm property,
+and elliptic regularity identifies its kernel and cokernel with those
+of the Hilbert realization. The comparison of realizations is
+Lemma~\ref{lem:realization}; its paths are compact families of this
+kind, and its proof uses only the Fredholm and continuity statements
+just proved. The affine-center comparison is
+Proposition~\ref{prop:affine-square}.
+\end{proof}
+
+\subsection{Proof of Proposition~\ref{prop:foundations}(b)}
+The end critical sets are finite and nondegenerate, and the primary
+critical families are compact and regular. Hence there is a common gap
+for the finitely many end models of a compact family, and a common
+small weight below all gaps and scalar thresholds; at mixed ends the
+stationary coordinates are split off before the weight is imposed
+\cite[Section~4.2.1]{DFL}.
+
+\emph{The scalar operator.} The Neumann operator $d_A^*d_A$ is Fredholm by
+the argument of Lemma~\ref{lem:compact-remainder}: its end models have
+positive gaps by irreducibility of the end connections, and on the
+torus region the fibre operator has mass $\mu_T$ because
+$H^0(T;\ad\alpha)=0$. Integration by parts identifies its kernel at
+weight zero with parallel sections, which vanish on an irreducible
+collar; it is self-adjoint of index zero there, and sufficiently small
+weights preserve the index and add no kernel. This is the argument in
+the proof of Paper~I, Theorem~5.6(ii). Near the preglued references the
+uniform version is Paper~I, Lemma~10.25.
+
+A regular zero-dimensional solution has an invertible realized operator
+by definition, and this does not depend on the realization by
+Lemma~\ref{lem:realization}. Uniformity for the preglued families as the
+torus lengths tend to infinity is Lemma~\ref{lem:bridge-gluing}. At
+positive collapse scale the estimates are those of
+Lemma~\ref{lem:compact-remainder} on compact scale intervals; nothing
+uniform as the scale tends to zero is claimed beyond
+Lemma~\ref{lem:collapse-family}. The constant reference pairs are
+treated in the next lemma. For small secondary or inhomogeneous data the
+operators remain invertible by openness, with the bounds of
+Lemma~\ref{lem:compact-remainder}.
+
+\begin{lemma}\label{lem:constant-pairs}
+The constant reference pairs, with no secondary or inhomogeneous data,
+have invertible physical operators on every DFL-type domain of a
+transverse compression pair in the class of Paper~I, Lemma~9.7
+(including the vertex domain and the truncated output regions of the
+triangles), on the separate domains $W_{a,\mathsf R}$,
+$\mathsf R\in[0,\infty]$, on the joined domains $W^J_\lambda$, $\lambda>0$,
+and on the closed-cut piece $M_\lambda$, including along the family used
+in the proof of Paper~I, Lemma~9.7, as applied in Paper~I,
+Proposition~10.21. The inverse bounds are uniform on compact families of
+lengths, and the positive elements extend continuously through torus
+completion.
+\end{lemma}
+\begin{proof}
+\emph{The quadratic identity.} Write $d^h_A$ for the perturbed exterior
+derivative of \cite[(4.42)]{DFL}, which adds the primary Hessian term on
+the compression cylinders and equals $d_A$ on the flat genus and torus
+regions. For every physical variation $(\zeta,\nu)$ satisfying the
+linearized matching and arc conditions, with the stationary behavior of
+the realization,
+\begin{equation}\label{eq:quadratic-identity}
+ \int_X\tr(d^h_A\zeta\wedge d^h_A\zeta)+\int_U\Omega(d\nu,d\nu)=0 .
+\end{equation}
+On the original pieces this is \cite[Lemma~4.40]{DFL}: the interior terms
+are total derivatives by the symmetry of the primary Hessian and the
+primary equation, the matching terms cancel because the surface trace is
+closed with class the section value, and the arc terms vanish on the
+Lagrangian tangent spaces. A primary tangent vector satisfies the
+linearized primary equation, so its pure stationary contribution at a
+truncated mixed end vanishes; the terms involving the decaying remainder
+tend to zero with the truncation, and the ordinary ends contribute zero.
+The flat torus region contributes only Stokes terms. At a finite outer
+torus face the conditions are $\zeta(\partial_r)=0$ and
+$d_\alpha(\zeta|_T)=0$ (Paper~I, Definition~10.23). Write the trace as
+$a+\psi\,d\theta$ with $d_\alpha a=0$; since $H^1(T;\ad\alpha)=0$ we have
+$a=d_\alpha f$, and
+$\int_T\tr(a\wedge\partial_\theta a)=\int_T\tr(d_\alpha f\wedge
+d_\alpha\partial_\theta f)=0$ by Stokes on $T$. The cross term
+$\int_T\tr(a\wedge d_T\psi)$ vanishes by Stokes on $T$ because
+$d_\alpha a=0$, as in \cite[(4.52)]{DFL}. On a completed domain use spatial
+cutoffs equal to one on all primary supports, whose gradients are of
+size $C/R$ on the flat tail; the resulting errors tend to zero because
+the tail field is in $H^1$. On a joined domain the bridge has no
+boundary, and its interfaces cancel those of the two cores. On the
+closed-cut piece the ordinary input $Z$ contributes nothing.
+
+\emph{The kernel.} Let $x$ be in the kernel and let $(\zeta,\nu)$ be its
+physical variation. The mixed equations give $(d^h_A\zeta)^+=0$ and the
+linear Cauchy--Riemann equation for $\nu$, so both integrands in
+\eqref{eq:quadratic-identity} are nonnegative with the trace convention
+of \cite{DFL}. Hence $d^h_A\zeta=0$ and $d\nu=0$. The section variation
+decays at its strip output, so $\nu=0$ on each component. The section
+limit of the stationary coordinates is their image in the tangent space
+of the primary Lagrangian, and the restriction map is an embedding, so
+all stationary coordinates vanish. What remains is a decaying $\zeta$
+with $d^h_A\zeta=0$, $d_A^*\zeta=0$ and the normal and face conditions.
+
+\emph{A primitive.} Construct $\eta$ with $d_A\eta=\zeta$ as in
+\cite[Proposition~4.54]{DFL}. On each compression cylinder take the
+temporal primitive from the gauge input; it converges because the
+kernel field solves the full gauge-fixed equation on the input
+cylinder, whose asymptotic operator is nondegenerate, so the field
+decays exponentially there. The primary equation and Hessian symmetry
+make it a primitive of the spatial part. On a flat genus product the
+surface class of $\zeta$ is $\nu=0$, and the surface scalar inverse
+gives the primitive; the base components agree because a parallel
+adjoint scalar on an odd surface vanishes. On the flat torus region put
+$\eta_T=\Delta_\alpha^{-1}d_\alpha^*\zeta_T$ fibrewise. Since
+$H^1(T;\ad\alpha)=0$ this is a primitive of the fibre part, and since
+$H^0(T;\ad\alpha)=0$ the base components agree. The primitives agree on
+overlaps for the same reason, also across a joined bridge. The fibre
+estimate $\|\eta_T\|\le\mu_T^{-1}\|\zeta_T\|$, the scalar spatial
+estimates on the mixed ends and the irreducible gauge input put $\eta$
+in the weighted $H^1$ space. Integration by parts with exhausting cutoffs
+gives
+$\|\zeta\|^2=\langle d_A\eta,\zeta\rangle=\langle\eta,d_A^*\zeta\rangle=0$;
+the boundary term vanishes by the normal and face conditions. Thus the
+kernel is zero.
+
+\emph{The index.} On the special quintuple \cite[Proposition~3.19]{DFL}
+gives index zero for the realization of \cite{DFL}. That realization and
+the one of Definition~\ref{def:realization} use the same decaying space and
+the same stationary parameter space; their stationary columns, including
+the scalar ones, differ by a bounded finite-rank map, so the indices
+agree (as in Paper~I, the remark after Definition~10.23); a change of
+weight inside the gap does not change the index (Lemma~\ref{lem:realization}).
+If the almost-complex structure near the matching line is not the one of
+\cite{DFL}, a homotopy of compatible structures localized in the seam
+collar keeps the constant pair a solution and the operators Fredholm, by
+Lemma~\ref{lem:compact-remainder}. For a DFL-type domain in the class of
+Paper~I, Lemma~9.7, and for the closed-cut piece along the family in the
+proof of that lemma, the metric changes are conformal on the ends or lie
+in flat regions, and the flat references do not depend on the end metric,
+so the constant pair remains a solution and the index is constant along
+the family. For $W_{a,\mathsf R}$ with finite $\mathsf R$ the index is
+constant along the collar-length family (Paper~I, Theorem~10.13(i)). By
+Lemma~\ref{lem:split-preglue}(iii), which does not use the present
+lemma, $P_{\mathsf R}(C_{a,x})$ is the constant pair on
+$W_{a,\mathsf R}$ and $P_\lambda(C_{-,x_-},C_{+,x_+})=C^{(\lambda)}_{J,x}$.
+Hence Lemma~\ref{lem:bridge-gluing}(ii) gives $\ind D_\infty=\ind D_{\mathsf R}=0$
+for large $\mathsf R$, and the index at $C^{(\lambda)}_{J,x}$ is the value
+$0$ at $\lambda=\infty$ for large $\lambda$; it is constant in
+$\lambda\in(0,\infty)$ by Proposition~\ref{prop:foundations}(a). In all
+cases the kernel is zero and the index is zero, so the operator is
+invertible.
+
+\emph{Uniformity.} On a compact family of finite lengths the inverses
+vary continuously. Through torus completion the positive elements are
+continuous by Lemma~\ref{lem:bridge-gluing}(iii), and uniform inverse
+bounds for large lengths follow from its part (i) with $E=0$.
+\end{proof}
+
+\subsection{Proof of Proposition~\ref{prop:foundations}(c)}
+The weight comparison is Proposition~\ref{prop:weights}.
+
+\emph{Compactness and gluing of pure moduli spaces.} The compression-body
+Lagrangians are simply connected with $\pi_2=0$, and $\pi_2(\Msf_h)\cong\ZZ$
+is generated by a class of Maslov index four; in the product target the
+correspondence $L_C$ has $\pi_2$ generated by spheres of zero area and zero
+Chern number (proof of Paper~I, Lemma~6.7, and
+Section~\ref{sec:characters}). The pairs and correspondences are
+therefore monotone with minimal Maslov number at least three, and sphere
+and disc bubbling has codimension at least two in the dimensions used.
+The compactness and transversality of the pure continuation, cap and
+strip moduli spaces is then \cite[Theorem~3.9]{WW-relative}, and their
+gluing is the construction in the proof of
+\cite[Theorem~3.13]{WW-relative}, with \cite[Theorems~3.3 and~3.7]{MWW}
+and \cite{Mau} for the quilted disc families. The strip
+gluing and exponential decay are those of \cite{Simcevic}; in the
+transverse case the full-strip statement is
+\cite[Proposition~2.3.1]{Simcevic}. For a finite collection of regular
+configurations with nondegenerate strip ends, every nearby
+zero-dimensional solution at a long neck is the unique correction of a
+preglued configuration, the correction tends to zero with the neck
+length, and the estimates are uniform over compact families. Along the
+path from the preglue to the solution the operators are invertible, by
+the uniform right inverse at the preglue and the smallness of the
+correction, as in the proof of Lemma~\ref{lem:gluing-path}; hence
+determinant transport preserves the canonical orientation. The unsigned
+low-dimensional counts agree with those of Paper~I, Section~11.
+
+\emph{Interior nodes.} Linear gluing of Cauchy--Riemann determinant lines
+along strip ends is Lemma~\ref{lem:line-gluing}. For a family of real
+Cauchy--Riemann operators on surfaces degenerating at an interior node,
+the determinant lines form a topological line bundle
+\cite[Proposition~2.4.12]{WW-orientations}, and the line isomorphism is
+given by the exact sequence of
+\cite[Remark~2.4.6 and Corollary~2.4.7]{WW-orientations}; its construction,
+in the proof of \cite[Theorem~2.4.5]{WW-orientations}, is local to the node
+disc, and it is associative \cite[Proposition~2.4.8]{WW-orientations}. The node
+contributes its complex fibre, canonically oriented and even, with no
+additional sign \cite[Theorem~4.3.3(a)]{WW-orientations}; numbering as in
+arXiv:1503.07803v6. These statements localize. Choose stabilizations of a
+mixed or pure operator supported away from a disc containing the node and
+separated from the matching and boundary collars. Then the stabilized
+kernel near the node is obtained by the local gluing map of the cited
+proposition, and the rest of the operator is unchanged. Hence the line
+bundle structure and the gluing isomorphism hold for the real
+Cauchy--Riemann part of any such operator. Associativity follows from the cited
+associativity, with disjoint supports.
+Commutation with ordinary strip gluing follows because the two
+stabilizations and cutoffs have disjoint supports, as in the proof of
+Lemma~\ref{lem:bridge-gluing}(iv). A cohomological composition identity
+alone is not used as a substitute for these moduli-space gluing
+statements.
 
 \subsection{Boundary Hodge theory and holonomy regularity}
 For a flat orthogonal bundle on
@@ -6012,110 +6433,12 @@ in the smooth topology, not
 asserted bounded on arbitrary
 low-order Sobolev spaces.
 
-\subsection{Pure symplectic gluing}
-The continuation and cap
-arguments require the
-following form of gluing.
-For a finite collection of
-regular configurations with
-nondegenerate strip ends,
-there is a sufficiently long
-neck such that every nearby
-zero-dimensional solution is
-the unique correction of a
-preglued configuration. The
-correction tends to zero with
-the neck length, and the
-linearized gluing map
-identifies the determinant
-orientations. The estimates
-are uniform over compact
-families of the fixed
-regular configurations.
-The strip construction is
-provided by the gluing
-analysis of~\cite{Simcevic};
-for quilted surfaces see
-\cite{Mau,MWW}. Exponential
-decay is used at every
-ordinary end; in the
-transverse case the full-strip
-statement is
-\cite[Proposition~2.3.1]{Simcevic}.
-
-Compactness in dimensions
-zero and one requires the
-monotonicity and index
-restrictions for the actual
-Lagrangians and
-correspondences. The
-compactified one-dimensional
-space then has the endpoint
-and ordinary broken-strip
-strata used for continuation.
-The monotone quilted
-compactness and family
-constructions are in
-\cite[Theorems~3.9 and~4.1]{WW-relative}
-and~\cite[Section~3]{MWW}.
-Their applicability to every
-pure symplectic domain used
-here is included in
-Hypothesis~\ref{hyp:regularity}(d).
-A cohomological composition
-identity alone is not used
-as a substitute for this
-moduli-space gluing statement.
-
-\subsection{The unresolved uniform comparisons}
-The following are the forms
-of the remaining estimates
-needed to remove
-Hypothesis~\ref{hyp:regularity}.
-For the completed gauge
-slices one needs a uniform
-Poincare estimate
-\[
- \|\zeta\|_{L^2}\le C\|d_A\zeta\|_{L^2}
-\]
-on the specified gauge
-subspace, including the
-end framing conditions.
-Together with the higher
-elliptic estimates it must
-give a positive Coulomb
-slice radius independent of
-the growing torus length.
-For mixed linearizations
-one needs uniform
-regularity on the joined,
-separate and closed-cut
-domains, with the same
-asymptotic weights and with
-the finite-dimensional
-stationary coordinates
-retained. The linear gluing
-across the torus bridge
-(Lemma~\ref{lem:bridge-gluing})
-derives its compact-remainder
-estimates, for the operator and
-its adjoint, from these uniform
-local estimates and the end
-models. The
-preglued-to-solution paths
-themselves lie in the gluing
-charts of Paper~I, where the
-chart operators are invertible
-(Lemma~\ref{lem:gluing-path});
-the identification of their
-determinant lines with those of
-the physical realizations is
-part of
-Hypothesis~\ref{hyp:regularity}(a).
-Pointwise regularity at each
-finite length proves none of
-these uniform assertions
-by itself.
+\subsection{Shifting and self-gluing}
+Relative preparation and shifting are proved in
+Appendix~\ref{app:shifting}. Naturality under isomorphisms of the
+decorated data is automatic: the pullback of a shift is a shift, and the
+orientation maps are independent of the shifting path
+(Proposition~\ref{prop:transport}).
 
 For ordinary gauge self-gluing,
 Proposition~\ref{prop:selfgluing} applies the low-dimensional
@@ -6124,8 +6447,377 @@ bundle and identifies the lifting fiber. Its orientation comparison
 first traces over the full determinant-one torus complex and then
 takes the larger quotient. Together with the finite group calculation
 in Section~\ref{sec:excision}, this gives integral unit multiplicity.
-The mixed Hypothesis~\ref{hyp:regularity} remains a separate
-analytic input.
+
+\section{Relative preparation and shifting}\label{app:shifting}
+
+This appendix proves Proposition~\ref{prop:shifting}. The one-input
+statement is the family version of \cite[Lemmas~4.62 and~4.64]{DFL},
+whose proof is sketched there; we give it in the topology of
+Section~\ref{sec:geometry}, jointly continuous in configurations and
+data, relative to the terminal subspace, and on the domains of this
+paper. Throughout, a family is a continuous map from a compact metrizable
+space $K$ to actual configurations on a fixed bundle, together with
+continuously varying data. No quotient by gauge transformations is
+taken; the lifting groups enter only through
+Proposition~\ref{prop:transport}.
+
+\emph{The terminal subspace.} For an output label $x$, a
+\emph{representative} of the critical point over $x$ is a connection
+$c=B\cup\mathrm{pr}^*b\cup B'$ on $Y_\#$, where $b$ is a flat connection
+on $\Sigma$ over the point of $\mathcal M(\Sigma)$ determined by $x$ and
+$B,B'$ are primary solutions on $Y_0,Y_0'$ which are products with value
+$b$ on the collars $[-5/2,-2]\times\Sigma$ of their boundaries fixed in
+Section~\ref{app:shift-prep}. Every such $c$ is a critical
+point of the perturbed Chern--Simons functional in the gauge orbit of
+$a_x$ or of its other lift, and the constant pair $C^c$ built from it is
+gauge equivalent to $C_x$. Its operator is therefore invertible, its
+positive element corresponds to that of $C_x$ under conjugation, and the
+almost-complex gauge orientations are invariant under the bundle
+automorphism. The lines at $c$ are identified with those at $a_x$ by this
+automorphism. The identification agrees with transport along any path of
+connections from $a_x$ to $c$: the gauge line is orientable over closed
+loops in the configuration space of $Y_\#$
+\cite[Section~5.4]{Donaldson-book}, and the character of the
+conversion line depends only on the lifting class
+(Proposition~\ref{prop:character-gauge}), so it is trivial for
+automorphisms of trivial lifting class, of any degree; an automorphism of
+nontrivial lifting class is the lifting action of
+Proposition~\ref{prop:transport}. The terminal subspace $\mathcal T_x$ consists of the
+configurations which, outside the gauge input end, agree with $C^c$ for
+some representative $c$; they are gauge paths ending at $c$ followed by
+$C^c$. Proposition~\ref{prop:shifting} is to be read with this terminal
+subspace. It cannot be replaced by the configurations ending at one fixed
+$C_x$: those have a single topological energy, whereas attaching a sphere
+of nonzero area changes the topological energy of a configuration without
+changing its labels $(a,x)$.
+
+\subsection{Reduction to a special quintuple}\label{app:shift-reduction}
+Let $(Y,Y')$ be a pair of odd compression bodies with common boundary
+$\Sigma$, a surface with two components on each of which the bundle is
+odd (Paper~I, Definition~3.2), with primary data whose Lagrangians
+$L(Y),L(Y')\subset\mathcal M(\Sigma)$ are embedded (Paper~I, Section~3.2).
+For the torus domains $\Sigma=\Sigma_h\sqcup T$; for the closed-cut piece
+and the product-target vertex pairs $\Sigma=\Sigma_h\sqcup\Sigma_g$. Let
+$X_D$, $U_+$ be the gauge region and section domain of the special
+quintuple \cite[Section~3.1]{DFL}: the gauge region is
+$\RR\times Y_0\cup U_-\times\Sigma\cup\RR\times(-Y_0')$, the matching seam is
+$U_\partial\times\Sigma$, the Lagrangian arcs $\eta_+,\eta'_+$ carry $L(Y)$
+and $L(Y')$, and the gauge input end is $(-\infty,-3]\times Y_\#$. Every
+flat connection on $\Sigma$ is irreducible with central stabilizer.
+
+The configuration space of Section~\ref{sec:geometry} depends only on the
+decorated smooth manifold (bundle, matching seam, arcs with their
+Lagrangians, ends with their limits) and on the primary data. It does
+not depend on the metric, the almost-complex structure or the secondary
+data: perturbed flatness involves no metric, and the weights are
+functions of the end coordinates. Each one-input domain of
+Proposition~\ref{prop:shifting}(a) with finite torus length is identified
+with a special quintuple by a diffeomorphism of decorated manifolds,
+depending continuously on the lengths and widths: for $W_{a,\mathsf R}$
+the map $\psi_{\mathsf R}$ of Paper~I, Definition~10.1(a), which is
+independent of $\theta$ and is a translation near the flat face; for the
+closed-cut piece with input $Z$ the identification of Paper~I,
+Lemma~10.18(ii); for the vertex domains of Paper~I, Lemma~9.7, the
+diffeomorphism of that lemma, which moves the seam and the conformal
+structure. The output regions used in part~(b) are identified in
+Section~\ref{app:shift-local}. It therefore suffices to construct the
+deformations on a special quintuple, for families in which the primary
+data vary in a compact set.
+
+\subsection{Preparation}\label{app:shift-prep}
+Write $C_Y=[-2,0]_s\times\Sigma$ for the collar of $\Sigma=\partial Y$ in
+$Y$ which forms part of $U_-\times\Sigma$ on the mixed ends
+\cite[Section~3.1]{DFL}, and $C_{Y'}$ likewise. It extends to a flat
+collar $[-3,0]\times\Sigma$ whose part $[-3,-2]\times\Sigma$ in $Y_0$ is free of
+the primary perturbation, so that primary solutions are flat on it. The
+collars of $\partial Y_0$ used below are $[-9/4,-2]\times\Sigma$, in the
+normal form, and $[-5/2,-2]\times\Sigma$, in the definition of
+$\mathcal T_x$. We use the following normal form, with constants
+$\Theta\ge2$ and $S\ge3$:
+\begin{enumerate}[label=(N\arabic*)]
+\item $u$ is the constant map to $x$ on $[S,\infty)\times[-1,1]$;
+\item near $\eta_+$ and $\eta'_+$, $u$ is independent of the normal
+coordinate;
+\item on the mixed-end regions $|\theta|\ge\Theta$ the configuration is a
+stationary pair $(\pi^*B,q)$, $(\pi'^*B',q')$, where $B$ equals
+$\mathrm{pr}^*b$ on $[-9/4,0]\times\Sigma$, that is, on $C_Y$ and on the collar of
+width $1/4$ of $\partial Y_0$ in $Y_0$, for a flat connection $b$ on
+$\Sigma$, and similarly for $B'$;
+\item $u(s,\theta)$ is independent of $s$ for $s\in[0,1]$;
+\item on $[-1,0]\times\RR_\theta\times\Sigma$ the connection is the pullback
+of a connection $b(\theta)+\psi(\theta)\,d\theta$ on $\RR_\theta\times\Sigma$
+whose slices $b(\theta)$ are flat, with $\psi=0$ for $|\theta|\ge\Theta$.
+\end{enumerate}
+
+\begin{lemma}\label{lem:preparation}
+For a family $f:K\to\mathcal A(a,x)$ on the special quintuple there are
+$\Theta,S$ and a deformation $f_t$, $t\in[0,1]$, jointly continuous in
+$(k,t)$ and in the data, with $f_0=f$ and $f_1$ in normal form. It is
+the identity on the gauge input end $(-\infty,-3]\times Y_\#$. Members
+that are stationary on the original ends beyond $\Theta$ and $S$ remain
+so, and members of $\mathcal T_x$ are fixed.
+\end{lemma}
+\begin{proof}
+\emph{Collar gauge at the mixed ends.} Let $B_q$ be the actual limit
+representative at the $+$ mixed end; it is continuous in the family and
+flat on the flat collar. Let $K$ be its temporal gauge along the collar,
+the solution of $\partial_sK=-(B_q)_sK$ on $[-3,0]$ with $K(0)=1$. Then
+$K^*B_q$ has no $ds$ component on $[-3,0]\times\Sigma$ and, being flat, is a
+product there. Choose a smooth $\sigma_N:[-3,0]\to[-5/2,0]$ with
+$\sigma_N(s)=s$ on $[-9/4,0]$ and $\sigma_N=0$ near $-3$, and put
+$k_\lambda=K(\lambda\sigma_N(s))$, extended by $1$. This is a path of gauge
+transformations from $1$ to $k=k_1$, with $k_\lambda=1$ at the seam for every
+$\lambda$, and $k^*B_q=\mathrm{pr}^*b_q$ on $[-9/4,0]\times\Sigma$, because $k=K$
+there. Apply the gauge $k_{\lambda(\theta)}$ on the $+$ mixed end, with
+$\lambda(\theta)=0$ for $\theta\le\Theta_0$ and $1$ for $\theta\ge\Theta_0+1$,
+and do the same at the $-$ end. Gauge transformations preserve the
+matching condition, and this one is the identity at the seam. If the limit
+representative is already a product on $[-5/2,0]\times\Sigma$, then $K=1$ on
+$[-5/2,0]$, which contains the range of $\sigma_N$, so $k_\lambda=1$; in
+particular members of $\mathcal T_x$ are fixed.
+
+\emph{Ends.} On the strip output end write $u=\exp_x\xi$ in an exponential
+chart at $x$ in which both Lagrangians are linear, and put
+$u_t=\exp_x((1-t\beta)\xi)$ with a cutoff $\beta(s)$ equal to one for
+$s\ge S$. On a mixed end, beyond some $\Theta_1\ge\Theta_0+1$ the
+configuration lies in the matching chart $\Psi_{R_q}$ (Section~\ref{app:local})
+centered at its stationary limit $R_q=(\pi^*k^*B_q,q)$:
+$c=\Psi_{R_q}(\zeta)$ with $\zeta$ in the linearized boundary conditions.
+Put $c_t=\Psi_{R_q}((1-t\beta(\theta))\zeta)$ with $\beta=1$ for
+$\theta\ge\Theta$. The chart is fibrewise over the base, and the linear
+conditions are pointwise in $\theta$, so they are preserved; the chart
+gives the nonlinear matching and Lagrangian conditions. A compact family
+has uniformly small tails in the topology of Section~\ref{sec:geometry},
+so common $\Theta_1,\Theta,S$ exist, and the charts depend continuously on
+the limits and the primary data. Members already stationary beyond $\Theta$
+remain so.
+
+\emph{Collars.} Let $\phi_0:[0,\infty)\to[0,\infty)$ be smooth and
+nondecreasing, with $\phi_0=0$ on $[0,1]$ and $\phi_0(s)=s$ near and beyond
+$2$, and put $\phi_t=(1-t)\mathrm{id}+t\phi_0$. Pull back $u$ by $\phi_t$ in the
+normal coordinate of the seam in $U_+$, and $A$ by
+$(s,\theta,y)\mapsto(-\phi_t(-s),\theta,y)$ on $[-2,0]\times\RR\times\Sigma$;
+since $\phi_t$ is the identity near $2$, the result is smooth where
+$[-2,0]\times\Sigma$ meets $Y_0$. Since $\phi_t(0)=0$, the seam values, hence
+the matching condition, are unchanged. Do the same in the normal
+coordinates of $\eta_+,\eta'_+$, which preserves the arc values; along the
+strips $[0,2]\times[2,\infty)$ the two pullbacks fix the seam and the arc
+pointwise and commute. At $t=1$, (N2), (N4) and (N5) hold; stationarity
+beyond $\Theta$ is preserved, and so is (N3), because $\mathrm{pr}^*b$ is
+independent of $s$. Members of $\mathcal T_x$ are independent of $s$ on
+these collars and are fixed.
+
+All three steps are explicit, continuous in the data, and supported away
+from the gauge input end.
+\end{proof}
+
+\subsection{Positive extension, shift and straightening}\label{app:shift-shift}
+Use the reparametrizations $\Phi_\pm$ of \cite[Section~4.4]{DFL}, chosen
+polar about the corners for $|\theta|\ge\Theta+1$, preserving the lines of
+constant $\theta$ near the seam for $|\theta|\le\Theta$, smooth in between,
+where the prepared configuration is stationary, and carrying the
+normal collars of $\eta_+,\eta'_+$ onto collars of $t=\pm1$; DFL prescribe
+$\Phi_\pm$ only on the ends. In these coordinates the gauge region is
+$(-\infty,0]\times Y_\#$ with $\{0\}\times Y_0$ and $\{0\}\times Y_0'$
+removed, the section domain is $[0,\infty)\times[-1,1]$ with the corners
+$\pm i$ removed, the matching seam is $\{0\}\times[-1,1]\times\Sigma$ against
+$\{0\}\times[-1,1]$, and the collars $C_Y,C_{Y'}$ of the mixed ends collapse
+to $\{0\}\times\partial Y_0$ and $\{0\}\times\partial Y_0'$, the collar
+coordinate becoming the angle about these corners. By (N3)--(N5) a prepared
+configuration is independent of the normal coordinate near $r=0$, it is
+$\mathrm{pr}^*b$ with no angular component near the corners, and its seam
+restriction is $b(\theta(t))+\widetilde\psi(t)\,dt$ with
+$\widetilde\psi(t)=\psi(\theta(t))\theta'(t)$, which vanishes near $t=\pm1$.
+
+\begin{lemma}\label{lem:representatives}
+Let $\mathcal P$ be the space of smooth primary solutions on $Y_0$ which
+are products on the collar $[-9/4,-2]\times\Sigma$ of $\partial Y_0$, and let $\mathcal S$ be the
+space of smooth flat connections on $\Sigma$ whose class lies in $L(Y)$; a
+torus component of $\Sigma$ contributes only the point of $\mathcal M(T)$.
+Restriction $\rho:\mathcal P\to\mathcal S$ is a locally trivial fibre bundle,
+also over a compact family of primary data. A continuous family
+$a:K\times[0,\infty)\to\mathcal S$, smooth in $r$ with all $r$-derivatives
+continuous, with a lift $B(\cdot,0)$ of $a(\cdot,0)$, has a lift $B$ with
+the same regularity, constant in $r$ where $a$ is.
+\end{lemma}
+\begin{proof}
+Near $a_0=\rho(B_0)$ choose a smooth local section $[a]\mapsto\widehat B$ of
+$\mathcal P\to L(Y)$ by a primary slice; the primary moduli space is regular
+and its restriction map is an embedding (Paper~I, Section~3.2). Then
+$\rho(\widehat B)$ and $a$ represent the same class, so $\rho(\widehat B)=g^*a$
+for a gauge $g$ near $1$ on $\Sigma$, unique up to the center, by the
+surface Coulomb slice and irreducibility on both components. Extend $g$
+over the collar by $\exp(\beta\log g)$, with $\beta=1$ on
+$[-9/4,-2]\times\Sigma$ and $0$ at depth; this gives a local section with $\rho=a$. Thus $\rho$ is
+locally trivial; its fibre is the space of gauge transformations of $Y_0$
+which are central constants on the collar, modulo the center. On
+$K\times[0,\infty)$ patch the local sections with a partition of unity that
+is smooth in $r$ to a connection on the pulled-back bundle; the horizontal
+lift solves an ordinary differential equation $g'g^{-1}=\xi$ pointwise on
+$Y_0$, so it has the stated regularity and is constant where $a$ is.
+\end{proof}
+
+\emph{Positive extension.} For a prepared family, let $\alpha(r,t)$ be the
+horizontal lift of $r\mapsto u(r,t)$ in flat connections on $\Sigma$, with
+$d^*_{\alpha}\partial_r\alpha=0$ and initial value $b(\theta(t))$; on a torus
+component it is constant in $r$, since $H^1(T;\ad)=0$. It exists, is unique
+and depends smoothly on $u$, since the flat connections are irreducible;
+near $t=\pm1$ it is independent of $t$ by (N2). By
+Lemma~\ref{lem:representatives} choose $B(r)$ on $Y_0$ and $B'(r)$ on $-Y_0'$,
+products with values $\alpha(r,\pm1)$ on the collars of (N3), with $B(0),B'(0)$
+the limit representatives of (N3). Let $A_u$ be the connection on
+$[0,\infty)\times Y_\#$ equal to $B(r)$ on $Y_0$, $B'(r)$ on $-Y_0'$, and
+$\alpha(r,t)+\widetilde\psi(t)\,dt$ on $[-1,1]\times\Sigma$, with no $dr$
+component. By (N3)--(N5) the configuration and $A_u$ are independent of $r$
+near $r=0$ and agree there, so the connection $\widetilde A$ on $\RR\times Y_\#$
+equal to $A$ for $r\le0$ and to $A_u$ for $r\ge0$ is smooth. For $r\ge S$ it
+is independent of $r$; write $c_S$ for its restriction there, whose
+$\Sigma$-slices $\alpha(S,t)$ all represent the point determined by $x$.
+
+\begin{lemma}\label{lem:shift}
+For $\tau\in[0,S+4]$ put
+\[
+ A_\tau(r,y)=\widetilde A(r+\tau,y)\ (r\le0),\qquad
+ u_\tau(r,t)=u(r+\tau,t).
+\]
+This is a family of configurations with labels $(a,x)$, jointly continuous
+in $(k,\tau)$ and the data, beginning at the prepared family, and it
+translates the gauge input end by $\tau$. At $\tau=S+4$ the region
+$r\ge-4$ carries $\mathrm{pr}^*c_S$ and $u_\tau\equiv x$. Members of $\mathcal T_x$
+remain in $\mathcal T_x$ for all $\tau$.
+\end{lemma}
+\begin{proof}
+At the seam the slice of $A_\tau$ over $t$ is $\alpha(\tau,t)$, which represents
+$u(\tau,t)=u_\tau(0,t)$; the arcs carry $u(r+\tau,\pm1)\in L$. Near a
+removed corner the pair is smooth in the reparametrized coordinates, with
+limit the stationary pair of $B(\tau)$, whose collar value is $\alpha(\tau,1)$,
+a product. In the original end coordinate it converges to this stationary
+pair at the exponential rate one, which exceeds the weight $\delta$; the
+configuration therefore lies in the space of Section~\ref{sec:geometry}, with
+the mixed limit moving along the arc. Translation over a bounded range is
+continuous in that topology. For $\tau=S+4$ and $r\ge-4$ we have $r+\tau\ge S$.
+If a member lies in $\mathcal T_x$, then $u\equiv x$ and its seam restriction
+is $\mathrm{pr}^*b$, so $\alpha\equiv b$, $\widetilde\psi=0$, $B,B'$ are constant,
+and $\widetilde A$ is $\mathrm{pr}^*c$ on $[-3,\infty)\times Y_\#$; the translates
+keep this form.
+\end{proof}
+
+\emph{Straightening.} At $\tau=S+4$ contract the $t$-dependence of $c_S$. The
+slices $\alpha(S,t)$ are independent of $t$ for $|t|\ge1-\epsilon$, by (N2).
+Choose a smooth nondecreasing $\rho:[-1,1]\to[-1,1]$ with $\rho(t)=t$ for
+$|t|\le1-\epsilon$ and $\rho=\pm1$ near $\pm1$. For $\lambda\in[0,1]$ let
+$c_\lambda$ be the connection on $Y_\#$ equal to
+$\alpha(S,(1-\lambda)\rho(t))+(1-\lambda)\widetilde\psi(t)\,dt$ on
+$[-1,1]\times\Sigma$ and to the lifts $B_\lambda,B'_\lambda$ of
+Lemma~\ref{lem:representatives} of the paths
+$\lambda\mapsto\alpha(S,\pm(1-\lambda))$, starting at $B(S),B'(S)$. Near
+$t=\pm1$ the slices are the constant values of these paths, so the pieces
+join smoothly, and at $\lambda=0$ the connection is $c_S$. With a smooth
+$\chi$ equal to $0$ for $r\le-5$ and to $1$ for $r\ge-4$, replace the
+connection $A_{S+4}$ by
+$A_{S+4}+\chi(r)(\mathrm{pr}^*c_\lambda-\mathrm{pr}^*c_S)$ and keep $u\equiv x$. This is
+$\mathrm{pr}^*c_\lambda$ on $[-4,0]\times Y_\#$ and the unchanged connection for
+$r\le-5$; the interpolation lies in the gauge input end, where no boundary
+condition is imposed, and at $\lambda=0$ nothing changes. The slices
+represent the point of $x$, so matching holds, and the mixed limits are
+stationary pairs of $B_\lambda,B'_\lambda$. At $\lambda=1$ the connection
+$c_1=B_1\cup\mathrm{pr}^*b\cup B'_1$ is independent of $t$ on the neck, with
+$B_1,B'_1$ products on the collars of (N3). On members of $\mathcal T_x$ the
+slices $\alpha(S,\cdot)$ are constant and $\widetilde\psi=0$, so this step is
+the identity.
+
+\emph{Collar widening.} Let $K_1$ be the temporal gauge of $B_1\cup\mathrm{pr}^*b$
+along the flat collar, as in the proof of Lemma~\ref{lem:preparation}; it
+equals $1$ on $[-9/4,0]$. Choose a smooth $\sigma_W:[-3,0]\to[-3,0]$ with
+$\sigma_W(s)=s$ on $[-5/2,0]$ and $\sigma_W=0$ near $-3$, put
+$g_\mu=K_1(\mu\sigma_W(s))$ on $Y_0$, extended by $1$, and define $g'_\mu$ on
+$Y_0'$ likewise. For $\mu\in[0,1]$ these gauge transformations equal $1$ on
+$[-9/4,0]\times\Sigma$, hence near the neck and the seam, and
+$g_1^*B_1$ is a product on $[-5/2,-2]\times\Sigma$. Apply the gauge
+transformation $g_{\mu\chi(r)}\cup1\cup g'_{\mu\chi(r)}$ on the gauge region,
+with $\chi$ as above. It changes the mixed limits to the stationary pairs
+of $g_\mu^*B_1$ and $g'^*_\mu B'_1$, and at $\mu=1$ the region $r\ge-4$
+carries $\mathrm{pr}^*c$ with $c=g_1^*B_1\cup\mathrm{pr}^*b\cup g'^*_1B'_1$, a
+representative of the critical point over $x$ in the sense above. The
+configuration therefore lies in $\mathcal T_x$. A member of $\mathcal T_x$
+is carried to the constant pair of $g_\mu^*B\cup\mathrm{pr}^*b\cup g'^*_\mu B'$,
+which is again a representative since $g_\mu=1$ on $[-5/2,0]$ in that case;
+so members of $\mathcal T_x$ remain in $\mathcal T_x$.
+
+\begin{proof}[Proof of Proposition~\ref{prop:shifting}(a) for finite torus lengths]
+Concatenate Lemma~\ref{lem:preparation}, Lemma~\ref{lem:shift} and the
+straightening, and transport by the identifications of
+Section~\ref{app:shift-reduction}. Relative preparation of the original
+tails is the second step of Lemma~\ref{lem:preparation}. Continuity in the
+data holds because every choice above (the collar gauges, the charts at
+stationary pairs, the lifts of Lemma~\ref{lem:representatives}, the horizontal
+lifts, the widening gauges) depends continuously on the primary data, and
+the identifications depend continuously on the lengths. The deformation is
+the identity on, or a translation of, the gauge input end away from
+$[-5,-3]\times Y_\#$. Hence if
+the family has the form $A_0\#_\ell c$ with an ordinary configuration $A_0$
+glued at the input with a long neck $\ell$, the deformation is
+$A_0\#_{\ell+\tau}c_\tau$, and the determinant gluing maps of
+Lemma~\ref{lem:line-gluing} are continuous along it. This is the coherence with
+ordinary end gluing. Families with strips glued at the output are families of
+the same kind.
+\end{proof}
+
+\subsection{Completed torus domains}\label{app:shift-completed}
+Let a compact family on $W_{a,\infty}$ be given. By
+Lemma~\ref{lem:split-preglue}(i) it is in torus normal form beyond some
+$r_0$ after a continuous family of small gauge transformations. The
+truncation $\alpha+(1-t+t\chi_{R})b$ on the tail, with $\chi_R=1$ for
+$r\le R$ and $0$ for $r\ge R+1$, is continuous in the topology of
+Section~\ref{sec:geometry}, whose weight is independent of $r$, and fixes
+members that are $\alpha$ beyond $R$; at $t=1$ every member is $\alpha$ beyond
+$R+1$. Such a configuration is the extension by $\alpha$ of a configuration on
+$W_{a,R+2}$ which equals $\alpha$ near the flat face, and the face is part of
+the matching seam. The deformations of
+Sections~\ref{app:shift-prep}--\ref{app:shift-shift} preserve this condition:
+the collar gauges and the chart cutoffs are the identity where the
+configuration and its limit are $\alpha$, the widening gauges are supported
+away from the neck and the seam, the collar pullbacks fix
+configurations equal to $\alpha$ near the seam, the seam term $\widetilde\psi$
+vanishes on the torus component, the horizontal lifts and the representatives
+are $\alpha$ on $T$, and the translation and the straightening bring the
+positive extension, which is $\alpha$ on $T$, to the neighbourhood of the face.
+Extending by $\alpha$ along the whole deformation gives
+Proposition~\ref{prop:shifting}(a) on $W_{a,\infty}$, ending in $\mathcal T_x$
+with a representative which is $\alpha$ on $T$; the constant pair is then $\alpha$
+on the tail.
+
+\subsection{The localized several-input shift}\label{app:shift-local}
+On a triangle or folded triangle at positive collapse scale, and on a
+finite-width joined torus domain, the outgoing closed cut writes the gauge
+region as an ordinary cobordism followed by an output region $M$. For the
+joined torus domain this is Paper~I, Lemma~10.18; for the triangles and
+folded triangles it is the cut of the proofs of Paper~I, Theorems~9.10
+and~11.8, through the collapsing region (Paper~I, Lemmas~9.11 and~9.12).
+In each case $M$, with a smooth product collar at the cut, is identified
+with the complement of $(-\infty,-c_1]\times Y_\#$ in a special quintuple by a
+diffeomorphism of decorated manifolds, continuous in the width and in the
+scale on compact positive ranges; its compression bodies are those of the
+pair $(D_0,D_1)$, or of the marked pair of the triangle. The cut is
+$\{-c_1\}\times Y_\#$, with $c_1>5$. The steps of
+Sections~\ref{app:shift-prep}--\ref{app:shift-shift} are supported in
+$r\ge-5$, away from a collar of the cut, except for the translation. Replace
+the translation by the localized map: with $\chi$ nondecreasing, zero near
+$-c_1$ and one on $[-5,\infty)$, put $F_\kappa(r)=r+\kappa\chi(r)$ and
+\[
+ A_\kappa=F_\kappa^*\widetilde A,\qquad u_\kappa(r,t)=u(r+\kappa,t).
+\]
+Since $F_\kappa'>0$ this is a smooth configuration; it is a translation on
+$[-5,\infty)$, so the seam and the corners are treated as in
+Lemma~\ref{lem:shift}, and near the cut it is the identity, so it glues with
+the ordinary cobordism. For $\kappa=S+4$ followed by the straightening and
+the collar widening, the region $r\ge-4$ carries a constant pair $C^c$, and the configuration is
+$A_E\#C^c$, with $A_E$ an ordinary cobordism configuration ending at $c$ on
+the parallel copy $\{-7/2\}\times Y_\#$ of the cut, whose collar
+$[-4,-3]\times Y_\#$ carries $\mathrm{pr}^*c$, and with the original inputs
+unchanged. This is the deformation of Section~\ref{sec:determinants}, which
+proves Proposition~\ref{prop:shifting}(b). Relative and continuity statements
+follow as in Lemma~\ref{lem:shift}.
 
 \section{A sign calculation for projective composition}\label{app:signs}
 
@@ -6216,6 +6908,11 @@ Cambridge Tracts in Math. \textbf{147}, Cambridge Univ. Press, 2002.
 A.~Floer and H.~Hofer, \emph{Coherent orientations for periodic
 orbit problems in symplectic geometry}, Math. Z. \textbf{212}
 (1993), 13--38.
+
+\bibitem{FOOO-decay}
+K.~Fukaya, Y.-G. Oh, H.~Ohta and K.~Ono, \emph{Exponential decay
+estimates and smoothness of the moduli space of pseudoholomorphic
+curves}, arXiv:1603.07026.
 
 \bibitem{KM-instantons}
 P.~B. Kronheimer and T.~S. Mrowka,

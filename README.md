@@ -54,7 +54,7 @@ are constructed by the Daemi–Fukaya–Lipyanskiy method with invariant
 perturbations. Where both constructions are defined, they coincide with the
 Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist at
 the fixed metric data used here (Appendix C). Integer coefficients are the
-subject of the conditional draft of Paper II below. The current
+subject of the draft of Paper II below. The current
 manuscript is dated **25 September 2026**, revised **27 September 2026**,
 and has **148 pages**. The revision expands the collapse and boundary
 estimates and the construction of invariant regular data. The torus
@@ -77,15 +77,14 @@ gauge theory and compares collapse, torus excision, reflection, and
 compression cups and caps. The resulting comparison allows one overall
 sign per cobordism.
 
-**Conditional draft, revised 29 September 2026, 72 pages.** The theorem
-assumes uniform regularity and compatible Fredholm realizations on the
-mixed domains and their completed limits (Hypothesis 2.1), in addition to
-Paper I's analytic results. The oriented mixed torus-completion comparison
-is now proved in Section 8 from these inputs, with an explicit integral
-chain homotopy; it is no longer a hypothesis. Ordinary determinant-one
-self-gluing is proved in Proposition 2.2 for the stated regular excision
-data, including the graded trace, lifting multiplicity, parameter signs
-and unit-cap comparison.
+**Draft, revised 30 September 2026, 82 pages.** The theorem assumes the
+unsigned analytic results of Paper I and no further hypothesis. The
+analytic foundations on the mixed domains and their completed limits are
+proved in Appendix A, and relative preparation and shifting in families
+in Appendix B. The oriented mixed torus-completion comparison is proved in
+Section 8, with an explicit integral chain homotopy, and ordinary
+determinant-one self-gluing in Proposition 2.3. The manuscript has not yet
+been independently refereed.
 
 Earlier revisions prove physical weight independence, the fixed-scale
 affine-center comparison and mixed comparisons for changes of ordinary
