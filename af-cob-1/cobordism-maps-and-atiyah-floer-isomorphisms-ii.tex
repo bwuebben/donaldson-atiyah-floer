@@ -15,7 +15,6 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
-\newtheorem{hypothesis}[theorem]{Hypothesis}
 \newtheorem{convention}[theorem]{Convention}
 \newtheorem{example}[theorem]{Example}
 \theoremstyle{remark}
@@ -224,8 +223,12 @@ They use the same assumptions as that theorem.
 \begin{thmletter}[Orientations under collapse]\label{thm:B}
 The bijection of regular index-zero solutions in the compression-body
 collapse of Paper~I preserves the transported determinant-line
-orientations. This assertion uses the metric and the admissible
-linearizations specified in Section~\ref{sec:determinants}. It is
+orientations. On the zero-scale limit the pure triangle orientation is
+defined by inverse collapse; the content is that this orientation is
+well defined and coherent at breaks, and that transport from the
+preglued configuration to the solution preserves the sign. This
+assertion uses the metric and the admissible linearizations specified in
+Section~\ref{sec:determinants}. It is
 compatible with ordinary gauge and strip gluing and with compact
 parameter families. The two-handle comparison therefore holds over
 $\ZZ$, up to the single sign arising from the auxiliary orientation
@@ -814,9 +817,10 @@ Stiefel--Whitney class has an integral lift. The remaining relative
 class is in the image of the connecting map from $H^2(A;\ZZ)$.
 The restriction $H^2(W^\#;\ZZ)\to H^2(A;\ZZ)$ is surjective:
 the torus summand supplies a class pairing once with $T_0$, and
-this class extends by the Mayer--Vietoris sequence across the
-three-sphere where the tube is attached. Thus the connecting
-map vanishes.
+this class extends by the Mayer--Vietoris sequence across
+$S^2\times[0,1]$, along which the tube is attached, since it
+restricts to zero on the boundary sphere of the punctured torus
+summand. Thus the connecting map vanishes.
 
 The secondary obstruction lies in $H^4(W^\#,A;\ZZ)$.
 Since $A\simeq T^2$, its third cohomology vanishes; since
@@ -973,7 +977,10 @@ For composition choose an admissible almost-complex structure
 on the composite and make it cylindrical at the intermediate
 cut. The restrictions then have identical structures there,
 and the ordinary gauge composition theorem applies
-\cite[Proposition~5.4]{KM-unknot}. Insert the conversions to
+\cite[Proposition~5.4]{KM-unknot}. Its hypothesis, that the group of
+automorphisms contains the image of the connecting map from $H^0$ of
+the cut, holds because composition in $\mathbf B$ takes place at
+connected cuts. Insert the conversions to
 the chosen object bases. The conversions at the common end
 cancel up to sign, and~\eqref{eq:right-conversion} accounts
 for their ordering. Independence of $J_W$ gives the result
@@ -990,18 +997,38 @@ Here $\rho$ reverses the cylindrical direction and $\Psi$
 is the fixed identification of the reflected torus-summed
 presentation with $(-M)^\#$. Take $T_0=\{\theta_0\}\times T^2$
 and the product germ there; require $\Psi$ to preserve the
-odd torus, its germ, and its lifting class. Gauge reflection
-then gives an even isomorphism
+odd torus, its germ, and its lifting class, and choose the pairing
+involutive, so that it returns $J^0_M$ when applied to $J^0_{-M}$.
+Define $\Phi_{G,M}$ by the bent product cylinder: the product
+cobordism $[0,1]\times M^\#$, with both ends bent to incoming ends, is
+a cobordism from $(-M)^\#\sqcup M^\#$ to the empty set. Its gauge map,
+with the ordered determinant gluing and the almost-complex orientations
+of the paired bases, is a pairing
+$\langle\cdot,\cdot\rangle_M:C_G(-M)\otimes C_G(M)\to\ZZ$, and we put
+$\Phi_{G,M}(y)(x)=(-1)^{|y|}\langle y,x\rangle_M$. The sign makes
+$\Phi_{G,M}$ a chain map: the pairing is closed for the right tensor
+differential~\eqref{eq:tensor}, so
+$\langle y,dx\rangle_M=-(-1)^{|x|}\langle dy,x\rangle_M$, and with the dual
+differential this gives $d^\vee\Phi_{G,M}=\Phi_{G,M}d$. Its index-zero solutions are
+the constant ones, which pair a critical point with its reflection;
+their operators are invertible and their end lines even. Hence
 \begin{equation}\label{eq:gauge-duality}
  \Phi_{G,M}:C_G(-M)\longrightarrow C_G(M)^\vee,
- \qquad \Phi_{G,-M}=\Phi_{G,M}^\vee\ev.
+ \qquad \Phi_{G,-M}=\Phi_{G,M}^\vee\ev,
 \end{equation}
-The transpose formula for a reversed cobordism follows by
-bending its cylindrical ends and applying the same
-ordered determinant gluing. All constant end lines are even;
-any remaining change is one orientation sign of the
-cobordism. This also gives the transpose formula for gauge
-continuation.
+is an even isomorphism. For the identity, the bent cylinder of $-M$ is
+that of $M$ with its two incoming ends exchanged, since the pairing of
+bases is involutive; exchanging the input lines of $y$ and $x$ costs
+$(-1)^{|x||y|}$, so $\langle x,y\rangle_{-M}=(-1)^{|x||y|}\langle
+y,x\rangle_M$. Since the pairing vanishes unless $|x|=|y|$, the two signs
+$(-1)^{|x|}$ and $(-1)^{|y|}$ in the definitions cancel, and this is the
+displayed identity. The transpose formula
+for a reversed cobordism follows by gluing bent product cylinders to
+the ends of $W$ and of $\overline W$: both give the same bent cobordism,
+and ordinary determinant gluing with the ordered lines compares them.
+All constant end lines are even; any remaining change is one
+orientation sign of the cobordism. This also gives the transpose
+formula for gauge continuation.
 
 If the conversion lines are instead placed on the left, put
 $I_{\mathrm l}(W)=\Theta^{\mathrm l}_1I(W)\Theta^{\mathrm l}_0$.
@@ -1343,8 +1370,11 @@ A constant pair $C_x$ joins the gauge critical point $a_x$
 to the symplectic intersection point $x$. Its operator is
 invertible. Let $L_S(x)=L_G(a_x)$. More generally, a constant pair
 $C^{c}$ may be built from any representative $c$ of the critical
-point over $x$ (Appendix~\ref{app:shifting}); it is gauge equivalent to
-$C_x$, its operator is invertible, its positive element corresponds to
+point over $x$ (Appendix~\ref{app:shifting}); it is equivalent to $C_x$
+under the lifting group, by a gauge transformation when $c$ lies in the
+orbit of $a_x$. Its operator is invertible at the actual data, by the
+invertibility clause of Proposition~\ref{prop:foundations}(b), the data
+being small; its positive element corresponds to
 that of $C_x$ under conjugation, and the almost-complex orientation
 identifies $L_G(c)$ with $L_G(a_x)$, compatibly with transport
 (Appendix~\ref{app:shifting}). For a mixed configuration
@@ -1365,18 +1395,27 @@ shifting path, natural under the lifting group, and coherent
 under ordinary gauge and strip gluing.
 \end{proposition}
 \begin{proof}
-First consider a loop of configurations with fixed limits.
-The relative family shifting in
-Proposition~\ref{prop:shifting} deforms it to a loop of
-symplectically constant configurations. A common gluing
-length works for the compact family. At that end of the
-deformation, the determinant bundle is the gauge
-orientation bundle tensored with the determinant of the
-invertible constant pair. The gauge bundle is oriented by
-the almost-complex construction, and the second factor has
-its canonical orientation. The orientation monodromy of
-the loop is therefore trivial. This proves path independence
-of the orientation transported from the constant reference.
+On the terminal subspace of Appendix~\ref{app:shifting}, a common gluing
+length identifies the determinant line of $A\#C^{c}$ with the gauge
+line of $A$ tensored with the determinant line of the invertible
+constant pair. The gauge factor is oriented by the almost-complex
+construction and the second factor canonically, so this terminal
+orientation is continuous on compact families in the terminal subspace.
+
+Let $p_1,p_2$ be two shifting paths from $c$, ending at terminal
+configurations $t_1,t_2$. Apply the relative family shifting of
+Proposition~\ref{prop:shifting}(a) to the compact one-parameter family
+$p_1^{-1}p_2$ from $t_1$ to $t_2$. Its relative clause keeps the tracks
+of the two endpoints in the terminal subspace, and the family ends in
+it. This gives a square whose top edge and two sides lie in the
+terminal subspace, where the terminal orientation is continuous. Since
+the square is contractible, transport along $p_1$ and along $p_2$ gives
+the same orientation at $c$. In particular $t_1$ and $t_2$ are joined in
+the terminal subspace. For a loop $\ell$ at $c$, taking $p_2=\ell\cdot p_1$
+shows that the orientation monodromy of a loop with fixed limits is
+trivial. This
+proves path independence of the orientation transported from the
+constant reference.
 
 For a strip attached at the output, first shift the original
 mixed configuration to $A\#C^{c}$. Then shift $C^{c}$ together
@@ -1413,8 +1452,11 @@ structure, with no collapse scale. By Paper~I, Lemma~10.18, the closed
 cut $Z_{\rm cut}\cong Z$ decomposes $W^J_\lambda$ into the reverse
 excision cobordism, which is the ordinary two-input cobordism, and the
 closed-cut piece $M_\lambda$, a truncated output DFL region for the pair
-$(A_0,A_1)$ with arms $D_{0,\lambda},D_{1,\lambda}$; the cut has a
-product collar. The construction below applies verbatim with the
+$(A_0,A_1)$ with arms $D_{0,\lambda},D_{1,\lambda}$. After the
+compactly supported metric change near the rounded corners of Paper~I,
+Lemma~10.18(v), the cut has a product collar; the configuration spaces
+do not depend on the metric (Appendix~\ref{app:shift-reduction}), so the
+change is a transport along a path of data. The construction below applies verbatim with the
 output region $M_\lambda$ and the cut $Z_{\rm cut}$, on compact ranges of
 widths; no uniformity as $\lambda\to\infty$ is asserted.
 
@@ -1457,8 +1499,8 @@ homotopies, not assertions about unchanged solution counts. Ordinary
 determinant gluing then gives the ordinary cobordism line tensored
 with the canonically oriented constant-pair line. The relative
 construction preserves this terminal subspace, so the square
-argument above proves independence and coherence with ordinary
-gluing. Input lines stay in cyclic triangle order; any conversion
+argument in the proof of Proposition~\ref{prop:transport} proves
+independence and coherence with ordinary gluing. Input lines stay in cyclic triangle order; any conversion
 line stays in its prescribed position. Associativity is applied
 before any factor is reordered.
 
@@ -1553,7 +1595,8 @@ about the set of solutions, before orienting it.
 
 \begin{lemma}\label{lem:triangular}
 Let $F$ be an integral endomorphism of a finite filtered
-free module. Suppose its associated graded map is diagonal
+free module. (For the mixed map, the source and target bases are
+identified through $L_S(x)=L_G(a_x)$.) Suppose its associated graded map is diagonal
 with each diagonal entry in $\{1,-1\}$. Then $F$ is an
 integral isomorphism. Its inverse preserves the filtration.
 \end{lemma}
@@ -1665,7 +1708,7 @@ formula give a uniform energy and lower-index bound. Compactness
 retains the coefficient family on the core; the usual nonnegative
 four-index loss and positive indices of ordinary breaks remain.
 Invariant compact gauge variations still detect the entire mixed
-cokernel with this prescribed $J$: the scalar inverse removes the
+cokernel with this prescribed $J$, as in Paper~I, Theorem~5.6: the scalar inverse removes the
 scalar component; character-zero holonomy tests, including every
 nonlocal output in the detecting region, remove the gauge adjoint;
 and the matching Green form followed by zero extension and unique
@@ -1890,9 +1933,7 @@ formula, with the right tensor convention.
 The comparison must be defined on compact families of limiting
 configurations, where kernels and cokernels may occur. We first give
 that construction. Stationary mixed-end coordinates are included
-as finite-dimensional domain factors throughout. The fast factor
-is the determinant contribution from the complement of the harmonic
-modes on the collapsing compression.
+as finite-dimensional domain factors throughout.
 
 \begin{lemma}[Collapse of stabilized families]\label{lem:collapse-family}
 Let $\{V_b\}_{b\in B}$ be a compact smooth family of limiting
@@ -1905,7 +1946,8 @@ collapse datum: the primary perturbation vanishes on the inserted
 compression, and both the dependence and output of every other
 perturbation avoid the prescribed collapse neighborhood.
 Primary data on the remaining pieces may vary in a compact
-regular family. For sufficiently small
+regular family, and the length of the collapse arc may vary in a compact
+range. For sufficiently small
 $\epsilon>0$, pregluing gives a continuous isomorphism of
 orientation lines
 \begin{equation}\label{eq:collapse-det}
@@ -1913,10 +1955,9 @@ orientation lines
 \end{equation}
 It is independent, up to positive homotopy, of the stabilization
 and cutoff choices. It commutes with gauge and strip gluing and
-with the lifting actions. At a constant reference pair its fast
-factor has the canonical invertible-operator orientation. At a
-regular solution it is the comparison used by the unsigned
-collapse construction of Paper~I.
+with the lifting actions. At a regular index-zero solution both
+operators are invertible and~\eqref{eq:collapse-det} carries the
+canonical element to the canonical element.
 \end{lemma}
 \begin{proof}
 \emph{Stabilization.} Choose a finite-dimensional real space $F$
@@ -1935,7 +1976,10 @@ coordinate projections at original ends and the coordinate tests
 on $F$: a nonzero
 kernel element cannot vanish in all three sets of tests. The $F$
 tests also detect redundant or inactive stabilization columns.
-A finite selection works over each compact parameter patch.
+A finite selection works over each compact parameter patch. A family of
+arc lengths in a compact range is identified with a family of metrics on
+one domain by diffeomorphisms supported along the arc; the constants of
+Paper~I, Sections~7.1--7.7, are uniform on such families.
 Any free stationary coordinate at an artificial exterior end is
 also detected by compact pairings on $K_b$, after enlarging the
 compact set. Choose those pairings instead of an artificial-end
@@ -1967,7 +2011,9 @@ is retained. On the unchanged pieces the operator is the full
 $D_{V_b}$. The compactness of $B$ bounds all these coefficients.
 The end and transition estimates use only the fixed end operators,
 the separated stationary coordinates, and the common gaps. Choose
-the auxiliary exterior weight $\delta_*<\beta$. Paper~I's exterior
+the auxiliary exterior weight $\delta_*<\min(\beta,\gamma/2)$, where
+$\gamma$ is the transition gap of Paper~I, Proposition~7.9, as in
+Paper~I, Proposition~7.13. Paper~I's exterior
 truncation gives the stationary-column error
 \[
  O(\epsilon^{1/4})+
@@ -2036,11 +2082,15 @@ velocity of the harmonic lift give
  \le C_B\epsilon^\sigma(1+|\log\epsilon|)^N\|k\|,
 \]
 for some $\sigma>0$ and finite $N$. These are the endpoint and
-patching estimates of Paper~I, Sections~7.5--7.7: the fast lift
-has weighted size $O(\sqrt{\mathfrak s})$, where $\mathfrak s$
-is the local compression scale ($\mathfrak s=\epsilon$ on the
-middle compression and $\mathfrak s=\epsilon e^s$ in the endpoint
-neck coordinate $s$ of Paper~I); the stationary factors
+patching estimates of Paper~I, Sections~7.5--7.7, namely the kernel
+estimate of Proposition~7.8 and the spatial estimate of
+Proposition~7.9: the fast lift has weighted size
+$O(\sqrt{\mathfrak s})$, where $\mathfrak s$ is the local compression
+scale ($\mathfrak s=\epsilon/r$ on the middle compression in the
+conformal representative of Paper~I, Section~7.7, and
+$\mathfrak s=\epsilon e^s$ in the endpoint neck coordinate $s$). The
+kernel field is stationary on the truncation region, so the lift
+contributes only where $\mathfrak s\le\epsilon^{3/4}$. The stationary factors
 are unchanged, and the fixed compact family has uniformly bounded
 coefficients. Take $\sigma$ no larger than the positive exponents in
 these endpoint errors. The truncation estimates are uniform on the
@@ -2078,20 +2128,37 @@ ordinary gluing determinant maps are unchanged along that
 connection by continuity. We obtain the asserted compatibility,
 including its graded permutations.
 
-At a constant pair the complementary fast operator is invertible
-and contributes its canonical positive factor. At a regular
-solution this is exactly the kernel patching and correction used
-in Paper~I, with no additional stabilization required. This proves
-all the assertions.
+At a regular index-zero solution the stabilization may be taken to
+be zero. Then $K_b=0$, the realized operator is invertible, and the
+estimate above makes the preglued operator invertible, so
+\eqref{eq:collapse-det} carries the canonical element to the canonical
+element; by stabilization independence the same holds for every
+stabilization. This proves all the assertions.
+
+The proof reruns Paper~I's arguments, not only its statements, for
+stabilized families of nonsolutions. The modified steps are these: the
+exterior inverse of Paper~I, Proposition~7.13, is proved for the
+augmented operator $(D_{V_b},j_b,\Gamma_b)$; the common rate $\beta$
+replaces the decay of actual solutions; the attachment inverse of
+Paper~I, Proposition~7.15, is proved with the exterior operator
+augmented by $F$ and $K_b$; and the kernel-patching estimate, proved in
+Paper~I for the model strip (Proposition~7.8), is transplanted to the
+glued domain as above.
 \end{proof}
 
 We use the lemma to \emph{define} the limiting triangle orientation.
 Complete its incoming ordinary strip ends with the already oriented
 one-input mixed vertices; the constant vertices at its generators
 suffice for this definition. Orient $L_{W_\epsilon(V)}$ by the
-positive-scale several-input construction above, pull its orientation
-back through~\eqref{eq:collapse-det}, and cancel the completing-vertex
-lines in cyclic order. A limiting triangle need not admit a shift
+positive-scale several-input construction above. That construction
+first moves the metric, with the configuration fixed, along stages (A)
+and (B) of the path of Paper~I, Lemma~9.12 (for the folded triangle,
+the corresponding stages in the proof of Paper~I, Theorem~11.8), to a
+metric with a product collar at the cut. The configuration spaces do not
+depend on the metric (Appendix~\ref{app:shift-reduction}), so this is
+transport along a path of data, continuous in $\epsilon$. Pull the
+resulting orientation back through~\eqref{eq:collapse-det}, and cancel
+the completing-vertex lines in cyclic order. A limiting triangle need not admit a shift
 to a constant triangle: the triple intersection of its boundary
 labels can be empty. The positive-scale shift need not preserve
 the image of collapse pregluing either. Neither assertion enters
@@ -2105,7 +2172,27 @@ For a symplectic strip at an incoming end, apply the one-input
 comparison $C_x\#u\sim A\#C_y$ in its completing vertex, away from
 the central collapse neighbourhood, and absorb $A$ into the ordinary
 cobordism factor. Thus the full end-gluing diagram commutes before
-the vertex lines are cancelled. This proves coherence of the
+the vertex lines are cancelled.
+
+The same comparison applies with nonconstant completing vertices. If
+$c_{01},c_{12}$ are mixed vertex solutions, shift each to
+$A_{ij}\#C^{c'_{ij}}$ inside its vertex domain
+(Proposition~\ref{prop:shifting}(a); Appendix~\ref{app:shifting} covers
+the vertex domains). This is a compact family on a fixed limiting
+domain, of the kind allowed in Lemma~\ref{lem:collapse-family}. Its
+compatibility with gauge gluing at the original inputs, together with
+the coherence of the positive-scale orientation under input gauge
+gluing, absorbs $A_{ij}$. Hence at $c_{01}\#c_{12}\#u$ the pulled-back
+orientation is $\Gamma_{c_{01}}\otimes\Gamma_{c_{12}}\otimes o(u)$, in
+cyclic order. At an incoming break of the one-dimensional triangle space
+the internal neck grows with the breaking parameter. Regroup
+$C_x\#_T(w\#_{T'}u')$ as $(C_x\#w)\#_Tu'$ on a domain with a longer
+internal neck. This neck runs along the collapsing arc: the output
+strip of a completing vertex is bounded by $P_0$ and $P_1$, and in the
+limit domain the only $P_1$ boundary is the collapse arc (Paper~I, proof
+of Theorem~9.10). Lemma~\ref{lem:collapse-family} allows compact families
+of lengths of this arc, so the pulled-back orientation does not depend on
+the neck length over compact ranges. This proves coherence of the
 defined triangle orientation without an independent component sign.
 
 For a nonsolution reference family supplied only in a strong
@@ -2226,7 +2313,7 @@ close to it, whether or not $C$ is primary flat.
 
 We next specify all stationary columns. Let $h_{s,0,e}(p)$ be
 the connection value of the contraction-chart column at the
-limit $B_e(s)$, and let $C=C_{s,t,e}$ be the corresponding
+limit $B_e(s)$ of $c_s$ at the end $e$, and let $C=C_{s,t,e}$ be the corresponding
 limit of the center. Define
 \begin{equation}\label{eq:affine-columns}
  \psi_{s,t,e}(p)=(d_C^*d_{B_e(s)})^{-1}d_C^*h_{s,0,e}(p),
@@ -2392,6 +2479,20 @@ invertible by the quotient and scalar block decomposition.
 Lemma~\ref{lem:square} identifies the canonical orientations
 along the remaining physical operator path. Composing this
 identification with \eqref{eq:collapse-det} proves the claim.
+
+That path, the edge $t=1$, is an extended realization, not an
+admissible one in the sense of Definition~\ref{def:realization}: its
+target map $S_{c_s}$ may have a nonidentity stationary limit, and its
+source is the chart at $c_0$. It differs from an admissible realization
+$L_{c_s}$ along the same configurations by bounded source and target
+isomorphisms depending continuously on $s$. At $s=0$ these are the
+identity, since $S_{c_0}=1$ and the chart is centred at $c_0$. The
+naturality maps of determinant lines under these isomorphisms commute
+with transport, and at $s=1$ both operators are invertible, so the
+naturality map carries the canonical element to the canonical element.
+Hence the identification along the edge $t=1$ is the one in the
+admissible determinant bundle along $c_s$, which carries the
+transported orientation.
 \end{proof}
 
 If the conformal metric in the collapse estimate is
@@ -2433,14 +2534,62 @@ top cycle, with the chosen sign. The mixed triangle
 family has one endpoint equal to a gauge triangle
 followed by the mixed map, and the other endpoint
 is a symplectic triangle with the two mixed inputs.
-Proposition~\ref{prop:collapse-sign} compares their
-orientations. The broken boundary terms give a
+Proposition~\ref{prop:collapse-sign} compares the
+counts at the collapse endpoint with the transported orientations,
+and the two endpoints of the family are related by its oriented
+boundary~\eqref{eq:family-boundary}. The broken boundary terms give a
 homotopy, hence
 \begin{equation}\label{eq:triangle-square}
  N_{02}\mu_G\simeq
  \pm\mu_S(N_{01}\otimes_R N_{12}).
 \end{equation}
-Evaluating the second input on $\theta_G$ gives
+The gauge two-handle map is itself a triangle map over the integers.
+
+\begin{lemma}\label{lem:gauge-triangle-Z}
+With the almost-complex orientations, the ordering of
+Lemma~\ref{lem:tensor-geometric} and the conversions inserted as in
+Proposition~\ref{prop:gauge-functor},
+\[
+ \IG(W_2)\simeq\pm\mu_G(\,\cdot\otimes\theta_G),
+\]
+where $\mu_G$ is the framed gauge triangle map of the torus-summed
+triangle (Paper~I, Section~9.3) and $\theta_G=\pm o_{q_*}$.
+\end{lemma}
+\begin{proof}
+Paper~I, Proposition~9.5, proves the identity modulo two, and its
+argument is integral once three points are checked. First,
+$W_2^\#=X^\#\circ W'$ is cut along $Y_{01}^\#\sqcup Y_{12}^\#$, and the
+connecting image in \cite[Proposition~5.4]{KM-unknot} vanishes by the
+$H^0$ computation there. That proposition and the K\"unneth isomorphism
+of \cite[Section~5.2]{KM-unknot} hold over $\ZZ$; the latter is written
+in the left convention, and its transfer to the ordering of
+Lemma~\ref{lem:tensor-geometric} is trivial on $a\otimes\widetilde\theta_G$,
+because the invariant $\widetilde\theta_G$ of the filling is even in its
+induced grading. Second, an element of
+the lifting group with $s_{12}=1$ is realized by an automorphism
+supported on the torus region. The almost-complex orientations are
+invariant under all bundle automorphisms (Section~\ref{sec:gauge}), so
+it maps solutions to solutions preserving their signs, and the orbit
+count of Paper~I gives $\mu^{\{s_{12}=0\}}(a\otimes b)=\mu^\Phi(a\otimes\pi
+b)$ over $\ZZ$, with no factor two. The conversion character of these
+classes is trivial by Proposition~\ref{prop:character-gauge}, because
+$J_W$ equals the fixed germ on the torus region. Third, the
+conversions to the object bases are inserted and cancelled as in the
+proof of Proposition~\ref{prop:gauge-functor}. Finally, the filling has
+exactly one index-zero solution, with limit $q_*$ and invertible
+operator (Paper~I, Proposition~9.4), so $\theta_G=\pm o_{q_*}$.
+Paper~I, Proposition~9.5, and \cite[Proposition~5.4]{KM-unknot} are
+stated on homology; the proof of the latter gives the composition at
+chain level, up to the homotopy of Proposition~\ref{prop:gauge-functor},
+so the identity holds up to chain homotopy.
+\end{proof}
+
+The frame transports of Paper~I, Theorem~9.13, are pushforwards under
+diffeomorphisms and bundle isomorphisms preserving the torus
+decoration; their mixed squares are those of
+Section~\ref{sec:descent}. Evaluating the second input
+of~\eqref{eq:triangle-square} on $\theta_G$ and applying
+Lemma~\ref{lem:gauge-triangle-Z} gives
 \begin{equation}\label{eq:twohandle}
  N_{p_1}\IG(W_2)\simeq\pm S_{W_2}N_{p_0}.
 \end{equation}
@@ -2520,7 +2669,29 @@ $H^2(\mathcal E;\ZZ)\to H^2(A;\ZZ)$ onto. Also $H^3(A;\ZZ)=0$
 and $H^4(\mathcal E;\ZZ)=0$, so the secondary relative obstruction
 vanishes. The same argument applies with the cobordism reversed. Make both structures cylindrical at the
 closed cut, preserving their product germ near these two fibres.
-Thus their Chern evaluations are actually zero. This is a choice
+Thus their Chern evaluations are actually zero.
+
+Two end restrictions are prescribed. By convention the separate torus
+domains $W_{\pm,\mathsf R}$ read their input lines $L_G(a_\pm)$ in the
+base structures of $(-M)^\#$ and $(M^+)^\#$; this is unobstructed, since
+their gauge regions deformation retract onto the input slice. Choose
+$J_{\overline{\mathcal E}}$ with these base structures as its input
+restriction at $Z'$; the two prescriptions agree on the collars of the
+tori of $Z'$, where the object germ is the product germ. Then
+choose $J_{\mathcal E}$ with restriction $J_{\overline{\mathcal E}}|_Z$ at
+$Z$. Both extensions are unobstructed. Write $Q=Q_-\sqcup Q_+$, so that
+the complement of $A$ is $[0,1]\times Q$. By excision,
+\[
+ H^*(\overline{\mathcal E},A\cup\partial_{\rm in}\overline{\mathcal E};\ZZ)
+ \cong H^*\bigl((Q,\partial Q)\times([0,1],\{0\});\ZZ\bigr)=0,
+\]
+and likewise $H^*(\mathcal E,A\cup Z;\ZZ)=0$, so the primary and
+secondary relative obstructions vanish. The product germ near the fibres
+at $T_a,T_b$ is kept, so~\eqref{eq:cut-Chern} is unaffected. With these
+choices the orientation maps of Section~\ref{subsec:torus-maps} and the
+maps $N_\pm$ read their input lines in the same structures, and the
+composite $\overline{\mathsf E}\mathsf E$ has equal end structures at
+$Z$. This is a choice
 on the stated fillings and product regions; it does not require
 a divisibility assertion for arbitrary tori in four-manifolds.
 
@@ -2596,7 +2767,10 @@ would give a parallel automorphism. Its restriction
 to an irreducible end must be the identity once its
 lifting class there vanishes. A parallel automorphism
 which is the identity on an end is the identity
-everywhere on a connected cobordism. The almost-complex
+everywhere on a connected cobordism. An element whose
+class is nonzero at every end, such as $P_\pm$, restricts
+to $s_Z$ at the $Z$ ends, and $\phi_Z$ acts freely on the
+critical points of $Z$, so it fixes no solution either. The almost-complex
 orientation construction preserves signs under the
 whole group. Thus~\eqref{eq:orbit-count} applies.
 
@@ -2984,7 +3158,7 @@ This proves all three assertions in the stated orientation
 convention.
 \end{proof}
 
-\subsection{The capped comparison}
+\subsection{The capped comparison}\label{subsec:capped}
 Let $V=\mathcal E\cup_{Z'}\overline{\mathcal E}$ be
 the composite of excision and reverse excision.
 The standard local model is $T^2$ times the doubled
@@ -3126,16 +3300,29 @@ between matching two lifts and matching two orbits.
 The one-dimensional gluing family identifies these
 counts with the composite excision map. The same
 argument for the other composite gives the reverse
-comparison. Consequently $H(\mathsf E)$ and
-$H(\overline{\mathsf E})$ are isomorphisms. On a
-homogeneous class their composite is that class
-up to a sign depending on its degree. This is the
-only inverse-excision statement needed for the
-handle state below. By Lemma~\ref{lem:acyclic}, the
-closed excision maps are homotopy equivalences
-(after shifting degrees if necessary). We do not
-replace a possibly degree-dependent sign by a
-single scalar on an ungraded complex.
+comparison. There the cut is the separating torus cut
+$T^2\times\gamma'$, so there is no trace and the matching
+multiplicity is one. The lifting group has order eight, against
+the capped group $\langle s_-,s_+\rangle$ of order four. On each cut
+piece the meridional class of the removed cap exchanges
+$\sigma\in\{g_1,g_2\}$ and moves one endpoint lift within its orbit,
+so after summing over endpoint lifts the two matched choices
+contribute equally. This gives a factor two, and the factors
+balance: $2/8=1/4$. Consequently $H(\mathsf E)$ and
+$H(\overline{\mathsf E})$ are isomorphisms. With the
+end structures prescribed in Section~\ref{sec:excision},
+$\mathsf E$ and $\overline{\mathsf E}$ have the same structure at
+$Z$; at $Z'$ the composite is formed with the right-placed
+conversion, as at the fixed end bases. By
+Proposition~\ref{prop:gauge-functor} it equals the map of $V$ for any
+admissible structure on $V$, after the end conversions, up to one
+sign for all entries. The unconverted map of $V^\circ$ is even, so
+$f=0$ and the capped factor is $(-1)^p/(uv)$; hence the composite
+is $\pm1$ on every homogeneous class, and the conversion at $Z'$ has
+even total parity. This is the only inverse-excision statement
+needed for the handle state below. By
+Lemma~\ref{lem:acyclic}, the closed excision maps are
+homotopy equivalences (after shifting degrees if necessary).
 
 \subsection{The torus domains and their orientation lines}
 \label{subsec:torus-lines}
@@ -3225,9 +3412,10 @@ Let $C_{M,x}$ be the primary constant pair on $M_\lambda$ with limit
 $\beta_x$ on its ordinary input and with no secondary or
 inhomogeneous data. Its physical operator, with stationary columns and
 scalar row, is invertible for every finite $\lambda>0$ and along the
-family of Paper~I, Lemma~9.7, which changes the finite torus-neck
-lengths and the compact metric of $M_{\lambda_0}$ to those of the special
-quintuple of $(D_0,D_1)$. The inverse bounds are uniform on compact
+family in the proof of Paper~I, Lemma~9.7, as applied in Paper~I,
+Proposition~10.21, which changes the finite torus-neck lengths and the
+compact metric of $M_{\lambda_0}$ to those of the special quintuple of
+$(D_0,D_1)$. The inverse bounds are uniform on compact
 subfamilies.
 \end{lemma}
 \begin{proof}
@@ -3350,14 +3538,14 @@ the coherent orientations $q=q_x$ and $q_\beta$,
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-Path independence is the relative argument in the proof of
-Proposition~\ref{prop:transport}. Apply the relative localized shift
-to a path whose endpoints are terminal. The endpoint tracks and the final edge remain terminal,
+Path independence is the square argument in the proof of
+Proposition~\ref{prop:transport}, with the relative localized shift of
+Proposition~\ref{prop:shifting}(b). Apply it to a path whose endpoints
+are terminal. The endpoint tracks and the final edge remain terminal,
 where \eqref{eq:G-terminal} is continuous. The orientation double
 cover over the parameter square then shows that the original path
 preserves \eqref{eq:G-terminal}. Applying this to the concatenation
-of two shifting paths from $c$ proves independence, also when they
-reach different terminal components. The lifting arrows preserve
+of two shifting paths from $c$ proves independence. The lifting arrows preserve
 the almost-complex orientations, the conversion character on
 $\phi_Z$ and the positive constant element, and they map terminal
 configurations to terminal ones. The pullback of a shifting path by an
@@ -3528,8 +3716,10 @@ $\Lambda:E\to Y$ into smooth target sections supported in a fixed
 compact subset of the two cores, and $\lambda_1$, such that
 $D_\lambda(c)\oplus\Lambda$ is onto, with a uniformly bounded right
 inverse, for all $c\in\mathfrak F$ and $\lambda\in[\lambda_1,\infty]$.
+If every $D_\infty(c)$ is onto, one may take $E=0$.
 \item The kernels of $D_\lambda(c)\oplus\Lambda$ form a continuous vector
-bundle over $\mathfrak F\times[\lambda_1,\infty]$. Near $\lambda=\infty$ its
+bundle over $\mathfrak F\times[\lambda_1,\infty]$; in particular
+$\ind D_\lambda(c)=\ind D_\infty(c)$ for $\lambda\ge\lambda_1$. Near $\lambda=\infty$ its
 local frames are $\iota_\lambda(v)=\beta_\lambda v-Q_\lambda(D_\lambda\oplus
 \Lambda)\beta_\lambda v$, where $\beta_\lambda$ is multiplication by
 $\chi_\lambda$ on both tails and $Q_\lambda$ is the right inverse of (i).
@@ -3556,7 +3746,7 @@ listed at its beginning.
 Proposition~10.26, use only the following: on the torus region beyond
 a fixed $S$ the operator is the flat odd-torus operator $D_\alpha$ of
 Paper~I, Proposition~10.3, plus a small zeroth-order term, with the
-normal derivatives at a flat face recovered as in Paper~I,
+normal derivatives at a flat face recovered as in the proof of Paper~I,
 Theorem~10.5(b); on the mixed ends it is transported to the stationary
 models by the maps of \cite[Proposition~5.27]{DFL-mixed}, with errors
 tending to zero, and the slice estimates of Paper~I, Proposition~10.7
@@ -3589,7 +3779,8 @@ on the dual weighted spaces.
 Proposition~\ref{prop:foundations}(a). Smooth compactly
 supported target sections are dense, so finitely many of them span a
 complement of its range, and by continuity also near $c$. A finite
-cover of $\mathfrak F$ gives $\Lambda$. Suppose there were $\lambda_j\to\infty$,
+cover of $\mathfrak F$ gives $\Lambda$; if every $D_\infty(c)$ is onto,
+no sections are needed and $E=0$. Suppose there were $\lambda_j\to\infty$,
 $c_j\in\mathfrak F$ and $\eta_j$ with $\|\eta_j\|=1$ and
 $\|(D_{\lambda_j}(c_j)\oplus\Lambda)^*\eta_j\|\to0$. By the adjoint estimate,
 $\|\eta_j\|_{L^2(K_1)}\ge1/C$. Pass to $c_j\to c$. As in Step~5 of that
@@ -3683,8 +3874,8 @@ configuration is $(A_-\sqcup A_+)\#C^{(\lambda)}_{J,x}$, and there $S$ is
 the ordinary orientation of $A_-\sqcup A_+$ followed by the positive
 element of the invertible constant factor, by
 Lemma~\ref{lem:bridge-gluing}(iii),(iv). The rectangle is
-contractible, so $S$ at $P_\lambda(c)$ does not depend on the chosen
-shifting homotopy.
+contractible, so this description of $S$ at $P_\lambda(c)$ through $h=1$
+does not depend on the chosen shifting homotopy.
 
 The same device compares the separate orientations on the finite and
 completed domains. By construction, $\Gamma^a$ on the finite domain
@@ -3855,8 +4046,11 @@ the rectangle of configurations
  \cup\{\Psi_{\mathsf L}(sz_{\mathsf L}(V)):s\in[0,1],\
                   \mathsf L\in[\mathsf L_1,\infty)\},
 \]
-with $P_\infty(V)=V$. The physical determinant lines form a continuous
-line bundle over $\mathcal R_V$, and determinant transport carries the
+with $P_\infty(V)=V$, where $V$ is represented by the adapted
+representative of Paper~I, Lemmas~10.11 and~10.24, so that the two edges
+meet; the gauge of Lemma~\ref{lem:split-preglue}(i) is then the
+identity, by fibrewise uniqueness in Paper~I, Lemma~10.9. The physical
+determinant lines form a continuous line bundle over $\mathcal R_V$, and determinant transport carries the
 canonical positive element at $V$ to the canonical positive element at
 $\mathcal G_{\mathsf L}(V)$.
 \end{lemma}
@@ -3932,7 +4126,7 @@ same lemma transports the positive element. At index zero
 $\ind D_{V_-}=0$, so \eqref{eq:S-infty} evaluated on the positive
 element is the product of the two separate signs. The joined lifting
 group is $\Phi_-\oplus\Phi_+$ and the bridge has no gluing parameter
-(Paper~I, Theorem~10.31), so the orbit counts multiply. The generator
+(proof of Paper~I, Theorem~10.31), so the orbit counts multiply. The generator
 factors in \eqref{eq:S-infty} are those of the right tensor of maps
 \eqref{eq:tensor-maps} of the even maps $N_{\pm,\infty}$. This proves
 the second identity. The third follows from the second and
@@ -3944,8 +4138,10 @@ the second identity. The third follows from the second and
 \label{subsec:torus-families}
 The comparison families below are those of Paper~I:
 Lemma~10.15 with Propositions~10.16 and~10.17 for collar length and
-width, Lemma~10.20 for the change of data at fixed width, and
-Theorem~5.4 for compactly supported changes of secondary data. In each
+width, Lemma~10.20 for the change of data at fixed width,
+Theorem~5.4 for compactly supported changes of secondary data, and the
+mixed-end family in the proof of Lemma~9.7, which produces $H_M$ in
+Proposition~\ref{prop:closed-neck}. In each
 case the data are constant near $b=0,1$, the endpoints are regular in
 index at most one, and a relative invariant regularization gives:
 finitely many isolated universal solutions of vertical index $-1$, each
@@ -4117,8 +4313,9 @@ Lemma~10.20, connects the data at width $\lambda_0$ to the long-neck
 data by a family with compactly supported parameter derivative, and
 Lemma~\ref{lem:family-signs} with $\Omega=G$ gives $B_{\rm cut}$.
 
-For the second identity, the mixed-end clause of Paper~I, Lemma~9.7,
-changes the finite torus-neck lengths of
+For the second identity, the mixed-end family in the proof of Paper~I,
+Lemma~9.7, as applied in Paper~I, Proposition~10.21, changes the finite
+torus-neck lengths of
 $D_{i,\lambda_0}$ to those of the special quintuple of $(D_0,D_1)$,
 together with a compact interpolation of the metric, with the ordinary
 datum on $Z$ fixed. This is a noncollapsing family with the weighted
@@ -4173,7 +4370,7 @@ restatement. For \eqref{eq:excision-cycle} apply
 \eqref{eq:excision-reverse} to $\mathsf Ez$. After the continuation
 homotopy of Proposition~\ref{prop:selfgluing}(c), the capped comparison
 gives $[\overline{\mathsf E}\mathsf Ez]=\pm[z]$ for this homogeneous
-class, with a sign depending on its degree, and applying
+class, with one sign (Section~\ref{subsec:capped}), and applying
 $\mathcal K_RN_Z\Theta^{\mathrm r}$ gives the claim.
 \end{proof}
 
@@ -4287,11 +4484,15 @@ The top cycles are normalized using the integral
 mixed maps on the auxiliary vertices:
 $q_i^*=\pm N_i\theta_i$. The sign is one sign
 of each distinguished cycle. The auxiliary
-complexes have the standard filtration, and the
+complexes have the standard filtration. The
 unit-diagonal calculation in
-Proposition~\ref{prop:N-isomorphism} makes this
-an integral normalization, not merely a
-mod-two one.
+Proposition~\ref{prop:N-isomorphism} gives the
+coefficient $\pm1$ on $q_i^*$, and the other
+coefficients vanish by the grading argument of
+Paper~I, Lemma~9.2 and Proposition~9.4, with
+Lemma~11.7 for the folded pairs, which uses no
+signs. This is an integral normalization, not
+merely a mod-two one.
 
 \subsection{The gauge handle state}
 Let $B_k$ be the gauge filling whose closed
@@ -4304,7 +4505,15 @@ use its restrictions on the pieces. Convert
 at $Z$ to the structure used for mixed torus
 excision. After excision the resulting state
 is a cycle on
-$C_G(-M)\otimes_R C_G(M^+)$.
+$C_G(-M)\otimes_R C_G(M^+)$. It is the state of
+the bent cobordism $W_k^\#$: by Paper~I,
+Lemma~11.1(ii), $B_k\cup_Z\mathcal E\cong W_k^\#$
+with the incoming end read as outgoing and with
+lifting group $\phi_{W_k}$. Gluing at the connected
+cut $Z$ has no extra gluing fibre
+(Lemma~\ref{lem:gluing-multiplicity}), and the orbit
+count~\eqref{eq:orbit-count} gives the integral
+coefficients.
 
 Bending the source end of the one-handle
 cobordism $W_k$ gives the identity
@@ -4312,9 +4521,20 @@ cobordism $W_k$ gives the identity
  (\Phi_{G,M}\otimes_R1)[\mathsf E\Theta_{B_k}]
        =\pm[\ten(\IG(W_k))].
 \end{equation}
-To check the sign convention, start with the
-product cylinder: its bent state is the
-coevaluation tensor. Glue $W_k$ to its second
+To check the sign convention, let $\kappa$ be the
+state of the product cylinder with both ends bent
+outgoing. Gluing the doubly incoming cylinder of
+Section~\ref{sec:gauge} to it along $-M$ gives the
+product cylinder. In ordered determinant gluing the
+line of $x\in C_G(M)$ passes the $-M$ factor of
+$\kappa=\sum\kappa_1\otimes\kappa_2$, so the glued map is
+$x\mapsto\sum(-1)^{|x||\kappa_1|}\langle\kappa_1,x\rangle_M\kappa_2$,
+and it is $\pm1$. By the definition of $\Phi_{G,M}$,
+$\langle y,x\rangle_M=\ev'(\Phi_{G,M}y\otimes x)$, where
+$\ev'(f\otimes x)=(-1)^{|f|}f(x)$ is the closed
+evaluation for~\eqref{eq:tensor}. The same composite
+formed with $\ev'$ and $\ten(1)$ is the identity, so
+$(\Phi_{G,M}\otimes1)\kappa=\pm\ten(1)$, with one sign. Glue $W_k$ to its second
 end and use the ordered determinant gluing.
 This gives the tensor of the right-placed
 map. An odd endpoint conversion is already
@@ -4368,7 +4588,10 @@ collapse: Section~\ref{sec:collapse} rests on the collapse analysis of
 Paper~I, Sections~6--8, and the proof of Paper~I, Theorem~11.8, supplies its
 inputs for the collapse of $C=C_{h,g}$, with product target, both boundary surfaces
 matched and the lower sheet reversed, using the two-trace slice space
-$H^1(\Sigma_h;\ad)\oplus H^1(\Sigma_g;\ad)$; ordinary gluing along
+$H^1(\Sigma_h;\ad)\oplus H^1(\Sigma_g;\ad)$. The sign comparison of
+Proposition~\ref{prop:collapse-sign} uses only canonical orientations
+along paths of invertible operators, so the reversed sheet does not
+enter it. Ordinary gluing along
 the two stretched necks (Lemma~\ref{lem:line-gluing}) gives the count
 $\mu_X^\Theta(N_0\otimes_RN_1)$, with the input lines in cyclic order. At
 the stretched cut, gluing at the connected closed cut $Z$ has no extra
@@ -4384,8 +4607,12 @@ of the gauge cobordism followed by the conversion and the mixed map; this
 gives $N_Z\Theta^{\mathrm r}\mu_{\mathscr W}$. Parts (i) and (ii) give the
 compatibility at the input and output breaks. The family between the two
 ends is a compact one-parameter family with compactly supported parameter
-derivative, and Lemma~\ref{lem:family-signs}, with $f=t$, turns its
-compactified index-zero space into the stated homotopy. The overall sign
+derivative. Its boundary strata are the two endpoints and ordinary breaks
+at the two gauge inputs, ordered by Lemma~\ref{lem:tensor-geometric} as in
+the proof of Lemma~\ref{lem:family-signs}, and at the output strip; the
+collapse-scale stage is a family of the same kind. Lemma~\ref{lem:family-signs},
+with $f=t$, turns its compactified index-zero space into the stated
+homotopy. The overall sign
 reflects the fixed orientation choices at the two ends.
 \end{proof}
 
@@ -4480,9 +4707,8 @@ $d$ contains the regularizing and almost-complex
 data.
 
 \begin{lemma}\label{lem:pointed-character}
-At regular data,
-$\chi(h,x;d)=\chi^P(S_h)$ for every transverse
-intersection point $x$. The ratio is constant along
+Whenever $x$ is a transverse intersection point,
+$\chi(h,x;d)=\chi^P(S_h)$. The ratio is constant along
 any compact smooth family of primary data carrying
 a persistent transverse intersection point. It is
 also independent of small regularizing data at
@@ -4490,7 +4716,10 @@ fixed primary data and fixed gauge base.
 \end{lemma}
 \begin{proof}
 Glue a strip to the constant pair and attach the
-sphere away from the ordinary gluing collar. The
+sphere away from the ordinary gluing collar; moving
+the sphere from the constant pair to the strip keeps
+the node in the interior of a pure strip, where
+Proposition~\ref{prop:foundations}(c) applies. The
 two possible orders of these operations induce
 the same determinant-line isomorphism. The sphere
 and node factors are complex, hence even as real
@@ -4636,9 +4865,10 @@ compact manifold proves (iii). The matching
 exact sequence for the two compression-body
 boundary problems identifies the kernel
 of the closed Hessian with the tangent
-intersection of the Lagrangians; hence
-transversality gives (iv), as in
-\cite[Section~2.3]{DFL}.
+intersection of the Lagrangians, using the
+restriction and deformation sequences of
+\cite[Propositions~2.10 and~2.16]{DFL}; hence
+transversality gives (iv).
 \end{proof}
 
 No radius controlling all higher derivatives
@@ -4687,7 +4917,8 @@ Variation of the holonomy function induces
 an exact Lagrangian deformation; its
 Hamiltonian on the perturbed Lagrangian is
 the restriction of that function to the
-connection moduli space. The trace
+connection moduli space, by the Lagrangian
+cobordism of \cite[Proposition~2.18]{DFL}. The trace
 coordinates remain embedding coordinates
 by Proposition~\ref{prop:small-ball}.
 Polynomials of degree at most three in
@@ -4836,7 +5067,12 @@ has differential sign
 \end{equation}
 The minus sign is the reversed
 translation vector; the other sign is
-the graded transpose. Thus this reflected
+the graded transpose. In general the
+graded transpose of a strip of index $n$
+carries the sign $(-1)^{n|w|}$, where $w$ is
+the target of the strip read on the
+presentation whose system is being
+transposed. Thus this reflected
 system is the one for which the
 paired generator bases give the graded
 dual differential.
@@ -4984,8 +5220,13 @@ chosen tensor order. Cancelling the ordered
 stabilizations proves the displayed statement. The diagonal
 normal factor has its complex orientation and is even.
 Reflection of the strip $u$ of index $n$ moves its index line
-across the paired endpoint line and contributes $(-1)^{n|x'|}$
-with the endpoint order used in the graded transpose.
+across the paired endpoint line and contributes the graded transpose
+sign. As in~\eqref{eq:reflection-sign}, the graded transpose of a strip
+of index $n$ carries the sign $(-1)^{n|w|}$, where $w$ is the target of
+the strip read on $p$; at index one this is the sign
+in~\eqref{eq:reflection-sign}, and at index four it is the sign
+$(-1)^{4|y|}=1$ above. Here $Ru$ runs from $x'$ to $x$ on $p$, so the
+sign is $(-1)^{n|x|}$.
 For a strip counted modulo translation the reversed translation
 vector adds the minus sign in \eqref{eq:reflection-sign}.
 To check the total sign, put $a=|x|$, $b=|y|$ and
@@ -5021,10 +5262,8 @@ Choose a smooth reference configuration
 $c_0$ on the doubled disk. Insert a representative sphere on
 the first outgoing strip end at a fixed small positive plumbing
 parameter. Move this smooth inserted configuration through the
-unfolded disk to the second outgoing end, then refold. The middle
-is a compact smooth configuration homotopy; we do not apply an
-interior-node theorem at a node on the diagonal. The two resulting
-configurations lie in the same relative class. Under diagonal
+unfolded disk to the second outgoing end, then refold. The two
+resulting configurations lie in the same relative class. Under diagonal
 unfolding the two sphere
 classes are identified with the same generator of the relative
 sphere group. In the product description this moves the class
@@ -5054,9 +5293,26 @@ the first diagram of Lemma~\ref{lem:fold-coherence}
 identifies the transported orientation with both specified
 strip-node gluing orientations.
 No Koszul sign is introduced by moving
-the complex node factor. Their ratios
-are therefore equal, giving the
-assertion.
+the complex node factor.
+
+It remains to carry the node-glued orientation along the path, on
+which the node crosses the image of the diagonal. Carry out the move at
+zero collapse scale, on the doubling locus, with the doubling data of
+Lemma~\ref{lem:fold-coherence}: the Hodge almost-complex structure and
+zero inhomogeneous germ in the collapse neighbourhood. There the folded
+operator is identified with the unfolded pure real Cauchy--Riemann
+operator, by the $W^{1,p}\to L^p$ identification in the proof of that
+lemma, and in the unfolded picture the image of the diagonal is an
+interior line, not a matching or boundary collar. Along the whole path
+the node lies in a disc separated from the matching and boundary
+collars, so Proposition~\ref{prop:foundations}(c) makes the node gluing
+a continuous isomorphism of line bundles along the path. Hence transport
+carries the node-glued orientation at the start to the node-glued
+orientation at the end. The transported orientation is continuous along
+the same zero-scale path by Lemma~\ref{lem:collapse-family}: the path is
+a compact smooth family of limiting configurations, and the collapse
+datum is unperturbed near the diagonal. The ratios at the two ends are
+therefore equal, giving the assertion.
 
 This comparison uses arbitrary smooth
 configurations, not only holomorphic
@@ -5293,7 +5549,10 @@ existence for $p,q$ in the same admissible
 ball. For a lower datum and an auxiliary upper
 height datum, the folded configuration itself
 supplies a coherent system and hence the
-required character equality. The latter
+required character equality; moving the node through
+the unfolded configuration crosses the image of the
+diagonal, and this is justified as in the proof of
+Proposition~\ref{prop:fold-character}. The latter
 observation applies even when the auxiliary
 upper datum is outside the character-constancy
 ball, provided it satisfies the separate
@@ -5530,12 +5789,16 @@ Nonzero mod-two gauge homology
 implies nonzero integral gauge
 homology, since an acyclic finite
 free integral complex would be
-contractible. The standard mod-two
-framed calculation therefore
-places rational homology spheres
-and $\#^k(S^1\times S^2)$ in the
-nonvanishing case
-\cite[Corollary~1.4 and Section~7.8]{Scaduto}.
+contractible. Integral framed
+calculations place rational homology
+spheres and $\#^k(S^1\times S^2)$ in
+the nonvanishing case: for a rational
+homology sphere $Y$ the Euler
+characteristic of $I^\#(Y)$ is
+$|H_1(Y;\ZZ)|$
+\cite[Corollary~1.4]{Scaduto}, and
+$I^\#(\#^k(S^1\times S^2))$ is computed in
+\cite[Section~7.8]{Scaduto}.
 We do not use the converse
 implication: a nonzero finite
 odd-torsion integral group need
@@ -5556,7 +5819,7 @@ paired gauge bases and trace-coordinate
 families for all objects and their
 reflections. Choose a common primary
 regularity threshold $r_H$ for this
-finite set, as in
+finite set: the radius $r_*$ of
 Proposition~\ref{prop:small-ball}.
 \item Choose the first auxiliary heights
 $t_*,t'_*$ so their height perturbations
@@ -5564,7 +5827,7 @@ and small generic corrections have norm
 less than $r_H$. These data are used as
 upper auxiliary presentations.
 \item Choose the character-constancy
-radius $r_*$ below $r_H$ and inside the
+radius $r_\chi$ below $r_H$ and inside the
 small-primary neighborhoods required
 for those heights. Use the same choice
 for a presentation and its reflection.
@@ -5773,7 +6036,9 @@ cobordism $W_3$, one has
                                       \label{eq:threehandle}
 \end{align}
 The identities hold at all admissible
-endpoint presentations.
+endpoint presentations in the balls of the
+splittings of the handle data; other endpoints
+are reached through Section~\ref{sec:descent}.
 \end{theorem}
 \begin{proof}
 The cup formula and mixed duality give
@@ -5864,9 +6129,23 @@ preserving the torus decoration.
 
 A Heegaard stabilization is realized
 by the cancelling one- and two-handle
-pair of Paper~I. Compose
-\eqref{eq:onehandle} and
-\eqref{eq:twohandle}. The decorated
+pair of Paper~I. Let $r$ be the
+stabilized presentation. The one-handle
+square ends at the vertex $C\circ p$,
+which carries height perturbations on
+both bodies, while the two-handle square
+holds from $(C\circ p)'$ to $r'$, the
+presentations with the perturbed primary
+data in the proof of Paper~I,
+Proposition~12.4. As in Paper~I, insert the
+continuations $\cont_S(C\circ p,(C\circ p)')$
+and $\cont_S(r',r)$; their squares are
+Proposition~\ref{prop:primary-naturality},
+since $(C\circ p)'$ and $r'$ lie in the
+relevant balls by the choices of
+Section~\ref{sec:choices}. Compose
+\eqref{eq:onehandle}, these two squares
+and \eqref{eq:twohandle}. The decorated
 gauge cobordism is the identity,
 so its map is continuation up to
 sign and homotopy. The reverse
@@ -5950,8 +6229,10 @@ Proposition~\ref{prop:N-isomorphism}
 gives the integral mixed
 isomorphisms. Equation
 \eqref{eq:twohandle},
-Theorem~\ref{thm:handles}, and
-the presentation comparisons
+Theorem~\ref{thm:handles},
+Proposition~\ref{prop:primary-naturality}
+for changes of primary data within a
+ball, and the presentation comparisons
 above supply all elementary
 squares. Generation and
 connectivity are the geometric
@@ -6035,7 +6316,9 @@ This appendix proves Proposition~\ref{prop:foundations}. All
 references to Paper~I mean the companion version accompanying this
 manuscript. The present paper does not supply an independent proof of
 that manuscript's unsigned collapse, torus excision, or generation
-results; it uses them as they are stated there. The arguments below
+results. It uses them as they are stated there, except where a proof
+here says that it reruns an argument of Paper~I; the principal case is
+Lemma~\ref{lem:collapse-family}, which lists the modified steps. The arguments below
 combine the local theory of \cite{DFL,DFL-mixed} with explicit end
 models. They are the local-plus-ends arguments of
 \cite[Lemma~4.34]{DFL}, carried out on the domains of this paper.
@@ -6094,7 +6377,7 @@ end coordinate, as in Step~1(E) of the proof of Paper~I,
 Proposition~10.26. (T) On a flat torus region the operator and its
 adjoint are the invertible operators of Paper~I, Proposition~10.3, with
 the stated weighted bounds; at a flat face the normal derivatives are
-recovered from the equation as in Paper~I, Theorem~10.5(b).
+recovered from the equation as in the proof of Paper~I, Theorem~10.5(b).
 
 \subsection{Proof of Proposition~\ref{prop:foundations}(a)}
 \begin{lemma}\label{lem:compact-remainder}
@@ -6133,10 +6416,13 @@ Proposition~10.17, are the identity outside the bridge. Pulled back by
 them, the metrics form a compact family of uniformly elliptic metrics,
 and on the mixed ends model (E) is applied on the slices $Y_{\mathsf R}$
 and $D_{i,\lambda}$ for lengths in the given compact range. At positive
-collapse scale, identify $X_\eps$, $\eps\in[\eps_1,\eps_2]$, with
-$X_{\eps_1}$ by the insertion coordinates of Paper~I,
-Definition~6.2; each member is a noncollapsing domain
-(Paper~I, Proposition~6.9). The zero-scale limit domains are obtained, in
+collapse scale, the domains $X_\eps$, $\eps\in[\eps_1,\eps_2]$, of
+Paper~I, Definition~6.2, are built in fixed coordinates, with section
+complex structure $j_\eps$ and seam embedding $F_\eps$ depending smoothly
+on $\eps$. An isotopy of the collar embeddings $F_\eps$, extended to a
+diffeomorphism of the section surface, identifies them with $X_{\eps_1}$
+as decorated manifolds. At each fixed $\eps>0$ the collapsing region is
+compact with a smooth metric (proof of Paper~I, Proposition~6.9). The zero-scale limit domains are obtained, in
 the proofs of Paper~I, Theorems~9.10 and~11.8, by joining DFL-type
 domains of compression pairs, with the new mixed ends of Paper~I,
 Proposition~6.9, and a polygon domain along ordinary strip ends; the
@@ -6187,7 +6473,9 @@ weight zero with parallel sections, which vanish on an irreducible
 collar; it is self-adjoint of index zero there, and sufficiently small
 weights preserve the index and add no kernel. This is the argument in
 the proof of Paper~I, Theorem~5.6(ii). Near the preglued references the
-uniform version is Paper~I, Lemma~10.25.
+uniform version is the proof of Paper~I, Lemma~10.25, which is stated for
+completed index-zero solutions and applies without change to the
+constant pairs and to the references along the shifting rectangles.
 
 A regular zero-dimensional solution has an invertible realized operator
 by definition, and this does not depend on the realization by
@@ -6292,15 +6580,18 @@ If the almost-complex structure near the matching line is not the one of
 collar keeps the constant pair a solution and the operators Fredholm, by
 Lemma~\ref{lem:compact-remainder}. For a DFL-type domain in the class of
 Paper~I, Lemma~9.7, and for the closed-cut piece along the family in the
-proof of that lemma, the metric changes are conformal on the ends or lie
-in flat regions, and the flat references do not depend on the end metric,
-so the constant pair remains a solution and the index is constant along
-the family. For $W_{a,\mathsf R}$ with finite $\mathsf R$ the index is
+proof of that lemma, the constant pair remains a solution: on each mixed
+end the metric is conformal to a product, and the perturbed
+anti-self-duality condition on two-forms is conformally invariant; the
+flat references do not depend on the end metric and the primary critical
+set does not depend on the metric or the almost-complex structure (proof
+of Paper~I, Lemma~9.7); and the section is constant. The index is
+therefore constant along the family. For $W_{a,\mathsf R}$ with finite $\mathsf R$ the index is
 constant along the collar-length family (Paper~I, Theorem~10.13(i)). By
 Lemma~\ref{lem:split-preglue}(iii), which does not use the present
 lemma, $P_{\mathsf R}(C_{a,x})$ is the constant pair on
 $W_{a,\mathsf R}$ and $P_\lambda(C_{-,x_-},C_{+,x_+})=C^{(\lambda)}_{J,x}$.
-Hence Lemma~\ref{lem:bridge-gluing}(ii) gives $\ind D_\infty=\ind D_{\mathsf R}=0$
+Hence Lemma~\ref{lem:bridge-gluing}(ii) gives $\ind D_{\mathsf R}=\ind D_\infty=0$
 for large $\mathsf R$, and the index at $C^{(\lambda)}_{J,x}$ is the value
 $0$ at $\lambda=\infty$ for large $\lambda$; it is constant in
 $\lambda\in(0,\infty)$ by Proposition~\ref{prop:foundations}(a). In all
@@ -6310,7 +6601,8 @@ invertible.
 \emph{Uniformity.} On a compact family of finite lengths the inverses
 vary continuously. Through torus completion the positive elements are
 continuous by Lemma~\ref{lem:bridge-gluing}(iii), and uniform inverse
-bounds for large lengths follow from its part (i) with $E=0$.
+bounds for large lengths follow from its part (i), with $E=0$ since the
+limiting operators are onto.
 \end{proof}
 
 \subsection{Proof of Proposition~\ref{prop:foundations}(c)}
@@ -6319,19 +6611,26 @@ The weight comparison is Proposition~\ref{prop:weights}.
 \emph{Compactness and gluing of pure moduli spaces.} The compression-body
 Lagrangians are simply connected with $\pi_2=0$, and $\pi_2(\Msf_h)\cong\ZZ$
 is generated by a class of Maslov index four; in the product target the
-correspondence $L_C$ has $\pi_2$ generated by spheres of zero area and zero
-Chern number (proof of Paper~I, Lemma~6.7, and
-Section~\ref{sec:characters}). The pairs and correspondences are
-therefore monotone with minimal Maslov number at least three, and sphere
-and disc bubbling has codimension at least two in the dimensions used.
-The compactness and transversality of the pure continuation, cap and
-strip moduli spaces is then \cite[Theorem~3.9]{WW-relative}, and their
-gluing is the construction in the proof of
-\cite[Theorem~3.13]{WW-relative}, with \cite[Theorems~3.3 and~3.7]{MWW}
-and \cite{Mau} for the quilted disc families. The strip
-gluing and exponential decay are those of \cite{Simcevic}; in the
-transverse case the full-strip statement is
-\cite[Proposition~2.3.1]{Simcevic}. For a finite collection of regular
+correspondence $L_C$ is simply connected (Paper~I, Section~11.3) and has
+$\pi_2$ generated by spheres of zero area and zero Chern number
+(Section~\ref{sec:characters}). The pairs and correspondences are
+therefore monotone with minimal Maslov number at least three: for the
+compression-body Lagrangians this is \cite[Proposition~2.27]{DFL}, and for
+the correspondence $L_C$ it is Paper~I, Section~11.3. Sphere and disc bubbling has
+codimension at least two in the dimensions used. The compactification
+and boundary structure of the one-dimensional pure continuation, cap and
+strip moduli spaces are then as in \cite[Theorem~3.9(c)]{WW-relative}.
+Transversality there is obtained from Hamiltonian perturbations; in the
+perturbation class used here, with zero Hamiltonian and
+domain-dependent almost-complex structures, it is Paper~I,
+Lemma~11.3, for the strips and triangles from which the cup and cap
+maps are built, and Proposition~\ref{prop:end-data}(ii) for
+continuation strips; the ordinary Heegaard strips are regular by the
+definition of the symplectic complex (Paper~I, Section~3.4). Strip gluing
+is \cite[Theorem~5.4.1]{Simcevic},
+with \cite[Theorems~3.3 and~3.7]{MWW} and \cite{Mau} for the quilted
+disc families, and exponential decay on half-strips is
+\cite[Corollary~2.3.2]{Simcevic}. For a finite collection of regular
 configurations with nondegenerate strip ends, every nearby
 zero-dimensional solution at a long neck is the unique correction of a
 preglued configuration, the correction tends to zero with the neck
@@ -6347,13 +6646,14 @@ along strip ends is Lemma~\ref{lem:line-gluing}. For a family of real
 Cauchy--Riemann operators on surfaces degenerating at an interior node,
 the determinant lines form a topological line bundle
 \cite[Proposition~2.4.12]{WW-orientations}, and the line isomorphism is
-given by the exact sequence of
-\cite[Remark~2.4.6 and Corollary~2.4.7]{WW-orientations}; its construction,
-in the proof of \cite[Theorem~2.4.5]{WW-orientations}, is local to the node
-disc, and it is associative \cite[Proposition~2.4.8]{WW-orientations}. The node
-contributes its complex fibre, canonically oriented and even, with no
-additional sign \cite[Theorem~4.3.3(a)]{WW-orientations}; numbering as in
-arXiv:1503.07803v6. These statements localize. Choose stabilizations of a
+given by the exact sequence (18) of \cite[Theorem~2.4.5]{WW-orientations}
+and \cite[Corollary~2.4.7]{WW-orientations}; it is associative
+\cite[Proposition~2.4.8]{WW-orientations}. The sequence is proved there
+for a boundary node, and the interior case is treated in the same way.
+Its middle term is the fibre of the bundle at the node, a complex vector
+space; it is even and canonically oriented, so the node contributes no
+additional sign. Numbering is as in arXiv:1503.07803v6. These statements
+localize, by the following stabilization argument. Choose stabilizations of a
 mixed or pure operator supported away from a disc containing the node and
 separated from the matching and boundary collars. Then the stabilized
 kernel near the node is obtained by the local gluing map of the cited
@@ -6379,12 +6679,16 @@ are smooth and finite
 dimensional, and its exact
 part is the covariant
 differential of $W^{2,2}$
-sections. The Dirichlet Green
-operator for $d_B^*d_B$
+sections. Since
+$H^0(C;\ad)=0$, the Neumann
+Green operator $G_N$ for
+$d_B^*d_B$ exists and
 preserves smoothness, so
-$1-d_BG_Dd_B^*$ is a
+$1-d_BG_Nd_B^*$ is a
 smoothness-preserving
-projection onto coclosed forms.
+projection onto coclosed forms
+satisfying the normal boundary
+condition.
 These statements follow from
 the flat covariant de Rham
 case of
@@ -6470,19 +6774,24 @@ $b$ on the collars $[-5/2,-2]\times\Sigma$ of their boundaries fixed in
 Section~\ref{app:shift-prep}. Every such $c$ is a critical
 point of the perturbed Chern--Simons functional in the gauge orbit of
 $a_x$ or of its other lift, and the constant pair $C^c$ built from it is
-gauge equivalent to $C_x$. Its operator is therefore invertible, its
+equivalent to $C_x$ under the lifting group, by a gauge transformation
+when $c$ lies in the orbit of $a_x$. Its operator is therefore invertible, its
 positive element corresponds to that of $C_x$ under conjugation, and the
 almost-complex gauge orientations are invariant under the bundle
 automorphism. The lines at $c$ are identified with those at $a_x$ by this
 automorphism. The identification agrees with transport along any path of
-connections from $a_x$ to $c$: the gauge line is orientable over closed
-loops in the configuration space of $Y_\#$
-\cite[Section~5.4]{Donaldson-book}, and the character of the
-conversion line depends only on the lifting class
+connections from $a_x$ to $c$: the almost-complex orientation of the
+gauge line is invariant under the full group of bundle automorphisms,
+of every degree and lifting class (Section~\ref{sec:gauge},
+\cite[Section~5.1]{KM-unknot}), and the character of the conversion line
+depends only on the lifting class
 (Proposition~\ref{prop:character-gauge}), so it is trivial for
-automorphisms of trivial lifting class, of any degree; an automorphism of
-nontrivial lifting class is the lifting action of
-Proposition~\ref{prop:transport}. The terminal subspace $\mathcal T_x$ consists of the
+automorphisms of trivial lifting class, of any degree. For a
+representative in the orbit of the other lift, the relating automorphism
+has lifting class in the framing group, on which the character is
+trivial by the last clause of Proposition~\ref{prop:character-gauge},
+since all structures agree with the fixed germ near the odd torus; at
+the cut $Z$ this is~\eqref{eq:cut-Chern}. The terminal subspace $\mathcal T_x$ consists of the
 configurations which, outside the gauge input end, agree with $C^c$ for
 some representative $c$; they are gauge paths ending at $c$ followed by
 $C^c$. Proposition~\ref{prop:shifting} is to be read with this terminal
@@ -6517,9 +6826,14 @@ depending continuously on the lengths and widths: for $W_{a,\mathsf R}$
 the map $\psi_{\mathsf R}$ of Paper~I, Definition~10.1(a), which is
 independent of $\theta$ and is a translation near the flat face; for the
 closed-cut piece with input $Z$ the identification of Paper~I,
-Lemma~10.18(ii); for the vertex domains of Paper~I, Lemma~9.7, the
-diffeomorphism of that lemma, which moves the seam and the conformal
-structure. The output regions used in part~(b) are identified in
+Lemma~10.18(ii); for the vertex domains of Paper~I, Lemma~9.7, a
+decorated diffeomorphism equal to the identity outside a compact set.
+The domains of that lemma differ from the special quintuple by
+compactly supported changes of the seam placement and of the neck
+lengths (proof of Paper~I, Lemma~9.7), which the isotopy extension
+theorem realizes by such a diffeomorphism; it carries end coordinates
+to end coordinates, and the metric does not enter the configuration
+space. The output regions used in part~(b) are identified in
 Section~\ref{app:shift-local}. It therefore suffices to construct the
 deformations on a special quintuple, for families in which the primary
 data vary in a compact set.
@@ -6600,9 +6914,17 @@ $(s,\theta,y)\mapsto(-\phi_t(-s),\theta,y)$ on $[-2,0]\times\RR\times\Sigma$;
 since $\phi_t$ is the identity near $2$, the result is smooth where
 $[-2,0]\times\Sigma$ meets $Y_0$. Since $\phi_t(0)=0$, the seam values, hence
 the matching condition, are unchanged. Do the same in the normal
-coordinates of $\eta_+,\eta'_+$, which preserves the arc values; along the
-strips $[0,2]\times[2,\infty)$ the two pullbacks fix the seam and the arc
-pointwise and commute. At $t=1$, (N2), (N4) and (N5) hold; stationarity
+coordinates of $\eta_+,\eta'_+$, which preserves the arc values. On the
+strips $[0,2]\times[2,\infty)$ both maps act on the same coordinate and do
+not commute. In the coordinate $s\in[0,2]$ across such a strip, with the
+seam at $s=0$ and the arc at $s=2$, write
+$\Phi_{\rm seam}(s)=\phi_t(s)$ and $\Phi_{\rm arc}(s)=2-\phi_t(2-s)$. Take
+the arc pullback first and the seam pullback second, so that $u$ is
+replaced by $u\circ\Phi_{\rm arc}\circ\Phi_{\rm seam}$. At $t=1$ this
+composite maps $[0,1]$ to the seam, because $\phi_0=0$ there and
+$\Phi_{\rm arc}(0)=0$, and a neighbourhood of $2$ to the arc, because
+$\phi_0$ is the identity near $2$; for every $t$ it fixes the seam and
+the arc pointwise. At $t=1$, (N2), (N4) and (N5) hold; stationarity
 beyond $\Theta$ is preserved, and so is (N3), because $\mathrm{pr}^*b$ is
 independent of $s$. Members of $\mathcal T_x$ are independent of $s$ on
 these collars and are fixed.
@@ -6692,7 +7014,9 @@ $u(\tau,t)=u_\tau(0,t)$; the arcs carry $u(r+\tau,\pm1)\in L$. Near a
 removed corner the pair is smooth in the reparametrized coordinates, with
 limit the stationary pair of $B(\tau)$, whose collar value is $\alpha(\tau,1)$,
 a product. In the original end coordinate it converges to this stationary
-pair at the exponential rate one, which exceeds the weight $\delta$; the
+pair at the exponential rate one. This exceeds the mixed-end weight,
+which we choose below one; Proposition~\ref{prop:weights} permits any
+weight in the gap. The
 configuration therefore lies in the space of Section~\ref{sec:geometry}, with
 the mixed limit moving along the arc. Translation over a bounded range is
 continuous in that topology. For $\tau=S+4$ and $r\ge-4$ we have $r+\tau\ge S$.

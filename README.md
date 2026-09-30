@@ -56,14 +56,7 @@ Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist 
 the fixed metric data used here (Appendix C). Integer coefficients are the
 subject of the draft of Paper II below. The current
 manuscript is dated **25 September 2026**, revised **27 September 2026**,
-and has **148 pages**. The revision expands the collapse and boundary
-estimates and the construction of invariant regular data. The torus
-gluing argument includes corrected stationary tangent lifts, explicit
-boundary-domain transport and a direct scalar Neumann estimate. The
-energy identities and auxiliary integer gradings retain the full
-normalization, endpoint actions and ordered unit-cap bounds. The latest
-revision also proves regularity for the actual compression auxiliary
-strips and triangles and corrects the moving-boundary continuation setup.
+and has **148 pages**.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -71,32 +64,17 @@ strips and triangles and corrects the moving-boundary continuation setup.
 
 ### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-This sequel develops the signed cobordism comparison over ℤ for the
-geometric symplectic maps of Paper I. It transports orientations from the
-gauge theory and compares collapse, torus excision, reflection, and
-compression cups and caps. The resulting comparison allows one overall
-sign per cobordism.
-
-**Draft, revised 30 September 2026, 82 pages.** The theorem assumes the
-unsigned analytic results of Paper I and no further hypothesis. The
-analytic foundations on the mixed domains and their completed limits are
-proved in Appendix A, and relative preparation and shifting in families
-in Appendix B. The oriented mixed torus-completion comparison is proved in
-Section 8, with an explicit integral chain homotopy, and ordinary
-determinant-one self-gluing in Proposition 2.3. The manuscript has not yet
-been independently refereed.
-
-Earlier revisions prove physical weight independence, the fixed-scale
-affine-center comparison and mixed comparisons for changes of ordinary
-end data.
-
-The gauge orientation convention is explicit; identification with
-homology-oriented integral instanton maps and with relative-spin quilt
-orientations remains open. The full operator realization retains both
-rows; the affine-center square is proved at each fixed positive collapse
-scale in its stated small neighborhood.
-The auxiliary grading distinguishes its relative class from total
-symplectic area, with the actual endpoint action subtracted.
+This sequel develops the cobordism comparison over ℤ for the geometric
+symplectic maps of Paper I. It transports orientations from the gauge theory
+through the mixed equation and compares collapse, torus excision, reflection,
+and compression cups and caps; the resulting comparison allows one overall
+sign per cobordism. The main theorem assumes the unsigned analytic results of
+Paper I and no further hypothesis: the analytic foundations on the mixed
+domains and the shifting of mixed configurations in families are proved in
+the appendices. The gauge orientation convention is explicit; identification
+with homology-oriented integral instanton maps and with relative-spin quilt
+orientations remains open. The draft is dated **30 September 2026**, has
+**86 pages**, and has not yet been independently refereed.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)

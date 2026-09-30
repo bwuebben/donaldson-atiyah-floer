@@ -61,10 +61,9 @@ The analytic input consists of two new results for the mixed equation.
   counts would need coherent orientations, compared with the homology
   orientations of the gauge side. The homological algebra used to pass from
   homology to chain homotopy also requires a field. Integer coefficients are
-  treated in [Paper II](PAPER-II.md), a draft of the comparison
-  over ℤ up to one sign for each cobordism, which assumes the unsigned
-  analysis of this paper, with its gauge
-  orientation convention stated explicitly.
+  treated in [Paper II](PAPER-II.md), a draft of the comparison over ℤ
+  up to one sign for each cobordism, which assumes the unsigned analysis
+  of this paper and states its gauge orientation convention explicitly.
 - **Objects.** The objects are connected and carry the trivial bundle on
   the original three-manifold. Disconnected objects, units and counits, and
   closed pairings are not treated.
@@ -77,29 +76,6 @@ The analytic input consists of two new results for the mixed equation.
   data used here, without rescaling the metric (Appendix C): the
   perturbations are built from holonomy traces of disjoint solid tori, and a
   unique continuation argument on torus collars supplies the transversality.
-
-## Revision of 27 September 2026
-
-The latest revision gives a direct zero-Hamiltonian regularity proof
-for general-compression auxiliary strips and triangles. Exact unfolding
-is reserved for the diagonal compression. The moving-boundary
-continuation argument retains the full Hamiltonian one-form, its
-curvature and the boundary-work terms.
-
-The energy identities now use the full analytic normalization,
-including the switched perturbation terms. The auxiliary integer
-grading distinguishes its relative class from total symplectic area
-and retains the actual endpoint actions under primary changes. The
-filling and unit-cap arguments include their energy bounds and the
-ordered Lagrangian pairs.
-
-## Revision of 26 September 2026
-
-The torus gluing argument now uses stationary tangent lifts satisfying
-the matching condition at the actual reference configuration. The
-revision also gives a direct scalar Neumann estimate, makes the
-mixed-end boundary-domain transport explicit, and expands the nonlinear
-matching chart and its gauge-fixing argument.
 
 ## Build
 
