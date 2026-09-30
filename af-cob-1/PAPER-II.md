@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-Bernd Johannes Wuebben · 30 September 2026 · 86 pages · Draft
+Bernd Johannes Wuebben · 30 September 2026 · 86 pages
 
 - [Read Paper II](cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
@@ -13,7 +13,7 @@ We study the extension to integer coefficients of the cobordism
 comparison between framed instanton homology and the Lagrangian Floer
 homology of a Heegaard splitting. Orientations are transported from
 almost-complex orientations on the gauge side through moduli spaces of
-the mixed anti-self-duality and holomorphic curve equation. Assuming
+the mixed anti-self-duality and holomorphic curve equation. Using
 the unsigned analytic results of the companion paper, we obtain a
 projective natural isomorphism for connected cobordisms with a framed
 arc and a bundle trivialized at the ends. The symplectic maps are
@@ -28,8 +28,9 @@ relative-spin quilt orientations is left open.
 
 ## Status and scope
 
-**Draft, not yet independently refereed.** The main theorem assumes the
-unsigned analytic results of Paper I and no further hypothesis.
+**Not yet independently refereed.** The proof of the main theorem uses
+the unsigned analytic results of Paper I: compactness, gluing, the
+collapse theorem and torus excision.
 
 - **Proved here.**
   - The analytic foundations on the mixed domains and their completed

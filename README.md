@@ -54,7 +54,7 @@ are constructed by the Daemi–Fukaya–Lipyanskiy method with invariant
 perturbations. Where both constructions are defined, they coincide with the
 Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist at
 the fixed metric data used here (Appendix C). Integer coefficients are the
-subject of the draft of Paper II below. The current
+subject of Paper II below. The current
 manuscript is dated **25 September 2026**, revised **27 September 2026**,
 and has **148 pages**.
 
@@ -68,12 +68,12 @@ This sequel develops the cobordism comparison over ℤ for the geometric
 symplectic maps of Paper I. It transports orientations from the gauge theory
 through the mixed equation and compares collapse, torus excision, reflection,
 and compression cups and caps; the resulting comparison allows one overall
-sign per cobordism. The main theorem assumes the unsigned analytic results of
-Paper I and no further hypothesis: the analytic foundations on the mixed
-domains and the shifting of mixed configurations in families are proved in
-the appendices. The gauge orientation convention is explicit; identification
+sign per cobordism. The proof uses the unsigned analytic results of Paper I;
+the further analysis it needs, the analytic foundations on the mixed domains
+and the shifting of mixed configurations in families, is proved in the
+appendices. The gauge orientation convention is explicit; identification
 with homology-oriented integral instanton maps and with relative-spin quilt
-orientations remains open. The draft is dated **30 September 2026**, has
+orientations remains open. The manuscript is dated **30 September 2026**, has
 **86 pages**, and has not yet been independently refereed.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)

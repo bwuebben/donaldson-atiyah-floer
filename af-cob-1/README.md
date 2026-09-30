@@ -4,7 +4,7 @@ Bernd Johannes Wuebben · 25 September 2026 · Revised 27 September 2026 · 148 
 
 - [Read the paper](cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms.tex)
-- [Paper II: integer coefficients, draft](PAPER-II.md)
+- [Paper II: integer coefficients](PAPER-II.md)
 - [Donaldson and Atiyah–Floer manuscript collection](../README.md)
 
 ## Abstract
@@ -61,9 +61,9 @@ The analytic input consists of two new results for the mixed equation.
   counts would need coherent orientations, compared with the homology
   orientations of the gauge side. The homological algebra used to pass from
   homology to chain homotopy also requires a field. Integer coefficients are
-  treated in [Paper II](PAPER-II.md), a draft of the comparison over ℤ
-  up to one sign for each cobordism, which assumes the unsigned analysis
-  of this paper and states its gauge orientation convention explicitly.
+  treated in [Paper II](PAPER-II.md), the comparison over ℤ
+  up to one sign for each cobordism, which builds on the unsigned
+  analysis of this paper and states its gauge orientation convention explicitly.
 - **Objects.** The objects are connected and carry the trivial bundle on
   the original three-manifold. Disconnected objects, units and counits, and
   closed pairings are not treated.
