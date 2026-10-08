@@ -64,18 +64,21 @@ has **150 pages**.
 
 ### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-This sequel develops the cobordism comparison over ℤ for the geometric
-symplectic maps of Paper I. It transports orientations from the gauge theory
-through the mixed equation and compares collapse, torus excision, reflection,
-and compression cups and caps; the resulting comparison allows one overall
-sign per cobordism. The proof uses the unsigned analytic results of Paper I;
-the further analysis it needs, the analytic foundations on the mixed domains
-and the shifting of mixed configurations in families, is proved in the
-appendices. The gauge orientation convention is explicit; identification
-with homology-oriented integral instanton maps and with relative-spin quilt
-orientations remains open. The current version is dated **7 October 2026** (first
-version 30 September 2026), has **86 pages**, and has not yet been
-independently refereed.
+This sequel proves the cobordism comparison over ℤ. The mixed isomorphisms
+of Paper I intertwine the integral instanton cobordism maps, oriented by
+almost-complex structures, with signed symplectic cobordism maps, up to
+chain homotopy and one overall sign for each cobordism; on homology the
+symplectic maps form a projective functor. The orientations are transported
+from the gauge theory through the mixed equation. The new input is that the
+collapse of a compression body and excision along a torus preserve
+orientations, and that the sign of attaching a sphere to a strip is constant
+under small perturbations and invariant under reversing the splitting. The
+proof uses the unsigned analytic results of Paper I; the further analysis it
+needs is proved in the appendices. Identification with homology-oriented
+integral instanton maps and with relative-spin quilt orientations remains
+open. The current version is dated **8 October 2026** (first version
+30 September 2026), has **106 pages**, and has not yet been independently
+refereed.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
