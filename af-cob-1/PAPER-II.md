@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-Bernd Johannes Wuebben · First version 30 September 2026 · This version 8 October 2026 · 106 pages
+Bernd Johannes Wuebben · First version 30 September 2026 · This version 8 October 2026 · 107 pages
 
 - [Read Paper II](cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
@@ -80,7 +80,9 @@ excision.
   relative-spin orientations of quilted Floer theory.
 - **Coefficients.** Objects with vanishing integral homology are treated
   in the chain homotopy category: their complexes are contractible and the
-  maps incident to them are zero.
+  maps incident to them are zero. No such object is known; whether framed
+  instanton homology is nonzero for every closed three-manifold is an open
+  question.
 - **Objects and cobordisms.** The paper treats connected objects with
   trivial bundles, and connected cobordisms carrying a framed arc and a
   bundle trivialized at the ends and along the arc. Disconnected objects,
