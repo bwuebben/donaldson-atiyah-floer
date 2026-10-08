@@ -68,7 +68,7 @@
 \title[Atiyah--Floer cobordism maps II]{Cobordism maps and Atiyah--Floer isomorphisms\\
 for framed instanton homology II}
 \author{Bernd Johannes Wuebben}
-\date{30 September 2026}
+\date{First version: 30 September 2026. This version: 7 October 2026}
 \subjclass[2020]{57K31, 57R58 (primary); 53D40, 58J05 (secondary)}
 \keywords{Atiyah--Floer conjecture, framed instanton homology, coherent
 orientations, determinant lines, Lagrangian Floer homology, cobordism maps}
@@ -1448,8 +1448,8 @@ cut $Z_{\rm cut}\cong Z$ decomposes $W^J_\lambda$ into the reverse
 excision cobordism, which is the ordinary two-input cobordism, and the
 closed-cut piece $M_\lambda$, a truncated output DFL region for the pair
 $(A_0,A_1)$ with arms $D_{0,\lambda},D_{1,\lambda}$. After the
-compactly supported metric change near the rounded corners of Paper~I,
-Lemma~10.18(v), the cut has a product collar; the configuration spaces
+compactly supported metric change of Paper~I, Lemma~10.18(v), near
+the arcs of the cut away from the bridge ends and the matching lines, the cut has a product collar; the configuration spaces
 do not depend on the metric (Appendix~\ref{app:shift-reduction}), so the
 change is a transport along a path of data. The construction below applies verbatim with the
 output region $M_\lambda$ and the cut $Z_{\rm cut}$, on compact ranges of
@@ -3380,7 +3380,7 @@ on a genus collar, exchanges them, and it acts freely
 (Paper~I, Lemma~10.18(iv), for the lifting classes). Both are irreducible and nondegenerate
 \cite[Lemma~2.47]{DFL}, so the quotient critical set is
 $A_0\cap A_1$. Let $\beta_x$ be either
-lift. The complex $C_Z=\CF_X(A_0,A_1)$ is the target of $N_Z$; its
+lift. The complex $C_Z=\CF_{\mathbb X}(A_0,A_1)$ is the target of $N_Z$; its
 generator line over $x$ is
 \[
  Z_x=L_G^{M}(\beta_x),
@@ -3631,7 +3631,7 @@ tending to zero uniformly as $r_1\to\infty$. For a pair $c=(c_-,c_+)$
 in torus normal form beyond $r_0$ and $\lambda\ge2r_0+2$, the preglue
 $P_\lambda(c)$ replaces $b$ by $\chi_\lambda b$ on both tails, with
 $\chi_\lambda(r)=\chi(r-\lambda/2)$, and joins them by $\alpha$ on the
-bridge, as in Paper~I, Lemma~10.24. On one side the truncation
+bridge, as in Paper~I, Lemma~10.25. On one side the truncation
 $P_{\mathsf R}(c_a)$ on $W_{a,\mathsf R}$ is defined in the same way; it
 equals $\alpha$ near the face and so satisfies the flat-fibre
 condition.
@@ -3738,7 +3738,7 @@ listed at its beginning.
 \end{lemma}
 \begin{proof}
 \emph{Compact-remainder estimates.} Steps~1--3 of the proof of Paper~I,
-Proposition~10.26, use only the following: on the torus region beyond
+Proposition~10.27, use only the following: on the torus region beyond
 a fixed $S$ the operator is the flat odd-torus operator $D_\alpha$ of
 Paper~I, Proposition~10.3, plus a small zeroth-order term, with the
 normal derivatives at a flat face recovered as in the proof of Paper~I,
@@ -4019,7 +4019,7 @@ Fix regular data as in Paper~I, Section~10.11, steps (1)--(4). The
 completed index-zero sets are finite and regular, there are no
 completed solutions of negative index, and for
 $\mathsf R\ge\mathsf R_0$, $\lambda\ge\lambda_1$ Paper~I,
-Theorem~10.31, gives the bijections
+Theorem~10.32, gives the bijections
 $\mathcal G_{\mathsf R}$ and $\mathcal G_\lambda$ onto regular index-zero
 solutions, with no solutions of negative index. Write
 $N_{a,\infty}$ for the completed separate counts, oriented by
@@ -4033,7 +4033,7 @@ lemma.
 \begin{lemma}\label{lem:gluing-path}
 Let $V$ be a completed index-zero solution, or a pair of them, and for
 $\mathsf L\ge\mathsf L_1$ let $z_{\mathsf L}(V)$ be the small zero of
-Paper~I, Proposition~10.29, so that
+Paper~I, Proposition~10.30, so that
 $\mathcal G_{\mathsf L}(V)=\Psi_{\mathsf L}(z_{\mathsf L}(V))$. Consider
 the rectangle of configurations
 \[
@@ -4042,7 +4042,7 @@ the rectangle of configurations
                   \mathsf L\in[\mathsf L_1,\infty)\},
 \]
 with $P_\infty(V)=V$, where $V$ is represented by the adapted
-representative of Paper~I, Lemmas~10.11 and~10.24, so that the two edges
+representative of Paper~I, Lemmas~10.11 and~10.25, so that the two edges
 meet; the gauge of Lemma~\ref{lem:split-preglue}(i) is then the
 identity, by fibrewise uniqueness in Paper~I, Lemma~10.9. The physical
 determinant lines form a continuous line bundle over $\mathcal R_V$, and determinant transport carries the
@@ -4057,12 +4057,12 @@ continuous family on a fixed domain for each $\mathsf L$.
 
 Use also the chart operators $T$ of Paper~I, Definition~10.23. At the
 preglues they are invertible with a uniform bound by Paper~I,
-Proposition~10.26; at $\mathsf L=\infty$ the chart is centered at $V$
+Proposition~10.27; at $\mathsf L=\infty$ the chart is centered at $V$
 and the operator is invertible by Step~4 of its proof and index zero.
 Along the contraction path the chart operator is
 $D_{\mathsf L}+DN_{\mathsf L}(sz_{\mathsf L})$ with
 $\|DN_{\mathsf L}(sz_{\mathsf L})\|\le2C_{\rm quad}r\le(2C_{\rm inv})^{-1}$,
-as in the proof of Paper~I, Proposition~10.29, so it is invertible.
+as in the proof of Paper~I, Proposition~10.30, so it is invertible.
 The chart operator at $\Psi_{\mathsf L}(sz)$ is centered at the preglue.
 Moving its slice center, trace chart and target projection to the
 configuration itself changes it by at most
@@ -4070,8 +4070,7 @@ $C(\|sz\|+\|D\Psi_{\mathsf L}(sz)-1\|)$ in operator norm, which is small,
 so the straight path between them consists of invertible operators.
 The resulting operator and the physical realization at the same
 configuration have the same decaying block; their stationary columns
-and scalar rows differ by a bounded finite-rank map (Paper~I, remark
-after Definition~10.23). The straight path between these two is
+and scalar rows differ by a bounded finite-rank map (Paper~I, Remark~10.24). The straight path between these two is
 therefore a continuous Fredholm path, and these identifications are
 continuous over $\mathcal R_V$. The positive elements of the invertible
 chart operators thus give a continuous nonvanishing section of the
@@ -4081,11 +4080,11 @@ At the two solutions $V$ and $\mathcal G_{\mathsf L}(V)$ this section is
 the canonical positive element. Indeed, there the change of stationary
 columns is unipotent: the chart lifts and the Coulomb lifts differ by
 infinitesimal gauge directions $d\psi_e$ and by decaying fields already
-in the domain (Paper~I, Step~4 of the proof of Proposition~10.26), and a
+in the domain (Paper~I, Step~4 of the proof of Proposition~10.27), and a
 unipotent change of source coordinates preserves the positive element.
 The change of the scalar row is block triangular with invertible gauge
 block, as in the proof of Lemma~\ref{lem:realization}, using Paper~I,
-Lemma~10.25. At these points every operator of the interpolating paths
+Lemma~10.26. At these points every operator of the interpolating paths
 is invertible. No kernel at a nonsolution of $\mathcal R_V$ is
 identified with a tangent space.
 \end{proof}
@@ -4121,7 +4120,7 @@ same lemma transports the positive element. At index zero
 $\ind D_{V_-}=0$, so \eqref{eq:S-infty} evaluated on the positive
 element is the product of the two separate signs. The joined lifting
 group is $\Phi_-\oplus\Phi_+$ and the bridge has no gluing parameter
-(proof of Paper~I, Theorem~10.31), so the orbit counts multiply. The generator
+(proof of Paper~I, Theorem~10.32), so the orbit counts multiply. The generator
 factors in \eqref{eq:S-infty} are those of the right tensor of maps
 \eqref{eq:tensor-maps} of the even maps $N_{\pm,\infty}$. This proves
 the second identity. The third follows from the second and
@@ -4413,25 +4412,25 @@ on the lower pair are imposed below. This is the lower-data
 neighbourhood used in Section~\ref{sec:choices}.
 In the product symplectic manifold
 \[
- X=\Msf_h^-\times\Msf_g,\qquad
+ \mathbb X=\Msf_h^-\times\Msf_g,\qquad
  A_i=\widetilde P_i^-\times R_i,
 \]
 require the three pairs among $(A_0,L_C,A_1)$ to be transverse
 and their triple intersection to be empty. These are the generic
 conditions used for the folded triangle in Paper~I. The two
-auxiliary complexes are $\CF_X(A_0,L_C)$ and
-$\CF_X(L_C,A_1)$. Their distinguished top cycles are $q_0^*$ and
+auxiliary complexes are $\CF_{\mathbb X}(A_0,L_C)$ and
+$\CF_{\mathbb X}(L_C,A_1)$. Their distinguished top cycles are $q_0^*$ and
 $q_1^*$, respectively, with top degree defined by the auxiliary integer grading $m$
 of Paper~I, Section~11.3. Its differences satisfy
 $m(a)-m(x)=\ind(u)-8\kappa_{\mathrm{aux}}(u)$.
 Here $\kappa_{\mathrm{aux}}$ is the relative class of Paper~I's
 auxiliary pair. Let $\mathcal A_i$ denote its critical action,
 the values of the actual local exact-graph primitive, with the
-sign fixed by the ordered pair. Writing $\omega_X$ for the
-symplectic form of $X$, the relation is
+sign fixed by the ordered pair. Writing $\omega_{\mathbb X}$ for the
+symplectic form of $\mathbb X$, the relation is
 \[
 4\pi^2\kappa_{\mathrm{aux}}(u)
- =\int u^*\omega_X-\bigl(\mathcal A_i(a)-\mathcal A_i(x)\bigr).
+ =\int u^*\omega_{\mathbb X}-\bigl(\mathcal A_i(a)-\mathcal A_i(x)\bigr).
 \]
 At the flat height data $\mathcal A_i$ is the signed height
 function $t h_i$; under small primary changes its actual values
@@ -4446,7 +4445,7 @@ critical point is the maximum or minimum of the height function.
 
 Denote the chosen upper presentation by $q=C\circ p$; this notation
 includes its height perturbation. With a split almost-complex
-structure on $X$, folding identifies the output complex with
+structure on $\mathbb X$, folding identifies the output complex with
 $\CF(\bar p)\otimes_R\CF(q)$. Let $\mathcal K_R$ be the closed
 identification \eqref{eq:KR-def} of
 Section~\ref{sec:excision}, with its transported orientation lines. It uses
@@ -4454,10 +4453,10 @@ the orientation system transported independently at $\bar p$; the reflection pai
 with $\CF(p)^\vee$ will be constructed later. The triangle product
 for the ordered triple $(A_0,L_C,A_1)$, including the conversion
  $\Theta$ at its closed gauge cut $Z$ in the position of
-Convention~\ref{conv:interior-line}, is denoted by $\mu_X^\Theta$.
+Convention~\ref{conv:interior-line}, is denoted by $\mu_{\mathbb X}^\Theta$.
 It gives the cycle
 \begin{equation}\label{eq:cup-tensor}
- z_C=\mathcal K_R\mu_X^\Theta(q_0^*\otimes_R q_1^*)
+ z_C=\mathcal K_R\mu_{\mathbb X}^\Theta(q_0^*\otimes_R q_1^*)
        \in\CF(\bar p)\otimes_R\CF(q).
 \end{equation}
 Define
@@ -4564,7 +4563,7 @@ C_G(Z)$ be the integral gauge map of the cobordism formed by the pieces
 $D_0$, $C$, $D_1$. With the conversion at $Z$ placed as in
 Convention~\ref{conv:interior-line},
 \[
- \mu_X^\Theta(N_0\otimes_RN_1)\simeq\pm N_Z\Theta^{\mathrm r}\mu_{\mathscr W}.
+ \mu_{\mathbb X}^\Theta(N_0\otimes_RN_1)\simeq\pm N_Z\Theta^{\mathrm r}\mu_{\mathscr W}.
 \]
 \end{lemma}
 \begin{proof}
@@ -4587,7 +4586,7 @@ Proposition~\ref{prop:collapse-sign} uses only canonical orientations
 along paths of invertible operators, so the reversed sheet does not
 enter it. Ordinary gluing along
 the two stretched necks (Lemma~\ref{lem:line-gluing}) gives the count
-$\mu_X^\Theta(N_0\otimes_RN_1)$, with the input lines in cyclic order. At
+$\mu_{\mathbb X}^\Theta(N_0\otimes_RN_1)$, with the input lines in cyclic order. At
 the stretched cut, gluing at the connected closed cut $Z$ has no extra
 gluing fibre (Lemma~\ref{lem:gluing-multiplicity}). The stretched cut
 decomposes the domain into the triangle cobordism of $D_0$, $C$, $D_1$,
@@ -6351,7 +6350,7 @@ the $L^q$ radius of Paper~I, Remark~5.2; the $L^2$ radius stated in
 on a compact family the charts vary continuously with their centers.
 Charts with a radius uniform as a torus length tends to infinity are
 used only at the preglued references of Paper~I, Definition~10.23 and
-Lemmas~10.27--10.28.
+Lemmas~10.28--10.29.
 
 \emph{End models.} (O) At an ordinary gauge or strip end the operator is
 translation invariant with invertible asymptotic operator, the extended
@@ -6369,7 +6368,7 @@ Proposition~10.17). The moving boundary domain is transported to a fixed
 one by \cite[Proposition~5.27 and Lemma~5.67]{DFL-mixed}, and the weighted
 estimate for weights in $(0,\gamma)$ follows by Fourier transform in the
 end coordinate, as in Step~1(E) of the proof of Paper~I,
-Proposition~10.26. (T) On a flat torus region the operator and its
+Proposition~10.27. (T) On a flat torus region the operator and its
 adjoint are the invertible operators of Paper~I, Proposition~10.3, with
 the stated weighted bounds; at a flat face the normal derivatives are
 recovered from the equation as in the proof of Paper~I, Theorem~10.5(b).
@@ -6391,7 +6390,7 @@ where $p(x)$ denotes the stationary coordinates.
 Choose cutoffs subordinate to a fixed compact core, the ordinary ends,
 the mixed ends and, on torus domains, the torus region beyond a fixed
 radius. Their gradients can be made small on the noncompact overlaps,
-as in Step~2 of the proof of Paper~I, Proposition~10.26. On each end
+as in Step~2 of the proof of Paper~I, Proposition~10.27. On each end
 apply the corresponding model of Section~\ref{app:local}; the
 coefficients differ from the model by terms which are small beyond a
 common truncation, uniformly on $\mathfrak F$. On the core apply the
@@ -6468,7 +6467,7 @@ weight zero with parallel sections, which vanish on an irreducible
 collar; it is self-adjoint of index zero there, and sufficiently small
 weights preserve the index and add no kernel. This is the argument in
 the proof of Paper~I, Theorem~5.6(ii). Near the preglued references the
-uniform version is the proof of Paper~I, Lemma~10.25, which is stated for
+uniform version is the proof of Paper~I, Lemma~10.26, which is stated for
 completed index-zero solutions and applies without change to the
 constant pairs and to the references along the shifting rectangles.
 
@@ -6568,7 +6567,7 @@ gives index zero for the realization of \cite{DFL}. That realization and
 the one of Definition~\ref{def:realization} use the same decaying space and
 the same stationary parameter space; their stationary columns, including
 the scalar ones, differ by a bounded finite-rank map, so the indices
-agree (as in Paper~I, the remark after Definition~10.23); a change of
+agree (as in Paper~I, Remark~10.24); a change of
 weight inside the gap does not change the index (Lemma~\ref{lem:realization}).
 If the almost-complex structure near the matching line is not the one of
 \cite{DFL}, a homotopy of compatible structures localized in the seam

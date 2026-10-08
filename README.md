@@ -55,8 +55,8 @@ perturbations. Where both constructions are defined, they coincide with the
 Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist at
 the fixed metric data used here (Appendix C). Integer coefficients are the
 subject of Paper II below. The current
-manuscript is dated **25 September 2026**, revised **27 September 2026**,
-and has **148 pages**.
+version is dated **7 October 2026** (first version 25 September 2026) and
+has **150 pages**.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -73,8 +73,9 @@ the further analysis it needs, the analytic foundations on the mixed domains
 and the shifting of mixed configurations in families, is proved in the
 appendices. The gauge orientation convention is explicit; identification
 with homology-oriented integral instanton maps and with relative-spin quilt
-orientations remains open. The manuscript is dated **30 September 2026**, has
-**86 pages**, and has not yet been independently refereed.
+orientations remains open. The current version is dated **7 October 2026** (first
+version 30 September 2026), has **86 pages**, and has not yet been
+independently refereed.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
