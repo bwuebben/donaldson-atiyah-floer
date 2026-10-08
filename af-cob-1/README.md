@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology I
 
-Bernd Johannes Wuebben · First version 25 September 2026 · This version 7 October 2026 · 150 pages
+Bernd Johannes Wuebben · First version 25 September 2026 · This version 7 October 2026 · 151 pages
 
 - [Read the paper](cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms.tex)
