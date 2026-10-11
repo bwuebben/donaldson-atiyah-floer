@@ -76,7 +76,7 @@ under small perturbations and invariant under reversing the splitting. The
 proof uses the unsigned analytic results of Paper I; the further analysis it
 needs is proved in the appendices. Identification with homology-oriented
 integral instanton maps and with relative-spin quilt orientations remains
-open. The current version is dated **8 October 2026** (first version
+open. The current version is dated **11 October 2026** (first version
 30 September 2026), has **108 pages**, and has not yet been independently
 refereed.
 
