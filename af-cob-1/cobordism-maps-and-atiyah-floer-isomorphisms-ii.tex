@@ -68,7 +68,7 @@
 \title[Atiyah--Floer cobordism maps II]{Cobordism maps and Atiyah--Floer isomorphisms\\
 for framed instanton homology II}
 \author{Bernd Johannes Wuebben}
-\date{First version: 30 September 2026. This version: 11 October 2026}
+\date{First version: 30 September 2026. This version: 19 October 2026}
 \subjclass[2020]{57K31, 57R58 (primary); 53D40, 58J05 (secondary)}
 \keywords{Atiyah--Floer conjecture, framed instanton homology, coherent
 orientations, determinant lines, Lagrangian Floer homology, cobordism maps}
@@ -84,8 +84,8 @@ symplectic maps are signed counts of holomorphic triangles, with the Lagrangian 
 a compression body as one boundary condition for one- and three-handles. At three-manifolds whose integral framed instanton homology vanishes, the complexes are contractible and the maps are zero. The orientations are transported from the gauge theory through the mixed
 anti-self-duality and holomorphic curve equation. Consequently these maps form a projective
 functor on homology, independent of the handle decomposition up to sign. The unsigned analysis is that of the comparison modulo two; the new input is that two degenerations of the mixed
-equation, the collapse of a compression body and excision along a torus, preserve orientations,
-and that where this homology is nonzero the sign by which the orientations change when a sphere is attached to a strip is constant
+equation, the collapse of a compression body and excision along a torus, preserve orientations.
+Where this homology is nonzero, we also prove that the sign by which the orientations change when a sphere is attached to a strip is constant
 under small perturbations and invariant under reversing the splitting. The relation with
 homology-oriented integral instanton maps is left open.
 \end{abstract}
@@ -217,10 +217,23 @@ along a torus. On the gauge side such a manifold is split by Floer's excision th
 of~\cite[Theorem~5.6]{KM-unknot}. Paper~I proves the corresponding excision for the mixed
 equation over $\FF$ by stretching a torus collar. Let $M^+$ be obtained from $M$ by $k$ one-handles.
 The two sides are the torus-summed objects $(-M)^\#$ and $(M^+)^\#$, and the closed cut is
-$Z\cong(-M)\#M^+\#T^3$ (Section~\ref{subsec:handle-geometry}). Write $N_\pm$ for the mixed maps of
-the two sides, $N_Z$ for the mixed map, with gauge input $Z$, of the folded pair $(A_0,A_1)$, where $A_i=\widetilde P_i^-\times R_i\subset\Msf_h^-\times\Msf_g$ are the product Lagrangians of Section~\ref{subsec:handle-geometry}, and
-$\overline{\mathsf E}$ for the reverse excision map of Kronheimer and Mrowka from the tensor product
-of the gauge complexes of the two sides to that of $Z$. The output complex of the folded pair is a complex of the product $\mathbb X$; write $\mathcal K^{\mathrm r}$ for its identification, of degree equal to the parity $|\Theta|$ of the conversion $\Theta$ at the cut, with the tensor product of the symplectic complexes of the two sides. It is canonical up to one sign and absorbs the orientation line of the conversion at the cut (Section~\ref{sec:excision}). Here and below $\otimes^{\mathrm r}$ is the tensor product of maps with the Koszul rule of Section~\ref{sec:algebra} in which signs arise from passing the right-hand factor.
+$Z\cong(-M)\#M^+\#T^3$ (Section~\ref{subsec:handle-geometry}). The folded pair
+has product Lagrangians
+\[
+ A_i=\widetilde P_i^-\times R_i\subset\mathbb X=\Msf_h^-\times\Msf_g.
+\]
+
+Write $N_\pm$ for the mixed maps of the two sides and $N_Z$ for the mixed
+map of $(A_0,A_1)$, with gauge input $Z$. Let $\overline{\mathsf E}$ be the
+Kronheimer--Mrowka reverse excision map from the tensor product of the two
+gauge complexes to the gauge complex of $Z$. The output complex of the
+folded pair is a complex in $\mathbb X$. Its identification
+$\mathcal K^{\mathrm r}$ with the tensor product of the symplectic complexes
+has degree $|\Theta|$, the parity of the conversion $\Theta$ at the cut.
+It is canonical up to one sign and absorbs the conversion's orientation
+line (Section~\ref{sec:excision}). Here and below $\otimes^{\mathrm r}$
+uses the Koszul rule of Section~\ref{sec:algebra}, in which signs arise
+from passing the right-hand factor.
 
 \begin{thmletter}[Oriented torus excision]\label{thm:excision-intro}
 After the conversion at the cut, the mixed map $N_Z$ of the folded pair composed with reverse excision is chain homotopic over $\ZZ$, up to one sign, to the tensor product of the mixed maps of
@@ -729,7 +742,8 @@ faces into a bridge of width $2\lambda$. (After Paper~I, Figure~5.)}
 Fix a Heegaard splitting with its metric data. Its \emph{small ball} consists of the primary
 perturbations in the span of a finite family of sign-sensitive holonomy functions, containing the
 fixed family $F_0$ of Section~\ref{sec:characters} and subject to the conditions of Paper~I,
-Definition~3.3, whose norm~\eqref{eq:primary-norm}, a Lipschitz norm of the gradient, is less than
+Definition~3.3 (in particular containing the family $F_*$ of~\ref{I5}), whose
+norm~\eqref{eq:primary-norm}, a Lipschitz norm of the gradient, is less than
 a radius $r_\chi>0$. The radius depends only on the splitting and its metric data, and is transported by isomorphisms of decorated data. A presentation is
 \emph{small} if it is regular and its primary perturbation lies in the small ball of its splitting and metric data. Small presentations are admissible in the sense of Paper~I (see~\ref{I5}).
 \end{definition}
@@ -762,12 +776,38 @@ glued solution is the unique zero of the equation in a ball of fixed radius in t
 $N_Z\circ\mu_{\mathscr W}\simeq\mu_{\mathbb X}\circ(N_0\otimes N_1)$ over $\FF$, where
 $\mu_{\mathscr W}$ is the gauge triangle of the pieces $D_0$, $C$, $D_1$ and $\mu_{\mathbb X}$ the
 holomorphic triangle map in $\mathbb X=\Msf_h^-\times\Msf_g$; here $N_0,N_1$ are the mixed maps of the pairs $(A_0,L_C)$ and $(L_C,A_1)$, and $N_Z$ that of $(A_0,A_1)$.
-\item\label{I5} \emph{Admissible neighbourhoods} (Paper~I, Definition~11.12). For each sufficiently
-small height $t>0$ there is a $C^1$-neighbourhood $\mathcal N(t)$ of the pair of compression-body
-Lagrangians, and of the reflected pair, such that for the product compression body ($k=0$) the
-unfolding and grading statements, the mod-two folded triangle and the mod-two cup formula of
-Paper~I hold for every lower pair in $\mathcal N(t)$ and every height Lagrangian at height $t$
-satisfying the incidence conditions.
+\item\label{I5} \emph{Admissible neighbourhoods} (Paper~I, Definition~11.12). Paper~I fixes, with
+each Heegaard splitting, a finite family $F_*$ of primary perturbations containing the height
+functions and having the submersion property of Paper~I, Section~3.2; the generic corrections
+of the height Lagrangians are taken from its span.
+
+For each sufficiently small height $t>0$ there is a $C^1$-neighbourhood
+$\mathcal N(t)$ of the pair of compression-body Lagrangians and of the
+reflected pair, depending only on the splitting, metric data and height
+functions. For the product compression body ($k=0$), every lower pair in
+$\mathcal N(t)$ and every height Lagrangian at height $t$, with correction
+$g\in\operatorname{span}F_*$, $|g|\le\delta(t)$, satisfy:
+\begin{enumerate}[label=(\alph*)]
+\item the unfolding statements of Paper~I;
+\item the auxiliary generators are the nondegenerate critical points
+  of a Morse function $C^2$-close to $t$ times the height function,
+  with the same indices;
+\item their critical actions satisfy
+  $2\max_{a,x}|\mathcal A_i(a)-\mathcal A_i(x)|<2\pi^2$.
+\end{enumerate}
+For a finite family $F\supseteq F_*$ the set $\mathcal U_F(t)$ is the path
+component of zero in the set of primary data in $\operatorname{span}F$ whose Lagrangians, and
+those of their reflections, lie in $\mathcal N(t)$; the mod-two folded triangle and the mod-two
+cup formula of Paper~I hold at every regular point of $\mathcal U_F(t)$, for a height Lagrangian
+of that family satisfying the incidence conditions, by~\ref{I14}(ii), first for end and secondary
+data below its threshold and then, on homology, for the prescribed data by Theorem~3.8(ii) and
+Paper~I, Section~11.5.
+
+The admissible neighbourhood $\mathcal U(F)$ is the path component of zero in
+$\mathcal U_F(t_*)\cap\mathcal U_F(t_*')$ for two heights $t_*'\le t_*$ fixed with the
+splitting. It is an open neighbourhood of zero in $\operatorname{span}F$, and
+$\mathcal U(F)\subseteq\mathcal U(F')$ for $F\subseteq F'$. Admissibility is a condition on the
+primary data through the path joining them to zero, not on their Lagrangians alone.
 \item\label{I6} \emph{Uniform stationary gap} (Paper~I, Proposition~10.7). The stationary operators
 on the slices of the mixed ends of the torus domains are self-adjoint with kernel the tangent space
 of the critical manifold, and their nonzero spectrum avoids a fixed interval about zero, uniformly
@@ -834,17 +874,50 @@ $m(a)-m(x)=\ind(u)-8\kappa_{\mathrm{aux}}(u)$, where the relative class
 $\kappa_{\mathrm{aux}}\in\tfrac12\ZZ$ is the topological energy corrected by the critical actions
 at the endpoints; the same relation holds for every gauge, mixed or strip configuration $u$ from $a$
 to $x$. For small height, $m$ is the Morse index of the height function for $(A_0,L_C)$ and of its
-negative for $(L_C,A_1)$, and there is a unique generator $q_i^*$ of maximal $m$; it is the maximum
-or the minimum of the height function according to the order of the pair. For small height, end
+negative for $(L_C,A_1)$, and there is a unique generator $q_i^*$ of maximal $m$; at uncorrected
+height data it is the maximum or the minimum of the height function according to the order of the
+pair, and under the corrections of the height Lagrangians of Paper~I, Section~11.6, the generators
+and $q_i^*$ are their continuations. For small height, end
 perturbation and secondary perturbations, $\kappa_{\mathrm{aux}}\ge0$ on every counted
-configuration (Paper~I, Lemma~9.1(iii)).
-\item\label{I14} \emph{Changes of the lower data} (Paper~I, Lemma~11.7). There is a neighbourhood
-$\mathcal N_{C,R}$ of the lower primary data, depending on $C$ and on the height Lagrangians
-$R=(R_0,R_1)$, with the following property. Under changes of the lower primary data within
-$\mathcal N_{C,R}$, the relative classes and the grading of~\ref{I13} are transported from the
-height data, with the endpoint values of the height function replaced by the critical actions
-$\mathcal A_i$ of the changed pairs, and the coefficient of $q_i^*$ in $N_i\theta_i$, and in the
-filling invariant, remains $1$ over $\FF$; the representing solutions need not remain flat.
+configuration (Paper~I, Lemma~9.1(iii)); at corrected height data and at changed lower data the
+same follows from~\ref{I14}.
+\item\label{I14} \emph{Changes of the end data} (Paper~I, Lemma~11.7). Fix the height $t$ and a
+finite family $F\supseteq F_*$. The end data of an auxiliary pair are its lower primary datum, in
+$\operatorname{span}F$, and the primary datum $th_i+g$ of its height Lagrangian, in
+$\operatorname{span}F_*$; the height data are $(0,th_i)$.
+\begin{enumerate}[label=(\roman*)]
+\item For $|g|\le\delta(t)$ there is a
+ball $\mathcal N_{C,R}$ about zero in $\operatorname{span}F$, depending on $C$, on $R$ and
+on $F$, such that, for end and secondary data below the threshold of (ii) with $c=2\pi^2$, under
+changes of the lower primary data within $\mathcal N_{C,R}$ the relative
+classes and the grading of~\ref{I13} are transported from the height data, with the endpoint
+values of the height function replaced by the critical actions $\mathcal A_i$ of the changed
+pairs, and the coefficient of $q_i^*$ in $N_i\theta_i$, and in the filling invariant, remains $1$
+over $\FF$; the representing solutions need not remain flat.
+\item Along a smooth path of end data
+starting at the height data, on which the generators of the auxiliary pairs remain nondegenerate
+and continue those at the height data with their gradings and relative classes, and twice the
+maximal difference of their critical actions stays below a constant $c<4\pi^2$, the following
+hold at the endpoint, for end perturbations along the path and secondary perturbations at the
+endpoint satisfying
+\[
+4\sup\|f\|_\infty+2\sup\|\eta\|^2_{L^2}<4\pi^2-c
+\]
+and the thresholds of Paper~I, Theorem~3.8. Every counted gauge trajectory, mixed solution and strip has
+$\kappa_{\mathrm{aux}}\ge0$; the differential of the auxiliary gauge complex vanishes, its $2^r$
+generators matching the rank of its free homology; the filling invariant is the generator
+$\theta_i$ of maximal $m$; and $N_i\theta_i=q_i^*$, both on chains over $\FF$.
+\end{enumerate}
+Paper~I proves
+(ii) by transporting the filling class along a fine subdivision of the path by gauge
+continuation maps, which are isomorphisms triangular with respect to $m$, and by identifying the
+mixed coefficient at the endpoint through the isomorphism of Theorem~3.8(i), triangular with
+respect to $m$ by the index formula, and Lemma~9.2; (i) is the case
+of the path that first corrects the height datum and then moves the lower datum along a
+segment. The hypotheses of (ii) hold with $c=2\pi^2$ along every smooth path of lower data from
+zero whose Lagrangians stay in the neighbourhood $\mathcal N(t)$ of~\ref{I5}, preceded by the
+correction $th_i\mapsto th_i+g$, $g\in\operatorname{span}F_*$, $|g|\le\delta(t)$, of the height
+datum.
 \item\label{I15} \emph{Generation and connectivity} (Paper~I, Propositions~12.1 and~13.2). Any two
 admissible presentations of an object are joined by presentation moves: changes of disk system,
 stabilization and destabilization away from the ball, isotopies fixed near the ball, and changes
@@ -2042,11 +2115,9 @@ decaying kernel zero. Its index is zero by deformation to an
 autonomous constant strip, during which the asymptotic operators stay
 invertible by transversality. For product targets use independent
 variations on each nonconstant factor; each constant factor is
-invertible. This transversality argument uses only the linearized
-strip operator and no part of Proposition~\ref{prop:foundations}; it is
-the input for continuation strips cited in the proof of
-Proposition~\ref{prop:foundations}(c), so that citation is not
-circular.
+invertible. This direct transversality argument for the linearized
+strip operator supplies the continuation-strip input in the proof of
+Proposition~\ref{prop:foundations}(c).
 
 We choose perturbations inductively in the index, starting from the
 lowest index allowed by the energy bound. At each stage the solutions of smaller index are already regular, those of negative index, counting the parameter, are absent, and outside a neighbourhood of the already regular broken configurations the solutions of the next index form a compact set, and a
@@ -3147,8 +3218,7 @@ zero by \cite[Proposition~3.19]{DFL} at the special quintuple and
 continuity along the family. The proof of that lemma uses the local
 theory of Section~\ref{app:local}, Lemma~\ref{lem:compact-remainder},
 Paper~I, Theorem~10.13, Lemma~\ref{lem:split-preglue}(iii) and
-Lemma~\ref{lem:bridge-gluing}; none of the inputs of that lemma uses the
-present lemma.
+Lemma~\ref{lem:bridge-gluing}.
 \end{proof}
 
 The determinant line of an invertible operator has the canonical
@@ -4129,20 +4199,25 @@ lower Lagrangians $\widetilde P_i$, the product $\mathbb X$ with
 $A_i=\widetilde P_i^-\times R_i$, and the incidence conditions on
 $(A_0,L_C,A_1)$ are as defined there.
 
-The upper data may carry generic corrections $\gamma$ supported away
-from the critical sets of the height functions. These are taken in a closed ball $|\gamma|\le\delta(t)$
-in the span of a finite family. On this ball the corrected
+The upper data may carry generic corrections $\gamma$ from the span of the family $F_*$
+of~\ref{I5}; these may move the generators, whose labels and
+gradings are continued (Paper~I, Section~11.6). They are taken in a closed ball $|\gamma|\le\delta(t)$
+in that span. On this ball the corrected
 Lagrangians remain height Lagrangians at height $t$, and the
 restriction map of the family of perturbed flat connections
 parametrized by the primary perturbations remains a submersion
-\cite[Section~2.3]{DFL}. Hence the incidence conditions
-hold for generic corrections, as in Paper~I, Definition~11.12, and
-the paragraph following it. The resulting upper presentation is
+\cite[Section~2.3]{DFL}. Hence for $k=0$ the incidence conditions
+hold for generic corrections, as in the proof of Paper~I,
+Proposition~11.10; for $k\ge1$ the upper data are fixed first, and the
+incidence conditions, for the pair and for its reflection, hold for
+generic lower data chosen afterwards (item~(4) of
+Section~\ref{subsec:admissible}; Paper~I, Section~10.1). The resulting upper presentation is
 the upper height presentation of Definition~\ref{def:fold-pair}.
 
 Fix the height $t$. Choose an open $C^1$-neighbourhood
 $\mathcal N_C(t)$ of the pair $(L(U_0),L(U_1))$, together with the
-corresponding neighbourhood of the reflected pair, with the
+corresponding neighbourhood $\mathcal N_{\bar C}(t)$ of the reflected pair, for the
+reflected compression, with the
 following property: for every lower pair in $\mathcal N_C(t)$ and
 every correction in the ball, the two auxiliary height intersections
 remain transverse, and their critical points continue uniquely from
@@ -4152,11 +4227,14 @@ the ball of corrections. For $k=0$ we shrink it so that it lies in
 the neighbourhood $\mathcal N(t)$ of \ref{I5} at the same height. For
 $k\ge1$ the upper Lagrangians $R_i$ are fixed, and the lower primary
 data are in addition required to lie in the neighbourhood
-$\mathcal N_{C,R}$ of~\ref{I14}. In both cases the grading,
-action and coefficient statements of~\ref{I13} and~\ref{I14} hold for
-the lower data. The lower data are small presentations
-(Section~\ref{subsec:admissible}) whose Lagrangians lie in
-$\mathcal N_C(t)$.
+$\mathcal N_{C,R}$ of~\ref{I14}(i). The lower data are small presentations
+(Section~\ref{subsec:admissible}) whose norm is small relative to $t$,
+so that their Lagrangians, and those along the segment joining them
+to zero in the small ball, lie in $\mathcal N_C(t)$. In both cases
+the grading, action and coefficient statements of~\ref{I13}
+and~\ref{I14} hold for the lower data: for $k\ge1$ by~\ref{I14}(i),
+and for $k=0$ by~\ref{I14}(ii) applied along the path that first corrects the height datum and
+then follows that segment.
 
 The two auxiliary complexes are
 $\CF_{\mathbb X}(A_0,L_C)$ and $\CF_{\mathbb X}(L_C,A_1)$. Their
@@ -4184,7 +4262,8 @@ $\kappa_{\mathrm{aux}}$ by $1/2$ and the index by $4$, leaving
 $m(a)-m(x)$ unchanged. The normalization of $m$ agrees with the Morse
 grading. A top class is defined by $m$, not by the parity grading.
 Depending on the order of the pair, the corresponding critical point
-is the maximum or minimum of the height function.
+is, at uncorrected height data, the maximum or minimum of the height function, and in general
+its continuation.
 
 Denote the upper height presentation by $q=C\circ p$; this notation
 includes its height perturbation. With a split almost-complex
@@ -4211,7 +4290,7 @@ the neighbourhood $\mathcal N_C(t)$ above.
 compression bodies $V_0,V_1$, the Lagrangians $R_0,R_1$, possibly
 corrected by some $\gamma$ in the ball, and its height and auxiliary
 regular data (Paper~I, Lemma~11.3).
-\item Let $p$ be lower data as above (small, with Lagrangians in $\mathcal N_C(t)$ and, for $k\ge1$, primary data in $\mathcal N_{C,R}$) which satisfies the incidence conditions of Section~\ref{subsec:handle-geometry} with
+\item Let $p$ be lower data as above (small, with norm so small relative to $t$ that the Lagrangians along the segment from zero lie in $\mathcal N_C(t)$, and, for $k\ge1$, primary data in $\mathcal N_{C,R}$) which satisfies the incidence conditions of Section~\ref{subsec:handle-geometry} with
 the upper height presentation $q=C\circ p$. The \emph{unpaired
 compression cup} is
 \begin{equation}\label{eq:check-cup}
@@ -4222,8 +4301,9 @@ where $\operatorname{bend}$ is the bending map of
 Section~\ref{sec:algebra} and $z_C$ is the cycle~\eqref{eq:cup-tensor}.
 \item Let $k=0$, so that $L_C$ is the diagonal, and write $r$ for the
 upper height presentation. A \emph{small fold pair} $(p,r)$ at
-height $t$ consists of a small lower presentation $p$ with
-Lagrangians in $\mathcal N_C(t)$ and an upper height presentation $r$
+height $t$ consists of a small lower presentation $p$ whose norm is so small relative to $t$
+that the Lagrangians along the segment from zero lie in $\mathcal N_C(t)$, and an upper height
+presentation $r$
 at height $t$ whose primary data lie in the ball $\mathfrak B$ of
 Section~\ref{sec:characters}. The pair is subject to the incidence
 conditions and the auxiliary regularity conditions above (see also
@@ -4241,16 +4321,49 @@ here.
 
 Let $Z_0=D_0\cup(-C)$ and $Z_1=C\cup(-D_1)$ be the gauge inputs of the auxiliary pairs $(A_0,L_C)$ and $(L_C,A_1)$, each diffeomorphic to $V_i\cup(-V_i)$; let $N_0,N_1$ be their integral mixed maps, and let $\theta_i\in C_G(Z_i)$ be the relative invariant of the auxiliary filling $F_i=V_i\times[0,1]$ of $Z_i$ (Paper~I, Lemma~11.1(i) and Lemma~11.2). The top cycles are normalized by
 $q_i^*=\pm N_i\theta_i$. The sign is one sign
-of each distinguished cycle. The auxiliary
-complexes have the standard filtration. The
-unit-diagonal calculation in
-Proposition~\ref{prop:N-isomorphism} gives the
+of each distinguished cycle. This is an integral
+normalization, for the following reason. The
+auxiliary gauge complexes $C_G(Z_i)$ are the
+framed complexes of $\#^r(S^1\times S^2)$, with
+$2^r$ generators, and $\Ish(\#^r(S^1\times S^2))$
+is free of rank $2^r$ \cite[Section~7.8]{Scaduto}
+(Paper~I, proof of Proposition~9.4), so their
+differentials vanish.
+Along a fine subdivision of the path of end data
+from the height data, the gauge continuation
+maps between them are therefore isomorphisms,
+and they are triangular with respect to $m$ by
+the energy bound in the proof of Paper~I,
+Lemma~11.7(ii), which uses no signs; a
+triangular isomorphism has a triangular inverse,
+so each maps the generator of maximal $m$ to
+$\pm$ itself (the argument of Paper~I,
+Lemma~9.2, over $\ZZ$). At the height data the
+relative invariant of the filling is $\pm$ that
+generator, there being one regular solution
+(Paper~I, Proposition~9.4; Lemma~\ref{lem:gauge-triangle-Z}),
+and composition at the connected cut $Z_i$
+together with the data-change homotopy of
+Proposition~\ref{prop:gauge-functor}, applied to
+the filling as in the proof of
+Lemma~\ref{lem:gauge-triangle-Z}, transport it by
+these maps, the continuation cylinder being the
+product cobordism with varying Floer data; the
+differentials vanishing, the homotopies are
+equalities on chains. Hence $\theta_i$ is $\pm$
+the generator of maximal $m$. The unit-diagonal
+calculation in
+Proposition~\ref{prop:N-isomorphism}, whose proof
+applies to the auxiliary pairs at their end data
+(the entry from the top generator to $q_i^*$ has
+$\kappa_{\mathrm{aux}}=0$, so its solutions are
+the small deformations of the constant pair at
+the continued $q_i^*$), gives the
 coefficient $\pm1$ on $q_i^*$, and the other
 coefficients vanish by the grading argument of
 Paper~I, Lemma~9.2 and Proposition~9.4, with
-\ref{I13} and~\ref{I14} for the folded pairs, which use no
-signs. This is an integral normalization, not
-merely a mod-two one.
+\ref{I13} and~\ref{I14} for the folded pairs,
+which use no signs.
 
 \subsection{The relative invariant of the one-handle filling}
 Let $B_k$ be the gauge filling whose closed
@@ -5789,19 +5902,25 @@ Section~\ref{sec:cup} and of the admissible neighbourhoods~\ref{I5} of
 Paper~I. Choose it so small that its height perturbations, together
 with every generic correction in the ball $|\gamma|\le\delta(t_*)$ of
 Section~\ref{sec:cup}, have norm less than $r_H$. These data are used
-as upper auxiliary presentations.
+as upper auxiliary presentations. This $t_*$ is taken as the height $t_*$ fixed in Paper~I,
+Definition~11.12, together with its companion height $t_*'\le t_*$ chosen there.
 \item Choose the radius $r_\chi<r_H$ with the following property, for
 the splitting and for its reflection. If a primary datum lies in the
 span of a finite family containing $F_0$ and has norm less than
 $r_\chi$, then its Lagrangians lie in the lower-data neighbourhood
 $\mathcal N_C(t_*)$ of Section~\ref{sec:cup} for the product
-compression body, and in the neighbourhoods that define admissible
-primary data in Paper~I, Definition~11.12 (see~\ref{I5}). Such a radius
+compression body, and in the neighbourhoods $\mathcal N(t_*)$ and $\mathcal N(t_*')$ that
+define admissible primary data in Paper~I, Definition~11.12 (see~\ref{I5}). Such a radius
 exists because these neighbourhoods are $C^1$-neighbourhoods of the
 unperturbed pair of Lagrangians, and by
 Proposition~\ref{prop:small-ball}(ii),(iii) and its proof the
 perturbed Lagrangians converge in $C^1$, uniformly in the finite
-family, as the norm tends to zero.
+family, as the norm tends to zero. A small presentation is then
+admissible in the sense of Paper~I: the segment from zero to its
+primary datum lies in the convex small ball, so along it the
+Lagrangians, and those of the reflection, stay in these
+neighbourhoods, and the datum lies in the path component
+$\mathcal U(F)$ of~\ref{I5}.
 \item Choose smaller heights $t''$ for the proof of Proposition~\ref{prop:mixed-duality},
 $t_f$ for the reflection fold and $t_C$ for the compression cup and,
 for a Heegaard stabilization or destabilization, the two-handle heights
@@ -5809,12 +5928,16 @@ $t_2,t_2'$ and the generic perturbations $R_0',R_0''$ of $R_0$ used for
 stabilization in Section~\ref{sec:descent} (Paper~I, proof of
 Proposition~12.4). Choose them so that the resulting upper and
 intermediate presentations are small in the sense defined below.
-Choose the lower datum of a cup after $t_C$, sufficiently small
-relative to that height.
+Choose the lower datum of a fold pair or of a cup after its height $t''$, $t_f$ or $t_C$, with
+norm so small relative to that height that the Lagrangians along the segment from zero to it lie
+in $\mathcal N_C$ at that height.
 \item Fix the ordinary gauge trajectory data and the symplectic
 strip-end data for every required end, including the intermediate
 closed cuts. Make the simultaneous regular end choices before
-selecting their weights. Choose a common sufficiently small weight
+selecting their weights. For the auxiliary pairs, for every $k$, choose the end perturbations
+and the secondary data with $4\sup\|f\|_\infty+2\sup\|\eta\|^2_{L^2}<2\pi^2$, as~\ref{I14}
+requires; the secondary data chosen in items~(6) and~(8) below respect this bound. Choose a
+common sufficiently small weight
 below the relevant primal, adjoint and scalar thresholds. For
 configuration reference paths it must also lie below their
 remainder rates; relative end preparation then supplies faster
@@ -5861,19 +5984,24 @@ and its elements are admissible primary data in
 the sense of Paper~I (see~\ref{I5}). Small
 fold pairs are those of
 Definition~\ref{def:fold-pair}(c): the lower
-presentation is small with Lagrangians in
-$\mathcal N_C(t)$, and the primary data of the
+presentation is small, with norm so small relative to
+$t$ that the Lagrangians along the segment from zero
+lie in $\mathcal N_C(t)$, and the primary data of the
 upper height presentation lie in $\mathfrak B$.
 For $k\ge1$,
 \emph{compatible handle data} consist of a
 small lower presentation $p$ and the upper
 height presentation $q=C\circ p$ at the height
 $t_C$, subject to the same conditions. The
-Lagrangians of $p$ lie in $\mathcal N_C(t_C)$,
-and its primary data lie in the neighbourhood
-$\mathcal N_{C,R}$ of~\ref{I14}, on
+Lagrangians of $p$, and those along the segment
+from zero, lie in $\mathcal N_C(t_C)$,
+and its primary data, and those of its reflection,
+lie in the neighbourhoods $\mathcal N_{C,R}$ and
+$\mathcal N_{\bar C,\bar R}$ of~\ref{I14}(i), on
 which the grading and coefficient statements of
-\ref{I13} and~\ref{I14} hold. By item~(4), $q$ is small.
+\ref{I13} and~\ref{I14} hold for the pair and for
+its reflection, as the three-handle cap requires.
+By item~(4), $q$ is small.
 A \emph{small decomposition} of a morphism,
 from $(M_0,p_0)$ to $(M_1,p_1)$, is a word of
 elementary moves as in~\ref{I15}:
@@ -6185,8 +6313,9 @@ square ends at the presentation $C\circ p$,
 which carries height perturbations on
 both bodies, while the two-handle square
 holds from $(C\circ p)'$ to $r'$. Here
-$(C\circ p)'$ is $C\circ p$ with the Lagrangian $R_0$ of its first body replaced by a generic small perturbation $R_0'$,
-supported away from its critical set, and with
+$(C\circ p)'$ is $C\circ p$ with the Lagrangian $R_0$ of its first body replaced by a generic small perturbation $R_0'$
+from the span of $F_*$, which may move its
+generators, and with
 zero primary perturbation on its second body;
 $r'$ is $r$ with $R_0'$ on its first body and
 the two-handle height perturbation at height
@@ -6352,7 +6481,7 @@ information involved.
 \section{Analytic foundations}\label{app:inputs}
 
 This appendix proves Proposition~\ref{prop:foundations}, the four estimates in the proof of Lemma~\ref{lem:collapse-family} (Section~\ref{app:collapse-family}), Lemma~\ref{lem:bridge-gluing} (Section~\ref{app:bridge-gluing}) and Proposition~\ref{prop:weights} (Section~\ref{app:weights}). All
-references to Paper~I mean its version of 7 October 2026~\cite{PaperI}. The unsigned collapse, torus excision and generation results of that
+references to Paper~I mean its version of 19 October 2026~\cite{PaperI}. The unsigned collapse, torus excision and generation results of that
 manuscript are used as they are stated there. The exceptions are the
 proofs here which repeat an argument of Paper~I for a wider class of
 operators, such as stabilized families of nonsolutions, and state which
@@ -6733,8 +6862,8 @@ We use the notation of the proof of Lemma~\ref{lem:collapse-family}. Paper~I, Se
 linearization at a regular index-zero limiting solution, whose operator
 is invertible. Here $\{V_b\}$ is an arbitrary compact family of limiting
 configurations, and $D_{V_b}$ may have kernel and cokernel. After the
-stabilization of that proof we repeat the arguments of Paper~I, not only cite their
-conclusions, for the stabilized operators. Four steps change. The
+stabilization of that proof, the arguments of Paper~I extend to the
+stabilized operators through the following four modifications. The
 exterior inverse of Paper~I, Proposition~7.13, is proved for the
 augmented operator $(D_{V_b},j_b,\Gamma_b)$. The common exponential rate
 $\beta$ of the family replaces the decay of solutions. The attachment
@@ -8437,7 +8566,7 @@ Geom. Topol. \textbf{14} (2010), 833--902.
 
 \bibitem[Wue26a]{PaperI}
 B.~J. Wuebben, \emph{Cobordism maps and Atiyah--Floer isomorphisms
-for framed instanton homology~I}, manuscript, version of 7 October 2026 (first version
+for framed instanton homology~I}, manuscript, version of 19 October 2026 (first version
 25 September 2026),
 \url{https://github.com/bwuebben/donaldson-atiyah-floer/tree/main/af-cob-1}.
 

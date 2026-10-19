@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-Bernd Johannes Wuebben · First version 30 September 2026 · This version 11 October 2026 · 108 pages
+Bernd Johannes Wuebben · First version 30 September 2026 · This version 19 October 2026 · 110 pages
 
 - [Read Paper II](cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
@@ -27,11 +27,11 @@ these maps form a projective functor on homology, independent of the
 handle decomposition up to sign. The unsigned analysis is that of the
 comparison modulo two; the new input is that two degenerations of the
 mixed equation, the collapse of a compression body and excision along a
-torus, preserve orientations, and that where this homology is nonzero the
-sign by which the orientations change when a sphere is attached to a strip
-is constant under small perturbations and invariant under reversing the
-splitting. The relation with homology-oriented integral instanton maps is
-left open.
+torus, preserve orientations. Where this homology is nonzero, we also prove
+that the sign by which the orientations change when a sphere is attached
+to a strip is constant under small perturbations and invariant under
+reversing the splitting. The relation with homology-oriented integral
+instanton maps is left open.
 
 ## Main results
 
@@ -61,7 +61,8 @@ left open.
 
 **Not yet independently refereed.** The proof uses the unsigned analytic
 results of Paper I: compactness, gluing, the collapse theorem and torus
-excision.
+excision. Its imports refer to the 19 October 2026 version of Paper I and
+use the admissible primary-perturbation domains of Definition 11.12.
 
 - **Proved here.**
   - The analytic foundations on the mixed domains and their completed

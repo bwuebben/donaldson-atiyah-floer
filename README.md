@@ -54,9 +54,10 @@ are constructed by the Daemi–Fukaya–Lipyanskiy method with invariant
 perturbations. Where both constructions are defined, they coincide with the
 Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist at
 the fixed metric data used here (Appendix C). Integer coefficients are the
-subject of Paper II below. The current
-version is dated **7 October 2026** (first version 25 September 2026) and
-has **151 pages**.
+subject of Paper II below. The admissible primary perturbations lie in the
+path component of zero specified by Paper I, Definition 11.12. The current
+version is dated **19 October 2026** (first version 25 September 2026) and
+has **155 pages**.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -76,8 +77,8 @@ under small perturbations and invariant under reversing the splitting. The
 proof uses the unsigned analytic results of Paper I; the further analysis it
 needs is proved in the appendices. Identification with homology-oriented
 integral instanton maps and with relative-spin quilt orientations remains
-open. The current version is dated **11 October 2026** (first version
-30 September 2026), has **108 pages**, and has not yet been independently
+open. The current version is dated **19 October 2026** (first version
+30 September 2026), has **110 pages**, and has not yet been independently
 refereed.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)

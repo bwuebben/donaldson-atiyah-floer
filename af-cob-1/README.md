@@ -1,6 +1,6 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology I
 
-Bernd Johannes Wuebben · First version 25 September 2026 · This version 7 October 2026 · 151 pages
+Bernd Johannes Wuebben · First version 25 September 2026 · This version 19 October 2026 · 155 pages
 
 - [Read the paper](cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms.tex)
@@ -40,6 +40,12 @@ theorem along a torus.
 - **Objects.** The objects are connected and carry the trivial bundle on
   the original three-manifold. Disconnected objects, units and counits, and
   closed pairings are not treated.
+- **Admissible presentations.** Definition 11.12 fixes the auxiliary height
+  data and takes the path component of zero in each finite-dimensional
+  space of primary perturbations subject to the stated Lagrangian
+  neighbourhood conditions. The cup and duality formulas hold throughout
+  this domain, which is preserved under enlargement of the perturbation
+  family.
 - **The isomorphisms.** They are constructed by the method of Daemi, Fukaya
   and Lipyanskiy, with perturbations invariant under the framed symmetry.
   Where both constructions are defined, they coincide with the
