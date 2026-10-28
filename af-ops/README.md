@@ -2,8 +2,11 @@
 
 Bernd Johannes Wuebben · 8 September 2026 · 219 pages
 
+Revised 23 September 2026; the manuscript date is unchanged.
+
 - [Read the paper](point-operations-and-matching-line-bubbles.pdf)
 - [LaTeX source](point-operations-and-matching-line-bubbles.tex)
+- [Abstract page](https://bwuebben.github.io/papers/af-point-operations/) · [Zenodo:23643185](https://zenodo.org/records/23643185)
 - [Donaldson and Atiyah–Floer manuscript collection](../README.md)
 
 ## Abstract

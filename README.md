@@ -28,12 +28,14 @@ quarter-Pontryagin normalization gives the shifts 2, 1, and 0.
 
 The manuscript concerns the stated admissible embedded-Lagrangian setting
 and does not assert a general ambient compactification or higher-coherence
-extension. The current version is dated **8 September 2026** and has
-**219 pages**, including a separate linked contents page.
+extension. The current version is dated **8 September 2026** (revised
+23 September 2026) and has **219 pages**, including a separate linked
+contents page.
 
 - [PDF](af-ops/point-operations-and-matching-line-bubbles.pdf)
 - [LaTeX source](af-ops/point-operations-and-matching-line-bubbles.tex)
 - [Paper overview and build instructions](af-ops/README.md)
+- [Abstract page](https://bwuebben.github.io/papers/af-point-operations/) · [Zenodo:23643185](https://zenodo.org/records/23643185)
 
 ### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology I
 
@@ -62,6 +64,7 @@ has **155 pages**.
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
 - [Paper overview and build instructions](af-cob-1/README.md)
+- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-i/) · [Zenodo:23643187](https://zenodo.org/records/23643187)
 
 ### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
@@ -84,6 +87,7 @@ refereed.
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
 - [Paper II overview, scope, and build instructions](af-cob-1/PAPER-II.md)
+- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-ii/) · [Zenodo:23643189](https://zenodo.org/records/23643189)
 
 ### One-bubble neighborhoods in SO(3)-monopole moduli spaces
 
@@ -110,6 +114,7 @@ require further arguments. The manuscript remains dated **9 September
 - [PDF](w-glue-1/one-bubble-neighborhoods-of-seiberg-witten-strata.pdf)
 - [LaTeX source](w-glue-1/one-bubble-neighborhoods-of-seiberg-witten-strata.tex)
 - [Paper overview and build instructions](w-glue-1/README.md)
+- [Abstract page](https://bwuebben.github.io/papers/one-bubble-neighborhoods/) · [Zenodo:23643193](https://zenodo.org/records/23643193)
 
 ## Building the papers
 

@@ -5,6 +5,7 @@ Bernd Johannes Wuebben · First version 25 September 2026 · This version 19 Oct
 - [Read the paper](cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms.tex)
 - [Paper II: integer coefficients](PAPER-II.md)
+- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-i/) · [Zenodo:23643187](https://zenodo.org/records/23643187)
 - [Donaldson and Atiyah–Floer manuscript collection](../README.md)
 
 ## Abstract

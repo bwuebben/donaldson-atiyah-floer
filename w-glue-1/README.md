@@ -6,6 +6,7 @@ Revised 27 September 2026; the manuscript date is unchanged.
 
 - [Read the paper](one-bubble-neighborhoods-of-seiberg-witten-strata.pdf)
 - [LaTeX source](one-bubble-neighborhoods-of-seiberg-witten-strata.tex)
+- [Abstract page](https://bwuebben.github.io/papers/one-bubble-neighborhoods/) · [Zenodo:23643193](https://zenodo.org/records/23643193)
 - [Donaldson and Atiyah–Floer manuscript collection](../README.md)
 
 ## Abstract
