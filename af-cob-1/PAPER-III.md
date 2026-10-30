@@ -1,11 +1,11 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology III
 
-Bernd Johannes Wuebben · First version 26 October 2026 · This version 29 October 2026 · 32 pages
+Bernd Johannes Wuebben · First version 26 October 2026 · This version 30 October 2026 · 32 pages
 
 - [Read Paper III](cobordism-maps-and-atiyah-floer-isomorphisms-iii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-iii.tex)
 - [Abstract and citation](https://bwuebben.github.io/papers/af-cobordism-iii/)
-- [Zenodo:23789290](https://zenodo.org/records/23789290) · DOI: [10.5281/zenodo.23789290](https://doi.org/10.5281/zenodo.23789290)
+- [Zenodo:23811477](https://zenodo.org/records/23811477) · DOI: [10.5281/zenodo.23811477](https://doi.org/10.5281/zenodo.23811477)
 - [Paper I](README.md) · [Paper II](PAPER-II.md)
 - [Donaldson and Atiyah–Floer manuscript collection](../README.md)
 

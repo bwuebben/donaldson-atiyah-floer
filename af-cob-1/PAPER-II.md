@@ -1,10 +1,11 @@
 # Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
-Bernd Johannes Wuebben · First version 30 September 2026 · This version 19 October 2026 · 110 pages
+Bernd Johannes Wuebben · First version 30 September 2026 · This version 30 October 2026 · 110 pages
 
 - [Read Paper II](cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
 - [Paper I: coefficients in 𝔽₂](README.md)
+- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-ii/) · [Zenodo:23811453](https://zenodo.org/records/23811453)
 - [Donaldson and Atiyah–Floer manuscript collection](../README.md)
 
 ## Abstract
@@ -61,7 +62,7 @@ instanton maps is left open.
 
 **Not yet independently refereed.** The proof uses the unsigned analytic
 results of Paper I: compactness, gluing, the collapse theorem and torus
-excision. Its imports refer to the 19 October 2026 version of Paper I and
+excision. Its imports refer to the 30 October 2026 version of Paper I and
 use the admissible primary-perturbation domains of Definition 11.12.
 
 - **Proved here.**

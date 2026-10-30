@@ -10,6 +10,13 @@ source file together with its compiled PDF.
 
 ## Papers
 
+The three cobordism papers form a series: Paper I establishes the comparison
+over 𝔽₂ and its analytic foundations; Paper II develops integral naturality
+with transported orientations; Paper III identifies the usual singular
+instanton maps and constructs the further orientation normalization under
+its stated inputs. Each introduction describes this reading order and cites
+the companion papers by their Zenodo DOIs.
+
 ### Point operations and matching-line bubbles in the Atiyah–Floer comparison
 
 Daemi, Fukaya, and Lipyanskiy proved the admissible embedded-Lagrangian
@@ -58,13 +65,13 @@ Daemi–Fukaya–Lipyanskiy isomorphism reduced modulo two, and such data exist 
 the fixed metric data used here (Appendix C). Integer coefficients are the
 subject of Paper II below. The admissible primary perturbations lie in the
 path component of zero specified by Paper I, Definition 11.12. The current
-version is dated **19 October 2026** (first version 25 September 2026) and
-has **155 pages**.
+version is dated **30 October 2026** (first version 25 September 2026) and
+has **156 pages**.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms.tex)
 - [Paper overview and build instructions](af-cob-1/README.md)
-- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-i/) · [Zenodo:23643187](https://zenodo.org/records/23643187)
+- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-i/) · [Zenodo:23811438](https://zenodo.org/records/23811438)
 
 ### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology II
 
@@ -81,14 +88,14 @@ proof uses the unsigned analytic results of Paper I; the further analysis it
 needs is proved in the appendices. Paper III below identifies the usual
 singular Hopf-link maps and the calibrated DFL count. The nonsingular cap
 comparison and prescribed relative-spin quilt orientations remain open.
-The current version is dated **19 October 2026** (first version
+The current version is dated **30 October 2026** (first version
 30 September 2026), has **110 pages**, and has not yet been independently
 refereed.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
 - [Paper II overview, scope, and build instructions](af-cob-1/PAPER-II.md)
-- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-ii/) · [Zenodo:23643189](https://zenodo.org/records/23643189)
+- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-ii/) · [Zenodo:23811453](https://zenodo.org/records/23811453)
 
 ### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology III
 
@@ -108,12 +115,12 @@ The statements retain the companion analytic results, ordinary surgery
 and stated oriented gluing inputs, and their regular small-data hypotheses.
 The constructed maps are not identified with prescribed relative-spin
 operations or Scaduto's nonsingular cap convention. The manuscript is dated
-**26 October 2026**, revised **29 October 2026**, and has **32 pages**.
+**26 October 2026**, revised **30 October 2026**, and has **32 pages**.
 
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-iii.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-iii.tex)
 - [Paper III overview, scope, and build instructions](af-cob-1/PAPER-III.md)
-- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-iii/) · [Zenodo:23789290](https://zenodo.org/records/23789290)
+- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-iii/) · [Zenodo:23811477](https://zenodo.org/records/23811477)
 
 ### One-bubble neighborhoods in SO(3)-monopole moduli spaces
 
