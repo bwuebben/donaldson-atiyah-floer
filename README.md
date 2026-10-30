@@ -78,9 +78,10 @@ collapse of a compression body and excision along a torus preserve
 orientations, and that the sign of attaching a sphere to a strip is constant
 under small perturbations and invariant under reversing the splitting. The
 proof uses the unsigned analytic results of Paper I; the further analysis it
-needs is proved in the appendices. Identification with homology-oriented
-integral instanton maps and with relative-spin quilt orientations remains
-open. The current version is dated **19 October 2026** (first version
+needs is proved in the appendices. Paper III below identifies the usual
+singular Hopf-link maps and the calibrated DFL count. The nonsingular cap
+comparison and prescribed relative-spin quilt orientations remain open.
+The current version is dated **19 October 2026** (first version
 30 September 2026), has **110 pages**, and has not yet been independently
 refereed.
 
@@ -88,6 +89,31 @@ refereed.
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex)
 - [Paper II overview, scope, and build instructions](af-cob-1/PAPER-II.md)
 - [Abstract page](https://bwuebben.github.io/papers/af-cobordism-ii/) · [Zenodo:23643189](https://zenodo.org/records/23643189)
+
+### Cobordism maps and Atiyah–Floer isomorphisms for framed instanton homology III
+
+Theorem A identifies the usual singular Hopf-link framed instanton maps
+with the gauge-calibrated Daemi–Fukaya–Lipyanskiy mixed comparison, up to
+integral chain homotopy and one overall sign, with an explicit grading
+conversion. The symplectic orientations are transported from gauge theory.
+Theorem B constructs the sphere-positive normalization for every closed
+connected oriented three-manifold, using finite integer linear combinations
+of products of geometric counts. Surgery generation supplies a finite
+model built from one-generator three-sphere complexes; counts through the
+three-sphere realize its matrix entries and hence an algebraically chosen
+normalization. Forward and reflected mixed counts transfer the construction
+to the symplectic side.
+
+The statements retain the companion analytic results, ordinary surgery
+and stated oriented gluing inputs, and their regular small-data hypotheses.
+The constructed maps are not identified with prescribed relative-spin
+operations or Scaduto's nonsingular cap convention. The manuscript is dated
+**26 October 2026**, revised **29 October 2026**, and has **32 pages**.
+
+- [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-iii.pdf)
+- [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-iii.tex)
+- [Paper III overview, scope, and build instructions](af-cob-1/PAPER-III.md)
+- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-iii/)
 
 ### One-bubble neighborhoods in SO(3)-monopole moduli spaces
 
@@ -128,6 +154,7 @@ latexmk -pdf point-operations-and-matching-line-bubbles.tex
 cd ../af-cob-1
 latexmk -pdf cobordism-maps-and-atiyah-floer-isomorphisms.tex
 latexmk -pdf cobordism-maps-and-atiyah-floer-isomorphisms-ii.tex
+latexmk -pdf cobordism-maps-and-atiyah-floer-isomorphisms-iii.tex
 
 cd ../w-glue-1
 latexmk -pdf one-bubble-neighborhoods-of-seiberg-witten-strata.tex

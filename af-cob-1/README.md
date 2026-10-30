@@ -68,3 +68,12 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error cobordism-maps-and-atiyah-f
 ```
 
 The distributed PDF and source belong to the same manuscript version.
+
+## Paper III: the usual maps and normalization
+
+[Paper III](PAPER-III.md) identifies the usual singular Hopf-link gauge
+maps and the gauge-calibrated DFL count, and constructs sphere-positive
+normalization for every closed connected oriented three-manifold under
+its stated inputs. It uses finite integer combinations of geometric
+count products. The nonsingular cap and prescribed relative-spin
+comparisons remain follow-up problems.

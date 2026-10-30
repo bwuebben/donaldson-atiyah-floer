@@ -89,6 +89,16 @@ use the admissible primary-perturbation domains of Definition 11.12.
   bundle trivialized at the ends and along the arc. Disconnected objects,
   units, counits and closed pairings are not treated.
 
+## Subsequent comparison
+
+[Paper III](PAPER-III.md) identifies the usual singular Hopf-link maps
+and the actual DFL mixed count with a calibrated coherent orientation.
+It also constructs a sphere-positive normalization for every permitted
+closed connected oriented three-manifold. These results retain the
+analytic and naturality inputs of this paper. Identification with the
+nonsingular cap convention and prescribed relative-spin operations
+remains open. The abstract and scope above describe Paper II itself.
+
 ## Build
 
 The source is self-contained and has an internal bibliography. With
