@@ -113,7 +113,7 @@ operations or Scaduto's nonsingular cap convention. The manuscript is dated
 - [PDF](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-iii.pdf)
 - [LaTeX source](af-cob-1/cobordism-maps-and-atiyah-floer-isomorphisms-iii.tex)
 - [Paper III overview, scope, and build instructions](af-cob-1/PAPER-III.md)
-- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-iii/)
+- [Abstract page](https://bwuebben.github.io/papers/af-cobordism-iii/) · [Zenodo:23789290](https://zenodo.org/records/23789290)
 
 ### One-bubble neighborhoods in SO(3)-monopole moduli spaces
 
